@@ -1,11 +1,11 @@
 id = "seo/claude-usage"
 name = "Claude Usage"
-version = "1.2.0"
+version = "1.3.0"
 plugin_api = 43
-author = "seo"
+author = "Seo1323"
 license = "MIT"
 icon = "brain"
-description = "Claude Code usage in the bar: 5-hour / weekly limit, time to reset and tokens used. Highly configurable."
+description = "Claude Code usage in the bar: 5-hour / weekly limit, time to reset and tokens used, as text, a bar or a ring."
 tags = ["bar", "ai", "indicator", "utility"]
 dependencies = ["curl", "jq"]
 
@@ -39,6 +39,18 @@ entry = "bar.luau"
   ]
 
   [[widget.setting]]
+  key = "display_mode"
+  type = "select"
+  label_key = "settings.display_mode.label"
+  description_key = "settings.display_mode.description"
+  default = "always"
+  options = [
+    { value = "always", label_key = "settings.display_mode.always" },
+    { value = "important", label_key = "settings.display_mode.important" },
+    { value = "hover", label_key = "settings.display_mode.hover" },
+  ]
+
+  [[widget.setting]]
   key = "logo"
   type = "select"
   label_key = "settings.logo.label"
@@ -49,15 +61,32 @@ entry = "bar.luau"
     { value = "glyph", label_key = "settings.logo.glyph" },
     { value = "star", label_key = "settings.logo.star" },
     { value = "custom", label_key = "settings.logo.custom" },
+    { value = "ring", label_key = "settings.logo.ring" },
   ]
 
   [[widget.setting]]
+  key = "glyph"
+  type = "glyph"
+  label_key = "settings.glyph.label"
+  default = "brain"
+  visible_when = { key = "logo", values = ["glyph"] }
+
+  [[widget.setting]]
   key = "logo_path"
-  type = "string"
+  type = "file"
   label_key = "settings.logo_path.label"
   description_key = "settings.logo_path.description"
   default = ""
-  advanced = true
+  extensions = [".svg", ".png"]
+  visible_when = { key = "logo", values = ["custom"] }
+
+  [[widget.setting]]
+  key = "icon_size"
+  type = "int"
+  label_key = "settings.icon_size.label"
+  default = 18
+  min = 10
+  max = 40
 
   [[widget.setting]]
   key = "show_percent"
@@ -66,11 +95,49 @@ entry = "bar.luau"
   default = true
 
   [[widget.setting]]
+  key = "percent_mode"
+  type = "select"
+  label_key = "settings.percent_mode.label"
+  default = "used"
+  options = [
+    { value = "used", label_key = "settings.percent_mode.used" },
+    { value = "left", label_key = "settings.percent_mode.left" },
+  ]
+  visible_when = { key = "show_percent", values = ["true"] }
+
+  [[widget.setting]]
   key = "show_prefix"
   type = "bool"
   label_key = "settings.show_prefix.label"
   description_key = "settings.show_prefix.description"
   default = false
+
+  [[widget.setting]]
+  key = "show_bar"
+  type = "bool"
+  label_key = "settings.show_bar.label"
+  description_key = "settings.show_bar.description"
+  default = false
+
+  [[widget.setting]]
+  key = "bar_width"
+  type = "int"
+  label_key = "settings.bar_width.label"
+  default = 32
+  min = 12
+  max = 120
+  visible_when = { key = "show_bar", values = ["true"] }
+
+  [[widget.setting]]
+  key = "gauge_mode"
+  type = "select"
+  label_key = "settings.gauge_mode.label"
+  description_key = "settings.gauge_mode.description"
+  default = "left"
+  options = [
+    { value = "left", label_key = "settings.gauge_mode.left" },
+    { value = "used", label_key = "settings.gauge_mode.used" },
+  ]
 
   [[widget.setting]]
   key = "show_reset"
@@ -88,6 +155,7 @@ entry = "bar.luau"
     { value = "compact", label_key = "settings.reset_format.compact" },
     { value = "verbose", label_key = "settings.reset_format.verbose" },
   ]
+  visible_when = { key = "show_reset", values = ["true"] }
 
   [[widget.setting]]
   key = "ready_text"
@@ -95,6 +163,7 @@ entry = "bar.luau"
   label_key = "settings.ready_text.label"
   description_key = "settings.ready_text.description"
   default = "ready"
+  visible_when = { key = "show_reset", values = ["true"] }
 
   [[widget.setting]]
   key = "show_tokens"
@@ -109,6 +178,7 @@ entry = "bar.luau"
   label_key = "settings.include_cache_read.label"
   description_key = "settings.include_cache_read.description"
   default = false
+  visible_when = { key = "show_tokens", values = ["true"] }
 
   [[widget.setting]]
   key = "token_format"
@@ -119,6 +189,26 @@ entry = "bar.luau"
     { value = "short", label_key = "settings.token_format.short" },
     { value = "full", label_key = "settings.token_format.full" },
   ]
+  visible_when = { key = "show_tokens", values = ["true"] }
+
+  [[widget.setting]]
+  key = "separator"
+  type = "select"
+  label_key = "settings.separator.label"
+  default = "none"
+  options = [
+    { value = "none", label_key = "settings.separator.none" },
+    { value = "dot", label_key = "settings.separator.dot" },
+    { value = "bar", label_key = "settings.separator.bar" },
+    { value = "slash", label_key = "settings.separator.slash" },
+  ]
+
+  [[widget.setting]]
+  key = "dim_extras"
+  type = "bool"
+  label_key = "settings.dim_extras.label"
+  description_key = "settings.dim_extras.description"
+  default = false
 
   [[widget.setting]]
   key = "gap"
@@ -152,6 +242,7 @@ entry = "bar.luau"
   default = 70
   min = 1
   max = 100
+  visible_when = { key = "color_by_usage", values = ["true"] }
 
   [[widget.setting]]
   key = "critical_at"
@@ -160,6 +251,7 @@ entry = "bar.luau"
   default = 90
   min = 1
   max = 100
+  visible_when = { key = "color_by_usage", values = ["true"] }
 
   [[widget.setting]]
   key = "color"
@@ -174,6 +266,7 @@ entry = "bar.luau"
   type = "color"
   label_key = "settings.warn_color.label"
   default = "tertiary"
+  visible_when = { key = "color_by_usage", values = ["true"] }
   advanced = true
 
   [[widget.setting]]
@@ -181,6 +274,7 @@ entry = "bar.luau"
   type = "color"
   label_key = "settings.critical_color.label"
   default = "error"
+  visible_when = { key = "color_by_usage", values = ["true"] }
   advanced = true
 
   [[widget.setting]]
@@ -191,7 +285,7 @@ entry = "bar.luau"
   default = ""
   advanced = true
 
-# Compact variant: only the Claude logo, usage in the tooltip.
+# Compact variant: only an icon or a usage ring, usage in the tooltip.
 [[widget]]
 id = "icon"
 entry = "icon.luau"
@@ -206,15 +300,24 @@ entry = "icon.luau"
     { value = "glyph", label_key = "settings.logo.glyph" },
     { value = "star", label_key = "settings.logo.star" },
     { value = "custom", label_key = "settings.logo.custom" },
+    { value = "ring", label_key = "settings.logo.ring" },
   ]
 
   [[widget.setting]]
+  key = "glyph"
+  type = "glyph"
+  label_key = "settings.glyph.label"
+  default = "brain"
+  visible_when = { key = "logo", values = ["glyph"] }
+
+  [[widget.setting]]
   key = "logo_path"
-  type = "string"
+  type = "file"
   label_key = "settings.logo_path.label"
   description_key = "settings.logo_path.description"
   default = ""
-  advanced = true
+  extensions = [".svg", ".png"]
+  visible_when = { key = "logo", values = ["custom"] }
 
   [[widget.setting]]
   key = "size"

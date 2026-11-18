@@ -1,52 +1,43 @@
 #!/usr/bin/env bash
-# Prints one JSON line with Claude Code rate-limit usage, or {"error": "..."}.
-# Reads the OAuth token Claude Code already stores; never writes or refreshes it.
+# Prints one JSON line with Claude Code usage, or {"error": "..."}.
+# Network: one HTTPS request to api.anthropic.com, authenticated with the OAuth token
+# Claude Code already stores (read only - never written or refreshed).
+# Token counts come from local transcripts, because the API has none.
 set -u
-CREDS="${CLAUDE_CONFIG_DIR:-$HOME/.claude}/.credentials.json"
-fail() { jq -nc --arg e "$1" '{error:$e}'; exit 0; }
+DIR="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
+CREDS="$DIR/.credentials.json"
+fail() { printf '{"error":"%s"}\n' "$1"; exit 0; }
 
 [ -r "$CREDS" ] || fail no_credentials
 exp=$(jq -r '.claudeAiOauth.expiresAt // 0' "$CREDS" 2>/dev/null) || fail no_credentials
-[ "$exp" -gt "$(( $(date +%s) * 1000 ))" ] 2>/dev/null || fail token_expired
+[ "${exp%.*}" -gt "$(( $(date +%s) * 1000 ))" ] 2>/dev/null || fail token_expired
 
+# The token reaches curl as a config file on stdin, so it never appears in argv / ps.
 resp=$(jq -r '"header = " + ("Authorization: Bearer " + .claudeAiOauth.accessToken | @json)' "$CREDS" \
-  | curl -sS --max-time 10 -K - \
+  | curl -sS --max-time 10 --proto =https -K - \
       -H "anthropic-beta: oauth-2025-04-20" \
-      -H "Content-Type: application/json" \
       -w $'\n%{http_code}' \
       https://api.anthropic.com/api/oauth/usage 2>/dev/null) || fail network
-code=${resp##*$'\n'}
-body=${resp%$'\n'*}
-[ "$code" = 200 ] || fail "http_$code"
+[ "${resp##*$'\n'}" = 200 ] || fail "http_${resp##*$'\n'}"
 
-usage=$(printf '%s' "$body" | jq -c '
-  def ep: if . == null then null else (sub("\\.[0-9]+";"") | sub("\\+00:00$";"Z") | fromdateiso8601) end;
-  { five_hour:   (.five_hour.utilization // null),
-    five_reset:  (.five_hour.resets_at | ep),
-    weekly:      (.seven_day.utilization // null),
-    weekly_reset:(.seven_day.resets_at | ep) }' 2>/dev/null) || fail bad_response
-
-# Token counts come from Claude Code's local transcripts (the API has none).
-# Counted: input + output + cache-creation tokens, deduplicated per message id,
-# inside the current 5h / weekly windows (window start = reset time - length).
-# Cache reads are summed separately (*_cache_read) so the widget can add them on demand.
-PROJECTS="${CLAUDE_CONFIG_DIR:-$HOME/.claude}/projects"
-now_s=$(date +%s)
-f5=$(jq -n --argjson u "$usage" --argjson n "$now_s" 'if ($u.five_reset // 0) > $n then $u.five_reset - 18000 else $n + 1 end')
-fw=$(jq -n --argjson u "$usage" --argjson n "$now_s" 'if ($u.weekly_reset // 0) > $n then $u.weekly_reset - 604800 else $n + 1 end')
-tokens=$( { [ -d "$PROJECTS" ] && find "$PROJECTS" -name '*.jsonl' -mtime -8 -print0 2>/dev/null | xargs -0 -r cat; } \
-  | jq -Rc 'fromjson? | select(.type == "assistant" and .message.usage != null)
-      | { k: (.message.id // .uuid // empty),
-          t: (.timestamp | sub("\\.[0-9]+";"") | fromdateiso8601),
-          n: ((.message.usage.input_tokens // 0) + (.message.usage.output_tokens // 0)
-              + (.message.usage.cache_creation_input_tokens // 0)),
-          c: (.message.usage.cache_read_input_tokens // 0) }' 2>/dev/null \
-  | jq -sc --argjson f5 "$f5" --argjson fw "$fw" '
-      group_by(.k) | map(last)
-      | { five_tokens:       (map(select(.t >= $f5) | .n) | add // 0),
-          weekly_tokens:     (map(select(.t >= $fw) | .n) | add // 0),
-          five_cache_read:   (map(select(.t >= $f5) | .c) | add // 0),
-          weekly_cache_read: (map(select(.t >= $fw) | .c) | add // 0) }' 2>/dev/null) || tokens='{"five_tokens":null,"weekly_tokens":null}'
-[ -n "$tokens" ] || tokens='{"five_tokens":null,"weekly_tokens":null}'
-
-jq -nc --argjson a "$usage" --argjson b "$tokens" '$a + $b'
+# Tokens per message (deduplicated by id) inside each window (start = reset - length):
+# input + output + cache creation, with cache reads summed separately.
+find "$DIR/projects" -name '*.jsonl' -mtime -8 -print0 2>/dev/null \
+| xargs -0 -r grep -hF '"usage"' 2>/dev/null \
+| jq -Rnc --argjson now "$(date +%s)" --argjson api "${resp%$'\n'*}" '
+    def ts: sub("\\.[0-9]+"; "") | sub("\\+00:00$"; "Z") | fromdateiso8601;
+    def start($r; $len): if $r != null and $r > $now then $r - $len else $now + 1 end;
+    ($api.five_hour.resets_at | values | ts) as $r5
+    | ($api.seven_day.resets_at | values | ts) as $rw
+    | [inputs | fromjson? | select(.type == "assistant" and .message.usage != null)
+        | .message.usage as $u
+        | { k: (.message.id // .uuid), t: ((.timestamp | ts)? // 0),
+            n: (($u.input_tokens // 0) + ($u.output_tokens // 0) + ($u.cache_creation_input_tokens // 0)),
+            c: ($u.cache_read_input_tokens // 0) }]
+    | (group_by(.k) | map(last)) as $m
+    | def total(f; $from): [$m[] | select(.t >= $from) | f] | add // 0;
+      { five_hour: $api.five_hour.utilization, five_reset: $r5,
+        weekly: $api.seven_day.utilization, weekly_reset: $rw,
+        five_tokens: total(.n; start($r5; 18000)), weekly_tokens: total(.n; start($rw; 604800)),
+        five_cache_read: total(.c; start($r5; 18000)), weekly_cache_read: total(.c; start($rw; 604800)) }' 2>/dev/null \
+|| fail bad_response

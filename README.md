@@ -22,8 +22,12 @@
 - **5-hour and weekly limits** — usage percentage straight from your Claude account.
 - **Time to reset** — a live countdown (`1:05` or `1h 5m`), or `ready` when no window is running.
 - **Tokens used** — counted locally from your Claude Code transcripts (`290k` or `289731`), optionally including prompt-cache reads.
+- **Text, bar or ring** — show numbers, a small progress bar, or a usage ring that empties as you go.
+- **Details on hover** — keep just an icon or the ring in the bar and reveal the numbers when you point at it,
+  or show them only when usage gets high.
 - **Colors that warn you** — switches to warning / critical colors above the thresholds you pick.
-- **Make it yours** — choose what is shown, the icon (none, glyph, bundled star or your own image), spacing, font weight and colors.
+- **Make it yours** — any glyph from the icon set or your own image, separators, dimmed extras, percent used or left,
+  icon size, spacing, font weight and colors.
 - **Light on resources** — one background poller, no matter how many monitors or bars.
 
 ## 📸 Examples
@@ -50,6 +54,26 @@ Same widget, different settings:
   <tr>
     <td align="center"><img src="claude-usage/docs/example-5.png" alt="Critical color" height="40"></td>
     <td><b>Critical color</b><br>shown above <code>critical_at</code> (here forced with <code>critical_at = 5</code>)</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="claude-usage/docs/example-6.png" alt="Usage ring with separators" height="40"></td>
+    <td><b>Usage ring</b><br><code>logo = ring</code>, <code>separator = dot</code>, <code>dim_extras = true</code></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="claude-usage/docs/example-7.png" alt="Progress bar and percent left" height="40"></td>
+    <td><b>Progress bar, percent left</b><br><code>show_bar = true</code>, <code>percent_mode = left</code>, <code>show_tokens = false</code></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="claude-usage/docs/example-8.png" alt="Ring only until hovered" height="40"></td>
+    <td><b>Ring only — details on hover</b><br><code>display_mode = hover</code>, <code>logo = ring</code></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="claude-usage/docs/example-9.png" alt="Details only when usage is high" height="40"></td>
+    <td><b>Quiet until it matters</b><br><code>display_mode = important</code> — time and tokens appear above <code>warn_at</code></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="claude-usage/docs/example-10.png" alt="Any glyph and bar separators" height="40"></td>
+    <td><b>Any glyph</b><br><code>logo = glyph</code>, <code>glyph = bolt</code>, <code>separator = bar</code></td>
   </tr>
 </table>
 
@@ -83,16 +107,18 @@ Everything is set per widget in Noctalia's widget settings. The full list with t
 
 | Group | What you can change |
 | --- | --- |
-| **Content** | Limit window (5h / weekly / both), usage %, `5h` / `7d` labels, time to reset, tokens |
-| **Format** | Reset time `1:05` or `1h 5m`, the text shown when ready, tokens `290k` or `289731`, with or without cache reads |
-| **Look** | Icon (none, glyph, bundled star, custom image), spacing, font weight |
+| **Content** | Limit window (5h / weekly / both), usage % (used or left), `5h` / `7d` labels, progress bar, time to reset, tokens (with or without cache reads) |
+| **When** | Details always, only when usage is high, or only on hover |
+| **Format** | Reset time `1:05` or `1h 5m`, the text shown when ready, tokens `290k` or `289731`, separators |
+| **Icon** | None, any glyph, bundled star, custom image or usage ring; icon size |
+| **Look** | Spacing, font weight, dimmed time and tokens |
 | **Colors** | Color by usage, warning / critical thresholds, text / warning / critical colors |
 | **Behaviour** | Refresh interval, custom click command (default: refresh now) |
 
 ### Custom icon
 
-Put any SVG or PNG somewhere on disk, set **Icon** to *Custom image* and point **Custom logo path** at it
-(or drop it in the plugin folder as `logo.svg`). Light, single-color images blend best with the other bar icons.
+Set **Icon** to *Custom image* and pick an SVG or PNG with the file browser (or drop it in the plugin folder as
+`logo.svg`). Light, single-color images blend best with the other bar icons.
 
 ## 🔍 How it works
 
