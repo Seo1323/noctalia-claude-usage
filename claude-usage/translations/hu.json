@@ -302,7 +302,10 @@
     "last_7d": "Elmúlt 7 nap",
     "hours_ago": "{n} órája",
     "days_ago": "{n} napja",
-    "cost_total": "≈ {cost} tokenenkénti fizetéssel (becslés)"
+    "cost_total": "≈ {cost} tokenenkénti fizetéssel (becslés)",
+    "resume": "Munkamenet folytatása",
+    "just_now": "épp most",
+    "minutes_ago": "{n} perce"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

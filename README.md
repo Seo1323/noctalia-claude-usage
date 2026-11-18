@@ -54,7 +54,8 @@ Hover the widget for both limits; click it for graphs and a button that opens Cl
 - **Your limits at a glance** — 5-hour and weekly usage, time to reset and tokens used.
 - **Text, bar or ring** — numbers, a small progress bar, or a ring that empties as you go.
 - **Quiet when you want** — show details always, only when usage is high, or on hover.
-- **A panel on click** — both limits, token graphs, tokens per model and a Claude Code launcher.
+- **A panel on click** — both limits, token graphs, tokens per model, a Claude Code launcher and one-click resume
+  of your latest sessions.
 - **Make it yours** — 40+ options for icons, formats, colors and layout.
 - **Speaks your language** — all 29 languages Noctalia supports.
 

@@ -302,7 +302,10 @@
     "last_7d": "7 הימים האחרונים",
     "hours_ago": "לפני {n} ש׳",
     "days_ago": "לפני {n} י׳",
-    "cost_total": "≈ {cost} בתשלום לפי טוקן (הערכה)"
+    "cost_total": "≈ {cost} בתשלום לפי טוקן (הערכה)",
+    "resume": "חזרה לסשן",
+    "just_now": "ממש עכשיו",
+    "minutes_ago": "לפני {n} דק׳"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

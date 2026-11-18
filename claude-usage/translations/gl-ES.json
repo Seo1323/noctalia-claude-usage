@@ -302,7 +302,10 @@
     "last_7d": "Últimos 7 días",
     "hours_ago": "hai {n} h",
     "days_ago": "hai {n} d",
-    "cost_total": "≈ {cost} pagando por token (estimación)"
+    "cost_total": "≈ {cost} pagando por token (estimación)",
+    "resume": "Retomar unha sesión",
+    "just_now": "agora mesmo",
+    "minutes_ago": "hai {n} min"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",

@@ -242,6 +242,26 @@ function M.spawn(command)
   noctalia.runAsync(`PATH="$HOME/.local/bin:$PATH" setsid -f {command} >/dev/null 2>&1`, function() end)
 end
 
+-- Single-quotes a value for /bin/sh.
+function M.shellQuote(value)
+  return "'" .. tostring(value):gsub("'", "'\\''") .. "'"
+end
+
+-- Runs a command inside a folder (for resuming a session where it was started).
+function M.spawnIn(folder, command)
+  local script = `cd {M.shellQuote(folder)} && exec {command}`
+  noctalia.runAsync(`PATH="$HOME/.local/bin:$PATH" setsid -f sh -c {M.shellQuote(script)} >/dev/null 2>&1`, function() end)
+end
+
+-- "just now" / "5 min ago" / "3 h ago" / "2 d ago" for a unix time.
+function M.ago(t)
+  local s = os.time() - (tonumber(t) or os.time())
+  if s < 60 then return noctalia.tr("panel.just_now") end
+  if s < 3600 then return noctalia.tr("panel.minutes_ago", { n = s // 60 }) end
+  if s < 86400 then return noctalia.tr("panel.hours_ago", { n = s // 3600 }) end
+  return noctalia.tr("panel.days_ago", { n = s // 86400 })
+end
+
 function M.tooltip(snapshot)
   local data = snapshot and snapshot.data
   local lines = { "Claude Code" }

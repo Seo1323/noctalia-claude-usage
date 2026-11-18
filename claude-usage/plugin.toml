@@ -1,6 +1,6 @@
 id = "seo/claude-usage"
 name = "Claude Limits"
-version = "1.7.0"
+version = "1.8.0"
 plugin_api = 43
 author = "Seo1323"
 license = "MIT"

@@ -302,7 +302,10 @@
     "last_7d": "Апошнія 7 дзён",
     "hours_ago": "{n} гадз таму",
     "days_ago": "{n} дз таму",
-    "cost_total": "≈ {cost} з аплатай за токены (ацэнка)"
+    "cost_total": "≈ {cost} з аплатай за токены (ацэнка)",
+    "resume": "Працягнуць сесію",
+    "just_now": "толькі што",
+    "minutes_ago": "{n} хв таму"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

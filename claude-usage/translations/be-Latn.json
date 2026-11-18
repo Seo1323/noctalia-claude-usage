@@ -302,7 +302,10 @@
     "last_7d": "Apošnija 7 dzion",
     "hours_ago": "{n} hadz tamu",
     "days_ago": "{n} dz tamu",
-    "cost_total": "≈ {cost} z apłataj za tokieny (acenka)"
+    "cost_total": "≈ {cost} z apłataj za tokieny (acenka)",
+    "resume": "Praciahnuć sesiju",
+    "just_now": "toĺki što",
+    "minutes_ago": "{n} chv tamu"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

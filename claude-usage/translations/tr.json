@@ -302,7 +302,10 @@
     "last_7d": "Son 7 gün",
     "hours_ago": "{n} sa önce",
     "days_ago": "{n} g önce",
-    "cost_total": "≈ {cost} token başına ödemeyle (tahmin)"
+    "cost_total": "≈ {cost} token başına ödemeyle (tahmin)",
+    "resume": "Bir oturumu sürdür",
+    "just_now": "az önce",
+    "minutes_ago": "{n} dk önce"
   },
   "notify": {
     "title": "Claude Code {window}: %{pct}",

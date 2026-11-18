@@ -302,7 +302,10 @@
     "last_7d": "Posledních 7 dní",
     "hours_ago": "před {n} h",
     "days_ago": "před {n} d",
-    "cost_total": "≈ {cost} při placení za tokeny (odhad)"
+    "cost_total": "≈ {cost} při placení za tokeny (odhad)",
+    "resume": "Obnovit relaci",
+    "just_now": "právě teď",
+    "minutes_ago": "před {n} min"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",

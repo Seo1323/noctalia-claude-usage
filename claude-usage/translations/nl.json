@@ -302,7 +302,10 @@
     "last_7d": "Afgelopen 7 dagen",
     "hours_ago": "{n} u geleden",
     "days_ago": "{n} d geleden",
-    "cost_total": "≈ {cost} bij betalen per token (schatting)"
+    "cost_total": "≈ {cost} bij betalen per token (schatting)",
+    "resume": "Sessie hervatten",
+    "just_now": "zojuist",
+    "minutes_ago": "{n} min geleden"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

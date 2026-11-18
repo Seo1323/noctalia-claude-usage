@@ -302,7 +302,10 @@
     "last_7d": "Últims 7 dies",
     "hours_ago": "fa {n} h",
     "days_ago": "fa {n} d",
-    "cost_total": "≈ {cost} pagant per token (estimació)"
+    "cost_total": "≈ {cost} pagant per token (estimació)",
+    "resume": "Reprèn una sessió",
+    "just_now": "ara mateix",
+    "minutes_ago": "fa {n} min"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",

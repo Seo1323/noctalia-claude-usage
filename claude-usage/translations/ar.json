@@ -302,7 +302,10 @@
     "last_7d": "آخر 7 أيام",
     "hours_ago": "قبل {n} س",
     "days_ago": "قبل {n} ي",
-    "cost_total": "≈ {cost} عند الدفع لكل رمز (تقدير)"
+    "cost_total": "≈ {cost} عند الدفع لكل رمز (تقدير)",
+    "resume": "استئناف جلسة",
+    "just_now": "الآن",
+    "minutes_ago": "قبل {n} د"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

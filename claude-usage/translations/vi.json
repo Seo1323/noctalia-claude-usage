@@ -302,7 +302,10 @@
     "last_7d": "7 ngày qua",
     "hours_ago": "{n} giờ trước",
     "days_ago": "{n} ngày trước",
-    "cost_total": "≈ {cost} nếu trả theo token (ước tính)"
+    "cost_total": "≈ {cost} nếu trả theo token (ước tính)",
+    "resume": "Tiếp tục một phiên",
+    "just_now": "vừa xong",
+    "minutes_ago": "{n} phút trước"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

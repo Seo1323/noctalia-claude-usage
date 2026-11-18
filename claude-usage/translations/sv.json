@@ -302,7 +302,10 @@
     "last_7d": "Senaste 7 dagarna",
     "hours_ago": "för {n} h sedan",
     "days_ago": "för {n} d sedan",
-    "cost_total": "≈ {cost} vid betalning per token (uppskattning)"
+    "cost_total": "≈ {cost} vid betalning per token (uppskattning)",
+    "resume": "Återuppta en session",
+    "just_now": "nyss",
+    "minutes_ago": "för {n} min sedan"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",

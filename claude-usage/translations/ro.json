@@ -302,7 +302,10 @@
     "last_7d": "Ultimele 7 zile",
     "hours_ago": "acum {n} h",
     "days_ago": "acum {n} z",
-    "cost_total": "≈ {cost} plătind per token (estimare)"
+    "cost_total": "≈ {cost} plătind per token (estimare)",
+    "resume": "Reia o sesiune",
+    "just_now": "chiar acum",
+    "minutes_ago": "acum {n} min"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

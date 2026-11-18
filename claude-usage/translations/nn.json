@@ -302,7 +302,10 @@
     "last_7d": "Siste 7 dagar",
     "hours_ago": "for {n} t sidan",
     "days_ago": "for {n} d sidan",
-    "cost_total": "≈ {cost} ved betaling per token (overslag)"
+    "cost_total": "≈ {cost} ved betaling per token (overslag)",
+    "resume": "Hald fram med ei økt",
+    "just_now": "nett no",
+    "minutes_ago": "for {n} min sidan"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",

@@ -302,7 +302,10 @@
     "last_7d": "過去7日間",
     "hours_ago": "{n} 時間前",
     "days_ago": "{n} 日前",
-    "cost_total": "≈ {cost}（トークンごとに支払った場合の目安）"
+    "cost_total": "≈ {cost}（トークンごとに支払った場合の目安）",
+    "resume": "セッションを再開",
+    "just_now": "たった今",
+    "minutes_ago": "{n} 分前"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

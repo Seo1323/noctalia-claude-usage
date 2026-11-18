@@ -302,7 +302,10 @@
     "last_7d": "최근 7일",
     "hours_ago": "{n}시간 전",
     "days_ago": "{n}일 전",
-    "cost_total": "≈ {cost} (토큰마다 낸다면, 추정)"
+    "cost_total": "≈ {cost} (토큰마다 낸다면, 추정)",
+    "resume": "세션 이어 하기",
+    "just_now": "방금",
+    "minutes_ago": "{n}분 전"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

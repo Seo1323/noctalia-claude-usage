@@ -302,7 +302,10 @@
     "last_7d": "最近 7 天",
     "hours_ago": "{n} 小時前",
     "days_ago": "{n} 天前",
-    "cost_total": "≈ {cost}（依權杖付費，估算）"
+    "cost_total": "≈ {cost}（依權杖付費，估算）",
+    "resume": "恢復工作階段",
+    "just_now": "剛剛",
+    "minutes_ago": "{n} 分鐘前"
   },
   "notify": {
     "title": "Claude Code {window}：{pct}%",

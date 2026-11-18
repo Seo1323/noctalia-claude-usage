@@ -32,6 +32,7 @@ Add **Claude Limits** to a bar in **Settings → Bar** and pick the entry:
 - **`panel`** — opens on a left click on the `bar` widget (default `click_action`), or with
   `noctalia msg panel-toggle seo/claude-usage:panel`. It shows both limits, lets you start Claude Code in a
   terminal with a chosen model (default, Opus, Sonnet, Haiku) and mode (new session, `--continue`, `--resume`),
+  resumes one of your 3 latest sessions with one click (in the folder where it was started, so `--resume` finds it),
   graphs your tokens over the last 24 hours and 7 days (hover a graph for the value), and lists tokens per model
   for the 5-hour or weekly window. It opens in the middle of the screen like the built-in panels; Noctalia's own
   panel settings (**Settings → Plugins**, gear on the plugin) switch it to attached, another position or "open near
@@ -215,7 +216,8 @@ Limits was written independently and takes a different direction:
   cache writes at 1.25x input for the 5-minute TTL and 2x for the 1-hour TTL). With a Claude subscription you do not
   pay per token - the figure shows what the same usage would cost on the API. Unknown models fall back to their
   family's price.
-- **Panel data:** the graphs and the per-model table come from the same local transcripts; nothing extra is sent.
+- **Panel data:** the graphs, the per-model table and the recent-session buttons (folder, time and the first ~60
+  characters of the first prompt) come from the same local transcripts; nothing extra is sent.
 - **Files read:** `~/.claude/.credentials.json` and transcripts in `~/.claude/projects/**/*.jsonl` modified in the
   last 8 days (to count tokens: input + output + cache-creation, deduplicated per message; cache reads are
   counted separately and added only with `include_cache_read`).

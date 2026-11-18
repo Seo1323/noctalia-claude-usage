@@ -302,7 +302,10 @@
     "last_7d": "Ostatnie 7 dni",
     "hours_ago": "{n} godz. temu",
     "days_ago": "{n} dni temu",
-    "cost_total": "≈ {cost} przy płaceniu za tokeny (szacunek)"
+    "cost_total": "≈ {cost} przy płaceniu za tokeny (szacunek)",
+    "resume": "Wznów sesję",
+    "just_now": "przed chwilą",
+    "minutes_ago": "{n} min temu"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

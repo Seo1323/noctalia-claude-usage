@@ -30,6 +30,22 @@ local function launch()
   panel.close()
 end
 
+-- Resumes a session in the folder it was started in (Claude Code keeps sessions per folder).
+local function resume(session)
+  local id = tostring(session.id or "")
+  if not id:match("^%x%x%x%x%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%x%x%x%x%x%x%x%x$") then return end
+  local parts = { S.text("launch_command", "alacritty -e claude") }
+  if MODELS[model] ~= "" then parts[#parts + 1] = "--model " .. MODELS[model] end
+  parts[#parts + 1] = "--resume " .. id
+  S.spawnIn(session.cwd, table.concat(parts, " "))
+  panel.close()
+end
+
+local function folderName(path)
+  if path:match("^/home/[^/]+/?$") or path == "/root" then return "~" end
+  return path:match("([^/]+)/*$") or path
+end
+
 local render
 
 local function limitRow(label, win)
@@ -134,6 +150,21 @@ function render()
     onChange = function(i) mode = tonumber(i) + 1 end,
   }))
   add(ui.button({ text = noctalia.tr("panel.start"), glyph = "terminal-2", variant = "primary", onClick = launch }))
+
+  local sessions = data and data.recent_sessions or {}
+  if #sessions > 0 then
+    add(ui.separator({}))
+    add(heading(noctalia.tr("panel.resume")))
+    for _, s in sessions do
+      local prompt = tostring(s.prompt or "")
+      if utf8.len(prompt) and utf8.len(prompt) > 38 then prompt = prompt:sub(1, utf8.offset(prompt, 38) - 1) .. "…" end
+      add(ui.button({
+        text = `{folderName(s.cwd)} · {S.ago(s.t)}` .. (if prompt ~= "" then ` — {prompt}` else ""),
+        glyph = "history", variant = "outline", contentAlign = "start",
+        onClick = function() resume(s) end,
+      }))
+    end
+  end
 
   if data and data.hourly then
     add(ui.separator({}))

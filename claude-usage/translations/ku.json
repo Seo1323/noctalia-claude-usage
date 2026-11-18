@@ -302,7 +302,10 @@
     "last_7d": "7 rojên dawî",
     "hours_ago": "{n} saet berê",
     "days_ago": "{n} roj berê",
-    "cost_total": "≈ {cost} bi dayîna ji bo her tokenê (texmîn)"
+    "cost_total": "≈ {cost} bi dayîna ji bo her tokenê (texmîn)",
+    "resume": "Danişînekê bidomîne",
+    "just_now": "niha",
+    "minutes_ago": "{n} deqîqe berê"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

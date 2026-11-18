@@ -20,13 +20,28 @@ resp=$(jq -r '"header = " + ("Authorization: Bearer " + .claudeAiOauth.accessTok
       https://api.anthropic.com/api/oauth/usage 2>/dev/null) || fail network
 [ "${resp##*$'\n'}" = 200 ] || fail "http_${resp##*$'\n'}"
 
+# The 3 most recent sessions (top-level transcripts; subagent runs live in subfolders), for the
+# panel's "Resume a session" buttons: id, project folder, last activity and the first prompt.
+sessions=$(find "$DIR/projects" -mindepth 2 -maxdepth 2 -name '*.jsonl' -printf '%T@ %p\n' 2>/dev/null \
+  | sort -rn | head -3 | while read -r mtime file; do
+      jq -c --arg id "$(basename "$file" .jsonl)" --argjson t "${mtime%.*}" -n '
+        [inputs] as $l
+        | { id: $id, t: $t,
+            cwd: ([$l[] | .cwd | strings] | first),
+            prompt: ([$l[] | select(.type == "user") | .message.content
+                      | if type == "string" then . else ([.[]? | select(.type == "text") | .text] | join(" ")) end
+                      | select(type == "string" and length > 0 and (startswith("<") | not))] | first // "" | .[0:60]) }
+        | select(.cwd != null)' "$file" 2>/dev/null
+    done | jq -sc '.' 2>/dev/null)
+[ -n "$sessions" ] || sessions='[]'
+
 # Tokens per message (deduplicated by id) inside each window (start = reset - length):
 # input + output + cache creation, with cache reads summed separately. Also per model
 # for both windows (with the input / output / cache split used for cost estimates), and
 # series for the panel graphs (24 hourly / 7 daily buckets).
 find "$DIR/projects" -name '*.jsonl' -mtime -8 -print0 2>/dev/null \
 | xargs -0 -r grep -hF '"usage"' 2>/dev/null \
-| jq -Rnc --argjson now "$(date +%s)" --argjson api "${resp%$'\n'*}" '
+| jq -Rnc --argjson now "$(date +%s)" --argjson api "${resp%$'\n'*}" --argjson sessions "$sessions" '
     def ts: sub("\\.[0-9]+"; "") | sub("\\+00:00$"; "Z") | fromdateiso8601;
     def start($r; $len): if $r != null and $r > $now then $r - $len else $now + 1 end;
     ($api.five_hour.resets_at | values | ts) as $r5
@@ -53,6 +68,6 @@ find "$DIR/projects" -name '*.jsonl' -mtime -8 -print0 2>/dev/null \
         five_tokens: total(.n; start($r5; 18000)), weekly_tokens: total(.n; start($rw; 604800)),
         five_cache_read: total(.c; start($r5; 18000)), weekly_cache_read: total(.c; start($rw; 604800)),
         five_models: models(start($r5; 18000)), weekly_models: models(start($rw; 604800)),
-        hourly: series(3600; 24), daily: series(86400; 7),
+        hourly: series(3600; 24), daily: series(86400; 7), recent_sessions: $sessions,
         last_model: ([$m[] | select(.model != "" and (.model | startswith("<") | not))] | max_by(.t) | .model?) }' 2>/dev/null \
 || fail bad_response
