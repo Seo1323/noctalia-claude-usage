@@ -36,7 +36,9 @@ Add **Claude Limits** to a bar in **Settings → Bar** and pick the entry:
   graphs your tokens over the last 24 hours and 7 days (hover a graph for the value), and lists tokens per model
   for the 5-hour or weekly window. It opens in the middle of the screen like the built-in panels; Noctalia's own
   panel settings (**Settings → Plugins**, gear on the plugin) switch it to attached, another position or "open near
-  the widget". Its background can be made translucent from the `bar` widget settings.
+  the widget". Its background can be made translucent from the `bar` widget settings; a centered (floating) panel also needs
+  Noctalia's **Settings → Panels → Transparency** set to *Glass* or *Soft*, because Noctalia draws the floating
+  panel's own background underneath.
 
 The `poller` service starts with the plugin and refreshes every `refresh_minutes`; all widgets share its result.
 
