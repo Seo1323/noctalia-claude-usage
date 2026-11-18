@@ -9,155 +9,139 @@
 [![Tested on Niri](https://img.shields.io/badge/tested%20on-Niri-46a58f?style=flat-square)](https://github.com/YaLTeR/niri)
 [![License: MIT](https://img.shields.io/badge/license-MIT-e0a458?style=flat-square)](LICENSE)
 
-**See how much of your Claude Code limit is left — without leaving your desktop.**
+**See how much of your Claude Code limit is left — right in your bar.**
 
-[Install](#-install) · [Examples](#-examples) · [Settings](#%EF%B8%8F-settings) · [How it works](#-how-it-works)
+[Quick start](#-quick-start) · [Examples](#-examples) · [Customize](#-customize) · [Privacy](#-privacy)
 
 </div>
 
 ---
 
-## ✨ Features
+## 🚀 Quick start
 
-- **5-hour and weekly limits** — usage percentage straight from your Claude account.
-- **Time to reset** — a live countdown (`1:05` or `1h 5m`), or `ready` when no window is running.
-- **Tokens used** — counted locally from your Claude Code transcripts (`290k` or `289731`), optionally including prompt-cache reads.
-- **Text, bar or ring** — show numbers, a small progress bar, or a usage ring that empties as you go.
-- **Details on hover** — keep just an icon or the ring in the bar and reveal the numbers when you point at it,
-  or show them only when usage gets high.
-- **What it would cost** — optional estimate of your tokens at API prices, in the bar, tooltip and panel.
-- **Colors that warn you** — switches to warning / critical colors above the thresholds you pick.
-- **Make it yours** — any glyph from the icon set or your own image, separators, dimmed extras, percent used or left,
-  icon size, spacing, font weight and colors.
-- **Click for more** — a panel with both limits, one-click Claude Code launch with a model of your choice
-  (default, Opus, Sonnet, Haiku; new session, continue or resume), token graphs for the last 24 hours and
-  7 days, and tokens per model.
-- **Speaks your language** — settings, tooltip and bar text in all 29 languages Noctalia supports.
-- **Light on resources** — one background poller, no matter how many monitors or bars.
+1. In Noctalia open **Settings → Plugins → Add source**, choose **git** and paste
+   `https://github.com/Seo1323/noctalia-claude-usage`.
+2. Switch on **Claude Limits** in the plugin list.
+3. Add the **Claude Limits** widget to your bar.
 
-## 📸 Examples
-
-Same widget, different settings:
-
-<table>
-  <tr>
-    <td align="center"><img src="claude-usage/docs/example-6.webp" alt="Default look" height="40"></td>
-    <td><b>Defaults</b><br>usage ring · usage · time to reset · tokens</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="claude-usage/docs/example-1.webp" alt="Plain text" height="40"></td>
-    <td><b>Plain text</b><br><code>logo = none</code>, <code>separator = none</code>, <code>dim_extras = false</code></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="claude-usage/docs/example-2.webp" alt="Star icon and 5h label" height="40"></td>
-    <td><b>Star icon + label</b><br><code>logo = star</code>, <code>show_prefix = true</code></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="claude-usage/docs/example-3.webp" alt="Both windows" height="40"></td>
-    <td><b>Both windows, compact</b><br><code>logo = glyph</code>, <code>window = both</code>, <code>show_reset = false</code>, <code>show_tokens = false</code></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="claude-usage/docs/example-4.webp" alt="Verbose and bold" height="40"></td>
-    <td><b>Verbose & bold</b><br><code>reset_format = verbose</code>, <code>token_format = full</code>, <code>font_weight = bold</code></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="claude-usage/docs/example-5.webp" alt="Critical color" height="40"></td>
-    <td><b>Critical color</b><br>shown above <code>critical_at</code> (here forced with <code>critical_at = 5</code>)</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="claude-usage/docs/example-7.webp" alt="Progress bar and percent left" height="40"></td>
-    <td><b>Progress bar, percent left</b><br><code>show_bar = true</code>, <code>percent_mode = left</code>, <code>show_tokens = false</code></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="claude-usage/docs/example-8.webp" alt="Ring only until hovered" height="40"></td>
-    <td><b>Ring only — details on hover</b><br><code>display_mode = hover</code>, <code>logo = ring</code></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="claude-usage/docs/example-9.webp" alt="Details only when usage is high" height="40"></td>
-    <td><b>Quiet until it matters</b><br><code>display_mode = important</code> — time and tokens appear above <code>warn_at</code></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="claude-usage/docs/example-10.webp" alt="Any glyph and bar separators" height="40"></td>
-    <td><b>Any glyph</b><br><code>logo = glyph</code>, <code>glyph = bolt</code>, <code>separator = bar</code></td>
-  </tr>
-</table>
-
-## 🚀 Install
-
-**From Noctalia's settings**
-
-1. Open **Settings → Plugins → Add source**.
-2. Choose **git** and paste `https://github.com/Seo1323/noctalia-claude-usage`.
-3. Switch on **Claude Limits** in the plugin list.
-4. Add the **Claude Limits** widget to your bar.
+You need `curl`, `jq` and Claude Code logged in on this machine.
 
 <details>
-<summary><b>Or from a terminal</b></summary>
+<summary>Prefer the terminal?</summary>
 
 ```sh
 noctalia msg plugins source add seo git https://github.com/Seo1323/noctalia-claude-usage
 noctalia msg plugins enable seo/claude-usage
 ```
 
-Then add the **Claude Limits** widget to your bar in Noctalia's settings.
+</details>
+
+## ✨ What you get
+
+- **Your limits at a glance** — 5-hour and weekly usage, time to reset and tokens used.
+- **Text, bar or ring** — numbers, a small progress bar, or a ring that empties as you go.
+- **Quiet when you want** — show details always, only when usage is high, or on hover.
+- **A panel on click** — both limits, token graphs, tokens per model and a Claude Code launcher.
+- **Make it yours** — 40+ options for icons, formats, colors and layout.
+- **Speaks your language** — all 29 languages Noctalia supports.
+
+## 📸 Examples
+
+<table>
+  <tr>
+    <td align="center"><img src="claude-usage/docs/example-6.webp" alt="Default look" height="36"><br><sub><b>Default</b></sub></td>
+    <td align="center"><img src="claude-usage/docs/example-1.webp" alt="Plain text" height="36"><br><sub><b>Plain text</b></sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="claude-usage/docs/example-2.webp" alt="Star icon with label" height="36"><br><sub><b>Star icon + label</b></sub></td>
+    <td align="center"><img src="claude-usage/docs/example-3.webp" alt="Both windows" height="36"><br><sub><b>Both windows</b></sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="claude-usage/docs/example-7.webp" alt="Progress bar" height="36"><br><sub><b>Progress bar, percent left</b></sub></td>
+    <td align="center"><img src="claude-usage/docs/example-4.webp" alt="Verbose and bold" height="36"><br><sub><b>Verbose and bold</b></sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="claude-usage/docs/example-8.webp" alt="Ring only" height="36"><br><sub><b>Ring only, details on hover</b></sub></td>
+    <td align="center"><img src="claude-usage/docs/example-9.webp" alt="Quiet until high" height="36"><br><sub><b>Quiet until usage is high</b></sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="claude-usage/docs/example-10.webp" alt="Any glyph" height="36"><br><sub><b>Any glyph, bar separators</b></sub></td>
+    <td align="center"><img src="claude-usage/docs/example-5.webp" alt="Critical color" height="36"><br><sub><b>Critical color</b></sub></td>
+  </tr>
+</table>
+
+<details>
+<summary>Settings behind each example</summary>
+
+| Example | Settings |
+| --- | --- |
+| Default | nothing changed |
+| Plain text | `logo = none`, `separator = none`, `dim_extras = false` |
+| Star icon + label | `logo = star`, `show_prefix = true` |
+| Both windows | `logo = glyph`, `window = both`, `show_reset = false`, `show_tokens = false` |
+| Progress bar, percent left | `show_bar = true`, `percent_mode = left`, `show_tokens = false` |
+| Verbose and bold | `reset_format = verbose`, `token_format = full`, `font_weight = bold` |
+| Ring only, details on hover | `display_mode = hover`, `logo = ring` |
+| Quiet until usage is high | `display_mode = important` |
+| Any glyph, bar separators | `logo = glyph`, `glyph = bolt`, `separator = bar` |
+| Critical color | above `critical_at` (forced here with `critical_at = 5`) |
 
 </details>
 
-**Requirements:** Noctalia (plugin API 43+), `curl`, `jq`, and Claude Code logged in on this machine.
+## 🎨 Customize
 
-## ⚙️ Settings
+Middle-click the widget, or open it in **Settings → Bar**. Less common options are
+behind Noctalia's **Advanced** switch, and options that do not apply (for example ring thickness without the ring)
+stay hidden.
 
-Everything is set per widget in Noctalia's widget settings. The full list with types and defaults is in the
-[plugin page](claude-usage/README.md#settings).
-
-| Group | What you can change |
+| What | Options |
 | --- | --- |
-| **Content** | Limit window (5h / weekly / both), usage % (used or left), `5h` / `7d` labels, progress bar, time to reset, tokens (with or without cache reads), cost at API prices |
-| **When** | Details always, only when usage is high, or only on hover (animated, adjustable speed) |
-| **Format** | Reset time `1:05` or `1h 5m`, the text shown when ready, tokens `290k` or `289731`, separators |
-| **Icon** | None, any glyph, bundled star, custom image or usage ring (thin / normal / thick, with or without track); icon size |
-| **Look** | Spacing, font weight, dimmed time and tokens, translucent panel with adjustable opacity |
-| **Colors** | Color by usage or a smooth gradient, warning / critical thresholds, text / warning / critical colors, own color for the weekly window |
-| **Format** | Decimal places in percentages (0–2), own text template, custom 5h / 7d labels, font size, cost currency (20 currencies, ECB rates) |
-| **Extras** | Current model, notifications at the thresholds, hide while usage is low |
-| **Behaviour** | Refresh interval, left click opens the panel / runs a command / refreshes, right click refreshes, the command the panel starts Claude Code with |
+| **Content** | 5-hour, weekly or both windows · usage used or left · progress bar · time to reset · tokens · current model · cost at API prices |
+| **Icon** | none · any glyph · bundled star · your own SVG/PNG · usage ring (thin / normal / thick) · size |
+| **When to show details** | always · only above the warning threshold · on hover, with an adjustable animation |
+| **Format** | `1:05` or `1h 5m` · `290k` or `289731` · 0–2 decimals · separators · custom `5h` / `7d` labels · your own text template |
+| **Look** | spacing · font size and weight · dimmed time and tokens · hide while usage is low |
+| **Colors** | by usage or a smooth gradient · warning / critical thresholds and colors · own color for the weekly window |
+| **Panel** | centered or attached to the bar · translucent background · Claude Code launch command |
+| **Alerts and clicks** | notification at the thresholds · left click: panel, command or refresh · right click: refresh |
+| **Cost** | 20 currencies with daily ECB rates or a manual rate |
 
-### Custom icon
+The full list with defaults is on the [plugin page](claude-usage/README.md#settings).
 
-Set **Icon** to *Custom image* and pick an SVG or PNG with the file browser (or drop it in the plugin folder as
-`logo.svg`). Light, single-color images blend best with the other bar icons.
+## 🔒 Privacy
 
-## 🔍 How it works
+- One request per refresh to `api.anthropic.com`, using the token Claude Code already stores. The token is only read.
+- Token counts come from your local Claude Code transcripts; nothing about them is sent anywhere.
+- Only when costs are shown in a currency other than USD, the daily exchange rates are fetched from the European
+  Central Bank.
 
-- `fetch.sh` reads the OAuth token Claude Code already stores in `~/.claude/.credentials.json` and asks
-  `api.anthropic.com/api/oauth/usage` for utilization and reset times. It never writes or refreshes the token.
-- Token counts come from your local transcripts in `~/.claude/projects` (input + output + cache-creation
-  tokens, deduplicated per message, inside the current window). Prompt-cache reads are counted separately; turn on
-  **Include cache reads** to add them.
-- That one request is the only network call. Nothing else leaves your machine.
+<details>
+<summary>Languages, related plugins and the fine print</summary>
 
-If the token has expired, the tooltip says so — use Claude Code once and it refreshes.
+### Languages
 
-## 🌍 Languages
+The widget follows Noctalia's language (**Settings → Appearance → Language**). English and Polish are maintained by
+the author; the other 27 were machine-translated — fixes to [`claude-usage/translations`](claude-usage/translations)
+are very welcome.
 
-The widget follows Noctalia's language setting. English and Polish are maintained by the author; the other
-27 translations were machine-translated and are waiting for native speakers — fixes to
-[`claude-usage/translations`](claude-usage/translations) are very welcome.
-
-## 🔗 See also
+### See also
 
 [**Claude Code Usage**](https://github.com/noctalia-dev/community-plugins/tree/main/claudecode) (`jrohland/claudecode`)
 is another Noctalia plugin for Claude Code usage, with a richer dashboard (costs, activity charts, profiles). Claude
-Limits was written independently and takes a different direction:
+Limits was written independently and goes another way:
 
-- **Highly configurable, made to fit your bar** — almost every part can be switched on or off and
-  restyled: icon (none, any glyph, bundled star, your own image or a usage ring), percent used or left with 0–2
-  decimals, progress bar, time format, token format, separators, dimmed extras, spacing, font weight and colors.
-- **Small by default** — one compact capsule; details can stay visible, appear only when usage is high, or slide
-  out on hover with an adjustable animation.
+- **Highly configurable, made to fit your bar** — nearly every part can be switched on or off and restyled.
+- **Small by default** — one compact capsule; details on demand.
 - **Lightweight** — a shell script with `curl` + `jq`, no Python; one request per refresh for every bar and monitor.
-- **Quick launcher** — the click panel starts Claude Code with a chosen model and session mode.
+- **Quick launcher** — the panel starts Claude Code with a chosen model and session mode.
+
+### Notes
+
+Costs are estimates at Anthropic API list prices — with a Claude subscription you do not pay per token. The plugin
+uses an undocumented usage endpoint that may change. Not affiliated with or endorsed by Anthropic.
+
+</details>
 
 ## 📄 License
 
-[MIT](LICENSE). Not affiliated with or endorsed by Anthropic. Uses an undocumented usage endpoint that may change.
+[MIT](LICENSE)

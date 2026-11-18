@@ -56,76 +56,111 @@ The `poller` service starts with the plugin and refreshes every `refresh_minutes
 
 ## Settings
 
-Plugin:
+Settings marked ⚙ are behind Noctalia's **Advanced** switch. Options that do not apply right now (for example
+`ring_thickness` without the ring) are hidden in the settings window.
 
-| Setting | Type | Default | Description |
-| --- | --- | --- | --- |
-| `refresh_minutes` | `int` | `5` | How often the usage API is queried (1–120 minutes). |
-| `percent_decimals` | `int` | `0` | Decimal places in percentages (0–2). The API currently reports whole percentages. |
-| `currency` | `select` | `USD` | Currency for costs: USD, EUR, PLN, GBP, CHF, JPY, CNY, CAD, AUD, SEK, NOK, DKK, CZK, HUF, RON, TRY, BRL, INR, KRW, MXN. |
-| `exchange_rate` | `double` | `0` | Units of `currency` per 1 USD; `0` uses the ECB daily reference rate. |
-| `launch_command` | `string` | `alacritty -e claude` | Command the panel uses to start Claude Code; `--model …` and the mode flag are appended. |
+### Plugin
 
-`bar` widget:
+Set once for every widget, under **Settings → Plugins** (gear on the plugin).
 
-| Setting | Type | Default | Description |
-| --- | --- | --- | --- |
-| `window` | `select` | `five_hour` | Which limit to show: `five_hour`, `weekly` or `both`. |
-| `display_mode` | `select` | `always` | When details (time, tokens, bar) show: `always`, `important` (at or above `warn_at`) or `hover` (otherwise only the icon or ring, or the percentage when there is no icon). |
-| `animation_ms` | `int` | `250` | Hover mode: how long the details take to slide out and fade in, in ms (0–1000; 0 = no animation). |
-| `logo` | `select` | `ring` | `none`, `glyph`, `star` (bundled `assets/star.svg`), `custom` or `ring` (usage ring). |
-| `glyph` | `glyph` | `brain` | Icon used when `logo = glyph`. |
-| `logo_path` | `file` | `""` | SVG / PNG used when `logo = custom`; empty means `logo.svg` in the plugin folder. |
-| `icon_size` | `int` | `18` | Icon and ring size, in pixels (10–40). |
-| `ring_thickness` | `select` | `normal` | Usage ring stroke: `thin`, `normal` or `thick`. |
-| `ring_track` | `bool` | `true` | Faint full circle behind the filled part of the ring. |
-| `format` | `string` | `""` | Own text template instead of the items: `{window}` `{pct}` `{left}` `{reset}` `{tokens}` `{cost}` `{model}`. |
-| `show_percent` | `bool` | `true` | Show the usage percentage. |
-| `percent_mode` | `select` | `used` | `used` (`22%`) or `left` (`78% left`). |
-| `show_prefix` | `bool` | `false` | Prefix the percentage with `5h` / `7d`. |
-| `label_five` / `label_week` | `string` | `5h` / `7d` | Labels used by `show_prefix` and `{window}`. |
-| `show_bar` | `bool` | `false` | Small progress bar after the percentage. |
-| `bar_width` | `int` | `32` | Progress bar width, in pixels (12–120). |
-| `gauge_mode` | `select` | `left` | What the progress bar and the ring fill with: `left` or `used`. |
-| `show_reset` | `bool` | `true` | Show the time left until the window resets. |
-| `reset_format` | `select` | `compact` | `compact` (`1:05`, hours:minutes) or `verbose` (`1h 5m`). |
-| `ready_text` | `string` | `""` | Shown instead of the countdown when no window is running; empty means "ready" in the shell's language. |
-| `show_tokens` | `bool` | `true` | Show tokens used in the window. |
-| `include_cache_read` | `bool` | `false` | Add prompt-cache reads to the token count. They are cheap but numerous, so the number gets much larger. The tooltip always shows them separately. |
-| `show_cost` | `bool` | `false` | Estimated cost of the window's tokens at Anthropic API list prices (see Notes). |
-| `token_format` | `select` | `short` | `short` (`290k`) or `full` (`289731`). |
-| `show_model` | `bool` | `false` | Model of your latest Claude Code message, e.g. `Opus 5.5`. |
-| `separator` | `select` | `dot` | Between items: `none`, `dot` (`·`), `bar` (`\|`) or `slash` (`/`). |
-| `dim_extras` | `bool` | `true` | Time and tokens in a muted color; only the percentage keeps the usage color. |
-| `font_size` | `int` | `0` | Font size in px; `0` keeps the bar's size. |
-| `gap` | `int` | `4` | Spacing between items, in pixels (0–24). |
-| `font_weight` | `select` | `medium` | `medium` or `bold`. |
-| `color_by_usage` | `bool` | `true` | Use the warning / critical colors above the thresholds. |
-| `gradient` | `bool` | `false` | Blend colors smoothly with usage instead of switching at the thresholds. |
-| `warn_at` | `int` | `70` | Warning threshold, in percent. |
-| `critical_at` | `int` | `90` | Critical threshold, in percent. |
-| `color` | `color` | `on_surface` | Normal text color (color role or hex). |
-| `warn_color` | `color` | `tertiary` | Text color above `warn_at`. |
-| `critical_color` | `color` | `error` | Text color above `critical_at`. |
-| `weekly_own_color` / `weekly_color` | `bool` / `color` | `false` / `secondary` | Own base color for the 7d items when both windows are shown. |
-| `hide_below` | `int` | `0` | Hide the widget while usage is below this %; `0` always shows it. |
-| `notify` | `select` | `off` | Notify once per window: `off`, `warning` (warning and critical) or `critical`. |
-| `click_action` | `select` | `panel` | Left click: `panel` (open the panel), `command` (run `click_command`) or `refresh`. Right click always refreshes. |
-| `click_command` | `string` | `""` | Shell command for `click_action = command`, e.g. `alacritty -e claude`. |
-| `panel_translucent` | `bool` | `false` | Translucent panel background (the text stays opaque). |
-| `panel_opacity` | `double` | `0.85` | Panel background opacity when translucent, 0–1. |
+| Setting | Default | Description |
+| --- | --- | --- |
+| `refresh_minutes` | `5` | How often the usage API is queried. |
+| `percent_decimals` ⚙ | `0` | 0 rounds to whole numbers. The API currently reports whole percentages, so decimals usually show .0. |
+| `launch_command` | `alacritty -e claude` | Terminal command the panel uses to start Claude Code; the chosen --model and mode are appended. |
+| `currency` | `USD` | Costs are converted from USD with the European Central Bank's daily reference rates (fetched at most every 12 hours, only for a currency other than USD), unless you set a manual rate. Options: `USD`, `EUR`, `PLN`, `GBP`, `CHF`, `JPY`, `CNY`, `CAD`, `AUD`, `SEK`, `NOK`, `DKK`, `CZK`, `HUF`, `RON`, `TRY`, `BRL`, `INR`, `KRW`, `MXN`. |
+| `exchange_rate` ⚙ | `0.0` | Units of the chosen currency per 1 USD. 0 = use the ECB daily rate. |
 
-Dependent settings (glyph, image, formats, thresholds…) only appear in the settings window when they apply.
+Noctalia also adds its standard panel settings there: placement (floating / attached), position (default:
+center) and "open near the widget".
 
-`icon` widget:
+### `bar` widget
 
-| Setting | Type | Default | Description |
-| --- | --- | --- | --- |
-| `logo` | `select` | `glyph` | `glyph`, `star`, `custom` or `ring` (5-hour usage ring). |
-| `glyph` | `glyph` | `brain` | Icon used when `logo = glyph`. |
-| `logo_path` | `file` | `""` | SVG / PNG used when `logo = custom`; empty means `logo.svg` in the plugin folder. |
-| `size` | `int` | `20` | Icon size, in pixels (10–40). |
-| `command` | `string` | `alacritty -e claude` | Command run on click. |
+#### What is shown
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| `window` | `five_hour` | Which usage window the bar shows. Options: `five_hour`, `weekly`, `both`. |
+| `show_percent` | `true` | Show usage percentage |
+| `percent_mode` | `used` | Percentage shows Options: `used`, `left`. |
+| `show_prefix` | `false` | Prefix each percentage with its window. |
+| `label_five` ⚙ | `5h` | Label for the 5-hour window |
+| `label_week` ⚙ | `7d` | Label for the weekly window |
+| `show_bar` | `false` | A small bar next to the percentage. |
+| `bar_width` ⚙ | `32` | Progress bar width (px) |
+| `gauge_mode` ⚙ | `left` | What the progress bar and the usage ring fill with. Options: `left`, `used`. |
+| `show_reset` | `true` | Time left until the window resets. |
+| `reset_format` | `compact` | Reset time format Options: `compact`, `verbose`. |
+| `ready_text` ⚙ | `""` | Shown instead of a countdown when the window is not running. Empty = "ready" in your language. |
+| `show_tokens` | `true` | Tokens used in the window (input + output + cache creation, from local transcripts). |
+| `include_cache_read` ⚙ | `false` | Add tokens read from the prompt cache. They are cheap but numerous, so the number gets much larger. |
+| `token_format` ⚙ | `short` | Token format Options: `short`, `full`. |
+| `show_cost` | `false` | Estimated cost of the window's tokens at Anthropic API list prices. With a Claude subscription you do not pay per token - this shows what the same usage would cost on the API. |
+| `show_model` | `false` | The model of your latest Claude Code message, e.g. Opus 5.5. |
+| `format` ⚙ | `""` | Replaces the items with your own text, e.g. {pct} · {reset} · {tokens}. Placeholders: {window} {pct} {left} {reset} {tokens} {cost} {model}. Empty = normal layout. |
+
+#### Icon
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| `logo` | `ring` | Shown before the text. The ring fills with the remaining (or used) share of the limit. Options: `none`, `glyph`, `star`, `custom`, `ring`. |
+| `glyph` | `brain` | Glyph |
+| `logo_path` | `""` | SVG or PNG. Empty means logo.svg in the plugin folder. |
+| `icon_size` | `18` | Icon size (px) |
+| `ring_thickness` | `normal` | Ring thickness Options: `thin`, `normal`, `thick`. |
+| `ring_track` ⚙ | `true` | The faint full circle behind the filled part. |
+
+#### When details show
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| `display_mode` | `always` | When the time to reset, tokens and bar are shown. Options: `always`, `important`, `hover`. |
+| `animation_ms` | `250` | How long the details take to slide out and fade in. 0 turns the animation off. |
+| `hide_below` ⚙ | `0` | Hide the widget while usage is below this value. 0 = always show. |
+
+#### Look
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| `separator` | `dot` | Separator between items Options: `none`, `dot`, `bar`, `slash`. |
+| `dim_extras` | `true` | Show the time to reset and the tokens in a muted color; only the percentage keeps the usage color. |
+| `gap` ⚙ | `4` | Spacing between items (px) |
+| `font_size` ⚙ | `0` | 0 = the bar's font size. |
+| `font_weight` ⚙ | `medium` | Font weight Options: `medium`, `bold`. |
+
+#### Colors
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| `color_by_usage` | `true` | Switch to the warning / critical colors above the thresholds. |
+| `gradient` | `false` | Blend the colors continuously with usage instead of switching at the thresholds. |
+| `warn_at` | `70` | Warning threshold (%) |
+| `critical_at` | `90` | Critical threshold (%) |
+| `color` ⚙ | `on_surface` | Color role or hex color for normal usage. |
+| `warn_color` ⚙ | `tertiary` | Warning color |
+| `critical_color` ⚙ | `error` | Critical color |
+| `weekly_own_color` ⚙ | `false` | Use a different base color for the 7d items when both windows are shown. |
+| `weekly_color` ⚙ | `secondary` | Weekly window color |
+
+#### Clicks, panel and alerts
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| `click_action` | `panel` | What a left click on the widget does. Right click always refreshes. Options: `panel`, `command`, `refresh`. |
+| `click_command` | `""` | Shell command run on left click, e.g. alacritty -e claude. |
+| `panel_translucent` | `false` | Let the wallpaper show through the panel background; the text stays fully opaque. |
+| `panel_opacity` | `0.85` | 0 is fully transparent, 1 is solid. |
+| `notify` | `off` | Show a notification once per window when usage crosses a threshold. Options: `off`, `warning`, `critical`. |
+
+### `icon` widget
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| `logo` | `glyph` | Shown before the text. The ring fills with the remaining (or used) share of the limit. Options: `glyph`, `star`, `custom`, `ring`. |
+| `glyph` | `brain` | Glyph |
+| `logo_path` | `""` | SVG or PNG. Empty means logo.svg in the plugin folder. |
+| `size` | `20` | Icon size (px) |
+| `command` | `alacritty -e claude` | Command run when the icon is clicked. |
 
 ## Languages
 

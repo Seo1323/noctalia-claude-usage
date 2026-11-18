@@ -26,6 +26,7 @@ description_key = "settings.percent_decimals.description"
 default = 0
 min = 0
 max = 2
+advanced = true
 
 [[setting]]
 key = "launch_command"
@@ -70,8 +71,9 @@ label_key = "settings.exchange_rate.label"
 description_key = "settings.exchange_rate.description"
 default = 0.0
 min = 0.0
-max = 100000.0
+max = 2000.0
 step = 0.01
+advanced = true
 
 [[service]]
 id = "poller"
@@ -186,6 +188,7 @@ entry = "bar.luau"
   description_key = "settings.ring_track.description"
   default = true
   visible_when = { key = "logo", values = ["ring"] }
+  advanced = true
 
   [[widget.setting]]
   key = "format"
@@ -193,6 +196,7 @@ entry = "bar.luau"
   label_key = "settings.format.label"
   description_key = "settings.format.description"
   default = ""
+  advanced = true
 
   [[widget.setting]]
   key = "show_percent"
@@ -224,6 +228,7 @@ entry = "bar.luau"
   label_key = "settings.label_five.label"
   default = "5h"
   visible_when = { key = "show_prefix", values = ["true"] }
+  advanced = true
 
   [[widget.setting]]
   key = "label_week"
@@ -231,6 +236,7 @@ entry = "bar.luau"
   label_key = "settings.label_week.label"
   default = "7d"
   visible_when = { key = "show_prefix", values = ["true"] }
+  advanced = true
 
   [[widget.setting]]
   key = "show_bar"
@@ -247,6 +253,7 @@ entry = "bar.luau"
   min = 12
   max = 120
   visible_when = { key = "show_bar", values = ["true"] }
+  advanced = true
 
   [[widget.setting]]
   key = "gauge_mode"
@@ -258,6 +265,7 @@ entry = "bar.luau"
     { value = "left", label_key = "settings.gauge_mode.left" },
     { value = "used", label_key = "settings.gauge_mode.used" },
   ]
+  advanced = true
 
   [[widget.setting]]
   key = "show_reset"
@@ -284,6 +292,7 @@ entry = "bar.luau"
   description_key = "settings.ready_text.description"
   default = ""
   visible_when = { key = "show_reset", values = ["true"] }
+  advanced = true
 
   [[widget.setting]]
   key = "show_tokens"
@@ -299,6 +308,7 @@ entry = "bar.luau"
   description_key = "settings.include_cache_read.description"
   default = false
   visible_when = { key = "show_tokens", values = ["true"] }
+  advanced = true
 
   [[widget.setting]]
   key = "show_cost"
@@ -317,6 +327,7 @@ entry = "bar.luau"
     { value = "full", label_key = "settings.token_format.full" },
   ]
   visible_when = { key = "show_tokens", values = ["true"] }
+  advanced = true
 
   [[widget.setting]]
   key = "show_model"
@@ -352,6 +363,7 @@ entry = "bar.luau"
   default = 0
   min = 0
   max = 32
+  advanced = true
 
   [[widget.setting]]
   key = "gap"
@@ -360,6 +372,7 @@ entry = "bar.luau"
   default = 4
   min = 0
   max = 24
+  advanced = true
 
   [[widget.setting]]
   key = "font_weight"
@@ -370,6 +383,7 @@ entry = "bar.luau"
     { value = "medium", label_key = "settings.font_weight.medium" },
     { value = "bold", label_key = "settings.font_weight.bold" },
   ]
+  advanced = true
 
   [[widget.setting]]
   key = "color_by_usage"
@@ -434,6 +448,7 @@ entry = "bar.luau"
   label_key = "settings.weekly_own_color.label"
   description_key = "settings.weekly_own_color.description"
   default = false
+  advanced = true
 
   [[widget.setting]]
   key = "weekly_color"
@@ -441,6 +456,7 @@ entry = "bar.luau"
   label_key = "settings.weekly_color.label"
   default = "secondary"
   visible_when = { key = "weekly_own_color", values = ["true"] }
+  advanced = true
 
   [[widget.setting]]
   key = "hide_below"
@@ -450,6 +466,7 @@ entry = "bar.luau"
   default = 0
   min = 0
   max = 100
+  advanced = true
 
   [[widget.setting]]
   key = "notify"
