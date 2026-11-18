@@ -28,6 +28,9 @@
 - **Colors that warn you** — switches to warning / critical colors above the thresholds you pick.
 - **Make it yours** — any glyph from the icon set or your own image, separators, dimmed extras, percent used or left,
   icon size, spacing, font weight and colors.
+- **Click for more** — a panel with both limits, one-click Claude Code launch with a model of your choice
+  (default, Opus, Sonnet, Haiku; new session, continue or resume), token graphs for the last 24 hours and
+  7 days, and tokens per model.
 - **Speaks your language** — settings, tooltip and bar text in all 29 languages Noctalia supports.
 - **Light on resources** — one background poller, no matter how many monitors or bars.
 
@@ -114,7 +117,8 @@ Everything is set per widget in Noctalia's widget settings. The full list with t
 | **Icon** | None, any glyph, bundled star, custom image or usage ring; icon size |
 | **Look** | Spacing, font weight, dimmed time and tokens |
 | **Colors** | Color by usage, warning / critical thresholds, text / warning / critical colors |
-| **Behaviour** | Refresh interval, left-click command (e.g. open Claude Code in a terminal; default: refresh), right click refreshes |
+| **Format** | Decimal places in percentages (0–2) |
+| **Behaviour** | Refresh interval, left click opens the panel / runs a command / refreshes, right click refreshes, the command the panel starts Claude Code with |
 
 ### Custom icon
 

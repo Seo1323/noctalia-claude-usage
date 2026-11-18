@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Ordre en fer clic",
-      "description": "Ordre de shell en fer clic esquerre, p. ex. alacritty -e claude. Buit = actualitza ara. El clic dret sempre actualitza."
+      "description": "Ordre de shell en fer clic esquerre, p. ex. alacritty -e claude."
     },
     "command": {
       "label": "Ordre en fer clic",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Animació en passar-hi el cursor (ms)",
       "description": "Quant triguen els detalls a desplegar-se i aparèixer. 0 desactiva l’animació."
+    },
+    "percent_decimals": {
+      "label": "Decimals als percentatges",
+      "description": "0 arrodoneix a enters. L’API retorna ara percentatges enters, així que els decimals solen mostrar ,0."
+    },
+    "launch_command": {
+      "label": "Ordre de Claude Code",
+      "description": "Ordre de terminal amb què el plafó inicia Claude Code; s’hi afegeixen --model i el mode triats."
+    },
+    "click_action": {
+      "label": "Clic esquerre",
+      "description": "Què fa un clic esquerre al giny. El clic dret sempre actualitza.",
+      "panel": "Obre el plafó",
+      "command": "Executa l’ordre de clic",
+      "refresh": "Actualitza"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Sense connexió",
     "bad_response": "Resposta inesperada de l’API",
     "http_429": "Límit de sol·licituds - es tornarà a provar"
+  },
+  "panel": {
+    "no_reset": "cap reinici pendent",
+    "resets_in": "es reinicia d’aquí a {time}",
+    "peak": "pic {tokens}",
+    "model_tokens": "{tokens} · {messages} miss. · memòria cau {cache}",
+    "no_models": "Encara no hi ha ús en aquesta finestra.",
+    "by_model": "Tokens per model",
+    "refresh": "Actualitza",
+    "settings": "Configuració",
+    "launch": "Inicia Claude Code",
+    "model_default": "Model per defecte",
+    "mode_new": "Sessió nova",
+    "mode_continue": "Continua l’última sessió",
+    "mode_resume": "Tria una sessió per reprendre",
+    "start": "Inicia",
+    "last_24h": "Últimes 24 hores",
+    "last_7d": "Últims 7 dies",
+    "hours_ago": "fa {n} h",
+    "days_ago": "fa {n} d"
   }
 }

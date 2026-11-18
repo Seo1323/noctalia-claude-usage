@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Tıklama komutu",
-      "description": "Sol tıklamada çalışan kabuk komutu, ör. alacritty -e claude. Boş = şimdi yenile. Sağ tıklama her zaman yeniler."
+      "description": "Sol tıklamada çalışan kabuk komutu, ör. alacritty -e claude."
     },
     "command": {
       "label": "Tıklama komutu",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Üzerine gelme animasyonu (ms)",
       "description": "Ayrıntıların kayarak belirmesinin ne kadar süreceği. 0 animasyonu kapatır."
+    },
+    "percent_decimals": {
+      "label": "Yüzdelerde ondalık basamak",
+      "description": "0 tam sayıya yuvarlar. API şu anda tam yüzdeler bildiriyor, bu yüzden ondalıklar genelde ,0 gösterir."
+    },
+    "launch_command": {
+      "label": "Claude Code komutu",
+      "description": "Panelin Claude Code'u başlatmak için kullandığı terminal komutu; seçilen --model ve mod eklenir."
+    },
+    "click_action": {
+      "label": "Sol tıklama",
+      "description": "Bileşene sol tıklamanın ne yapacağı. Sağ tıklama her zaman yeniler.",
+      "panel": "Paneli aç",
+      "command": "Tıklama komutunu çalıştır",
+      "refresh": "Yenile"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Bağlantı yok",
     "bad_response": "Beklenmeyen API yanıtı",
     "http_429": "İstek sınırı - yeniden denenecek"
+  },
+  "panel": {
+    "no_reset": "bekleyen sıfırlama yok",
+    "resets_in": "{time} sonra sıfırlanır",
+    "peak": "zirve {tokens}",
+    "model_tokens": "{tokens} · {messages} ileti · önbellek {cache}",
+    "no_models": "Bu pencerede henüz kullanım yok.",
+    "by_model": "Modele göre tokenlar",
+    "refresh": "Yenile",
+    "settings": "Ayarlar",
+    "launch": "Claude Code'u başlat",
+    "model_default": "Varsayılan model",
+    "mode_new": "Yeni oturum",
+    "mode_continue": "Son oturuma devam et",
+    "mode_resume": "Sürdürülecek oturumu seç",
+    "start": "Başlat",
+    "last_24h": "Son 24 saat",
+    "last_7d": "Son 7 gün",
+    "hours_ago": "{n} sa önce",
+    "days_ago": "{n} g önce"
   }
 }

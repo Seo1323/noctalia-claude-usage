@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "פקודת לחיצה",
-      "description": "פקודת shell שמופעלת בלחיצה שמאלית, למשל alacritty -e claude. ריק = רענון עכשיו. לחיצה ימנית תמיד מרעננת."
+      "description": "פקודת shell שמופעלת בלחיצה שמאלית, למשל alacritty -e claude."
     },
     "command": {
       "label": "פקודת לחיצה",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "הנפשת ריחוף (ms)",
       "description": "כמה זמן לוקח לפרטים להחליק ולהופיע. 0 מכבה את ההנפשה."
+    },
+    "percent_decimals": {
+      "label": "ספרות אחרי הנקודה באחוזים",
+      "description": "0 מעגל למספרים שלמים. ה-API מחזיר כרגע אחוזים שלמים, ולכן הספרות אחרי הנקודה מראות בדרך כלל ‎.0."
+    },
+    "launch_command": {
+      "label": "פקודת Claude Code",
+      "description": "פקודת המסוף שבה הלוח מפעיל את Claude Code; --model והמצב שנבחרו מתווספים."
+    },
+    "click_action": {
+      "label": "לחיצה שמאלית",
+      "description": "מה עושה לחיצה שמאלית על הווידג׳ט. לחיצה ימנית תמיד מרעננת.",
+      "panel": "פתיחת הלוח",
+      "command": "הפעלת פקודת הלחיצה",
+      "refresh": "רענון"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "אין חיבור",
     "bad_response": "תגובה לא צפויה מה-API",
     "http_429": "הגבלת בקשות - ינסה שוב"
+  },
+  "panel": {
+    "no_reset": "אין איפוס ממתין",
+    "resets_in": "איפוס בעוד {time}",
+    "peak": "שיא {tokens}",
+    "model_tokens": "{tokens} · {messages} הודעות · מטמון {cache}",
+    "no_models": "עדיין אין שימוש בחלון הזה.",
+    "by_model": "טוקנים לפי מודל",
+    "refresh": "רענון",
+    "settings": "הגדרות",
+    "launch": "הפעלת Claude Code",
+    "model_default": "מודל ברירת מחדל",
+    "mode_new": "סשן חדש",
+    "mode_continue": "המשך הסשן האחרון",
+    "mode_resume": "בחירת סשן להמשך",
+    "start": "הפעלה",
+    "last_24h": "24 השעות האחרונות",
+    "last_7d": "7 הימים האחרונים",
+    "hours_ago": "לפני {n} ש׳",
+    "days_ago": "לפני {n} י׳"
   }
 }

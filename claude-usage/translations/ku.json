@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Fermana tikandinê",
-      "description": "Fermana shellê ya bi tikandina çepê dixebite, mînak alacritty -e claude. Vala = niha nû bike. Tikandina rastê her tim nû dike."
+      "description": "Fermana shellê ya bi tikandina çepê dixebite, mînak alacritty -e claude."
     },
     "command": {
       "label": "Fermana tikandinê",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Anîmasyona nîşankerê (ms)",
       "description": "Hûrgulî çiqas dem digirin ku derkevin û xuya bibin. 0 anîmasyonê digire."
+    },
+    "percent_decimals": {
+      "label": "Hejmarên piştî xalê di rêjeyan de",
+      "description": "0 dike hejmarên tam. API niha rêjeyên tam dide, ji ber vê hejmarên piştî xalê bi gelemperî ,0 nîşan didin."
+    },
+    "launch_command": {
+      "label": "Fermana Claude Code",
+      "description": "Fermana termînalê ya ku panel pê Claude Code dide destpêkirin; --model û moda hilbijartî lê zêde dibin."
+    },
+    "click_action": {
+      "label": "Tikandina çepê",
+      "description": "Tikandina çepê li ser widgetê çi dike. Tikandina rastê her tim nû dike.",
+      "panel": "Panelê veke",
+      "command": "Fermana tikandinê bixebitîne",
+      "refresh": "Nû bike"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Girêdan tune",
     "bad_response": "Bersiva API ya nediyar",
     "http_429": "Sînorê daxwazan - dê dîsa biceribîne"
+  },
+  "panel": {
+    "no_reset": "tu sifirkirin li bendê nîne",
+    "resets_in": "piştî {time} sifir dibe",
+    "peak": "lûtke {tokens}",
+    "model_tokens": "{tokens} · {messages} peyam · kaş {cache}",
+    "no_models": "Hîn di vê pencereyê de bikaranîn tune.",
+    "by_model": "Token li gorî modelê",
+    "refresh": "Nû bike",
+    "settings": "Mîheng",
+    "launch": "Claude Code bide destpêkirin",
+    "model_default": "Modela xwerû",
+    "mode_new": "Danişîna nû",
+    "mode_continue": "Danişîna dawî bidomîne",
+    "mode_resume": "Danişînekê ji bo domandinê hilbijêre",
+    "start": "Dest pê bike",
+    "last_24h": "24 saetên dawî",
+    "last_7d": "7 rojên dawî",
+    "hours_ago": "{n} saet berê",
+    "days_ago": "{n} roj berê"
   }
 }

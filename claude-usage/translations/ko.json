@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "클릭 명령",
-      "description": "왼쪽 클릭 시 실행할 셸 명령(예: alacritty -e claude). 비워 두면 지금 새로 고침. 오른쪽 클릭은 항상 새로 고칩니다."
+      "description": "왼쪽 클릭 시 실행할 셸 명령(예: alacritty -e claude)."
     },
     "command": {
       "label": "클릭 명령",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "마우스 오버 애니메이션(ms)",
       "description": "세부 정보가 펼쳐지며 나타나는 데 걸리는 시간. 0이면 애니메이션을 끕니다."
+    },
+    "percent_decimals": {
+      "label": "백분율 소수 자릿수",
+      "description": "0이면 정수로 반올림합니다. 현재 API가 정수 백분율을 반환하므로 소수점은 보통 .0으로 표시됩니다."
+    },
+    "launch_command": {
+      "label": "Claude Code 명령",
+      "description": "패널이 Claude Code를 시작할 때 쓰는 터미널 명령. 선택한 --model과 모드가 뒤에 붙습니다."
+    },
+    "click_action": {
+      "label": "왼쪽 클릭",
+      "description": "위젯을 왼쪽 클릭할 때의 동작. 오른쪽 클릭은 항상 새로 고칩니다.",
+      "panel": "패널 열기",
+      "command": "클릭 명령 실행",
+      "refresh": "새로 고침"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "연결 없음",
     "bad_response": "예상치 못한 API 응답",
     "http_429": "요청 한도 초과 - 다시 시도합니다"
+  },
+  "panel": {
+    "no_reset": "대기 중인 재설정 없음",
+    "resets_in": "{time} 후 재설정",
+    "peak": "최대 {tokens}",
+    "model_tokens": "{tokens} · 메시지 {messages}개 · 캐시 {cache}",
+    "no_models": "이 창에는 아직 사용량이 없습니다.",
+    "by_model": "모델별 토큰",
+    "refresh": "새로 고침",
+    "settings": "설정",
+    "launch": "Claude Code 시작",
+    "model_default": "기본 모델",
+    "mode_new": "새 세션",
+    "mode_continue": "마지막 세션 계속",
+    "mode_resume": "재개할 세션 선택",
+    "start": "시작",
+    "last_24h": "최근 24시간",
+    "last_7d": "최근 7일",
+    "hours_ago": "{n}시간 전",
+    "days_ago": "{n}일 전"
   }
 }

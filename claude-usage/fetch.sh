@@ -21,7 +21,8 @@ resp=$(jq -r '"header = " + ("Authorization: Bearer " + .claudeAiOauth.accessTok
 [ "${resp##*$'\n'}" = 200 ] || fail "http_${resp##*$'\n'}"
 
 # Tokens per message (deduplicated by id) inside each window (start = reset - length):
-# input + output + cache creation, with cache reads summed separately.
+# input + output + cache creation, with cache reads summed separately. Also per model
+# for both windows, and series for the panel graphs (24 hourly / 7 daily buckets).
 find "$DIR/projects" -name '*.jsonl' -mtime -8 -print0 2>/dev/null \
 | xargs -0 -r grep -hF '"usage"' 2>/dev/null \
 | jq -Rnc --argjson now "$(date +%s)" --argjson api "${resp%$'\n'*}" '
@@ -31,13 +32,21 @@ find "$DIR/projects" -name '*.jsonl' -mtime -8 -print0 2>/dev/null \
     | ($api.seven_day.resets_at | values | ts) as $rw
     | [inputs | fromjson? | select(.type == "assistant" and .message.usage != null)
         | .message.usage as $u
-        | { k: (.message.id // .uuid), t: ((.timestamp | ts)? // 0),
+        | { k: (.message.id // .uuid), t: ((.timestamp | ts)? // 0), model: (.message.model // ""),
             n: (($u.input_tokens // 0) + ($u.output_tokens // 0) + ($u.cache_creation_input_tokens // 0)),
             c: ($u.cache_read_input_tokens // 0) }]
     | (group_by(.k) | map(last)) as $m
     | def total(f; $from): [$m[] | select(.t >= $from) | f] | add // 0;
+      def models($from): [$m[] | select(.t >= $from and .model != "" and (.model | startswith("<") | not))]
+        | group_by(.model) | map({ model: .[0].model, tokens: (map(.n) | add), cache_read: (map(.c) | add), messages: length })
+        | sort_by(-.tokens);
+      def series($size; $count): ([$m[] | (($now - .t) / $size | floor) as $b | select($b >= 0 and $b < $count)
+          | { b: ($count - 1 - $b), n }] | group_by(.b) | map({ key: (.[0].b | tostring), value: (map(.n) | add) }) | from_entries) as $g
+        | [range(0; $count) | $g[tostring] // 0];
       { five_hour: $api.five_hour.utilization, five_reset: $r5,
         weekly: $api.seven_day.utilization, weekly_reset: $rw,
         five_tokens: total(.n; start($r5; 18000)), weekly_tokens: total(.n; start($rw; 604800)),
-        five_cache_read: total(.c; start($r5; 18000)), weekly_cache_read: total(.c; start($rw; 604800)) }' 2>/dev/null \
+        five_cache_read: total(.c; start($r5; 18000)), weekly_cache_read: total(.c; start($rw; 604800)),
+        five_models: models(start($r5; 18000)), weekly_models: models(start($rw; 604800)),
+        hourly: series(3600; 24), daily: series(86400; 7) }' 2>/dev/null \
 || fail bad_response

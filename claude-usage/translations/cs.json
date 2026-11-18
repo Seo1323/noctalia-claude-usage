@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Příkaz po kliknutí",
-      "description": "Příkaz shellu spuštěný levým kliknutím, např. alacritty -e claude. Prázdné = obnovit nyní. Pravé kliknutí vždy obnoví."
+      "description": "Příkaz shellu spuštěný levým kliknutím, např. alacritty -e claude."
     },
     "command": {
       "label": "Příkaz po kliknutí",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Animace při najetí (ms)",
       "description": "Jak dlouho se podrobnosti vysouvají a objevují. 0 animaci vypne."
+    },
+    "percent_decimals": {
+      "label": "Desetinná místa v procentech",
+      "description": "0 zaokrouhlí na celá čísla. API nyní vrací celá procenta, takže desetinná místa obvykle ukazují ,0."
+    },
+    "launch_command": {
+      "label": "Příkaz Claude Code",
+      "description": "Příkaz terminálu, kterým panel spouští Claude Code; připojí se zvolené --model a režim."
+    },
+    "click_action": {
+      "label": "Levé kliknutí",
+      "description": "Co udělá levé kliknutí na widget. Pravé kliknutí vždy obnoví.",
+      "panel": "Otevřít panel",
+      "command": "Spustit příkaz kliknutí",
+      "refresh": "Obnovit"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Bez připojení",
     "bad_response": "Neočekávaná odpověď API",
     "http_429": "Limit požadavků - zkusím znovu"
+  },
+  "panel": {
+    "no_reset": "žádný čekající reset",
+    "resets_in": "reset za {time}",
+    "peak": "maximum {tokens}",
+    "model_tokens": "{tokens} · {messages} zpráv · mezipaměť {cache}",
+    "no_models": "V tomto okně zatím žádné využití.",
+    "by_model": "Tokeny podle modelu",
+    "refresh": "Obnovit",
+    "settings": "Nastavení",
+    "launch": "Spustit Claude Code",
+    "model_default": "Výchozí model",
+    "mode_new": "Nová relace",
+    "mode_continue": "Pokračovat v poslední relaci",
+    "mode_resume": "Vybrat relaci k obnovení",
+    "start": "Spustit",
+    "last_24h": "Posledních 24 hodin",
+    "last_7d": "Posledních 7 dní",
+    "hours_ago": "před {n} h",
+    "days_ago": "před {n} d"
   }
 }

@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Commande au clic",
-      "description": "Commande shell exécutée au clic gauche, p. ex. alacritty -e claude. Vide = actualiser maintenant. Le clic droit actualise toujours."
+      "description": "Commande shell exécutée au clic gauche, p. ex. alacritty -e claude."
     },
     "command": {
       "label": "Commande au clic",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Animation au survol (ms)",
       "description": "Durée d’apparition et de fondu des détails. 0 désactive l’animation."
+    },
+    "percent_decimals": {
+      "label": "Décimales des pourcentages",
+      "description": "0 arrondit à l’entier. L’API renvoie actuellement des pourcentages entiers, les décimales affichent donc souvent ,0."
+    },
+    "launch_command": {
+      "label": "Commande Claude Code",
+      "description": "Commande de terminal utilisée par le panneau pour lancer Claude Code ; --model et le mode choisis sont ajoutés."
+    },
+    "click_action": {
+      "label": "Clic gauche",
+      "description": "Action d’un clic gauche sur le widget. Le clic droit actualise toujours.",
+      "panel": "Ouvrir le panneau",
+      "command": "Exécuter la commande au clic",
+      "refresh": "Actualiser"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Pas de connexion",
     "bad_response": "Réponse inattendue de l’API",
     "http_429": "Limite de requêtes atteinte - nouvel essai plus tard"
+  },
+  "panel": {
+    "no_reset": "aucune réinitialisation en attente",
+    "resets_in": "réinitialisation dans {time}",
+    "peak": "pic {tokens}",
+    "model_tokens": "{tokens} · {messages} msg · cache {cache}",
+    "no_models": "Aucune utilisation dans cette fenêtre.",
+    "by_model": "Tokens par modèle",
+    "refresh": "Actualiser",
+    "settings": "Paramètres",
+    "launch": "Lancer Claude Code",
+    "model_default": "Modèle par défaut",
+    "mode_new": "Nouvelle session",
+    "mode_continue": "Reprendre la dernière session",
+    "mode_resume": "Choisir une session à reprendre",
+    "start": "Lancer",
+    "last_24h": "Dernières 24 heures",
+    "last_7d": "7 derniers jours",
+    "hours_ago": "il y a {n} h",
+    "days_ago": "il y a {n} j"
   }
 }

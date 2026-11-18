@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Comando al hacer clic",
-      "description": "Comando de shell al hacer clic izquierdo, p. ej. alacritty -e claude. Vacío = actualizar ahora. El clic derecho siempre actualiza."
+      "description": "Comando de shell al hacer clic izquierdo, p. ej. alacritty -e claude."
     },
     "command": {
       "label": "Comando al hacer clic",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Animación al pasar el cursor (ms)",
       "description": "Cuánto tardan los detalles en desplegarse y aparecer. 0 desactiva la animación."
+    },
+    "percent_decimals": {
+      "label": "Decimales en los porcentajes",
+      "description": "0 redondea a números enteros. La API devuelve ahora porcentajes enteros, así que los decimales suelen mostrar ,0."
+    },
+    "launch_command": {
+      "label": "Comando de Claude Code",
+      "description": "Comando de terminal con el que el panel inicia Claude Code; se añaden --model y el modo elegidos."
+    },
+    "click_action": {
+      "label": "Clic izquierdo",
+      "description": "Qué hace un clic izquierdo en el widget. El clic derecho siempre actualiza.",
+      "panel": "Abrir el panel",
+      "command": "Ejecutar el comando al hacer clic",
+      "refresh": "Actualizar"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Sin conexión",
     "bad_response": "Respuesta inesperada de la API",
     "http_429": "Límite de solicitudes - se reintentará"
+  },
+  "panel": {
+    "no_reset": "sin reinicio pendiente",
+    "resets_in": "se reinicia en {time}",
+    "peak": "pico {tokens}",
+    "model_tokens": "{tokens} · {messages} mens. · caché {cache}",
+    "no_models": "Todavía no hay uso en esta ventana.",
+    "by_model": "Tokens por modelo",
+    "refresh": "Actualizar",
+    "settings": "Ajustes",
+    "launch": "Iniciar Claude Code",
+    "model_default": "Modelo predeterminado",
+    "mode_new": "Nueva sesión",
+    "mode_continue": "Continuar la última sesión",
+    "mode_resume": "Elegir una sesión para reanudar",
+    "start": "Iniciar",
+    "last_24h": "Últimas 24 horas",
+    "last_7d": "Últimos 7 días",
+    "hours_ago": "hace {n} h",
+    "days_ago": "hace {n} d"
   }
 }

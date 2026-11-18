@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "クリック時のコマンド",
-      "description": "左クリックで実行するシェルコマンド（例: alacritty -e claude）。空 = 今すぐ更新。右クリックは常に更新します。"
+      "description": "左クリックで実行するシェルコマンド（例: alacritty -e claude）。"
     },
     "command": {
       "label": "クリック時のコマンド",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "ホバーアニメーション（ms）",
       "description": "詳細がスライドしてフェードインするまでの時間。0 でアニメーションをオフにします。"
+    },
+    "percent_decimals": {
+      "label": "パーセントの小数点以下桁数",
+      "description": "0 で整数に丸めます。現在 API は整数のパーセントを返すため、小数点以下は通常 .0 になります。"
+    },
+    "launch_command": {
+      "label": "Claude Code コマンド",
+      "description": "パネルが Claude Code を起動するターミナルコマンド。選択した --model とモードが追加されます。"
+    },
+    "click_action": {
+      "label": "左クリック",
+      "description": "ウィジェットを左クリックしたときの動作。右クリックは常に更新します。",
+      "panel": "パネルを開く",
+      "command": "クリック時のコマンドを実行",
+      "refresh": "更新"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "接続がありません",
     "bad_response": "予期しない API 応答",
     "http_429": "レート制限中 - 後で再試行します"
+  },
+  "panel": {
+    "no_reset": "リセット待ちなし",
+    "resets_in": "{time} 後にリセット",
+    "peak": "ピーク {tokens}",
+    "model_tokens": "{tokens} · {messages} 件 · キャッシュ {cache}",
+    "no_models": "このウィンドウではまだ使用されていません。",
+    "by_model": "モデル別トークン",
+    "refresh": "更新",
+    "settings": "設定",
+    "launch": "Claude Code を起動",
+    "model_default": "デフォルトのモデル",
+    "mode_new": "新しいセッション",
+    "mode_continue": "前回のセッションを続ける",
+    "mode_resume": "再開するセッションを選ぶ",
+    "start": "起動",
+    "last_24h": "過去24時間",
+    "last_7d": "過去7日間",
+    "hours_ago": "{n} 時間前",
+    "days_ago": "{n} 日前"
   }
 }

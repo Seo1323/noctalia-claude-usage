@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Comandă la clic",
-      "description": "Comandă shell rulată la clic stânga, de ex. alacritty -e claude. Gol = reîmprospătează acum. Clicul dreapta reîmprospătează mereu."
+      "description": "Comandă shell rulată la clic stânga, de ex. alacritty -e claude."
     },
     "command": {
       "label": "Comandă la clic",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Animație la trecerea cursorului (ms)",
       "description": "Cât durează până apar detaliile. 0 dezactivează animația."
+    },
+    "percent_decimals": {
+      "label": "Zecimale în procente",
+      "description": "0 rotunjește la numere întregi. API-ul raportează acum procente întregi, așa că zecimalele arată de obicei ,0."
+    },
+    "launch_command": {
+      "label": "Comanda Claude Code",
+      "description": "Comanda de terminal cu care panoul pornește Claude Code; se adaugă --model și modul alese."
+    },
+    "click_action": {
+      "label": "Clic stânga",
+      "description": "Ce face un clic stânga pe widget. Clicul dreapta reîmprospătează mereu.",
+      "panel": "Deschide panoul",
+      "command": "Rulează comanda de clic",
+      "refresh": "Reîmprospătează"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Fără conexiune",
     "bad_response": "Răspuns neașteptat de la API",
     "http_429": "Limită de cereri - se va reîncerca"
+  },
+  "panel": {
+    "no_reset": "nicio resetare programată",
+    "resets_in": "resetare în {time}",
+    "peak": "vârf {tokens}",
+    "model_tokens": "{tokens} · {messages} mesaje · cache {cache}",
+    "no_models": "Încă nicio utilizare în această fereastră.",
+    "by_model": "Tokenuri pe model",
+    "refresh": "Reîmprospătează",
+    "settings": "Setări",
+    "launch": "Pornește Claude Code",
+    "model_default": "Model implicit",
+    "mode_new": "Sesiune nouă",
+    "mode_continue": "Continuă ultima sesiune",
+    "mode_resume": "Alege o sesiune de reluat",
+    "start": "Pornește",
+    "last_24h": "Ultimele 24 de ore",
+    "last_7d": "Ultimele 7 zile",
+    "hours_ago": "acum {n} h",
+    "days_ago": "acum {n} z"
   }
 }

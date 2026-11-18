@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Polecenie kliknięcia",
-      "description": "Polecenie powłoki uruchamiane lewym kliknięciem, np. alacritty -e claude. Puste = odśwież teraz. Prawy przycisk zawsze odświeża."
+      "description": "Polecenie powłoki uruchamiane lewym przyciskiem, np. alacritty -e claude."
     },
     "command": {
       "label": "Polecenie kliknięcia",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Animacja po najechaniu (ms)",
       "description": "Jak długo szczegóły się wysuwają i pojawiają. 0 wyłącza animację."
+    },
+    "percent_decimals": {
+      "label": "Miejsca po przecinku w procentach",
+      "description": "0 zaokrągla do liczb całkowitych. API podaje obecnie pełne procenty, więc miejsca po przecinku zwykle pokazują ,0."
+    },
+    "launch_command": {
+      "label": "Polecenie Claude Code",
+      "description": "Polecenie terminala, którym panel uruchamia Claude Code; dopisywane są wybrane --model i tryb."
+    },
+    "click_action": {
+      "label": "Lewy przycisk",
+      "description": "Co robi kliknięcie lewym przyciskiem. Prawy przycisk zawsze odświeża.",
+      "panel": "Otwórz panel",
+      "command": "Uruchom polecenie kliknięcia",
+      "refresh": "Odśwież"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Brak połączenia",
     "bad_response": "Nieoczekiwana odpowiedź API",
     "http_429": "Limit zapytań - ponowię później"
+  },
+  "panel": {
+    "no_reset": "brak naliczanego resetu",
+    "resets_in": "reset za {time}",
+    "peak": "szczyt {tokens}",
+    "model_tokens": "{tokens} · {messages} wiad. · cache {cache}",
+    "no_models": "Brak zużycia w tym oknie.",
+    "by_model": "Tokeny według modelu",
+    "refresh": "Odśwież",
+    "settings": "Ustawienia",
+    "launch": "Uruchom Claude Code",
+    "model_default": "Domyślny model",
+    "mode_new": "Nowa sesja",
+    "mode_continue": "Kontynuuj ostatnią sesję",
+    "mode_resume": "Wybierz sesję do wznowienia",
+    "start": "Uruchom",
+    "last_24h": "Ostatnie 24 godziny",
+    "last_7d": "Ostatnie 7 dni",
+    "hours_ago": "{n} godz. temu",
+    "days_ago": "{n} dni temu"
   }
 }

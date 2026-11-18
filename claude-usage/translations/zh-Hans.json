@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "点击命令",
-      "description": "左键点击时运行的 shell 命令，例如 alacritty -e claude。留空 = 立即刷新。右键点击始终刷新。"
+      "description": "左键点击时运行的 shell 命令，例如 alacritty -e claude。"
     },
     "command": {
       "label": "点击命令",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "悬停动画（ms）",
       "description": "详情滑出并淡入所需的时间。0 表示关闭动画。"
+    },
+    "percent_decimals": {
+      "label": "百分比小数位数",
+      "description": "0 表示四舍五入为整数。目前 API 返回整数百分比，因此小数部分通常显示为 .0。"
+    },
+    "launch_command": {
+      "label": "Claude Code 命令",
+      "description": "面板启动 Claude Code 所用的终端命令；会追加所选的 --model 和模式。"
+    },
+    "click_action": {
+      "label": "左键点击",
+      "description": "左键点击小组件时的操作。右键点击始终刷新。",
+      "panel": "打开面板",
+      "command": "运行点击命令",
+      "refresh": "刷新"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "无网络连接",
     "bad_response": "API 响应异常",
     "http_429": "请求受限 - 稍后重试"
+  },
+  "panel": {
+    "no_reset": "无待重置",
+    "resets_in": "{time} 后重置",
+    "peak": "峰值 {tokens}",
+    "model_tokens": "{tokens} · {messages} 条消息 · 缓存 {cache}",
+    "no_models": "此窗口内暂无用量。",
+    "by_model": "按模型统计令牌",
+    "refresh": "刷新",
+    "settings": "设置",
+    "launch": "启动 Claude Code",
+    "model_default": "默认模型",
+    "mode_new": "新会话",
+    "mode_continue": "继续上次会话",
+    "mode_resume": "选择要恢复的会话",
+    "start": "启动",
+    "last_24h": "最近 24 小时",
+    "last_7d": "最近 7 天",
+    "hours_ago": "{n} 小时前",
+    "days_ago": "{n} 天前"
   }
 }

@@ -30,12 +30,27 @@ function M.windows(data, withCacheReads)
     local pct = data and data[pctKey]
     local tokens = data and data[prefix .. "_tokens"]
     local cache = data and data[prefix .. "_cache_read"]
-    if pct ~= nil then pct = math.floor(tonumber(pct) + 0.5) end
+    if pct ~= nil then pct = tonumber(pct) end
     if reset ~= nil and tonumber(reset) <= os.time() then pct, tokens, cache = 0, 0, 0 end
     if withCacheReads and tokens ~= nil then tokens = tonumber(tokens) + tonumber(cache or 0) end
     return { pct = pct, reset = data and data[prefix .. "_reset"], tokens = tokens, cache = cache }
   end
   return { five = window("five", "five_hour"), week = window("weekly", "weekly") }
+end
+
+-- Percent with the configured number of decimals (plugin setting percent_decimals).
+local DECIMALS = math.clamp(tonumber(noctalia.getConfig("percent_decimals")) or 0, 0, 2)
+function M.num(pct)
+  if pct == nil then return "--" end
+  return string.format(`%.{DECIMALS}f`, pct)
+end
+
+-- "claude-opus-5-5" -> "Opus 5.5"; ids in another shape are returned unchanged.
+function M.modelName(id)
+  local family, rest = id:match("^claude%-(%a+)%-?(.*)$")
+  if family == nil then return id end
+  local version = (rest:gsub("%-%d%d%d%d%d%d%d%d$", ""):gsub("%-", "."))
+  return family:sub(1, 1):upper() .. family:sub(2) .. (if version ~= "" then " " .. version else "")
 end
 
 local function secondsLeft(resetAt)
@@ -120,6 +135,11 @@ function M.ring(fraction, color, size)
   return ui.image({ path = path, width = size, height = size, fit = "contain" })
 end
 
+-- Runs a user-configured command detached from the shell, with ~/.local/bin on PATH (claude lives there).
+function M.spawn(command)
+  noctalia.runAsync(`PATH="$HOME/.local/bin:$PATH" setsid -f {command} >/dev/null 2>&1`, function() end)
+end
+
 function M.tooltip(snapshot)
   local data = snapshot and snapshot.data
   local lines = { "Claude Code" }
@@ -128,7 +148,7 @@ function M.tooltip(snapshot)
     for _, g in { { "5h", w.five }, { "7d", w.week } } do
       local win = g[2]
       local time = M.verbose(win.reset) or (if win.reset then noctalia.tr("tooltip.now") else "-")
-      lines[#lines + 1] = noctalia.tr("tooltip.window", { window = g[1], pct = win.pct or "--", time = time })
+      lines[#lines + 1] = noctalia.tr("tooltip.window", { window = g[1], pct = M.num(win.pct), time = time })
       lines[#lines + 1] = "    " .. noctalia.tr("tooltip.tokens", { tokens = M.tokens(win.tokens), cache = M.tokens(win.cache) })
     end
   end

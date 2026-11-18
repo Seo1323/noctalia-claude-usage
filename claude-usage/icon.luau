@@ -35,7 +35,7 @@ end
 function onClick()
   local command = S.text("command", "")
   if command == "" then command = "alacritty -e claude" end
-  noctalia.runAsync(`PATH="$HOME/.local/bin:$PATH" setsid -f {command} >/dev/null 2>&1`, function() end)
+  S.spawn(command)
 end
 
 render()

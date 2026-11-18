@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Lệnh khi nhấp",
-      "description": "Lệnh shell chạy khi nhấp chuột trái, ví dụ alacritty -e claude. Để trống = làm mới ngay. Nhấp chuột phải luôn làm mới."
+      "description": "Lệnh shell chạy khi nhấp chuột trái, ví dụ alacritty -e claude."
     },
     "command": {
       "label": "Lệnh khi nhấp",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Hiệu ứng khi rê chuột (ms)",
       "description": "Thời gian để chi tiết trượt ra và hiện dần. 0 tắt hiệu ứng."
+    },
+    "percent_decimals": {
+      "label": "Số chữ số thập phân của phần trăm",
+      "description": "0 làm tròn thành số nguyên. Hiện API trả về phần trăm nguyên, nên phần thập phân thường hiện ,0."
+    },
+    "launch_command": {
+      "label": "Lệnh Claude Code",
+      "description": "Lệnh terminal mà bảng dùng để khởi động Claude Code; --model và chế độ đã chọn được thêm vào."
+    },
+    "click_action": {
+      "label": "Nhấp chuột trái",
+      "description": "Nhấp chuột trái vào widget sẽ làm gì. Nhấp chuột phải luôn làm mới.",
+      "panel": "Mở bảng",
+      "command": "Chạy lệnh khi nhấp",
+      "refresh": "Làm mới"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Không có kết nối",
     "bad_response": "Phản hồi API không mong đợi",
     "http_429": "Bị giới hạn yêu cầu - sẽ thử lại"
+  },
+  "panel": {
+    "no_reset": "không có lần đặt lại nào",
+    "resets_in": "đặt lại sau {time}",
+    "peak": "đỉnh {tokens}",
+    "model_tokens": "{tokens} · {messages} tin · bộ nhớ đệm {cache}",
+    "no_models": "Chưa có lượt dùng trong cửa sổ này.",
+    "by_model": "Token theo mô hình",
+    "refresh": "Làm mới",
+    "settings": "Cài đặt",
+    "launch": "Khởi động Claude Code",
+    "model_default": "Mô hình mặc định",
+    "mode_new": "Phiên mới",
+    "mode_continue": "Tiếp tục phiên gần nhất",
+    "mode_resume": "Chọn phiên để tiếp tục",
+    "start": "Bắt đầu",
+    "last_24h": "24 giờ qua",
+    "last_7d": "7 ngày qua",
+    "hours_ago": "{n} giờ trước",
+    "days_ago": "{n} ngày trước"
   }
 }

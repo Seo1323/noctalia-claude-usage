@@ -11,7 +11,7 @@ Details can stay visible, appear only when usage is high, or appear only on hove
 | Field | Value |
 | --- | --- |
 | ID | `seo/claude-usage` |
-| Entries | Bar widget: `bar`; bar widget: `icon`; service: `poller` |
+| Entries | Bar widget: `bar`; bar widget: `icon`; panel: `panel`; service: `poller` |
 
 ## Requirements
 
@@ -28,6 +28,12 @@ Add **Claude Usage** to a bar in **Settings → Bar** and pick the entry:
   always refreshes.
 - **`icon`** — compact variant: only an icon or a usage ring, everything else in the tooltip. Click runs
   `command` (default `alacritty -e claude`).
+
+- **`panel`** — opens on a left click on the `bar` widget (default `click_action`), or with
+  `noctalia msg panel-toggle seo/claude-usage:panel`. It shows both limits, lets you start Claude Code in a
+  terminal with a chosen model (default, Opus, Sonnet, Haiku) and mode (new session, `--continue`, `--resume`),
+  graphs your tokens over the last 24 hours and 7 days (hover a graph for the value), and lists tokens per model
+  for the 5-hour or weekly window.
 
 The `poller` service starts with the plugin and refreshes every `refresh_minutes`; all widgets share its result.
 
@@ -53,6 +59,8 @@ Plugin:
 | Setting | Type | Default | Description |
 | --- | --- | --- | --- |
 | `refresh_minutes` | `int` | `5` | How often the usage API is queried (1–120 minutes). |
+| `percent_decimals` | `int` | `0` | Decimal places in percentages (0–2). The API currently reports whole percentages. |
+| `launch_command` | `string` | `alacritty -e claude` | Command the panel uses to start Claude Code; `--model …` and the mode flag are appended. |
 
 `bar` widget:
 
@@ -87,7 +95,8 @@ Plugin:
 | `color` | `color` | `on_surface` | Normal text color (color role or hex). |
 | `warn_color` | `color` | `tertiary` | Text color above `warn_at`. |
 | `critical_color` | `color` | `error` | Text color above `critical_at`. |
-| `click_command` | `string` | `""` | Shell command run on left click, e.g. `alacritty -e claude`; empty refreshes now. Right click always refreshes. |
+| `click_action` | `select` | `panel` | Left click: `panel` (open the panel), `command` (run `click_command`) or `refresh`. Right click always refreshes. |
+| `click_command` | `string` | `""` | Shell command for `click_action = command`, e.g. `alacritty -e claude`. |
 
 Dependent settings (glyph, image, formats, thresholds…) only appear in the settings window when they apply.
 
@@ -113,6 +122,12 @@ native speakers yet. Corrections are very welcome — edit `translations/<lang>.
 
 ## IPC
 
+Toggle the panel:
+
+```sh
+noctalia msg panel-toggle seo/claude-usage:panel
+```
+
 Refresh immediately:
 
 ```sh
@@ -124,6 +139,7 @@ noctalia msg plugin seo/claude-usage:poller all refresh
 - **Network:** one HTTPS request per refresh to `https://api.anthropic.com/api/oauth/usage`, authenticated with
   the OAuth token Claude Code stores in `~/.claude/.credentials.json`. The token is only read, never written or
   refreshed. If it has expired, the tooltip says so; using Claude Code once refreshes it.
+- **Panel data:** the graphs and the per-model table come from the same local transcripts; nothing extra is sent.
 - **Files read:** `~/.claude/.credentials.json` and transcripts in `~/.claude/projects/**/*.jsonl` modified in the
   last 8 days (to count tokens: input + output + cache-creation, deduplicated per message; cache reads are
   counted separately and added only with `include_cache_read`).

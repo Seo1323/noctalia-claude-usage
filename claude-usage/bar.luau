@@ -1,7 +1,7 @@
 --!nonstrict
 -- Bar capsule: optional icon or usage ring + "22%  0:57  499k" (usage, time to reset, tokens).
 -- Details can always show, show only when usage is high, or slide out on hover.
--- Left click: click_command or refresh; right click: refresh.
+-- Left click: panel, click_command or refresh (click_action); right click: refresh.
 
 local S = require("./shared.luau")
 local conf, bool = S.conf, S.bool
@@ -41,6 +41,7 @@ local cfg = {
     warnAt = tonumber(conf("warn_at", 70)) or 70,
     critAt = tonumber(conf("critical_at", 90)) or 90,
   },
+  clickAction = conf("click_action", "panel"), -- panel | command | refresh
   clickCommand = S.text("click_command", ""),
 }
 if cfg.readyText == "" then cfg.readyText = noctalia.tr("bar.ready") end
@@ -63,7 +64,7 @@ local function ease(t) -- ease-in-out cubic
 end
 
 local function percentText(prefix, pct)
-  local text = if pct == nil then "--" elseif cfg.percentLeft then noctalia.tr("bar.left", { pct = 100 - pct }) else `{pct}%`
+  local text = if pct == nil then "--" elseif cfg.percentLeft then noctalia.tr("bar.left", { pct = S.num(100 - pct) }) else `{S.num(pct)}%`
   return if cfg.showPrefix then `{prefix} {text}` else text
 end
 
@@ -198,10 +199,12 @@ local function refresh()
   noctalia.state.set("refresh", noctalia.nowMs())
 end
 
--- Left click runs click_command (e.g. a terminal with Claude Code), or refreshes when it is empty.
+-- Left click: open the panel (launch Claude Code, graphs, per-model usage), run
+-- click_command, or refresh - see click_action.
 function onClick()
-  if cfg.clickCommand == "" then return refresh() end
-  noctalia.runAsync(`PATH="$HOME/.local/bin:$PATH" setsid -f {cfg.clickCommand} >/dev/null 2>&1`, function() end)
+  if cfg.clickAction == "panel" then return noctalia.togglePanel("seo/claude-usage:panel") end
+  if cfg.clickAction == "command" and cfg.clickCommand ~= "" then return S.spawn(cfg.clickCommand) end
+  refresh()
 end
 
 -- Right click always refreshes.

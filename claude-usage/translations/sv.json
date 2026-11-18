@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Klickkommando",
-      "description": "Skalkommando vid vänsterklick, t.ex. alacritty -e claude. Tomt = uppdatera nu. Högerklick uppdaterar alltid."
+      "description": "Skalkommando vid vänsterklick, t.ex. alacritty -e claude."
     },
     "command": {
       "label": "Klickkommando",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Hovringsanimation (ms)",
       "description": "Hur lång tid detaljerna tar att glida fram och tonas in. 0 stänger av animationen."
+    },
+    "percent_decimals": {
+      "label": "Decimaler i procent",
+      "description": "0 avrundar till heltal. API:t rapporterar just nu hela procent, så decimaler visar oftast ,0."
+    },
+    "launch_command": {
+      "label": "Claude Code-kommando",
+      "description": "Terminalkommando som panelen startar Claude Code med; vald --model och läge läggs till."
+    },
+    "click_action": {
+      "label": "Vänsterklick",
+      "description": "Vad ett vänsterklick på widgeten gör. Högerklick uppdaterar alltid.",
+      "panel": "Öppna panelen",
+      "command": "Kör klickkommandot",
+      "refresh": "Uppdatera"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Ingen anslutning",
     "bad_response": "Oväntat API-svar",
     "http_429": "Begränsning av förfrågningar - försöker igen"
+  },
+  "panel": {
+    "no_reset": "ingen väntande återställning",
+    "resets_in": "återställs om {time}",
+    "peak": "topp {tokens}",
+    "model_tokens": "{tokens} · {messages} medd. · cache {cache}",
+    "no_models": "Ingen användning i det här fönstret än.",
+    "by_model": "Tokens per modell",
+    "refresh": "Uppdatera",
+    "settings": "Inställningar",
+    "launch": "Starta Claude Code",
+    "model_default": "Standardmodell",
+    "mode_new": "Ny session",
+    "mode_continue": "Fortsätt senaste sessionen",
+    "mode_resume": "Välj en session att återuppta",
+    "start": "Starta",
+    "last_24h": "Senaste 24 timmarna",
+    "last_7d": "Senaste 7 dagarna",
+    "hours_ago": "för {n} h sedan",
+    "days_ago": "för {n} d sedan"
   }
 }

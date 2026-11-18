@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Kamanda pa pstryčcy",
-      "description": "Kamanda abałonki pa levaj pstryčcy, napr. alacritty -e claude. Pusta = abnavić zaraz. Pravaja pstryčka zaŭsiody abnaŭliaje."
+      "description": "Kamanda abałonki pa levaj pstryčcy, napr. alacritty -e claude."
     },
     "command": {
       "label": "Kamanda pa pstryčcy",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Animacyja pry naviadzienni (ms)",
       "description": "Koĺki doŭžycca vysoŭvannie i zjaŭliennie padrabiaznasciej. 0 vykliučaje animacyju."
+    },
+    "percent_decimals": {
+      "label": "Znakaŭ paslia koski ŭ pracentach",
+      "description": "0 akruhliaje da cełych. Zaraz API viartaje cełyja pracenty, tamu drobnaja častka zvyčajna ,0."
+    },
+    "launch_command": {
+      "label": "Kamanda Claude Code",
+      "description": "Kamanda terminała, jakoj paneĺ zapuskaje Claude Code; dadajucca vybranyja --model i režym."
+    },
+    "click_action": {
+      "label": "Levaja pstryčka",
+      "description": "Što robić levaja pstryčka pa vidžecie. Pravaja pstryčka zaŭsiody abnaŭliaje.",
+      "panel": "Adkryć paneĺ",
+      "command": "Vykanać kamandu pstryčki",
+      "refresh": "Abnavić"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Niama złučennia",
     "bad_response": "Niečakany adkaz API",
     "http_429": "Limit zapytaŭ - pasprabuju paźniej"
+  },
+  "panel": {
+    "no_reset": "skid nie čakajecca",
+    "resets_in": "skid praz {time}",
+    "peak": "pik {tokens}",
+    "model_tokens": "{tokens} · {messages} paviedam. · keš {cache}",
+    "no_models": "U hetym aknie pakuĺ niama vykarystannia.",
+    "by_model": "Tokieny pavodle madelaŭ",
+    "refresh": "Abnavić",
+    "settings": "Nałady",
+    "launch": "Zapuscić Claude Code",
+    "model_default": "Madeĺ pa zmaŭčanni",
+    "mode_new": "Novaja sesija",
+    "mode_continue": "Praciahnuć apošniuju sesiju",
+    "mode_resume": "Vybrać sesiju dlia praciahu",
+    "start": "Zapuscić",
+    "last_24h": "Apošnija 24 hadziny",
+    "last_7d": "Apošnija 7 dzion",
+    "hours_ago": "{n} hadz tamu",
+    "days_ago": "{n} dz tamu"
   }
 }

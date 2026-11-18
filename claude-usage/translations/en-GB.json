@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Click command",
-      "description": "Shell command run on left click, e.g. alacritty -e claude. Empty = refresh now. Right click always refreshes."
+      "description": "Shell command run on left click, e.g. alacritty -e claude."
     },
     "command": {
       "label": "Click command",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Hover animation (ms)",
       "description": "How long the details take to slide out and fade in. 0 turns the animation off."
+    },
+    "percent_decimals": {
+      "label": "Decimal places in percentages",
+      "description": "0 rounds to whole numbers. The API currently reports whole percentages, so decimals usually show .0."
+    },
+    "launch_command": {
+      "label": "Claude Code command",
+      "description": "Terminal command the panel uses to start Claude Code; the chosen --model and mode are appended."
+    },
+    "click_action": {
+      "label": "Left click",
+      "description": "What a left click on the widget does. Right click always refreshes.",
+      "panel": "Open the panel",
+      "command": "Run the click command",
+      "refresh": "Refresh"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "No connection",
     "bad_response": "Unexpected API response",
     "http_429": "Rate limited - will retry"
+  },
+  "panel": {
+    "no_reset": "no reset pending",
+    "resets_in": "resets in {time}",
+    "peak": "peak {tokens}",
+    "model_tokens": "{tokens} · {messages} msgs · cache {cache}",
+    "no_models": "No usage in this window yet.",
+    "by_model": "Tokens by model",
+    "refresh": "Refresh",
+    "settings": "Settings",
+    "launch": "Start Claude Code",
+    "model_default": "Default model",
+    "mode_new": "New session",
+    "mode_continue": "Continue last session",
+    "mode_resume": "Pick a session to resume",
+    "start": "Start",
+    "last_24h": "Last 24 hours",
+    "last_7d": "Last 7 days",
+    "hours_ago": "{n} h ago",
+    "days_ago": "{n} d ago"
   }
 }

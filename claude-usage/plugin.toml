@@ -1,6 +1,6 @@
 id = "seo/claude-usage"
 name = "Claude Usage"
-version = "1.4.0"
+version = "1.5.0"
 plugin_api = 43
 author = "Seo1323"
 license = "MIT"
@@ -18,9 +18,33 @@ default = 5
 min = 1
 max = 120
 
+[[setting]]
+key = "percent_decimals"
+type = "int"
+label_key = "settings.percent_decimals.label"
+description_key = "settings.percent_decimals.description"
+default = 0
+min = 0
+max = 2
+
+[[setting]]
+key = "launch_command"
+type = "string"
+label_key = "settings.launch_command.label"
+description_key = "settings.launch_command.description"
+default = "alacritty -e claude"
+
 [[service]]
 id = "poller"
 entry = "service.luau"
+
+# Opened by a left click on the bar widget: launch Claude Code, graphs, tokens per model.
+[[panel]]
+id = "panel"
+entry = "panel.luau"
+width = 380
+height = "content"
+max_height = 760
 
 [[widget]]
 id = "bar"
@@ -289,12 +313,24 @@ entry = "bar.luau"
   advanced = true
 
   [[widget.setting]]
+  key = "click_action"
+  type = "select"
+  label_key = "settings.click_action.label"
+  description_key = "settings.click_action.description"
+  default = "panel"
+  options = [
+    { value = "panel", label_key = "settings.click_action.panel" },
+    { value = "command", label_key = "settings.click_action.command" },
+    { value = "refresh", label_key = "settings.click_action.refresh" },
+  ]
+
+  [[widget.setting]]
   key = "click_command"
   type = "string"
   label_key = "settings.click_command.label"
   description_key = "settings.click_command.description"
   default = ""
-  advanced = true
+  visible_when = { key = "click_action", values = ["command"] }
 
 # Compact variant: only an icon or a usage ring, usage in the tooltip.
 [[widget]]

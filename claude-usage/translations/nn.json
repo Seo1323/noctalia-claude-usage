@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Klikkommando",
-      "description": "Skalkommando ved venstreklikk, t.d. alacritty -e claude. Tomt = oppdater no. Høgreklikk oppdaterer alltid."
+      "description": "Skalkommando ved venstreklikk, t.d. alacritty -e claude."
     },
     "command": {
       "label": "Klikkommando",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Animasjon ved peikar over (ms)",
       "description": "Kor lang tid detaljane brukar på å gli fram og tonast inn. 0 slår av animasjonen."
+    },
+    "percent_decimals": {
+      "label": "Desimalar i prosent",
+      "description": "0 rundar av til heiltal. API-et rapporterer no heile prosent, så desimalar viser oftast ,0."
+    },
+    "launch_command": {
+      "label": "Claude Code-kommando",
+      "description": "Terminalkommando panelet startar Claude Code med; vald --model og modus vert lagde til."
+    },
+    "click_action": {
+      "label": "Venstreklikk",
+      "description": "Kva eit venstreklikk på widgeten gjer. Høgreklikk oppdaterer alltid.",
+      "panel": "Opna panelet",
+      "command": "Køyr klikkommandoen",
+      "refresh": "Oppdater"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Inga tilkopling",
     "bad_response": "Uventa API-svar",
     "http_429": "Avgrensa førespurnader - prøver på nytt"
+  },
+  "panel": {
+    "no_reset": "inga ventande nullstilling",
+    "resets_in": "nullstilt om {time}",
+    "peak": "topp {tokens}",
+    "model_tokens": "{tokens} · {messages} meld. · buffer {cache}",
+    "no_models": "Inga bruk i dette vindauget enno.",
+    "by_model": "Token per modell",
+    "refresh": "Oppdater",
+    "settings": "Innstillingar",
+    "launch": "Start Claude Code",
+    "model_default": "Standardmodell",
+    "mode_new": "Ny økt",
+    "mode_continue": "Hald fram med siste økt",
+    "mode_resume": "Vel ei økt å halda fram med",
+    "start": "Start",
+    "last_24h": "Siste 24 timar",
+    "last_7d": "Siste 7 dagar",
+    "hours_ago": "for {n} t sidan",
+    "days_ago": "for {n} d sidan"
   }
 }

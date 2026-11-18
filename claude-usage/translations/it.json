@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Comando al clic",
-      "description": "Comando shell eseguito al clic sinistro, ad es. alacritty -e claude. Vuoto = aggiorna ora. Il clic destro aggiorna sempre."
+      "description": "Comando shell eseguito al clic sinistro, ad es. alacritty -e claude."
     },
     "command": {
       "label": "Comando al clic",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Animazione al passaggio (ms)",
       "description": "Quanto impiegano i dettagli a comparire e a dissolversi. 0 disattiva l’animazione."
+    },
+    "percent_decimals": {
+      "label": "Decimali nelle percentuali",
+      "description": "0 arrotonda all’intero. L’API restituisce al momento percentuali intere, quindi i decimali mostrano di solito ,0."
+    },
+    "launch_command": {
+      "label": "Comando Claude Code",
+      "description": "Comando del terminale con cui il pannello avvia Claude Code; vengono aggiunti --model e la modalità scelti."
+    },
+    "click_action": {
+      "label": "Clic sinistro",
+      "description": "Cosa fa un clic sinistro sul widget. Il clic destro aggiorna sempre.",
+      "panel": "Apri il pannello",
+      "command": "Esegui il comando al clic",
+      "refresh": "Aggiorna"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Nessuna connessione",
     "bad_response": "Risposta API inattesa",
     "http_429": "Limite di richieste - nuovo tentativo più tardi"
+  },
+  "panel": {
+    "no_reset": "nessun reset in corso",
+    "resets_in": "reset tra {time}",
+    "peak": "picco {tokens}",
+    "model_tokens": "{tokens} · {messages} msg · cache {cache}",
+    "no_models": "Ancora nessun utilizzo in questa finestra.",
+    "by_model": "Token per modello",
+    "refresh": "Aggiorna",
+    "settings": "Impostazioni",
+    "launch": "Avvia Claude Code",
+    "model_default": "Modello predefinito",
+    "mode_new": "Nuova sessione",
+    "mode_continue": "Continua l’ultima sessione",
+    "mode_resume": "Scegli una sessione da riprendere",
+    "start": "Avvia",
+    "last_24h": "Ultime 24 ore",
+    "last_7d": "Ultimi 7 giorni",
+    "hours_ago": "{n} h fa",
+    "days_ago": "{n} g fa"
   }
 }

@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Klikopdracht",
-      "description": "Shell-opdracht bij linksklikken, bijv. alacritty -e claude. Leeg = nu vernieuwen. Rechtsklikken vernieuwt altijd."
+      "description": "Shell-opdracht bij linksklikken, bijv. alacritty -e claude."
     },
     "command": {
       "label": "Klikopdracht",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Animatie bij aanwijzen (ms)",
       "description": "Hoe lang de details erover doen om uit te schuiven en in te faden. 0 schakelt de animatie uit."
+    },
+    "percent_decimals": {
+      "label": "Decimalen in percentages",
+      "description": "0 rondt af op hele getallen. De API geeft nu hele percentages, dus decimalen tonen meestal ,0."
+    },
+    "launch_command": {
+      "label": "Claude Code-opdracht",
+      "description": "Terminalopdracht waarmee het paneel Claude Code start; de gekozen --model en modus worden toegevoegd."
+    },
+    "click_action": {
+      "label": "Linksklikken",
+      "description": "Wat linksklikken op de widget doet. Rechtsklikken vernieuwt altijd.",
+      "panel": "Paneel openen",
+      "command": "Klikopdracht uitvoeren",
+      "refresh": "Vernieuwen"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Geen verbinding",
     "bad_response": "Onverwacht API-antwoord",
     "http_429": "Aanvraaglimiet bereikt - wordt opnieuw geprobeerd"
+  },
+  "panel": {
+    "no_reset": "geen reset in behandeling",
+    "resets_in": "reset over {time}",
+    "peak": "piek {tokens}",
+    "model_tokens": "{tokens} · {messages} ber. · cache {cache}",
+    "no_models": "Nog geen gebruik in dit venster.",
+    "by_model": "Tokens per model",
+    "refresh": "Vernieuwen",
+    "settings": "Instellingen",
+    "launch": "Claude Code starten",
+    "model_default": "Standaardmodel",
+    "mode_new": "Nieuwe sessie",
+    "mode_continue": "Laatste sessie voortzetten",
+    "mode_resume": "Sessie kiezen om te hervatten",
+    "start": "Starten",
+    "last_24h": "Afgelopen 24 uur",
+    "last_7d": "Afgelopen 7 dagen",
+    "hours_ago": "{n} u geleden",
+    "days_ago": "{n} d geleden"
   }
 }

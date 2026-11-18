@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "點擊指令",
-      "description": "滑鼠左鍵點擊時執行的 shell 指令，例如 alacritty -e claude。留空 = 立即重新整理。右鍵點擊一律重新整理。"
+      "description": "以左鍵點擊時執行的 shell 指令，例如 alacritty -e claude。"
     },
     "command": {
       "label": "點擊指令",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "懸停動畫（ms）",
       "description": "詳細資訊滑出並淡入所需的時間。0 表示關閉動畫。"
+    },
+    "percent_decimals": {
+      "label": "百分比小數位數",
+      "description": "0 表示四捨五入為整數。目前 API 回傳整數百分比，因此小數部分通常顯示為 .0。"
+    },
+    "launch_command": {
+      "label": "Claude Code 指令",
+      "description": "面板啟動 Claude Code 所用的終端機指令；會附加所選的 --model 與模式。"
+    },
+    "click_action": {
+      "label": "滑鼠左鍵",
+      "description": "以左鍵點擊小工具時的動作。右鍵點擊一律重新整理。",
+      "panel": "開啟面板",
+      "command": "執行點擊指令",
+      "refresh": "重新整理"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "沒有網路連線",
     "bad_response": "API 回應異常",
     "http_429": "請求受限 - 稍後重試"
+  },
+  "panel": {
+    "no_reset": "沒有待重設",
+    "resets_in": "{time} 後重設",
+    "peak": "峰值 {tokens}",
+    "model_tokens": "{tokens} · {messages} 則訊息 · 快取 {cache}",
+    "no_models": "此視窗內尚無用量。",
+    "by_model": "依模型統計權杖",
+    "refresh": "重新整理",
+    "settings": "設定",
+    "launch": "啟動 Claude Code",
+    "model_default": "預設模型",
+    "mode_new": "新工作階段",
+    "mode_continue": "繼續上次的工作階段",
+    "mode_resume": "選擇要恢復的工作階段",
+    "start": "啟動",
+    "last_24h": "最近 24 小時",
+    "last_7d": "最近 7 天",
+    "hours_ago": "{n} 小時前",
+    "days_ago": "{n} 天前"
   }
 }

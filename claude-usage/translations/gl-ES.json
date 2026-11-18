@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Orde ao premer",
-      "description": "Orde de shell ao premer co botón esquerdo, p. ex. alacritty -e claude. Baleiro = actualizar agora. O botón dereito sempre actualiza."
+      "description": "Orde de shell ao premer co botón esquerdo, p. ex. alacritty -e claude."
     },
     "command": {
       "label": "Orde ao premer",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Animación ao pasar o cursor (ms)",
       "description": "Canto tardan os detalles en despregarse e aparecer. 0 desactiva a animación."
+    },
+    "percent_decimals": {
+      "label": "Decimais nas porcentaxes",
+      "description": "0 arredonda a enteiros. A API devolve agora porcentaxes enteiras, así que os decimais adoitan amosar ,0."
+    },
+    "launch_command": {
+      "label": "Orde de Claude Code",
+      "description": "Orde de terminal coa que o panel inicia Claude Code; engádense --model e o modo escollidos."
+    },
+    "click_action": {
+      "label": "Clic esquerdo",
+      "description": "Que fai un clic esquerdo no trebello. O clic dereito sempre actualiza.",
+      "panel": "Abrir o panel",
+      "command": "Executar a orde de clic",
+      "refresh": "Actualizar"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Sen conexión",
     "bad_response": "Resposta inesperada da API",
     "http_429": "Límite de solicitudes - volverase intentar"
+  },
+  "panel": {
+    "no_reset": "sen reinicio pendente",
+    "resets_in": "reiníciase en {time}",
+    "peak": "pico {tokens}",
+    "model_tokens": "{tokens} · {messages} msx. · caché {cache}",
+    "no_models": "Aínda non hai uso nesta xanela.",
+    "by_model": "Tokens por modelo",
+    "refresh": "Actualizar",
+    "settings": "Configuración",
+    "launch": "Iniciar Claude Code",
+    "model_default": "Modelo predeterminado",
+    "mode_new": "Nova sesión",
+    "mode_continue": "Continuar a última sesión",
+    "mode_resume": "Escoller unha sesión para retomar",
+    "start": "Iniciar",
+    "last_24h": "Últimas 24 horas",
+    "last_7d": "Últimos 7 días",
+    "hours_ago": "hai {n} h",
+    "days_ago": "hai {n} d"
   }
 }

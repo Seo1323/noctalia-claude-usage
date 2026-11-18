@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Kattintási parancs",
-      "description": "Bal kattintáskor futó shell-parancs, pl. alacritty -e claude. Üresen = frissítés most. A jobb kattintás mindig frissít."
+      "description": "Bal kattintáskor futó shell-parancs, pl. alacritty -e claude."
     },
     "command": {
       "label": "Kattintási parancs",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Rámutatási animáció (ms)",
       "description": "Mennyi idő alatt csúsznak elő és jelennek meg a részletek. 0 kikapcsolja az animációt."
+    },
+    "percent_decimals": {
+      "label": "Tizedesjegyek a százalékokban",
+      "description": "0 egészre kerekít. Az API jelenleg egész százalékokat ad, ezért a tizedesjegyek általában ,0-t mutatnak."
+    },
+    "launch_command": {
+      "label": "Claude Code parancs",
+      "description": "Terminálparancs, amellyel a panel elindítja a Claude Code-ot; a választott --model és mód hozzáfűződik."
+    },
+    "click_action": {
+      "label": "Bal kattintás",
+      "description": "Mit csinál a bal kattintás a modulon. A jobb kattintás mindig frissít.",
+      "panel": "Panel megnyitása",
+      "command": "Kattintási parancs futtatása",
+      "refresh": "Frissítés"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Nincs kapcsolat",
     "bad_response": "Váratlan API-válasz",
     "http_429": "Kéréskorlát - később újrapróbálja"
+  },
+  "panel": {
+    "no_reset": "nincs függő visszaállítás",
+    "resets_in": "visszaállítás: {time} múlva",
+    "peak": "csúcs {tokens}",
+    "model_tokens": "{tokens} · {messages} üzenet · gyorsítótár {cache}",
+    "no_models": "Ebben az ablakban még nincs használat.",
+    "by_model": "Tokenek modellenként",
+    "refresh": "Frissítés",
+    "settings": "Beállítások",
+    "launch": "Claude Code indítása",
+    "model_default": "Alapértelmezett modell",
+    "mode_new": "Új munkamenet",
+    "mode_continue": "Az utolsó munkamenet folytatása",
+    "mode_resume": "Folytatandó munkamenet kiválasztása",
+    "start": "Indítás",
+    "last_24h": "Elmúlt 24 óra",
+    "last_7d": "Elmúlt 7 nap",
+    "hours_ago": "{n} órája",
+    "days_ago": "{n} napja"
   }
 }

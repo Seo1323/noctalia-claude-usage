@@ -133,7 +133,7 @@
     },
     "click_command": {
       "label": "Klick-Befehl",
-      "description": "Shell-Befehl beim Linksklick, z. B. alacritty -e claude. Leer = jetzt aktualisieren. Rechtsklick aktualisiert immer."
+      "description": "Shell-Befehl beim Linksklick, z. B. alacritty -e claude."
     },
     "command": {
       "label": "Klick-Befehl",
@@ -142,6 +142,21 @@
     "animation_ms": {
       "label": "Hover-Animation (ms)",
       "description": "Wie lange die Details zum Ausfahren und Einblenden brauchen. 0 schaltet die Animation aus."
+    },
+    "percent_decimals": {
+      "label": "Nachkommastellen bei Prozent",
+      "description": "0 rundet auf ganze Zahlen. Die API meldet derzeit ganze Prozente, daher zeigen Nachkommastellen meist ,0."
+    },
+    "launch_command": {
+      "label": "Claude-Code-Befehl",
+      "description": "Terminalbefehl, mit dem das Panel Claude Code startet; --model und Modus werden angehängt."
+    },
+    "click_action": {
+      "label": "Linksklick",
+      "description": "Was ein Linksklick auf das Widget tut. Rechtsklick aktualisiert immer.",
+      "panel": "Panel öffnen",
+      "command": "Klick-Befehl ausführen",
+      "refresh": "Aktualisieren"
     }
   },
   "bar": {
@@ -161,5 +176,25 @@
     "network": "Keine Verbindung",
     "bad_response": "Unerwartete API-Antwort",
     "http_429": "Anfragelimit erreicht - neuer Versuch folgt"
+  },
+  "panel": {
+    "no_reset": "kein Reset ausstehend",
+    "resets_in": "Reset in {time}",
+    "peak": "Spitze {tokens}",
+    "model_tokens": "{tokens} · {messages} Nachr. · Cache {cache}",
+    "no_models": "In diesem Zeitraum noch keine Nutzung.",
+    "by_model": "Tokens nach Modell",
+    "refresh": "Aktualisieren",
+    "settings": "Einstellungen",
+    "launch": "Claude Code starten",
+    "model_default": "Standardmodell",
+    "mode_new": "Neue Sitzung",
+    "mode_continue": "Letzte Sitzung fortsetzen",
+    "mode_resume": "Sitzung zum Fortsetzen wählen",
+    "start": "Starten",
+    "last_24h": "Letzte 24 Stunden",
+    "last_7d": "Letzte 7 Tage",
+    "hours_ago": "vor {n} Std.",
+    "days_ago": "vor {n} T."
   }
 }
