@@ -2,98 +2,98 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Yenileme aralığı (dakika)",
-      "description": "Kullanım API'sinin ne sıklıkla sorgulanacağı."
+      "label": "Kontrol sıklığı (dakika)",
+      "description": "Bileşenin güncel kullanımınızı ne sıklıkla alacağı."
     },
     "window": {
-      "label": "Limit penceresi",
-      "description": "Çubuğun hangi kullanım penceresini göstereceği.",
-      "five_hour": "5 saatlik oturum",
-      "weekly": "Haftalık (7g)",
-      "both": "Her ikisi"
+      "label": "Hangi sınır gösterilsin",
+      "description": "Claude Code'un 5 saatlik ve haftalık bir sınırı vardır. Birini ya da ikisini gösterin.",
+      "five_hour": "5 saatlik sınır",
+      "weekly": "Haftalık sınır (7g)",
+      "both": "İkisi de"
     },
     "display_mode": {
-      "label": "Ayrıntıları göster",
-      "description": "Sıfırlamaya kalan süre, token ve çubuğun ne zaman gösterileceği.",
+      "label": "Ayrıntılar ne zaman gösterilsin",
+      "description": "Ayrıntılar: sınırın dolmasına kalan süre, tokenlar ve çubuk.",
       "always": "Her zaman",
-      "important": "Yalnızca kullanım yüksekken (uyarı eşiğinin üstünde)",
-      "hover": "Yalnızca üzerine gelince (aksi halde simge veya halka)"
+      "important": "Yalnızca kullanım yüksekken",
+      "hover": "Yalnızca üzerine gelindiğinde"
     },
     "logo": {
-      "label": "Simge",
-      "description": "Metnin önünde gösterilir. Halka, limitin kalan (veya kullanılan) kısmıyla dolar.",
+      "label": "Öndeki görsel",
+      "description": "Sayıların önünde gösterilir. Halka, sınır kullanıldıkça dolan küçük bir dairedir.",
       "none": "Yok",
-      "glyph": "Glif",
-      "star": "Yıldız (dahili)",
-      "custom": "Özel görsel",
+      "glyph": "Simge",
+      "star": "Yıldız",
+      "custom": "Kendi görselim",
       "ring": "Kullanım halkası"
     },
     "glyph": {
-      "label": "Glif"
+      "label": "Hangi simge"
     },
     "logo_path": {
-      "label": "Özel görsel",
-      "description": "SVG veya PNG. Boş bırakılırsa eklenti klasöründeki logo.svg kullanılır."
+      "label": "Görselim",
+      "description": "Bir SVG veya PNG dosyası. Eklenti klasöründeki logo.svg için boş bırakın."
     },
     "icon_size": {
-      "label": "Simge boyutu (px)"
+      "label": "Görsel boyutu (px)"
     },
     "size": {
       "label": "Simge boyutu (px)"
     },
     "show_percent": {
-      "label": "Kullanım yüzdesini göster"
+      "label": "Yüzdeyi göster"
     },
     "percent_mode": {
-      "label": "Yüzde gösterir",
-      "used": "Kullanılan (22%)",
+      "label": "Yüzdeyi şöyle göster",
+      "used": "Kullanılan (%22)",
       "left": "Kalan (%78 kaldı)"
     },
     "show_prefix": {
-      "label": "5h / 7d etiketlerini göster",
-      "description": "Her yüzdenin önüne penceresini ekler."
+      "label": "Hangi sınır olduğunu göster",
+      "description": "Her yüzdenin önüne “5h” veya “7d” gibi kısa bir ad koyar."
     },
     "show_bar": {
-      "label": "İlerleme çubuğunu göster",
+      "label": "İlerleme çubuğu göster",
       "description": "Yüzdenin yanında küçük bir çubuk."
     },
     "bar_width": {
       "label": "İlerleme çubuğu genişliği (px)"
     },
     "gauge_mode": {
-      "label": "Çubuk ve halka gösterir",
-      "description": "İlerleme çubuğunun ve kullanım halkasının neyle dolacağı.",
-      "left": "Kalanı",
-      "used": "Kullanılanı"
+      "label": "Çubuk ve halka şunu gösterir",
+      "description": "Kalanla mı yoksa kullanılanla mı dolacaklarını seçin.",
+      "left": "Kalan",
+      "used": "Kullanılan"
     },
     "show_reset": {
-      "label": "Sıfırlamaya kalan süreyi göster",
-      "description": "Pencerenin sıfırlanmasına kalan süre."
+      "label": "Sınırın dolmasına kalan süreyi göster",
+      "description": "Sınırınız yeniden dolana kadar geri sayım."
     },
     "reset_format": {
-      "label": "Sıfırlama süresi biçimi",
+      "label": "Saat biçimi",
       "compact": "Kısa (1:44)",
-      "verbose": "Ayrıntılı (1h 44m)"
+      "verbose": "Uzun (1h 44m)"
     },
     "ready_text": {
-      "label": "Bekleyen sıfırlama yokken metin",
-      "description": "Pencere çalışmıyorken geri sayım yerine gösterilir. Boş = kendi dilinizde \"hazır\"."
+      "label": "Sınır doluyken metin",
+      "description": "Bu sınır henüz kullanılmadıysa geri sayım yerine gösterilir. “hazır” için boş bırakın."
     },
     "show_tokens": {
       "label": "Kullanılan tokenları göster",
-      "description": "Pencerede kullanılan tokenlar (girdi + çıktı + önbellek oluşturma, yerel dökümlerden)."
+      "description": "Tokenlar, Claude'un okuyup yazdığı metin parçalarıdır. Kendi bilgisayarınızda sayılır."
     },
     "include_cache_read": {
-      "label": "Önbellek okumalarını dahil et",
-      "description": "İstem önbelleğinden okunan tokenları ekler. Ucuzdurlar ama çoktur, bu yüzden sayı çok büyür."
+      "label": "Yeniden okunan metni de say",
+      "description": "Claude her yanıttan önce konuşmayı yeniden okur. Bunu saymak sayıyı çok büyütür."
     },
     "token_format": {
-      "label": "Token biçimi",
+      "label": "Token sayısının yazımı",
       "short": "Kısa (92k)",
       "full": "Tam (92424)"
     },
     "separator": {
-      "label": "Öğeler arası ayırıcı",
+      "label": "Ayırıcı",
       "none": "Yok",
       "dot": "Nokta (·)",
       "bar": "Dikey çizgi (|)",
@@ -101,29 +101,29 @@
     },
     "dim_extras": {
       "label": "Süreyi ve tokenları soluklaştır",
-      "description": "Sıfırlamaya kalan süreyi ve tokenları soluk renkte gösterir; kullanım rengini yalnızca yüzde korur."
+      "description": "Uyarı renklerini yalnızca yüzde korur."
     },
     "gap": {
       "label": "Öğeler arası boşluk (px)"
     },
     "font_weight": {
-      "label": "Yazı kalınlığı",
+      "label": "Metin kalınlığı",
       "medium": "Orta",
       "bold": "Kalın"
     },
     "color_by_usage": {
-      "label": "Kullanıma göre renk",
-      "description": "Eşiklerin üzerinde uyarı / kritik renklere geçer."
+      "label": "Kullanım arttıkça rengi değiştir",
+      "description": "Aşağıdaki seviyelerde önce uyarı, sonra kritik renge geçer."
     },
     "warn_at": {
-      "label": "Uyarı eşiği (%)"
+      "label": "Uyarı başlangıcı (%)"
     },
     "critical_at": {
-      "label": "Kritik eşik (%)"
+      "label": "Kritik başlangıcı (%)"
     },
     "color": {
-      "label": "Metin rengi",
-      "description": "Normal kullanım için renk rolü veya hex renk."
+      "label": "Normal metin rengi",
+      "description": "Temanızdan bir renk ya da istediğiniz herhangi bir rengi seçin."
     },
     "warn_color": {
       "label": "Uyarı rengi"
@@ -132,47 +132,47 @@
       "label": "Kritik renk"
     },
     "click_command": {
-      "label": "Tıklama komutu",
-      "description": "Sol tıklamada çalışan kabuk komutu, ör. alacritty -e claude."
+      "label": "Komutum",
+      "description": "Çalıştırılacak bir komut, örneğin Claude Code'u bir terminalde açmak için alacritty -e claude."
     },
     "command": {
-      "label": "Tıklama komutu",
-      "description": "Simgeye tıklanınca çalışan komut."
+      "label": "Tıklamada komut",
+      "description": "Simgeye tıklandığında çalışan komut, örneğin alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Üzerine gelme animasyonu (ms)",
-      "description": "Ayrıntıların kayarak belirmesinin ne kadar süreceği. 0 animasyonu kapatır."
+      "label": "Animasyon hızı (ms)",
+      "description": "İmleç bileşenin üzerine geldiğinde ayrıntıların ne kadar sürede belireceği. 0 = animasyon yok."
     },
     "percent_decimals": {
       "label": "Yüzdelerde ondalık basamak",
-      "description": "0 tam sayıya yuvarlar. API şu anda tam yüzdeler bildiriyor, bu yüzden ondalıklar genelde ,0 gösterir."
+      "description": "0 tam sayı gösterir. Kullanım şu anda tam yüzde olarak gelir, bu yüzden ondalık kısım genelde ,0 olur."
     },
     "launch_command": {
-      "label": "Claude Code komutu",
-      "description": "Panelin Claude Code'u başlatmak için kullandığı terminal komutu; seçilen --model ve mod eklenir."
+      "label": "Claude Code'u açan komut",
+      "description": "Panel, Claude Code'u bir terminalde bununla açar. Seçilen model ve oturum sona eklenir."
     },
     "click_action": {
       "label": "Sol tıklama",
-      "description": "Bileşene sol tıklamanın ne yapacağı. Sağ tıklama her zaman yeniler.",
+      "description": "Bileşene sol tıklandığında ne olacağı. Sağ tıklama her zaman yeniler.",
       "panel": "Paneli aç",
-      "command": "Tıklama komutunu çalıştır",
+      "command": "Komutumu çalıştırır",
       "refresh": "Yenile"
     },
     "panel_translucent": {
-      "label": "Yarı saydam panel",
-      "description": "Arka planın panelden görünmesini sağlar; metin tamamen opak kalır."
+      "label": "Saydam panel",
+      "description": "Duvar kâğıdının panelin arkasından görünmesini sağlar. Metin net kalır."
     },
     "panel_opacity": {
-      "label": "Panel arka planı opaklığı",
-      "description": "0 tamamen saydam, 1 tamamen opaktır."
+      "label": "Panelin ne kadar dolu olduğu",
+      "description": "0 = tamamen saydam, 1 = tamamen dolu."
     },
     "show_cost": {
-      "label": "Maliyeti API fiyatlarıyla göster",
-      "description": "Penceredeki tokenların Anthropic API liste fiyatlarıyla tahmini maliyeti. Claude aboneliğinde token başına ödeme yapmazsınız - aynı kullanımın API'de ne kadar tutacağını gösterir."
+      "label": "Ne kadar tutacağını göster",
+      "description": "Token başına ödenseydi bu kullanımın ne kadar tutacağına dair bir tahmin. Claude aboneliğinde bunu ödemezsiniz."
     },
     "currency": {
-      "label": "Maliyet para birimi",
-      "description": "Maliyetler, elle bir kur girmediğiniz sürece Avrupa Merkez Bankası'nın günlük referans kurlarıyla USD'den çevrilir (en fazla 12 saatte bir ve yalnızca USD dışındaki bir para birimi için alınır).",
+      "label": "Para birimi",
+      "description": "Maliyetler, ABD dolarından Avrupa Merkez Bankası'nın günlük kurlarıyla ya da kendi kurunuzla çevrilir.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Elle döviz kuru",
-      "description": "1 USD karşılığı seçilen para biriminden birim. 0 = AMB günlük kuru."
+      "label": "Kendi döviz kurum",
+      "description": "1 ABD dolarının sizin para biriminizde kaç ettiği. 0 = günlük kuru otomatik kullan."
     },
     "ring_thickness": {
       "label": "Halka kalınlığı",
@@ -205,48 +205,48 @@
       "thick": "Kalın"
     },
     "ring_track": {
-      "label": "Halka izini göster",
+      "label": "Halkanın arka planını göster",
       "description": "Dolu kısmın arkasındaki soluk tam daire."
     },
     "format": {
-      "label": "Metin şablonu",
-      "description": "Öğeleri kendi metninizle değiştirir, ör. {pct} · {reset} · {tokens}. Yer tutucular: {window} {pct} {left} {reset} {tokens} {cost} {model}. Boş = normal düzen."
+      "label": "Kendi metnim",
+      "description": "Her zamanki öğeler yerine kendi metninizi yazın. Süslü parantez içindeki sözcükler doldurulur: {window} {pct} {left} {reset} {tokens} {cost} {model}. Örnek: {pct} · {reset}. Normal görünüm için boş bırakın."
     },
     "label_five": {
-      "label": "5 saatlik pencere etiketi"
+      "label": "5 saatlik sınırın adı"
     },
     "label_week": {
-      "label": "Haftalık pencere etiketi"
+      "label": "Haftalık sınırın adı"
     },
     "show_model": {
       "label": "Geçerli modeli göster",
-      "description": "Son Claude Code iletinizin modeli, ör. Opus 5.5."
+      "description": "En son kullanılan Claude modeli, örneğin Opus 5.5."
     },
     "font_size": {
-      "label": "Yazı boyutu (px)",
-      "description": "0 = çubuğun yazı boyutu."
+      "label": "Metin boyutu (px)",
+      "description": "0 = çubuğun geri kalanıyla aynı boyut."
     },
     "gradient": {
       "label": "Yumuşak renk geçişi",
-      "description": "Renkler eşiklerde birden değişmek yerine kullanıma göre kademeli değişir."
+      "description": "Renk, seviyelerde aniden değişmek yerine kullanımla birlikte yavaş yavaş değişir."
     },
     "weekly_own_color": {
-      "label": "Haftalık pencere için ayrı renk",
-      "description": "Her iki pencere gösterildiğinde 7d öğeleri için farklı bir temel renk."
+      "label": "Haftalık sınır için farklı renk",
+      "description": "İki sınır birlikte gösterildiğinde kullanılır."
     },
     "weekly_color": {
-      "label": "Haftalık pencere rengi"
+      "label": "Haftalık sınır rengi"
     },
     "hide_below": {
-      "label": "Bu kullanımın altında gizle (%)",
-      "description": "Kullanım bu değerin altındayken bileşeni gizler. 0 = her zaman göster."
+      "label": "Kullanım şu düzeye gelene kadar gizle (%)",
+      "description": "Kullanım düşükken bileşeni gizli tutar. 0 = her zaman görünür."
     },
     "notify": {
       "label": "Bildirimler",
-      "description": "Kullanım bir eşiği aştığında her pencere için bir kez bildirim gösterir.",
+      "description": "Kullanım bir seviyeyi aştığında tek bir bildirim alın.",
       "off": "Kapalı",
-      "warning": "Uyarı ve kritik eşiklerde",
-      "critical": "Yalnızca kritik eşikte"
+      "warning": "Uyarı ve kritik seviyelerde",
+      "critical": "Yalnızca kritik seviyede"
     },
     "custom_prices": {
       "label": "Kendi token fiyatlarımı kullan",
@@ -270,24 +270,24 @@
     "ready": "hazır"
   },
   "tooltip": {
-    "window": "{window}: %{pct}  ({time} sonra sıfırlanır)",
-    "tokens": "tokenlar: {tokens}, önbellek okuma: {cache}",
-    "stale": "Güncel değil: {error}",
+    "window": "{window}: %{pct}  ({time} sonra yeniden dolar)",
+    "tokens": "tokenlar: {tokens}, yeniden okunan: {cache}",
+    "stale": "Eski veriler — {error}",
     "loading": "Yükleniyor...",
-    "cost": "API fiyatlarıyla: {cost}"
+    "cost": "token başına ödemeyle: {cost}"
   },
   "error": {
     "no_credentials": "Claude Code'da oturum açılmamış",
-    "token_expired": "Tokenın süresi doldu - yenilemek için Claude Code'u bir kez kullanın",
+    "token_expired": "Oturumun süresi doldu - yenilemek için Claude Code'u bir kez açın",
     "network": "Bağlantı yok",
-    "bad_response": "Beklenmeyen API yanıtı",
-    "http_429": "İstek sınırı - yeniden denenecek"
+    "bad_response": "Kullanım hizmetinden beklenmeyen yanıt",
+    "http_429": "Çok fazla kontrol - birkaç dakika içinde yeniden denenecek"
   },
   "panel": {
-    "no_reset": "bekleyen sıfırlama yok",
-    "resets_in": "{time} sonra sıfırlanır",
+    "no_reset": "sınır dolu",
+    "resets_in": "{time} sonra yeniden dolar",
     "peak": "zirve {tokens}",
-    "model_tokens": "{tokens} · {messages} ileti · önbellek {cache}",
+    "model_tokens": "{tokens} · {messages} ileti · yeniden okunan {cache}",
     "no_models": "Bu pencerede henüz kullanım yok.",
     "by_model": "Modele göre tokenlar",
     "refresh": "Yenile",
@@ -302,10 +302,10 @@
     "last_7d": "Son 7 gün",
     "hours_ago": "{n} sa önce",
     "days_ago": "{n} g önce",
-    "cost_total": "≈ {cost} API fiyatlarıyla (tahmin)"
+    "cost_total": "≈ {cost} token başına ödemeyle (tahmin)"
   },
   "notify": {
     "title": "Claude Code {window}: %{pct}",
-    "body": "{time} sonra sıfırlanır"
+    "body": "{time} sonra yeniden dolar"
   }
 }

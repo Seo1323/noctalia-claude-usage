@@ -2,59 +2,59 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Intervalo de actualización (minutos)",
-      "description": "Con que frecuencia se consulta a API de uso."
+      "label": "Cada canto comprobar (minutos)",
+      "description": "Cada canto o trebello consulta o teu uso actual."
     },
     "window": {
-      "label": "Xanela do límite",
-      "description": "Que xanela de uso amosa a barra.",
-      "five_hour": "Sesión de 5 horas",
-      "weekly": "Semanal (7 d)",
-      "both": "Ambas"
+      "label": "Que límite amosar",
+      "description": "Claude Code ten un límite de 5 horas e un semanal. Amosa un deles ou os dous.",
+      "five_hour": "Límite de 5 horas",
+      "weekly": "Límite semanal (7 d)",
+      "both": "Os dous"
     },
     "display_mode": {
-      "label": "Amosar detalles",
-      "description": "Cando se amosan o tempo ata o reinicio, os tokens e a barra.",
+      "label": "Cando amosar os detalles",
+      "description": "Os detalles son o tempo ata que o límite se recarga, os tokens e a barra.",
       "always": "Sempre",
-      "important": "Só con uso alto (por riba do limiar de aviso)",
-      "hover": "Só ao pasar o cursor (se non, icona ou anel)"
+      "important": "Só cun uso alto",
+      "hover": "Só ao pasar o cursor"
     },
     "logo": {
-      "label": "Icona",
-      "description": "Amósase antes do texto. O anel énchese coa parte restante (ou usada) do límite.",
+      "label": "Imaxe diante",
+      "description": "Amósase antes dos números. O anel é un pequeno círculo que se enche a medida que se usa o límite.",
       "none": "Ningunha",
-      "glyph": "Glifo",
-      "star": "Estrela (incluída)",
-      "custom": "Imaxe personalizada",
+      "glyph": "Icona",
+      "star": "Estrela",
+      "custom": "A miña imaxe",
       "ring": "Anel de uso"
     },
     "glyph": {
-      "label": "Glifo"
+      "label": "Que icona"
     },
     "logo_path": {
-      "label": "Imaxe personalizada",
-      "description": "SVG ou PNG. Baleiro significa logo.svg no cartafol do complemento."
+      "label": "A miña imaxe",
+      "description": "Un ficheiro SVG ou PNG. Déixao baleiro para usar logo.svg do cartafol do complemento."
     },
     "icon_size": {
-      "label": "Tamaño da icona (px)"
+      "label": "Tamaño da imaxe (px)"
     },
     "size": {
       "label": "Tamaño da icona (px)"
     },
     "show_percent": {
-      "label": "Amosar a porcentaxe de uso"
+      "label": "Amosar a porcentaxe"
     },
     "percent_mode": {
-      "label": "A porcentaxe amosa",
+      "label": "Amosar a porcentaxe como",
       "used": "Usado (22%)",
       "left": "Restante (78% restante)"
     },
     "show_prefix": {
-      "label": "Amosar etiquetas 5h / 7d",
-      "description": "Antepor a cada porcentaxe a súa xanela."
+      "label": "Amosar que límite é",
+      "description": "Pon un nome curto como «5h» ou «7d» diante de cada porcentaxe."
     },
     "show_bar": {
-      "label": "Amosar barra de progreso",
+      "label": "Amosar unha barra de progreso",
       "description": "Unha barra pequena xunto á porcentaxe."
     },
     "bar_width": {
@@ -62,68 +62,68 @@
     },
     "gauge_mode": {
       "label": "A barra e o anel amosan",
-      "description": "De que se enchen a barra de progreso e o anel de uso.",
+      "description": "Escolle se se enchen co que queda ou co que xa se usou.",
       "left": "O que queda",
-      "used": "O usado"
+      "used": "O que se usou"
     },
     "show_reset": {
-      "label": "Amosar o tempo ata o reinicio",
-      "description": "Tempo que falta para que a xanela se reinicie."
+      "label": "Amosar o tempo ata a recarga",
+      "description": "Unha conta atrás ata que o límite volva estar cheo."
     },
     "reset_format": {
-      "label": "Formato do tempo de reinicio",
-      "compact": "Compacto (1:44)",
-      "verbose": "Detallado (1h 44m)"
+      "label": "Formato da hora",
+      "compact": "Curto (1:44)",
+      "verbose": "Longo (1h 44m)"
     },
     "ready_text": {
-      "label": "Texto cando non hai reinicio pendente",
-      "description": "Amósase no canto da conta atrás cando a xanela non está activa. Baleiro = «listo» no teu idioma."
+      "label": "Texto cando o límite está cheo",
+      "description": "Amósase no canto da conta atrás mentres este límite aínda non se usou. Déixao baleiro para «listo»."
     },
     "show_tokens": {
-      "label": "Amosar tokens usados",
-      "description": "Tokens usados na xanela (entrada + saída + creación de caché, das transcricións locais)."
+      "label": "Amosar os tokens usados",
+      "description": "Os tokens son anacos de texto que Claude le e escribe. Cóntanse no teu propio ordenador."
     },
     "include_cache_read": {
-      "label": "Incluír lecturas da caché",
-      "description": "Sumar os tokens lidos da caché de prompts. Son baratos pero numerosos, así que o número medra moito."
+      "label": "Contar tamén o texto relido",
+      "description": "Claude rele a conversa antes de cada resposta. Contalo fai o número moito maior."
     },
     "token_format": {
-      "label": "Formato dos tokens",
+      "label": "Forma do número de tokens",
       "short": "Curto (92k)",
-      "full": "Completo (92424)"
+      "full": "Exacto (92424)"
     },
     "separator": {
-      "label": "Separador entre elementos",
+      "label": "Separador",
       "none": "Ningún",
       "dot": "Punto (·)",
       "bar": "Barra (|)",
       "slash": "Barra inclinada (/)"
     },
     "dim_extras": {
-      "label": "Atenuar tempo e tokens",
-      "description": "Amosa o tempo ata o reinicio e os tokens nunha cor atenuada; só a porcentaxe mantén a cor de uso."
+      "label": "Atenuar o tempo e os tokens",
+      "description": "Só a porcentaxe mantén as cores de aviso."
     },
     "gap": {
       "label": "Espazo entre elementos (px)"
     },
     "font_weight": {
-      "label": "Grosor da letra",
+      "label": "Grosor do texto",
       "medium": "Media",
-      "bold": "Negra"
+      "bold": "Negriña"
     },
     "color_by_usage": {
-      "label": "Cor segundo o uso",
-      "description": "Cambiar ás cores de aviso / crítica por riba dos limiares."
+      "label": "Cambiar de cor segundo o uso",
+      "description": "Pasa á cor de aviso e despois á crítica nos niveis de abaixo."
     },
     "warn_at": {
-      "label": "Limiar de aviso (%)"
+      "label": "Aviso desde (%)"
     },
     "critical_at": {
-      "label": "Limiar crítico (%)"
+      "label": "Crítico desde (%)"
     },
     "color": {
-      "label": "Cor do texto",
-      "description": "Rol de cor ou cor hex para o uso normal."
+      "label": "Cor normal do texto",
+      "description": "Escolle unha cor do teu tema ou calquera outra."
     },
     "warn_color": {
       "label": "Cor de aviso"
@@ -132,47 +132,47 @@
       "label": "Cor crítica"
     },
     "click_command": {
-      "label": "Orde ao premer",
-      "description": "Orde de shell ao premer co botón esquerdo, p. ex. alacritty -e claude."
+      "label": "A miña orde",
+      "description": "Unha orde para executar, por exemplo alacritty -e claude para abrir Claude Code nun terminal."
     },
     "command": {
       "label": "Orde ao premer",
-      "description": "Orde que se executa ao premer na icona."
+      "description": "Unha orde que se executa ao premer na icona, por exemplo alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Animación ao pasar o cursor (ms)",
-      "description": "Canto tardan os detalles en despregarse e aparecer. 0 desactiva a animación."
+      "label": "Velocidade da animación (ms)",
+      "description": "Canto tardan en aparecer os detalles ao pasar o cursor polo trebello. 0 = sen animación."
     },
     "percent_decimals": {
       "label": "Decimais nas porcentaxes",
-      "description": "0 arredonda a enteiros. A API devolve agora porcentaxes enteiras, así que os decimais adoitan amosar ,0."
+      "description": "0 amosa números enteiros. Agora o uso chega en porcentaxes enteiras, así que os decimais adoitan amosar ,0."
     },
     "launch_command": {
-      "label": "Orde de Claude Code",
-      "description": "Orde de terminal coa que o panel inicia Claude Code; engádense --model e o modo escollidos."
+      "label": "Orde que abre Claude Code",
+      "description": "O panel úsaa para abrir Claude Code nun terminal. O modelo e a sesión escollidos engádense ao final."
     },
     "click_action": {
-      "label": "Clic esquerdo",
-      "description": "Que fai un clic esquerdo no trebello. O clic dereito sempre actualiza.",
+      "label": "O clic esquerdo",
+      "description": "Que pasa ao premer co botón esquerdo no trebello. O botón dereito sempre actualiza.",
       "panel": "Abrir o panel",
-      "command": "Executar a orde de clic",
+      "command": "Executa a miña orde",
       "refresh": "Actualizar"
     },
     "panel_translucent": {
-      "label": "Panel translúcido",
-      "description": "Deixa ver o fondo a través do panel; o texto segue totalmente opaco."
+      "label": "Panel transparente",
+      "description": "Deixa ver o fondo de pantalla a través do panel. O texto segue nítido."
     },
     "panel_opacity": {
-      "label": "Opacidade do fondo do panel",
-      "description": "0 é totalmente transparente, 1 é sólido."
+      "label": "Opacidade do panel",
+      "description": "0 = totalmente transparente, 1 = sólido."
     },
     "show_cost": {
-      "label": "Amosar o custo a prezos da API",
-      "description": "Custo estimado dos tokens da xanela segundo os prezos de lista da API de Anthropic. Cunha subscrición a Claude non pagas por token: amosa canto custaría o mesmo uso na API."
+      "label": "Amosar canto custaría",
+      "description": "Unha estimación do que custaría este uso pagando por token. Cunha subscrición a Claude non o pagas."
     },
     "currency": {
-      "label": "Moeda dos custos",
-      "description": "Os custos convértense desde USD cos tipos de referencia diarios do Banco Central Europeo (obtidos como moito cada 12 horas e só para unha moeda distinta de USD), agás que fixes un tipo manual.",
+      "label": "Moeda",
+      "description": "Os custos convértense desde dólares estadounidenses cos tipos diarios do Banco Central Europeo ou co teu tipo.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Tipo de cambio manual",
-      "description": "Unidades da moeda escollida por 1 USD. 0 = tipo diario do BCE."
+      "label": "O meu tipo de cambio",
+      "description": "Canto vale 1 dólar estadounidense na túa moeda. 0 = tipo diario automático."
     },
     "ring_thickness": {
       "label": "Grosor do anel",
@@ -206,47 +206,47 @@
     },
     "ring_track": {
       "label": "Amosar o fondo do anel",
-      "description": "O círculo completo tenue detrás da parte chea."
+      "description": "Un círculo completo tenue detrás da parte chea."
     },
     "format": {
-      "label": "Modelo de texto",
-      "description": "Substitúe os elementos polo teu propio texto, p. ex. {pct} · {reset} · {tokens}. Marcadores: {window} {pct} {left} {reset} {tokens} {cost} {model}. Baleiro = deseño normal."
+      "label": "O meu texto",
+      "description": "Escribe o teu propio texto no canto dos elementos habituais. As palabras entre chaves substitúense: {window} {pct} {left} {reset} {tokens} {cost} {model}. Exemplo: {pct} · {reset}. Déixao baleiro para o aspecto normal."
     },
     "label_five": {
-      "label": "Etiqueta da xanela de 5 horas"
+      "label": "Nome do límite de 5 horas"
     },
     "label_week": {
-      "label": "Etiqueta da xanela semanal"
+      "label": "Nome do límite semanal"
     },
     "show_model": {
       "label": "Amosar o modelo actual",
-      "description": "O modelo da túa última mensaxe de Claude Code, p. ex. Opus 5.5."
+      "description": "O último modelo de Claude usado, por exemplo Opus 5.5."
     },
     "font_size": {
-      "label": "Tamaño da letra (px)",
-      "description": "0 = tamaño da letra da barra."
+      "label": "Tamaño do texto (px)",
+      "description": "0 = o mesmo tamaño que o resto da barra."
     },
     "gradient": {
-      "label": "Degradado de cor suave",
-      "description": "As cores cambian aos poucos co uso en vez de saltar nos limiares."
+      "label": "Cambio de cor suave",
+      "description": "A cor cambia aos poucos co uso en vez de saltar nos niveis."
     },
     "weekly_own_color": {
-      "label": "Cor propia para a xanela semanal",
-      "description": "Outra cor base para os elementos de 7d cando se amosan as dúas xanelas."
+      "label": "Outra cor para o límite semanal",
+      "description": "Úsase cando se amosan os dous límites."
     },
     "weekly_color": {
-      "label": "Cor da xanela semanal"
+      "label": "Cor do límite semanal"
     },
     "hide_below": {
-      "label": "Agochar por debaixo do uso (%)",
-      "description": "Agocha o trebello mentres o uso estea por debaixo deste valor. 0 = amosar sempre."
+      "label": "Agochar ata que o uso chegue a (%)",
+      "description": "Mantén o trebello agochado mentres o uso é baixo. 0 = sempre visible."
     },
     "notify": {
       "label": "Notificacións",
-      "description": "Amosa unha notificación unha vez por xanela cando o uso supera un limiar.",
+      "description": "Recibe unha notificación cando o uso supere un nivel.",
       "off": "Desactivadas",
-      "warning": "Nos limiares de aviso e crítico",
-      "critical": "Só no limiar crítico"
+      "warning": "Nos niveis de aviso e crítico",
+      "critical": "Só no nivel crítico"
     },
     "custom_prices": {
       "label": "Usar os meus prezos",
@@ -270,24 +270,24 @@
     "ready": "listo"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (reiníciase en {time})",
-    "tokens": "tokens: {tokens}, lectura de caché: {cache}",
-    "stale": "Desactualizado: {error}",
+    "window": "{window}: {pct}%  (recárgase en {time})",
+    "tokens": "tokens: {tokens}, relido: {cache}",
+    "stale": "Datos anteriores — {error}",
     "loading": "Cargando...",
-    "cost": "a prezos da API: {cost}"
+    "cost": "pagando por token: {cost}"
   },
   "error": {
     "no_credentials": "Non iniciaches sesión en Claude Code",
-    "token_expired": "Token caducado - usa Claude Code unha vez para renovalo",
+    "token_expired": "A sesión caducou - abre Claude Code unha vez para renovala",
     "network": "Sen conexión",
-    "bad_response": "Resposta inesperada da API",
-    "http_429": "Límite de solicitudes - volverase intentar"
+    "bad_response": "Resposta inesperada do servizo de uso",
+    "http_429": "Demasiadas comprobacións - novo intento nuns minutos"
   },
   "panel": {
-    "no_reset": "sen reinicio pendente",
-    "resets_in": "reiníciase en {time}",
+    "no_reset": "o límite está cheo",
+    "resets_in": "recárgase en {time}",
     "peak": "pico {tokens}",
-    "model_tokens": "{tokens} · {messages} msx. · caché {cache}",
+    "model_tokens": "{tokens} · {messages} mensaxes · relido {cache}",
     "no_models": "Aínda non hai uso nesta xanela.",
     "by_model": "Tokens por modelo",
     "refresh": "Actualizar",
@@ -302,10 +302,10 @@
     "last_7d": "Últimos 7 días",
     "hours_ago": "hai {n} h",
     "days_ago": "hai {n} d",
-    "cost_total": "≈ {cost} a prezos da API (estimación)"
+    "cost_total": "≈ {cost} pagando por token (estimación)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",
-    "body": "Reiníciase en {time}"
+    "body": "Recárgase en {time}"
   }
 }

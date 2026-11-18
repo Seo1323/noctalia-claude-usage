@@ -2,128 +2,128 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Frissítési időköz (perc)",
-      "description": "Milyen gyakran kérdezi le a használati API-t."
+      "label": "Ellenőrzés gyakorisága (perc)",
+      "description": "Milyen gyakran kéri le a modul az aktuális használatot."
     },
     "window": {
-      "label": "Korlátablak",
-      "description": "Melyik használati ablakot mutatja a sáv.",
-      "five_hour": "5 órás munkamenet",
-      "weekly": "Heti (7 nap)",
+      "label": "Melyik korlát látszódjon",
+      "description": "A Claude Code-nak van 5 órás és heti korlátja. Az egyik vagy mindkettő megjeleníthető.",
+      "five_hour": "5 órás korlát",
+      "weekly": "Heti korlát (7d)",
       "both": "Mindkettő"
     },
     "display_mode": {
-      "label": "Részletek megjelenítése",
-      "description": "Mikor látszik a visszaállításig hátralévő idő, a tokenek és a sáv.",
+      "label": "Mikor látszódjanak a részletek",
+      "description": "A részletek: az idő a korlát feltöltődéséig, a tokenek és a sáv.",
       "always": "Mindig",
-      "important": "Csak magas használatnál (a figyelmeztetési küszöb felett)",
-      "hover": "Csak rámutatáskor (egyébként ikon vagy gyűrű)"
+      "important": "Csak magas használatnál",
+      "hover": "Csak ha rámutatok"
     },
     "logo": {
-      "label": "Ikon",
-      "description": "A szöveg előtt jelenik meg. A gyűrű a korlát hátralévő (vagy felhasznált) részével telik meg.",
+      "label": "Kép elöl",
+      "description": "A számok előtt jelenik meg. A gyűrű egy kis kör, amely a korlát használatával telik meg.",
       "none": "Nincs",
-      "glyph": "Glifa",
-      "star": "Csillag (mellékelt)",
-      "custom": "Egyéni kép",
+      "glyph": "Ikon",
+      "star": "Csillag",
+      "custom": "Saját kép",
       "ring": "Használati gyűrű"
     },
     "glyph": {
-      "label": "Glifa"
+      "label": "Melyik ikon"
     },
     "logo_path": {
-      "label": "Egyéni kép",
-      "description": "SVG vagy PNG. Üresen a bővítmény mappájában lévő logo.svg."
+      "label": "Saját kép",
+      "description": "SVG- vagy PNG-fájl. Üresen hagyva a bővítmény mappájában lévő logo.svg lesz használva."
     },
     "icon_size": {
-      "label": "Ikonméret (px)"
+      "label": "Kép mérete (px)"
     },
     "size": {
-      "label": "Ikonméret (px)"
+      "label": "Ikon mérete (px)"
     },
     "show_percent": {
-      "label": "Használati százalék megjelenítése"
+      "label": "Százalék megjelenítése"
     },
     "percent_mode": {
-      "label": "A százalék mutatja",
+      "label": "A százalék jelentése",
       "used": "Felhasznált (22%)",
       "left": "Hátralévő (78% maradt)"
     },
     "show_prefix": {
-      "label": "5h / 7d címkék megjelenítése",
-      "description": "Minden százalék elé odaírja az ablakát."
+      "label": "Melyik korlát látszódjon a százalék előtt",
+      "description": "Rövid nevet tesz minden százalék elé, például „5h” vagy „7d”."
     },
     "show_bar": {
-      "label": "Folyamatjelző megjelenítése",
+      "label": "Folyamatjelző sáv megjelenítése",
       "description": "Kis sáv a százalék mellett."
     },
     "bar_width": {
-      "label": "Folyamatjelző szélessége (px)"
+      "label": "A folyamatjelző szélessége (px)"
     },
     "gauge_mode": {
-      "label": "A sáv és a gyűrű mutatja",
-      "description": "Mivel telik meg a folyamatjelző és a használati gyűrű.",
-      "left": "Ami maradt",
+      "label": "A sáv és a gyűrű ezt mutatja",
+      "description": "Választható, hogy a megmaradt vagy a felhasznált résszel teljen meg.",
+      "left": "Ami megmaradt",
       "used": "Ami elfogyott"
     },
     "show_reset": {
-      "label": "Visszaállításig hátralévő idő",
-      "description": "Az ablak visszaállításáig hátralévő idő."
+      "label": "Idő a korlát feltöltődéséig",
+      "description": "Visszaszámlálás addig, amíg a korlát újra tele lesz."
     },
     "reset_format": {
-      "label": "Visszaállítási idő formátuma",
-      "compact": "Tömör (1:44)",
-      "verbose": "Részletes (1h 44m)"
+      "label": "Időformátum",
+      "compact": "Rövid (1:44)",
+      "verbose": "Hosszú (1h 44m)"
     },
     "ready_text": {
-      "label": "Szöveg, ha nincs függő visszaállítás",
-      "description": "A visszaszámlálás helyett jelenik meg, ha az ablak nem fut. Üresen = „kész” a saját nyelveden."
+      "label": "Szöveg, amikor a korlát tele van",
+      "description": "A visszaszámlálás helyett látszik, amíg ez a korlát még nincs használatban. Üresen hagyva: „kész”."
     },
     "show_tokens": {
       "label": "Felhasznált tokenek megjelenítése",
-      "description": "Az ablakban felhasznált tokenek (bemenet + kimenet + gyorsítótár-írás, a helyi átiratokból)."
+      "description": "A tokenek szövegdarabok, amelyeket a Claude olvas és ír. A saját számítógépen számolva."
     },
     "include_cache_read": {
-      "label": "Gyorsítótár-olvasások beszámítása",
-      "description": "A prompt-gyorsítótárból olvasott tokenek hozzáadása. Olcsók, de sok van belőlük, így a szám jóval nagyobb lesz."
+      "label": "Az újraolvasott szöveg is számítson",
+      "description": "A Claude minden válasz előtt újraolvassa a beszélgetést. Ha ez is számít, a szám sokkal nagyobb lesz."
     },
     "token_format": {
-      "label": "Tokenformátum",
+      "label": "A tokenszám írásmódja",
       "short": "Rövid (92k)",
-      "full": "Teljes (92424)"
+      "full": "Pontos (92424)"
     },
     "separator": {
-      "label": "Elválasztó az elemek között",
+      "label": "Elválasztó",
       "none": "Nincs",
       "dot": "Pont (·)",
       "bar": "Függőleges vonal (|)",
       "slash": "Perjel (/)"
     },
     "dim_extras": {
-      "label": "Idő és tokenek halványítása",
-      "description": "A visszaállításig hátralévő idő és a tokenek tompított színnel; csak a százalék tartja meg a használati színt."
+      "label": "Az idő és a tokenek halványabbak",
+      "description": "Csak a százalék tartja meg a figyelmeztető színeket."
     },
     "gap": {
-      "label": "Elemek közötti térköz (px)"
+      "label": "Távolság az elemek között (px)"
     },
     "font_weight": {
-      "label": "Betűvastagság",
+      "label": "Szöveg vastagsága",
       "medium": "Közepes",
       "bold": "Félkövér"
     },
     "color_by_usage": {
-      "label": "Színezés használat szerint",
-      "description": "A küszöbök felett figyelmeztető / kritikus színre vált."
+      "label": "Szín változik a használattal",
+      "description": "Az alábbi szinteken figyelmeztető, majd kritikus színre vált."
     },
     "warn_at": {
-      "label": "Figyelmeztetési küszöb (%)"
+      "label": "Figyelmeztetés ettől (%)"
     },
     "critical_at": {
-      "label": "Kritikus küszöb (%)"
+      "label": "Kritikus ettől (%)"
     },
     "color": {
-      "label": "Szövegszín",
-      "description": "Színszerep vagy hex szín normál használathoz."
+      "label": "Szokásos szövegszín",
+      "description": "Szín a témából vagy bármilyen más szín."
     },
     "warn_color": {
       "label": "Figyelmeztető szín"
@@ -132,47 +132,47 @@
       "label": "Kritikus szín"
     },
     "click_command": {
-      "label": "Kattintási parancs",
-      "description": "Bal kattintáskor futó shell-parancs, pl. alacritty -e claude."
+      "label": "Saját parancs",
+      "description": "Futtatandó parancs, például alacritty -e claude a Claude Code terminálban való megnyitásához."
     },
     "command": {
-      "label": "Kattintási parancs",
-      "description": "Az ikonra kattintáskor futó parancs."
+      "label": "Parancs kattintásra",
+      "description": "Az ikonra kattintva futó parancs, például alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Rámutatási animáció (ms)",
-      "description": "Mennyi idő alatt csúsznak elő és jelennek meg a részletek. 0 kikapcsolja az animációt."
+      "label": "Animáció sebessége (ms)",
+      "description": "Mennyi idő alatt jelennek meg a részletek, amikor a mutató a modul fölé ér. 0 = nincs animáció."
     },
     "percent_decimals": {
       "label": "Tizedesjegyek a százalékokban",
-      "description": "0 egészre kerekít. Az API jelenleg egész százalékokat ad, ezért a tizedesjegyek általában ,0-t mutatnak."
+      "description": "0 egész számokat mutat. A használat most egész százalékban érkezik, ezért a tizedesjegyek általában ,0-t mutatnak."
     },
     "launch_command": {
-      "label": "Claude Code parancs",
-      "description": "Terminálparancs, amellyel a panel elindítja a Claude Code-ot; a választott --model és mód hozzáfűződik."
+      "label": "A Claude Code-ot megnyitó parancs",
+      "description": "A panel ezzel nyitja meg a Claude Code-ot egy terminálban. A választott modell és munkamenet a végére kerül."
     },
     "click_action": {
-      "label": "Bal kattintás",
-      "description": "Mit csinál a bal kattintás a modulon. A jobb kattintás mindig frissít.",
+      "label": "Bal kattintás hatása",
+      "description": "Mi történik a modulra kattintva bal gombbal. A jobb kattintás mindig frissít.",
       "panel": "Panel megnyitása",
-      "command": "Kattintási parancs futtatása",
+      "command": "Saját parancs futtatása",
       "refresh": "Frissítés"
     },
     "panel_translucent": {
       "label": "Áttetsző panel",
-      "description": "A háttér átlátszik a panelen; a szöveg teljesen fedő marad."
+      "description": "A háttérkép átlátszik a panelen. A szöveg éles marad."
     },
     "panel_opacity": {
-      "label": "Panelháttér átlátszatlansága",
-      "description": "0 teljesen átlátszó, 1 tömör."
+      "label": "Mennyire fedő a panel",
+      "description": "0 = teljesen átlátszó, 1 = teljesen fedő."
     },
     "show_cost": {
-      "label": "Költség megjelenítése API-áron",
-      "description": "Az ablak tokenjeinek becsült költsége az Anthropic API listaárai szerint. Claude-előfizetéssel nem tokenenként fizetsz - ez azt mutatja, mennyibe kerülne ugyanez a használat az API-n."
+      "label": "Mennyibe kerülne",
+      "description": "Becslés arról, mennyibe kerülne ez a használat tokenenkénti fizetéssel. Claude-előfizetéssel ezt nem kell fizetni."
     },
     "currency": {
-      "label": "Költségek pénzneme",
-      "description": "A költségeket az Európai Központi Bank napi referencia-árfolyamaival váltja át USD-ből (legfeljebb 12 óránként tölti le, csak USD-től eltérő pénznemnél), hacsak nem adsz meg kézi árfolyamot.",
+      "label": "Pénznem",
+      "description": "A költségek amerikai dollárból számolódnak át az Európai Központi Bank napi árfolyamával vagy saját árfolyammal.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Kézi árfolyam",
-      "description": "A választott pénznem egységei 1 USD-re. 0 = napi EKB-árfolyam."
+      "label": "Saját árfolyam",
+      "description": "Mennyit ér 1 amerikai dollár a saját pénznemben. 0 = automatikusan a napi árfolyam."
     },
     "ring_thickness": {
       "label": "Gyűrű vastagsága",
@@ -205,48 +205,48 @@
       "thick": "Vastag"
     },
     "ring_track": {
-      "label": "Gyűrű sávjának megjelenítése",
-      "description": "A halvány teljes kör a kitöltött rész mögött."
+      "label": "A gyűrű hátterének megjelenítése",
+      "description": "Halvány teljes kör a kitöltött rész mögött."
     },
     "format": {
-      "label": "Szövegsablon",
-      "description": "Az elemeket saját szövegre cseréli, pl. {pct} · {reset} · {tokens}. Helyőrzők: {window} {pct} {left} {reset} {tokens} {cost} {model}. Üres = szokásos elrendezés."
+      "label": "Saját szöveg",
+      "description": "Saját szöveg a szokásos elemek helyett. A kapcsos zárójelben lévő szavak behelyettesítődnek: {window} {pct} {left} {reset} {tokens} {cost} {model}. Példa: {pct} · {reset}. Üresen hagyva a szokásos megjelenés marad."
     },
     "label_five": {
-      "label": "Az 5 órás ablak címkéje"
+      "label": "Az 5 órás korlát neve"
     },
     "label_week": {
-      "label": "A heti ablak címkéje"
+      "label": "A heti korlát neve"
     },
     "show_model": {
       "label": "Aktuális modell megjelenítése",
-      "description": "A legutóbbi Claude Code-üzeneted modellje, pl. Opus 5.5."
+      "description": "A legutóbb használt Claude-modell, például Opus 5.5."
     },
     "font_size": {
-      "label": "Betűméret (px)",
-      "description": "0 = a sáv betűmérete."
+      "label": "Szövegméret (px)",
+      "description": "0 = ugyanakkora, mint a sáv többi része."
     },
     "gradient": {
-      "label": "Folyamatos színátmenet",
-      "description": "A színek a használattal folyamatosan változnak, nem a küszöböknél ugranak."
+      "label": "Fokozatos színváltás",
+      "description": "A szín a használattal fokozatosan változik, nem ugrik a szinteknél."
     },
     "weekly_own_color": {
-      "label": "Saját szín a heti ablakhoz",
-      "description": "Más alapszín a 7d elemekhez, ha mindkét ablak látszik."
+      "label": "Más szín a heti korláthoz",
+      "description": "Akkor használatos, ha mindkét korlát látszik."
     },
     "weekly_color": {
-      "label": "A heti ablak színe"
+      "label": "A heti korlát színe"
     },
     "hide_below": {
-      "label": "Elrejtés e használat alatt (%)",
-      "description": "Elrejti a modult, amíg a használat ez alatt az érték alatt van. 0 = mindig látszik."
+      "label": "Rejtve, amíg a használat el nem éri (%)",
+      "description": "A modul rejtve marad, amíg a használat alacsony. 0 = mindig látszik."
     },
     "notify": {
       "label": "Értesítések",
-      "description": "Ablakonként egyszer értesítést mutat, amikor a használat átlép egy küszöböt.",
+      "description": "Egy értesítés, amikor a használat átlép egy szintet.",
       "off": "Ki",
-      "warning": "A figyelmeztetési és a kritikus küszöbnél",
-      "critical": "Csak a kritikus küszöbnél"
+      "warning": "A figyelmeztető és a kritikus szintnél",
+      "critical": "Csak a kritikus szintnél"
     },
     "custom_prices": {
       "label": "Saját tokenárak használata",
@@ -270,24 +270,24 @@
     "ready": "kész"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (visszaállítás: {time} múlva)",
-    "tokens": "tokenek: {tokens}, gyorsítótár-olvasás: {cache}",
-    "stale": "Elavult: {error}",
+    "window": "{window}: {pct}%  (feltöltődik {time} múlva)",
+    "tokens": "tokenek: {tokens}, újraolvasva: {cache}",
+    "stale": "Régebbi adatok — {error}",
     "loading": "Betöltés...",
-    "cost": "API-áron: {cost}"
+    "cost": "tokenenkénti fizetéssel: {cost}"
   },
   "error": {
     "no_credentials": "Nincs bejelentkezve a Claude Code-ba",
-    "token_expired": "A token lejárt - használd egyszer a Claude Code-ot a frissítéséhez",
+    "token_expired": "A bejelentkezés lejárt - a Claude Code egyszeri megnyitása megújítja",
     "network": "Nincs kapcsolat",
-    "bad_response": "Váratlan API-válasz",
-    "http_429": "Kéréskorlát - később újrapróbálja"
+    "bad_response": "Váratlan válasz a használati szolgáltatástól",
+    "http_429": "Túl sok lekérdezés - új próbálkozás néhány perc múlva"
   },
   "panel": {
-    "no_reset": "nincs függő visszaállítás",
-    "resets_in": "visszaállítás: {time} múlva",
+    "no_reset": "a korlát tele van",
+    "resets_in": "feltöltődik {time} múlva",
     "peak": "csúcs {tokens}",
-    "model_tokens": "{tokens} · {messages} üzenet · gyorsítótár {cache}",
+    "model_tokens": "{tokens} · {messages} üzenet · újraolvasva {cache}",
     "no_models": "Ebben az ablakban még nincs használat.",
     "by_model": "Tokenek modellenként",
     "refresh": "Frissítés",
@@ -302,10 +302,10 @@
     "last_7d": "Elmúlt 7 nap",
     "hours_ago": "{n} órája",
     "days_ago": "{n} napja",
-    "cost_total": "≈ {cost} API-áron (becslés)"
+    "cost_total": "≈ {cost} tokenenkénti fizetéssel (becslés)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",
-    "body": "Visszaállítás: {time} múlva"
+    "body": "Feltöltődik {time} múlva"
   }
 }

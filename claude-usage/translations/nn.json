@@ -2,177 +2,177 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Oppdateringsintervall (minutt)",
-      "description": "Kor ofte bruks-API-et vert spurt."
+      "label": "Kor ofte det skal sjekkast (minutt)",
+      "description": "Kor ofte widgeten hentar den noverande bruken din."
     },
     "window": {
-      "label": "Grensevindauge",
-      "description": "Kva bruksvindauge linja viser.",
-      "five_hour": "5-timarsøkt",
-      "weekly": "Vekentleg (7 d)",
+      "label": "Kva grense som skal visast",
+      "description": "Claude Code har ei grense per 5 timar og ei vekegrense. Vis éi av dei eller begge.",
+      "five_hour": "Grense per 5 timar",
+      "weekly": "Vekegrense (7 d)",
       "both": "Begge"
     },
     "display_mode": {
-      "label": "Vis detaljar",
-      "description": "Når tid til nullstilling, token og stolpe vert viste.",
+      "label": "Når detaljane skal visast",
+      "description": "Detaljane er tida til grensa er fylt opp att, tokena og stolpen.",
       "always": "Alltid",
-      "important": "Berre ved høg bruk (over åtvaringsgrensa)",
-      "hover": "Berre ved peikar over (elles ikon eller ring)"
+      "important": "Berre ved høg bruk",
+      "hover": "Berre når eg peikar på han"
     },
     "logo": {
-      "label": "Ikon",
-      "description": "Vert vist før teksten. Ringen vert fylt med den attverande (eller brukte) delen av grensa.",
+      "label": "Bilete framfor",
+      "description": "Vert vist før tala. Ringen er ein liten sirkel som vert fylt etter kvart som grensa vert brukt.",
       "none": "Ingen",
-      "glyph": "Glyf",
-      "star": "Stjerne (medfølgjande)",
-      "custom": "Eige bilete",
+      "glyph": "Ikon",
+      "star": "Stjerne",
+      "custom": "Mitt eige bilete",
       "ring": "Bruksring"
     },
     "glyph": {
-      "label": "Glyf"
+      "label": "Kva ikon"
     },
     "logo_path": {
-      "label": "Eige bilete",
-      "description": "SVG eller PNG. Tomt tyder logo.svg i programtilleggsmappa."
+      "label": "Mitt bilete",
+      "description": "Ei SVG- eller PNG-fil. La stå tomt for å bruka logo.svg frå programtilleggsmappa."
     },
     "icon_size": {
-      "label": "Ikonstorleik (px)"
+      "label": "Biletstorleik (px)"
     },
     "size": {
       "label": "Ikonstorleik (px)"
     },
     "show_percent": {
-      "label": "Vis bruk i prosent"
+      "label": "Vis prosenten"
     },
     "percent_mode": {
-      "label": "Prosenten viser",
+      "label": "Vis prosenten som",
       "used": "Brukt (22%)",
       "left": "Att (78% att)"
     },
     "show_prefix": {
-      "label": "Vis merkelappane 5h / 7d",
-      "description": "Set vindauget framfor kvar prosent."
+      "label": "Vis kva grense det er",
+      "description": "Set eit kort namn som «5h» eller «7d» framfor kvar prosent."
     },
     "show_bar": {
-      "label": "Vis framdriftsstolpe",
+      "label": "Vis ein framdriftsstolpe",
       "description": "Ein liten stolpe ved sida av prosenten."
     },
     "bar_width": {
-      "label": "Breidd på framdriftsstolpen (px)"
+      "label": "Breidda på framdriftsstolpen (px)"
     },
     "gauge_mode": {
-      "label": "Stolpe og ring viser",
-      "description": "Kva framdriftsstolpen og bruksringen vert fylte med.",
+      "label": "Stolpen og ringen viser",
+      "description": "Vel om dei vert fylte med det som er att eller med det som er brukt.",
       "left": "Det som er att",
       "used": "Det som er brukt"
     },
     "show_reset": {
-      "label": "Vis tid til nullstilling",
-      "description": "Tid att til vindauget vert nullstilt."
+      "label": "Vis tid til grensa er fylt opp att",
+      "description": "Ei nedteljing til grensa er full att."
     },
     "reset_format": {
-      "label": "Format for nullstillingstid",
-      "compact": "Kompakt (1:44)",
-      "verbose": "Utfyllande (1h 44m)"
+      "label": "Tidsformat",
+      "compact": "Kort (1:44)",
+      "verbose": "Langt (1h 44m)"
     },
     "ready_text": {
-      "label": "Tekst når inga nullstilling ventar",
-      "description": "Vert vist i staden for nedteljinga når vindauget ikkje går. Tomt = «klar» på ditt språk."
+      "label": "Tekst når grensa er full",
+      "description": "Vert vist i staden for nedteljinga så lenge grensa ikkje er brukt enno. La stå tomt for «klar»."
     },
     "show_tokens": {
       "label": "Vis brukte token",
-      "description": "Token brukte i vindauget (inndata + utdata + bufferoppretting, frå lokale transkript)."
+      "description": "Token er bitar av tekst som Claude les og skriv. Talde på din eigen datamaskin."
     },
     "include_cache_read": {
-      "label": "Ta med bufferlesingar",
-      "description": "Legg til token lesne frå prompt-bufferen. Dei er billege men mange, så talet vert mykje større."
+      "label": "Tel òg tekst som vert lesen på nytt",
+      "description": "Claude les samtalen på nytt før kvart svar. Vert det talt med, vert talet mykje større."
     },
     "token_format": {
-      "label": "Tokenformat",
+      "label": "Skrivemåte for talet på token",
       "short": "Kort (92k)",
-      "full": "Fullt (92424)"
+      "full": "Nøyaktig (92424)"
     },
     "separator": {
-      "label": "Skiljeteikn mellom element",
+      "label": "Skiljeteikn",
       "none": "Ingen",
       "dot": "Punkt (·)",
       "bar": "Strek (|)",
       "slash": "Skråstrek (/)"
     },
     "dim_extras": {
-      "label": "Dempa tid og token",
-      "description": "Vis tid til nullstilling og token i ein dempa farge; berre prosenten held på bruksfargen."
+      "label": "Gjer tida og tokena svakare",
+      "description": "Berre prosenten held på varselfargane."
     },
     "gap": {
-      "label": "Avstand mellom element (px)"
+      "label": "Avstand mellom elementa (px)"
     },
     "font_weight": {
-      "label": "Skriftvekt",
-      "medium": "Medium",
+      "label": "Tjukkleik på teksten",
+      "medium": "Middels",
       "bold": "Feit"
     },
     "color_by_usage": {
-      "label": "Farge etter bruk",
-      "description": "Byt til åtvarings- / kritiske fargar over grensene."
+      "label": "Skift farge når bruken aukar",
+      "description": "Skiftar til varselfargen og så til den kritiske fargen ved nivåa nedanfor."
     },
     "warn_at": {
-      "label": "Åtvaringsgrense (%)"
+      "label": "Varsel frå (%)"
     },
     "critical_at": {
-      "label": "Kritisk grense (%)"
+      "label": "Kritisk frå (%)"
     },
     "color": {
-      "label": "Tekstfarge",
-      "description": "Fargerolle eller hex-farge for vanleg bruk."
+      "label": "Vanleg tekstfarge",
+      "description": "Vel ein farge frå temaet ditt eller kva farge som helst."
     },
     "warn_color": {
-      "label": "Åtvaringsfarge"
+      "label": "Varselfarge"
     },
     "critical_color": {
       "label": "Kritisk farge"
     },
     "click_command": {
-      "label": "Klikkommando",
-      "description": "Skalkommando ved venstreklikk, t.d. alacritty -e claude."
+      "label": "Kommandoen min",
+      "description": "Ein kommando som skal køyrast, til dømes alacritty -e claude for å opna Claude Code i ein terminal."
     },
     "command": {
-      "label": "Klikkommando",
-      "description": "Kommando som vert køyrd når ikonet vert klikka."
+      "label": "Kommando ved klikk",
+      "description": "Ein kommando som vert køyrd når du klikkar på ikonet, til dømes alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Animasjon ved peikar over (ms)",
-      "description": "Kor lang tid detaljane brukar på å gli fram og tonast inn. 0 slår av animasjonen."
+      "label": "Fart på animasjonen (ms)",
+      "description": "Kor lang tid detaljane brukar på å gli fram når du peikar på widgeten. 0 = ingen animasjon."
     },
     "percent_decimals": {
       "label": "Desimalar i prosent",
-      "description": "0 rundar av til heiltal. API-et rapporterer no heile prosent, så desimalar viser oftast ,0."
+      "description": "0 viser heiltal. Bruken kjem no i heile prosent, så desimalane viser oftast ,0."
     },
     "launch_command": {
-      "label": "Claude Code-kommando",
-      "description": "Terminalkommando panelet startar Claude Code med; vald --model og modus vert lagde til."
+      "label": "Kommando som opnar Claude Code",
+      "description": "Panelet brukar han til å opna Claude Code i ein terminal. Vald modell og økt vert lagde til på slutten."
     },
     "click_action": {
       "label": "Venstreklikk",
-      "description": "Kva eit venstreklikk på widgeten gjer. Høgreklikk oppdaterer alltid.",
+      "description": "Kva som skjer når du venstreklikkar på widgeten. Høgreklikk oppdaterer alltid.",
       "panel": "Opna panelet",
-      "command": "Køyr klikkommandoen",
+      "command": "Køyrer kommandoen min",
       "refresh": "Oppdater"
     },
     "panel_translucent": {
       "label": "Gjennomsiktig panel",
-      "description": "Lèt bakgrunnen syna gjennom panelet; teksten held seg heilt dekkjande."
+      "description": "Lèt bakgrunnsbiletet syna gjennom panelet. Teksten held seg skarp."
     },
     "panel_opacity": {
-      "label": "Dekkevne for panelbakgrunnen",
-      "description": "0 er heilt gjennomsiktig, 1 er heildekkjande."
+      "label": "Kor dekkjande panelet er",
+      "description": "0 = heilt gjennomsiktig, 1 = heildekkjande."
     },
     "show_cost": {
-      "label": "Vis kostnad etter API-prisar",
-      "description": "Overslag over kostnaden for token i vindauget etter API-listeprisane til Anthropic. Med eit Claude-abonnement betaler du ikkje per token - dette viser kva same bruk ville kosta via API-et."
+      "label": "Vis kva det ville kosta",
+      "description": "Eit overslag over kva denne bruken ville kosta med betaling per token. Med eit Claude-abonnement betaler du ikkje dette."
     },
     "currency": {
-      "label": "Valuta for kostnader",
-      "description": "Kostnader vert rekna om frå USD med dei daglege referansekursane til Den europeiske sentralbanken (henta høgst kvar 12. time og berre for ei anna valuta enn USD), med mindre du set ein eigen kurs.",
+      "label": "Valuta",
+      "description": "Kostnadene vert rekna om frå amerikanske dollar med dei daglege kursane til Den europeiske sentralbanken eller med din eigen kurs.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,58 +195,58 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Manuell vekslingskurs",
-      "description": "Einingar av vald valuta per 1 USD. 0 = dagleg ESB-kurs."
+      "label": "Min vekslingskurs",
+      "description": "Kor mykje 1 amerikansk dollar er verd i valutaen din. 0 = bruk dagskursen automatisk."
     },
     "ring_thickness": {
-      "label": "Ringtjukkleik",
+      "label": "Tjukkleiken på ringen",
       "thin": "Tynn",
       "normal": "Normal",
       "thick": "Tjukk"
     },
     "ring_track": {
-      "label": "Vis ringsporet",
-      "description": "Den svake heile sirkelen bak den fylte delen."
+      "label": "Vis bakgrunnen til ringen",
+      "description": "Ein svak heil sirkel bak den fylte delen."
     },
     "format": {
-      "label": "Tekstmal",
-      "description": "Byter ut elementa med eigen tekst, t.d. {pct} · {reset} · {tokens}. Plasshaldarar: {window} {pct} {left} {reset} {tokens} {cost} {model}. Tomt = vanleg oppsett."
+      "label": "Min eigen tekst",
+      "description": "Skriv din eigen tekst i staden for dei vanlege elementa. Ord i krøllparentesar vert fylte inn: {window} {pct} {left} {reset} {tokens} {cost} {model}. Døme: {pct} · {reset}. La stå tomt for vanleg utsjånad."
     },
     "label_five": {
-      "label": "Merkelapp for 5-timarsvindauget"
+      "label": "Namn på grensa per 5 timar"
     },
     "label_week": {
-      "label": "Merkelapp for vekevindauget"
+      "label": "Namn på vekegrensa"
     },
     "show_model": {
       "label": "Vis gjeldande modell",
-      "description": "Modellen i den siste Claude Code-meldinga di, t.d. Opus 5.5."
+      "description": "Den sist brukte Claude-modellen, til dømes Opus 5.5."
     },
     "font_size": {
-      "label": "Skriftstorleik (px)",
-      "description": "0 = skriftstorleiken til linja."
+      "label": "Tekststorleik (px)",
+      "description": "0 = same storleik som resten av linja."
     },
     "gradient": {
       "label": "Mjuk fargeovergang",
-      "description": "Fargane går gradvis over med bruken i staden for å byta ved grensene."
+      "description": "Fargen endrar seg litt etter litt med bruken i staden for å hoppa ved nivåa."
     },
     "weekly_own_color": {
-      "label": "Eigen farge for vekevindauget",
-      "description": "Ein annan grunnfarge for 7d-elementa når begge vindauga er viste."
+      "label": "Annan farge for vekegrensa",
+      "description": "Vert brukt når begge grensene er viste."
     },
     "weekly_color": {
-      "label": "Fargen til vekevindauget"
+      "label": "Fargen til vekegrensa"
     },
     "hide_below": {
-      "label": "Gøym under bruk (%)",
-      "description": "Gøymer widgeten så lenge bruken er under denne verdien. 0 = vis alltid."
+      "label": "Gøym til bruken når (%)",
+      "description": "Held widgeten ute av syne medan bruken er låg. 0 = alltid synleg."
     },
     "notify": {
       "label": "Varsel",
-      "description": "Viser eit varsel éin gong per vindauge når bruken passerer ei grense.",
+      "description": "Få eitt varsel når bruken passerer eit nivå.",
       "off": "Av",
-      "warning": "Ved åtvarings- og kritisk grense",
-      "critical": "Berre ved kritisk grense"
+      "warning": "Ved varsel- og det kritiske nivået",
+      "critical": "Berre ved det kritiske nivået"
     },
     "custom_prices": {
       "label": "Bruk eigne tokenprisar",
@@ -270,24 +270,24 @@
     "ready": "klar"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (nullstilt om {time})",
-    "tokens": "token: {tokens}, bufferlesing: {cache}",
-    "stale": "Utdatert: {error}",
+    "window": "{window}: {pct} %  (full att om {time})",
+    "tokens": "token: {tokens}, lesne på nytt: {cache}",
+    "stale": "Eldre tal — {error}",
     "loading": "Lastar...",
-    "cost": "etter API-prisar: {cost}"
+    "cost": "ved betaling per token: {cost}"
   },
   "error": {
     "no_credentials": "Ikkje logga inn i Claude Code",
-    "token_expired": "Tokenet har gått ut - bruk Claude Code éin gong for å fornya det",
+    "token_expired": "Innlogginga har gått ut - opna Claude Code éin gong for å fornya ho",
     "network": "Inga tilkopling",
-    "bad_response": "Uventa API-svar",
-    "http_429": "Avgrensa førespurnader - prøver på nytt"
+    "bad_response": "Uventa svar frå brukstenesta",
+    "http_429": "For mange sjekkar - nytt forsøk om nokre minutt"
   },
   "panel": {
-    "no_reset": "inga ventande nullstilling",
-    "resets_in": "nullstilt om {time}",
+    "no_reset": "grensa er full",
+    "resets_in": "full att om {time}",
     "peak": "topp {tokens}",
-    "model_tokens": "{tokens} · {messages} meld. · buffer {cache}",
+    "model_tokens": "{tokens} · {messages} meldingar · lesne på nytt {cache}",
     "no_models": "Inga bruk i dette vindauget enno.",
     "by_model": "Token per modell",
     "refresh": "Oppdater",
@@ -302,10 +302,10 @@
     "last_7d": "Siste 7 dagar",
     "hours_ago": "for {n} t sidan",
     "days_ago": "for {n} d sidan",
-    "cost_total": "≈ {cost} etter API-prisar (overslag)"
+    "cost_total": "≈ {cost} ved betaling per token (overslag)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",
-    "body": "Nullstilt om {time}"
+    "body": "Full att om {time}"
   }
 }

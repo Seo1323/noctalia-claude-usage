@@ -2,56 +2,56 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Khoảng làm mới (phút)",
-      "description": "Tần suất truy vấn API sử dụng."
+      "label": "Tần suất kiểm tra (phút)",
+      "description": "Widget lấy mức sử dụng hiện tại của bạn bao lâu một lần."
     },
     "window": {
-      "label": "Cửa sổ giới hạn",
-      "description": "Thanh hiển thị cửa sổ sử dụng nào.",
-      "five_hour": "Phiên 5 giờ",
-      "weekly": "Hằng tuần (7 ngày)",
+      "label": "Hiện giới hạn nào",
+      "description": "Claude Code có giới hạn 5 giờ và giới hạn hằng tuần. Hiện một trong hai hoặc cả hai.",
+      "five_hour": "Giới hạn 5 giờ",
+      "weekly": "Giới hạn hằng tuần (7 ngày)",
       "both": "Cả hai"
     },
     "display_mode": {
-      "label": "Hiện chi tiết",
-      "description": "Khi nào hiện thời gian đến lúc đặt lại, token và thanh.",
+      "label": "Khi nào hiện chi tiết",
+      "description": "Chi tiết gồm thời gian đến khi giới hạn đầy lại, số token và thanh.",
       "always": "Luôn luôn",
-      "important": "Chỉ khi mức dùng cao (trên ngưỡng cảnh báo)",
-      "hover": "Chỉ khi rê chuột (nếu không thì biểu tượng hoặc vòng)"
+      "important": "Chỉ khi dùng nhiều",
+      "hover": "Chỉ khi rê chuột vào"
     },
     "logo": {
-      "label": "Biểu tượng",
-      "description": "Hiển thị trước văn bản. Vòng được tô theo phần còn lại (hoặc đã dùng) của giới hạn.",
+      "label": "Hình phía trước",
+      "description": "Hiện trước các con số. Vòng là một vòng tròn nhỏ đầy dần khi giới hạn được dùng.",
       "none": "Không có",
-      "glyph": "Glyph",
-      "star": "Ngôi sao (đi kèm)",
-      "custom": "Ảnh tùy chỉnh",
+      "glyph": "Biểu tượng",
+      "star": "Ngôi sao",
+      "custom": "Hình của tôi",
       "ring": "Vòng sử dụng"
     },
     "glyph": {
-      "label": "Glyph"
+      "label": "Biểu tượng nào"
     },
     "logo_path": {
-      "label": "Ảnh tùy chỉnh",
-      "description": "SVG hoặc PNG. Để trống nghĩa là logo.svg trong thư mục plugin."
+      "label": "Hình của tôi",
+      "description": "Một tệp SVG hoặc PNG. Để trống để dùng logo.svg trong thư mục plugin."
     },
     "icon_size": {
-      "label": "Kích thước biểu tượng (px)"
+      "label": "Kích thước hình (px)"
     },
     "size": {
       "label": "Kích thước biểu tượng (px)"
     },
     "show_percent": {
-      "label": "Hiện phần trăm sử dụng"
+      "label": "Hiện phần trăm"
     },
     "percent_mode": {
-      "label": "Phần trăm hiển thị",
+      "label": "Hiện phần trăm theo kiểu",
       "used": "Đã dùng (22%)",
       "left": "Còn lại (còn 78%)"
     },
     "show_prefix": {
-      "label": "Hiện nhãn 5h / 7d",
-      "description": "Thêm tên cửa sổ trước mỗi phần trăm."
+      "label": "Cho biết đó là giới hạn nào",
+      "description": "Đặt một tên ngắn như “5h” hoặc “7d” trước mỗi phần trăm."
     },
     "show_bar": {
       "label": "Hiện thanh tiến trình",
@@ -61,39 +61,39 @@
       "label": "Độ rộng thanh tiến trình (px)"
     },
     "gauge_mode": {
-      "label": "Thanh và vòng hiển thị",
-      "description": "Thanh tiến trình và vòng sử dụng được tô theo gì.",
+      "label": "Thanh và vòng thể hiện",
+      "description": "Chọn chúng đầy theo phần còn lại hay phần đã dùng.",
       "left": "Phần còn lại",
       "used": "Phần đã dùng"
     },
     "show_reset": {
-      "label": "Hiện thời gian đến lúc đặt lại",
-      "description": "Thời gian còn lại cho đến khi cửa sổ được đặt lại."
+      "label": "Hiện thời gian đến khi giới hạn đầy lại",
+      "description": "Đếm ngược đến lúc giới hạn của bạn đầy trở lại."
     },
     "reset_format": {
-      "label": "Định dạng thời gian đặt lại",
-      "compact": "Gọn (1:44)",
-      "verbose": "Đầy đủ (1h 44m)"
+      "label": "Định dạng thời gian",
+      "compact": "Ngắn (1:44)",
+      "verbose": "Dài (1h 44m)"
     },
     "ready_text": {
-      "label": "Văn bản khi không có lần đặt lại nào",
-      "description": "Hiển thị thay cho đếm ngược khi cửa sổ không chạy. Để trống = \"sẵn sàng\" theo ngôn ngữ của bạn."
+      "label": "Văn bản khi giới hạn còn đầy",
+      "description": "Hiện thay cho đếm ngược khi giới hạn này chưa được dùng. Để trống để hiện “sẵn sàng”."
     },
     "show_tokens": {
-      "label": "Hiện token đã dùng",
-      "description": "Token đã dùng trong cửa sổ (đầu vào + đầu ra + tạo bộ nhớ đệm, từ bản ghi cục bộ)."
+      "label": "Hiện số token đã dùng",
+      "description": "Token là những mẩu văn bản mà Claude đọc và viết. Được đếm ngay trên máy tính của bạn."
     },
     "include_cache_read": {
-      "label": "Tính cả lượt đọc bộ nhớ đệm",
-      "description": "Cộng thêm token đọc từ bộ nhớ đệm prompt. Chúng rẻ nhưng nhiều, nên con số lớn hơn nhiều."
+      "label": "Đếm cả văn bản được đọc lại",
+      "description": "Trước mỗi câu trả lời, Claude đọc lại cuộc trò chuyện. Tính cả phần này làm con số lớn hơn nhiều."
     },
     "token_format": {
-      "label": "Định dạng token",
+      "label": "Cách viết số token",
       "short": "Ngắn (92k)",
-      "full": "Đầy đủ (92424)"
+      "full": "Chính xác (92424)"
     },
     "separator": {
-      "label": "Dấu phân cách giữa các mục",
+      "label": "Dấu phân cách",
       "none": "Không có",
       "dot": "Dấu chấm (·)",
       "bar": "Gạch đứng (|)",
@@ -101,29 +101,29 @@
     },
     "dim_extras": {
       "label": "Làm mờ thời gian và token",
-      "description": "Hiện thời gian đặt lại và token bằng màu dịu; chỉ phần trăm giữ màu sử dụng."
+      "description": "Chỉ phần trăm giữ màu cảnh báo."
     },
     "gap": {
       "label": "Khoảng cách giữa các mục (px)"
     },
     "font_weight": {
-      "label": "Độ đậm phông chữ",
+      "label": "Độ đậm của chữ",
       "medium": "Vừa",
       "bold": "Đậm"
     },
     "color_by_usage": {
-      "label": "Tô màu theo mức dùng",
-      "description": "Chuyển sang màu cảnh báo / nguy cấp khi vượt ngưỡng."
+      "label": "Đổi màu khi dùng nhiều hơn",
+      "description": "Chuyển sang màu cảnh báo, rồi màu nguy cấp ở các mức bên dưới."
     },
     "warn_at": {
-      "label": "Ngưỡng cảnh báo (%)"
+      "label": "Cảnh báo từ (%)"
     },
     "critical_at": {
-      "label": "Ngưỡng nguy cấp (%)"
+      "label": "Nguy cấp từ (%)"
     },
     "color": {
-      "label": "Màu chữ",
-      "description": "Vai trò màu hoặc màu hex cho mức dùng bình thường."
+      "label": "Màu chữ bình thường",
+      "description": "Chọn một màu từ chủ đề hoặc bất kỳ màu nào bạn thích."
     },
     "warn_color": {
       "label": "Màu cảnh báo"
@@ -132,47 +132,47 @@
       "label": "Màu nguy cấp"
     },
     "click_command": {
-      "label": "Lệnh khi nhấp",
-      "description": "Lệnh shell chạy khi nhấp chuột trái, ví dụ alacritty -e claude."
+      "label": "Lệnh của tôi",
+      "description": "Một lệnh để chạy, ví dụ alacritty -e claude để mở Claude Code trong terminal."
     },
     "command": {
       "label": "Lệnh khi nhấp",
-      "description": "Lệnh chạy khi nhấp vào biểu tượng."
+      "description": "Lệnh chạy khi nhấp vào biểu tượng, ví dụ alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Hiệu ứng khi rê chuột (ms)",
-      "description": "Thời gian để chi tiết trượt ra và hiện dần. 0 tắt hiệu ứng."
+      "label": "Tốc độ hiệu ứng (ms)",
+      "description": "Thời gian để chi tiết hiện ra khi rê chuột vào widget. 0 = không có hiệu ứng."
     },
     "percent_decimals": {
-      "label": "Số chữ số thập phân của phần trăm",
-      "description": "0 làm tròn thành số nguyên. Hiện API trả về phần trăm nguyên, nên phần thập phân thường hiện ,0."
+      "label": "Số thập phân của phần trăm",
+      "description": "0 hiện số nguyên. Hiện mức dùng được báo theo phần trăm nguyên, nên phần thập phân thường là ,0."
     },
     "launch_command": {
-      "label": "Lệnh Claude Code",
-      "description": "Lệnh terminal mà bảng dùng để khởi động Claude Code; --model và chế độ đã chọn được thêm vào."
+      "label": "Lệnh mở Claude Code",
+      "description": "Bảng dùng lệnh này để mở Claude Code trong terminal. Mô hình và phiên đã chọn được thêm vào cuối."
     },
     "click_action": {
-      "label": "Nhấp chuột trái",
-      "description": "Nhấp chuột trái vào widget sẽ làm gì. Nhấp chuột phải luôn làm mới.",
+      "label": "Nhấp chuột trái sẽ",
+      "description": "Điều gì xảy ra khi nhấp chuột trái vào widget. Nhấp chuột phải luôn làm mới.",
       "panel": "Mở bảng",
-      "command": "Chạy lệnh khi nhấp",
+      "command": "Chạy lệnh của tôi",
       "refresh": "Làm mới"
     },
     "panel_translucent": {
-      "label": "Bảng trong mờ",
-      "description": "Cho hình nền hiện qua nền bảng; chữ vẫn rõ hoàn toàn."
+      "label": "Bảng trong suốt",
+      "description": "Cho hình nền hiện qua bảng. Chữ vẫn sắc nét."
     },
     "panel_opacity": {
-      "label": "Độ mờ đục của nền bảng",
-      "description": "0 là trong suốt hoàn toàn, 1 là đặc."
+      "label": "Độ đặc của bảng",
+      "description": "0 = trong suốt hoàn toàn, 1 = đặc."
     },
     "show_cost": {
-      "label": "Hiện chi phí theo giá API",
-      "description": "Chi phí ước tính của token trong cửa sổ theo bảng giá API của Anthropic. Với gói đăng ký Claude bạn không trả tiền theo token - đây là số tiền nếu dùng tương tự qua API."
+      "label": "Hiện chi phí ước tính",
+      "description": "Ước tính mức sử dụng này sẽ tốn bao nhiêu nếu trả tiền theo token. Với gói đăng ký Claude, bạn không phải trả khoản này."
     },
     "currency": {
-      "label": "Tiền tệ cho chi phí",
-      "description": "Chi phí được quy đổi từ USD theo tỷ giá tham chiếu hằng ngày của Ngân hàng Trung ương châu Âu (tải tối đa 12 giờ một lần và chỉ khi dùng tiền tệ khác USD), trừ khi bạn đặt tỷ giá thủ công.",
+      "label": "Tiền tệ",
+      "description": "Chi phí được đổi từ đô la Mỹ theo tỷ giá hằng ngày của Ngân hàng Trung ương châu Âu hoặc theo tỷ giá của bạn.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,58 +195,58 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Tỷ giá thủ công",
-      "description": "Số đơn vị tiền tệ đã chọn cho 1 USD. 0 = tỷ giá hằng ngày của ECB."
+      "label": "Tỷ giá của tôi",
+      "description": "1 đô la Mỹ bằng bao nhiêu tiền của bạn. 0 = tự động dùng tỷ giá trong ngày."
     },
     "ring_thickness": {
-      "label": "Độ dày vòng",
+      "label": "Độ dày của vòng",
       "thin": "Mỏng",
       "normal": "Bình thường",
       "thick": "Dày"
     },
     "ring_track": {
-      "label": "Hiện đường nền của vòng",
-      "description": "Vòng tròn mờ đầy đủ phía sau phần đã tô."
+      "label": "Hiện nền của vòng",
+      "description": "Một vòng tròn đầy đủ mờ phía sau phần đã tô."
     },
     "format": {
-      "label": "Mẫu văn bản",
-      "description": "Thay các mục bằng văn bản của bạn, ví dụ {pct} · {reset} · {tokens}. Biến: {window} {pct} {left} {reset} {tokens} {cost} {model}. Để trống = bố cục thường."
+      "label": "Văn bản của tôi",
+      "description": "Viết văn bản của riêng bạn thay cho các mục thông thường. Các từ trong ngoặc nhọn sẽ được thay: {window} {pct} {left} {reset} {tokens} {cost} {model}. Ví dụ: {pct} · {reset}. Để trống để giữ giao diện bình thường."
     },
     "label_five": {
-      "label": "Nhãn cho cửa sổ 5 giờ"
+      "label": "Tên của giới hạn 5 giờ"
     },
     "label_week": {
-      "label": "Nhãn cho cửa sổ hằng tuần"
+      "label": "Tên của giới hạn hằng tuần"
     },
     "show_model": {
       "label": "Hiện mô hình hiện tại",
-      "description": "Mô hình của tin nhắn Claude Code gần nhất, ví dụ Opus 5.5."
+      "description": "Mô hình Claude được dùng gần nhất, ví dụ Opus 5.5."
     },
     "font_size": {
       "label": "Cỡ chữ (px)",
-      "description": "0 = cỡ chữ của thanh."
+      "description": "0 = cùng cỡ với phần còn lại của thanh."
     },
     "gradient": {
-      "label": "Chuyển màu mượt",
-      "description": "Màu thay đổi dần theo mức dùng thay vì đổi đột ngột ở các ngưỡng."
+      "label": "Đổi màu mượt",
+      "description": "Màu thay đổi dần theo mức dùng thay vì đổi đột ngột ở các mức."
     },
     "weekly_own_color": {
-      "label": "Màu riêng cho cửa sổ hằng tuần",
-      "description": "Một màu nền khác cho các mục 7d khi hiện cả hai cửa sổ."
+      "label": "Màu khác cho giới hạn hằng tuần",
+      "description": "Dùng khi hiện cả hai giới hạn."
     },
     "weekly_color": {
-      "label": "Màu cửa sổ hằng tuần"
+      "label": "Màu của giới hạn hằng tuần"
     },
     "hide_below": {
-      "label": "Ẩn khi mức dùng dưới (%)",
-      "description": "Ẩn widget khi mức dùng dưới giá trị này. 0 = luôn hiện."
+      "label": "Ẩn cho đến khi mức dùng đạt (%)",
+      "description": "Giữ widget ẩn khi mức dùng còn thấp. 0 = luôn hiện."
     },
     "notify": {
       "label": "Thông báo",
-      "description": "Hiện thông báo một lần cho mỗi cửa sổ khi mức dùng vượt ngưỡng.",
+      "description": "Nhận một thông báo khi mức dùng vượt qua một mức.",
       "off": "Tắt",
-      "warning": "Ở ngưỡng cảnh báo và nguy cấp",
-      "critical": "Chỉ ở ngưỡng nguy cấp"
+      "warning": "Ở mức cảnh báo và mức nguy cấp",
+      "critical": "Chỉ ở mức nguy cấp"
     },
     "custom_prices": {
       "label": "Dùng giá token của tôi",
@@ -270,24 +270,24 @@
     "ready": "sẵn sàng"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (đặt lại sau {time})",
-    "tokens": "token: {tokens}, đọc bộ nhớ đệm: {cache}",
-    "stale": "Đã cũ: {error}",
+    "window": "{window}: {pct}%  (đầy lại sau {time})",
+    "tokens": "token: {tokens}, đọc lại: {cache}",
+    "stale": "Số liệu cũ hơn — {error}",
     "loading": "Đang tải...",
-    "cost": "theo giá API: {cost}"
+    "cost": "nếu trả theo token: {cost}"
   },
   "error": {
     "no_credentials": "Chưa đăng nhập Claude Code",
-    "token_expired": "Token đã hết hạn - hãy dùng Claude Code một lần để làm mới",
+    "token_expired": "Phiên đăng nhập đã hết hạn - mở Claude Code một lần để gia hạn",
     "network": "Không có kết nối",
-    "bad_response": "Phản hồi API không mong đợi",
-    "http_429": "Bị giới hạn yêu cầu - sẽ thử lại"
+    "bad_response": "Dịch vụ sử dụng trả lời không như mong đợi",
+    "http_429": "Kiểm tra quá nhiều lần - sẽ thử lại sau vài phút"
   },
   "panel": {
-    "no_reset": "không có lần đặt lại nào",
-    "resets_in": "đặt lại sau {time}",
+    "no_reset": "giới hạn đang đầy",
+    "resets_in": "đầy lại sau {time}",
     "peak": "đỉnh {tokens}",
-    "model_tokens": "{tokens} · {messages} tin · bộ nhớ đệm {cache}",
+    "model_tokens": "{tokens} · {messages} tin nhắn · đọc lại {cache}",
     "no_models": "Chưa có lượt dùng trong cửa sổ này.",
     "by_model": "Token theo mô hình",
     "refresh": "Làm mới",
@@ -302,10 +302,10 @@
     "last_7d": "7 ngày qua",
     "hours_ago": "{n} giờ trước",
     "days_ago": "{n} ngày trước",
-    "cost_total": "≈ {cost} theo giá API (ước tính)"
+    "cost_total": "≈ {cost} nếu trả theo token (ước tính)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",
-    "body": "Đặt lại sau {time}"
+    "body": "Đầy lại sau {time}"
   }
 }

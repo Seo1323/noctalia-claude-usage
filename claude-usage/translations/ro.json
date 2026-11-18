@@ -2,59 +2,59 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Interval de reîmprospătare (minute)",
-      "description": "Cât de des este interogat API-ul de utilizare."
+      "label": "Cât de des să verifice (minute)",
+      "description": "Cât de des preia widgetul utilizarea ta actuală."
     },
     "window": {
-      "label": "Fereastra limitei",
-      "description": "Ce fereastră de utilizare afișează bara.",
-      "five_hour": "Sesiune de 5 ore",
-      "weekly": "Săptămânal (7z)",
-      "both": "Ambele"
+      "label": "Ce limită să afișeze",
+      "description": "Claude Code are o limită de 5 ore și una săptămânală. Afișează una dintre ele sau pe amândouă.",
+      "five_hour": "Limita de 5 ore",
+      "weekly": "Limita săptămânală (7z)",
+      "both": "Amândouă"
     },
     "display_mode": {
-      "label": "Afișează detalii",
-      "description": "Când se afișează timpul până la resetare, tokenurile și bara.",
+      "label": "Când să afișeze detaliile",
+      "description": "Detaliile sunt timpul până se reîncarcă limita, tokenurile și bara.",
       "always": "Mereu",
-      "important": "Doar la utilizare mare (peste pragul de avertizare)",
-      "hover": "Doar la trecerea cursorului (altfel pictogramă sau inel)"
+      "important": "Doar la utilizare mare",
+      "hover": "Doar la trecerea cursorului"
     },
     "logo": {
-      "label": "Pictogramă",
-      "description": "Afișată înaintea textului. Inelul se umple cu partea rămasă (sau folosită) din limită.",
+      "label": "Imagine în față",
+      "description": "Afișată înaintea numerelor. Inelul este un cerc mic care se umple pe măsură ce limita este folosită.",
       "none": "Niciuna",
-      "glyph": "Glif",
-      "star": "Stea (inclusă)",
-      "custom": "Imagine personalizată",
+      "glyph": "Pictogramă",
+      "star": "Stea",
+      "custom": "Imaginea mea",
       "ring": "Inel de utilizare"
     },
     "glyph": {
-      "label": "Glif"
+      "label": "Ce pictogramă"
     },
     "logo_path": {
-      "label": "Imagine personalizată",
-      "description": "SVG sau PNG. Gol înseamnă logo.svg din folderul pluginului."
+      "label": "Imaginea mea",
+      "description": "Un fișier SVG sau PNG. Lasă gol pentru logo.svg din folderul pluginului."
     },
     "icon_size": {
-      "label": "Dimensiune pictogramă (px)"
+      "label": "Mărimea imaginii (px)"
     },
     "size": {
-      "label": "Dimensiune pictogramă (px)"
+      "label": "Mărimea pictogramei (px)"
     },
     "show_percent": {
-      "label": "Afișează procentul de utilizare"
+      "label": "Afișează procentul"
     },
     "percent_mode": {
-      "label": "Procentul arată",
+      "label": "Afișează procentul ca",
       "used": "Folosit (22%)",
       "left": "Rămas (78% rămas)"
     },
     "show_prefix": {
-      "label": "Afișează etichetele 5h / 7d",
-      "description": "Prefixează fiecare procent cu fereastra sa."
+      "label": "Arată ce limită este",
+      "description": "Pune un nume scurt, cum ar fi „5h” sau „7d”, înaintea fiecărui procent."
     },
     "show_bar": {
-      "label": "Afișează bara de progres",
+      "label": "Afișează o bară de progres",
       "description": "O bară mică lângă procent."
     },
     "bar_width": {
@@ -62,38 +62,38 @@
     },
     "gauge_mode": {
       "label": "Bara și inelul arată",
-      "description": "Cu ce se umplu bara de progres și inelul de utilizare.",
+      "description": "Alege dacă se umplu cu ce a rămas sau cu ce s-a folosit.",
       "left": "Ce a rămas",
       "used": "Ce s-a folosit"
     },
     "show_reset": {
-      "label": "Afișează timpul până la resetare",
-      "description": "Timpul rămas până la resetarea ferestrei."
+      "label": "Afișează timpul până la reîncărcare",
+      "description": "O numărătoare inversă până când limita este din nou plină."
     },
     "reset_format": {
-      "label": "Formatul timpului de resetare",
-      "compact": "Compact (1:44)",
-      "verbose": "Detaliat (1h 44m)"
+      "label": "Formatul orei",
+      "compact": "Scurt (1:44)",
+      "verbose": "Lung (1h 44m)"
     },
     "ready_text": {
-      "label": "Text când nu este programată nicio resetare",
-      "description": "Afișat în locul numărătorii inverse când fereastra nu rulează. Gol = „gata” în limba ta."
+      "label": "Text când limita este plină",
+      "description": "Afișat în locul numărătorii inverse cât timp limita nu a fost încă folosită. Lasă gol pentru „gata”."
     },
     "show_tokens": {
       "label": "Afișează tokenurile folosite",
-      "description": "Tokenuri folosite în fereastră (intrare + ieșire + creare cache, din transcrierile locale)."
+      "description": "Tokenurile sunt bucăți de text pe care Claude le citește și le scrie. Numărate pe calculatorul tău."
     },
     "include_cache_read": {
-      "label": "Include citirile din cache",
-      "description": "Adaugă tokenurile citite din cache-ul de prompturi. Sunt ieftine, dar numeroase, așa că numărul crește mult."
+      "label": "Numără și textul recitit",
+      "description": "Claude recitește conversația înaintea fiecărui răspuns. Dacă se numără și asta, numărul crește mult."
     },
     "token_format": {
-      "label": "Formatul tokenurilor",
+      "label": "Scrierea numărului de tokenuri",
       "short": "Scurt (92k)",
-      "full": "Complet (92424)"
+      "full": "Exact (92424)"
     },
     "separator": {
-      "label": "Separator între elemente",
+      "label": "Separator",
       "none": "Niciunul",
       "dot": "Punct (·)",
       "bar": "Bară (|)",
@@ -101,29 +101,29 @@
     },
     "dim_extras": {
       "label": "Estompează timpul și tokenurile",
-      "description": "Afișează timpul până la resetare și tokenurile într-o culoare estompată; doar procentul păstrează culoarea utilizării."
+      "description": "Doar procentul păstrează culorile de avertizare."
     },
     "gap": {
       "label": "Spațiu între elemente (px)"
     },
     "font_weight": {
-      "label": "Grosimea fontului",
+      "label": "Grosimea textului",
       "medium": "Medie",
       "bold": "Aldin"
     },
     "color_by_usage": {
-      "label": "Culoare după utilizare",
-      "description": "Comută la culorile de avertizare / critice peste praguri."
+      "label": "Schimbă culoarea odată cu utilizarea",
+      "description": "Trece la culoarea de avertizare și apoi la cea critică la nivelurile de mai jos."
     },
     "warn_at": {
-      "label": "Prag de avertizare (%)"
+      "label": "Avertizare de la (%)"
     },
     "critical_at": {
-      "label": "Prag critic (%)"
+      "label": "Critic de la (%)"
     },
     "color": {
-      "label": "Culoarea textului",
-      "description": "Rol de culoare sau culoare hex pentru utilizare normală."
+      "label": "Culoarea normală a textului",
+      "description": "Alege o culoare din temă sau orice altă culoare."
     },
     "warn_color": {
       "label": "Culoare de avertizare"
@@ -132,47 +132,47 @@
       "label": "Culoare critică"
     },
     "click_command": {
-      "label": "Comandă la clic",
-      "description": "Comandă shell rulată la clic stânga, de ex. alacritty -e claude."
+      "label": "Comanda mea",
+      "description": "O comandă de rulat, de exemplu alacritty -e claude pentru a deschide Claude Code într-un terminal."
     },
     "command": {
       "label": "Comandă la clic",
-      "description": "Comandă rulată la clic pe pictogramă."
+      "description": "O comandă rulată la clic pe pictogramă, de exemplu alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Animație la trecerea cursorului (ms)",
-      "description": "Cât durează până apar detaliile. 0 dezactivează animația."
+      "label": "Viteza animației (ms)",
+      "description": "Cât durează până apar detaliile când cursorul trece peste widget. 0 = fără animație."
     },
     "percent_decimals": {
       "label": "Zecimale în procente",
-      "description": "0 rotunjește la numere întregi. API-ul raportează acum procente întregi, așa că zecimalele arată de obicei ,0."
+      "description": "0 afișează numere întregi. Acum utilizarea vine în procente întregi, așa că zecimalele arată de obicei ,0."
     },
     "launch_command": {
-      "label": "Comanda Claude Code",
-      "description": "Comanda de terminal cu care panoul pornește Claude Code; se adaugă --model și modul alese."
+      "label": "Comanda care deschide Claude Code",
+      "description": "Panoul o folosește pentru a deschide Claude Code într-un terminal. Modelul și sesiunea alese se adaugă la sfârșit."
     },
     "click_action": {
-      "label": "Clic stânga",
-      "description": "Ce face un clic stânga pe widget. Clicul dreapta reîmprospătează mereu.",
+      "label": "Clicul stânga",
+      "description": "Ce se întâmplă la un clic stânga pe widget. Clicul dreapta reîmprospătează mereu.",
       "panel": "Deschide panoul",
-      "command": "Rulează comanda de clic",
+      "command": "Rulează comanda mea",
       "refresh": "Reîmprospătează"
     },
     "panel_translucent": {
-      "label": "Panou translucid",
-      "description": "Lasă fundalul să se vadă prin panou; textul rămâne complet opac."
+      "label": "Panou transparent",
+      "description": "Lasă imaginea de fundal să se vadă prin panou. Textul rămâne clar."
     },
     "panel_opacity": {
-      "label": "Opacitatea fundalului panoului",
-      "description": "0 este complet transparent, 1 este solid."
+      "label": "Cât de opac este panoul",
+      "description": "0 = complet transparent, 1 = plin."
     },
     "show_cost": {
-      "label": "Afișează costul la prețurile API",
-      "description": "Costul estimat al tokenurilor din fereastră la prețurile de listă ale API-ului Anthropic. Cu un abonament Claude nu plătești per token - arată cât ar costa aceeași utilizare prin API."
+      "label": "Arată cât ar costa",
+      "description": "O estimare a cât ar costa această utilizare dacă s-ar plăti per token. Cu un abonament Claude nu plătești asta."
     },
     "currency": {
-      "label": "Moneda costurilor",
-      "description": "Costurile sunt convertite din USD cu cursurile de referință zilnice ale Băncii Centrale Europene (preluate cel mult la 12 ore și doar pentru o altă monedă decât USD), dacă nu setezi un curs manual.",
+      "label": "Monedă",
+      "description": "Costurile sunt convertite din dolari americani cu cursurile zilnice ale Băncii Centrale Europene sau cu propriul tău curs.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Curs de schimb manual",
-      "description": "Unități din moneda aleasă pentru 1 USD. 0 = cursul zilnic BCE."
+      "label": "Cursul meu de schimb",
+      "description": "Cât valorează 1 dolar american în moneda ta. 0 = cursul zilnic automat."
     },
     "ring_thickness": {
       "label": "Grosimea inelului",
@@ -206,47 +206,47 @@
     },
     "ring_track": {
       "label": "Afișează fundalul inelului",
-      "description": "Cercul complet estompat din spatele părții umplute."
+      "description": "Un cerc complet estompat în spatele părții pline."
     },
     "format": {
-      "label": "Șablon de text",
-      "description": "Înlocuiește elementele cu propriul text, de ex. {pct} · {reset} · {tokens}. Marcaje: {window} {pct} {left} {reset} {tokens} {cost} {model}. Gol = aranjament normal."
+      "label": "Textul meu",
+      "description": "Scrie propriul text în locul elementelor obișnuite. Cuvintele dintre acolade sunt înlocuite: {window} {pct} {left} {reset} {tokens} {cost} {model}. Exemplu: {pct} · {reset}. Lasă gol pentru aspectul obișnuit."
     },
     "label_five": {
-      "label": "Eticheta ferestrei de 5 ore"
+      "label": "Numele limitei de 5 ore"
     },
     "label_week": {
-      "label": "Eticheta ferestrei săptămânale"
+      "label": "Numele limitei săptămânale"
     },
     "show_model": {
       "label": "Afișează modelul curent",
-      "description": "Modelul ultimului tău mesaj din Claude Code, de ex. Opus 5.5."
+      "description": "Ultimul model Claude folosit, de exemplu Opus 5.5."
     },
     "font_size": {
-      "label": "Mărimea fontului (px)",
-      "description": "0 = mărimea fontului barei."
+      "label": "Mărimea textului (px)",
+      "description": "0 = aceeași mărime ca restul barei."
     },
     "gradient": {
-      "label": "Gradient de culoare fin",
-      "description": "Culorile trec treptat odată cu utilizarea, în loc să se schimbe brusc la praguri."
+      "label": "Schimbare lină a culorii",
+      "description": "Culoarea se schimbă treptat odată cu utilizarea, în loc să sară la niveluri."
     },
     "weekly_own_color": {
-      "label": "Culoare proprie pentru fereastra săptămânală",
-      "description": "O altă culoare de bază pentru elementele 7d când sunt afișate ambele ferestre."
+      "label": "Altă culoare pentru limita săptămânală",
+      "description": "Folosită când se afișează ambele limite."
     },
     "weekly_color": {
-      "label": "Culoarea ferestrei săptămânale"
+      "label": "Culoarea limitei săptămânale"
     },
     "hide_below": {
-      "label": "Ascunde sub utilizarea (%)",
-      "description": "Ascunde widgetul cât timp utilizarea este sub această valoare. 0 = afișează mereu."
+      "label": "Ascunde până când utilizarea ajunge la (%)",
+      "description": "Ține widgetul ascuns cât timp utilizarea este mică. 0 = mereu vizibil."
     },
     "notify": {
       "label": "Notificări",
-      "description": "Afișează o notificare o dată pe fereastră când utilizarea depășește un prag.",
+      "description": "Primește o notificare când utilizarea depășește un nivel.",
       "off": "Dezactivate",
-      "warning": "La pragurile de avertizare și critic",
-      "critical": "Doar la pragul critic"
+      "warning": "La nivelurile de avertizare și critic",
+      "critical": "Doar la nivelul critic"
     },
     "custom_prices": {
       "label": "Folosește prețurile mele",
@@ -270,24 +270,24 @@
     "ready": "gata"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (resetare în {time})",
-    "tokens": "tokenuri: {tokens}, citire cache: {cache}",
-    "stale": "Învechit: {error}",
+    "window": "{window}: {pct}%  (se reîncarcă în {time})",
+    "tokens": "tokenuri: {tokens}, recitite: {cache}",
+    "stale": "Date mai vechi — {error}",
     "loading": "Se încarcă...",
-    "cost": "la prețurile API: {cost}"
+    "cost": "plătind per token: {cost}"
   },
   "error": {
-    "no_credentials": "Nu ești conectat la Claude Code",
-    "token_expired": "Token expirat - folosește Claude Code o dată pentru a-l reînnoi",
+    "no_credentials": "Autentificarea în Claude Code lipsește",
+    "token_expired": "Autentificarea a expirat - deschide Claude Code o dată pentru a o reînnoi",
     "network": "Fără conexiune",
-    "bad_response": "Răspuns neașteptat de la API",
-    "http_429": "Limită de cereri - se va reîncerca"
+    "bad_response": "Răspuns neașteptat de la serviciul de utilizare",
+    "http_429": "Prea multe verificări - nouă încercare în câteva minute"
   },
   "panel": {
-    "no_reset": "nicio resetare programată",
-    "resets_in": "resetare în {time}",
+    "no_reset": "limita este plină",
+    "resets_in": "se reîncarcă în {time}",
     "peak": "vârf {tokens}",
-    "model_tokens": "{tokens} · {messages} mesaje · cache {cache}",
+    "model_tokens": "{tokens} · {messages} mesaje · recitite {cache}",
     "no_models": "Încă nicio utilizare în această fereastră.",
     "by_model": "Tokenuri pe model",
     "refresh": "Reîmprospătează",
@@ -302,10 +302,10 @@
     "last_7d": "Ultimele 7 zile",
     "hours_ago": "acum {n} h",
     "days_ago": "acum {n} z",
-    "cost_total": "≈ {cost} la prețurile API (estimare)"
+    "cost_total": "≈ {cost} plătind per token (estimare)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",
-    "body": "Resetare în {time}"
+    "body": "Se reîncarcă în {time}"
   }
 }

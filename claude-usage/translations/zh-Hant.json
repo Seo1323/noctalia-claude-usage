@@ -2,128 +2,128 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "重新整理間隔（分鐘）",
-      "description": "查詢用量 API 的頻率。"
+      "label": "檢查間隔（分鐘）",
+      "description": "小工具取得最新用量的頻率。"
     },
     "window": {
-      "label": "限額視窗",
-      "description": "狀態列顯示哪個用量視窗。",
-      "five_hour": "5 小時工作階段",
-      "weekly": "每週（7 天）",
-      "both": "兩者"
+      "label": "顯示哪個限額",
+      "description": "Claude Code 有 5 小時限額和每週限額。可以顯示其中一個或兩個都顯示。",
+      "five_hour": "5 小時限額",
+      "weekly": "每週限額（7d）",
+      "both": "兩個都顯示"
     },
     "display_mode": {
-      "label": "顯示詳細資訊",
-      "description": "何時顯示距重設時間、權杖數與進度列。",
+      "label": "何時顯示詳細資訊",
+      "description": "詳細資訊是限額恢復前的剩餘時間、權杖數和進度列。",
       "always": "一律",
-      "important": "僅在用量偏高時（高於警告門檻）",
-      "hover": "僅在滑鼠懸停時（否則顯示圖示或圓環）"
+      "important": "僅在用量偏高時",
+      "hover": "僅在指標停留時"
     },
     "logo": {
-      "label": "圖示",
-      "description": "顯示在文字前面。圓環依限額的剩餘（或已用）比例填滿。",
+      "label": "前面的圖片",
+      "description": "顯示在數字前面。圓環是一個小圓圈，隨著限額的使用逐漸填滿。",
       "none": "無",
-      "glyph": "字符",
-      "star": "星形（內建）",
-      "custom": "自訂圖片",
+      "glyph": "圖示",
+      "star": "星形",
+      "custom": "我的圖片",
       "ring": "用量圓環"
     },
     "glyph": {
-      "label": "字符"
+      "label": "選擇圖示"
     },
     "logo_path": {
-      "label": "自訂圖片",
-      "description": "SVG 或 PNG。留空表示使用外掛資料夾中的 logo.svg。"
+      "label": "我的圖片",
+      "description": "SVG 或 PNG 檔案。留空則使用外掛資料夾中的 logo.svg。"
     },
     "icon_size": {
-      "label": "圖示大小（px）"
+      "label": "圖片大小（px）"
     },
     "size": {
       "label": "圖示大小（px）"
     },
     "show_percent": {
-      "label": "顯示用量百分比"
+      "label": "顯示百分比"
     },
     "percent_mode": {
-      "label": "百分比顯示",
+      "label": "百分比顯示方式",
       "used": "已用（22%）",
       "left": "剩餘（剩餘 78%）"
     },
     "show_prefix": {
-      "label": "顯示 5h / 7d 標籤",
-      "description": "在每個百分比前加上其視窗。"
+      "label": "顯示是哪個限額",
+      "description": "在每個百分比前加上「5h」或「7d」這類短名稱。"
     },
     "show_bar": {
       "label": "顯示進度列",
-      "description": "百分比旁的小進度列。"
+      "description": "百分比旁邊的小進度列。"
     },
     "bar_width": {
       "label": "進度列寬度（px）"
     },
     "gauge_mode": {
-      "label": "進度列與圓環顯示",
-      "description": "進度列與用量圓環依什麼填滿。",
-      "left": "剩餘部分",
-      "used": "已用部分"
+      "label": "進度列和圓環顯示",
+      "description": "選擇它們依剩餘量還是已用量填滿。",
+      "left": "剩餘量",
+      "used": "已用量"
     },
     "show_reset": {
-      "label": "顯示距重設時間",
-      "description": "距離視窗重設的剩餘時間。"
+      "label": "顯示限額恢復前的時間",
+      "description": "倒數計時，直到限額重新滿額。"
     },
     "reset_format": {
-      "label": "重設時間格式",
-      "compact": "精簡（1:44）",
-      "verbose": "詳細（1h 44m）"
+      "label": "時間格式",
+      "compact": "簡短（1:44）",
+      "verbose": "完整（1h 44m）"
     },
     "ready_text": {
-      "label": "沒有待重設時的文字",
-      "description": "視窗未進行時取代倒數顯示。留空 = 你所用語言的「就緒」。"
+      "label": "限額滿額時的文字",
+      "description": "在這個限額尚未使用時取代倒數顯示。留空則顯示「就緒」。"
     },
     "show_tokens": {
       "label": "顯示已用權杖",
-      "description": "視窗內已用權杖（輸入 + 輸出 + 快取寫入，來自本機對話記錄）。"
+      "description": "權杖是 Claude 讀寫的小段文字，在這台電腦上計算。"
     },
     "include_cache_read": {
-      "label": "計入快取讀取",
-      "description": "加上從提示快取讀取的權杖。它們便宜但數量多，因此數字會大很多。"
+      "label": "也計算重新讀取的文字",
+      "description": "Claude 每次回答前都會重新讀一遍對話。把這部分也算進去，數字會大很多。"
     },
     "token_format": {
-      "label": "權杖格式",
+      "label": "權杖數的寫法",
       "short": "簡短（92k）",
-      "full": "完整（92424）"
+      "full": "精確（92424）"
     },
     "separator": {
-      "label": "項目間分隔符",
+      "label": "分隔符號",
       "none": "無",
       "dot": "圓點（·）",
       "bar": "直線（|）",
       "slash": "斜線（/）"
     },
     "dim_extras": {
-      "label": "淡化時間與權杖",
-      "description": "以柔和的顏色顯示距重設時間與權杖；只有百分比保留用量顏色。"
+      "label": "讓時間和權杖顏色更淡",
+      "description": "只有百分比保留警告顏色。"
     },
     "gap": {
-      "label": "項目間距（px）"
+      "label": "各項間距（px）"
     },
     "font_weight": {
-      "label": "字重",
+      "label": "文字粗細",
       "medium": "中等",
       "bold": "粗體"
     },
     "color_by_usage": {
-      "label": "依用量著色",
-      "description": "超過門檻時切換為警告 / 嚴重顏色。"
+      "label": "隨用量改變顏色",
+      "description": "在下方的級別先變成警告色，再變成嚴重色。"
     },
     "warn_at": {
-      "label": "警告門檻（%）"
+      "label": "警告起點（%）"
     },
     "critical_at": {
-      "label": "嚴重門檻（%）"
+      "label": "嚴重起點（%）"
     },
     "color": {
-      "label": "文字顏色",
-      "description": "一般用量時的顏色角色或 hex 顏色。"
+      "label": "一般文字顏色",
+      "description": "可以選主題裡的顏色，也可以選任何顏色。"
     },
     "warn_color": {
       "label": "警告顏色"
@@ -132,47 +132,47 @@
       "label": "嚴重顏色"
     },
     "click_command": {
-      "label": "點擊指令",
-      "description": "以左鍵點擊時執行的 shell 指令，例如 alacritty -e claude。"
+      "label": "我的指令",
+      "description": "要執行的指令，例如 alacritty -e claude，可在終端機中開啟 Claude Code。"
     },
     "command": {
-      "label": "點擊指令",
-      "description": "點擊圖示時執行的指令。"
+      "label": "點擊時的指令",
+      "description": "點擊圖示時執行的指令，例如 alacritty -e claude。"
     },
     "animation_ms": {
-      "label": "懸停動畫（ms）",
-      "description": "詳細資訊滑出並淡入所需的時間。0 表示關閉動畫。"
+      "label": "動畫速度（毫秒）",
+      "description": "指標移到小工具上時，詳細資訊出現所需的時間。0 = 無動畫。"
     },
     "percent_decimals": {
-      "label": "百分比小數位數",
-      "description": "0 表示四捨五入為整數。目前 API 回傳整數百分比，因此小數部分通常顯示為 .0。"
+      "label": "百分比的小數位",
+      "description": "0 顯示整數。目前用量以整數百分比提供，所以小數部分通常是 .0。"
     },
     "launch_command": {
-      "label": "Claude Code 指令",
-      "description": "面板啟動 Claude Code 所用的終端機指令；會附加所選的 --model 與模式。"
+      "label": "開啟 Claude Code 的指令",
+      "description": "面板用它在終端機中開啟 Claude Code。所選的模型和工作階段會加在最後。"
     },
     "click_action": {
-      "label": "滑鼠左鍵",
-      "description": "以左鍵點擊小工具時的動作。右鍵點擊一律重新整理。",
+      "label": "以左鍵點擊時",
+      "description": "以左鍵點擊小工具時會發生什麼事。右鍵點擊一律重新整理。",
       "panel": "開啟面板",
-      "command": "執行點擊指令",
+      "command": "執行我的指令",
       "refresh": "重新整理"
     },
     "panel_translucent": {
-      "label": "半透明面板",
-      "description": "讓桌布透過面板背景顯示；文字保持完全不透明。"
+      "label": "透明面板",
+      "description": "讓桌布透過面板顯示。文字依然清晰。"
     },
     "panel_opacity": {
-      "label": "面板背景不透明度",
-      "description": "0 為完全透明，1 為不透明。"
+      "label": "面板的不透明程度",
+      "description": "0 = 完全透明，1 = 完全不透明。"
     },
     "show_cost": {
-      "label": "依 API 價格顯示費用",
-      "description": "依 Anthropic API 定價估算視窗內權杖的費用。使用 Claude 訂閱時不按權杖付費——這裡顯示的是同樣用量在 API 上的花費。"
+      "label": "顯示大概花費",
+      "description": "依權杖付費時這些用量大約要花多少錢的估算。使用 Claude 訂閱時不需要支付這筆錢。"
     },
     "currency": {
-      "label": "費用貨幣",
-      "description": "除非手動設定匯率，費用會依歐洲中央銀行的每日參考匯率從美元換算（僅在使用非美元貨幣時取得，最多每 12 小時一次）。",
+      "label": "貨幣",
+      "description": "費用依歐洲中央銀行的每日匯率或你設定的匯率從美元換算。",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "手動匯率",
-      "description": "每 1 美元對應所選貨幣的數量。0 = 歐洲央行每日匯率。"
+      "label": "我的匯率",
+      "description": "1 美元等於多少所選貨幣。0 = 自動使用每日匯率。"
     },
     "ring_thickness": {
       "label": "圓環粗細",
@@ -205,48 +205,48 @@
       "thick": "粗"
     },
     "ring_track": {
-      "label": "顯示圓環軌道",
+      "label": "顯示圓環背景",
       "description": "已填滿部分後方的淡色完整圓圈。"
     },
     "format": {
-      "label": "文字範本",
-      "description": "以你自己的文字取代各項，例如 {pct} · {reset} · {tokens}。預留位置：{window} {pct} {left} {reset} {tokens} {cost} {model}。留空 = 一般版面。"
+      "label": "自訂文字",
+      "description": "用自己寫的文字取代平常的各項。大括號裡的詞會被替換：{window} {pct} {left} {reset} {tokens} {cost} {model}。範例：{pct} · {reset}。留空則使用一般樣式。"
     },
     "label_five": {
-      "label": "5 小時視窗的標籤"
+      "label": "5 小時限額的名稱"
     },
     "label_week": {
-      "label": "每週視窗的標籤"
+      "label": "每週限額的名稱"
     },
     "show_model": {
       "label": "顯示目前模型",
-      "description": "你最近一則 Claude Code 訊息所用的模型，例如 Opus 5.5。"
+      "description": "最近一次使用的 Claude 模型，例如 Opus 5.5。"
     },
     "font_size": {
-      "label": "字型大小（px）",
-      "description": "0 = 狀態列字型大小。"
+      "label": "文字大小（px）",
+      "description": "0 = 與狀態列其他部分相同。"
     },
     "gradient": {
-      "label": "平滑色彩漸層",
-      "description": "色彩隨用量平滑變化，而不是在門檻處突然切換。"
+      "label": "顏色平滑變化",
+      "description": "顏色隨用量一點一點變化，而不是在級別處突然改變。"
     },
     "weekly_own_color": {
-      "label": "每週視窗使用專屬顏色",
-      "description": "同時顯示兩個視窗時，為 7d 項目使用另一種基本顏色。"
+      "label": "每週限額使用不同顏色",
+      "description": "同時顯示兩個限額時使用。"
     },
     "weekly_color": {
-      "label": "每週視窗顏色"
+      "label": "每週限額顏色"
     },
     "hide_below": {
-      "label": "用量低於此值時隱藏（%）",
-      "description": "用量低於此值時隱藏小工具。0 = 一律顯示。"
+      "label": "用量達到此值前隱藏（%）",
+      "description": "用量偏低時隱藏小工具。0 = 一律顯示。"
     },
     "notify": {
       "label": "通知",
-      "description": "用量超過門檻時，每個視窗通知一次。",
+      "description": "用量超過某個級別時通知一次。",
       "off": "關閉",
-      "warning": "在警告與嚴重門檻時",
-      "critical": "僅在嚴重門檻時"
+      "warning": "在警告與嚴重級別時",
+      "critical": "僅在嚴重級別時"
     },
     "custom_prices": {
       "label": "使用我自己的權杖價格",
@@ -270,24 +270,24 @@
     "ready": "就緒"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  （{time} 後重設）",
-    "tokens": "權杖：{tokens}，快取讀取：{cache}",
-    "stale": "資料過期：{error}",
+    "window": "{window}: {pct}%  （{time} 後恢復）",
+    "tokens": "權杖：{tokens}，重新讀取：{cache}",
+    "stale": "較早的資料 — {error}",
     "loading": "載入中...",
-    "cost": "依 API 價格：{cost}"
+    "cost": "依權杖付費：{cost}"
   },
   "error": {
     "no_credentials": "未登入 Claude Code",
-    "token_expired": "權杖已過期 - 使用一次 Claude Code 即可更新",
+    "token_expired": "登入已過期 - 開啟一次 Claude Code 即可續期",
     "network": "沒有網路連線",
-    "bad_response": "API 回應異常",
-    "http_429": "請求受限 - 稍後重試"
+    "bad_response": "用量服務傳回了非預期的結果",
+    "http_429": "檢查次數過多 - 幾分鐘後重試"
   },
   "panel": {
-    "no_reset": "沒有待重設",
-    "resets_in": "{time} 後重設",
+    "no_reset": "限額已滿",
+    "resets_in": "{time} 後恢復",
     "peak": "峰值 {tokens}",
-    "model_tokens": "{tokens} · {messages} 則訊息 · 快取 {cache}",
+    "model_tokens": "{tokens} · {messages} 則訊息 · 重新讀取 {cache}",
     "no_models": "此視窗內尚無用量。",
     "by_model": "依模型統計權杖",
     "refresh": "重新整理",
@@ -302,10 +302,10 @@
     "last_7d": "最近 7 天",
     "hours_ago": "{n} 小時前",
     "days_ago": "{n} 天前",
-    "cost_total": "≈ {cost}（依 API 價格估算）"
+    "cost_total": "≈ {cost}（依權杖付費，估算）"
   },
   "notify": {
     "title": "Claude Code {window}：{pct}%",
-    "body": "{time} 後重設"
+    "body": "{time} 後恢復"
   }
 }

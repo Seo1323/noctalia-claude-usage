@@ -2,56 +2,56 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "刷新间隔（分钟）",
-      "description": "查询用量 API 的频率。"
+      "label": "检查间隔（分钟）",
+      "description": "小组件获取最新用量的频率。"
     },
     "window": {
-      "label": "限额窗口",
-      "description": "状态栏显示哪个用量窗口。",
-      "five_hour": "5 小时会话",
-      "weekly": "每周（7 天）",
-      "both": "两者"
+      "label": "显示哪个限额",
+      "description": "Claude Code 有 5 小时限额和每周限额。可以显示其中一个或两个都显示。",
+      "five_hour": "5 小时限额",
+      "weekly": "每周限额（7d）",
+      "both": "两个都显示"
     },
     "display_mode": {
-      "label": "显示详情",
-      "description": "何时显示距重置时间、令牌数和进度条。",
+      "label": "何时显示详情",
+      "description": "详情是限额恢复前的剩余时间、令牌数和进度条。",
       "always": "始终",
-      "important": "仅在用量较高时（高于警告阈值）",
-      "hover": "仅在悬停时（否则显示图标或圆环）"
+      "important": "仅在用量较高时",
+      "hover": "仅在指针悬停时"
     },
     "logo": {
-      "label": "图标",
-      "description": "显示在文字前面。圆环按限额的剩余（或已用）比例填充。",
+      "label": "前面的图片",
+      "description": "显示在数字前面。圆环是一个小圆圈，随着限额的使用逐渐填满。",
       "none": "无",
-      "glyph": "字形",
-      "star": "星形（内置）",
-      "custom": "自定义图片",
+      "glyph": "图标",
+      "star": "星形",
+      "custom": "我的图片",
       "ring": "用量圆环"
     },
     "glyph": {
-      "label": "字形"
+      "label": "选择图标"
     },
     "logo_path": {
-      "label": "自定义图片",
-      "description": "SVG 或 PNG。留空表示使用插件文件夹中的 logo.svg。"
+      "label": "我的图片",
+      "description": "SVG 或 PNG 文件。留空则使用插件文件夹中的 logo.svg。"
     },
     "icon_size": {
-      "label": "图标大小（px）"
+      "label": "图片大小（px）"
     },
     "size": {
       "label": "图标大小（px）"
     },
     "show_percent": {
-      "label": "显示用量百分比"
+      "label": "显示百分比"
     },
     "percent_mode": {
-      "label": "百分比显示",
+      "label": "百分比显示方式",
       "used": "已用（22%）",
       "left": "剩余（剩余 78%）"
     },
     "show_prefix": {
-      "label": "显示 5h / 7d 标签",
-      "description": "在每个百分比前加上其窗口。"
+      "label": "显示是哪个限额",
+      "description": "在每个百分比前加上“5h”或“7d”这样的短名称。"
     },
     "show_bar": {
       "label": "显示进度条",
@@ -62,68 +62,68 @@
     },
     "gauge_mode": {
       "label": "进度条和圆环显示",
-      "description": "进度条和用量圆环按什么填充。",
-      "left": "剩余部分",
-      "used": "已用部分"
+      "description": "选择它们按剩余量还是已用量填充。",
+      "left": "剩余量",
+      "used": "已用量"
     },
     "show_reset": {
-      "label": "显示距重置时间",
-      "description": "距离窗口重置的剩余时间。"
+      "label": "显示限额恢复前的时间",
+      "description": "倒计时，直到限额重新满额。"
     },
     "reset_format": {
-      "label": "重置时间格式",
-      "compact": "紧凑（1:44）",
-      "verbose": "详细（1h 44m）"
+      "label": "时间格式",
+      "compact": "简短（1:44）",
+      "verbose": "完整（1h 44m）"
     },
     "ready_text": {
-      "label": "无待重置时的文字",
-      "description": "窗口未运行时代替倒计时显示。留空 = 你所用语言的“就绪”。"
+      "label": "限额满额时的文字",
+      "description": "在这个限额尚未使用时代替倒计时显示。留空则显示“就绪”。"
     },
     "show_tokens": {
       "label": "显示已用令牌",
-      "description": "窗口内已用令牌（输入 + 输出 + 缓存写入，来自本地对话记录）。"
+      "description": "令牌是 Claude 读写的小段文字，在这台电脑上统计。"
     },
     "include_cache_read": {
-      "label": "计入缓存读取",
-      "description": "加上从提示缓存读取的令牌。它们便宜但数量多，因此数字会大很多。"
+      "label": "也统计重新读取的文字",
+      "description": "Claude 每次回答前都会重新读一遍对话。把这部分也算上，数字会大很多。"
     },
     "token_format": {
-      "label": "令牌格式",
+      "label": "令牌数的写法",
       "short": "简短（92k）",
-      "full": "完整（92424）"
+      "full": "精确（92424）"
     },
     "separator": {
-      "label": "项目间分隔符",
+      "label": "分隔符",
       "none": "无",
       "dot": "圆点（·）",
       "bar": "竖线（|）",
       "slash": "斜杠（/）"
     },
     "dim_extras": {
-      "label": "淡化时间和令牌",
-      "description": "以柔和的颜色显示距重置时间和令牌；只有百分比保留用量颜色。"
+      "label": "让时间和令牌颜色更淡",
+      "description": "只有百分比保留警告颜色。"
     },
     "gap": {
-      "label": "项目间距（px）"
+      "label": "各项间距（px）"
     },
     "font_weight": {
-      "label": "字重",
+      "label": "文字粗细",
       "medium": "中等",
       "bold": "粗体"
     },
     "color_by_usage": {
-      "label": "按用量着色",
-      "description": "超过阈值时切换为警告 / 严重颜色。"
+      "label": "随用量改变颜色",
+      "description": "在下面的级别先变为警告色，再变为严重色。"
     },
     "warn_at": {
-      "label": "警告阈值（%）"
+      "label": "警告起点（%）"
     },
     "critical_at": {
-      "label": "严重阈值（%）"
+      "label": "严重起点（%）"
     },
     "color": {
-      "label": "文字颜色",
-      "description": "正常用量时的颜色角色或 hex 颜色。"
+      "label": "普通文字颜色",
+      "description": "可以选主题里的颜色，也可以选任意颜色。"
     },
     "warn_color": {
       "label": "警告颜色"
@@ -132,47 +132,47 @@
       "label": "严重颜色"
     },
     "click_command": {
-      "label": "点击命令",
-      "description": "左键点击时运行的 shell 命令，例如 alacritty -e claude。"
+      "label": "我的命令",
+      "description": "要运行的命令，例如 alacritty -e claude，可在终端中打开 Claude Code。"
     },
     "command": {
-      "label": "点击命令",
-      "description": "点击图标时运行的命令。"
+      "label": "点击时的命令",
+      "description": "点击图标时运行的命令，例如 alacritty -e claude。"
     },
     "animation_ms": {
-      "label": "悬停动画（ms）",
-      "description": "详情滑出并淡入所需的时间。0 表示关闭动画。"
+      "label": "动画速度（毫秒）",
+      "description": "指针移到小组件上时，详情出现所需的时间。0 = 无动画。"
     },
     "percent_decimals": {
-      "label": "百分比小数位数",
-      "description": "0 表示四舍五入为整数。目前 API 返回整数百分比，因此小数部分通常显示为 .0。"
+      "label": "百分比的小数位",
+      "description": "0 显示整数。目前用量以整数百分比提供，所以小数部分通常是 .0。"
     },
     "launch_command": {
-      "label": "Claude Code 命令",
-      "description": "面板启动 Claude Code 所用的终端命令；会追加所选的 --model 和模式。"
+      "label": "打开 Claude Code 的命令",
+      "description": "面板用它在终端中打开 Claude Code。所选的模型和会话会加在末尾。"
     },
     "click_action": {
-      "label": "左键点击",
-      "description": "左键点击小组件时的操作。右键点击始终刷新。",
+      "label": "左键点击时",
+      "description": "左键点击小组件时会发生什么。右键点击始终刷新。",
       "panel": "打开面板",
-      "command": "运行点击命令",
+      "command": "运行我的命令",
       "refresh": "刷新"
     },
     "panel_translucent": {
-      "label": "半透明面板",
-      "description": "让壁纸透过面板背景显示；文字保持完全不透明。"
+      "label": "透明面板",
+      "description": "让壁纸透过面板显示。文字依然清晰。"
     },
     "panel_opacity": {
-      "label": "面板背景不透明度",
-      "description": "0 为完全透明，1 为不透明。"
+      "label": "面板的不透明程度",
+      "description": "0 = 完全透明，1 = 完全不透明。"
     },
     "show_cost": {
-      "label": "按 API 价格显示费用",
-      "description": "按 Anthropic API 标价估算窗口内令牌的费用。使用 Claude 订阅时不按令牌付费——这里显示的是同样用量在 API 上的花费。"
+      "label": "显示大概花费",
+      "description": "按令牌付费时这些用量大约要花多少钱的估算。使用 Claude 订阅时不需要支付这笔钱。"
     },
     "currency": {
-      "label": "费用货币",
-      "description": "除非手动设置汇率，费用会按欧洲中央银行的每日参考汇率从美元换算（仅在使用非美元货币时获取，最多每 12 小时一次）。",
+      "label": "货币",
+      "description": "费用按欧洲中央银行的每日汇率或你设定的汇率从美元换算。",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "手动汇率",
-      "description": "每 1 美元对应所选货币的数量。0 = 欧洲央行每日汇率。"
+      "label": "我的汇率",
+      "description": "1 美元等于多少所选货币。0 = 自动使用每日汇率。"
     },
     "ring_thickness": {
       "label": "圆环粗细",
@@ -205,48 +205,48 @@
       "thick": "粗"
     },
     "ring_track": {
-      "label": "显示圆环轨道",
+      "label": "显示圆环背景",
       "description": "已填充部分后面的浅色完整圆圈。"
     },
     "format": {
-      "label": "文本模板",
-      "description": "用你自己的文本替换各项，例如 {pct} · {reset} · {tokens}。占位符：{window} {pct} {left} {reset} {tokens} {cost} {model}。留空 = 常规布局。"
+      "label": "自定义文字",
+      "description": "用自己写的文字代替平常的各项。花括号里的词会被替换：{window} {pct} {left} {reset} {tokens} {cost} {model}。示例：{pct} · {reset}。留空则使用常规样式。"
     },
     "label_five": {
-      "label": "5 小时窗口的标签"
+      "label": "5 小时限额的名称"
     },
     "label_week": {
-      "label": "每周窗口的标签"
+      "label": "每周限额的名称"
     },
     "show_model": {
       "label": "显示当前模型",
-      "description": "你最近一条 Claude Code 消息所用的模型，例如 Opus 5.5。"
+      "description": "最近一次使用的 Claude 模型，例如 Opus 5.5。"
     },
     "font_size": {
-      "label": "字号（px）",
-      "description": "0 = 状态栏字号。"
+      "label": "文字大小（px）",
+      "description": "0 = 与状态栏其他部分相同。"
     },
     "gradient": {
-      "label": "平滑颜色渐变",
-      "description": "颜色随用量平滑过渡，而不是在阈值处突变。"
+      "label": "颜色平滑变化",
+      "description": "颜色随用量一点点变化，而不是在级别处突变。"
     },
     "weekly_own_color": {
-      "label": "每周窗口使用单独颜色",
-      "description": "同时显示两个窗口时，为 7d 项目使用另一种基础颜色。"
+      "label": "每周限额使用不同颜色",
+      "description": "同时显示两个限额时使用。"
     },
     "weekly_color": {
-      "label": "每周窗口颜色"
+      "label": "每周限额颜色"
     },
     "hide_below": {
-      "label": "用量低于此值时隐藏（%）",
-      "description": "用量低于该值时隐藏小组件。0 = 始终显示。"
+      "label": "用量达到此值前隐藏（%）",
+      "description": "用量较低时隐藏小组件。0 = 始终显示。"
     },
     "notify": {
       "label": "通知",
-      "description": "用量超过阈值时，每个窗口通知一次。",
+      "description": "用量超过某个级别时通知一次。",
       "off": "关闭",
-      "warning": "在警告和严重阈值时",
-      "critical": "仅在严重阈值时"
+      "warning": "在警告和严重级别时",
+      "critical": "仅在严重级别时"
     },
     "custom_prices": {
       "label": "使用我自己的令牌价格",
@@ -270,24 +270,24 @@
     "ready": "就绪"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  （{time} 后重置）",
-    "tokens": "令牌：{tokens}，缓存读取：{cache}",
-    "stale": "数据过期：{error}",
+    "window": "{window}: {pct}%  （{time} 后恢复）",
+    "tokens": "令牌：{tokens}，重新读取：{cache}",
+    "stale": "较早的数据 — {error}",
     "loading": "加载中...",
-    "cost": "按 API 价格：{cost}"
+    "cost": "按令牌付费：{cost}"
   },
   "error": {
     "no_credentials": "未登录 Claude Code",
-    "token_expired": "令牌已过期 - 使用一次 Claude Code 即可刷新",
+    "token_expired": "登录已过期 - 打开一次 Claude Code 即可续期",
     "network": "无网络连接",
-    "bad_response": "API 响应异常",
-    "http_429": "请求受限 - 稍后重试"
+    "bad_response": "用量服务返回了意外的结果",
+    "http_429": "检查次数过多 - 几分钟后重试"
   },
   "panel": {
-    "no_reset": "无待重置",
-    "resets_in": "{time} 后重置",
+    "no_reset": "限额已满",
+    "resets_in": "{time} 后恢复",
     "peak": "峰值 {tokens}",
-    "model_tokens": "{tokens} · {messages} 条消息 · 缓存 {cache}",
+    "model_tokens": "{tokens} · {messages} 条消息 · 重新读取 {cache}",
     "no_models": "此窗口内暂无用量。",
     "by_model": "按模型统计令牌",
     "refresh": "刷新",
@@ -302,10 +302,10 @@
     "last_7d": "最近 7 天",
     "hours_ago": "{n} 小时前",
     "days_ago": "{n} 天前",
-    "cost_total": "≈ {cost}（按 API 价格估算）"
+    "cost_total": "≈ {cost}（按令牌付费，估算）"
   },
   "notify": {
     "title": "Claude Code {window}：{pct}%",
-    "body": "{time} 后重置"
+    "body": "{time} 后恢复"
   }
 }

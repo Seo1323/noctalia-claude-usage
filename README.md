@@ -164,7 +164,7 @@ row the usage service may ask you to wait a few minutes — the widget then keep
 ### Languages
 
 The widget follows Noctalia's language (**Settings → Appearance → Language**). English and Polish are maintained by
-the author; the other 27 were machine-translated — fixes to [`claude-usage/translations`](claude-usage/translations)
+the author; the other 27 were machine-translated and checked for plain, gender-neutral wording — fixes to [`claude-usage/translations`](claude-usage/translations)
 are very welcome.
 
 ### See also

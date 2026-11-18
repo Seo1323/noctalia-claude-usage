@@ -270,24 +270,24 @@
     "ready": "ready"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (resets in {time})",
-    "tokens": "tokens: {tokens}, cache read: {cache}",
-    "stale": "Stale: {error}",
+    "window": "{window}: {pct}%  (refills in {time})",
+    "tokens": "tokens: {tokens}, re-read: {cache}",
+    "stale": "Older numbers — {error}",
     "loading": "Loading...",
-    "cost": "at API prices: {cost}"
+    "cost": "if paid per token: {cost}"
   },
   "error": {
     "no_credentials": "Not logged in to Claude Code",
-    "token_expired": "Token expired - use Claude Code once to refresh",
+    "token_expired": "Login expired - open Claude Code once to renew it",
     "network": "No connection",
-    "bad_response": "Unexpected API response",
-    "http_429": "Rate limited - will retry"
+    "bad_response": "Unexpected answer from the usage service",
+    "http_429": "Too many checks - trying again in a few minutes"
   },
   "panel": {
-    "no_reset": "no reset pending",
-    "resets_in": "resets in {time}",
+    "no_reset": "the limit is full",
+    "resets_in": "refills in {time}",
     "peak": "peak {tokens}",
-    "model_tokens": "{tokens} · {messages} msgs · cache {cache}",
+    "model_tokens": "{tokens} · {messages} messages · re-read {cache}",
     "no_models": "No usage in this window yet.",
     "by_model": "Tokens by model",
     "refresh": "Refresh",
@@ -302,10 +302,10 @@
     "last_7d": "Last 7 days",
     "hours_ago": "{n} h ago",
     "days_ago": "{n} d ago",
-    "cost_total": "≈ {cost} at API prices (estimate)"
+    "cost_total": "≈ {cost} if paid per token (estimate)"
   },
   "notify": {
     "title": "Claude Code {window} at {pct}%",
-    "body": "Resets in {time}"
+    "body": "Refills in {time}"
   }
 }

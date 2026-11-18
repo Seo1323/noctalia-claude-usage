@@ -2,56 +2,56 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Interval obnovení (minuty)",
-      "description": "Jak často se dotazuje API využití."
+      "label": "Jak často kontrolovat (minuty)",
+      "description": "Jak často widget zjišťuje aktuální využití."
     },
     "window": {
-      "label": "Okno limitu",
-      "description": "Které okno využití lišta zobrazuje.",
-      "five_hour": "5hodinová relace",
-      "weekly": "Týdenní (7d)",
-      "both": "Obě"
+      "label": "Který limit zobrazit",
+      "description": "Claude Code má 5hodinový a týdenní limit. Zobrazte jeden z nich nebo oba.",
+      "five_hour": "5hodinový limit",
+      "weekly": "Týdenní limit (7d)",
+      "both": "Oba"
     },
     "display_mode": {
-      "label": "Zobrazit podrobnosti",
-      "description": "Kdy se zobrazí čas do resetu, tokeny a lišta.",
+      "label": "Kdy zobrazit podrobnosti",
+      "description": "Podrobnosti jsou čas do obnovení limitu, tokeny a lišta.",
       "always": "Vždy",
-      "important": "Jen při vysokém využití (nad prahem varování)",
-      "hover": "Jen při najetí myší (jinak ikona nebo kruh)"
+      "important": "Jen při vysokém využití",
+      "hover": "Jen po najetí myší"
     },
     "logo": {
-      "label": "Ikona",
-      "description": "Zobrazí se před textem. Kruh se plní zbývající (nebo využitou) částí limitu.",
-      "none": "Žádná",
-      "glyph": "Glyf",
-      "star": "Hvězda (přibalená)",
+      "label": "Obrázek vpředu",
+      "description": "Zobrazí se před čísly. Kroužek je malý kruh, který se plní s využitím limitu.",
+      "none": "Žádný",
+      "glyph": "Ikona",
+      "star": "Hvězda",
       "custom": "Vlastní obrázek",
-      "ring": "Kruh využití"
+      "ring": "Kroužek využití"
     },
     "glyph": {
-      "label": "Glyf"
+      "label": "Která ikona"
     },
     "logo_path": {
       "label": "Vlastní obrázek",
-      "description": "SVG nebo PNG. Prázdné znamená logo.svg ve složce pluginu."
+      "description": "Soubor SVG nebo PNG. Nechte prázdné pro logo.svg ze složky pluginu."
     },
     "icon_size": {
-      "label": "Velikost ikony (px)"
+      "label": "Velikost obrázku (px)"
     },
     "size": {
       "label": "Velikost ikony (px)"
     },
     "show_percent": {
-      "label": "Zobrazit procento využití"
+      "label": "Zobrazit procento"
     },
     "percent_mode": {
-      "label": "Procento ukazuje",
+      "label": "Zobrazit procento jako",
       "used": "Využito (22%)",
       "left": "Zbývá (zbývá 78%)"
     },
     "show_prefix": {
-      "label": "Zobrazit štítky 5h / 7d",
-      "description": "Před každé procento přidat jeho okno."
+      "label": "Ukázat, o který limit jde",
+      "description": "Před každé procento přidá krátký název, například „5h“ nebo „7d“."
     },
     "show_bar": {
       "label": "Zobrazit ukazatel průběhu",
@@ -61,39 +61,39 @@
       "label": "Šířka ukazatele průběhu (px)"
     },
     "gauge_mode": {
-      "label": "Lišta a kruh ukazují",
-      "description": "Čím se plní ukazatel průběhu a kruh využití.",
+      "label": "Lišta a kroužek ukazují",
+      "description": "Vyberte, zda se plní tím, co zbývá, nebo tím, co je využito.",
       "left": "Co zbývá",
       "used": "Co je využito"
     },
     "show_reset": {
-      "label": "Zobrazit čas do resetu",
-      "description": "Čas zbývající do resetu okna."
+      "label": "Zobrazit čas do obnovení limitu",
+      "description": "Odpočet do chvíle, kdy bude limit opět plný."
     },
     "reset_format": {
-      "label": "Formát času resetu",
-      "compact": "Kompaktní (1:44)",
-      "verbose": "Podrobný (1h 44m)"
+      "label": "Formát času",
+      "compact": "Krátký (1:44)",
+      "verbose": "Dlouhý (1h 44m)"
     },
     "ready_text": {
-      "label": "Text, když reset neprobíhá",
-      "description": "Zobrazí se místo odpočtu, když okno neběží. Prázdné = „připraveno“ ve vašem jazyce."
+      "label": "Text, když je limit plný",
+      "description": "Zobrazí se místo odpočtu, dokud tento limit ještě nebyl využit. Nechte prázdné pro „připraveno“."
     },
     "show_tokens": {
       "label": "Zobrazit využité tokeny",
-      "description": "Tokeny využité v okně (vstup + výstup + vytvoření mezipaměti, z místních přepisů)."
+      "description": "Tokeny jsou kousky textu, které Claude čte a píše. Počítají se na vašem počítači."
     },
     "include_cache_read": {
-      "label": "Započítat čtení z mezipaměti",
-      "description": "Přičíst tokeny načtené z mezipaměti promptů. Jsou levné, ale početné, takže číslo výrazně vzroste."
+      "label": "Počítat i znovu čtený text",
+      "description": "Claude před každou odpovědí znovu čte konverzaci. Když se to započítá, číslo výrazně vzroste."
     },
     "token_format": {
-      "label": "Formát tokenů",
+      "label": "Zápis počtu tokenů",
       "short": "Krátký (92k)",
-      "full": "Úplný (92424)"
+      "full": "Přesný (92424)"
     },
     "separator": {
-      "label": "Oddělovač mezi položkami",
+      "label": "Oddělovač",
       "none": "Žádný",
       "dot": "Tečka (·)",
       "bar": "Svislice (|)",
@@ -101,78 +101,78 @@
     },
     "dim_extras": {
       "label": "Ztlumit čas a tokeny",
-      "description": "Zobrazit čas do resetu a tokeny tlumenou barvou; barvu využití si ponechá jen procento."
+      "description": "Barvy upozornění si ponechá jen procento."
     },
     "gap": {
       "label": "Mezera mezi položkami (px)"
     },
     "font_weight": {
-      "label": "Tloušťka písma",
+      "label": "Tloušťka textu",
       "medium": "Střední",
       "bold": "Tučné"
     },
     "color_by_usage": {
-      "label": "Barva podle využití",
-      "description": "Nad prahy přepnout na barvy varování / kritické."
+      "label": "Měnit barvu s využitím",
+      "description": "Na úrovních níže se změní na barvu upozornění a pak na kritickou barvu."
     },
     "warn_at": {
-      "label": "Práh varování (%)"
+      "label": "Upozornění od (%)"
     },
     "critical_at": {
-      "label": "Kritický práh (%)"
+      "label": "Kritický stav od (%)"
     },
     "color": {
-      "label": "Barva textu",
-      "description": "Barevná role nebo hex barva pro běžné využití."
+      "label": "Běžná barva textu",
+      "description": "Vyberte barvu z motivu nebo jakoukoli jinou."
     },
     "warn_color": {
-      "label": "Barva varování"
+      "label": "Barva upozornění"
     },
     "critical_color": {
       "label": "Kritická barva"
     },
     "click_command": {
-      "label": "Příkaz po kliknutí",
-      "description": "Příkaz shellu spuštěný levým kliknutím, např. alacritty -e claude."
+      "label": "Můj příkaz",
+      "description": "Příkaz ke spuštění, například alacritty -e claude pro otevření Claude Code v terminálu."
     },
     "command": {
       "label": "Příkaz po kliknutí",
-      "description": "Příkaz spuštěný po kliknutí na ikonu."
+      "description": "Příkaz spuštěný po kliknutí na ikonu, například alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Animace při najetí (ms)",
-      "description": "Jak dlouho se podrobnosti vysouvají a objevují. 0 animaci vypne."
+      "label": "Rychlost animace (ms)",
+      "description": "Jak dlouho se podrobnosti vysouvají po najetí myší na widget. 0 = bez animace."
     },
     "percent_decimals": {
       "label": "Desetinná místa v procentech",
-      "description": "0 zaokrouhlí na celá čísla. API nyní vrací celá procenta, takže desetinná místa obvykle ukazují ,0."
+      "description": "0 zobrazuje celá čísla. Využití teď přichází v celých procentech, takže desetinná místa obvykle ukazují ,0."
     },
     "launch_command": {
-      "label": "Příkaz Claude Code",
-      "description": "Příkaz terminálu, kterým panel spouští Claude Code; připojí se zvolené --model a režim."
+      "label": "Příkaz, který otevře Claude Code",
+      "description": "Panel jím otevírá Claude Code v terminálu. Zvolený model a relace se přidají na konec."
     },
     "click_action": {
       "label": "Levé kliknutí",
-      "description": "Co udělá levé kliknutí na widget. Pravé kliknutí vždy obnoví.",
+      "description": "Co se stane po kliknutí levým tlačítkem na widget. Pravé kliknutí vždy obnoví.",
       "panel": "Otevřít panel",
-      "command": "Spustit příkaz kliknutí",
+      "command": "Spustí můj příkaz",
       "refresh": "Obnovit"
     },
     "panel_translucent": {
-      "label": "Průsvitný panel",
-      "description": "Pozadí prosvítá panelem; text zůstává plně neprůhledný."
+      "label": "Průhledný panel",
+      "description": "Tapeta prosvítá panelem. Text zůstává ostrý."
     },
     "panel_opacity": {
-      "label": "Krytí pozadí panelu",
-      "description": "0 je zcela průhledné, 1 je plné."
+      "label": "Jak plný je panel",
+      "description": "0 = zcela průhledný, 1 = plný."
     },
     "show_cost": {
-      "label": "Zobrazit cenu podle ceníku API",
-      "description": "Odhadovaná cena tokenů v okně podle ceníku API Anthropic. S předplatným Claude neplatíte za tokeny - ukazuje, kolik by stejné využití stálo přes API."
+      "label": "Zobrazit, kolik by to stálo",
+      "description": "Odhad, kolik by toto využití stálo při placení za tokeny. S předplatným Claude to neplatíte."
     },
     "currency": {
-      "label": "Měna nákladů",
-      "description": "Náklady se přepočítávají z USD podle denních referenčních kurzů Evropské centrální banky (stahovaných nejvýše každých 12 hodin a jen pro jinou měnu než USD), pokud nenastavíte vlastní kurz.",
+      "label": "Měna",
+      "description": "Náklady se přepočítávají z amerických dolarů podle denních kurzů Evropské centrální banky nebo podle vašeho kurzu.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,58 +195,58 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Ruční směnný kurz",
-      "description": "Jednotky zvolené měny za 1 USD. 0 = denní kurz ECB."
+      "label": "Můj směnný kurz",
+      "description": "Kolik vaší měny je 1 americký dolar. 0 = automaticky denní kurz."
     },
     "ring_thickness": {
-      "label": "Tloušťka kruhu",
+      "label": "Tloušťka kroužku",
       "thin": "Tenký",
       "normal": "Normální",
       "thick": "Silný"
     },
     "ring_track": {
-      "label": "Zobrazit stopu kruhu",
-      "description": "Bledá celá kružnice za vyplněnou částí."
+      "label": "Zobrazit pozadí kroužku",
+      "description": "Bledý celý kruh za vyplněnou částí."
     },
     "format": {
-      "label": "Textová šablona",
-      "description": "Nahradí položky vlastním textem, např. {pct} · {reset} · {tokens}. Zástupné symboly: {window} {pct} {left} {reset} {tokens} {cost} {model}. Prázdné = běžné rozvržení."
+      "label": "Vlastní text",
+      "description": "Napište vlastní text místo obvyklých položek. Slova ve složených závorkách se doplní: {window} {pct} {left} {reset} {tokens} {cost} {model}. Příklad: {pct} · {reset}. Nechte prázdné pro běžný vzhled."
     },
     "label_five": {
-      "label": "Popisek 5hodinového okna"
+      "label": "Název 5hodinového limitu"
     },
     "label_week": {
-      "label": "Popisek týdenního okna"
+      "label": "Název týdenního limitu"
     },
     "show_model": {
       "label": "Zobrazit aktuální model",
-      "description": "Model vaší poslední zprávy v Claude Code, např. Opus 5.5."
+      "description": "Naposledy použitý model Claude, například Opus 5.5."
     },
     "font_size": {
-      "label": "Velikost písma (px)",
-      "description": "0 = velikost písma lišty."
+      "label": "Velikost textu (px)",
+      "description": "0 = stejná velikost jako zbytek lišty."
     },
     "gradient": {
-      "label": "Plynulý barevný přechod",
-      "description": "Barvy se s využitím mění plynule, místo aby se přepínaly na prazích."
+      "label": "Plynulá změna barvy",
+      "description": "Barva se s využitím mění postupně, místo aby na úrovních skočila."
     },
     "weekly_own_color": {
-      "label": "Vlastní barva týdenního okna",
-      "description": "Jiná základní barva pro položky 7d, když jsou zobrazena obě okna."
+      "label": "Jiná barva pro týdenní limit",
+      "description": "Použije se, když jsou zobrazeny oba limity."
     },
     "weekly_color": {
-      "label": "Barva týdenního okna"
+      "label": "Barva týdenního limitu"
     },
     "hide_below": {
-      "label": "Skrýt pod využitím (%)",
-      "description": "Skryje widget, dokud je využití pod touto hodnotou. 0 = vždy zobrazit."
+      "label": "Skrýt, dokud využití nedosáhne (%)",
+      "description": "Widget zůstane skrytý, dokud je využití nízké. 0 = vždy viditelný."
     },
     "notify": {
       "label": "Oznámení",
-      "description": "Zobrazí oznámení jednou za okno, když využití překročí práh.",
+      "description": "Jedno oznámení, když využití překročí úroveň.",
       "off": "Vypnuto",
-      "warning": "Na prahu varování a kritickém",
-      "critical": "Jen na kritickém prahu"
+      "warning": "Na úrovni upozornění a kritické",
+      "critical": "Jen na kritické úrovni"
     },
     "custom_prices": {
       "label": "Použít vlastní ceny tokenů",
@@ -270,24 +270,24 @@
     "ready": "připraveno"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (reset za {time})",
-    "tokens": "tokeny: {tokens}, čtení z mezipaměti: {cache}",
-    "stale": "Neaktuální: {error}",
+    "window": "{window}: {pct} %  (obnovení za {time})",
+    "tokens": "tokeny: {tokens}, znovu čtené: {cache}",
+    "stale": "Starší údaje — {error}",
     "loading": "Načítání...",
-    "cost": "podle cen API: {cost}"
+    "cost": "při placení za tokeny: {cost}"
   },
   "error": {
     "no_credentials": "Nepřihlášeno do Claude Code",
-    "token_expired": "Token vypršel - jednou použijte Claude Code pro jeho obnovení",
+    "token_expired": "Přihlášení vypršelo - jednou otevřete Claude Code, aby se obnovilo",
     "network": "Bez připojení",
-    "bad_response": "Neočekávaná odpověď API",
-    "http_429": "Limit požadavků - zkusím znovu"
+    "bad_response": "Neočekávaná odpověď služby využití",
+    "http_429": "Příliš mnoho kontrol - nový pokus za pár minut"
   },
   "panel": {
-    "no_reset": "žádný čekající reset",
-    "resets_in": "reset za {time}",
+    "no_reset": "limit je plný",
+    "resets_in": "obnovení za {time}",
     "peak": "maximum {tokens}",
-    "model_tokens": "{tokens} · {messages} zpráv · mezipaměť {cache}",
+    "model_tokens": "{tokens} · {messages} zpráv · znovu čtené {cache}",
     "no_models": "V tomto okně zatím žádné využití.",
     "by_model": "Tokeny podle modelu",
     "refresh": "Obnovit",
@@ -302,10 +302,10 @@
     "last_7d": "Posledních 7 dní",
     "hours_ago": "před {n} h",
     "days_ago": "před {n} d",
-    "cost_total": "≈ {cost} podle cen API (odhad)"
+    "cost_total": "≈ {cost} při placení za tokeny (odhad)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",
-    "body": "Reset za {time}"
+    "body": "Obnovení za {time}"
   }
 }

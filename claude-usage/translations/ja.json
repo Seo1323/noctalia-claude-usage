@@ -2,128 +2,128 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "更新間隔（分）",
-      "description": "使用量 API を問い合わせる頻度。"
+      "label": "確認する間隔（分）",
+      "description": "ウィジェットが最新の使用量を取得する間隔です。"
     },
     "window": {
-      "label": "制限ウィンドウ",
-      "description": "バーに表示する使用量ウィンドウ。",
-      "five_hour": "5時間セッション",
-      "weekly": "週間（7日）",
+      "label": "表示する上限",
+      "description": "Claude Code には 5 時間ごとの上限と週ごとの上限があります。どちらか一方、または両方を表示できます。",
+      "five_hour": "5 時間の上限",
+      "weekly": "週間の上限（7d）",
       "both": "両方"
     },
     "display_mode": {
-      "label": "詳細を表示",
-      "description": "リセットまでの時間、トークン、バーを表示するタイミング。",
+      "label": "詳細を表示するタイミング",
+      "description": "詳細とは、上限が回復するまでの時間、トークン数、バーのことです。",
       "always": "常に",
-      "important": "使用量が多いときのみ（警告しきい値以上）",
-      "hover": "ホバー時のみ（それ以外はアイコンまたはリング）"
+      "important": "使用量が多いときだけ",
+      "hover": "ポインターを重ねたときだけ"
     },
     "logo": {
-      "label": "アイコン",
-      "description": "テキストの前に表示されます。リングは制限の残り（または使用済み）の割合で満たされます。",
+      "label": "先頭の画像",
+      "description": "数字の前に表示されます。リングは、上限を使うにつれて埋まっていく小さな円です。",
       "none": "なし",
-      "glyph": "グリフ",
-      "star": "スター（同梱）",
-      "custom": "カスタム画像",
+      "glyph": "アイコン",
+      "star": "星",
+      "custom": "自分の画像",
       "ring": "使用量リング"
     },
     "glyph": {
-      "label": "グリフ"
+      "label": "どのアイコン"
     },
     "logo_path": {
-      "label": "カスタム画像",
-      "description": "SVG または PNG。空の場合はプラグインフォルダーの logo.svg。"
+      "label": "自分の画像",
+      "description": "SVG または PNG ファイル。空欄にするとプラグインフォルダーの logo.svg を使います。"
     },
     "icon_size": {
-      "label": "アイコンサイズ（px）"
+      "label": "画像のサイズ（px）"
     },
     "size": {
-      "label": "アイコンサイズ（px）"
+      "label": "アイコンのサイズ（px）"
     },
     "show_percent": {
-      "label": "使用率を表示"
+      "label": "パーセントを表示"
     },
     "percent_mode": {
-      "label": "パーセントの表示内容",
+      "label": "パーセントの表示方法",
       "used": "使用済み（22%）",
       "left": "残り（残り 78%）"
     },
     "show_prefix": {
-      "label": "5h / 7d ラベルを表示",
-      "description": "各パーセントの前にウィンドウ名を付けます。"
+      "label": "どの上限かを表示",
+      "description": "各パーセントの前に「5h」や「7d」などの短い名前を付けます。"
     },
     "show_bar": {
       "label": "プログレスバーを表示",
-      "description": "パーセントの横に小さなバーを表示します。"
+      "description": "パーセントの横の小さなバーです。"
     },
     "bar_width": {
       "label": "プログレスバーの幅（px）"
     },
     "gauge_mode": {
-      "label": "バーとリングの表示内容",
-      "description": "プログレスバーと使用量リングを何で満たすか。",
-      "left": "残り",
-      "used": "使用済み"
+      "label": "バーとリングが示すもの",
+      "description": "残りの量で埋まるか、使った量で埋まるかを選びます。",
+      "left": "残りの量",
+      "used": "使った量"
     },
     "show_reset": {
-      "label": "リセットまでの時間を表示",
-      "description": "ウィンドウがリセットされるまでの残り時間。"
+      "label": "上限が回復するまでの時間を表示",
+      "description": "上限が再びいっぱいになるまでのカウントダウンです。"
     },
     "reset_format": {
-      "label": "リセット時間の形式",
-      "compact": "短縮（1:44）",
-      "verbose": "詳細（1h 44m）"
+      "label": "時間の表示形式",
+      "compact": "短い（1:44）",
+      "verbose": "長い（1h 44m）"
     },
     "ready_text": {
-      "label": "リセット待ちがないときのテキスト",
-      "description": "ウィンドウが動いていないとき、カウントダウンの代わりに表示します。空 = 使用言語の「準備完了」。"
+      "label": "上限がいっぱいのときのテキスト",
+      "description": "この上限をまだ使っていない間、カウントダウンの代わりに表示します。空欄なら「準備完了」です。"
     },
     "show_tokens": {
-      "label": "使用トークンを表示",
-      "description": "ウィンドウ内の使用トークン（入力 + 出力 + キャッシュ作成、ローカルのトランスクリプトから）。"
+      "label": "使ったトークンを表示",
+      "description": "トークンは Claude が読み書きするテキストの小さな断片です。このパソコン上で数えます。"
     },
     "include_cache_read": {
-      "label": "キャッシュ読み取りを含める",
-      "description": "プロンプトキャッシュから読み取ったトークンを加算します。安価ですが数が多いため、数値が大きくなります。"
+      "label": "読み直したテキストも数える",
+      "description": "Claude は返答のたびに会話を読み直します。これも数えると数字がかなり大きくなります。"
     },
     "token_format": {
-      "label": "トークンの形式",
-      "short": "短縮（92k）",
-      "full": "完全（92424）"
+      "label": "トークン数の表記",
+      "short": "短い（92k）",
+      "full": "正確（92424）"
     },
     "separator": {
-      "label": "項目間の区切り",
+      "label": "区切り",
       "none": "なし",
       "dot": "ドット（·）",
       "bar": "縦線（|）",
       "slash": "スラッシュ（/）"
     },
     "dim_extras": {
-      "label": "時間とトークンを淡色にする",
-      "description": "リセットまでの時間とトークンを控えめな色で表示し、パーセントだけが使用量の色を保ちます。"
+      "label": "時間とトークンを淡く表示",
+      "description": "警告の色はパーセントだけに残ります。"
     },
     "gap": {
-      "label": "項目間の間隔（px）"
+      "label": "項目の間隔（px）"
     },
     "font_weight": {
-      "label": "フォントの太さ",
+      "label": "文字の太さ",
       "medium": "中",
       "bold": "太字"
     },
     "color_by_usage": {
-      "label": "使用量に応じた色",
-      "description": "しきい値を超えると警告 / 危険の色に切り替えます。"
+      "label": "使用量に応じて色を変える",
+      "description": "下のレベルで警告の色、次に危険の色に変わります。"
     },
     "warn_at": {
-      "label": "警告しきい値（%）"
+      "label": "警告の開始（%）"
     },
     "critical_at": {
-      "label": "危険しきい値（%）"
+      "label": "危険の開始（%）"
     },
     "color": {
-      "label": "テキストの色",
-      "description": "通常時のカラーロールまたは hex カラー。"
+      "label": "通常の文字の色",
+      "description": "テーマの色や好きな色を選べます。"
     },
     "warn_color": {
       "label": "警告の色"
@@ -132,47 +132,47 @@
       "label": "危険の色"
     },
     "click_command": {
-      "label": "クリック時のコマンド",
-      "description": "左クリックで実行するシェルコマンド（例: alacritty -e claude）。"
+      "label": "自分のコマンド",
+      "description": "実行するコマンド。例: alacritty -e claude でターミナルに Claude Code を開きます。"
     },
     "command": {
       "label": "クリック時のコマンド",
-      "description": "アイコンをクリックしたときに実行するコマンド。"
+      "description": "アイコンをクリックしたときに実行するコマンド（例: alacritty -e claude）。"
     },
     "animation_ms": {
-      "label": "ホバーアニメーション（ms）",
-      "description": "詳細がスライドしてフェードインするまでの時間。0 でアニメーションをオフにします。"
+      "label": "アニメーションの速さ（ms）",
+      "description": "ウィジェットにポインターを重ねたとき、詳細が表示されるまでの時間です。0 = アニメーションなし。"
     },
     "percent_decimals": {
-      "label": "パーセントの小数点以下桁数",
-      "description": "0 で整数に丸めます。現在 API は整数のパーセントを返すため、小数点以下は通常 .0 になります。"
+      "label": "パーセントの小数点以下",
+      "description": "0 は整数で表示します。使用量は現在整数のパーセントで届くため、小数点以下はたいてい .0 です。"
     },
     "launch_command": {
-      "label": "Claude Code コマンド",
-      "description": "パネルが Claude Code を起動するターミナルコマンド。選択した --model とモードが追加されます。"
+      "label": "Claude Code を開くコマンド",
+      "description": "パネルはこのコマンドでターミナルに Claude Code を開きます。選んだモデルとセッションが末尾に付きます。"
     },
     "click_action": {
-      "label": "左クリック",
-      "description": "ウィジェットを左クリックしたときの動作。右クリックは常に更新します。",
+      "label": "左クリックの動作",
+      "description": "ウィジェットを左クリックしたときの動作です。右クリックは常に更新します。",
       "panel": "パネルを開く",
-      "command": "クリック時のコマンドを実行",
+      "command": "自分のコマンドを実行",
       "refresh": "更新"
     },
     "panel_translucent": {
-      "label": "半透明のパネル",
-      "description": "パネルの背景から壁紙が透けて見えます。テキストは不透明のままです。"
+      "label": "透けるパネル",
+      "description": "パネル越しに壁紙が見えます。文字ははっきりしたままです。"
     },
     "panel_opacity": {
-      "label": "パネル背景の不透明度",
-      "description": "0 は完全に透明、1 は不透明です。"
+      "label": "パネルの濃さ",
+      "description": "0 = 完全に透明、1 = 不透明。"
     },
     "show_cost": {
-      "label": "API 価格でのコストを表示",
-      "description": "ウィンドウ内トークンの推定コスト（Anthropic API の定価ベース）。Claude のサブスクリプションではトークン単位で支払いません。同じ使用量を API で使った場合の金額です。"
+      "label": "かかる費用を表示",
+      "description": "トークンごとに支払った場合にこの使用量がいくらになるかの目安です。Claude のサブスクリプションでは支払いは発生しません。"
     },
     "currency": {
-      "label": "コストの通貨",
-      "description": "手動レートを設定しない限り、コストは欧州中央銀行の日次参照レートで USD から換算されます（USD 以外の通貨のときだけ、最大 12 時間ごとに取得）。",
+      "label": "通貨",
+      "description": "費用は欧州中央銀行の毎日のレート、または自分で決めたレートで米ドルから換算されます。",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "手動の為替レート",
-      "description": "1 USD あたりの選択した通貨の単位数。0 = ECB の日次レート。"
+      "label": "自分の為替レート",
+      "description": "1 米ドルが選んだ通貨でいくらか。0 = 毎日のレートを自動で使います。"
     },
     "ring_thickness": {
       "label": "リングの太さ",
@@ -205,48 +205,48 @@
       "thick": "太い"
     },
     "ring_track": {
-      "label": "リングのトラックを表示",
-      "description": "塗られた部分の後ろにある淡い円全体。"
+      "label": "リングの背景を表示",
+      "description": "埋まった部分の後ろにある淡い円全体です。"
     },
     "format": {
-      "label": "テキストテンプレート",
-      "description": "項目を独自のテキストに置き換えます。例: {pct} · {reset} · {tokens}。プレースホルダー: {window} {pct} {left} {reset} {tokens} {cost} {model}。空 = 通常のレイアウト。"
+      "label": "自分のテキスト",
+      "description": "いつもの項目の代わりに自分のテキストを表示します。波かっこの言葉が置き換わります: {window} {pct} {left} {reset} {tokens} {cost} {model}。例: {pct} · {reset}。空欄なら通常の表示です。"
     },
     "label_five": {
-      "label": "5時間ウィンドウのラベル"
+      "label": "5 時間の上限の名前"
     },
     "label_week": {
-      "label": "週間ウィンドウのラベル"
+      "label": "週間の上限の名前"
     },
     "show_model": {
       "label": "現在のモデルを表示",
-      "description": "最新の Claude Code メッセージのモデル（例: Opus 5.5）。"
+      "description": "最後に使われた Claude のモデル（例: Opus 5.5）。"
     },
     "font_size": {
-      "label": "フォントサイズ（px）",
-      "description": "0 = バーのフォントサイズ。"
+      "label": "文字の大きさ（px）",
+      "description": "0 = バーのほかの部分と同じ大きさ。"
     },
     "gradient": {
-      "label": "なめらかなグラデーション",
-      "description": "しきい値で切り替えるのではなく、使用量に応じて色をなめらかに変化させます。"
+      "label": "なめらかな色の変化",
+      "description": "レベルで急に変わるのではなく、使用量に合わせて少しずつ色が変わります。"
     },
     "weekly_own_color": {
-      "label": "週間ウィンドウに専用の色",
-      "description": "両方のウィンドウを表示するとき、7d の項目に別のベースカラーを使います。"
+      "label": "週間の上限に別の色",
+      "description": "両方の上限を表示するときに使います。"
     },
     "weekly_color": {
-      "label": "週間ウィンドウの色"
+      "label": "週間の上限の色"
     },
     "hide_below": {
-      "label": "使用率がこの値未満なら非表示（%）",
-      "description": "使用率がこの値を下回っている間はウィジェットを隠します。0 = 常に表示。"
+      "label": "使用量がこの値になるまで隠す（%）",
+      "description": "使用量が少ない間はウィジェットを隠します。0 = 常に表示。"
     },
     "notify": {
       "label": "通知",
-      "description": "使用量がしきい値を超えたとき、ウィンドウごとに一度通知します。",
+      "description": "使用量がレベルを超えたときに一度だけ通知します。",
       "off": "オフ",
-      "warning": "警告と危険のしきい値で",
-      "critical": "危険のしきい値のみ"
+      "warning": "警告と危険のレベルで",
+      "critical": "危険のレベルだけ"
     },
     "custom_prices": {
       "label": "自分のトークン価格を使う",
@@ -270,24 +270,24 @@
     "ready": "準備完了"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  （{time} 後にリセット）",
-    "tokens": "トークン: {tokens}、キャッシュ読み取り: {cache}",
-    "stale": "古いデータ: {error}",
+    "window": "{window}: {pct}%  （{time} 後に回復）",
+    "tokens": "トークン: {tokens}、読み直し: {cache}",
+    "stale": "前のデータ — {error}",
     "loading": "読み込み中...",
-    "cost": "API 価格: {cost}"
+    "cost": "トークンごとに支払うと: {cost}"
   },
   "error": {
     "no_credentials": "Claude Code にログインしていません",
-    "token_expired": "トークンの期限切れ - 一度 Claude Code を使うと更新されます",
+    "token_expired": "ログインの期限切れ - Claude Code を一度開くと更新されます",
     "network": "接続がありません",
-    "bad_response": "予期しない API 応答",
-    "http_429": "レート制限中 - 後で再試行します"
+    "bad_response": "使用量サービスから予期しない応答",
+    "http_429": "確認が多すぎます - 数分後にもう一度試します"
   },
   "panel": {
-    "no_reset": "リセット待ちなし",
-    "resets_in": "{time} 後にリセット",
+    "no_reset": "上限はいっぱいです",
+    "resets_in": "{time} 後に回復",
     "peak": "ピーク {tokens}",
-    "model_tokens": "{tokens} · {messages} 件 · キャッシュ {cache}",
+    "model_tokens": "{tokens} · {messages} 件 · 読み直し {cache}",
     "no_models": "このウィンドウではまだ使用されていません。",
     "by_model": "モデル別トークン",
     "refresh": "更新",
@@ -302,10 +302,10 @@
     "last_7d": "過去7日間",
     "hours_ago": "{n} 時間前",
     "days_ago": "{n} 日前",
-    "cost_total": "≈ {cost}（API 価格での推定）"
+    "cost_total": "≈ {cost}（トークンごとに支払った場合の目安）"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",
-    "body": "{time} 後にリセット"
+    "body": "{time} 後に回復"
   }
 }

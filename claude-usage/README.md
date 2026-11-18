@@ -171,8 +171,8 @@ The settings window, the tooltip and the bar text follow Noctalia's language (**
 `en`, `en-GB`, `es`, `fr`, `gl-ES`, `he`, `hu`, `it`, `ja`, `ko`, `ku`, `nl`, `nn`, `pl`, `pt-BR`, `ro`, `ru`, `sv`,
 `tr`, `uk-UA`, `vi`, `zh-Hans` and `zh-Hant`.
 
-English and Polish are maintained by the author; the others were machine-translated and have not been reviewed by
-native speakers yet. Corrections are very welcome — edit `translations/<lang>.json` and open a pull request.
+English and Polish are maintained by the author; the others were machine-translated, then checked for plain wording,
+gender-neutral phrasing, spelling and grammar, but not yet reviewed by native speakers. Corrections are very welcome — edit `translations/<lang>.json` and open a pull request.
 
 ## IPC
 

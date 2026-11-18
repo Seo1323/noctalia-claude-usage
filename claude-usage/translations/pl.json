@@ -270,24 +270,24 @@
     "ready": "gotowe"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (reset za {time})",
-    "tokens": "tokeny: {tokens}, odczyt cache: {cache}",
-    "stale": "Nieaktualne: {error}",
+    "window": "{window}: {pct}%  (odnowienie za {time})",
+    "tokens": "tokeny: {tokens}, ponownie czytane: {cache}",
+    "stale": "Starsze dane — {error}",
     "loading": "Wczytywanie...",
-    "cost": "według cen API: {cost}"
+    "cost": "przy płaceniu za tokeny: {cost}"
   },
   "error": {
     "no_credentials": "Nie zalogowano do Claude Code",
-    "token_expired": "Token wygasł - użyj raz Claude Code, aby go odświeżyć",
+    "token_expired": "Logowanie wygasło - otwórz raz Claude Code, żeby je odnowić",
     "network": "Brak połączenia",
-    "bad_response": "Nieoczekiwana odpowiedź API",
-    "http_429": "Limit zapytań - ponowię później"
+    "bad_response": "Nieoczekiwana odpowiedź usługi zużycia",
+    "http_429": "Za dużo sprawdzeń - ponowna próba za kilka minut"
   },
   "panel": {
-    "no_reset": "brak naliczanego resetu",
-    "resets_in": "reset za {time}",
+    "no_reset": "limit jest pełny",
+    "resets_in": "odnowienie za {time}",
     "peak": "szczyt {tokens}",
-    "model_tokens": "{tokens} · {messages} wiad. · cache {cache}",
+    "model_tokens": "{tokens} · {messages} wiad. · ponownie czytane {cache}",
     "no_models": "Brak zużycia w tym oknie.",
     "by_model": "Tokeny według modelu",
     "refresh": "Odśwież",
@@ -302,10 +302,10 @@
     "last_7d": "Ostatnie 7 dni",
     "hours_ago": "{n} godz. temu",
     "days_ago": "{n} dni temu",
-    "cost_total": "≈ {cost} według cen API (szacunek)"
+    "cost_total": "≈ {cost} przy płaceniu za tokeny (szacunek)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",
-    "body": "Reset za {time}"
+    "body": "Odnowienie za {time}"
   }
 }

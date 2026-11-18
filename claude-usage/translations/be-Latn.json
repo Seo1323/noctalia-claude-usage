@@ -2,128 +2,128 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Interval abnaŭlennia (chviliny)",
-      "description": "Jak časta apytvajecca API vykarystannia."
+      "label": "Jak časta praviarać (chviliny)",
+      "description": "Jak časta vidžet zapytvaje biahučaje vykarystannie."
     },
     "window": {
-      "label": "Akno limitu",
-      "description": "Jakoje akno vykarystannia pakazvaje paneĺ.",
-      "five_hour": "5-hadzinnaja sesija",
-      "weekly": "Tydzień (7 dz)",
+      "label": "Jaki limit pakazvać",
+      "description": "U Claude Code josć 5-hadzinny i tydniovy limity. Možna pakazać adzin z ich abo abodva.",
+      "five_hour": "5-hadzinny limit",
+      "weekly": "Tydniovy limit (7d)",
       "both": "Abodva"
     },
     "display_mode": {
-      "label": "Pakazvać padrabiaznasci",
-      "description": "Kali pakazvajucca čas da skidu, tokieny i palasa.",
+      "label": "Kali pakazvać padrabiaznasci",
+      "description": "Padrabiaznasci — heta čas da adnaŭliennia limitu, tokieny i pałasa.",
       "always": "Zaŭsiody",
-      "important": "Toĺki pry vysokim vykarystanni (vyšej za paroh papiaredžannia)",
-      "hover": "Toĺki pry naviadzienni (inakš značok abo kaĺco)"
+      "important": "Toĺki pry vysokim vykarystanni",
+      "hover": "Toĺki pry naviadzienni"
     },
     "logo": {
-      "label": "Značok",
-      "description": "Pakazvajecca pierad tekstam. Kaĺco zapaŭniajecca reštaj (abo vykarystanaj) častkaj limitu.",
+      "label": "Maliunak napieradzie",
+      "description": "Pakazvajecca pierad ličbami. Kaĺco — heta nievialiki kruh, jaki zapaŭniajecca pa miery vydatkoŭvannia limitu.",
       "none": "Niama",
-      "glyph": "Hlif",
-      "star": "Zorka (ubudavanaja)",
+      "glyph": "Značok",
+      "star": "Zorka",
       "custom": "Ulasny maliunak",
       "ring": "Kaĺco vykarystannia"
     },
     "glyph": {
-      "label": "Hlif"
+      "label": "Jaki značok"
     },
     "logo_path": {
       "label": "Ulasny maliunak",
-      "description": "SVG abo PNG. Pusta aznačaje logo.svg u papcy plahina."
+      "description": "Fajł SVG abo PNG. Pakińcie pustym, kab vykarystać logo.svg z papki plahina."
     },
     "icon_size": {
-      "label": "Pamier značka (px)"
+      "label": "Pamier maliunka (px)"
     },
     "size": {
       "label": "Pamier značka (px)"
     },
     "show_percent": {
-      "label": "Pakazvać pracent vykarystannia"
+      "label": "Pakazvać pracent"
     },
     "percent_mode": {
-      "label": "Pracent pakazvaje",
+      "label": "Pakazvać pracent jak",
       "used": "Vykarystana (22%)",
       "left": "Zastałosia (zastałosia 78%)"
     },
     "show_prefix": {
-      "label": "Pakazvać mietki 5h / 7d",
-      "description": "Dadavać pierad kožnym pracentam jaho akno."
+      "label": "Pakazvać, jaki heta limit",
+      "description": "Dadaje karotkuju nazvu, napryklad «5h» abo «7d», pierad kožnym pracentam."
     },
     "show_bar": {
-      "label": "Pakazvać palasu prahresu",
-      "description": "Nievialikaja palasa pobač z pracentam."
+      "label": "Pakazvać pałasu prahresu",
+      "description": "Nievialikaja pałasa pobač z pracentam."
     },
     "bar_width": {
-      "label": "Šyrynia palasy prahresu (px)"
+      "label": "Šyrynia pałasy prahresu (px)"
     },
     "gauge_mode": {
-      "label": "Palasa i kaĺco pakazvajuć",
-      "description": "Čym zapaŭniajucca palasa prahresu i kaĺco vykarystannia.",
-      "left": "Koĺki zastałosia",
-      "used": "Koĺki vykarystana"
+      "label": "Pałasa i kaĺco pakazvajuć",
+      "description": "Vybieryce, ci zapaŭniajucca jany reštaj, ci vydatkavanaj častkaj.",
+      "left": "Reštu",
+      "used": "Vydatkavanaje"
     },
     "show_reset": {
-      "label": "Pakazvać čas da skidu",
-      "description": "Čas da skidu akna."
+      "label": "Pakazvać čas da adnaŭliennia limitu",
+      "description": "Advarotny adlik da momantu, kali limit znoŭ budzie poŭnym."
     },
     "reset_format": {
-      "label": "Farmat času skidu",
-      "compact": "Scisły (1:44)",
-      "verbose": "Padrabiazny (1h 44m)"
+      "label": "Farmat času",
+      "compact": "Karotki (1:44)",
+      "verbose": "Doŭhi (1h 44m)"
     },
     "ready_text": {
-      "label": "Tekst, kali skid nie čakajecca",
-      "description": "Pakazvajecca zamiest advarotnaha adliku, kali akno nie idzie. Pusta = «hatova» na vašaj movie."
+      "label": "Tekst, kali limit poŭny",
+      "description": "Pakazvajecca zamiest advarotnaha adliku, pakuĺ hety limit jašče nie vydatkoŭvaŭsia. Pakińcie pustym dlia «hatova»."
     },
     "show_tokens": {
-      "label": "Pakazvać vykarystanyja tokieny",
-      "description": "Tokieny, vykarystanyja ŭ aknie (uvod + vyvad + zapis u keš, z lakaĺnych žurnałaŭ)."
+      "label": "Pakazvać vydatkavanyja tokieny",
+      "description": "Tokieny — heta kavałački tekstu, jakija Claude čytaje i piša. Padlik idzie na vašym kampjutary."
     },
     "include_cache_read": {
-      "label": "Uličvać čytanni z keša",
-      "description": "Dadać tokieny, pračytanyja z keša promptaŭ. Jany tannyja, ale ich šmat, tamu lik mocna rascie."
+      "label": "Uličvać i paŭtorna pračytany tekst",
+      "description": "Pierad kožnym adkazam Claude nanava čytaje razmovu. Kali heta ŭličvać, lik stanie značna boĺšym."
     },
     "token_format": {
-      "label": "Farmat tokienaŭ",
-      "short": "Scisły (92k)",
-      "full": "Poŭny (92424)"
+      "label": "Zapis koĺkasci tokienaŭ",
+      "short": "Karotki (92k)",
+      "full": "Dakładny (92424)"
     },
     "separator": {
-      "label": "Razdzialiaĺnik pamiž elemientami",
+      "label": "Razdzialiaĺnik",
       "none": "Niama",
       "dot": "Kropka (·)",
       "bar": "Ryska (|)",
       "slash": "Kasaja ryska (/)"
     },
     "dim_extras": {
-      "label": "Pryhłušać čas i tokieny",
-      "description": "Čas da skidu i tokieny pryhłušanym kolieram; kolier vykarystannia zachoŭvaje toĺki pracent."
+      "label": "Rabić čas i tokieny bliadniejšymi",
+      "description": "Koliery papiaredžanniaŭ zachoŭvaje toĺki pracent."
     },
     "gap": {
       "label": "Adstup pamiž elemientami (px)"
     },
     "font_weight": {
-      "label": "Taŭščynia šryftu",
+      "label": "Taŭščynia tekstu",
       "medium": "Siaredni",
       "bold": "Toŭsty"
     },
     "color_by_usage": {
-      "label": "Kolier pavodle vykarystannia",
-      "description": "Vyšej za parohi pierakliučacca na koliery papiaredžannia / krytyčny."
+      "label": "Mianiać kolier pa miery rostu vykarystannia",
+      "description": "Na ŭzroŭniach nižej kolier zmienicca na papiaredžaĺny, a potym na krytyčny."
     },
     "warn_at": {
-      "label": "Paroh papiaredžannia (%)"
+      "label": "Papiaredžannie ad (%)"
     },
     "critical_at": {
-      "label": "Krytyčny paroh (%)"
+      "label": "Krytyčny ŭzrovień ad (%)"
     },
     "color": {
-      "label": "Kolier tekstu",
-      "description": "Kaliarovaja rolia abo hex-kolier dlia zvyčajnaha vykarystannia."
+      "label": "Zvyčajny kolier tekstu",
+      "description": "Kolier z temy abo luby inšy."
     },
     "warn_color": {
       "label": "Kolier papiaredžannia"
@@ -132,47 +132,47 @@
       "label": "Krytyčny kolier"
     },
     "click_command": {
-      "label": "Kamanda pa pstryčcy",
-      "description": "Kamanda abałonki pa levaj pstryčcy, napr. alacritty -e claude."
+      "label": "Maja kamanda",
+      "description": "Kamanda dlia zapusku, napryklad alacritty -e claude, kab adkryć Claude Code u terminale."
     },
     "command": {
       "label": "Kamanda pa pstryčcy",
-      "description": "Kamanda, što vykonvajecca pa pstryčcy na značku."
+      "description": "Kamanda, jakaja zapuskajecca paslia pstryčki na značku, napryklad alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Animacyja pry naviadzienni (ms)",
-      "description": "Koĺki doŭžycca vysoŭvannie i zjaŭliennie padrabiaznasciej. 0 vykliučaje animacyju."
+      "label": "Chutkasć animacyi (ms)",
+      "description": "Koĺki času padrabiaznasci zjaŭliajucca pry naviadzienni na vidžet. 0 = biez animacyi."
     },
     "percent_decimals": {
       "label": "Znakaŭ paslia koski ŭ pracentach",
-      "description": "0 akruhliaje da cełych. Zaraz API viartaje cełyja pracenty, tamu drobnaja častka zvyčajna ,0."
+      "description": "0 pakazvaje cełyja liki. Ciapier vykarystannie prychodzić u cełych pracentach, tamu paslia koski zvyčajna 0."
     },
     "launch_command": {
-      "label": "Kamanda Claude Code",
-      "description": "Kamanda terminała, jakoj paneĺ zapuskaje Claude Code; dadajucca vybranyja --model i režym."
+      "label": "Kamanda, jakaja adkryvaje Claude Code",
+      "description": "Joju paneĺ adkryvaje Claude Code u terminale. Vybranyja madeĺ i sesija dadajucca ŭ kancy."
     },
     "click_action": {
       "label": "Levaja pstryčka",
-      "description": "Što robić levaja pstryčka pa vidžecie. Pravaja pstryčka zaŭsiody abnaŭliaje.",
+      "description": "Što adbyvajecca paslia pstryčki levaj knopkaj pa vidžecie. Pravaja pstryčka zaŭsiody abnaŭliaje.",
       "panel": "Adkryć paneĺ",
-      "command": "Vykanać kamandu pstryčki",
+      "command": "Zapuskaje maju kamandu",
       "refresh": "Abnavić"
     },
     "panel_translucent": {
-      "label": "Paŭprazrystaja paneĺ",
-      "description": "Fon prasviečvaje praz paneĺ; tekst zastajecca całkam nieprazrystym."
+      "label": "Prazrystaja paneĺ",
+      "description": "Špaliery prasviečvajuć praz paneĺ. Tekst zastajecca vyraznym."
     },
     "panel_opacity": {
-      "label": "Nieprazrystasć fonu panełi",
-      "description": "0 — całkam prazrysta, 1 — sucelny fon."
+      "label": "Nakoĺki paneĺ ščyĺnaja",
+      "description": "0 = całkam prazrystaja, 1 = sucelnaja."
     },
     "show_cost": {
-      "label": "Pakazvać košt pa cenach API",
-      "description": "Prykładny košt tokienaŭ akna pavodle prajsa API Anthropic. Z padpiskaj Claude vy nie płacicie za tokieny - tut vidać, koĺki kaštavała b toje ž vykarystannie praz API."
+      "label": "Pakazvać, koĺki b heta kaštavała",
+      "description": "Acenka taho, koĺki kaštavała b takoje vykarystannie z apłataj za tokieny. Z padpiskaj Claude heta nie apłačvajecca."
     },
     "currency": {
-      "label": "Valiuta koštu",
-      "description": "Košt pieraličvajecca z USD pa štodzionnych daviedačnych kursach Jeŭrapiejskaha centraĺnaha banka (zahružajucca nie čašciej za raz na 12 hadzin i toĺki dlia valiuty, adroznaj ad USD), kali vy nie zadali kurs uručnuju.",
+      "label": "Valiuta",
+      "description": "Košt pieraličvajecca z dolaraŭ ZŠA pa štodzionnych kursach Jeŭrapiejskaha centraĺnaha banka abo pa vašym kursie.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Kurs uručnuju",
-      "description": "Adzinak vybranaj valiuty za 1 USD. 0 = štodzionny kurs JeCB."
+      "label": "Moj kurs valiuty",
+      "description": "Koĺki kaštuje 1 dolar ZŠA ŭ vašaj valiucie. 0 = aŭtamatyčna štodzionny kurs."
     },
     "ring_thickness": {
       "label": "Taŭščynia kaĺca",
@@ -205,48 +205,48 @@
       "thick": "Toŭstaje"
     },
     "ring_track": {
-      "label": "Pakazvać darožku kaĺca",
+      "label": "Pakazvać fon kaĺca",
       "description": "Blednaja poŭnaja akružyna za zapoŭnienaj častkaj."
     },
     "format": {
-      "label": "Šablon tekstu",
-      "description": "Zamianiaje elemienty vašym tekstam, napryklad {pct} · {reset} · {tokens}. Padstanoŭki: {window} {pct} {left} {reset} {tokens} {cost} {model}. Pusta = zvyčajny vyhliad."
+      "label": "Ulasny tekst",
+      "description": "Ulasny tekst zamiest zvyčajnych elemientaŭ. Słovy ŭ fihurnych dužkach padstaŭliajucca: {window} {pct} {left} {reset} {tokens} {cost} {model}. Pryklad: {pct} · {reset}. Pakińcie pustym dlia zvyčajnaha vyhliadu."
     },
     "label_five": {
-      "label": "Mietka 5-hadzinnaha akna"
+      "label": "Nazva 5-hadzinnaha limitu"
     },
     "label_week": {
-      "label": "Mietka tydniovaha akna"
+      "label": "Nazva tydniovaha limitu"
     },
     "show_model": {
       "label": "Pakazvać biahučuju madeĺ",
-      "description": "Madeĺ vašaha apošniaha paviedamliennia ŭ Claude Code, napryklad Opus 5.5."
+      "description": "Madeĺ Claude, vykarystanaja apošniaj, napryklad Opus 5.5."
     },
     "font_size": {
-      "label": "Pamier šryftu (px)",
-      "description": "0 = pamier šryftu panełi."
+      "label": "Pamier tekstu (px)",
+      "description": "0 = taki ž pamier, jak u astatniaj panełi."
     },
     "gradient": {
-      "label": "Płaŭny pierachod kolieraŭ",
-      "description": "Koliery zmianiajucca płaŭna razam z vykarystanniem, a nie pierakliučajucca na parohach."
+      "label": "Płaŭnaja zmiena koliera",
+      "description": "Kolier zmianiajecca pastupova razam z vykarystanniem, a nie skačkom na ŭzroŭniach."
     },
     "weekly_own_color": {
-      "label": "Ulasny kolier dlia tydniovaha akna",
-      "description": "Inšy bazavy kolier dlia elemientaŭ 7d, kali pakazany abodva vokny."
+      "label": "Inšy kolier dlia tydniovaha limitu",
+      "description": "Vykarystoŭvajecca, kali pakazany abodva limity."
     },
     "weekly_color": {
-      "label": "Kolier tydniovaha akna"
+      "label": "Kolier tydniovaha limitu"
     },
     "hide_below": {
-      "label": "Chavać nižej vykarystannia (%)",
-      "description": "Chavaje vidžet, pakuĺ vykarystannie nižej za heta značennie. 0 = zaŭsiody pakazvać."
+      "label": "Chavać, pakuĺ vykarystannie nie dasiahnie (%)",
+      "description": "Vidžet schavany, pakuĺ vykarystannie nizkaje. 0 = zaŭsiody bačny."
     },
     "notify": {
       "label": "Apaviaščenni",
-      "description": "Pakazvaje apaviaščennie adzin raz za akno, kali vykarystannie pieravyšaje paroh.",
+      "description": "Adno apaviaščennie, kali vykarystannie pierachodzić uzrovień.",
       "off": "Vykl.",
-      "warning": "Na parozie papiaredžannia i krytyčnym",
-      "critical": "Toĺki na krytyčnym parozie"
+      "warning": "Na ŭzroŭni papiaredžannia i na krytyčnym",
+      "critical": "Toĺki na krytyčnym uzroŭni"
     },
     "custom_prices": {
       "label": "Ulasnyja ceny za tokieny",
@@ -270,24 +270,24 @@
     "ready": "hatova"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (skid praz {time})",
-    "tokens": "tokieny: {tokens}, čytannie keša: {cache}",
-    "stale": "Sastareła: {error}",
+    "window": "{window}: {pct}%  (adnovicca praz {time})",
+    "tokens": "tokieny: {tokens}, pieračytana: {cache}",
+    "stale": "Papiarednija danyja — {error}",
     "loading": "Zahruzka...",
-    "cost": "pa cenach API: {cost}"
+    "cost": "z apłataj za tokieny: {cost}"
   },
   "error": {
     "no_credentials": "Uvachod u Claude Code nie vykanany",
-    "token_expired": "Termin tokiena skončyŭsia - adzin raz skarystajciesia Claude Code, kab abnavić jaho",
+    "token_expired": "Termin uvachodu skončyŭsia - adkryjcie Claude Code adzin raz, kab abnavić jaho",
     "network": "Niama złučennia",
-    "bad_response": "Niečakany adkaz API",
-    "http_429": "Limit zapytaŭ - pasprabuju paźniej"
+    "bad_response": "Niečakany adkaz servisu vykarystannia",
+    "http_429": "Zanadta šmat pravierak - novaja sproba praz niekaĺki chvilin"
   },
   "panel": {
-    "no_reset": "skid nie čakajecca",
-    "resets_in": "skid praz {time}",
+    "no_reset": "limit poŭny",
+    "resets_in": "adnovicca praz {time}",
     "peak": "pik {tokens}",
-    "model_tokens": "{tokens} · {messages} paviedam. · keš {cache}",
+    "model_tokens": "{tokens} · {messages} paviedam. · pieračytana {cache}",
     "no_models": "U hetym aknie pakuĺ niama vykarystannia.",
     "by_model": "Tokieny pavodle madelaŭ",
     "refresh": "Abnavić",
@@ -302,10 +302,10 @@
     "last_7d": "Apošnija 7 dzion",
     "hours_ago": "{n} hadz tamu",
     "days_ago": "{n} dz tamu",
-    "cost_total": "≈ {cost} pa cenach API (acenka)"
+    "cost_total": "≈ {cost} z apłataj za tokieny (acenka)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",
-    "body": "Skid praz {time}"
+    "body": "Adnovicca praz {time}"
   }
 }

@@ -2,128 +2,128 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Intervallo di aggiornamento (minuti)",
-      "description": "Ogni quanto viene interrogata l’API di utilizzo."
+      "label": "Ogni quanto controllare (minuti)",
+      "description": "Ogni quanto il widget recupera il tuo utilizzo attuale."
     },
     "window": {
-      "label": "Finestra del limite",
-      "description": "Quale finestra di utilizzo mostra la barra.",
-      "five_hour": "Sessione di 5 ore",
-      "weekly": "Settimanale (7 g)",
-      "both": "Entrambe"
+      "label": "Quale limite mostrare",
+      "description": "Claude Code ha un limite di 5 ore e uno settimanale. Mostrane uno o entrambi.",
+      "five_hour": "Limite di 5 ore",
+      "weekly": "Limite settimanale (7 g)",
+      "both": "Entrambi"
     },
     "display_mode": {
-      "label": "Mostra dettagli",
-      "description": "Quando vengono mostrati il tempo al reset, i token e la barra.",
+      "label": "Quando mostrare i dettagli",
+      "description": "I dettagli sono il tempo che manca alla ricarica del limite, i token e la barra.",
       "always": "Sempre",
-      "important": "Solo con utilizzo alto (sopra la soglia di avviso)",
-      "hover": "Solo al passaggio del mouse (altrimenti icona o anello)"
+      "important": "Solo con utilizzo alto",
+      "hover": "Solo al passaggio del puntatore"
     },
     "logo": {
-      "label": "Icona",
-      "description": "Mostrata prima del testo. L’anello si riempie con la parte rimanente (o usata) del limite.",
+      "label": "Immagine davanti",
+      "description": "Mostrata prima dei numeri. L’anello è un piccolo cerchio che si riempie man mano che usi il limite.",
       "none": "Nessuna",
-      "glyph": "Glifo",
-      "star": "Stella (inclusa)",
-      "custom": "Immagine personalizzata",
+      "glyph": "Icona",
+      "star": "Stella",
+      "custom": "La mia immagine",
       "ring": "Anello di utilizzo"
     },
     "glyph": {
-      "label": "Glifo"
+      "label": "Quale icona"
     },
     "logo_path": {
-      "label": "Immagine personalizzata",
-      "description": "SVG o PNG. Vuoto significa logo.svg nella cartella del plugin."
+      "label": "La mia immagine",
+      "description": "Un file SVG o PNG. Lascia vuoto per usare logo.svg dalla cartella del plugin."
     },
     "icon_size": {
-      "label": "Dimensione icona (px)"
+      "label": "Dimensione dell’immagine (px)"
     },
     "size": {
-      "label": "Dimensione icona (px)"
+      "label": "Dimensione dell’icona (px)"
     },
     "show_percent": {
-      "label": "Mostra percentuale di utilizzo"
+      "label": "Mostra la percentuale"
     },
     "percent_mode": {
-      "label": "La percentuale mostra",
+      "label": "Mostra la percentuale come",
       "used": "Usato (22%)",
       "left": "Rimanente (78% rimanente)"
     },
     "show_prefix": {
-      "label": "Mostra etichette 5h / 7d",
-      "description": "Anteponi a ogni percentuale la sua finestra."
+      "label": "Mostra di quale limite si tratta",
+      "description": "Mette un nome breve come «5h» o «7d» prima di ogni percentuale."
     },
     "show_bar": {
-      "label": "Mostra barra di avanzamento",
+      "label": "Mostra una barra di avanzamento",
       "description": "Una piccola barra accanto alla percentuale."
     },
     "bar_width": {
       "label": "Larghezza della barra di avanzamento (px)"
     },
     "gauge_mode": {
-      "label": "Barra e anello mostrano",
-      "description": "Di cosa si riempiono la barra di avanzamento e l’anello di utilizzo.",
+      "label": "La barra e l’anello mostrano",
+      "description": "Scegli se si riempiono con ciò che resta o con ciò che è stato usato.",
       "left": "Ciò che resta",
       "used": "Ciò che è usato"
     },
     "show_reset": {
-      "label": "Mostra tempo al reset",
-      "description": "Tempo rimanente prima che la finestra si azzeri."
+      "label": "Mostra il tempo alla ricarica",
+      "description": "Un conto alla rovescia fino al momento in cui il limite è di nuovo pieno."
     },
     "reset_format": {
-      "label": "Formato del tempo al reset",
-      "compact": "Compatto (1:44)",
-      "verbose": "Esteso (1h 44m)"
+      "label": "Formato dell’ora",
+      "compact": "Breve (1:44)",
+      "verbose": "Lungo (1h 44m)"
     },
     "ready_text": {
-      "label": "Testo quando nessun reset è in corso",
-      "description": "Mostrato al posto del conto alla rovescia quando la finestra non è attiva. Vuoto = «pronto» nella tua lingua."
+      "label": "Testo quando il limite è pieno",
+      "description": "Mostrato al posto del conto alla rovescia finché questo limite non è stato usato. Lascia vuoto per «pronto»."
     },
     "show_tokens": {
-      "label": "Mostra token usati",
-      "description": "Token usati nella finestra (input + output + creazione cache, dalle trascrizioni locali)."
+      "label": "Mostra i token usati",
+      "description": "I token sono pezzi di testo che Claude legge e scrive. Contati sul tuo computer."
     },
     "include_cache_read": {
-      "label": "Includi letture dalla cache",
-      "description": "Aggiungi i token letti dalla cache dei prompt. Costano poco ma sono numerosi, quindi il numero cresce molto."
+      "label": "Conta anche il testo riletto",
+      "description": "Claude rilegge la conversazione prima di ogni risposta. Contarlo rende il numero molto più grande."
     },
     "token_format": {
-      "label": "Formato dei token",
+      "label": "Scrittura del numero di token",
       "short": "Breve (92k)",
-      "full": "Completo (92424)"
+      "full": "Esatto (92424)"
     },
     "separator": {
-      "label": "Separatore tra elementi",
+      "label": "Separatore",
       "none": "Nessuno",
       "dot": "Punto (·)",
       "bar": "Barra (|)",
       "slash": "Barra obliqua (/)"
     },
     "dim_extras": {
-      "label": "Attenua tempo e token",
-      "description": "Mostra il tempo al reset e i token in un colore attenuato; solo la percentuale mantiene il colore di utilizzo."
+      "label": "Attenua il tempo e i token",
+      "description": "Solo la percentuale mantiene i colori di avviso."
     },
     "gap": {
-      "label": "Spaziatura tra elementi (px)"
+      "label": "Spazio tra gli elementi (px)"
     },
     "font_weight": {
-      "label": "Spessore del carattere",
+      "label": "Spessore del testo",
       "medium": "Medio",
       "bold": "Grassetto"
     },
     "color_by_usage": {
-      "label": "Colore in base all’utilizzo",
-      "description": "Passa ai colori di avviso / critico sopra le soglie."
+      "label": "Cambia colore con l’utilizzo",
+      "description": "Passa al colore di avviso e poi a quello critico ai livelli qui sotto."
     },
     "warn_at": {
-      "label": "Soglia di avviso (%)"
+      "label": "Avviso da (%)"
     },
     "critical_at": {
-      "label": "Soglia critica (%)"
+      "label": "Critico da (%)"
     },
     "color": {
-      "label": "Colore del testo",
-      "description": "Ruolo colore o colore hex per l’utilizzo normale."
+      "label": "Colore normale del testo",
+      "description": "Scegli un colore del tuo tema o qualsiasi altro."
     },
     "warn_color": {
       "label": "Colore di avviso"
@@ -132,47 +132,47 @@
       "label": "Colore critico"
     },
     "click_command": {
-      "label": "Comando al clic",
-      "description": "Comando shell eseguito al clic sinistro, ad es. alacritty -e claude."
+      "label": "Il mio comando",
+      "description": "Un comando da eseguire, ad esempio alacritty -e claude per aprire Claude Code in un terminale."
     },
     "command": {
       "label": "Comando al clic",
-      "description": "Comando eseguito al clic sull’icona."
+      "description": "Un comando eseguito con un clic sull’icona, ad esempio alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Animazione al passaggio (ms)",
-      "description": "Quanto impiegano i dettagli a comparire e a dissolversi. 0 disattiva l’animazione."
+      "label": "Velocità dell’animazione (ms)",
+      "description": "Quanto impiegano i dettagli a comparire al passaggio del puntatore sul widget. 0 = nessuna animazione."
     },
     "percent_decimals": {
       "label": "Decimali nelle percentuali",
-      "description": "0 arrotonda all’intero. L’API restituisce al momento percentuali intere, quindi i decimali mostrano di solito ,0."
+      "description": "0 mostra numeri interi. L’utilizzo arriva ora in percentuali intere, quindi i decimali mostrano di solito ,0."
     },
     "launch_command": {
-      "label": "Comando Claude Code",
-      "description": "Comando del terminale con cui il pannello avvia Claude Code; vengono aggiunti --model e la modalità scelti."
+      "label": "Comando che apre Claude Code",
+      "description": "Il pannello lo usa per aprire Claude Code in un terminale. Il modello e la sessione scelti vengono aggiunti alla fine."
     },
     "click_action": {
-      "label": "Clic sinistro",
-      "description": "Cosa fa un clic sinistro sul widget. Il clic destro aggiorna sempre.",
+      "label": "Il clic sinistro",
+      "description": "Cosa succede con un clic sinistro sul widget. Il clic destro aggiorna sempre.",
       "panel": "Apri il pannello",
-      "command": "Esegui il comando al clic",
+      "command": "Esegue il mio comando",
       "refresh": "Aggiorna"
     },
     "panel_translucent": {
-      "label": "Pannello traslucido",
-      "description": "Lascia trasparire lo sfondo attraverso il pannello; il testo resta completamente opaco."
+      "label": "Pannello trasparente",
+      "description": "Lascia vedere lo sfondo attraverso il pannello. Il testo resta nitido."
     },
     "panel_opacity": {
-      "label": "Opacità dello sfondo del pannello",
-      "description": "0 è completamente trasparente, 1 è pieno."
+      "label": "Opacità del pannello",
+      "description": "0 = del tutto trasparente, 1 = pieno."
     },
     "show_cost": {
-      "label": "Mostra il costo ai prezzi API",
-      "description": "Costo stimato dei token della finestra ai prezzi di listino dell’API Anthropic. Con un abbonamento Claude non paghi a token: indica quanto costerebbe lo stesso utilizzo tramite API."
+      "label": "Mostra quanto costerebbe",
+      "description": "Una stima di quanto costerebbe questo utilizzo pagando a token. Con un abbonamento Claude non lo paghi."
     },
     "currency": {
-      "label": "Valuta dei costi",
-      "description": "I costi sono convertiti da USD con i tassi di riferimento giornalieri della Banca centrale europea (scaricati al massimo ogni 12 ore e solo per una valuta diversa da USD), a meno che tu non imposti un tasso manuale.",
+      "label": "Valuta",
+      "description": "I costi sono convertiti dal dollaro statunitense con i tassi giornalieri della Banca centrale europea o con un tasso tuo.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Tasso di cambio manuale",
-      "description": "Unità della valuta scelta per 1 USD. 0 = tasso giornaliero BCE."
+      "label": "Il mio tasso di cambio",
+      "description": "Quanto vale 1 dollaro statunitense nella tua valuta. 0 = tasso giornaliero automatico."
     },
     "ring_thickness": {
       "label": "Spessore dell’anello",
@@ -205,48 +205,48 @@
       "thick": "Spesso"
     },
     "ring_track": {
-      "label": "Mostra la traccia dell’anello",
-      "description": "Il cerchio completo tenue dietro la parte piena."
+      "label": "Mostra lo sfondo dell’anello",
+      "description": "Un cerchio completo tenue dietro la parte piena."
     },
     "format": {
-      "label": "Modello di testo",
-      "description": "Sostituisce gli elementi con un testo tuo, ad es. {pct} · {reset} · {tokens}. Segnaposto: {window} {pct} {left} {reset} {tokens} {cost} {model}. Vuoto = layout normale."
+      "label": "Testo personale",
+      "description": "Scrivi un testo tuo al posto degli elementi soliti. Le parole tra parentesi graffe vengono sostituite: {window} {pct} {left} {reset} {tokens} {cost} {model}. Esempio: {pct} · {reset}. Lascia vuoto per l’aspetto normale."
     },
     "label_five": {
-      "label": "Etichetta della finestra di 5 ore"
+      "label": "Nome del limite di 5 ore"
     },
     "label_week": {
-      "label": "Etichetta della finestra settimanale"
+      "label": "Nome del limite settimanale"
     },
     "show_model": {
       "label": "Mostra il modello attuale",
-      "description": "Il modello del tuo ultimo messaggio di Claude Code, ad es. Opus 5.5."
+      "description": "L’ultimo modello Claude usato, ad esempio Opus 5.5."
     },
     "font_size": {
-      "label": "Dimensione del carattere (px)",
-      "description": "0 = dimensione del carattere della barra."
+      "label": "Dimensione del testo (px)",
+      "description": "0 = stessa dimensione del resto della barra."
     },
     "gradient": {
-      "label": "Sfumatura di colore graduale",
-      "description": "I colori cambiano gradualmente con l’utilizzo invece di scattare alle soglie."
+      "label": "Cambio di colore graduale",
+      "description": "Il colore cambia poco a poco con l’utilizzo invece di saltare ai livelli."
     },
     "weekly_own_color": {
-      "label": "Colore proprio per la finestra settimanale",
-      "description": "Un altro colore di base per gli elementi 7d quando sono mostrate entrambe le finestre."
+      "label": "Un altro colore per il limite settimanale",
+      "description": "Usato quando sono mostrati entrambi i limiti."
     },
     "weekly_color": {
-      "label": "Colore della finestra settimanale"
+      "label": "Colore del limite settimanale"
     },
     "hide_below": {
-      "label": "Nascondi sotto l’utilizzo (%)",
-      "description": "Nasconde il widget finché l’utilizzo è sotto questo valore. 0 = mostra sempre."
+      "label": "Nascondi finché l’utilizzo non arriva a (%)",
+      "description": "Tiene il widget nascosto finché l’utilizzo è basso. 0 = sempre visibile."
     },
     "notify": {
       "label": "Notifiche",
-      "description": "Mostra una notifica una volta per finestra quando l’utilizzo supera una soglia.",
+      "description": "Ricevi una notifica quando l’utilizzo supera un livello.",
       "off": "Disattivate",
-      "warning": "Alle soglie di avviso e critica",
-      "critical": "Solo alla soglia critica"
+      "warning": "Ai livelli di avviso e critico",
+      "critical": "Solo al livello critico"
     },
     "custom_prices": {
       "label": "Usa i miei prezzi",
@@ -270,24 +270,24 @@
     "ready": "pronto"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (reset tra {time})",
-    "tokens": "token: {tokens}, letture cache: {cache}",
-    "stale": "Non aggiornato: {error}",
+    "window": "{window}: {pct}%  (si ricarica tra {time})",
+    "tokens": "token: {tokens}, riletti: {cache}",
+    "stale": "Dati precedenti — {error}",
     "loading": "Caricamento...",
-    "cost": "ai prezzi API: {cost}"
+    "cost": "pagando a token: {cost}"
   },
   "error": {
     "no_credentials": "Accesso a Claude Code non effettuato",
-    "token_expired": "Token scaduto - usa Claude Code una volta per rinnovarlo",
+    "token_expired": "Accesso scaduto - apri Claude Code una volta per rinnovarlo",
     "network": "Nessuna connessione",
-    "bad_response": "Risposta API inattesa",
-    "http_429": "Limite di richieste - nuovo tentativo più tardi"
+    "bad_response": "Risposta inattesa dal servizio di utilizzo",
+    "http_429": "Troppi controlli - nuovo tentativo tra qualche minuto"
   },
   "panel": {
-    "no_reset": "nessun reset in corso",
-    "resets_in": "reset tra {time}",
+    "no_reset": "il limite è pieno",
+    "resets_in": "si ricarica tra {time}",
     "peak": "picco {tokens}",
-    "model_tokens": "{tokens} · {messages} msg · cache {cache}",
+    "model_tokens": "{tokens} · {messages} messaggi · riletti {cache}",
     "no_models": "Ancora nessun utilizzo in questa finestra.",
     "by_model": "Token per modello",
     "refresh": "Aggiorna",
@@ -302,10 +302,10 @@
     "last_7d": "Ultimi 7 giorni",
     "hours_ago": "{n} h fa",
     "days_ago": "{n} g fa",
-    "cost_total": "≈ {cost} ai prezzi API (stima)"
+    "cost_total": "≈ {cost} pagando a token (stima)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",
-    "body": "Reset tra {time}"
+    "body": "Si ricarica tra {time}"
   }
 }

@@ -2,98 +2,98 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Vernieuwingsinterval (minuten)",
-      "description": "Hoe vaak de gebruiks-API wordt bevraagd."
+      "label": "Hoe vaak controleren (minuten)",
+      "description": "Hoe vaak de widget je huidige gebruik ophaalt."
     },
     "window": {
-      "label": "Limietvenster",
-      "description": "Welk gebruiksvenster de balk toont.",
-      "five_hour": "Sessie van 5 uur",
-      "weekly": "Wekelijks (7d)",
-      "both": "Beide"
+      "label": "Welke limiet tonen",
+      "description": "Claude Code heeft een limiet per 5 uur en een weeklimiet. Toon er een of allebei.",
+      "five_hour": "Limiet per 5 uur",
+      "weekly": "Weeklimiet (7d)",
+      "both": "Allebei"
     },
     "display_mode": {
-      "label": "Details tonen",
-      "description": "Wanneer de tijd tot reset, tokens en balk worden getoond.",
+      "label": "Wanneer details tonen",
+      "description": "De details zijn de tijd tot de limiet weer vol is, de tokens en de balk.",
       "always": "Altijd",
-      "important": "Alleen bij hoog gebruik (boven de waarschuwingsdrempel)",
-      "hover": "Alleen bij aanwijzen (anders pictogram of ring)"
+      "important": "Alleen bij hoog gebruik",
+      "hover": "Alleen als ik ernaar wijs"
     },
     "logo": {
-      "label": "Pictogram",
-      "description": "Getoond vóór de tekst. De ring vult zich met het resterende (of gebruikte) deel van de limiet.",
+      "label": "Afbeelding vooraan",
+      "description": "Getoond vóór de cijfers. De ring is een kleine cirkel die zich vult naarmate je de limiet gebruikt.",
       "none": "Geen",
-      "glyph": "Glyph",
-      "star": "Ster (meegeleverd)",
-      "custom": "Eigen afbeelding",
+      "glyph": "Pictogram",
+      "star": "Ster",
+      "custom": "Mijn eigen afbeelding",
       "ring": "Gebruiksring"
     },
     "glyph": {
-      "label": "Glyph"
+      "label": "Welk pictogram"
     },
     "logo_path": {
-      "label": "Eigen afbeelding",
-      "description": "SVG of PNG. Leeg betekent logo.svg in de pluginmap."
+      "label": "Mijn afbeelding",
+      "description": "Een SVG- of PNG-bestand. Laat leeg om logo.svg uit de pluginmap te gebruiken."
     },
     "icon_size": {
-      "label": "Pictogramgrootte (px)"
+      "label": "Grootte van de afbeelding (px)"
     },
     "size": {
-      "label": "Pictogramgrootte (px)"
+      "label": "Grootte van het pictogram (px)"
     },
     "show_percent": {
-      "label": "Gebruikspercentage tonen"
+      "label": "Percentage tonen"
     },
     "percent_mode": {
-      "label": "Percentage toont",
+      "label": "Percentage tonen als",
       "used": "Gebruikt (22%)",
       "left": "Over (78% over)"
     },
     "show_prefix": {
-      "label": "Labels 5h / 7d tonen",
-      "description": "Elk percentage laten voorafgaan door zijn venster."
+      "label": "Tonen welke limiet het is",
+      "description": "Zet een korte naam zoals „5h” of „7d” voor elk percentage."
     },
     "show_bar": {
       "label": "Voortgangsbalk tonen",
       "description": "Een kleine balk naast het percentage."
     },
     "bar_width": {
-      "label": "Breedte voortgangsbalk (px)"
+      "label": "Breedte van de voortgangsbalk (px)"
     },
     "gauge_mode": {
-      "label": "Balk en ring tonen",
-      "description": "Waarmee de voortgangsbalk en de gebruiksring zich vullen.",
-      "left": "Wat over is",
-      "used": "Wat gebruikt is"
+      "label": "De balk en ring tonen",
+      "description": "Kies of ze zich vullen met wat er over is of met wat er gebruikt is.",
+      "left": "Wat er over is",
+      "used": "Wat er gebruikt is"
     },
     "show_reset": {
-      "label": "Tijd tot reset tonen",
-      "description": "Resterende tijd tot het venster wordt gereset."
+      "label": "Tijd tot de limiet weer vol is tonen",
+      "description": "Een aftelling tot het moment dat je limiet weer vol is."
     },
     "reset_format": {
-      "label": "Notatie resettijd",
-      "compact": "Compact (1:44)",
-      "verbose": "Uitgebreid (1h 44m)"
+      "label": "Tijdnotatie",
+      "compact": "Kort (1:44)",
+      "verbose": "Lang (1h 44m)"
     },
     "ready_text": {
-      "label": "Tekst als er geen reset loopt",
-      "description": "Getoond in plaats van de aftelling als het venster niet loopt. Leeg = „klaar” in jouw taal."
+      "label": "Tekst als de limiet vol is",
+      "description": "Getoond in plaats van de aftelling zolang deze limiet nog niet gebruikt is. Laat leeg voor „klaar”."
     },
     "show_tokens": {
       "label": "Gebruikte tokens tonen",
-      "description": "Tokens gebruikt in het venster (invoer + uitvoer + cache-aanmaak, uit lokale transcripten)."
+      "description": "Tokens zijn stukjes tekst die Claude leest en schrijft. Geteld op je eigen computer."
     },
     "include_cache_read": {
-      "label": "Cache-leesacties meetellen",
-      "description": "Tokens die uit de promptcache zijn gelezen optellen. Ze zijn goedkoop maar talrijk, dus het getal wordt veel groter."
+      "label": "Ook opnieuw gelezen tekst tellen",
+      "description": "Claude leest het gesprek opnieuw vóór elk antwoord. Dat meetellen maakt het getal veel groter."
     },
     "token_format": {
-      "label": "Tokennotatie",
+      "label": "Schrijfwijze van het aantal tokens",
       "short": "Kort (92k)",
-      "full": "Volledig (92424)"
+      "full": "Exact (92424)"
     },
     "separator": {
-      "label": "Scheidingsteken tussen items",
+      "label": "Scheidingsteken",
       "none": "Geen",
       "dot": "Punt (·)",
       "bar": "Streep (|)",
@@ -101,29 +101,29 @@
     },
     "dim_extras": {
       "label": "Tijd en tokens dimmen",
-      "description": "Toon de tijd tot reset en de tokens in een gedempte kleur; alleen het percentage houdt de gebruikskleur."
+      "description": "Alleen het percentage houdt de waarschuwingskleuren."
     },
     "gap": {
-      "label": "Ruimte tussen items (px)"
+      "label": "Ruimte tussen onderdelen (px)"
     },
     "font_weight": {
-      "label": "Lettergewicht",
-      "medium": "Normaal-vet",
+      "label": "Tekstdikte",
+      "medium": "Halfvet",
       "bold": "Vet"
     },
     "color_by_usage": {
-      "label": "Kleur volgens gebruik",
-      "description": "Boven de drempels overschakelen naar de waarschuwings- / kritieke kleuren."
+      "label": "Kleur aanpassen aan het gebruik",
+      "description": "Wordt de waarschuwingskleur en daarna de kritieke kleur bij de niveaus hieronder."
     },
     "warn_at": {
-      "label": "Waarschuwingsdrempel (%)"
+      "label": "Waarschuwing vanaf (%)"
     },
     "critical_at": {
-      "label": "Kritieke drempel (%)"
+      "label": "Kritiek vanaf (%)"
     },
     "color": {
-      "label": "Tekstkleur",
-      "description": "Kleurrol of hex-kleur voor normaal gebruik."
+      "label": "Gewone tekstkleur",
+      "description": "Kies een kleur uit je thema of een andere kleur."
     },
     "warn_color": {
       "label": "Waarschuwingskleur"
@@ -132,47 +132,47 @@
       "label": "Kritieke kleur"
     },
     "click_command": {
-      "label": "Klikopdracht",
-      "description": "Shell-opdracht bij linksklikken, bijv. alacritty -e claude."
+      "label": "Mijn opdracht",
+      "description": "Een opdracht om uit te voeren, bijvoorbeeld alacritty -e claude om Claude Code in een terminal te openen."
     },
     "command": {
-      "label": "Klikopdracht",
-      "description": "Opdracht die wordt uitgevoerd bij klikken op het pictogram."
+      "label": "Opdracht bij klikken",
+      "description": "Een opdracht die wordt uitgevoerd als je op het pictogram klikt, bijvoorbeeld alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Animatie bij aanwijzen (ms)",
-      "description": "Hoe lang de details erover doen om uit te schuiven en in te faden. 0 schakelt de animatie uit."
+      "label": "Snelheid van de animatie (ms)",
+      "description": "Hoe lang het duurt voordat de details verschijnen als je naar de widget wijst. 0 = geen animatie."
     },
     "percent_decimals": {
       "label": "Decimalen in percentages",
-      "description": "0 rondt af op hele getallen. De API geeft nu hele percentages, dus decimalen tonen meestal ,0."
+      "description": "0 toont hele getallen. Het gebruik komt nu in hele procenten, dus decimalen tonen meestal ,0."
     },
     "launch_command": {
-      "label": "Claude Code-opdracht",
-      "description": "Terminalopdracht waarmee het paneel Claude Code start; de gekozen --model en modus worden toegevoegd."
+      "label": "Opdracht die Claude Code opent",
+      "description": "Het paneel opent er Claude Code mee in een terminal. Het gekozen model en de sessie worden aan het eind toegevoegd."
     },
     "click_action": {
       "label": "Linksklikken",
-      "description": "Wat linksklikken op de widget doet. Rechtsklikken vernieuwt altijd.",
+      "description": "Wat er gebeurt als je met links op de widget klikt. Rechtsklikken vernieuwt altijd.",
       "panel": "Paneel openen",
-      "command": "Klikopdracht uitvoeren",
+      "command": "Voert mijn opdracht uit",
       "refresh": "Vernieuwen"
     },
     "panel_translucent": {
-      "label": "Doorschijnend paneel",
-      "description": "Laat de achtergrond door het paneel schijnen; de tekst blijft volledig dekkend."
+      "label": "Doorzichtig paneel",
+      "description": "Laat je achtergrond door het paneel heen zien. De tekst blijft scherp."
     },
     "panel_opacity": {
-      "label": "Dekking paneelachtergrond",
-      "description": "0 is volledig transparant, 1 is effen."
+      "label": "Hoe dekkend het paneel is",
+      "description": "0 = helemaal doorzichtig, 1 = dekkend."
     },
     "show_cost": {
-      "label": "Kosten tegen API-prijzen tonen",
-      "description": "Geschatte kosten van de tokens in het venster tegen de API-catalogusprijzen van Anthropic. Met een Claude-abonnement betaal je niet per token - dit toont wat hetzelfde gebruik via de API zou kosten."
+      "label": "Tonen wat het zou kosten",
+      "description": "Een schatting van wat dit gebruik zou kosten als je per token betaalt. Met een Claude-abonnement betaal je dit niet."
     },
     "currency": {
-      "label": "Valuta voor kosten",
-      "description": "Kosten worden vanuit USD omgerekend met de dagelijkse referentiekoersen van de Europese Centrale Bank (hoogstens elke 12 uur opgehaald, alleen voor een andere valuta dan USD), tenzij je een eigen koers instelt.",
+      "label": "Valuta",
+      "description": "Kosten worden omgerekend vanuit Amerikaanse dollars met de dagkoersen van de Europese Centrale Bank of met je eigen koers.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,58 +195,58 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Handmatige wisselkoers",
-      "description": "Eenheden van de gekozen valuta per 1 USD. 0 = dagelijkse ECB-koers."
+      "label": "Mijn wisselkoers",
+      "description": "Hoeveel 1 Amerikaanse dollar waard is in jouw valuta. 0 = automatisch de dagkoers gebruiken."
     },
     "ring_thickness": {
-      "label": "Ringdikte",
+      "label": "Dikte van de ring",
       "thin": "Dun",
       "normal": "Normaal",
       "thick": "Dik"
     },
     "ring_track": {
-      "label": "Ringspoor tonen",
-      "description": "De vage volledige cirkel achter het gevulde deel."
+      "label": "Achtergrond van de ring tonen",
+      "description": "Een vage volledige cirkel achter het gevulde deel."
     },
     "format": {
-      "label": "Tekstsjabloon",
-      "description": "Vervangt de items door je eigen tekst, bijv. {pct} · {reset} · {tokens}. Variabelen: {window} {pct} {left} {reset} {tokens} {cost} {model}. Leeg = normale indeling."
+      "label": "Mijn eigen tekst",
+      "description": "Schrijf je eigen tekst in plaats van de gewone onderdelen. Woorden tussen accolades worden ingevuld: {window} {pct} {left} {reset} {tokens} {cost} {model}. Voorbeeld: {pct} · {reset}. Laat leeg voor de gewone weergave."
     },
     "label_five": {
-      "label": "Label voor het venster van 5 uur"
+      "label": "Naam van de limiet per 5 uur"
     },
     "label_week": {
-      "label": "Label voor het weekvenster"
+      "label": "Naam van de weeklimiet"
     },
     "show_model": {
       "label": "Huidig model tonen",
-      "description": "Het model van je laatste Claude Code-bericht, bijv. Opus 5.5."
+      "description": "Het laatst gebruikte Claude-model, bijvoorbeeld Opus 5.5."
     },
     "font_size": {
-      "label": "Lettergrootte (px)",
-      "description": "0 = lettergrootte van de balk."
+      "label": "Tekstgrootte (px)",
+      "description": "0 = even groot als de rest van de balk."
     },
     "gradient": {
-      "label": "Vloeiend kleurverloop",
-      "description": "Kleuren gaan geleidelijk over met het gebruik in plaats van te wisselen bij de drempels."
+      "label": "Vloeiende kleurwissel",
+      "description": "De kleur verandert geleidelijk met het gebruik in plaats van te verspringen bij de niveaus."
     },
     "weekly_own_color": {
-      "label": "Eigen kleur voor het weekvenster",
-      "description": "Een andere basiskleur voor de 7d-items als beide vensters worden getoond."
+      "label": "Andere kleur voor de weeklimiet",
+      "description": "Gebruikt als beide limieten getoond worden."
     },
     "weekly_color": {
-      "label": "Kleur van het weekvenster"
+      "label": "Kleur van de weeklimiet"
     },
     "hide_below": {
-      "label": "Verbergen onder gebruik (%)",
-      "description": "Verbergt de widget zolang het gebruik onder deze waarde ligt. 0 = altijd tonen."
+      "label": "Verbergen tot het gebruik bereikt (%)",
+      "description": "Houdt de widget uit beeld zolang het gebruik laag is. 0 = altijd zichtbaar."
     },
     "notify": {
       "label": "Meldingen",
-      "description": "Toont één keer per venster een melding als het gebruik een drempel overschrijdt.",
+      "description": "Krijg één melding als het gebruik een niveau overschrijdt.",
       "off": "Uit",
-      "warning": "Bij de waarschuwings- en kritieke drempel",
-      "critical": "Alleen bij de kritieke drempel"
+      "warning": "Bij het waarschuwings- en het kritieke niveau",
+      "critical": "Alleen bij het kritieke niveau"
     },
     "custom_prices": {
       "label": "Eigen tokenprijzen gebruiken",
@@ -270,24 +270,24 @@
     "ready": "klaar"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (reset over {time})",
-    "tokens": "tokens: {tokens}, cache gelezen: {cache}",
-    "stale": "Verouderd: {error}",
+    "window": "{window}: {pct}%  (weer vol over {time})",
+    "tokens": "tokens: {tokens}, opnieuw gelezen: {cache}",
+    "stale": "Oudere cijfers — {error}",
     "loading": "Laden...",
-    "cost": "tegen API-prijzen: {cost}"
+    "cost": "bij betalen per token: {cost}"
   },
   "error": {
     "no_credentials": "Niet aangemeld bij Claude Code",
-    "token_expired": "Token verlopen - gebruik Claude Code één keer om het te vernieuwen",
+    "token_expired": "Aanmelding verlopen - open Claude Code één keer om die te vernieuwen",
     "network": "Geen verbinding",
-    "bad_response": "Onverwacht API-antwoord",
-    "http_429": "Aanvraaglimiet bereikt - wordt opnieuw geprobeerd"
+    "bad_response": "Onverwacht antwoord van de gebruiksdienst",
+    "http_429": "Te veel controles - nieuwe poging over een paar minuten"
   },
   "panel": {
-    "no_reset": "geen reset gepland",
-    "resets_in": "reset over {time}",
+    "no_reset": "de limiet is vol",
+    "resets_in": "weer vol over {time}",
     "peak": "piek {tokens}",
-    "model_tokens": "{tokens} · {messages} ber. · cache {cache}",
+    "model_tokens": "{tokens} · {messages} berichten · opnieuw gelezen {cache}",
     "no_models": "Nog geen gebruik in dit venster.",
     "by_model": "Tokens per model",
     "refresh": "Vernieuwen",
@@ -302,10 +302,10 @@
     "last_7d": "Afgelopen 7 dagen",
     "hours_ago": "{n} u geleden",
     "days_ago": "{n} d geleden",
-    "cost_total": "≈ {cost} tegen API-prijzen (schatting)"
+    "cost_total": "≈ {cost} bij betalen per token (schatting)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",
-    "body": "Reset over {time}"
+    "body": "Weer vol over {time}"
   }
 }

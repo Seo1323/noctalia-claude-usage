@@ -2,59 +2,59 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Interval d’actualització (minuts)",
-      "description": "Amb quina freqüència es consulta l’API d’ús."
+      "label": "Cada quan comprovar (minuts)",
+      "description": "Cada quan el giny consulta el teu ús actual."
     },
     "window": {
-      "label": "Finestra del límit",
-      "description": "Quina finestra d’ús mostra la barra.",
-      "five_hour": "Sessió de 5 hores",
-      "weekly": "Setmanal (7 d)",
-      "both": "Totes dues"
+      "label": "Quin límit mostrar",
+      "description": "Claude Code té un límit de 5 hores i un de setmanal. Mostra’n un o tots dos.",
+      "five_hour": "Límit de 5 hores",
+      "weekly": "Límit setmanal (7 d)",
+      "both": "Tots dos"
     },
     "display_mode": {
-      "label": "Mostra els detalls",
-      "description": "Quan es mostren el temps fins al reinici, els tokens i la barra.",
+      "label": "Quan mostrar els detalls",
+      "description": "Els detalls són el temps fins que el límit es recarrega, els tokens i la barra.",
       "always": "Sempre",
-      "important": "Només amb ús alt (per sobre del llindar d’avís)",
-      "hover": "Només en passar-hi el cursor (si no, icona o anell)"
+      "important": "Només amb un ús alt",
+      "hover": "Només en passar-hi el cursor"
     },
     "logo": {
-      "label": "Icona",
-      "description": "Es mostra abans del text. L’anell s’omple amb la part restant (o usada) del límit.",
+      "label": "Imatge al davant",
+      "description": "Es mostra abans dels números. L’anell és un cercle petit que s’omple a mesura que s’usa el límit.",
       "none": "Cap",
-      "glyph": "Glif",
-      "star": "Estrella (inclosa)",
-      "custom": "Imatge personalitzada",
+      "glyph": "Icona",
+      "star": "Estrella",
+      "custom": "La meva imatge",
       "ring": "Anell d’ús"
     },
     "glyph": {
-      "label": "Glif"
+      "label": "Quina icona"
     },
     "logo_path": {
-      "label": "Imatge personalitzada",
-      "description": "SVG o PNG. Buit vol dir logo.svg a la carpeta del connector."
+      "label": "La meva imatge",
+      "description": "Un fitxer SVG o PNG. Deixa-ho buit per fer servir logo.svg de la carpeta del connector."
     },
     "icon_size": {
-      "label": "Mida de la icona (px)"
+      "label": "Mida de la imatge (px)"
     },
     "size": {
       "label": "Mida de la icona (px)"
     },
     "show_percent": {
-      "label": "Mostra el percentatge d’ús"
+      "label": "Mostra el percentatge"
     },
     "percent_mode": {
-      "label": "El percentatge mostra",
+      "label": "Mostra el percentatge com a",
       "used": "Usat (22%)",
       "left": "Restant (78% restant)"
     },
     "show_prefix": {
-      "label": "Mostra les etiquetes 5h / 7d",
-      "description": "Posa davant de cada percentatge la seva finestra."
+      "label": "Mostra quin límit és",
+      "description": "Posa un nom curt com «5h» o «7d» davant de cada percentatge."
     },
     "show_bar": {
-      "label": "Mostra la barra de progrés",
+      "label": "Mostra una barra de progrés",
       "description": "Una barra petita al costat del percentatge."
     },
     "bar_width": {
@@ -62,38 +62,38 @@
     },
     "gauge_mode": {
       "label": "La barra i l’anell mostren",
-      "description": "De què s’omplen la barra de progrés i l’anell d’ús.",
+      "description": "Tria si s’omplen amb el que queda o amb el que ja s’ha usat.",
       "left": "El que queda",
       "used": "El que s’ha usat"
     },
     "show_reset": {
-      "label": "Mostra el temps fins al reinici",
-      "description": "Temps que falta perquè la finestra es reiniciï."
+      "label": "Mostra el temps fins a la recàrrega",
+      "description": "Un compte enrere fins al moment en què el límit torna a estar ple."
     },
     "reset_format": {
-      "label": "Format del temps de reinici",
-      "compact": "Compacte (1:44)",
-      "verbose": "Detallat (1h 44m)"
+      "label": "Format de l’hora",
+      "compact": "Curt (1:44)",
+      "verbose": "Llarg (1h 44m)"
     },
     "ready_text": {
-      "label": "Text quan no hi ha cap reinici pendent",
-      "description": "Es mostra en lloc del compte enrere quan la finestra no està activa. Buit = «a punt» en el teu idioma."
+      "label": "Text quan el límit és ple",
+      "description": "Es mostra en lloc del compte enrere mentre aquest límit encara no s’ha usat. Deixa-ho buit per a «a punt»."
     },
     "show_tokens": {
       "label": "Mostra els tokens usats",
-      "description": "Tokens usats a la finestra (entrada + sortida + creació de memòria cau, de les transcripcions locals)."
+      "description": "Els tokens són trossos de text que Claude llegeix i escriu. Es compten al teu ordinador."
     },
     "include_cache_read": {
-      "label": "Inclou les lectures de la memòria cau",
-      "description": "Suma els tokens llegits de la memòria cau de prompts. Són barats però nombrosos, així que el nombre creix molt."
+      "label": "Compta també el text rellegit",
+      "description": "Claude rellegeix la conversa abans de cada resposta. Comptar-ho fa el número molt més gran."
     },
     "token_format": {
-      "label": "Format dels tokens",
+      "label": "Forma del nombre de tokens",
       "short": "Curt (92k)",
-      "full": "Complet (92424)"
+      "full": "Exacte (92424)"
     },
     "separator": {
-      "label": "Separador entre elements",
+      "label": "Separador",
       "none": "Cap",
       "dot": "Punt (·)",
       "bar": "Barra (|)",
@@ -101,29 +101,29 @@
     },
     "dim_extras": {
       "label": "Atenua el temps i els tokens",
-      "description": "Mostra el temps fins al reinici i els tokens amb un color atenuat; només el percentatge manté el color d’ús."
+      "description": "Només el percentatge manté els colors d’avís."
     },
     "gap": {
       "label": "Espai entre elements (px)"
     },
     "font_weight": {
-      "label": "Gruix de la lletra",
+      "label": "Gruix del text",
       "medium": "Mitjà",
       "bold": "Negreta"
     },
     "color_by_usage": {
-      "label": "Color segons l’ús",
-      "description": "Canvia als colors d’avís / crític per sobre dels llindars."
+      "label": "Canvia de color segons l’ús",
+      "description": "Passa al color d’avís i després al crític als nivells de sota."
     },
     "warn_at": {
-      "label": "Llindar d’avís (%)"
+      "label": "Avís a partir de (%)"
     },
     "critical_at": {
-      "label": "Llindar crític (%)"
+      "label": "Crític a partir de (%)"
     },
     "color": {
-      "label": "Color del text",
-      "description": "Rol de color o color hex per a l’ús normal."
+      "label": "Color normal del text",
+      "description": "Tria un color del teu tema o qualsevol altre."
     },
     "warn_color": {
       "label": "Color d’avís"
@@ -132,47 +132,47 @@
       "label": "Color crític"
     },
     "click_command": {
-      "label": "Ordre en fer clic",
-      "description": "Ordre de shell en fer clic esquerre, p. ex. alacritty -e claude."
+      "label": "La meva ordre",
+      "description": "Una ordre per executar, per exemple alacritty -e claude per obrir Claude Code en un terminal."
     },
     "command": {
       "label": "Ordre en fer clic",
-      "description": "Ordre que s’executa en fer clic a la icona."
+      "description": "Una ordre que s’executa en fer clic a la icona, per exemple alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Animació en passar-hi el cursor (ms)",
-      "description": "Quant triguen els detalls a desplegar-se i aparèixer. 0 desactiva l’animació."
+      "label": "Velocitat de l’animació (ms)",
+      "description": "Quant triguen a aparèixer els detalls en passar el cursor pel giny. 0 = sense animació."
     },
     "percent_decimals": {
       "label": "Decimals als percentatges",
-      "description": "0 arrodoneix a enters. L’API retorna ara percentatges enters, així que els decimals solen mostrar ,0."
+      "description": "0 mostra nombres enters. Ara l’ús arriba en percentatges enters, així que els decimals solen mostrar ,0."
     },
     "launch_command": {
-      "label": "Ordre de Claude Code",
-      "description": "Ordre de terminal amb què el plafó inicia Claude Code; s’hi afegeixen --model i el mode triats."
+      "label": "Ordre que obre Claude Code",
+      "description": "El plafó la fa servir per obrir Claude Code en un terminal. El model i la sessió triats s’afegeixen al final."
     },
     "click_action": {
-      "label": "Clic esquerre",
-      "description": "Què fa un clic esquerre al giny. El clic dret sempre actualitza.",
+      "label": "El clic esquerre",
+      "description": "Què passa quan fas clic esquerre al giny. El clic dret sempre actualitza.",
       "panel": "Obre el plafó",
-      "command": "Executa l’ordre de clic",
+      "command": "Executa la meva ordre",
       "refresh": "Actualitza"
     },
     "panel_translucent": {
-      "label": "Plafó translúcid",
-      "description": "Deixa veure el fons a través del plafó; el text continua totalment opac."
+      "label": "Plafó transparent",
+      "description": "Deixa veure el fons de pantalla a través del plafó. El text es manté nítid."
     },
     "panel_opacity": {
-      "label": "Opacitat del fons del plafó",
-      "description": "0 és totalment transparent, 1 és sòlid."
+      "label": "Opacitat del plafó",
+      "description": "0 = totalment transparent, 1 = sòlid."
     },
     "show_cost": {
-      "label": "Mostra el cost a preus de l’API",
-      "description": "Cost estimat dels tokens de la finestra segons els preus de llista de l’API d’Anthropic. Amb una subscripció a Claude no pagues per token: mostra quant costaria el mateix ús a l’API."
+      "label": "Mostra quant costaria",
+      "description": "Una estimació del que costaria aquest ús pagant per token. Amb una subscripció a Claude no ho pagues."
     },
     "currency": {
-      "label": "Moneda dels costos",
-      "description": "Els costos es converteixen des d’USD amb els tipus de referència diaris del Banc Central Europeu (obtinguts com a molt cada 12 hores i només per a una moneda diferent d’USD), tret que hi fixis un tipus manual.",
+      "label": "Moneda",
+      "description": "Els costos es converteixen des de dòlars dels EUA amb els tipus diaris del Banc Central Europeu o amb el teu tipus.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Tipus de canvi manual",
-      "description": "Unitats de la moneda triada per 1 USD. 0 = tipus diari del BCE."
+      "label": "El meu tipus de canvi",
+      "description": "Quant val 1 dòlar dels EUA en la teva moneda. 0 = tipus diari automàtic."
     },
     "ring_thickness": {
       "label": "Gruix de l’anell",
@@ -206,47 +206,47 @@
     },
     "ring_track": {
       "label": "Mostra el fons de l’anell",
-      "description": "El cercle complet tènue darrere la part plena."
+      "description": "Un cercle complet tènue darrere la part plena."
     },
     "format": {
-      "label": "Plantilla de text",
-      "description": "Substitueix els elements pel teu propi text, p. ex. {pct} · {reset} · {tokens}. Marcadors: {window} {pct} {left} {reset} {tokens} {cost} {model}. Buit = disposició normal."
+      "label": "El meu text",
+      "description": "Escriu el teu propi text en lloc dels elements habituals. Les paraules entre claus se substitueixen: {window} {pct} {left} {reset} {tokens} {cost} {model}. Exemple: {pct} · {reset}. Deixa-ho buit per a l’aspecte normal."
     },
     "label_five": {
-      "label": "Etiqueta de la finestra de 5 hores"
+      "label": "Nom del límit de 5 hores"
     },
     "label_week": {
-      "label": "Etiqueta de la finestra setmanal"
+      "label": "Nom del límit setmanal"
     },
     "show_model": {
       "label": "Mostra el model actual",
-      "description": "El model del teu darrer missatge de Claude Code, p. ex. Opus 5.5."
+      "description": "L’últim model de Claude que s’ha fet servir, per exemple Opus 5.5."
     },
     "font_size": {
-      "label": "Mida de la lletra (px)",
-      "description": "0 = mida de la lletra de la barra."
+      "label": "Mida del text (px)",
+      "description": "0 = la mateixa mida que la resta de la barra."
     },
     "gradient": {
-      "label": "Degradat de color suau",
-      "description": "Els colors canvien gradualment amb l’ús en lloc de saltar als llindars."
+      "label": "Canvi de color suau",
+      "description": "El color canvia de mica en mica amb l’ús en lloc de saltar als nivells."
     },
     "weekly_own_color": {
-      "label": "Color propi per a la finestra setmanal",
-      "description": "Un altre color base per als elements de 7d quan es mostren les dues finestres."
+      "label": "Un altre color per al límit setmanal",
+      "description": "S’usa quan es mostren tots dos límits."
     },
     "weekly_color": {
-      "label": "Color de la finestra setmanal"
+      "label": "Color del límit setmanal"
     },
     "hide_below": {
-      "label": "Amaga per sota de l’ús (%)",
-      "description": "Amaga el giny mentre l’ús sigui inferior a aquest valor. 0 = mostra sempre."
+      "label": "Amaga fins que l’ús arribi a (%)",
+      "description": "Manté el giny amagat mentre l’ús és baix. 0 = sempre visible."
     },
     "notify": {
       "label": "Notificacions",
-      "description": "Mostra una notificació un cop per finestra quan l’ús supera un llindar.",
+      "description": "Rep una notificació quan l’ús supera un nivell.",
       "off": "Desactivades",
-      "warning": "Als llindars d’avís i crític",
-      "critical": "Només al llindar crític"
+      "warning": "Als nivells d’avís i crític",
+      "critical": "Només al nivell crític"
     },
     "custom_prices": {
       "label": "Fes servir els meus preus",
@@ -270,24 +270,24 @@
     "ready": "a punt"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (es reinicia d’aquí a {time})",
-    "tokens": "tokens: {tokens}, lectura de memòria cau: {cache}",
-    "stale": "Desactualitzat: {error}",
+    "window": "{window}: {pct}%  (es recarrega d’aquí a {time})",
+    "tokens": "tokens: {tokens}, rellegit: {cache}",
+    "stale": "Dades anteriors — {error}",
     "loading": "S’està carregant...",
-    "cost": "a preus de l’API: {cost}"
+    "cost": "pagant per token: {cost}"
   },
   "error": {
     "no_credentials": "No has iniciat sessió a Claude Code",
-    "token_expired": "El token ha caducat - fes servir Claude Code un cop per renovar-lo",
+    "token_expired": "La sessió ha caducat - obre Claude Code un cop per renovar-la",
     "network": "Sense connexió",
-    "bad_response": "Resposta inesperada de l’API",
-    "http_429": "Límit de sol·licituds - es tornarà a provar"
+    "bad_response": "Resposta inesperada del servei d’ús",
+    "http_429": "Massa comprovacions - nou intent d’aquí a uns minuts"
   },
   "panel": {
-    "no_reset": "cap reinici pendent",
-    "resets_in": "es reinicia d’aquí a {time}",
+    "no_reset": "el límit és ple",
+    "resets_in": "es recarrega d’aquí a {time}",
     "peak": "pic {tokens}",
-    "model_tokens": "{tokens} · {messages} miss. · memòria cau {cache}",
+    "model_tokens": "{tokens} · {messages} missatges · rellegit {cache}",
     "no_models": "Encara no hi ha ús en aquesta finestra.",
     "by_model": "Tokens per model",
     "refresh": "Actualitza",
@@ -302,10 +302,10 @@
     "last_7d": "Últims 7 dies",
     "hours_ago": "fa {n} h",
     "days_ago": "fa {n} d",
-    "cost_total": "≈ {cost} a preus de l’API (estimació)"
+    "cost_total": "≈ {cost} pagant per token (estimació)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",
-    "body": "Es reinicia d’aquí a {time}"
+    "body": "Es recarrega d’aquí a {time}"
   }
 }

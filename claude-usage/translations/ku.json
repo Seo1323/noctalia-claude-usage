@@ -2,56 +2,56 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Navbera nûkirinê (deqîqe)",
-      "description": "API-ya bikaranînê çiqas caran tê pirsîn."
+      "label": "Çiqas caran kontrol bike (deqîqe)",
+      "description": "Widget çiqas caran bikaranîna te ya niha werdigire."
     },
     "window": {
-      "label": "Pencereya sînorê",
-      "description": "Darik kîjan pencereya bikaranînê nîşan dide.",
-      "five_hour": "Danişîna 5 saetan",
-      "weekly": "Heftane (7r)",
+      "label": "Kîjan sînor nîşan bide",
+      "description": "Claude Code sînorekî 5 saetan û sînorekî heftane heye. Yekê ji wan an herduyan nîşan bide.",
+      "five_hour": "Sînorê 5 saetan",
+      "weekly": "Sînorê heftane (7r)",
       "both": "Herdu"
     },
     "display_mode": {
-      "label": "Hûrguliyan nîşan bide",
-      "description": "Dema heta sifirkirinê, token û darik kengî têne nîşandan.",
+      "label": "Hûrgulî kengî nîşan bide",
+      "description": "Hûrgulî ev in: dema heta sînor dîsa tije dibe, token û darik.",
       "always": "Her tim",
-      "important": "Tenê dema bikaranîn bilind be (li ser sînorê hişyariyê)",
-      "hover": "Tenê dema nîşanker li ser be (wekî din îkon an xelek)"
+      "important": "Tenê dema bikaranîn zêde be",
+      "hover": "Tenê dema nîşanker li ser be"
     },
     "logo": {
-      "label": "Îkon",
-      "description": "Berî nivîsê tê nîşandan. Xelek bi beşa mayî (an bikaranî) ya sînorê tije dibe.",
+      "label": "Wêne li pêşiyê",
+      "description": "Berî hejmaran tê nîşandan. Xelek dorhêleke biçûk e ku her ku sînor tê bikaranîn tije dibe.",
       "none": "Tune",
-      "glyph": "Glîf",
-      "star": "Stêrk (pê re tê)",
-      "custom": "Wêneyê taybet",
+      "glyph": "Îkon",
+      "star": "Stêrk",
+      "custom": "Wêneyê min",
       "ring": "Xeleka bikaranînê"
     },
     "glyph": {
-      "label": "Glîf"
+      "label": "Kîjan îkon"
     },
     "logo_path": {
-      "label": "Wêneyê taybet",
-      "description": "SVG an PNG. Vala tê wateya logo.svg di peldanka pêvekê de."
+      "label": "Wêneyê min",
+      "description": "Pelek SVG an PNG. Vala bihêle da ku logo.svg ji peldanka pêvekê were bikaranîn."
     },
     "icon_size": {
-      "label": "Mezinahiya îkonê (px)"
+      "label": "Mezinahiya wêne (px)"
     },
     "size": {
       "label": "Mezinahiya îkonê (px)"
     },
     "show_percent": {
-      "label": "Rêjeya bikaranînê nîşan bide"
+      "label": "Rêjeyê nîşan bide"
     },
     "percent_mode": {
-      "label": "Rêje nîşan dide",
+      "label": "Rêjeyê wiha nîşan bide",
       "used": "Bikaranî (22%)",
       "left": "Mayî (78% maye)"
     },
     "show_prefix": {
-      "label": "Etîketên 5h / 7d nîşan bide",
-      "description": "Pencereyê li pêşiya her rêjeyê binivîse."
+      "label": "Nîşan bide ku kîjan sînor e",
+      "description": "Berî her rêjeyê navekî kurt wek “5h” an “7d” datîne."
     },
     "show_bar": {
       "label": "Darika pêşveçûnê nîşan bide",
@@ -62,68 +62,68 @@
     },
     "gauge_mode": {
       "label": "Darik û xelek nîşan didin",
-      "description": "Darika pêşveçûnê û xeleka bikaranînê bi çi tije dibin.",
+      "description": "Hilbijêre ka ew bi ya mayî an bi ya bikaranî tije bibin.",
       "left": "Ya mayî",
       "used": "Ya bikaranî"
     },
     "show_reset": {
-      "label": "Dema heta sifirkirinê nîşan bide",
-      "description": "Dema mayî heta ku pencere sifir bibe."
+      "label": "Dema heta sînor dîsa tije dibe nîşan bide",
+      "description": "Jimartina berevajî heta ku sînorê te dîsa tije dibe."
     },
     "reset_format": {
-      "label": "Formata dema sifirkirinê",
+      "label": "Formata demê",
       "compact": "Kurt (1:44)",
       "verbose": "Dirêj (1h 44m)"
     },
     "ready_text": {
-      "label": "Nivîs dema ku sifirkirin tune be",
-      "description": "Dema pencere ne çalak be li şûna jimartina berevajî tê nîşandan. Vala = \"amade\" bi zimanê te."
+      "label": "Nivîs dema sînor tije ye",
+      "description": "Heta ku ev sînor hîn nehatibe bikaranîn, li şûna jimartinê tê nîşandan. Ji bo “amade” vala bihêle."
     },
     "show_tokens": {
       "label": "Tokenên bikaranî nîşan bide",
-      "description": "Tokenên di pencereyê de bikaranî (têketin + derketin + çêkirina kaşê, ji tomarên herêmî)."
+      "description": "Token parçeyên nivîsê ne ku Claude dixwîne û dinivîse. Li ser komputera te tên hejmartin."
     },
     "include_cache_read": {
-      "label": "Xwendinên kaşê jî bihesibîne",
-      "description": "Tokenên ji kaşa promptan hatine xwendin lê zêde bike. Erzan in lê pir in, ji ber vê jimar pir mezin dibe."
+      "label": "Nivîsa dîsa tê xwendin jî bihejmêre",
+      "description": "Claude berî her bersivê axaftinê ji nû ve dixwîne. Hejmartina vê hejmarê gelekî mezin dike."
     },
     "token_format": {
-      "label": "Formata tokenan",
+      "label": "Nivîsandina hejmara tokenan",
       "short": "Kurt (92k)",
-      "full": "Tevahî (92424)"
+      "full": "Rast (92424)"
     },
     "separator": {
-      "label": "Veqetîner di navbera hêmanan de",
+      "label": "Veqetîner",
       "none": "Tune",
       "dot": "Xal (·)",
       "bar": "Xêza rast (|)",
       "slash": "Xêza xwar (/)"
     },
     "dim_extras": {
-      "label": "Dem û tokenan zelal bike",
-      "description": "Dema heta sifirkirinê û tokenan bi rengekî nermtir nîşan dide; tenê rêje rengê bikaranînê diparêze."
+      "label": "Dem û tokenan zelaltir bike",
+      "description": "Tenê rêje rengên hişyariyê diparêze."
     },
     "gap": {
-      "label": "Valahiya di navbera hêmanan de (px)"
+      "label": "Valahiya navbera hêmanan (px)"
     },
     "font_weight": {
-      "label": "Stûrahiya tîpan",
+      "label": "Stûrahiya nivîsê",
       "medium": "Navîn",
       "bold": "Stûr"
     },
     "color_by_usage": {
-      "label": "Reng li gorî bikaranînê",
-      "description": "Li ser sînoran derbasî rengên hişyarî / krîtîk dibe."
+      "label": "Rengê li gorî bikaranînê biguherîne",
+      "description": "Li astên jêrîn dibe rengê hişyariyê, paşê rengê krîtîk."
     },
     "warn_at": {
-      "label": "Sînorê hişyariyê (%)"
+      "label": "Hişyarî ji (%)"
     },
     "critical_at": {
-      "label": "Sînorê krîtîk (%)"
+      "label": "Krîtîk ji (%)"
     },
     "color": {
-      "label": "Rengê nivîsê",
-      "description": "Rola rengê an rengê hex ji bo bikaranîna asayî."
+      "label": "Rengê asayî yê nivîsê",
+      "description": "Rengekî ji temaya xwe an her rengekî din hilbijêre."
     },
     "warn_color": {
       "label": "Rengê hişyariyê"
@@ -132,47 +132,47 @@
       "label": "Rengê krîtîk"
     },
     "click_command": {
-      "label": "Fermana tikandinê",
-      "description": "Fermana shellê ya bi tikandina çepê dixebite, mînak alacritty -e claude."
+      "label": "Fermana min",
+      "description": "Fermanek ji bo xebitandinê, mînak alacritty -e claude da ku Claude Code di termînalekê de vebe."
     },
     "command": {
-      "label": "Fermana tikandinê",
-      "description": "Fermana ku dema îkon tê tikandin dixebite."
+      "label": "Ferman bi tikandinê",
+      "description": "Fermana ku dema li îkonê tê tikandin dixebite, mînak alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Anîmasyona nîşankerê (ms)",
-      "description": "Hûrgulî çiqas dem digirin ku derkevin û xuya bibin. 0 anîmasyonê digire."
+      "label": "Leza anîmasyonê (ms)",
+      "description": "Dema nîşanker diçe ser widgetê, hûrgulî çiqas dem digirin ku xuya bibin. 0 = bê anîmasyon."
     },
     "percent_decimals": {
       "label": "Hejmarên piştî xalê di rêjeyan de",
-      "description": "0 dike hejmarên tam. API niha rêjeyên tam dide, ji ber vê hejmarên piştî xalê bi gelemperî ,0 nîşan didin."
+      "description": "0 hejmarên tam nîşan dide. Bikaranîn niha bi rêjeyên tam tê, loma piştî xalê bi gelemperî ,0 xuya dibe."
     },
     "launch_command": {
-      "label": "Fermana Claude Code",
-      "description": "Fermana termînalê ya ku panel pê Claude Code dide destpêkirin; --model û moda hilbijartî lê zêde dibin."
+      "label": "Fermana ku Claude Code vedike",
+      "description": "Panel bi vê fermanê Claude Code di termînalekê de vedike. Model û danişîna hilbijartî li dawiyê tên zêdekirin."
     },
     "click_action": {
       "label": "Tikandina çepê",
-      "description": "Tikandina çepê li ser widgetê çi dike. Tikandina rastê her tim nû dike.",
+      "description": "Dema li widgetê bi bişkoka çepê tê tikandin çi dibe. Tikandina rastê her tim nû dike.",
       "panel": "Panelê veke",
-      "command": "Fermana tikandinê bixebitîne",
+      "command": "Fermana min dixebitîne",
       "refresh": "Nû bike"
     },
     "panel_translucent": {
-      "label": "Panela nîvşefaf",
-      "description": "Dihêle paşxane di panelê re xuya bibe; nivîs bi tevahî zelal dimîne."
+      "label": "Panela şefaf",
+      "description": "Dihêle wêneyê paşxaneyê di panelê re xuya bibe. Nivîs zelal dimîne."
     },
     "panel_opacity": {
-      "label": "Opaktiya paşxaneya panelê",
-      "description": "0 bi tevahî şefaf e, 1 tije ye."
+      "label": "Panel çiqas tije ye",
+      "description": "0 = bi tevahî şefaf, 1 = tije."
     },
     "show_cost": {
-      "label": "Lêçûnê li gorî bihayên API nîşan bide",
-      "description": "Lêçûna texmînî ya tokenên pencereyê li gorî bihayên lîsteyê yên API-ya Anthropic. Bi abonetiya Claude tu ji bo her tokenê pere nadî - ev nîşan dide ku heman bikaranîn di API de çiqas dike."
+      "label": "Nîşan bide ku çiqas bike",
+      "description": "Texmînek ka ev bikaranîn çiqas bike heke ji bo her tokenê pere were dayîn. Bi abonetiya Claude tu vê nadî."
     },
     "currency": {
-      "label": "Pereya lêçûnan",
-      "description": "Lêçûn ji USD bi rêjeyên referansê yên rojane yên Banka Navendî ya Ewropayê têne guhertin (herî zêde her 12 saetan û tenê ji bo pereyekî ji bilî USD tê wergirtin), heke tu rêjeyekê bi destan danenî.",
+      "label": "Pere",
+      "description": "Lêçûn ji dolarên DYA bi rêjeyên rojane yên Banka Navendî ya Ewropayê an bi rêjeya te tên guhertin.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Rêjeya guhertinê ya bi destan",
-      "description": "Yekeyên pereyê hilbijartî ji bo 1 USD. 0 = rêjeya rojane ya BNE."
+      "label": "Rêjeya min a pereyan",
+      "description": "1 dolarê DYA bi pereyê te çiqas e. 0 = rêjeya rojane bixweber bikar bîne."
     },
     "ring_thickness": {
       "label": "Stûrahiya xelekê",
@@ -205,48 +205,48 @@
       "thick": "Stûr"
     },
     "ring_track": {
-      "label": "Şopa xelekê nîşan bide",
-      "description": "Xeleka tevahî ya zelal li pişt beşa tije."
+      "label": "Paşxaneya xelekê nîşan bide",
+      "description": "Dorhêleke tevahî ya zelal li pişt beşa tije."
     },
     "format": {
-      "label": "Şablona nivîsê",
-      "description": "Hêmanan bi nivîsa te diguherîne, mînak {pct} · {reset} · {tokens}. Cihgir: {window} {pct} {left} {reset} {tokens} {cost} {model}. Vala = rêzkirina asayî."
+      "label": "Nivîsa min",
+      "description": "Li şûna hêmanên asayî nivîsa xwe binivîse. Peyvên di nav kevanên kulîlkî de tên guhertin: {window} {pct} {left} {reset} {tokens} {cost} {model}. Mînak: {pct} · {reset}. Ji bo xuyaniya asayî vala bihêle."
     },
     "label_five": {
-      "label": "Etîketa pencereya 5 saetan"
+      "label": "Navê sînorê 5 saetan"
     },
     "label_week": {
-      "label": "Etîketa pencereya heftane"
+      "label": "Navê sînorê heftane"
     },
     "show_model": {
       "label": "Modela niha nîşan bide",
-      "description": "Modela peyama te ya dawî ya Claude Code, mînak Opus 5.5."
+      "description": "Modela Claude ya herî dawî hatiye bikaranîn, mînak Opus 5.5."
     },
     "font_size": {
-      "label": "Mezinahiya tîpan (px)",
-      "description": "0 = mezinahiya tîpan a darikê."
+      "label": "Mezinahiya nivîsê (px)",
+      "description": "0 = wek mezinahiya beşên din ên darikê."
     },
     "gradient": {
-      "label": "Gradyana rengan a nerm",
-      "description": "Reng li gorî bikaranînê hêdî hêdî diguherin, ne li ser sînoran ji nişkê ve."
+      "label": "Guhertina rengê ya nerm",
+      "description": "Reng li gorî bikaranînê hêdî hêdî diguhere, li şûna ku li astan biguhere."
     },
     "weekly_own_color": {
-      "label": "Rengê taybet ji bo pencereya heftane",
-      "description": "Rengekî bingehîn ê din ji bo hêmanên 7d dema herdu pencere xuya dibin."
+      "label": "Rengekî din ji bo sînorê heftane",
+      "description": "Dema herdu sînor tên nîşandan tê bikaranîn."
     },
     "weekly_color": {
-      "label": "Rengê pencereya heftane"
+      "label": "Rengê sînorê heftane"
     },
     "hide_below": {
-      "label": "Di bin vê bikaranînê de veşêre (%)",
-      "description": "Widgetê vedişêre heta ku bikaranîn di bin vê nirxê de be. 0 = her tim nîşan bide."
+      "label": "Veşêre heta ku bikaranîn bigihîje (%)",
+      "description": "Dema bikaranîn kêm e widgetê veşartî dihêle. 0 = her tim xuya ye."
     },
     "notify": {
       "label": "Agahdarî",
-      "description": "Dema bikaranîn ji sînorekî derbas dibe, ji bo her pencereyê carekê agahdariyê nîşan dide.",
+      "description": "Dema bikaranîn ji astekê derbas dibe agahdariyekê bistîne.",
       "off": "Girtî",
-      "warning": "Li sînorên hişyarî û krîtîk",
-      "critical": "Tenê li sînorê krîtîk"
+      "warning": "Li astên hişyarî û krîtîk",
+      "critical": "Tenê li asta krîtîk"
     },
     "custom_prices": {
       "label": "Bihayên min ên tokenan bikar bîne",
@@ -270,24 +270,24 @@
     "ready": "amade"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (piştî {time} sifir dibe)",
-    "tokens": "token: {tokens}, xwendina kaşê: {cache}",
-    "stale": "Kevn: {error}",
+    "window": "{window}: {pct}%  (piştî {time} dîsa tije dibe)",
+    "tokens": "token: {tokens}, dîsa hatine xwendin: {cache}",
+    "stale": "Daneyên kevntir — {error}",
     "loading": "Tê barkirin...",
-    "cost": "li gorî bihayên API: {cost}"
+    "cost": "bi dayîna ji bo her tokenê: {cost}"
   },
   "error": {
     "no_credentials": "Têketina Claude Code nehatiye kirin",
-    "token_expired": "Dema tokenê qediya - ji bo nûkirinê carekê Claude Code bikar bîne",
+    "token_expired": "Dema têketinê qediya - carekê Claude Code veke da ku nû bibe",
     "network": "Girêdan tune",
-    "bad_response": "Bersiva API ya nediyar",
-    "http_429": "Sînorê daxwazan - dê dîsa biceribîne"
+    "bad_response": "Bersiveke nediyar ji xizmeta bikaranînê",
+    "http_429": "Gelek kontrol - piştî çend deqîqeyan dîsa tê ceribandin"
   },
   "panel": {
-    "no_reset": "tu sifirkirin li bendê nîne",
-    "resets_in": "piştî {time} sifir dibe",
+    "no_reset": "sînor tije ye",
+    "resets_in": "piştî {time} dîsa tije dibe",
     "peak": "lûtke {tokens}",
-    "model_tokens": "{tokens} · {messages} peyam · kaş {cache}",
+    "model_tokens": "{tokens} · {messages} peyam · dîsa hatine xwendin {cache}",
     "no_models": "Hîn di vê pencereyê de bikaranîn tune.",
     "by_model": "Token li gorî modelê",
     "refresh": "Nû bike",
@@ -302,10 +302,10 @@
     "last_7d": "7 rojên dawî",
     "hours_ago": "{n} saet berê",
     "days_ago": "{n} roj berê",
-    "cost_total": "≈ {cost} li gorî bihayên API (texmîn)"
+    "cost_total": "≈ {cost} bi dayîna ji bo her tokenê (texmîn)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",
-    "body": "Piştî {time} sifir dibe"
+    "body": "Piştî {time} dîsa tije dibe"
   }
 }

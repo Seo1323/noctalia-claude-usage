@@ -2,56 +2,56 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Aktualisierungsintervall (Minuten)",
-      "description": "Wie oft die Nutzungs-API abgefragt wird."
+      "label": "Wie oft prüfen (Minuten)",
+      "description": "Wie oft das Widget deine aktuelle Nutzung abfragt."
     },
     "window": {
-      "label": "Limit-Zeitraum",
-      "description": "Welcher Nutzungszeitraum in der Leiste angezeigt wird.",
-      "five_hour": "5-Stunden-Sitzung",
-      "weekly": "Wöchentlich (7 T)",
+      "label": "Welches Limit anzeigen",
+      "description": "Claude Code hat ein 5-Stunden-Limit und ein Wochenlimit. Zeige eines davon oder beide.",
+      "five_hour": "5-Stunden-Limit",
+      "weekly": "Wochenlimit (7d)",
       "both": "Beide"
     },
     "display_mode": {
-      "label": "Details anzeigen",
-      "description": "Wann Zeit bis zum Reset, Tokens und Balken angezeigt werden.",
+      "label": "Wann Details anzeigen",
+      "description": "Details sind die Zeit, bis das Limit wieder aufgefüllt ist, die Tokens und der Balken.",
       "always": "Immer",
-      "important": "Nur bei hoher Nutzung (über der Warnschwelle)",
-      "hover": "Nur beim Überfahren (sonst Symbol oder Ring)"
+      "important": "Nur bei hoher Nutzung",
+      "hover": "Nur wenn ich darauf zeige"
     },
     "logo": {
-      "label": "Symbol",
-      "description": "Wird vor dem Text angezeigt. Der Ring füllt sich mit dem verbleibenden (oder verbrauchten) Anteil des Limits.",
+      "label": "Bild davor",
+      "description": "Wird vor den Zahlen angezeigt. Der Ring ist ein kleiner Kreis, der sich füllt, während du das Limit nutzt.",
       "none": "Keins",
-      "glyph": "Glyphe",
-      "star": "Stern (mitgeliefert)",
+      "glyph": "Symbol",
+      "star": "Stern",
       "custom": "Eigenes Bild",
       "ring": "Nutzungsring"
     },
     "glyph": {
-      "label": "Glyphe"
+      "label": "Welches Symbol"
     },
     "logo_path": {
       "label": "Eigenes Bild",
-      "description": "SVG oder PNG. Leer bedeutet logo.svg im Plugin-Ordner."
+      "description": "Eine SVG- oder PNG-Datei. Leer lassen, um logo.svg aus dem Plugin-Ordner zu verwenden."
     },
     "icon_size": {
-      "label": "Symbolgröße (px)"
+      "label": "Bildgröße (px)"
     },
     "size": {
       "label": "Symbolgröße (px)"
     },
     "show_percent": {
-      "label": "Nutzung in Prozent anzeigen"
+      "label": "Prozent anzeigen"
     },
     "percent_mode": {
-      "label": "Prozent zeigt",
+      "label": "Prozent anzeigen als",
       "used": "Verbraucht (22%)",
       "left": "Verbleibend (78% übrig)"
     },
     "show_prefix": {
-      "label": "5h / 7d-Beschriftung anzeigen",
-      "description": "Jedem Prozentwert den Zeitraum voranstellen."
+      "label": "Anzeigen, welches Limit es ist",
+      "description": "Setzt einen kurzen Namen wie „5h“ oder „7d“ vor jeden Prozentwert."
     },
     "show_bar": {
       "label": "Fortschrittsbalken anzeigen",
@@ -62,38 +62,38 @@
     },
     "gauge_mode": {
       "label": "Balken und Ring zeigen",
-      "description": "Womit sich Fortschrittsbalken und Nutzungsring füllen.",
+      "description": "Wähle, ob sie sich mit dem Verbleibenden oder dem Verbrauchten füllen.",
       "left": "Was übrig ist",
       "used": "Was verbraucht ist"
     },
     "show_reset": {
-      "label": "Zeit bis zum Reset anzeigen",
-      "description": "Verbleibende Zeit, bis der Zeitraum zurückgesetzt wird."
+      "label": "Zeit bis zum Auffüllen anzeigen",
+      "description": "Ein Countdown bis zu dem Moment, in dem dein Limit wieder voll ist."
     },
     "reset_format": {
-      "label": "Format der Reset-Zeit",
-      "compact": "Kompakt (1:44)",
-      "verbose": "Ausführlich (1h 44m)"
+      "label": "Zeitformat",
+      "compact": "Kurz (1:44)",
+      "verbose": "Lang (1h 44m)"
     },
     "ready_text": {
-      "label": "Text, wenn kein Reset ansteht",
-      "description": "Wird statt des Countdowns angezeigt, wenn der Zeitraum nicht läuft. Leer = „bereit“ in deiner Sprache."
+      "label": "Text, wenn das Limit voll ist",
+      "description": "Wird statt des Countdowns angezeigt, solange dieses Limit noch nicht genutzt wurde. Leer lassen für „bereit“."
     },
     "show_tokens": {
       "label": "Verbrauchte Tokens anzeigen",
-      "description": "Im Zeitraum verbrauchte Tokens (Eingabe + Ausgabe + Cache-Erstellung, aus lokalen Transkripten)."
+      "description": "Tokens sind Textstücke, die Claude liest und schreibt. Gezählt auf deinem eigenen Computer."
     },
     "include_cache_read": {
-      "label": "Cache-Lesezugriffe einbeziehen",
-      "description": "Aus dem Prompt-Cache gelesene Tokens hinzurechnen. Sie sind günstig, aber zahlreich, daher wird die Zahl deutlich größer."
+      "label": "Auch erneut gelesenen Text zählen",
+      "description": "Claude liest vor jeder Antwort das Gespräch erneut. Wird das mitgezählt, wird die Zahl viel größer."
     },
     "token_format": {
-      "label": "Token-Format",
+      "label": "Schreibweise der Token-Zahl",
       "short": "Kurz (92k)",
-      "full": "Vollständig (92424)"
+      "full": "Genau (92424)"
     },
     "separator": {
-      "label": "Trennzeichen zwischen Elementen",
+      "label": "Trennzeichen",
       "none": "Keins",
       "dot": "Punkt (·)",
       "bar": "Strich (|)",
@@ -101,29 +101,29 @@
     },
     "dim_extras": {
       "label": "Zeit und Tokens abdunkeln",
-      "description": "Zeit bis zum Reset und Tokens in gedämpfter Farbe; nur der Prozentwert behält die Nutzungsfarbe."
+      "description": "Nur der Prozentwert behält die Warnfarben."
     },
     "gap": {
       "label": "Abstand zwischen Elementen (px)"
     },
     "font_weight": {
-      "label": "Schriftstärke",
+      "label": "Textstärke",
       "medium": "Mittel",
       "bold": "Fett"
     },
     "color_by_usage": {
-      "label": "Nach Nutzung einfärben",
-      "description": "Oberhalb der Schwellen zu Warn- / kritischen Farben wechseln."
+      "label": "Farbe mit der Nutzung ändern",
+      "description": "Wechselt bei den Stufen unten zur Warnfarbe und dann zur kritischen Farbe."
     },
     "warn_at": {
-      "label": "Warnschwelle (%)"
+      "label": "Warnung ab (%)"
     },
     "critical_at": {
-      "label": "Kritische Schwelle (%)"
+      "label": "Kritisch ab (%)"
     },
     "color": {
-      "label": "Textfarbe",
-      "description": "Farbrolle oder Hex-Farbe für normale Nutzung."
+      "label": "Normale Textfarbe",
+      "description": "Wähle eine Farbe aus deinem Theme oder eine beliebige andere."
     },
     "warn_color": {
       "label": "Warnfarbe"
@@ -132,47 +132,47 @@
       "label": "Kritische Farbe"
     },
     "click_command": {
-      "label": "Klick-Befehl",
-      "description": "Shell-Befehl beim Linksklick, z. B. alacritty -e claude."
+      "label": "Mein Befehl",
+      "description": "Ein Befehl, der ausgeführt wird, zum Beispiel alacritty -e claude, um Claude Code in einem Terminal zu öffnen."
     },
     "command": {
-      "label": "Klick-Befehl",
-      "description": "Befehl, der beim Klick auf das Symbol ausgeführt wird."
+      "label": "Befehl beim Klick",
+      "description": "Ein Befehl, der beim Klick auf das Symbol ausgeführt wird, zum Beispiel alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Hover-Animation (ms)",
-      "description": "Wie lange die Details zum Ausfahren und Einblenden brauchen. 0 schaltet die Animation aus."
+      "label": "Animationsgeschwindigkeit (ms)",
+      "description": "Wie lange die Details zum Einblenden brauchen, wenn du auf das Widget zeigst. 0 = keine Animation."
     },
     "percent_decimals": {
       "label": "Nachkommastellen bei Prozent",
-      "description": "0 rundet auf ganze Zahlen. Die API meldet derzeit ganze Prozente, daher zeigen Nachkommastellen meist ,0."
+      "description": "0 zeigt ganze Zahlen. Die Nutzung kommt derzeit in ganzen Prozent, daher zeigen Nachkommastellen meist ,0."
     },
     "launch_command": {
-      "label": "Claude-Code-Befehl",
-      "description": "Terminalbefehl, mit dem das Panel Claude Code startet; --model und Modus werden angehängt."
+      "label": "Befehl, der Claude Code öffnet",
+      "description": "Das Panel öffnet damit Claude Code in einem Terminal. Das gewählte Modell und die Sitzung werden ans Ende angehängt."
     },
     "click_action": {
-      "label": "Linksklick",
-      "description": "Was ein Linksklick auf das Widget tut. Rechtsklick aktualisiert immer.",
+      "label": "Linksklick bewirkt",
+      "description": "Was beim Linksklick auf das Widget passiert. Ein Rechtsklick aktualisiert immer.",
       "panel": "Panel öffnen",
-      "command": "Klick-Befehl ausführen",
+      "command": "Führt meinen Befehl aus",
       "refresh": "Aktualisieren"
     },
     "panel_translucent": {
       "label": "Durchscheinendes Panel",
-      "description": "Lässt den Hintergrund durch das Panel scheinen; der Text bleibt voll deckend."
+      "description": "Lässt dein Hintergrundbild durch das Panel scheinen. Der Text bleibt scharf."
     },
     "panel_opacity": {
-      "label": "Deckkraft des Panel-Hintergrunds",
-      "description": "0 ist völlig durchsichtig, 1 ist deckend."
+      "label": "Wie deckend das Panel ist",
+      "description": "0 = völlig durchsichtig, 1 = deckend."
     },
     "show_cost": {
-      "label": "Kosten zu API-Preisen anzeigen",
-      "description": "Geschätzte Kosten der Tokens im Zeitraum zu den API-Listenpreisen von Anthropic. Mit einem Claude-Abo zahlst du nicht pro Token - angezeigt wird, was dieselbe Nutzung über die API kosten würde."
+      "label": "Kosten anzeigen",
+      "description": "Eine Schätzung, was diese Nutzung bei Bezahlung pro Token kosten würde. Mit einem Claude-Abo zahlst du das nicht."
     },
     "currency": {
-      "label": "Währung für Kosten",
-      "description": "Kosten werden mit den täglichen Referenzkursen der Europäischen Zentralbank aus USD umgerechnet (höchstens alle 12 Stunden abgerufen, nur für eine andere Währung als USD), sofern du keinen eigenen Kurs festlegst.",
+      "label": "Währung",
+      "description": "Kosten werden mit den täglichen Kursen der Europäischen Zentralbank oder mit deinem eigenen Kurs aus US-Dollar umgerechnet.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Manueller Wechselkurs",
-      "description": "Einheiten der gewählten Währung pro 1 USD. 0 = täglicher EZB-Kurs."
+      "label": "Mein Wechselkurs",
+      "description": "Wie viel deiner Währung 1 US-Dollar wert ist. 0 = automatisch den Tageskurs verwenden."
     },
     "ring_thickness": {
       "label": "Ringstärke",
@@ -205,48 +205,48 @@
       "thick": "Dick"
     },
     "ring_track": {
-      "label": "Ringspur anzeigen",
-      "description": "Der blasse volle Kreis hinter dem gefüllten Teil."
+      "label": "Hintergrund des Rings anzeigen",
+      "description": "Ein blasser voller Kreis hinter dem gefüllten Teil."
     },
     "format": {
-      "label": "Textvorlage",
-      "description": "Ersetzt die Elemente durch eigenen Text, z. B. {pct} · {reset} · {tokens}. Platzhalter: {window} {pct} {left} {reset} {tokens} {cost} {model}. Leer = normales Layout."
+      "label": "Eigener Text",
+      "description": "Schreibe deinen eigenen Text statt der üblichen Elemente. Wörter in geschweiften Klammern werden ersetzt: {window} {pct} {left} {reset} {tokens} {cost} {model}. Beispiel: {pct} · {reset}. Leer lassen für die normale Ansicht."
     },
     "label_five": {
-      "label": "Bezeichnung für den 5-Stunden-Zeitraum"
+      "label": "Name des 5-Stunden-Limits"
     },
     "label_week": {
-      "label": "Bezeichnung für den Wochenzeitraum"
+      "label": "Name des Wochenlimits"
     },
     "show_model": {
       "label": "Aktuelles Modell anzeigen",
-      "description": "Das Modell deiner letzten Claude-Code-Nachricht, z. B. Opus 5.5."
+      "description": "Das zuletzt verwendete Claude-Modell, zum Beispiel Opus 5.5."
     },
     "font_size": {
-      "label": "Schriftgröße (px)",
-      "description": "0 = Schriftgröße der Leiste."
+      "label": "Textgröße (px)",
+      "description": "0 = so groß wie der Rest der Leiste."
     },
     "gradient": {
-      "label": "Fließender Farbverlauf",
-      "description": "Farben gehen mit der Nutzung fließend ineinander über, statt an den Schwellen umzuschalten."
+      "label": "Sanfter Farbwechsel",
+      "description": "Die Farbe ändert sich mit der Nutzung nach und nach, statt bei den Stufen zu springen."
     },
     "weekly_own_color": {
-      "label": "Eigene Farbe für den Wochenzeitraum",
-      "description": "Eine andere Grundfarbe für die 7d-Elemente, wenn beide Zeiträume angezeigt werden."
+      "label": "Andere Farbe für das Wochenlimit",
+      "description": "Wird verwendet, wenn beide Limits angezeigt werden."
     },
     "weekly_color": {
-      "label": "Farbe des Wochenzeitraums"
+      "label": "Farbe des Wochenlimits"
     },
     "hide_below": {
-      "label": "Unter Nutzung ausblenden (%)",
-      "description": "Blendet das Widget aus, solange die Nutzung unter diesem Wert liegt. 0 = immer anzeigen."
+      "label": "Ausblenden, bis die Nutzung erreicht (%)",
+      "description": "Hält das Widget verborgen, solange die Nutzung niedrig ist. 0 = immer sichtbar."
     },
     "notify": {
       "label": "Benachrichtigungen",
-      "description": "Zeigt einmal pro Zeitraum eine Benachrichtigung, wenn die Nutzung eine Schwelle überschreitet.",
+      "description": "Erhalte eine Benachrichtigung, wenn die Nutzung eine Stufe überschreitet.",
       "off": "Aus",
-      "warning": "Bei Warn- und kritischer Schwelle",
-      "critical": "Nur bei kritischer Schwelle"
+      "warning": "Bei der Warn- und der kritischen Stufe",
+      "critical": "Nur bei der kritischen Stufe"
     },
     "custom_prices": {
       "label": "Eigene Token-Preise verwenden",
@@ -270,24 +270,24 @@
     "ready": "bereit"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  (Reset in {time})",
-    "tokens": "Tokens: {tokens}, Cache gelesen: {cache}",
-    "stale": "Veraltet: {error}",
+    "window": "{window}: {pct}%  (wieder voll in {time})",
+    "tokens": "Tokens: {tokens}, erneut gelesen: {cache}",
+    "stale": "Ältere Zahlen — {error}",
     "loading": "Wird geladen...",
-    "cost": "zu API-Preisen: {cost}"
+    "cost": "bei Bezahlung pro Token: {cost}"
   },
   "error": {
     "no_credentials": "Nicht bei Claude Code angemeldet",
-    "token_expired": "Token abgelaufen - Claude Code einmal benutzen, um ihn zu erneuern",
+    "token_expired": "Anmeldung abgelaufen - öffne Claude Code einmal, um sie zu erneuern",
     "network": "Keine Verbindung",
-    "bad_response": "Unerwartete API-Antwort",
-    "http_429": "Anfragelimit erreicht - neuer Versuch folgt"
+    "bad_response": "Unerwartete Antwort des Nutzungsdienstes",
+    "http_429": "Zu viele Abfragen - neuer Versuch in ein paar Minuten"
   },
   "panel": {
-    "no_reset": "kein Reset ausstehend",
-    "resets_in": "Reset in {time}",
+    "no_reset": "das Limit ist voll",
+    "resets_in": "wieder voll in {time}",
     "peak": "Spitze {tokens}",
-    "model_tokens": "{tokens} · {messages} Nachr. · Cache {cache}",
+    "model_tokens": "{tokens} · {messages} Nachrichten · erneut gelesen {cache}",
     "no_models": "In diesem Zeitraum noch keine Nutzung.",
     "by_model": "Tokens nach Modell",
     "refresh": "Aktualisieren",
@@ -302,10 +302,10 @@
     "last_7d": "Letzte 7 Tage",
     "hours_ago": "vor {n} Std.",
     "days_ago": "vor {n} T.",
-    "cost_total": "≈ {cost} zu API-Preisen (Schätzung)"
+    "cost_total": "≈ {cost} bei Bezahlung pro Token (Schätzung)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",
-    "body": "Reset in {time}"
+    "body": "Wieder voll in {time}"
   }
 }
