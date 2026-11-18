@@ -46,7 +46,7 @@ local cfg = {
 local hoverMode = cfg.display == "hover"
 
 local snapshot = noctalia.state.get("usage")
-local tooltip = nil
+local frame = nil -- icon, items and tooltip; rebuilt on new data or the minute tick, reused by animation frames
 
 -- Hover animation: linear progress from `from` to `to` (0 = collapsed, 1 = open).
 local anim = { from = 0, to = if hoverMode then 0 else 1, start = 0 }
@@ -134,13 +134,12 @@ local function onHover(state)
   render()
 end
 
-function render()
+local function buildFrame()
   local data = snapshot and snapshot.data
   local win = S.windows(data, cfg.cacheReads)
   local shown = {}
   if cfg.window ~= "weekly" then shown[#shown + 1] = { "5h", win.five } end
   if cfg.window ~= "five_hour" then shown[#shown + 1] = { "7d", win.week } end
-
   local icon
   if cfg.logo == "ring" then
     local pct = shown[1][2].pct
@@ -148,8 +147,14 @@ function render()
   else
     icon = S.logo(cfg.logo, cfg.iconSize, cfg.colors.color, cfg.glyph, cfg.logoPath)
   end
+  local tooltip = S.tooltip(snapshot)
+  if frame == nil or frame.tooltip ~= tooltip then barWidget.setTooltip(tooltip) end
+  frame = { icon = icon, items = buildItems(data, shown), tooltip = tooltip }
+end
 
-  local items = buildItems(data, shown)
+function render(rebuild)
+  if rebuild or frame == nil then buildFrame() end
+  local icon, items = frame.icon, frame.items
   local parts = { icon }
   -- Without an icon the first item stays visible, so a collapsed capsule is never empty.
   local fixed = if icon then 0 else 1
@@ -174,23 +179,18 @@ function render()
     key = "capsule", gap = cfg.gap, align = "center",
     onHover = if hoverMode then onHover else nil,
   }, parts))
-
-  local text = S.tooltip(snapshot)
-  if text ~= tooltip then
-    tooltip = text
-    barWidget.setTooltip(text)
-  end
 end
 
 noctalia.state.watch("usage", function(value)
   snapshot = value
-  render()
+  render(true)
 end)
 
 -- Frames while animating, otherwise once a minute so countdowns stay current.
 function update()
-  render()
-  noctalia.setUpdateInterval(if animProgress() ~= anim.to then 16 else 60000)
+  local animating = animProgress() ~= anim.to
+  render(not animating)
+  noctalia.setUpdateInterval(if animating then 16 else 60000)
 end
 
 local function refresh()
@@ -208,4 +208,4 @@ function onRightClick()
   refresh()
 end
 
-render()
+render(true)

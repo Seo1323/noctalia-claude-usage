@@ -111,6 +111,8 @@ local RING = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
 local ARC = '<circle cx="32" cy="32" r="25" fill="none" stroke="%s" stroke-width="9" stroke-linecap="round"'
   .. ' stroke-dasharray="%.2f 999" transform="rotate(-90 32 32)"/>'
 
+local written = {} -- ring files known to exist, to skip the disk check
+
 -- Circular gauge filled clockwise from 12 o'clock. ui.ring needs plugin_api 55, so the
 -- ring is an SVG cached in the plugin data dir, one file per (percent, colors).
 function M.ring(fraction, color, size)
@@ -119,10 +121,11 @@ function M.ring(fraction, color, size)
   local p = math.clamp(math.floor(fraction * 100 + 0.5), 0, 100)
   local fg, track = hex(color), hex("on_surface")
   local path = `{dir}/ring-{p}-{fg:sub(2)}-{track:sub(2)}.svg`
-  if not noctalia.fileExists(path) then
+  if not written[path] and not noctalia.fileExists(path) then
     local arc = if p > 0 then string.format(ARC, fg, 2 * math.pi * 25 * p / 100) else ""
     noctalia.writeFile(path, string.format(RING, track, arc))
   end
+  written[path] = true
   return ui.image({ path = path, width = size, height = size, fit = "contain" })
 end
 
