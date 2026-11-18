@@ -23,8 +23,9 @@ Install `curl` and `jq` on `PATH`. Claude Code must be logged in on this machine
 Add **Claude Usage** to a bar in **Settings → Bar** and pick the entry:
 
 - **`bar`** — capsule with an optional icon or usage ring, usage %, progress bar, time to reset and tokens.
-  With **Show details** set to *Only on hover* it shrinks to the icon or ring until you point at it. Click
-  refreshes now (or runs your `click_command`).
+  With **Show details** set to *Only on hover* it shrinks to the icon or ring until you point at it. Left click
+  runs your `click_command` (for example `alacritty -e claude`) or refreshes when it is empty; right click
+  always refreshes.
 - **`icon`** — compact variant: only an icon or a usage ring, everything else in the tooltip. Click runs
   `command` (default `alacritty -e claude`).
 
@@ -59,6 +60,7 @@ Plugin:
 | --- | --- | --- | --- |
 | `window` | `select` | `five_hour` | Which limit to show: `five_hour`, `weekly` or `both`. |
 | `display_mode` | `select` | `always` | When details (time, tokens, bar) show: `always`, `important` (at or above `warn_at`) or `hover` (otherwise only the icon or ring, or the percentage when there is no icon). |
+| `animation_ms` | `int` | `250` | Hover mode: how long the details take to slide out and fade in, in ms (0–1000; 0 = no animation). |
 | `logo` | `select` | `none` | `none`, `glyph`, `star` (bundled `assets/star.svg`), `custom` or `ring` (usage ring). |
 | `glyph` | `glyph` | `brain` | Icon used when `logo = glyph`. |
 | `logo_path` | `file` | `""` | SVG / PNG used when `logo = custom`; empty means `logo.svg` in the plugin folder. |
@@ -85,7 +87,7 @@ Plugin:
 | `color` | `color` | `on_surface` | Normal text color (color role or hex). |
 | `warn_color` | `color` | `tertiary` | Text color above `warn_at`. |
 | `critical_color` | `color` | `error` | Text color above `critical_at`. |
-| `click_command` | `string` | `""` | Shell command run on click; empty refreshes now. |
+| `click_command` | `string` | `""` | Shell command run on left click, e.g. `alacritty -e claude`; empty refreshes now. Right click always refreshes. |
 
 Dependent settings (glyph, image, formats, thresholds…) only appear in the settings window when they apply.
 

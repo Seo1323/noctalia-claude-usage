@@ -133,11 +133,15 @@
     },
     "click_command": {
       "label": "Click command",
-      "description": "Shell command run on click. Empty = refresh now."
+      "description": "Shell command run on left click, e.g. alacritty -e claude. Empty = refresh now. Right click always refreshes."
     },
     "command": {
       "label": "Click command",
       "description": "Command run when the icon is clicked."
+    },
+    "animation_ms": {
+      "label": "Hover animation (ms)",
+      "description": "How long the details take to slide out and fade in. 0 turns the animation off."
     }
   }
 }

@@ -51,6 +51,17 @@ entry = "bar.luau"
   ]
 
   [[widget.setting]]
+  key = "animation_ms"
+  type = "int"
+  label_key = "settings.animation_ms.label"
+  description_key = "settings.animation_ms.description"
+  default = 250
+  min = 0
+  max = 1000
+  step = 50
+  visible_when = { key = "display_mode", values = ["hover"] }
+
+  [[widget.setting]]
   key = "logo"
   type = "select"
   label_key = "settings.logo.label"

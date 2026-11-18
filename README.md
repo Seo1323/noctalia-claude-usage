@@ -108,12 +108,12 @@ Everything is set per widget in Noctalia's widget settings. The full list with t
 | Group | What you can change |
 | --- | --- |
 | **Content** | Limit window (5h / weekly / both), usage % (used or left), `5h` / `7d` labels, progress bar, time to reset, tokens (with or without cache reads) |
-| **When** | Details always, only when usage is high, or only on hover |
+| **When** | Details always, only when usage is high, or only on hover (animated, adjustable speed) |
 | **Format** | Reset time `1:05` or `1h 5m`, the text shown when ready, tokens `290k` or `289731`, separators |
 | **Icon** | None, any glyph, bundled star, custom image or usage ring; icon size |
 | **Look** | Spacing, font weight, dimmed time and tokens |
 | **Colors** | Color by usage, warning / critical thresholds, text / warning / critical colors |
-| **Behaviour** | Refresh interval, custom click command (default: refresh now) |
+| **Behaviour** | Refresh interval, left-click command (e.g. open Claude Code in a terminal; default: refresh), right click refreshes |
 
 ### Custom icon
 
