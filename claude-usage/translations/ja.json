@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "パネルに「セッションを再開」を表示",
       "description": "最近の Claude Code の会話を開き直すボタンです。"
+    },
+    "limit_countdown": {
+      "label": "上限に達したらカウントダウンだけを表示",
+      "description": "100% になると、Claude Code をまた使えるようになるまでの時間だけを表示します。"
     }
   },
   "bar": {

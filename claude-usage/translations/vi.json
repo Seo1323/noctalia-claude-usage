@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Hiện “Tiếp tục một phiên” trong bảng",
       "description": "Các nút mở lại một trong những cuộc trò chuyện Claude Code gần đây."
+    },
+    "limit_countdown": {
+      "label": "Khi hết giới hạn, chỉ hiện đếm ngược",
+      "description": "Ở mức 100%, widget chỉ hiện thời gian đến khi có thể dùng lại Claude Code."
     }
   },
   "bar": {

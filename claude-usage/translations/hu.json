@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "„Munkamenet folytatása” a panelen",
       "description": "Gombok, amelyek újra megnyitják valamelyik legutóbbi Claude Code-beszélgetést."
+    },
+    "limit_countdown": {
+      "label": "Elfogyott korlátnál csak a visszaszámlálás",
+      "description": "100%-nál a modul csak azt az időt mutatja, amíg a Claude Code újra használható lesz."
     }
   },
   "bar": {

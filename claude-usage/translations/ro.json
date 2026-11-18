@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Afișează „Reia o sesiune” în panou",
       "description": "Butoane care redeschid una dintre ultimele conversații din Claude Code."
+    },
+    "limit_countdown": {
+      "label": "Când o limită se epuizează, afișează doar numărătoarea inversă",
+      "description": "La 100% widgetul arată doar timpul până când Claude Code poate fi folosit din nou."
     }
   },
   "bar": {

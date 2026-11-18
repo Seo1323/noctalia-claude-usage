@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "„Sitzung fortsetzen“ im Panel anzeigen",
       "description": "Schaltflächen, die eines der letzten Claude-Code-Gespräche wieder öffnen."
+    },
+    "limit_countdown": {
+      "label": "Bei ausgeschöpftem Limit nur den Countdown zeigen",
+      "description": "Bei 100 % zeigt das Widget nur die Zeit, bis Claude Code wieder genutzt werden kann."
     }
   },
   "bar": {

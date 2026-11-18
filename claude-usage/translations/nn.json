@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Vis «Hald fram med ei økt» i panelet",
       "description": "Knappar som opnar att ein av dei siste Claude Code-samtalane."
+    },
+    "limit_countdown": {
+      "label": "Når ei grense er brukt opp, vis berre nedteljinga",
+      "description": "Ved 100 % viser widgeten berre tida til Claude Code kan brukast att."
     }
   },
   "bar": {

@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Zobrazit „Obnovit relaci“ v panelu",
       "description": "Tlačítka, která znovu otevřou jednu z posledních konverzací v Claude Code."
+    },
+    "limit_countdown": {
+      "label": "Po vyčerpání limitu zobrazit jen odpočet",
+      "description": "Při 100 % widget ukazuje jen čas do chvíle, kdy půjde Claude Code znovu používat."
     }
   },
   "bar": {

@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Pakazvać «Praciahnuć sesiju» na paneli",
       "description": "Knopki, jakija znoŭ adkryvajuć adnu z apošnich razmoŭ u Claude Code."
+    },
+    "limit_countdown": {
+      "label": "Kali limit vyčarpany, pakazvać toĺki advarotny adlik",
+      "description": "Pry 100% vidžet pakazvaje toĺki čas da momantu, kali Claude Code znoŭ možna vykarystoŭvać."
     }
   },
   "bar": {

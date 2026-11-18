@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Visa ”Återuppta en session” i panelen",
       "description": "Knappar som öppnar ett av de senaste Claude Code-samtalen igen."
+    },
+    "limit_countdown": {
+      "label": "När en gräns tar slut, visa bara nedräkningen",
+      "description": "Vid 100 % visar widgeten bara tiden tills Claude Code kan användas igen."
     }
   },
   "bar": {

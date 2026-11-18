@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Show “Resume a session” in the panel",
       "description": "Buttons that reopen one of your latest Claude Code conversations."
+    },
+    "limit_countdown": {
+      "label": "When a limit runs out, show only the countdown",
+      "description": "At 100% the widget shows just the time until you can use Claude Code again."
     }
   },
   "bar": {

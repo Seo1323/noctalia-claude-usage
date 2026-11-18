@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Mostrar “Retomar uma sessão” no painel",
       "description": "Botões que reabrem uma das últimas conversas do Claude Code."
+    },
+    "limit_countdown": {
+      "label": "Quando um limite acabar, mostrar só a contagem regressiva",
+      "description": "Em 100% o widget mostra só o tempo até ser possível usar o Claude Code de novo."
     }
   },
   "bar": {

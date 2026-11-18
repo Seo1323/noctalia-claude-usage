@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Mostra «Riprendi una sessione» nel pannello",
       "description": "Pulsanti che riaprono una delle ultime conversazioni di Claude Code."
+    },
+    "limit_countdown": {
+      "label": "A limite esaurito, mostra solo il conto alla rovescia",
+      "description": "Al 100% il widget mostra solo il tempo che manca per poter usare di nuovo Claude Code."
     }
   },
   "bar": {

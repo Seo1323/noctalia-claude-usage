@@ -54,6 +54,7 @@ The `poller` service starts with the plugin and refreshes every `refresh_minutes
 | <img src="docs/example-8.webp" alt="Ring only, details on hover" height="34"> | **Ring only, details on hover** — When to show the details: Only when I point at it |
 | <img src="docs/example-9.webp" alt="Quiet until usage is high" height="34"> | **Quiet until usage is high** — When to show the details: Only when usage is high |
 | <img src="docs/example-10.webp" alt="Any glyph" height="34"> | **Any glyph** — Picture in front: Icon · Which icon: bolt · Separator: Bar |
+| <img src="docs/example-11.webp" alt="Limit used up" height="34"> | **Limit used up** — nothing changed; at 100% only the countdown is shown |
 
 ## Settings
 
@@ -119,6 +120,7 @@ is attached to the bar.
 | --- | --- | --- |
 | When to show the details | Always | The details are the time until the limit refills, the tokens and the bar. Choices: Always, Only when usage is high, Only when I point at it. |
 | Animation speed (ms) | `250` | How long the details take to slide in when you point at the widget. 0 = no animation. |
+| When a limit runs out, show only the countdown | on | At 100% the widget shows just the time until you can use Claude Code again. |
 | Hide until usage reaches (%) ⚙ | `0` | Keeps the widget out of sight while usage is low. 0 = always visible. |
 
 #### Look

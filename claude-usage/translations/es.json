@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Mostrar «Reanudar una sesión» en el panel",
       "description": "Botones que vuelven a abrir una de las últimas conversaciones de Claude Code."
+    },
+    "limit_countdown": {
+      "label": "Al agotarse un límite, mostrar solo la cuenta atrás",
+      "description": "Al 100 % el widget muestra solo el tiempo hasta poder volver a usar Claude Code."
     }
   },
   "bar": {

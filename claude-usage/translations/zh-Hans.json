@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "在面板中显示“恢复会话”",
       "description": "用于重新打开最近某个 Claude Code 对话的按钮。"
+    },
+    "limit_countdown": {
+      "label": "限额用完时只显示倒计时",
+      "description": "达到 100% 时，小组件只显示还要多久才能再次使用 Claude Code。"
     }
   },
   "bar": {

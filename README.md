@@ -82,6 +82,10 @@ Hover the widget for both limits; click it for graphs and a button that opens Cl
     <td align="center"><img src="claude-usage/docs/example-10.webp" alt="Any glyph" height="36"><br><sub><b>Any glyph, bar separators</b></sub></td>
     <td align="center"><img src="claude-usage/docs/example-5.webp" alt="Critical color" height="36"><br><sub><b>Critical color</b></sub></td>
   </tr>
+  <tr>
+    <td align="center"><img src="claude-usage/docs/example-11.webp" alt="Limit used up" height="36"><br><sub><b>Limit used up: only the countdown</b></sub></td>
+    <td></td>
+  </tr>
 </table>
 
 <details>
@@ -99,6 +103,7 @@ Hover the widget for both limits; click it for graphs and a button that opens Cl
 | Quiet until usage is high | When to show the details: Only when usage is high |
 | Any glyph, bar separators | Picture in front: Icon · Which icon: bolt · Separator: Bar |
 | Critical color | usage above “Critical from (%)” (set to 5 here to show it) |
+| Limit used up: only the countdown | nothing changed — at 100% the widget shows only the time until the limit refills |
 
 </details>
 
@@ -112,7 +117,7 @@ stay hidden.
 | --- | --- |
 | **Content** | 5-hour, weekly or both windows · usage used or left · progress bar · time to reset · tokens · current model · cost at API prices |
 | **Icon** | none · any glyph · bundled star · your own SVG/PNG · usage ring (thin / normal / thick) · size |
-| **When to show details** | always · only above the warning threshold · on hover, with an adjustable animation |
+| **When to show details** | always · only above the warning threshold · on hover, with an adjustable animation · only the countdown once a limit is used up |
 | **Format** | `1:05` or `1h 5m` · `290k` or `289731` · 0–2 decimals · separators · custom `5h` / `7d` labels · your own text template |
 | **Look** | spacing · font size and weight · dimmed time and tokens · hide while usage is low |
 | **Colors** | by usage or a smooth gradient · warning / critical thresholds and colors · own color for the weekly window |

@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "“Danişînekê bidomîne” di panelê de nîşan bide",
       "description": "Bişkokên ku yek ji axaftinên dawî yên Claude Code dîsa vedikin."
+    },
+    "limit_countdown": {
+      "label": "Dema sînor diqede, tenê jimartina berevajî nîşan bide",
+      "description": "Li %100 widget tenê dema heta ku Claude Code dîsa were bikaranîn nîşan dide."
     }
   },
   "bar": {

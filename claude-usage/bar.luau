@@ -52,6 +52,7 @@ local cfg = {
   labelWeek = S.text("label_week", "7d"),
   hideBelow = tonumber(conf("hide_below", 0)) or 0, -- hide the widget while usage is below this %
   showModel = bool("show_model", false),
+  limitCountdown = bool("limit_countdown", true), -- at 100%: only the time until the limit refills
   fontSize = tonumber(conf("font_size", 0)) or 0, -- 0 = bar default
   notify = conf("notify", "off"), -- off | warning | critical
   clickAction = conf("click_action", "panel"), -- panel | command | refresh
@@ -181,9 +182,31 @@ local function onHover(state)
   render()
 end
 
+-- When a limit is used up, the time that matters is when work can go on again: the latest
+-- refill among the used-up windows (the weekly one blocks even if only 5h is shown).
+local function blockedUntil(win)
+  local latest = nil
+  for _, w in { win.five, win.week } do
+    if w.pct ~= nil and w.pct >= 100 and w.reset ~= nil and (latest == nil or tonumber(w.reset) > latest) then
+      latest = tonumber(w.reset)
+    end
+  end
+  return latest
+end
+
 local function buildFrame()
   local data = snapshot and snapshot.data
   local win = S.windows(data, cfg.cacheReads)
+  local blocked = cfg.limitCountdown and blockedUntil(win)
+  if blocked then
+    local tooltip = S.tooltip(snapshot)
+    if frame == nil or frame.tooltip ~= tooltip then barWidget.setTooltip(tooltip) end
+    if frame and frame.hidden then barWidget.setVisible(true) end
+    local text = cfg.resetText(blocked) or cfg.readyText
+    frame = { icon = nil, tooltip = tooltip, hidden = false, blocked = true,
+      items = { { text = text, color = cfg.colors.crit, units = utf8.len(text) or #text } } }
+    return
+  end
   local shown = {}
   if cfg.window ~= "weekly" then shown[#shown + 1] = { cfg.labelFive, win.five, cfg.colors } end
   if cfg.window ~= "five_hour" then shown[#shown + 1] = { cfg.labelWeek, win.week, weeklyColors } end
@@ -210,7 +233,7 @@ function render(rebuild)
   local fixed = if icon then 0 else 1
   for i = 1, fixed do parts[#parts + 1] = toNode(items[i]) end
 
-  local p = if hoverMode then ease(animProgress()) else 1
+  local p = if hoverMode and not frame.blocked then ease(animProgress()) else 1
   if p >= 1 then
     for i = fixed + 1, #items do parts[#parts + 1] = toNode(items[i]) end
   elseif p > 0 then

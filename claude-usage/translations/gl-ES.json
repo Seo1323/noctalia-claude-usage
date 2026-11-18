@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Amosar «Retomar unha sesión» no panel",
       "description": "Botóns que volven abrir unha das últimas conversas de Claude Code."
+    },
+    "limit_countdown": {
+      "label": "Cando se esgote un límite, amosar só a conta atrás",
+      "description": "Ao 100% o trebello amosa só o tempo ata que se poida volver usar Claude Code."
     }
   },
   "bar": {

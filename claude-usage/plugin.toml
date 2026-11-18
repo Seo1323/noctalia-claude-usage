@@ -1,6 +1,6 @@
 id = "seo/claude-usage"
 name = "Claude Limits"
-version = "1.8.1"
+version = "1.9.0"
 plugin_api = 43
 author = "Seo1323"
 license = "MIT"
@@ -238,6 +238,13 @@ entry = "bar.luau"
   description_key = "settings.format.description"
   default = ""
   advanced = true
+
+  [[widget.setting]]
+  key = "limit_countdown"
+  type = "bool"
+  label_key = "settings.limit_countdown.label"
+  description_key = "settings.limit_countdown.description"
+  default = true
 
   [[widget.setting]]
   key = "show_percent"

@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "„Sessie hervatten” in het paneel tonen",
       "description": "Knoppen die een van de laatste Claude Code-gesprekken opnieuw openen."
+    },
+    "limit_countdown": {
+      "label": "Als een limiet op is, alleen de aftelling tonen",
+      "description": "Bij 100% toont de widget alleen de tijd tot Claude Code weer gebruikt kan worden."
     }
   },
   "bar": {

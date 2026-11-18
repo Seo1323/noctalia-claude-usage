@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Pokazuj „Wznów sesję” w panelu",
       "description": "Przyciski, które otwierają jedną z ostatnich rozmów w Claude Code."
+    },
+    "limit_countdown": {
+      "label": "Po wyczerpaniu limitu pokazuj tylko odliczanie",
+      "description": "Przy 100% widżet pokazuje tylko czas do chwili, gdy znów można korzystać z Claude Code."
     }
   },
   "bar": {

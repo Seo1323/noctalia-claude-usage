@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "在面板中顯示「恢復工作階段」",
       "description": "用來重新開啟最近某個 Claude Code 對話的按鈕。"
+    },
+    "limit_countdown": {
+      "label": "限額用完時只顯示倒數",
+      "description": "達到 100% 時，小工具只顯示還要多久才能再次使用 Claude Code。"
     }
   },
   "bar": {

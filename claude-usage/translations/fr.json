@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Afficher « Reprendre une session » dans le panneau",
       "description": "Des boutons qui rouvrent une des dernières conversations Claude Code."
+    },
+    "limit_countdown": {
+      "label": "Quand une limite est atteinte, n’afficher que le compte à rebours",
+      "description": "À 100 %, le widget affiche seulement le temps avant de pouvoir réutiliser Claude Code."
     }
   },
   "bar": {

@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "패널에 “세션 이어 하기” 표시",
       "description": "최근 Claude Code 대화 중 하나를 다시 여는 버튼입니다."
+    },
+    "limit_countdown": {
+      "label": "한도를 다 쓰면 카운트다운만 표시",
+      "description": "100%가 되면 Claude Code를 다시 쓸 수 있을 때까지의 시간만 표시합니다."
     }
   },
   "bar": {

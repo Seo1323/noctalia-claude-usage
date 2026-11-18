@@ -267,6 +267,10 @@
     "panel_resume": {
       "label": "Panelde “Bir oturumu sürdür”ü göster",
       "description": "Son Claude Code konuşmalarından birini yeniden açan düğmeler."
+    },
+    "limit_countdown": {
+      "label": "Sınır dolduğunda yalnızca geri sayımı göster",
+      "description": "%100'de bileşen yalnızca Claude Code yeniden kullanılabilene kadar kalan süreyi gösterir."
     }
   },
   "bar": {

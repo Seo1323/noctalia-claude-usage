@@ -153,10 +153,11 @@ function M.verbose(resetAt)
   return `{m}m`
 end
 
--- "1:44" (hours:minutes), or nil when no reset is pending.
+-- "1:44" (hours:minutes) or "2d 13:56" from a day on; nil when no reset is pending.
 function M.compact(resetAt)
   local s = secondsLeft(resetAt)
   if s == nil then return nil end
+  if s >= 86400 then return string.format("%dd %d:%02d", s // 86400, (s % 86400) // 3600, (s % 3600) // 60) end
   return string.format("%d:%02d", s // 3600, (s % 3600) // 60)
 end
 
