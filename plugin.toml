@@ -1,0 +1,207 @@
+id = "seo/claude-usage"
+name = "Claude Usage"
+version = "1.1.0"
+plugin_api = 43
+author = "seo"
+license = "MIT"
+icon = "brain"
+description = "Claude Code usage in the bar: 5-hour / weekly limit, time to reset and tokens used. Highly configurable."
+tags = ["bar", "ai", "indicator", "utility"]
+dependencies = ["curl", "jq"]
+
+[[setting]]
+key = "refresh_minutes"
+type = "int"
+label_key = "settings.refresh_minutes.label"
+description_key = "settings.refresh_minutes.description"
+default = 5
+min = 1
+max = 120
+
+[[service]]
+id = "poller"
+entry = "service.luau"
+
+[[widget]]
+id = "bar"
+entry = "bar.luau"
+
+  [[widget.setting]]
+  key = "window"
+  type = "select"
+  label_key = "settings.window.label"
+  description_key = "settings.window.description"
+  default = "five_hour"
+  options = [
+    { value = "five_hour", label_key = "settings.window.five_hour" },
+    { value = "weekly", label_key = "settings.window.weekly" },
+    { value = "both", label_key = "settings.window.both" },
+  ]
+
+  [[widget.setting]]
+  key = "logo"
+  type = "select"
+  label_key = "settings.logo.label"
+  description_key = "settings.logo.description"
+  default = "glyph"
+  options = [
+    { value = "glyph", label_key = "settings.logo.glyph" },
+    { value = "custom", label_key = "settings.logo.custom" },
+    { value = "none", label_key = "settings.logo.none" },
+  ]
+
+  [[widget.setting]]
+  key = "show_percent"
+  type = "bool"
+  label_key = "settings.show_percent.label"
+  default = true
+
+  [[widget.setting]]
+  key = "show_prefix"
+  type = "bool"
+  label_key = "settings.show_prefix.label"
+  description_key = "settings.show_prefix.description"
+  default = false
+
+  [[widget.setting]]
+  key = "show_reset"
+  type = "bool"
+  label_key = "settings.show_reset.label"
+  description_key = "settings.show_reset.description"
+  default = true
+
+  [[widget.setting]]
+  key = "reset_format"
+  type = "select"
+  label_key = "settings.reset_format.label"
+  default = "compact"
+  options = [
+    { value = "compact", label_key = "settings.reset_format.compact" },
+    { value = "verbose", label_key = "settings.reset_format.verbose" },
+  ]
+
+  [[widget.setting]]
+  key = "ready_text"
+  type = "string"
+  label_key = "settings.ready_text.label"
+  description_key = "settings.ready_text.description"
+  default = "ready"
+
+  [[widget.setting]]
+  key = "show_tokens"
+  type = "bool"
+  label_key = "settings.show_tokens.label"
+  description_key = "settings.show_tokens.description"
+  default = true
+
+  [[widget.setting]]
+  key = "token_format"
+  type = "select"
+  label_key = "settings.token_format.label"
+  default = "short"
+  options = [
+    { value = "short", label_key = "settings.token_format.short" },
+    { value = "full", label_key = "settings.token_format.full" },
+  ]
+
+  [[widget.setting]]
+  key = "gap"
+  type = "int"
+  label_key = "settings.gap.label"
+  default = 4
+  min = 0
+  max = 24
+
+  [[widget.setting]]
+  key = "font_weight"
+  type = "select"
+  label_key = "settings.font_weight.label"
+  default = "medium"
+  options = [
+    { value = "medium", label_key = "settings.font_weight.medium" },
+    { value = "bold", label_key = "settings.font_weight.bold" },
+  ]
+
+  [[widget.setting]]
+  key = "color_by_usage"
+  type = "bool"
+  label_key = "settings.color_by_usage.label"
+  description_key = "settings.color_by_usage.description"
+  default = true
+
+  [[widget.setting]]
+  key = "warn_at"
+  type = "int"
+  label_key = "settings.warn_at.label"
+  default = 70
+  min = 1
+  max = 100
+
+  [[widget.setting]]
+  key = "critical_at"
+  type = "int"
+  label_key = "settings.critical_at.label"
+  default = 90
+  min = 1
+  max = 100
+
+  [[widget.setting]]
+  key = "color"
+  type = "color"
+  label_key = "settings.color.label"
+  description_key = "settings.color.description"
+  default = "on_surface"
+  advanced = true
+
+  [[widget.setting]]
+  key = "warn_color"
+  type = "color"
+  label_key = "settings.warn_color.label"
+  default = "tertiary"
+  advanced = true
+
+  [[widget.setting]]
+  key = "critical_color"
+  type = "color"
+  label_key = "settings.critical_color.label"
+  default = "error"
+  advanced = true
+
+  [[widget.setting]]
+  key = "click_command"
+  type = "string"
+  label_key = "settings.click_command.label"
+  description_key = "settings.click_command.description"
+  default = ""
+  advanced = true
+
+# Compact variant: only the Claude logo, usage in the tooltip.
+[[widget]]
+id = "icon"
+entry = "icon.luau"
+
+  [[widget.setting]]
+  key = "logo"
+  type = "select"
+  label_key = "settings.logo.label"
+  description_key = "settings.logo.description"
+  default = "glyph"
+  options = [
+    { value = "glyph", label_key = "settings.logo.glyph" },
+    { value = "custom", label_key = "settings.logo.custom" },
+  ]
+
+  [[widget.setting]]
+  key = "size"
+  type = "int"
+  label_key = "settings.size.label"
+  default = 20
+  min = 10
+  max = 40
+
+  [[widget.setting]]
+  key = "command"
+  type = "string"
+  label_key = "settings.command.label"
+  description_key = "settings.command.description"
+  default = "alacritty -e claude"

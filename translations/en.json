@@ -1,0 +1,91 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Refresh interval (minutes)",
+      "description": "How often the usage API is queried."
+    },
+    "size": {
+      "label": "Icon size (px)"
+    },
+    "command": {
+      "label": "Click command",
+      "description": "Command run when the icon is clicked."
+    },
+    "window": {
+      "label": "Limit window",
+      "description": "Which usage window the bar shows.",
+      "five_hour": "5-hour session",
+      "weekly": "Weekly (7d)",
+      "both": "Both"
+    },
+    "show_percent": {
+      "label": "Show usage percentage"
+    },
+    "show_prefix": {
+      "label": "Show 5h / 7d labels",
+      "description": "Prefix each percentage with its window."
+    },
+    "show_reset": {
+      "label": "Show time to reset",
+      "description": "Time left until the window resets."
+    },
+    "reset_format": {
+      "label": "Reset time format",
+      "compact": "Compact (1:44)",
+      "verbose": "Verbose (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Text when no reset is pending",
+      "description": "Shown instead of a countdown when the window is not running."
+    },
+    "show_tokens": {
+      "label": "Show tokens used",
+      "description": "Tokens used in the window (input + output + cache creation, from local transcripts)."
+    },
+    "token_format": {
+      "label": "Token format",
+      "short": "Short (92k)",
+      "full": "Full (92424)"
+    },
+    "gap": {
+      "label": "Spacing between items (px)"
+    },
+    "font_weight": {
+      "label": "Font weight",
+      "medium": "Medium",
+      "bold": "Bold"
+    },
+    "color_by_usage": {
+      "label": "Color by usage",
+      "description": "Switch to the warning / critical colors above the thresholds."
+    },
+    "warn_at": {
+      "label": "Warning threshold (%)"
+    },
+    "critical_at": {
+      "label": "Critical threshold (%)"
+    },
+    "color": {
+      "label": "Text color",
+      "description": "Color role or hex color for normal usage."
+    },
+    "warn_color": {
+      "label": "Warning color"
+    },
+    "critical_color": {
+      "label": "Critical color"
+    },
+    "click_command": {
+      "label": "Click command",
+      "description": "Shell command run on click. Empty = refresh now."
+    },
+    "logo": {
+      "label": "Icon",
+      "description": "Built-in glyph, or your own logo.svg placed in the plugin folder.",
+      "glyph": "Built-in glyph",
+      "custom": "Custom logo.svg",
+      "none": "None"
+    }
+  }
+}
