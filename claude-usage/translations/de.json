@@ -247,6 +247,22 @@
       "off": "Aus",
       "warning": "Bei Warn- und kritischer Schwelle",
       "critical": "Nur bei kritischer Schwelle"
+    },
+    "custom_prices": {
+      "label": "Eigene Token-Preise verwenden",
+      "description": "Ersetzt die Preisliste von Anthropic für alle Modelle durch deine Preise."
+    },
+    "price_input": {
+      "label": "Preis für an Claude gesendeten Text",
+      "description": "In US-Dollar pro Million Tokens. Text zum erneuten Lesen zu speichern kostet das 1,25- oder 2-Fache."
+    },
+    "price_output": {
+      "label": "Preis für Text, den Claude schreibt",
+      "description": "In US-Dollar pro Million Tokens."
+    },
+    "price_cache_read": {
+      "label": "Preis für erneut gelesenen Text",
+      "description": "In US-Dollar pro Million Tokens."
     }
   },
   "bar": {

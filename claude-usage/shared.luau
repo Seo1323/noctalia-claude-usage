@@ -64,7 +64,15 @@ local PRICES = {
 -- Unknown or older ids fall back to their family's classic price.
 local FAMILY = { fable = { 10, 50, 1.00 }, mythos = { 10, 50, 1.00 }, opus = { 5, 25, 0.50 }, sonnet = { 3, 15, 0.30 }, haiku = { 1, 5, 0.10 } }
 
+-- Optional own prices (plugin settings, USD per million tokens) replace the table for every model.
+local CUSTOM = if noctalia.getConfig("custom_prices") == true then {
+  tonumber(noctalia.getConfig("price_input")) or 4,
+  tonumber(noctalia.getConfig("price_output")) or 20,
+  tonumber(noctalia.getConfig("price_cache_read")) or 0.2,
+} else nil
+
 local function priceFor(id)
+  if CUSTOM then return CUSTOM end
   local p = PRICES[id]
   if p then return p end
   for family, fp in FAMILY do

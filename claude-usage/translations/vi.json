@@ -247,6 +247,22 @@
       "off": "Tắt",
       "warning": "Ở ngưỡng cảnh báo và nguy cấp",
       "critical": "Chỉ ở ngưỡng nguy cấp"
+    },
+    "custom_prices": {
+      "label": "Dùng giá token của tôi",
+      "description": "Thay bảng giá của Anthropic bằng giá của bạn cho mọi mô hình."
+    },
+    "price_input": {
+      "label": "Giá văn bản gửi tới Claude",
+      "description": "Tính bằng đô la Mỹ cho mỗi triệu token. Lưu văn bản để đọc lại có giá gấp 1,25 hoặc 2 lần."
+    },
+    "price_output": {
+      "label": "Giá văn bản Claude viết",
+      "description": "Tính bằng đô la Mỹ cho mỗi triệu token."
+    },
+    "price_cache_read": {
+      "label": "Giá văn bản được đọc lại",
+      "description": "Tính bằng đô la Mỹ cho mỗi triệu token."
     }
   },
   "bar": {

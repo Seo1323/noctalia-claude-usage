@@ -247,6 +247,22 @@
       "off": "Av",
       "warning": "Vid varnings- och kritisk tröskel",
       "critical": "Bara vid kritisk tröskel"
+    },
+    "custom_prices": {
+      "label": "Använd egna tokenpriser",
+      "description": "Ersätter Anthropics prislista med dina priser, för alla modeller."
+    },
+    "price_input": {
+      "label": "Pris för text som skickas till Claude",
+      "description": "I amerikanska dollar per miljon tokens. Att spara text för omläsning kostar 1,25× eller 2× så mycket."
+    },
+    "price_output": {
+      "label": "Pris för text som Claude skriver",
+      "description": "I amerikanska dollar per miljon tokens."
+    },
+    "price_cache_read": {
+      "label": "Pris för omläst text",
+      "description": "I amerikanska dollar per miljon tokens."
     }
   },
   "bar": {

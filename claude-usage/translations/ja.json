@@ -247,6 +247,22 @@
       "off": "オフ",
       "warning": "警告と危険のしきい値で",
       "critical": "危険のしきい値のみ"
+    },
+    "custom_prices": {
+      "label": "自分のトークン価格を使う",
+      "description": "すべてのモデルで、Anthropic の価格表の代わりに自分の価格を使います。"
+    },
+    "price_input": {
+      "label": "Claude に送るテキストの価格",
+      "description": "100 万トークンあたりの米ドル。再読み込み用にテキストを保存すると、この 1.25 倍または 2 倍です。"
+    },
+    "price_output": {
+      "label": "Claude が書くテキストの価格",
+      "description": "100 万トークンあたりの米ドル。"
+    },
+    "price_cache_read": {
+      "label": "再読み込みされるテキストの価格",
+      "description": "100 万トークンあたりの米ドル。"
     }
   },
   "bar": {

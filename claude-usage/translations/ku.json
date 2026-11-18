@@ -247,6 +247,22 @@
       "off": "Girtî",
       "warning": "Li sînorên hişyarî û krîtîk",
       "critical": "Tenê li sînorê krîtîk"
+    },
+    "custom_prices": {
+      "label": "Bihayên min ên tokenan bikar bîne",
+      "description": "Ji bo hemû modelan li şûna lîsteya bihayên Anthropic bihayên te bikar tîne."
+    },
+    "price_input": {
+      "label": "Bihayê nivîsa ji Claude re tê şandin",
+      "description": "Bi dolarê DYA ji bo her milyon tokenan. Tomarkirina nivîsê ji bo xwendina dîsa 1,25 an 2 qat e."
+    },
+    "price_output": {
+      "label": "Bihayê nivîsa Claude dinivîse",
+      "description": "Bi dolarê DYA ji bo her milyon tokenan."
+    },
+    "price_cache_read": {
+      "label": "Bihayê nivîsa dîsa tê xwendin",
+      "description": "Bi dolarê DYA ji bo her milyon tokenan."
     }
   },
   "bar": {

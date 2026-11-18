@@ -247,6 +247,22 @@
       "off": "關閉",
       "warning": "在警告與嚴重門檻時",
       "critical": "僅在嚴重門檻時"
+    },
+    "custom_prices": {
+      "label": "使用我自己的權杖價格",
+      "description": "以你的價格取代 Anthropic 的價目表，適用於所有模型。"
+    },
+    "price_input": {
+      "label": "傳送給 Claude 的文字價格",
+      "description": "每百萬權杖的美元價格。為重複讀取而儲存文字的價格是它的 1.25 或 2 倍。"
+    },
+    "price_output": {
+      "label": "Claude 產生的文字價格",
+      "description": "每百萬權杖的美元價格。"
+    },
+    "price_cache_read": {
+      "label": "重複讀取的文字價格",
+      "description": "每百萬權杖的美元價格。"
     }
   },
   "bar": {

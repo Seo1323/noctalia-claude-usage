@@ -2,128 +2,128 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Refresh interval (minutes)",
-      "description": "How often the usage API is queried."
+      "label": "How often to check (minutes)",
+      "description": "How often the widget asks for your latest usage."
     },
     "window": {
-      "label": "Limit window",
-      "description": "Which usage window the bar shows.",
-      "five_hour": "5-hour session",
-      "weekly": "Weekly (7d)",
+      "label": "Which limit to show",
+      "description": "Claude Code has a 5-hour limit and a weekly limit. Show one of them or both.",
+      "five_hour": "5-hour limit",
+      "weekly": "Weekly limit (7d)",
       "both": "Both"
     },
     "display_mode": {
-      "label": "Show details",
-      "description": "When the time to reset, tokens and bar are shown.",
+      "label": "When to show the details",
+      "description": "The details are the time until the limit refills, the tokens and the bar.",
       "always": "Always",
-      "important": "Only when usage is high (above the warning threshold)",
-      "hover": "Only on hover (icon or ring otherwise)"
+      "important": "Only when usage is high",
+      "hover": "Only when I point at it"
     },
     "logo": {
-      "label": "Icon",
-      "description": "Shown before the text. The ring fills with the remaining (or used) share of the limit.",
+      "label": "Picture in front",
+      "description": "Shown before the numbers. The ring is a small circle that fills up as you use the limit.",
       "none": "None",
-      "glyph": "Glyph",
-      "star": "Star (bundled)",
-      "custom": "Custom image",
+      "glyph": "Icon",
+      "star": "Star",
+      "custom": "My own picture",
       "ring": "Usage ring"
     },
     "glyph": {
-      "label": "Glyph"
+      "label": "Which icon"
     },
     "logo_path": {
-      "label": "Custom image",
-      "description": "SVG or PNG. Empty means logo.svg in the plugin folder."
+      "label": "My picture",
+      "description": "An SVG or PNG file. Leave empty to use logo.svg from the plugin folder."
     },
     "icon_size": {
-      "label": "Icon size (px)"
+      "label": "Picture size (px)"
     },
     "size": {
       "label": "Icon size (px)"
     },
     "show_percent": {
-      "label": "Show usage percentage"
+      "label": "Show the percentage"
     },
     "percent_mode": {
-      "label": "Percentage shows",
+      "label": "Show the percentage as",
       "used": "Used (22%)",
       "left": "Left (78% left)"
     },
     "show_prefix": {
-      "label": "Show 5h / 7d labels",
-      "description": "Prefix each percentage with its window."
+      "label": "Show which limit it is",
+      "description": "Puts a short name such as “5h” or “7d” before each percentage."
     },
     "show_bar": {
-      "label": "Show progress bar",
+      "label": "Show a progress bar",
       "description": "A small bar next to the percentage."
     },
     "bar_width": {
       "label": "Progress bar width (px)"
     },
     "gauge_mode": {
-      "label": "Bar and ring show",
-      "description": "What the progress bar and the usage ring fill with.",
+      "label": "The bar and ring show",
+      "description": "Choose whether they fill up with what you have left or with what you have used.",
       "left": "What is left",
       "used": "What is used"
     },
     "show_reset": {
-      "label": "Show time to reset",
-      "description": "Time left until the window resets."
+      "label": "Show time until the limit refills",
+      "description": "A countdown to the moment your limit is full again."
     },
     "reset_format": {
-      "label": "Reset time format",
-      "compact": "Compact (1:44)",
-      "verbose": "Verbose (1h 44m)"
+      "label": "Time format",
+      "compact": "Short (1:44)",
+      "verbose": "Long (1h 44m)"
     },
     "ready_text": {
-      "label": "Text when no reset is pending",
-      "description": "Shown instead of a countdown when the window is not running. Empty = \"ready\" in your language."
+      "label": "Text when the limit is full",
+      "description": "Shown instead of the countdown when you have not used this limit yet. Leave empty for “ready”."
     },
     "show_tokens": {
       "label": "Show tokens used",
-      "description": "Tokens used in the window (input + output + cache creation, from local transcripts)."
+      "description": "Tokens are pieces of text Claude reads and writes. Counted on your own computer."
     },
     "include_cache_read": {
-      "label": "Include cache reads",
-      "description": "Add tokens read from the prompt cache. They are cheap but numerous, so the number gets much larger."
+      "label": "Also count re-read text",
+      "description": "Claude re-reads the conversation before every answer. Counting that makes the number much bigger."
     },
     "token_format": {
-      "label": "Token format",
+      "label": "Token number style",
       "short": "Short (92k)",
-      "full": "Full (92424)"
+      "full": "Exact (92424)"
     },
     "separator": {
-      "label": "Separator between items",
+      "label": "Separator",
       "none": "None",
       "dot": "Dot (·)",
       "bar": "Bar (|)",
       "slash": "Slash (/)"
     },
     "dim_extras": {
-      "label": "Dim time and tokens",
-      "description": "Show the time to reset and the tokens in a muted colour; only the percentage keeps the usage colour."
+      "label": "Make the time and tokens dimmer",
+      "description": "Only the percentage keeps the warning colours."
     },
     "gap": {
-      "label": "Spacing between items (px)"
+      "label": "Space between items (px)"
     },
     "font_weight": {
-      "label": "Font weight",
+      "label": "Text weight",
       "medium": "Medium",
       "bold": "Bold"
     },
     "color_by_usage": {
-      "label": "Colour by usage",
-      "description": "Switch to the warning / critical colours above the thresholds."
+      "label": "Change colour as usage grows",
+      "description": "Turns to the warning colour, then the critical colour, at the levels below."
     },
     "warn_at": {
-      "label": "Warning threshold (%)"
+      "label": "Warning from (%)"
     },
     "critical_at": {
-      "label": "Critical threshold (%)"
+      "label": "Critical from (%)"
     },
     "color": {
-      "label": "Text colour",
-      "description": "Colour role or hex colour for normal usage."
+      "label": "Normal text colour",
+      "description": "Pick a colour from your theme or any colour you like."
     },
     "warn_color": {
       "label": "Warning colour"
@@ -132,47 +132,47 @@
       "label": "Critical colour"
     },
     "click_command": {
-      "label": "Click command",
-      "description": "Shell command run on left click, e.g. alacritty -e claude."
+      "label": "My command",
+      "description": "A command to run, for example alacritty -e claude to open Claude Code in a terminal."
     },
     "command": {
-      "label": "Click command",
-      "description": "Command run when the icon is clicked."
+      "label": "Command on click",
+      "description": "A command to run when you click the icon, for example alacritty -e claude."
     },
     "animation_ms": {
-      "label": "Hover animation (ms)",
-      "description": "How long the details take to slide out and fade in. 0 turns the animation off."
+      "label": "Animation speed (ms)",
+      "description": "How long the details take to slide in when you point at the widget. 0 = no animation."
     },
     "percent_decimals": {
-      "label": "Decimal places in percentages",
-      "description": "0 rounds to whole numbers. The API currently reports whole percentages, so decimals usually show .0."
+      "label": "Decimals in percentages",
+      "description": "0 shows whole numbers. Usage currently comes in whole percents, so decimals usually show .0."
     },
     "launch_command": {
-      "label": "Claude Code command",
-      "description": "Terminal command the panel uses to start Claude Code; the chosen --model and mode are appended."
+      "label": "Command that opens Claude Code",
+      "description": "The panel uses it to open Claude Code in a terminal. The model and session you pick are added at the end."
     },
     "click_action": {
-      "label": "Left click",
-      "description": "What a left click on the widget does. Right click always refreshes.",
+      "label": "Left click does",
+      "description": "What happens when you left-click the widget. A right click always refreshes.",
       "panel": "Open the panel",
-      "command": "Run the click command",
+      "command": "Runs my command",
       "refresh": "Refresh"
     },
     "panel_translucent": {
-      "label": "Translucent panel",
-      "description": "Let the wallpaper show through the panel background; the text stays fully opaque."
+      "label": "See-through panel",
+      "description": "Lets your wallpaper show through the panel. The text stays sharp."
     },
     "panel_opacity": {
-      "label": "Panel background opacity",
-      "description": "0 is fully transparent, 1 is solid."
+      "label": "How solid the panel is",
+      "description": "0 = fully see-through, 1 = solid."
     },
     "show_cost": {
-      "label": "Show cost at API prices",
-      "description": "Estimated cost of the window's tokens at Anthropic API list prices. With a Claude subscription you do not pay per token - this shows what the same usage would cost on the API."
+      "label": "Show what it would cost",
+      "description": "An estimate of what this usage would cost if you paid per token. With a Claude subscription you do not pay this."
     },
     "currency": {
-      "label": "Currency for costs",
-      "description": "Costs are converted from USD with the European Central Bank's daily reference rates (fetched at most every 12 hours, only for a currency other than USD), unless you set a manual rate.",
+      "label": "Currency",
+      "description": "Costs are converted from US dollars with the European Central Bank's daily rates, or with your own rate.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -195,8 +195,8 @@
       "MXN": "MXN (MX$)"
     },
     "exchange_rate": {
-      "label": "Manual exchange rate",
-      "description": "Units of the chosen currency per 1 USD. 0 = use the ECB daily rate."
+      "label": "My exchange rate",
+      "description": "How much of your currency 1 US dollar is worth. 0 = use the daily rate automatically."
     },
     "ring_thickness": {
       "label": "Ring thickness",
@@ -205,48 +205,64 @@
       "thick": "Thick"
     },
     "ring_track": {
-      "label": "Show ring track",
-      "description": "The faint full circle behind the filled part."
+      "label": "Show the ring's background",
+      "description": "A faint full circle behind the filled part."
     },
     "format": {
-      "label": "Text template",
-      "description": "Replaces the items with your own text, e.g. {pct} · {reset} · {tokens}. Placeholders: {window} {pct} {left} {reset} {tokens} {cost} {model}. Empty = normal layout."
+      "label": "My own text",
+      "description": "Write your own text instead of the usual items. Words in braces are filled in: {window} {pct} {left} {reset} {tokens} {cost} {model}. Example: {pct} · {reset}. Leave empty for the normal look."
     },
     "label_five": {
-      "label": "Label for the 5-hour window"
+      "label": "Name of the 5-hour limit"
     },
     "label_week": {
-      "label": "Label for the weekly window"
+      "label": "Name of the weekly limit"
     },
     "show_model": {
-      "label": "Show current model",
-      "description": "The model of your latest Claude Code message, e.g. Opus 5.5."
+      "label": "Show the current model",
+      "description": "The Claude model you used last, for example Opus 5.5."
     },
     "font_size": {
-      "label": "Font size (px)",
-      "description": "0 = the bar's font size."
+      "label": "Text size (px)",
+      "description": "0 = the same size as the rest of the bar."
     },
     "gradient": {
-      "label": "Smooth colour gradient",
-      "description": "Blend the colours continuously with usage instead of switching at the thresholds."
+      "label": "Smooth colour change",
+      "description": "The colour shifts little by little as usage grows instead of jumping at the levels."
     },
     "weekly_own_color": {
-      "label": "Own colour for the weekly window",
-      "description": "Use a different base colour for the 7d items when both windows are shown."
+      "label": "Different colour for the weekly limit",
+      "description": "Used when both limits are shown."
     },
     "weekly_color": {
-      "label": "Weekly window colour"
+      "label": "Weekly limit colour"
     },
     "hide_below": {
-      "label": "Hide below usage (%)",
-      "description": "Hide the widget while usage is below this value. 0 = always show."
+      "label": "Hide until usage reaches (%)",
+      "description": "Keeps the widget out of sight while usage is low. 0 = always visible."
     },
     "notify": {
       "label": "Notifications",
-      "description": "Show a notification once per window when usage crosses a threshold.",
+      "description": "Get one notification when usage passes a level.",
       "off": "Off",
-      "warning": "At the warning and critical thresholds",
-      "critical": "Only at the critical threshold"
+      "warning": "At the warning and critical levels",
+      "critical": "Only at the critical level"
+    },
+    "custom_prices": {
+      "label": "Use my own token prices",
+      "description": "Replace Anthropic's price list with your own prices, for every model."
+    },
+    "price_input": {
+      "label": "Price of text sent to Claude",
+      "description": "In US dollars per million tokens. Saving text for re-reading costs 1.25× or 2× this."
+    },
+    "price_output": {
+      "label": "Price of text Claude writes",
+      "description": "In US dollars per million tokens."
+    },
+    "price_cache_read": {
+      "label": "Price of re-read text",
+      "description": "In US dollars per million tokens."
     }
   },
   "bar": {

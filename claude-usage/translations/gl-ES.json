@@ -247,6 +247,22 @@
       "off": "Desactivadas",
       "warning": "Nos limiares de aviso e crítico",
       "critical": "Só no limiar crítico"
+    },
+    "custom_prices": {
+      "label": "Usar os meus prezos",
+      "description": "Substitúe a lista de prezos de Anthropic polos teus prezos, para todos os modelos."
+    },
+    "price_input": {
+      "label": "Prezo do texto enviado a Claude",
+      "description": "En dólares por millón de tokens. Gardar texto para relelo custa 1,25× ou 2× este prezo."
+    },
+    "price_output": {
+      "label": "Prezo do texto que escribe Claude",
+      "description": "En dólares por millón de tokens."
+    },
+    "price_cache_read": {
+      "label": "Prezo do texto relido",
+      "description": "En dólares por millón de tokens."
     }
   },
   "bar": {

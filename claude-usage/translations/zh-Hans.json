@@ -247,6 +247,22 @@
       "off": "关闭",
       "warning": "在警告和严重阈值时",
       "critical": "仅在严重阈值时"
+    },
+    "custom_prices": {
+      "label": "使用我自己的令牌价格",
+      "description": "用你的价格替换 Anthropic 的价目表，适用于所有模型。"
+    },
+    "price_input": {
+      "label": "发送给 Claude 的文本价格",
+      "description": "每百万令牌的美元价格。为重复读取而保存文本的价格是它的 1.25 或 2 倍。"
+    },
+    "price_output": {
+      "label": "Claude 生成的文本价格",
+      "description": "每百万令牌的美元价格。"
+    },
+    "price_cache_read": {
+      "label": "重复读取的文本价格",
+      "description": "每百万令牌的美元价格。"
     }
   },
   "bar": {

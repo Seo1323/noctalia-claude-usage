@@ -247,6 +247,22 @@
       "off": "Desactivades",
       "warning": "Als llindars d’avís i crític",
       "critical": "Només al llindar crític"
+    },
+    "custom_prices": {
+      "label": "Fes servir els meus preus",
+      "description": "Substitueix la llista de preus d’Anthropic pels teus preus, per a tots els models."
+    },
+    "price_input": {
+      "label": "Preu del text enviat a Claude",
+      "description": "En dòlars per milió de tokens. Desar text per rellegir-lo costa 1,25× o 2× aquest preu."
+    },
+    "price_output": {
+      "label": "Preu del text que escriu Claude",
+      "description": "En dòlars per milió de tokens."
+    },
+    "price_cache_read": {
+      "label": "Preu del text rellegit",
+      "description": "En dòlars per milió de tokens."
     }
   },
   "bar": {

@@ -247,6 +247,22 @@
       "off": "Vypnuto",
       "warning": "Na prahu varování a kritickém",
       "critical": "Jen na kritickém prahu"
+    },
+    "custom_prices": {
+      "label": "Použít vlastní ceny tokenů",
+      "description": "Nahradí ceník Anthropic vašimi cenami pro všechny modely."
+    },
+    "price_input": {
+      "label": "Cena textu odeslaného Claudovi",
+      "description": "V dolarech za milion tokenů. Uložení textu k opětovnému čtení stojí 1,25× nebo 2× tolik."
+    },
+    "price_output": {
+      "label": "Cena textu, který Claude napíše",
+      "description": "V dolarech za milion tokenů."
+    },
+    "price_cache_read": {
+      "label": "Cena znovu čteného textu",
+      "description": "V dolarech za milion tokenů."
     }
   },
   "bar": {

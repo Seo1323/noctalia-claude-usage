@@ -247,6 +247,22 @@
       "off": "Uit",
       "warning": "Bij de waarschuwings- en kritieke drempel",
       "critical": "Alleen bij de kritieke drempel"
+    },
+    "custom_prices": {
+      "label": "Eigen tokenprijzen gebruiken",
+      "description": "Vervangt de prijslijst van Anthropic door jouw prijzen, voor alle modellen."
+    },
+    "price_input": {
+      "label": "Prijs van tekst naar Claude",
+      "description": "In Amerikaanse dollars per miljoen tokens. Tekst bewaren om opnieuw te lezen kost 1,25× of 2× zoveel."
+    },
+    "price_output": {
+      "label": "Prijs van tekst die Claude schrijft",
+      "description": "In Amerikaanse dollars per miljoen tokens."
+    },
+    "price_cache_read": {
+      "label": "Prijs van opnieuw gelezen tekst",
+      "description": "In Amerikaanse dollars per miljoen tokens."
     }
   },
   "bar": {

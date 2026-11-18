@@ -247,6 +247,22 @@
       "off": "끔",
       "warning": "경고 및 위험 임계값에서",
       "critical": "위험 임계값에서만"
+    },
+    "custom_prices": {
+      "label": "내 토큰 가격 사용",
+      "description": "모든 모델에서 Anthropic 가격표 대신 내 가격을 사용합니다."
+    },
+    "price_input": {
+      "label": "Claude에 보내는 텍스트 가격",
+      "description": "100만 토큰당 미국 달러. 다시 읽기 위해 텍스트를 저장하면 이 가격의 1.25배 또는 2배입니다."
+    },
+    "price_output": {
+      "label": "Claude가 쓰는 텍스트 가격",
+      "description": "100만 토큰당 미국 달러."
+    },
+    "price_cache_read": {
+      "label": "다시 읽는 텍스트 가격",
+      "description": "100만 토큰당 미국 달러."
     }
   },
   "bar": {

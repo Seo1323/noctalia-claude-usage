@@ -247,6 +247,22 @@
       "off": "Av",
       "warning": "Ved åtvarings- og kritisk grense",
       "critical": "Berre ved kritisk grense"
+    },
+    "custom_prices": {
+      "label": "Bruk eigne tokenprisar",
+      "description": "Byter ut prislista til Anthropic med dine prisar, for alle modellar."
+    },
+    "price_input": {
+      "label": "Pris for tekst sendt til Claude",
+      "description": "I amerikanske dollar per million token. Å lagra tekst for å lesa han på nytt kostar 1,25× eller 2× så mykje."
+    },
+    "price_output": {
+      "label": "Pris for tekst Claude skriv",
+      "description": "I amerikanske dollar per million token."
+    },
+    "price_cache_read": {
+      "label": "Pris for tekst som vert lesen på nytt",
+      "description": "I amerikanske dollar per million token."
     }
   },
   "bar": {

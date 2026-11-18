@@ -247,6 +247,22 @@
       "off": "Désactivées",
       "warning": "Aux seuils d’avertissement et critique",
       "critical": "Seulement au seuil critique"
+    },
+    "custom_prices": {
+      "label": "Utiliser mes propres prix",
+      "description": "Remplace la grille tarifaire d’Anthropic par vos prix, pour tous les modèles."
+    },
+    "price_input": {
+      "label": "Prix du texte envoyé à Claude",
+      "description": "En dollars US par million de tokens. Enregistrer du texte pour le relire coûte 1,25× ou 2× ce prix."
+    },
+    "price_output": {
+      "label": "Prix du texte écrit par Claude",
+      "description": "En dollars US par million de tokens."
+    },
+    "price_cache_read": {
+      "label": "Prix du texte relu",
+      "description": "En dollars US par million de tokens."
     }
   },
   "bar": {

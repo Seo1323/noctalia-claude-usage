@@ -247,6 +247,22 @@
       "off": "Dezactivate",
       "warning": "La pragurile de avertizare și critic",
       "critical": "Doar la pragul critic"
+    },
+    "custom_prices": {
+      "label": "Folosește prețurile mele",
+      "description": "Înlocuiește lista de prețuri Anthropic cu prețurile tale, pentru toate modelele."
+    },
+    "price_input": {
+      "label": "Prețul textului trimis la Claude",
+      "description": "În dolari pe milion de tokenuri. Salvarea textului pentru recitire costă de 1,25× sau 2× mai mult."
+    },
+    "price_output": {
+      "label": "Prețul textului scris de Claude",
+      "description": "În dolari pe milion de tokenuri."
+    },
+    "price_cache_read": {
+      "label": "Prețul textului recitit",
+      "description": "În dolari pe milion de tokenuri."
     }
   },
   "bar": {

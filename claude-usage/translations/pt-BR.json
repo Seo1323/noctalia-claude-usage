@@ -247,6 +247,22 @@
       "off": "Desativadas",
       "warning": "Nos limites de aviso e crítico",
       "critical": "Só no limite crítico"
+    },
+    "custom_prices": {
+      "label": "Usar meus próprios preços",
+      "description": "Substitui a tabela de preços da Anthropic pelos seus preços, para todos os modelos."
+    },
+    "price_input": {
+      "label": "Preço do texto enviado ao Claude",
+      "description": "Em dólares por milhão de tokens. Salvar texto para reler custa 1,25× ou 2× esse valor."
+    },
+    "price_output": {
+      "label": "Preço do texto que o Claude escreve",
+      "description": "Em dólares por milhão de tokens."
+    },
+    "price_cache_read": {
+      "label": "Preço do texto relido",
+      "description": "Em dólares por milhão de tokens."
     }
   },
   "bar": {

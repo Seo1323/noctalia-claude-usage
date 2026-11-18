@@ -75,6 +75,47 @@ max = 2000.0
 step = 0.01
 advanced = true
 
+[[setting]]
+key = "custom_prices"
+type = "bool"
+label_key = "settings.custom_prices.label"
+description_key = "settings.custom_prices.description"
+default = false
+advanced = true
+
+[[setting]]
+key = "price_input"
+type = "double"
+label_key = "settings.price_input.label"
+description_key = "settings.price_input.description"
+default = 4.0
+min = 0.0
+max = 200.0
+step = 0.05
+visible_when = { key = "custom_prices", values = ["true"] }
+
+[[setting]]
+key = "price_output"
+type = "double"
+label_key = "settings.price_output.label"
+description_key = "settings.price_output.description"
+default = 20.0
+min = 0.0
+max = 500.0
+step = 0.05
+visible_when = { key = "custom_prices", values = ["true"] }
+
+[[setting]]
+key = "price_cache_read"
+type = "double"
+label_key = "settings.price_cache_read.label"
+description_key = "settings.price_cache_read.description"
+default = 0.2
+min = 0.0
+max = 50.0
+step = 0.01
+visible_when = { key = "custom_prices", values = ["true"] }
+
 [[service]]
 id = "poller"
 entry = "service.luau"

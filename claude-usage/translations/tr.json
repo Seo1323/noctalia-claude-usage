@@ -247,6 +247,22 @@
       "off": "Kapalı",
       "warning": "Uyarı ve kritik eşiklerde",
       "critical": "Yalnızca kritik eşikte"
+    },
+    "custom_prices": {
+      "label": "Kendi token fiyatlarımı kullan",
+      "description": "Anthropic'in fiyat listesi yerine tüm modeller için kendi fiyatlarınızı kullanır."
+    },
+    "price_input": {
+      "label": "Claude'a gönderilen metnin fiyatı",
+      "description": "Milyon token başına ABD doları. Metni yeniden okunmak üzere saklamak bunun 1,25 veya 2 katıdır."
+    },
+    "price_output": {
+      "label": "Claude'un yazdığı metnin fiyatı",
+      "description": "Milyon token başına ABD doları."
+    },
+    "price_cache_read": {
+      "label": "Yeniden okunan metnin fiyatı",
+      "description": "Milyon token başına ABD doları."
     }
   },
   "bar": {

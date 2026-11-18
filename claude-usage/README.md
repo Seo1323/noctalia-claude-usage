@@ -41,126 +41,128 @@ The `poller` service starts with the plugin and refreshes every `refresh_minutes
 
 ### Examples
 
-| Look | Settings |
+| Look | How |
 | --- | --- |
-| <img src="docs/example-6.webp" alt="Defaults" height="34"> | Defaults |
-| <img src="docs/example-1.webp" alt="Plain text" height="34"> | `logo = none`, `separator = none`, `dim_extras = false` |
-| <img src="docs/example-2.webp" alt="Star icon" height="34"> | `logo = star`, `show_prefix = true` |
-| <img src="docs/example-3.webp" alt="Both windows" height="34"> | `logo = glyph`, `show_prefix = true`, `window = both`, `show_reset = false`, `show_tokens = false` |
-| <img src="docs/example-4.webp" alt="Verbose and bold" height="34"> | `logo = star`, `reset_format = verbose`, `token_format = full`, `font_weight = bold` |
-| <img src="docs/example-5.webp" alt="Critical color" height="34"> | `show_prefix = true`, `show_tokens = false`, `critical_at = 5` |
-| <img src="docs/example-7.webp" alt="Progress bar" height="34"> | `show_bar = true`, `percent_mode = left`, `show_tokens = false` |
-| <img src="docs/example-8.webp" alt="Ring until hovered" height="34"> | `display_mode = hover`, `logo = ring` (at rest) |
-| <img src="docs/example-9.webp" alt="Quiet until high" height="34"> | `display_mode = important`, `logo = star` |
-| <img src="docs/example-10.webp" alt="Any glyph" height="34"> | `logo = glyph`, `glyph = bolt`, `separator = bar` |
+| <img src="docs/example-6.webp" alt="Default" height="34"> | **Default** — nothing changed |
+| <img src="docs/example-1.webp" alt="Plain text" height="34"> | **Plain text** — Picture in front: None · Separator: None · Make the time and tokens dimmer: off |
+| <img src="docs/example-2.webp" alt="Star icon + label" height="34"> | **Star icon + label** — Picture in front: Star · Show which limit it is: on |
+| <img src="docs/example-3.webp" alt="Both windows" height="34"> | **Both windows** — Picture in front: Icon · Which limit to show: Both · Show time until the limit refills: off · Show tokens used: off |
+| <img src="docs/example-4.webp" alt="Verbose and bold" height="34"> | **Verbose and bold** — Time format: Long · Token number style: Exact · Text weight: Bold |
+| <img src="docs/example-5.webp" alt="Critical color" height="34"> | **Critical color** — usage above “Critical from (%)” (set to 5 here to show it) |
+| <img src="docs/example-7.webp" alt="Progress bar, percent left" height="34"> | **Progress bar, percent left** — Show a progress bar: on · Show the percentage as: Left · Show tokens used: off |
+| <img src="docs/example-8.webp" alt="Ring only, details on hover" height="34"> | **Ring only, details on hover** — When to show the details: Only when I point at it |
+| <img src="docs/example-9.webp" alt="Quiet until usage is high" height="34"> | **Quiet until usage is high** — When to show the details: Only when usage is high |
+| <img src="docs/example-10.webp" alt="Any glyph" height="34"> | **Any glyph** — Picture in front: Icon · Which icon: bolt · Separator: Bar |
 
 ## Settings
 
-Settings marked ⚙ are behind Noctalia's **Advanced** switch. Options that do not apply right now (for example
-`ring_thickness` without the ring) are hidden in the settings window.
+Middle-click the widget (or open it in **Settings → Bar**) to change these. Settings marked ⚙ appear when
+Noctalia's **Advanced** switch is on, and settings that do not apply right now stay hidden.
 
-### Plugin
+### For every widget (Settings → Plugins → gear next to Claude Limits)
 
-Set once for every widget, under **Settings → Plugins** (gear on the plugin).
-
-| Setting | Default | Description |
+| Setting | Default | What it does |
 | --- | --- | --- |
-| `refresh_minutes` | `5` | How often the usage API is queried. |
-| `percent_decimals` ⚙ | `0` | 0 rounds to whole numbers. The API currently reports whole percentages, so decimals usually show .0. |
-| `launch_command` | `alacritty -e claude` | Terminal command the panel uses to start Claude Code; the chosen --model and mode are appended. |
-| `currency` | `USD` | Costs are converted from USD with the European Central Bank's daily reference rates (fetched at most every 12 hours, only for a currency other than USD), unless you set a manual rate. Options: `USD`, `EUR`, `PLN`, `GBP`, `CHF`, `JPY`, `CNY`, `CAD`, `AUD`, `SEK`, `NOK`, `DKK`, `CZK`, `HUF`, `RON`, `TRY`, `BRL`, `INR`, `KRW`, `MXN`. |
-| `exchange_rate` ⚙ | `0.0` | Units of the chosen currency per 1 USD. 0 = use the ECB daily rate. |
+| How often to check (minutes) | `5` | How often the widget asks for your latest usage. |
+| Decimals in percentages ⚙ | `0` | 0 shows whole numbers. Usage currently comes in whole percents, so decimals usually show .0. |
+| Command that opens Claude Code | `alacritty -e claude` | The panel uses it to open Claude Code in a terminal. The model and session you pick are added at the end. |
+| Currency | USD ($) | Costs are converted from US dollars with the European Central Bank's daily rates, or with your own rate. Choices: USD ($), EUR (€), PLN (zł), GBP (£), CHF, JPY (¥), CNY (¥), CAD (C$), AUD (A$), SEK (kr), NOK (kr), DKK (kr), CZK (Kč), HUF (Ft), RON (lei), TRY (₺), BRL (R$), INR (₹), KRW (₩), MXN (MX$). |
+| My exchange rate ⚙ | `0.0` | How much of your currency 1 US dollar is worth. 0 = use the daily rate automatically. |
+| Use my own token prices ⚙ | off | Replace Anthropic's price list with your own prices, for every model. |
+| Price of text sent to Claude | `4.0` | In US dollars per million tokens. Saving text for re-reading costs 1.25× or 2× this. |
+| Price of text Claude writes | `20.0` | In US dollars per million tokens. |
+| Price of re-read text | `0.2` | In US dollars per million tokens. |
 
-Noctalia also adds its standard panel settings there: placement (floating / attached), position (default:
-center) and "open near the widget".
+Noctalia adds its own panel settings on the same page: where the panel opens (centered by default) and whether it
+is attached to the bar.
 
 ### `bar` widget
 
 #### What is shown
 
-| Setting | Default | Description |
+| Setting | Default | What it does |
 | --- | --- | --- |
-| `window` | `five_hour` | Which usage window the bar shows. Options: `five_hour`, `weekly`, `both`. |
-| `show_percent` | `true` | Show usage percentage |
-| `percent_mode` | `used` | Percentage shows Options: `used`, `left`. |
-| `show_prefix` | `false` | Prefix each percentage with its window. |
-| `label_five` ⚙ | `5h` | Label for the 5-hour window |
-| `label_week` ⚙ | `7d` | Label for the weekly window |
-| `show_bar` | `false` | A small bar next to the percentage. |
-| `bar_width` ⚙ | `32` | Progress bar width (px) |
-| `gauge_mode` ⚙ | `left` | What the progress bar and the usage ring fill with. Options: `left`, `used`. |
-| `show_reset` | `true` | Time left until the window resets. |
-| `reset_format` | `compact` | Reset time format Options: `compact`, `verbose`. |
-| `ready_text` ⚙ | `""` | Shown instead of a countdown when the window is not running. Empty = "ready" in your language. |
-| `show_tokens` | `true` | Tokens used in the window (input + output + cache creation, from local transcripts). |
-| `include_cache_read` ⚙ | `false` | Add tokens read from the prompt cache. They are cheap but numerous, so the number gets much larger. |
-| `token_format` ⚙ | `short` | Token format Options: `short`, `full`. |
-| `show_cost` | `false` | Estimated cost of the window's tokens at Anthropic API list prices. With a Claude subscription you do not pay per token - this shows what the same usage would cost on the API. |
-| `show_model` | `false` | The model of your latest Claude Code message, e.g. Opus 5.5. |
-| `format` ⚙ | `""` | Replaces the items with your own text, e.g. {pct} · {reset} · {tokens}. Placeholders: {window} {pct} {left} {reset} {tokens} {cost} {model}. Empty = normal layout. |
+| Which limit to show | 5-hour limit | Claude Code has a 5-hour limit and a weekly limit. Show one of them or both. Choices: 5-hour limit, Weekly limit (7d), Both. |
+| Show the percentage | on |  |
+| Show the percentage as | Used (22%) | Choices: Used (22%), Left (78% left). |
+| Show which limit it is | off | Puts a short name such as “5h” or “7d” before each percentage. |
+| Name of the 5-hour limit ⚙ | `5h` |  |
+| Name of the weekly limit ⚙ | `7d` |  |
+| Show a progress bar | off | A small bar next to the percentage. |
+| Progress bar width (px) ⚙ | `32` |  |
+| The bar and ring show ⚙ | What is left | Choose whether they fill up with what you have left or with what you have used. Choices: What is left, What is used. |
+| Show time until the limit refills | on | A countdown to the moment your limit is full again. |
+| Time format | Short (1:44) | Choices: Short (1:44), Long (1h 44m). |
+| Text when the limit is full ⚙ | empty | Shown instead of the countdown when you have not used this limit yet. Leave empty for “ready”. |
+| Show tokens used | on | Tokens are pieces of text Claude reads and writes. Counted on your own computer. |
+| Also count re-read text ⚙ | off | Claude re-reads the conversation before every answer. Counting that makes the number much bigger. |
+| Token number style ⚙ | Short (92k) | Choices: Short (92k), Exact (92424). |
+| Show what it would cost | off | An estimate of what this usage would cost if you paid per token. With a Claude subscription you do not pay this. |
+| Show the current model | off | The Claude model you used last, for example Opus 5.5. |
+| My own text ⚙ | empty | Write your own text instead of the usual items. Words in braces are filled in: {window} {pct} {left} {reset} {tokens} {cost} {model}. Example: {pct} · {reset}. Leave empty for the normal look. |
 
-#### Icon
+#### Picture in front
 
-| Setting | Default | Description |
+| Setting | Default | What it does |
 | --- | --- | --- |
-| `logo` | `ring` | Shown before the text. The ring fills with the remaining (or used) share of the limit. Options: `none`, `glyph`, `star`, `custom`, `ring`. |
-| `glyph` | `brain` | Glyph |
-| `logo_path` | `""` | SVG or PNG. Empty means logo.svg in the plugin folder. |
-| `icon_size` | `18` | Icon size (px) |
-| `ring_thickness` | `normal` | Ring thickness Options: `thin`, `normal`, `thick`. |
-| `ring_track` ⚙ | `true` | The faint full circle behind the filled part. |
+| Picture in front | Usage ring | Shown before the numbers. The ring is a small circle that fills up as you use the limit. Choices: None, Icon, Star, My own picture, Usage ring. |
+| Which icon | `brain` |  |
+| My picture | empty | An SVG or PNG file. Leave empty to use logo.svg from the plugin folder. |
+| Picture size (px) | `18` |  |
+| Ring thickness | Normal | Choices: Thin, Normal, Thick. |
+| Show the ring's background ⚙ | on | A faint full circle behind the filled part. |
 
 #### When details show
 
-| Setting | Default | Description |
+| Setting | Default | What it does |
 | --- | --- | --- |
-| `display_mode` | `always` | When the time to reset, tokens and bar are shown. Options: `always`, `important`, `hover`. |
-| `animation_ms` | `250` | How long the details take to slide out and fade in. 0 turns the animation off. |
-| `hide_below` ⚙ | `0` | Hide the widget while usage is below this value. 0 = always show. |
+| When to show the details | Always | The details are the time until the limit refills, the tokens and the bar. Choices: Always, Only when usage is high, Only when I point at it. |
+| Animation speed (ms) | `250` | How long the details take to slide in when you point at the widget. 0 = no animation. |
+| Hide until usage reaches (%) ⚙ | `0` | Keeps the widget out of sight while usage is low. 0 = always visible. |
 
 #### Look
 
-| Setting | Default | Description |
+| Setting | Default | What it does |
 | --- | --- | --- |
-| `separator` | `dot` | Separator between items Options: `none`, `dot`, `bar`, `slash`. |
-| `dim_extras` | `true` | Show the time to reset and the tokens in a muted color; only the percentage keeps the usage color. |
-| `gap` ⚙ | `4` | Spacing between items (px) |
-| `font_size` ⚙ | `0` | 0 = the bar's font size. |
-| `font_weight` ⚙ | `medium` | Font weight Options: `medium`, `bold`. |
+| Separator | Dot (·) | Choices: None, Dot (·), Bar (\|), Slash (/). |
+| Make the time and tokens dimmer | on | Only the percentage keeps the warning colors. |
+| Space between items (px) ⚙ | `4` |  |
+| Text size (px) ⚙ | `0` | 0 = the same size as the rest of the bar. |
+| Text weight ⚙ | Medium | Choices: Medium, Bold. |
 
 #### Colors
 
-| Setting | Default | Description |
+| Setting | Default | What it does |
 | --- | --- | --- |
-| `color_by_usage` | `true` | Switch to the warning / critical colors above the thresholds. |
-| `gradient` | `false` | Blend the colors continuously with usage instead of switching at the thresholds. |
-| `warn_at` | `70` | Warning threshold (%) |
-| `critical_at` | `90` | Critical threshold (%) |
-| `color` ⚙ | `on_surface` | Color role or hex color for normal usage. |
-| `warn_color` ⚙ | `tertiary` | Warning color |
-| `critical_color` ⚙ | `error` | Critical color |
-| `weekly_own_color` ⚙ | `false` | Use a different base color for the 7d items when both windows are shown. |
-| `weekly_color` ⚙ | `secondary` | Weekly window color |
+| Change color as usage grows | on | Turns to the warning color, then the critical color, at the levels below. |
+| Smooth color change | off | The color shifts little by little as usage grows instead of jumping at the levels. |
+| Warning from (%) | `70` |  |
+| Critical from (%) | `90` |  |
+| Normal text color ⚙ | `on_surface` | Pick a color from your theme or any color you like. |
+| Warning color ⚙ | `tertiary` |  |
+| Critical color ⚙ | `error` |  |
+| Different color for the weekly limit ⚙ | off | Used when both limits are shown. |
+| Weekly limit color ⚙ | `secondary` |  |
 
-#### Clicks, panel and alerts
+#### Clicks, panel and notifications
 
-| Setting | Default | Description |
+| Setting | Default | What it does |
 | --- | --- | --- |
-| `click_action` | `panel` | What a left click on the widget does. Right click always refreshes. Options: `panel`, `command`, `refresh`. |
-| `click_command` | `""` | Shell command run on left click, e.g. alacritty -e claude. |
-| `panel_translucent` | `false` | Let the wallpaper show through the panel background; the text stays fully opaque. |
-| `panel_opacity` | `0.85` | 0 is fully transparent, 1 is solid. |
-| `notify` | `off` | Show a notification once per window when usage crosses a threshold. Options: `off`, `warning`, `critical`. |
+| Left click does | Open the panel | What happens when you left-click the widget. A right click always refreshes. Choices: Open the panel, Runs my command, Refresh. |
+| My command | empty | A command to run, for example alacritty -e claude to open Claude Code in a terminal. |
+| See-through panel | off | Lets your wallpaper show through the panel. The text stays sharp. |
+| How solid the panel is | `0.85` | 0 = fully see-through, 1 = solid. |
+| Notifications | Off | Get one notification when usage passes a level. Choices: Off, At the warning and critical levels, Only at the critical level. |
 
 ### `icon` widget
 
-| Setting | Default | Description |
+| Setting | Default | What it does |
 | --- | --- | --- |
-| `logo` | `glyph` | Shown before the text. The ring fills with the remaining (or used) share of the limit. Options: `glyph`, `star`, `custom`, `ring`. |
-| `glyph` | `brain` | Glyph |
-| `logo_path` | `""` | SVG or PNG. Empty means logo.svg in the plugin folder. |
-| `size` | `20` | Icon size (px) |
-| `command` | `alacritty -e claude` | Command run when the icon is clicked. |
+| Picture in front | Icon | Shown before the numbers. The ring is a small circle that fills up as you use the limit. Choices: Icon, Star, My own picture, Usage ring. |
+| Which icon | `brain` |  |
+| My picture | empty | An SVG or PNG file. Leave empty to use logo.svg from the plugin folder. |
+| Icon size (px) | `20` |  |
+| Command on click | `alacritty -e claude` | A command to run when you click the icon, for example alacritty -e claude. |
 
 ## Languages
 

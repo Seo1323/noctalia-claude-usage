@@ -247,6 +247,22 @@
       "off": "Vykl.",
       "warning": "Na parozie papiaredžannia i krytyčnym",
       "critical": "Toĺki na krytyčnym parozie"
+    },
+    "custom_prices": {
+      "label": "Ulasnyja ceny za tokieny",
+      "description": "Zamianiaje prajs Anthropic vašymi cenami dlia ŭsich madelaŭ."
+    },
+    "price_input": {
+      "label": "Cana tekstu, adpraŭlenaha Claude",
+      "description": "U dolarach ZŠA za miljon tokienaŭ. Zachavannie tekstu dlia paŭtornaha čytannia kaštuje ŭ 1,25 abo 2 razy boĺš."
+    },
+    "price_output": {
+      "label": "Cana tekstu, jaki piša Claude",
+      "description": "U dolarach ZŠA za miljon tokienaŭ."
+    },
+    "price_cache_read": {
+      "label": "Cana paŭtorna pračytanaha tekstu",
+      "description": "U dolarach ZŠA za miljon tokienaŭ."
     }
   },
   "bar": {

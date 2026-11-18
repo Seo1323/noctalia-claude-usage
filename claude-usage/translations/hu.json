@@ -247,6 +247,22 @@
       "off": "Ki",
       "warning": "A figyelmeztetési és a kritikus küszöbnél",
       "critical": "Csak a kritikus küszöbnél"
+    },
+    "custom_prices": {
+      "label": "Saját tokenárak használata",
+      "description": "Az Anthropic árlistája helyett a saját áraidat használja minden modellnél."
+    },
+    "price_input": {
+      "label": "A Claude-nak küldött szöveg ára",
+      "description": "Amerikai dollárban, millió tokenenként. A szöveg újraolvasáshoz mentése ennek 1,25- vagy 2-szerese."
+    },
+    "price_output": {
+      "label": "A Claude által írt szöveg ára",
+      "description": "Amerikai dollárban, millió tokenenként."
+    },
+    "price_cache_read": {
+      "label": "Az újraolvasott szöveg ára",
+      "description": "Amerikai dollárban, millió tokenenként."
     }
   },
   "bar": {
