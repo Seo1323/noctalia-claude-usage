@@ -1,6 +1,6 @@
 id = "seo/claude-usage"
 name = "Claude Usage"
-version = "1.1.0"
+version = "1.2.0"
 plugin_api = 43
 author = "seo"
 license = "MIT"
@@ -102,6 +102,13 @@ entry = "bar.luau"
   label_key = "settings.show_tokens.label"
   description_key = "settings.show_tokens.description"
   default = true
+
+  [[widget.setting]]
+  key = "include_cache_read"
+  type = "bool"
+  label_key = "settings.include_cache_read.label"
+  description_key = "settings.include_cache_read.description"
+  default = false
 
   [[widget.setting]]
   key = "token_format"

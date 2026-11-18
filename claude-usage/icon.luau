@@ -52,8 +52,8 @@ local function render()
   local data = snapshot and snapshot.data
   local lines = { "Claude Code" }
   if data then
-    lines[#lines + 1] = `5h: {effective(data.five_hour, data.five_reset) or "--"}%  (resets in {left(data.five_reset)})\n    tokens: {fmtTokens(effective(data.five_hour, data.five_reset) == 0 and 0 or data.five_tokens)}`
-    lines[#lines + 1] = `7d: {effective(data.weekly, data.weekly_reset) or "--"}%  (resets in {left(data.weekly_reset)})\n    tokens: {fmtTokens(effective(data.weekly, data.weekly_reset) == 0 and 0 or data.weekly_tokens)}`
+    lines[#lines + 1] = `5h: {effective(data.five_hour, data.five_reset) or "--"}%  (resets in {left(data.five_reset)})\n    tokens: {fmtTokens(effective(data.five_hour, data.five_reset) == 0 and 0 or data.five_tokens)}, cache read: {fmtTokens(effective(data.five_hour, data.five_reset) == 0 and 0 or data.five_cache_read)}`
+    lines[#lines + 1] = `7d: {effective(data.weekly, data.weekly_reset) or "--"}%  (resets in {left(data.weekly_reset)})\n    tokens: {fmtTokens(effective(data.weekly, data.weekly_reset) == 0 and 0 or data.weekly_tokens)}, cache read: {fmtTokens(effective(data.weekly, data.weekly_reset) == 0 and 0 or data.weekly_cache_read)}`
   end
   if snapshot and snapshot.error then lines[#lines + 1] = "Error: " .. tostring(snapshot.error) end
   if snapshot == nil then lines[#lines + 1] = "Loading..." end

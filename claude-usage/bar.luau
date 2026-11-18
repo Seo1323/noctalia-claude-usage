@@ -15,6 +15,7 @@ local cfg = {
   showPercent = conf("show_percent", true) ~= false,
   showReset = conf("show_reset", true) ~= false,
   showTokens = conf("show_tokens", true) ~= false,
+  includeCacheRead = conf("include_cache_read", false) == true,
   resetFormat = conf("reset_format", "compact"), -- compact (1:44) | verbose (1h 44m)
   tokenFormat = conf("token_format", "short"), -- short (92k) | full (92424)
   readyText = tostring(conf("ready_text", "ready")),
@@ -89,6 +90,14 @@ local function fmtTokens(n, full)
   return tostring(n)
 end
 
+-- Tokens for a window; cache reads are added only when include_cache_read is on.
+local function tokensFor(data, base, cacheRead)
+  if data == nil or data[base] == nil then return nil end
+  local n = tonumber(data[base])
+  if cfg.includeCacheRead then n += tonumber(data[cacheRead] or 0) end
+  return n
+end
+
 local function render()
   local data = snapshot and snapshot.data
   local err = snapshot and snapshot.error
@@ -121,10 +130,10 @@ local function render()
   local five = data and effective(data.five_hour, data.five_reset)
   local week = data and effective(data.weekly, data.weekly_reset)
   if cfg.window ~= "weekly" then
-    group("5h", five, data and data.five_reset, data and data.five_tokens)
+    group("5h", five, data and data.five_reset, tokensFor(data, "five_tokens", "five_cache_read"))
   end
   if cfg.window ~= "five_hour" then
-    group("7d", week, data and data.weekly_reset, data and data.weekly_tokens)
+    group("7d", week, data and data.weekly_reset, tokensFor(data, "weekly_tokens", "weekly_cache_read"))
   end
 
   local container = barWidget.isVertical() and ui.column or ui.row
@@ -132,8 +141,8 @@ local function render()
 
   local lines = { "Claude Code" }
   if data then
-    lines[#lines + 1] = `5h: {five or "--"}%  (resets in {left(data.five_reset)})\n    tokens: {fmtTokens(five == 0 and 0 or data.five_tokens)}`
-    lines[#lines + 1] = `7d: {week or "--"}%  (resets in {left(data.weekly_reset)})\n    tokens: {fmtTokens(week == 0 and 0 or data.weekly_tokens)}`
+    lines[#lines + 1] = `5h: {five or "--"}%  (resets in {left(data.five_reset)})\n    tokens: {fmtTokens(five == 0 and 0 or data.five_tokens)}, cache read: {fmtTokens(five == 0 and 0 or data.five_cache_read)}`
+    lines[#lines + 1] = `7d: {week or "--"}%  (resets in {left(data.weekly_reset)})\n    tokens: {fmtTokens(week == 0 and 0 or data.weekly_tokens)}, cache read: {fmtTokens(week == 0 and 0 or data.weekly_cache_read)}`
   end
   if err then lines[#lines + 1] = (data and "Stale: " or "") .. (ERRORS[err] or err) end
   if snapshot == nil then lines[#lines + 1] = "Loading..." end

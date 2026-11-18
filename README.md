@@ -21,7 +21,7 @@
 
 - **5-hour and weekly limits** — usage percentage straight from your Claude account.
 - **Time to reset** — a live countdown (`1:05` or `1h 5m`), or `ready` when no window is running.
-- **Tokens used** — counted locally from your Claude Code transcripts (`290k` or `289731`).
+- **Tokens used** — counted locally from your Claude Code transcripts (`290k` or `289731`), optionally including prompt-cache reads.
 - **Colors that warn you** — switches to warning / critical colors above the thresholds you pick.
 - **Make it yours** — choose what is shown, the icon (none, glyph, bundled star or your own image), spacing, font weight and colors.
 - **Light on resources** — one background poller, no matter how many monitors or bars.
@@ -84,7 +84,7 @@ Everything is set per widget in Noctalia's widget settings. The full list with t
 | Group | What you can change |
 | --- | --- |
 | **Content** | Limit window (5h / weekly / both), usage %, `5h` / `7d` labels, time to reset, tokens |
-| **Format** | Reset time `1:05` or `1h 5m`, the text shown when ready, tokens `290k` or `289731` |
+| **Format** | Reset time `1:05` or `1h 5m`, the text shown when ready, tokens `290k` or `289731`, with or without cache reads |
 | **Look** | Icon (none, glyph, bundled star, custom image), spacing, font weight |
 | **Colors** | Color by usage, warning / critical thresholds, text / warning / critical colors |
 | **Behaviour** | Refresh interval, custom click command (default: refresh now) |
@@ -99,7 +99,8 @@ Put any SVG or PNG somewhere on disk, set **Icon** to *Custom image* and point *
 - `fetch.sh` reads the OAuth token Claude Code already stores in `~/.claude/.credentials.json` and asks
   `api.anthropic.com/api/oauth/usage` for utilization and reset times. It never writes or refreshes the token.
 - Token counts come from your local transcripts in `~/.claude/projects` (input + output + cache-creation
-  tokens, deduplicated per message, inside the current window).
+  tokens, deduplicated per message, inside the current window). Prompt-cache reads are counted separately; turn on
+  **Include cache reads** to add them.
 - That one request is the only network call. Nothing else leaves your machine.
 
 If the token has expired, the tooltip says so — use Claude Code once and it refreshes.

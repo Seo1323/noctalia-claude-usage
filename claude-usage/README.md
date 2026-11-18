@@ -59,6 +59,7 @@ Plugin:
 | `reset_format` | `select` | `compact` | `compact` (`1:05`, hours:minutes) or `verbose` (`1h 5m`). |
 | `ready_text` | `string` | `ready` | Shown instead of the countdown when no window is running. |
 | `show_tokens` | `bool` | `true` | Show tokens used in the window. |
+| `include_cache_read` | `bool` | `false` | Add prompt-cache reads to the token count. They are cheap but numerous, so the number gets much larger. The tooltip always shows them separately. |
 | `token_format` | `select` | `short` | `short` (`290k`) or `full` (`289731`). |
 | `gap` | `int` | `4` | Spacing between items, in pixels (0–24). |
 | `font_weight` | `select` | `medium` | `medium` or `bold`. |
@@ -93,7 +94,8 @@ noctalia msg plugin seo/claude-usage:poller all refresh
   the OAuth token Claude Code stores in `~/.claude/.credentials.json`. The token is only read, never written or
   refreshed. If it has expired, the tooltip says so; using Claude Code once refreshes it.
 - **Files read:** `~/.claude/.credentials.json` and transcripts in `~/.claude/projects/**/*.jsonl` modified in the
-  last 8 days (to count tokens: input + output + cache-creation, deduplicated per message). Nothing is written.
+  last 8 days (to count tokens: input + output + cache-creation, deduplicated per message; cache reads are
+  counted separately and added only with `include_cache_read`). Nothing is written.
 - **Processes:** `fetch.sh` runs `curl`, `jq`, `find`, `xargs` and `cat`. A click runs `click_command` / `command`
   if you set one.
 - Uses an undocumented endpoint that may change without notice. Not affiliated with or endorsed by Anthropic.

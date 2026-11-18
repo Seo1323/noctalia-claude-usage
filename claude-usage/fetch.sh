@@ -29,6 +29,7 @@ usage=$(printf '%s' "$body" | jq -c '
 # Token counts come from Claude Code's local transcripts (the API has none).
 # Counted: input + output + cache-creation tokens, deduplicated per message id,
 # inside the current 5h / weekly windows (window start = reset time - length).
+# Cache reads are summed separately (*_cache_read) so the widget can add them on demand.
 PROJECTS="${CLAUDE_CONFIG_DIR:-$HOME/.claude}/projects"
 now_s=$(date +%s)
 f5=$(jq -n --argjson u "$usage" --argjson n "$now_s" 'if ($u.five_reset // 0) > $n then $u.five_reset - 18000 else $n + 1 end')
@@ -38,11 +39,14 @@ tokens=$( { [ -d "$PROJECTS" ] && find "$PROJECTS" -name '*.jsonl' -mtime -8 -pr
       | { k: (.message.id // .uuid // empty),
           t: (.timestamp | sub("\\.[0-9]+";"") | fromdateiso8601),
           n: ((.message.usage.input_tokens // 0) + (.message.usage.output_tokens // 0)
-              + (.message.usage.cache_creation_input_tokens // 0)) }' 2>/dev/null \
+              + (.message.usage.cache_creation_input_tokens // 0)),
+          c: (.message.usage.cache_read_input_tokens // 0) }' 2>/dev/null \
   | jq -sc --argjson f5 "$f5" --argjson fw "$fw" '
       group_by(.k) | map(last)
-      | { five_tokens:   (map(select(.t >= $f5) | .n) | add // 0),
-          weekly_tokens: (map(select(.t >= $fw) | .n) | add // 0) }' 2>/dev/null) || tokens='{"five_tokens":null,"weekly_tokens":null}'
+      | { five_tokens:       (map(select(.t >= $f5) | .n) | add // 0),
+          weekly_tokens:     (map(select(.t >= $fw) | .n) | add // 0),
+          five_cache_read:   (map(select(.t >= $f5) | .c) | add // 0),
+          weekly_cache_read: (map(select(.t >= $fw) | .c) | add // 0) }' 2>/dev/null) || tokens='{"five_tokens":null,"weekly_tokens":null}'
 [ -n "$tokens" ] || tokens='{"five_tokens":null,"weekly_tokens":null}'
 
 jq -nc --argjson a "$usage" --argjson b "$tokens" '$a + $b'
