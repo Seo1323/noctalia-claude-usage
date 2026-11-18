@@ -13,7 +13,7 @@ local cfg = {
   window = conf("window", "five_hour"), -- five_hour | weekly | both
   display = conf("display_mode", "always"), -- always | important | hover
   animationMs = math.max(0, tonumber(conf("animation_ms", 250)) or 250),
-  logo = conf("logo", "none"), -- none | glyph | star | custom | ring
+  logo = conf("logo", "ring"), -- none | glyph | star | custom | ring
   glyph = S.text("glyph", "brain"),
   logoPath = S.text("logo_path", ""),
   iconSize = tonumber(conf("icon_size", 18)) or 18,
@@ -29,8 +29,9 @@ local cfg = {
   showTokens = bool("show_tokens", true),
   cacheReads = bool("include_cache_read", false),
   fullTokens = conf("token_format", "short") == "full",
-  separator = SEPARATORS[conf("separator", "none")],
-  dim = bool("dim_extras", false),
+  showCost = bool("show_cost", false),
+  separator = SEPARATORS[conf("separator", "dot")],
+  dim = bool("dim_extras", true),
   gap = tonumber(conf("gap", 4)) or 4,
   weight = conf("font_weight", "medium"),
   colors = {
@@ -101,6 +102,7 @@ local function buildItems(data, shown)
       end
       if cfg.showReset and data then text(cfg.resetText(w.reset) or cfg.readyText, extra) end
       if cfg.showTokens then text(S.tokens(w.tokens, cfg.fullTokens), extra) end
+      if cfg.showCost and w.cost ~= nil then text(S.money(w.cost), extra) end
     end
     if #items == before then text(percentText(prefix, w.pct), color) end
   end

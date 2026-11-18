@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "更新間隔（分）",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "パネル背景の不透明度",
       "description": "0 は完全に透明、1 は不透明です。"
+    },
+    "show_cost": {
+      "label": "API 価格でのコストを表示",
+      "description": "ウィンドウ内トークンの推定コスト（Anthropic API の定価ベース）。Claude のサブスクリプションではトークン単位で支払いません。同じ使用量を API で使った場合の金額です。"
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "トークン: {tokens}、キャッシュ読み取り: {cache}",
     "now": "まもなく",
     "stale": "古いデータ: {error}",
-    "loading": "読み込み中..."
+    "loading": "読み込み中...",
+    "cost": "API 価格: {cost}"
   },
   "error": {
     "no_credentials": "Claude Code にログインしていません",
@@ -203,6 +208,7 @@
     "last_24h": "過去24時間",
     "last_7d": "過去7日間",
     "hours_ago": "{n} 時間前",
-    "days_ago": "{n} 日前"
+    "days_ago": "{n} 日前",
+    "cost_total": "≈ {cost}（API 価格での推定）"
   }
 }

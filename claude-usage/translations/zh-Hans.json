@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "刷新间隔（分钟）",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "面板背景不透明度",
       "description": "0 为完全透明，1 为不透明。"
+    },
+    "show_cost": {
+      "label": "按 API 价格显示费用",
+      "description": "按 Anthropic API 标价估算窗口内令牌的费用。使用 Claude 订阅时不按令牌付费——这里显示的是同样用量在 API 上的花费。"
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "令牌：{tokens}，缓存读取：{cache}",
     "now": "即将",
     "stale": "数据过期：{error}",
-    "loading": "加载中..."
+    "loading": "加载中...",
+    "cost": "按 API 价格：{cost}"
   },
   "error": {
     "no_credentials": "未登录 Claude Code",
@@ -203,6 +208,7 @@
     "last_24h": "最近 24 小时",
     "last_7d": "最近 7 天",
     "hours_ago": "{n} 小时前",
-    "days_ago": "{n} 天前"
+    "days_ago": "{n} 天前",
+    "cost_total": "≈ {cost}（按 API 价格估算）"
   }
 }

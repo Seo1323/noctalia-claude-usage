@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "Oppdateringsintervall (minutt)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "Dekkevne for panelbakgrunnen",
       "description": "0 er heilt gjennomsiktig, 1 er heildekkjande."
+    },
+    "show_cost": {
+      "label": "Vis kostnad etter API-prisar",
+      "description": "Overslag over kostnaden for token i vindauget etter API-listeprisane til Anthropic. Med eit Claude-abonnement betaler du ikkje per token - dette viser kva same bruk ville kosta via API-et."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "token: {tokens}, bufferlesing: {cache}",
     "now": "no",
     "stale": "Utdatert: {error}",
-    "loading": "Lastar..."
+    "loading": "Lastar...",
+    "cost": "etter API-prisar: {cost}"
   },
   "error": {
     "no_credentials": "Ikkje logga inn i Claude Code",
@@ -203,6 +208,7 @@
     "last_24h": "Siste 24 timar",
     "last_7d": "Siste 7 dagar",
     "hours_ago": "for {n} t sidan",
-    "days_ago": "for {n} d sidan"
+    "days_ago": "for {n} d sidan",
+    "cost_total": "≈ {cost} etter API-prisar (overslag)"
   }
 }

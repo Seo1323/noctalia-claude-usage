@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "Yenileme aralığı (dakika)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "Panel arka planı opaklığı",
       "description": "0 tamamen saydam, 1 tamamen opaktır."
+    },
+    "show_cost": {
+      "label": "Maliyeti API fiyatlarıyla göster",
+      "description": "Penceredeki tokenların Anthropic API liste fiyatlarıyla tahmini maliyeti. Claude aboneliğinde token başına ödeme yapmazsınız - aynı kullanımın API'de ne kadar tutacağını gösterir."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "tokenlar: {tokens}, önbellek okuma: {cache}",
     "now": "şimdi",
     "stale": "Güncel değil: {error}",
-    "loading": "Yükleniyor..."
+    "loading": "Yükleniyor...",
+    "cost": "API fiyatlarıyla: {cost}"
   },
   "error": {
     "no_credentials": "Claude Code'da oturum açılmamış",
@@ -203,6 +208,7 @@
     "last_24h": "Son 24 saat",
     "last_7d": "Son 7 gün",
     "hours_ago": "{n} sa önce",
-    "days_ago": "{n} g önce"
+    "days_ago": "{n} g önce",
+    "cost_total": "≈ {cost} API fiyatlarıyla (tahmin)"
   }
 }

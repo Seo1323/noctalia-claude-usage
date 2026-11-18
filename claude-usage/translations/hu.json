@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "Frissítési időköz (perc)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "Panelháttér átlátszatlansága",
       "description": "0 teljesen átlátszó, 1 tömör."
+    },
+    "show_cost": {
+      "label": "Költség megjelenítése API-áron",
+      "description": "Az ablak tokenjeinek becsült költsége az Anthropic API listaárai szerint. Claude-előfizetéssel nem tokenenként fizetsz - ez azt mutatja, mennyibe kerülne ugyanez a használat az API-n."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "tokenek: {tokens}, gyorsítótár-olvasás: {cache}",
     "now": "most",
     "stale": "Elavult: {error}",
-    "loading": "Betöltés..."
+    "loading": "Betöltés...",
+    "cost": "API-áron: {cost}"
   },
   "error": {
     "no_credentials": "Nincs bejelentkezve a Claude Code-ba",
@@ -203,6 +208,7 @@
     "last_24h": "Elmúlt 24 óra",
     "last_7d": "Elmúlt 7 nap",
     "hours_ago": "{n} órája",
-    "days_ago": "{n} napja"
+    "days_ago": "{n} napja",
+    "cost_total": "≈ {cost} API-áron (becslés)"
   }
 }

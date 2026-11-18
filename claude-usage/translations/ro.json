@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "Interval de reîmprospătare (minute)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "Opacitatea fundalului panoului",
       "description": "0 este complet transparent, 1 este solid."
+    },
+    "show_cost": {
+      "label": "Afișează costul la prețurile API",
+      "description": "Costul estimat al tokenurilor din fereastră la prețurile de listă ale API-ului Anthropic. Cu un abonament Claude nu plătești per token - arată cât ar costa aceeași utilizare prin API."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "tokenuri: {tokens}, citire cache: {cache}",
     "now": "acum",
     "stale": "Învechit: {error}",
-    "loading": "Se încarcă..."
+    "loading": "Se încarcă...",
+    "cost": "la prețurile API: {cost}"
   },
   "error": {
     "no_credentials": "Nu ești conectat la Claude Code",
@@ -203,6 +208,7 @@
     "last_24h": "Ultimele 24 de ore",
     "last_7d": "Ultimele 7 zile",
     "hours_ago": "acum {n} h",
-    "days_ago": "acum {n} z"
+    "days_ago": "acum {n} z",
+    "cost_total": "≈ {cost} la prețurile API (estimare)"
   }
 }

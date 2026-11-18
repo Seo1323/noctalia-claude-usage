@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "Khoảng làm mới (phút)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "Độ mờ đục của nền bảng",
       "description": "0 là trong suốt hoàn toàn, 1 là đặc."
+    },
+    "show_cost": {
+      "label": "Hiện chi phí theo giá API",
+      "description": "Chi phí ước tính của token trong cửa sổ theo bảng giá API của Anthropic. Với gói đăng ký Claude bạn không trả tiền theo token - đây là số tiền nếu dùng tương tự qua API."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "token: {tokens}, đọc bộ nhớ đệm: {cache}",
     "now": "bây giờ",
     "stale": "Đã cũ: {error}",
-    "loading": "Đang tải..."
+    "loading": "Đang tải...",
+    "cost": "theo giá API: {cost}"
   },
   "error": {
     "no_credentials": "Chưa đăng nhập Claude Code",
@@ -203,6 +208,7 @@
     "last_24h": "24 giờ qua",
     "last_7d": "7 ngày qua",
     "hours_ago": "{n} giờ trước",
-    "days_ago": "{n} ngày trước"
+    "days_ago": "{n} ngày trước",
+    "cost_total": "≈ {cost} theo giá API (ước tính)"
   }
 }

@@ -33,7 +33,8 @@ function M.windows(data, withCacheReads)
     if pct ~= nil then pct = tonumber(pct) end
     if reset ~= nil and tonumber(reset) <= os.time() then pct, tokens, cache = 0, 0, 0 end
     if withCacheReads and tokens ~= nil then tokens = tonumber(tokens) + tonumber(cache or 0) end
-    return { pct = pct, reset = data and data[prefix .. "_reset"], tokens = tokens, cache = cache }
+    local cost = if pct == 0 and reset ~= nil and tonumber(reset) <= os.time() then 0 else M.cost(data and data[prefix .. "_models"])
+    return { pct = pct, reset = data and data[prefix .. "_reset"], tokens = tokens, cache = cache, cost = cost }
   end
   return { five = window("five", "five_hour"), week = window("weekly", "weekly") }
 end
@@ -43,6 +44,55 @@ local DECIMALS = math.clamp(tonumber(noctalia.getConfig("percent_decimals")) or 
 function M.num(pct)
   if pct == nil then return "--" end
   return string.format(`%.{DECIMALS}f`, pct)
+end
+
+-- API list prices in USD per million tokens: { input, output, cache read }. Cache writes are
+-- 1.25x input (5-minute TTL) or 2x input (1-hour TTL). Source: Anthropic pricing, 2026-11.
+-- Subscription users do not pay per token; this is an "at API prices" estimate.
+local PRICES = {
+  ["claude-fable-5-2"] = { 8, 40, 0.20 }, ["claude-mythos-5-2"] = { 8, 40, 0.20 },
+  ["claude-fable-5-1"] = { 10, 50, 0.25 }, ["claude-mythos-5-1"] = { 10, 50, 0.25 },
+  ["claude-fable-5"] = { 10, 50, 1.00 }, ["claude-mythos-5"] = { 10, 50, 1.00 },
+  ["claude-opus-5-5"] = { 4, 20, 0.20 },
+  ["claude-opus-5"] = { 5, 25, 0.50 },
+  ["claude-sonnet-5-5"] = { 2, 10, 0.10 },
+  ["claude-sonnet-5"] = { 2, 10, 0.20 },
+  ["claude-sonnet-4-6"] = { 3, 15, 0.30 },
+  ["claude-haiku-5-5"] = { 0.10, 0.50, 0.01 },
+  ["claude-haiku-4-5"] = { 1, 5, 0.10 },
+}
+-- Unknown or older ids fall back to their family's classic price.
+local FAMILY = { fable = { 10, 50, 1.00 }, mythos = { 10, 50, 1.00 }, opus = { 5, 25, 0.50 }, sonnet = { 3, 15, 0.30 }, haiku = { 1, 5, 0.10 } }
+
+local function priceFor(id)
+  local p = PRICES[id]
+  if p then return p end
+  for family, fp in FAMILY do
+    if id:find(family, 1, true) then return fp end
+  end
+  return nil
+end
+
+-- Estimated cost in USD of a list of per-model entries from fetch.sh (nil when none is priced).
+function M.cost(models)
+  if models == nil then return nil end
+  local total, priced = 0, false
+  for _, m in models do
+    local p = priceFor(m.model or "")
+    if p then
+      priced = true
+      local input = tonumber(m.input or 0) + 1.25 * tonumber(m.cache_write_5m or 0) + 2 * tonumber(m.cache_write_1h or 0)
+      total += (input * p[1] + tonumber(m.output or 0) * p[2] + tonumber(m.cache_read or 0) * p[3]) / 1000000
+    end
+  end
+  return if priced then total else nil
+end
+
+function M.money(usd)
+  if usd == nil then return "--" end
+  if usd >= 100 then return string.format("$%.0f", usd) end
+  if usd >= 10 then return string.format("$%.1f", usd) end
+  return string.format("$%.2f", usd)
 end
 
 -- "claude-opus-5-5" -> "Opus 5.5"; ids in another shape are returned unchanged.
@@ -150,6 +200,7 @@ function M.tooltip(snapshot)
       local time = M.verbose(win.reset) or (if win.reset then noctalia.tr("tooltip.now") else "-")
       lines[#lines + 1] = noctalia.tr("tooltip.window", { window = g[1], pct = M.num(win.pct), time = time })
       lines[#lines + 1] = "    " .. noctalia.tr("tooltip.tokens", { tokens = M.tokens(win.tokens), cache = M.tokens(win.cache) })
+      if win.cost ~= nil then lines[#lines + 1] = "    " .. noctalia.tr("tooltip.cost", { cost = M.money(win.cost) }) end
     end
   end
   local err = snapshot and snapshot.error

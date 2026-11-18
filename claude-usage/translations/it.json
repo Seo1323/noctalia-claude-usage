@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "Intervallo di aggiornamento (minuti)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "Opacità dello sfondo del pannello",
       "description": "0 è completamente trasparente, 1 è pieno."
+    },
+    "show_cost": {
+      "label": "Mostra il costo ai prezzi API",
+      "description": "Costo stimato dei token della finestra ai prezzi di listino dell’API Anthropic. Con un abbonamento Claude non paghi a token: indica quanto costerebbe lo stesso utilizzo tramite API."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "token: {tokens}, letture cache: {cache}",
     "now": "ora",
     "stale": "Non aggiornato: {error}",
-    "loading": "Caricamento..."
+    "loading": "Caricamento...",
+    "cost": "ai prezzi API: {cost}"
   },
   "error": {
     "no_credentials": "Accesso a Claude Code non effettuato",
@@ -203,6 +208,7 @@
     "last_24h": "Ultime 24 ore",
     "last_7d": "Ultimi 7 giorni",
     "hours_ago": "{n} h fa",
-    "days_ago": "{n} g fa"
+    "days_ago": "{n} g fa",
+    "cost_total": "≈ {cost} ai prezzi API (stima)"
   }
 }

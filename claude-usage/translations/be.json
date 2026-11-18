@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "Інтэрвал абнаўлення (хвіліны)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "Непразрыстасць фону панэлі",
       "description": "0 — цалкам празрыста, 1 — суцэльны фон."
+    },
+    "show_cost": {
+      "label": "Паказваць кошт па цэнах API",
+      "description": "Прыкладны кошт токенаў акна паводле прайса API Anthropic. З падпіскай Claude вы не плаціце за токены - тут відаць, колькі каштавала б тое ж выкарыстанне праз API."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "токены: {tokens}, чытанне кэша: {cache}",
     "now": "зараз",
     "stale": "Састарэла: {error}",
-    "loading": "Загрузка..."
+    "loading": "Загрузка...",
+    "cost": "па цэнах API: {cost}"
   },
   "error": {
     "no_credentials": "Уваход у Claude Code не выкананы",
@@ -203,6 +208,7 @@
     "last_24h": "Апошнія 24 гадзіны",
     "last_7d": "Апошнія 7 дзён",
     "hours_ago": "{n} гадз таму",
-    "days_ago": "{n} дз таму"
+    "days_ago": "{n} дз таму",
+    "cost_total": "≈ {cost} па цэнах API (ацэнка)"
   }
 }

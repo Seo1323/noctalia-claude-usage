@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "Interval obnovení (minuty)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "Krytí pozadí panelu",
       "description": "0 je zcela průhledné, 1 je plné."
+    },
+    "show_cost": {
+      "label": "Zobrazit cenu podle ceníku API",
+      "description": "Odhadovaná cena tokenů v okně podle ceníku API Anthropic. S předplatným Claude neplatíte za tokeny - ukazuje, kolik by stejné využití stálo přes API."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "tokeny: {tokens}, čtení z mezipaměti: {cache}",
     "now": "nyní",
     "stale": "Neaktuální: {error}",
-    "loading": "Načítání..."
+    "loading": "Načítání...",
+    "cost": "podle cen API: {cost}"
   },
   "error": {
     "no_credentials": "Nepřihlášeno do Claude Code",
@@ -203,6 +208,7 @@
     "last_24h": "Posledních 24 hodin",
     "last_7d": "Posledních 7 dní",
     "hours_ago": "před {n} h",
-    "days_ago": "před {n} d"
+    "days_ago": "před {n} d",
+    "cost_total": "≈ {cost} podle cen API (odhad)"
   }
 }

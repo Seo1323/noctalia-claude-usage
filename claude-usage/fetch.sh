@@ -22,7 +22,8 @@ resp=$(jq -r '"header = " + ("Authorization: Bearer " + .claudeAiOauth.accessTok
 
 # Tokens per message (deduplicated by id) inside each window (start = reset - length):
 # input + output + cache creation, with cache reads summed separately. Also per model
-# for both windows, and series for the panel graphs (24 hourly / 7 daily buckets).
+# for both windows (with the input / output / cache split used for cost estimates), and
+# series for the panel graphs (24 hourly / 7 daily buckets).
 find "$DIR/projects" -name '*.jsonl' -mtime -8 -print0 2>/dev/null \
 | xargs -0 -r grep -hF '"usage"' 2>/dev/null \
 | jq -Rnc --argjson now "$(date +%s)" --argjson api "${resp%$'\n'*}" '
@@ -32,13 +33,17 @@ find "$DIR/projects" -name '*.jsonl' -mtime -8 -print0 2>/dev/null \
     | ($api.seven_day.resets_at | values | ts) as $rw
     | [inputs | fromjson? | select(.type == "assistant" and .message.usage != null)
         | .message.usage as $u
+        | ($u.cache_creation_input_tokens // 0) as $w
+        | ($u.cache_creation.ephemeral_1h_input_tokens // 0) as $w1
         | { k: (.message.id // .uuid), t: ((.timestamp | ts)? // 0), model: (.message.model // ""),
-            n: (($u.input_tokens // 0) + ($u.output_tokens // 0) + ($u.cache_creation_input_tokens // 0)),
+            i: ($u.input_tokens // 0), o: ($u.output_tokens // 0), w5: ($w - $w1), w1: $w1,
+            n: (($u.input_tokens // 0) + ($u.output_tokens // 0) + $w),
             c: ($u.cache_read_input_tokens // 0) }]
     | (group_by(.k) | map(last)) as $m
     | def total(f; $from): [$m[] | select(.t >= $from) | f] | add // 0;
       def models($from): [$m[] | select(.t >= $from and .model != "" and (.model | startswith("<") | not))]
-        | group_by(.model) | map({ model: .[0].model, tokens: (map(.n) | add), cache_read: (map(.c) | add), messages: length })
+        | group_by(.model) | map({ model: .[0].model, tokens: (map(.n) | add), cache_read: (map(.c) | add), messages: length,
+            input: (map(.i) | add), output: (map(.o) | add), cache_write_5m: (map(.w5) | add), cache_write_1h: (map(.w1) | add) })
         | sort_by(-.tokens);
       def series($size; $count): ([$m[] | (($now - .t) / $size | floor) as $b | select($b >= 0 and $b < $count)
           | { b: ($count - 1 - $b), n }] | group_by(.b) | map({ key: (.[0].b | tostring), value: (map(.n) | add) }) | from_entries) as $g

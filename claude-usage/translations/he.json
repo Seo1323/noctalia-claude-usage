@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "מרווח רענון (דקות)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "אטימות רקע הלוח",
       "description": "0 שקוף לגמרי, 1 אטום."
+    },
+    "show_cost": {
+      "label": "הצגת עלות לפי מחירי ה-API",
+      "description": "עלות משוערת של הטוקנים בחלון לפי מחירון ה-API של Anthropic. במנוי Claude אינך משלם לפי טוקן - זה מראה כמה אותו שימוש היה עולה דרך ה-API."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "טוקנים: {tokens}, קריאה מהמטמון: {cache}",
     "now": "עכשיו",
     "stale": "לא עדכני: {error}",
-    "loading": "טוען..."
+    "loading": "טוען...",
+    "cost": "לפי מחירי ה-API: {cost}"
   },
   "error": {
     "no_credentials": "לא מחובר ל-Claude Code",
@@ -203,6 +208,7 @@
     "last_24h": "24 השעות האחרונות",
     "last_7d": "7 הימים האחרונים",
     "hours_ago": "לפני {n} ש׳",
-    "days_ago": "לפני {n} י׳"
+    "days_ago": "לפני {n} י׳",
+    "cost_total": "≈ {cost} לפי מחירי ה-API (הערכה)"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "Interval abnaŭlennia (chviliny)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "Nieprazrystasć fonu panełi",
       "description": "0 — całkam prazrysta, 1 — sucelny fon."
+    },
+    "show_cost": {
+      "label": "Pakazvać košt pa cenach API",
+      "description": "Prykładny košt tokienaŭ akna pavodle prajsa API Anthropic. Z padpiskaj Claude vy nie płacicie za tokieny - tut vidać, koĺki kaštavała b toje ž vykarystannie praz API."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "tokieny: {tokens}, čytannie keša: {cache}",
     "now": "zaraz",
     "stale": "Sastareła: {error}",
-    "loading": "Zahruzka..."
+    "loading": "Zahruzka...",
+    "cost": "pa cenach API: {cost}"
   },
   "error": {
     "no_credentials": "Uvachod u Claude Code nie vykanany",
@@ -203,6 +208,7 @@
     "last_24h": "Apošnija 24 hadziny",
     "last_7d": "Apošnija 7 dzion",
     "hours_ago": "{n} hadz tamu",
-    "days_ago": "{n} dz tamu"
+    "days_ago": "{n} dz tamu",
+    "cost_total": "≈ {cost} pa cenach API (acenka)"
   }
 }

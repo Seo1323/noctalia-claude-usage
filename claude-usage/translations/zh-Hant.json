@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "重新整理間隔（分鐘）",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "面板背景不透明度",
       "description": "0 為完全透明，1 為不透明。"
+    },
+    "show_cost": {
+      "label": "依 API 價格顯示費用",
+      "description": "依 Anthropic API 定價估算視窗內權杖的費用。使用 Claude 訂閱時不按權杖付費——這裡顯示的是同樣用量在 API 上的花費。"
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "權杖：{tokens}，快取讀取：{cache}",
     "now": "即將",
     "stale": "資料過期：{error}",
-    "loading": "載入中..."
+    "loading": "載入中...",
+    "cost": "依 API 價格：{cost}"
   },
   "error": {
     "no_credentials": "未登入 Claude Code",
@@ -203,6 +208,7 @@
     "last_24h": "最近 24 小時",
     "last_7d": "最近 7 天",
     "hours_ago": "{n} 小時前",
-    "days_ago": "{n} 天前"
+    "days_ago": "{n} 天前",
+    "cost_total": "≈ {cost}（依 API 價格估算）"
   }
 }

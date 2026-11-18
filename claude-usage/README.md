@@ -1,6 +1,6 @@
-# Claude Usage
+# Claude Limits
 
-<p align="center"><img src="docs/example-2.png" alt="Claude Usage in the Noctalia bar" height="44"></p>
+<p align="center"><img src="docs/example-6.png" alt="Claude Limits in the Noctalia bar" height="44"></p>
 
 Shows your Claude Code usage in the bar: how much of the 5-hour (and optionally weekly) limit is used, how long
 until it resets, and how many tokens you used in that window — as text, a small progress bar or a usage ring.
@@ -20,7 +20,7 @@ Install `curl` and `jq` on `PATH`. Claude Code must be logged in on this machine
 
 ## Usage
 
-Add **Claude Usage** to a bar in **Settings → Bar** and pick the entry:
+Add **Claude Limits** to a bar in **Settings → Bar** and pick the entry:
 
 - **`bar`** — capsule with an optional icon or usage ring, usage %, progress bar, time to reset and tokens.
   With **Show details** set to *Only on hover* it shrinks to the icon or ring until you point at it. Left click
@@ -42,12 +42,12 @@ The `poller` service starts with the plugin and refreshes every `refresh_minutes
 
 | Look | Settings |
 | --- | --- |
-| <img src="docs/example-1.png" alt="Defaults" height="34"> | Defaults |
+| <img src="docs/example-6.png" alt="Defaults" height="34"> | Defaults |
+| <img src="docs/example-1.png" alt="Plain text" height="34"> | `logo = none`, `separator = none`, `dim_extras = false` |
 | <img src="docs/example-2.png" alt="Star icon" height="34"> | `logo = star`, `show_prefix = true` |
 | <img src="docs/example-3.png" alt="Both windows" height="34"> | `logo = glyph`, `show_prefix = true`, `window = both`, `show_reset = false`, `show_tokens = false` |
 | <img src="docs/example-4.png" alt="Verbose and bold" height="34"> | `logo = star`, `reset_format = verbose`, `token_format = full`, `font_weight = bold` |
 | <img src="docs/example-5.png" alt="Critical color" height="34"> | `show_prefix = true`, `show_tokens = false`, `critical_at = 5` |
-| <img src="docs/example-6.png" alt="Usage ring" height="34"> | `logo = ring`, `separator = dot`, `dim_extras = true` |
 | <img src="docs/example-7.png" alt="Progress bar" height="34"> | `show_bar = true`, `percent_mode = left`, `show_tokens = false` |
 | <img src="docs/example-8.png" alt="Ring until hovered" height="34"> | `display_mode = hover`, `logo = ring` (at rest) |
 | <img src="docs/example-9.png" alt="Quiet until high" height="34"> | `display_mode = important`, `logo = star` |
@@ -70,7 +70,7 @@ Plugin:
 | `window` | `select` | `five_hour` | Which limit to show: `five_hour`, `weekly` or `both`. |
 | `display_mode` | `select` | `always` | When details (time, tokens, bar) show: `always`, `important` (at or above `warn_at`) or `hover` (otherwise only the icon or ring, or the percentage when there is no icon). |
 | `animation_ms` | `int` | `250` | Hover mode: how long the details take to slide out and fade in, in ms (0–1000; 0 = no animation). |
-| `logo` | `select` | `none` | `none`, `glyph`, `star` (bundled `assets/star.svg`), `custom` or `ring` (usage ring). |
+| `logo` | `select` | `ring` | `none`, `glyph`, `star` (bundled `assets/star.svg`), `custom` or `ring` (usage ring). |
 | `glyph` | `glyph` | `brain` | Icon used when `logo = glyph`. |
 | `logo_path` | `file` | `""` | SVG / PNG used when `logo = custom`; empty means `logo.svg` in the plugin folder. |
 | `icon_size` | `int` | `18` | Icon and ring size, in pixels (10–40). |
@@ -85,9 +85,10 @@ Plugin:
 | `ready_text` | `string` | `""` | Shown instead of the countdown when no window is running; empty means "ready" in the shell's language. |
 | `show_tokens` | `bool` | `true` | Show tokens used in the window. |
 | `include_cache_read` | `bool` | `false` | Add prompt-cache reads to the token count. They are cheap but numerous, so the number gets much larger. The tooltip always shows them separately. |
+| `show_cost` | `bool` | `false` | Estimated cost of the window's tokens at Anthropic API list prices (see Notes). |
 | `token_format` | `select` | `short` | `short` (`290k`) or `full` (`289731`). |
-| `separator` | `select` | `none` | Between items: `none`, `dot` (`·`), `bar` (`\|`) or `slash` (`/`). |
-| `dim_extras` | `bool` | `false` | Time and tokens in a muted color; only the percentage keeps the usage color. |
+| `separator` | `select` | `dot` | Between items: `none`, `dot` (`·`), `bar` (`\|`) or `slash` (`/`). |
+| `dim_extras` | `bool` | `true` | Time and tokens in a muted color; only the percentage keeps the usage color. |
 | `gap` | `int` | `4` | Spacing between items, in pixels (0–24). |
 | `font_weight` | `select` | `medium` | `medium` or `bold`. |
 | `color_by_usage` | `bool` | `true` | Use the warning / critical colors above the thresholds. |
@@ -137,11 +138,29 @@ Refresh immediately:
 noctalia msg plugin seo/claude-usage:poller all refresh
 ```
 
+## See also
+
+[**Claude Code Usage**](https://github.com/noctalia-dev/community-plugins/tree/main/claudecode) (`jrohland/claudecode`)
+is another Noctalia plugin for Claude Code usage, with a richer dashboard (costs, activity charts, profiles). Claude
+Limits was written independently and takes a different direction:
+
+- **Highly configurable, made to fit your bar** — almost every part can be switched on or off and
+  restyled: icon (none, any glyph, bundled star, your own image or a usage ring), percent used or left with 0–2
+  decimals, progress bar, time format, token format, separators, dimmed extras, spacing, font weight and colors.
+- **Small by default** — one compact capsule; details can stay visible, appear only when usage is high, or slide
+  out on hover with an adjustable animation.
+- **Lightweight** — a shell script with `curl` + `jq`, no Python; one request per refresh for every bar and monitor.
+- **Quick launcher** — the click panel starts Claude Code with a chosen model and session mode.
+
 ## Notes
 
 - **Network:** one HTTPS request per refresh to `https://api.anthropic.com/api/oauth/usage`, authenticated with
   the OAuth token Claude Code stores in `~/.claude/.credentials.json`. The token is only read, never written or
   refreshed. If it has expired, the tooltip says so; using Claude Code once refreshes it.
+- **Cost estimates:** prices per model are built into `shared.luau` (Anthropic API list prices, November 2026;
+  cache writes at 1.25x input for the 5-minute TTL and 2x for the 1-hour TTL). With a Claude subscription you do not
+  pay per token - the figure shows what the same usage would cost on the API. Unknown models fall back to their
+  family's price.
 - **Panel data:** the graphs and the per-model table come from the same local transcripts; nothing extra is sent.
 - **Files read:** `~/.claude/.credentials.json` and transcripts in `~/.claude/projects/**/*.jsonl` modified in the
   last 8 days (to count tokens: input + output + cache-creation, deduplicated per message; cache reads are

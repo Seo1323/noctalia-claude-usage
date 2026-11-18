@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "Uppdateringsintervall (minuter)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "Panelbakgrundens opacitet",
       "description": "0 är helt genomskinlig, 1 är heltäckande."
+    },
+    "show_cost": {
+      "label": "Visa kostnad enligt API-priser",
+      "description": "Uppskattad kostnad för fönstrets tokens enligt Anthropics API-listpriser. Med ett Claude-abonnemang betalar du inte per token - detta visar vad samma användning skulle kosta via API:t."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "tokens: {tokens}, cacheläsning: {cache}",
     "now": "nu",
     "stale": "Inaktuellt: {error}",
-    "loading": "Laddar..."
+    "loading": "Laddar...",
+    "cost": "enligt API-priser: {cost}"
   },
   "error": {
     "no_credentials": "Inte inloggad i Claude Code",
@@ -203,6 +208,7 @@
     "last_24h": "Senaste 24 timmarna",
     "last_7d": "Senaste 7 dagarna",
     "hours_ago": "för {n} h sedan",
-    "days_ago": "för {n} d sedan"
+    "days_ago": "för {n} d sedan",
+    "cost_total": "≈ {cost} enligt API-priser (uppskattning)"
   }
 }

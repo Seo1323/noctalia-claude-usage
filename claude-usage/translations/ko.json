@@ -1,5 +1,5 @@
 {
-  "title": "Claude Usage",
+  "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
       "label": "새로 고침 간격(분)",
@@ -165,6 +165,10 @@
     "panel_opacity": {
       "label": "패널 배경 불투명도",
       "description": "0은 완전히 투명, 1은 불투명입니다."
+    },
+    "show_cost": {
+      "label": "API 가격 기준 비용 표시",
+      "description": "창에서 사용한 토큰의 예상 비용(Anthropic API 정가 기준). Claude 구독에서는 토큰별로 결제하지 않으며, 같은 사용량을 API로 썼을 때의 금액입니다."
     }
   },
   "bar": {
@@ -176,7 +180,8 @@
     "tokens": "토큰: {tokens}, 캐시 읽기: {cache}",
     "now": "곧",
     "stale": "오래된 데이터: {error}",
-    "loading": "불러오는 중..."
+    "loading": "불러오는 중...",
+    "cost": "API 가격 기준: {cost}"
   },
   "error": {
     "no_credentials": "Claude Code에 로그인하지 않았습니다",
@@ -203,6 +208,7 @@
     "last_24h": "최근 24시간",
     "last_7d": "최근 7일",
     "hours_ago": "{n}시간 전",
-    "days_ago": "{n}일 전"
+    "days_ago": "{n}일 전",
+    "cost_total": "≈ {cost} (API 가격 기준 추정)"
   }
 }
