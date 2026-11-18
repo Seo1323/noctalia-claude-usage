@@ -2,10 +2,22 @@
 
 Shows your **Claude Code** usage limits in the [Noctalia](https://github.com/noctalia-dev) bar:
 
-<p align="center"><img src="docs/screenshot.png" alt="Claude Usage in the Noctalia bar" width="320"></p>
+<p align="center"><img src="docs/example-2.png" alt="Claude Usage in the Noctalia bar" width="320"></p>
 
 Left to right: usage of the 5-hour window · time to reset · tokens used in that window (shown with the bundled `star` icon). The weekly (7d) window
 can be shown too. Hover for a tooltip with both windows, click to refresh.
+
+## Examples
+
+Every item below is the same widget with different settings.
+
+| Look | Settings |
+| --- | --- |
+| <img src="docs/example-1.png" height="36"> | Defaults: no icon, usage %, time to reset, tokens. |
+| <img src="docs/example-2.png" height="36"> | `logo = star`, `show_prefix = true` |
+| <img src="docs/example-3.png" height="36"> | `logo = glyph`, `show_prefix = true`, `window = both`, `show_reset = false`, `show_tokens = false` |
+| <img src="docs/example-4.png" height="36"> | `logo = star`, `reset_format = verbose`, `token_format = full`, `font_weight = bold` |
+| <img src="docs/example-5.png" height="36"> | `show_prefix = true`, `show_tokens = false`, `critical_at = 5` (forces the critical color to show it) |
 
 ## Requirements
 
@@ -39,7 +51,7 @@ Then add the **Claude Usage** widget to your bar in Noctalia's settings.
 | Widget | Description |
 | --- | --- |
 | `bar` | Text capsule: usage %, time to reset, tokens. |
-| `icon` | Compact variant: only the Claude logo, usage in the tooltip; click launches a command. |
+| `icon` | Compact variant: only an icon, usage in the tooltip; click launches a command. |
 
 ## Settings
 
