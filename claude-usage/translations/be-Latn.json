@@ -162,10 +162,6 @@
       "label": "Prazrystaja paneĺ",
       "description": "Špaliery prasviečvajuć praz paneĺ. Tekst zastajecca vyraznym."
     },
-    "panel_opacity": {
-      "label": "Nakoĺki paneĺ ščyĺnaja",
-      "description": "0 = całkam prazrystaja, 1 = sucelnaja."
-    },
     "show_cost": {
       "label": "Pakazvać, koĺki b heta kaštavała",
       "description": "Acenka taho, koĺki kaštavała b takoje vykarystannie z apłataj za tokieny. Z padpiskaj Claude heta nie apłačvajecca."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Uličvać i tekst, zachavany dlia paŭtornaha čytannia",
       "description": "Vykl.: toĺki novy tekst, adpraŭleny Claude i napisany im. Ukl.: taksama razmova, jakuju Claude Code zachoŭvaje, kab chutka pieračytvać, — paslia pierapynku doŭhaja razmova zachoŭvajecca nanava i lik rezka rascie."
+    },
+    "panel_transparency": {
+      "label": "Prazrystasć panełi (%)",
+      "description": "0 = sucelnaja, 100 = całkam prazrystaja."
+    },
+    "match_ui": {
+      "label": "Jak u astatnim Noctalia",
+      "description": "Taŭščynia tekstu panełi i prazrystasć z «Nałady → Panełi → Prazrystasć», jak u astatnim Noctalia. Vykliučycie, kab zadać ich uručnuju."
     }
   },
   "bar": {

@@ -162,10 +162,6 @@
       "label": "Genomskinlig panel",
       "description": "Låter bakgrundsbilden synas genom panelen. Texten förblir skarp."
     },
-    "panel_opacity": {
-      "label": "Hur täckande panelen är",
-      "description": "0 = helt genomskinlig, 1 = heltäckande."
-    },
     "show_cost": {
       "label": "Visa vad det skulle kosta",
       "description": "En uppskattning av vad användningen skulle kosta om du betalade per token. Med ett Claude-abonnemang betalar du inte detta."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Räkna även text som sparas för omläsning",
       "description": "Av: bara ny text som skickas till och skrivs av Claude. På: även samtalet som Claude Code sparar för att snabbt läsa om det – efter en paus sparas ett långt samtal igen och talet hoppar."
+    },
+    "panel_transparency": {
+      "label": "Panelens genomskinlighet (%)",
+      "description": "0 = heltäckande, 100 = helt genomskinlig."
+    },
+    "match_ui": {
+      "label": "Följ Noctalias utseende",
+      "description": "Använder fältets textvikt och genomskinligheten från Inställningar → Paneler → Genomskinlighet, som resten av Noctalia. Stäng av för att välja själv."
     }
   },
   "bar": {

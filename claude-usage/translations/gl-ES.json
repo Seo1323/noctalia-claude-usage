@@ -162,10 +162,6 @@
       "label": "Panel transparente",
       "description": "Deixa ver o fondo de pantalla a través do panel. O texto segue nítido."
     },
-    "panel_opacity": {
-      "label": "Opacidade do panel",
-      "description": "0 = totalmente transparente, 1 = sólido."
-    },
     "show_cost": {
       "label": "Amosar canto custaría",
       "description": "Unha estimación do que custaría este uso pagando por token. Cunha subscrición a Claude non o pagas."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Contar tamén o texto gardado para relelo",
       "description": "Desactivado: só o texto novo enviado a Claude e escrito por Claude. Activado: tamén a conversa que Claude Code garda para relela axiña; despois dunha pausa, unha conversa longa gárdase de novo e o número dá un salto."
+    },
+    "panel_transparency": {
+      "label": "Transparencia do panel (%)",
+      "description": "0 = sólido, 100 = totalmente transparente."
+    },
+    "match_ui": {
+      "label": "Seguir o aspecto de Noctalia",
+      "description": "Usa o grosor do texto da barra e a transparencia de Configuración → Paneis → Transparencia, como o resto de Noctalia. Desactívao para escollelos a man."
     }
   },
   "bar": {

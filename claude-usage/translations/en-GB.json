@@ -162,10 +162,6 @@
       "label": "See-through panel",
       "description": "Lets your wallpaper show through the panel. The text stays sharp."
     },
-    "panel_opacity": {
-      "label": "How solid the panel is",
-      "description": "0 = fully see-through, 1 = solid."
-    },
     "show_cost": {
       "label": "Show what it would cost",
       "description": "An estimate of what this usage would cost if you paid per token. With a Claude subscription you do not pay this."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Also count text saved for re-reading",
       "description": "Off: only new text sent to and written by Claude. On: also the conversation Claude Code saves so it can re-read it quickly — after a pause a long conversation is saved again, so the number jumps."
+    },
+    "panel_transparency": {
+      "label": "Panel transparency (%)",
+      "description": "0 = solid, 100 = fully see-through."
+    },
+    "match_ui": {
+      "label": "Match Noctalia's look",
+      "description": "Use the bar's text weight and the panel transparency from Settings → Panels → Transparency, like the rest of Noctalia. Turn off to set them yourself."
     }
   },
   "bar": {

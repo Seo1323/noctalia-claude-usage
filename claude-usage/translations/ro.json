@@ -162,10 +162,6 @@
       "label": "Panou transparent",
       "description": "Lasă imaginea de fundal să se vadă prin panou. Textul rămâne clar."
     },
-    "panel_opacity": {
-      "label": "Cât de opac este panoul",
-      "description": "0 = complet transparent, 1 = plin."
-    },
     "show_cost": {
       "label": "Arată cât ar costa",
       "description": "O estimare a cât ar costa această utilizare dacă s-ar plăti per token. Cu un abonament Claude nu plătești asta."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Numără și textul salvat pentru recitire",
       "description": "Dezactivat: doar textul nou trimis la Claude și scris de Claude. Activat: și conversația pe care Claude Code o salvează ca s-o recitească repede; după o pauză, o conversație lungă se salvează din nou și numărul sare."
+    },
+    "panel_transparency": {
+      "label": "Transparența panoului (%)",
+      "description": "0 = plin, 100 = complet transparent."
+    },
+    "match_ui": {
+      "label": "Urmează aspectul Noctalia",
+      "description": "Folosește grosimea textului din bară și transparența din Setări → Panouri → Transparență, ca restul Noctalia. Dezactivează pentru a le alege manual."
     }
   },
   "bar": {

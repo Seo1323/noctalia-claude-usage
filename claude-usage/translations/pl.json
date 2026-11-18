@@ -162,10 +162,6 @@
       "label": "Prześwitujący panel",
       "description": "Tapeta prześwituje przez panel. Tekst pozostaje wyraźny."
     },
-    "panel_opacity": {
-      "label": "Jak bardzo panel jest pełny",
-      "description": "0 = całkiem przezroczysty, 1 = pełny."
-    },
     "show_cost": {
       "label": "Pokazuj, ile by to kosztowało",
       "description": "Szacunek, ile kosztowałoby to zużycie przy płaceniu za tokeny. Przy subskrypcji Claude tego nie płacisz."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Licz też tekst zapisywany do ponownego czytania",
       "description": "Wyłączone: tylko nowy tekst wysłany do Claude i przez niego napisany. Włączone: także rozmowa, którą Claude Code zapisuje, żeby szybko ją czytać — po przerwie długa rozmowa zapisuje się od nowa, więc liczba skacze."
+    },
+    "panel_transparency": {
+      "label": "Przezroczystość panelu (%)",
+      "description": "0 = pełny, 100 = całkiem przezroczysty."
+    },
+    "match_ui": {
+      "label": "Dopasuj do wyglądu Noctalii",
+      "description": "Grubość tekstu jak na reszcie paska i przezroczystość panelu z Ustawień → Panele → Przezroczystość, tak jak w reszcie Noctalii. Wyłącz, żeby ustawić je samodzielnie."
     }
   },
   "bar": {

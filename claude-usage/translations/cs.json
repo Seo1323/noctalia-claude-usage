@@ -162,10 +162,6 @@
       "label": "Průhledný panel",
       "description": "Tapeta prosvítá panelem. Text zůstává ostrý."
     },
-    "panel_opacity": {
-      "label": "Jak plný je panel",
-      "description": "0 = zcela průhledný, 1 = plný."
-    },
     "show_cost": {
       "label": "Zobrazit, kolik by to stálo",
       "description": "Odhad, kolik by toto využití stálo při placení za tokeny. S předplatným Claude to neplatíte."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Počítat i text uložený pro opětovné čtení",
       "description": "Vypnuto: jen nový text odeslaný Claudovi a jím napsaný. Zapnuto: i konverzace, kterou Claude Code ukládá, aby ji mohl rychle znovu číst – po přestávce se dlouhá konverzace uloží znovu a číslo poskočí."
+    },
+    "panel_transparency": {
+      "label": "Průhlednost panelu (%)",
+      "description": "0 = plný, 100 = zcela průhledný."
+    },
+    "match_ui": {
+      "label": "Řídit se vzhledem Noctalie",
+      "description": "Použije tloušťku textu lišty a průhlednost z Nastavení → Panely → Průhlednost, stejně jako zbytek Noctalie. Vypněte, chcete-li je nastavit sami."
     }
   },
   "bar": {

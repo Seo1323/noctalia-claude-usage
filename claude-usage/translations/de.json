@@ -162,10 +162,6 @@
       "label": "Durchscheinendes Panel",
       "description": "Lässt dein Hintergrundbild durch das Panel scheinen. Der Text bleibt scharf."
     },
-    "panel_opacity": {
-      "label": "Wie deckend das Panel ist",
-      "description": "0 = völlig durchsichtig, 1 = deckend."
-    },
     "show_cost": {
       "label": "Kosten anzeigen",
       "description": "Eine Schätzung, was diese Nutzung bei Bezahlung pro Token kosten würde. Mit einem Claude-Abo zahlst du das nicht."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Auch zum erneuten Lesen gespeicherten Text zählen",
       "description": "Aus: nur neuer Text, der an Claude geht oder von Claude geschrieben wird. An: auch das Gespräch, das Claude Code zum schnellen erneuten Lesen speichert – nach einer Pause wird ein langes Gespräch neu gespeichert, die Zahl springt dann."
+    },
+    "panel_transparency": {
+      "label": "Transparenz des Panels (%)",
+      "description": "0 = deckend, 100 = völlig durchsichtig."
+    },
+    "match_ui": {
+      "label": "An das Aussehen von Noctalia anpassen",
+      "description": "Textstärke der Leiste und Panel-Transparenz aus Einstellungen → Panels → Transparenz übernehmen, wie im Rest von Noctalia. Ausschalten, um sie selbst festzulegen."
     }
   },
   "bar": {

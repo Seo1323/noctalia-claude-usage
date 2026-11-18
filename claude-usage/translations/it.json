@@ -162,10 +162,6 @@
       "label": "Pannello trasparente",
       "description": "Lascia vedere lo sfondo attraverso il pannello. Il testo resta nitido."
     },
-    "panel_opacity": {
-      "label": "Opacità del pannello",
-      "description": "0 = del tutto trasparente, 1 = pieno."
-    },
     "show_cost": {
       "label": "Mostra quanto costerebbe",
       "description": "Una stima di quanto costerebbe questo utilizzo pagando a token. Con un abbonamento Claude non lo paghi."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Conta anche il testo salvato per la rilettura",
       "description": "Disattivato: solo il testo nuovo inviato a Claude e scritto da Claude. Attivato: anche la conversazione che Claude Code salva per rileggerla in fretta; dopo una pausa una conversazione lunga viene salvata di nuovo e il numero fa un salto."
+    },
+    "panel_transparency": {
+      "label": "Trasparenza del pannello (%)",
+      "description": "0 = pieno, 100 = del tutto trasparente."
+    },
+    "match_ui": {
+      "label": "Segui l’aspetto di Noctalia",
+      "description": "Usa lo spessore del testo della barra e la trasparenza di Impostazioni → Pannelli → Trasparenza, come il resto di Noctalia. Disattiva per sceglierli a mano."
     }
   },
   "bar": {

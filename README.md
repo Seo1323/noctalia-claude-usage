@@ -119,9 +119,9 @@ stay hidden.
 | **Icon** | none · any glyph · bundled star · your own SVG/PNG · usage ring (thin / normal / thick) · size |
 | **When to show details** | always · only above the warning threshold · on hover, with an adjustable animation · only the countdown once a limit is used up |
 | **Format** | `1:05` or `1h 5m` · `290k` or `289731` · 0–2 decimals · separators · custom `5h` / `7d` labels · your own text template |
-| **Look** | spacing · font size and weight · dimmed time and tokens · hide while usage is low |
+| **Look** | matches Noctalia's look by default · spacing · font size and weight · dimmed time and tokens · hide while usage is low |
 | **Colors** | by usage or a smooth gradient · warning / critical thresholds and colors · own color for the weekly window |
-| **Panel** | centered or attached to the bar · translucent background · Claude Code launch command |
+| **Panel** | cards like Noctalia's own panels · centered or attached to the bar · transparency level · Claude Code launch command |
 | **Alerts and clicks** | notification at the thresholds · left click: panel, command or refresh · right click: refresh |
 | **Cost** | 20 currencies with the European Central Bank's daily rates or your own rate · your own token prices |
 

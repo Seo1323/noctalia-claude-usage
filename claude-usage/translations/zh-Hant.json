@@ -162,10 +162,6 @@
       "label": "透明面板",
       "description": "讓桌布透過面板顯示。文字依然清晰。"
     },
-    "panel_opacity": {
-      "label": "面板的不透明程度",
-      "description": "0 = 完全透明，1 = 完全不透明。"
-    },
     "show_cost": {
       "label": "顯示大概花費",
       "description": "依權杖付費時這些用量大約要花多少錢的估算。使用 Claude 訂閱時不需要支付這筆錢。"
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "也計算為重新讀取而儲存的文字",
       "description": "關閉：只計算傳送給 Claude 和 Claude 寫出的新文字。開啟：也包括 Claude Code 為快速重新讀取而儲存的對話；停頓一段時間後，長對話會重新儲存，數字會暴增。"
+    },
+    "panel_transparency": {
+      "label": "面板透明度（%）",
+      "description": "0 = 不透明，100 = 完全透明。"
+    },
+    "match_ui": {
+      "label": "與 Noctalia 外觀一致",
+      "description": "使用狀態列的文字粗細和「設定 → 面板 → 透明度」的值，與 Noctalia 其他部分一致。關閉後可以自行設定。"
     }
   },
   "bar": {

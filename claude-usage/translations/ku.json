@@ -162,10 +162,6 @@
       "label": "Panela şefaf",
       "description": "Dihêle wêneyê paşxaneyê di panelê re xuya bibe. Nivîs zelal dimîne."
     },
-    "panel_opacity": {
-      "label": "Panel çiqas tije ye",
-      "description": "0 = bi tevahî şefaf, 1 = tije."
-    },
     "show_cost": {
       "label": "Nîşan bide ku çiqas bike",
       "description": "Texmînek ka ev bikaranîn çiqas bike heke ji bo her tokenê pere were dayîn. Bi abonetiya Claude tu vê nadî."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Nivîsa ji bo xwendina dîsa tê tomarkirin jî bihejmêre",
       "description": "Girtî: tenê nivîsa nû ya ji Claude re tê şandin û ya Claude dinivîse. Vekirî: axaftina ku Claude Code tomar dike da ku zû dîsa bixwîne jî; piştî navberekê axaftineke dirêj dîsa tê tomarkirin û hejmar ji nişkê ve zêde dibe."
+    },
+    "panel_transparency": {
+      "label": "Şefafiya panelê (%)",
+      "description": "0 = tije, 100 = bi tevahî şefaf."
+    },
+    "match_ui": {
+      "label": "Li gorî xuyaniya Noctalia",
+      "description": "Stûrahiya nivîsê ya darikê û şefafiya ji Mîheng → Panel → Şefafî bikar tîne, wek beşên din ên Noctalia. Ji bo ku tu bixwe hilbijêrî, bigire."
     }
   },
   "bar": {

@@ -36,9 +36,8 @@ Add **Claude Limits** to a bar in **Settings → Bar** and pick the entry:
   graphs your tokens over the last 24 hours and 7 days (hover a graph for the value), and lists tokens per model
   for the 5-hour or weekly window. It opens in the middle of the screen like the built-in panels; Noctalia's own
   panel settings (**Settings → Plugins**, gear on the plugin) switch it to attached, another position or "open near
-  the widget". Its background can be made translucent from the `bar` widget settings; a centered (floating) panel also needs
-  Noctalia's **Settings → Panels → Transparency** set to *Glass* or *Soft*, because Noctalia draws the floating
-  panel's own background underneath.
+  the widget". Like Noctalia's own panels, each section sits on its own card. With **Match Noctalia's look** (default) the cards
+  follow **Settings → Panels → Transparency**; turn it off to pick a transparency level yourself.
 
 The `poller` service starts with the plugin and refreshes every `refresh_minutes`; all widgets share its result.
 
@@ -83,6 +82,17 @@ is attached to the bar.
 
 ### `bar` widget
 
+#### Look
+
+| Setting | Default | What it does |
+| --- | --- | --- |
+| Match Noctalia's look | on | Use the bar's text weight and the panel transparency from Settings → Panels → Transparency, like the rest of Noctalia. Turn off to set them yourself. |
+| Separator | Dot (·) | Choices: None, Dot (·), Bar (\|), Slash (/). |
+| Make the time and tokens dimmer | on | Only the percentage keeps the warning colors. |
+| Space between items (px) ⚙ | `4` |  |
+| Text size (px) ⚙ | `0` | 0 = the same size as the rest of the bar. |
+| Text weight ⚙ | Medium | Choices: Medium, Bold. |
+
 #### What is shown
 
 | Setting | Default | What it does |
@@ -126,16 +136,6 @@ is attached to the bar.
 | When a limit runs out, show only the countdown | on | At 100% the widget shows just the time until you can use Claude Code again. |
 | Hide until usage reaches (%) ⚙ | `0` | Keeps the widget out of sight while usage is low. 0 = always visible. |
 
-#### Look
-
-| Setting | Default | What it does |
-| --- | --- | --- |
-| Separator | Dot (·) | Choices: None, Dot (·), Bar (\|), Slash (/). |
-| Make the time and tokens dimmer | on | Only the percentage keeps the warning colors. |
-| Space between items (px) ⚙ | `4` |  |
-| Text size (px) ⚙ | `0` | 0 = the same size as the rest of the bar. |
-| Text weight ⚙ | Medium | Choices: Medium, Bold. |
-
 #### Colors
 
 | Setting | Default | What it does |
@@ -157,7 +157,7 @@ is attached to the bar.
 | Left click does | Open the panel | What happens when you left-click the widget. A right click always refreshes. Choices: Open the panel, Runs my command, Refresh. |
 | My command | empty | A command to run, for example alacritty -e claude to open Claude Code in a terminal. |
 | See-through panel | off | Lets your wallpaper show through the panel. The text stays sharp. |
-| How solid the panel is | `0.85` | 0 = fully see-through, 1 = solid. |
+| Panel transparency (%) | `15` | 0 = solid, 100 = fully see-through. |
 | Show “Resume a session” in the panel | on | Buttons that reopen one of your latest Claude Code conversations. |
 | Notifications | Off | Get one notification when usage passes a level. Choices: Off, At the warning and critical levels, Only at the critical level. |
 

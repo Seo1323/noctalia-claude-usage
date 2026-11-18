@@ -162,10 +162,6 @@
       "label": "Doorzichtig paneel",
       "description": "Laat je achtergrond door het paneel heen zien. De tekst blijft scherp."
     },
-    "panel_opacity": {
-      "label": "Hoe dekkend het paneel is",
-      "description": "0 = helemaal doorzichtig, 1 = dekkend."
-    },
     "show_cost": {
       "label": "Tonen wat het zou kosten",
       "description": "Een schatting van wat dit gebruik zou kosten als je per token betaalt. Met een Claude-abonnement betaal je dit niet."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Ook tekst tellen die wordt opgeslagen om opnieuw te lezen",
       "description": "Uit: alleen nieuwe tekst die naar Claude gaat of door Claude wordt geschreven. Aan: ook het gesprek dat Claude Code opslaat om het snel opnieuw te lezen; na een pauze wordt een lang gesprek opnieuw opgeslagen en springt het getal omhoog."
+    },
+    "panel_transparency": {
+      "label": "Transparantie van het paneel (%)",
+      "description": "0 = dekkend, 100 = helemaal doorzichtig."
+    },
+    "match_ui": {
+      "label": "Uiterlijk van Noctalia volgen",
+      "description": "Gebruikt de tekstdikte van de balk en de transparantie uit Instellingen → Panelen → Transparantie, zoals de rest van Noctalia. Uitzetten om ze zelf in te stellen."
     }
   },
   "bar": {

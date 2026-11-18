@@ -1,6 +1,6 @@
 id = "seo/claude-usage"
 name = "Claude Limits"
-version = "1.10.0"
+version = "1.11.0"
 plugin_api = 43
 author = "Seo1323"
 license = "MIT"
@@ -135,7 +135,7 @@ id = "panel"
 entry = "panel.luau"
 width = 380
 height = "content"
-max_height = 760
+max_height = 980
 placement = "floating"
 position = "center"
 open_near_click = false
@@ -143,6 +143,13 @@ open_near_click = false
 [[widget]]
 id = "bar"
 entry = "bar.luau"
+
+  [[widget.setting]]
+  key = "match_ui"
+  type = "bool"
+  label_key = "settings.match_ui.label"
+  description_key = "settings.match_ui.description"
+  default = true
 
   [[widget.setting]]
   key = "window"
@@ -439,6 +446,7 @@ entry = "bar.luau"
     { value = "bold", label_key = "settings.font_weight.bold" },
   ]
   advanced = true
+  visible_when = { key = "match_ui", values = ["false"] }
 
   [[widget.setting]]
   key = "color_by_usage"
@@ -553,16 +561,17 @@ entry = "bar.luau"
   label_key = "settings.panel_translucent.label"
   description_key = "settings.panel_translucent.description"
   default = false
+  visible_when = { key = "match_ui", values = ["false"] }
 
   [[widget.setting]]
-  key = "panel_opacity"
-  type = "double"
-  label_key = "settings.panel_opacity.label"
-  description_key = "settings.panel_opacity.description"
-  default = 0.85
-  min = 0.0
-  max = 1.0
-  step = 0.05
+  key = "panel_transparency"
+  type = "int"
+  label_key = "settings.panel_transparency.label"
+  description_key = "settings.panel_transparency.description"
+  default = 15
+  min = 0
+  max = 100
+  step = 5
   visible_when = { key = "panel_translucent", values = ["true"] }
 
   [[widget.setting]]

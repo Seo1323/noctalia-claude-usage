@@ -57,13 +57,16 @@ local cfg = {
   notify = conf("notify", "off"), -- off | warning | critical
   clickAction = conf("click_action", "panel"), -- panel | command | refresh
   panelTranslucent = bool("panel_translucent", false),
-  panelOpacity = math.clamp(tonumber(conf("panel_opacity", 0.85)) or 0.85, 0, 1),
+  -- 0 = solid, 100 = fully see-through; the panel's background opacity is the inverse
+  panelOpacity = 1 - math.clamp(tonumber(conf("panel_transparency", 15)) or 15, 0, 100) / 100,
   panelResume = bool("panel_resume", true),
+  matchUi = bool("match_ui", true), -- follow Noctalia's look: bar text weight and panel transparency
   clickCommand = S.text("click_command", ""),
 }
 if cfg.readyText == "" then cfg.readyText = noctalia.tr("bar.ready") end
 -- The panel cannot read this widget's settings, so its look is handed over through shared state.
-noctalia.state.set("panel_style", { translucent = cfg.panelTranslucent, opacity = cfg.panelOpacity, resume = cfg.panelResume })
+if cfg.matchUi then cfg.weight = nil end -- labels without fontWeight use the bar's own weight
+noctalia.state.set("panel_style", { translucent = cfg.panelTranslucent, opacity = cfg.panelOpacity, resume = cfg.panelResume, match = cfg.matchUi })
 local hoverMode = cfg.display == "hover"
 local fontSize = if cfg.fontSize > 0 then cfg.fontSize else nil
 

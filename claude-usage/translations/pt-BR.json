@@ -162,10 +162,6 @@
       "label": "Painel transparente",
       "description": "Deixa o papel de parede aparecer através do painel. O texto continua nítido."
     },
-    "panel_opacity": {
-      "label": "Opacidade do painel",
-      "description": "0 = totalmente transparente, 1 = sólido."
-    },
     "show_cost": {
       "label": "Mostrar quanto custaria",
       "description": "Uma estimativa de quanto este uso custaria pagando por token. Com uma assinatura do Claude você não paga isso."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Contar também o texto salvo para reler",
       "description": "Desativado: só o texto novo enviado ao Claude e escrito pelo Claude. Ativado: também a conversa que o Claude Code salva para reler rápido; depois de uma pausa, uma conversa longa é salva de novo e o número dá um salto."
+    },
+    "panel_transparency": {
+      "label": "Transparência do painel (%)",
+      "description": "0 = sólido, 100 = totalmente transparente."
+    },
+    "match_ui": {
+      "label": "Seguir a aparência do Noctalia",
+      "description": "Usa o peso do texto da barra e a transparência de Configurações → Painéis → Transparência, como o resto do Noctalia. Desative para escolher manualmente."
     }
   },
   "bar": {

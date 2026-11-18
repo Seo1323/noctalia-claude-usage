@@ -72,7 +72,7 @@ local function graph(id, title, values, ago)
   return ui.column({ gap = 4 }, {
     ui.row({ justify = "space_between" }, { ui.label({ text = title, fontWeight = "medium" }), muted(readout) }),
     ui.graph({
-      values = norm, color = "primary", fillOpacity = 0.25, lineWidth = 2, height = 56,
+      values = norm, color = "primary", fillOpacity = 0.25, lineWidth = 2, height = 44,
       onPointerMove = function(x)
         local n = math.clamp(math.floor(tonumber(x) * #values) + 1, 1, #values)
         if hover[id] ~= n then hover[id] = n; render() end
@@ -117,6 +117,17 @@ end
 function render()
   if not isOpen then return end
   local data = snapshot and snapshot.data
+  -- Like Noctalia's own panels: a title row, then each section on its own card, with the panel's
+  -- glass showing between the cards. Translucency darkens or lightens the cards.
+  -- "Match Noctalia's look" takes the card strength from Settings -> Panels -> Transparency.
+  local MATCH = { glass = 0.45, soft = 0.7, solid = 1 }
+  local alpha = if style.match then MATCH[tostring(noctalia.getSetting("shell.panel.transparency_mode") or "solid")] or 1
+    elseif style.translucent then style.opacity or 0.85 else 1
+  local cardFill = if alpha < 1 then string.format("surface_container/%.2f", alpha) else "surface_container"
+  local function card(nodes)
+    return ui.column({ padding = 12, gap = 8, fill = cardFill, radius = 14, border = "outline_variant", borderWidth = 1 }, nodes)
+  end
+
   local children = {
     ui.row({ justify = "space_between", align = "center" }, {
       ui.label({ text = "Claude Code", fontWeight = "bold", fontSize = 16 }),
@@ -132,53 +143,58 @@ function render()
 
   if data then
     local w = S.windows(data, false)
-    add(limitRow("5h", w.five))
-    add(limitRow("7d", w.week))
+    add(card({ limitRow("5h", w.five), limitRow("7d", w.week) }))
   else
-    add(muted(S.tooltip(snapshot)))
+    add(card({ muted(S.tooltip(snapshot)) }))
   end
 
-  add(ui.separator({}))
-  add(heading(noctalia.tr("panel.launch")))
-  add(ui.select({
-    options = { noctalia.tr("panel.model_default"), "Opus", "Sonnet", "Haiku" }, selectedIndex = model - 1,
-    onChange = function(i) model = tonumber(i) + 1 end,
+  add(card({
+    heading(noctalia.tr("panel.launch")),
+    ui.select({
+      options = { noctalia.tr("panel.model_default"), "Opus", "Sonnet", "Haiku" }, selectedIndex = model - 1,
+      onChange = function(i) model = tonumber(i) + 1 end,
+    }),
+    ui.select({
+      options = { noctalia.tr("panel.mode_new"), noctalia.tr("panel.mode_continue"), noctalia.tr("panel.mode_resume") },
+      selectedIndex = mode - 1,
+      onChange = function(i) mode = tonumber(i) + 1 end,
+    }),
+    ui.button({ text = noctalia.tr("panel.start"), glyph = "terminal-2", variant = "primary", onClick = launch }),
   }))
-  add(ui.select({
-    options = { noctalia.tr("panel.mode_new"), noctalia.tr("panel.mode_continue"), noctalia.tr("panel.mode_resume") },
-    selectedIndex = mode - 1,
-    onChange = function(i) mode = tonumber(i) + 1 end,
-  }))
-  add(ui.button({ text = noctalia.tr("panel.start"), glyph = "terminal-2", variant = "primary", onClick = launch }))
 
   local sessions = if style.resume == false then {} else (data and data.recent_sessions or {})
   if #sessions > 0 then
-    add(ui.separator({}))
-    add(heading(noctalia.tr("panel.resume")))
+    local rows = { heading(noctalia.tr("panel.resume")) }
     for _, s in sessions do
       local prompt = tostring(s.prompt or "")
       if utf8.len(prompt) and utf8.len(prompt) > 38 then prompt = prompt:sub(1, utf8.offset(prompt, 38) - 1) .. "…" end
-      add(ui.button({
+      rows[#rows + 1] = ui.button({
         text = `{folderName(s.cwd)} · {S.ago(s.t)}` .. (if prompt ~= "" then ` — {prompt}` else ""),
-        glyph = "history", variant = "outline", contentAlign = "start",
+        glyph = "history", variant = "ghost", contentAlign = "start",
         onClick = function() resume(s) end,
-      }))
+      })
     end
+    add(card(rows))
   end
 
   local hourly = if S.COUNT_WRITES then data and data.hourly else data and (data.hourly_io or data.hourly)
   local daily = if S.COUNT_WRITES then data and data.daily else data and (data.daily_io or data.daily)
   if hourly then
-    add(ui.separator({}))
-    add(graph("hourly", noctalia.tr("panel.last_24h"), hourly, function(n) return noctalia.tr("panel.hours_ago", { n = n }) end))
-    add(graph("daily", noctalia.tr("panel.last_7d"), daily, function(n) return noctalia.tr("panel.days_ago", { n = n }) end))
-    add(ui.separator({}))
-    add(modelTable(data))
+    add(card({
+      graph("hourly", noctalia.tr("panel.last_24h"), hourly, function(n) return noctalia.tr("panel.hours_ago", { n = n }) end),
+      graph("daily", noctalia.tr("panel.last_7d"), daily, function(n) return noctalia.tr("panel.days_ago", { n = n }) end),
+    }))
+    add(card({ modelTable(data) }))
   end
 
-  -- Translucency goes into the background fill only, so the content stays fully opaque.
-  local fill = if style.translucent then string.format("surface/%.2f", style.opacity or 0.85) else "surface"
-  panel.render(ui.column({ padding = 16, gap = 12, fill = fill, radius = 12 }, children))
+  -- A floating panel already has Noctalia's own background (Settings -> Panels -> Transparency),
+  -- so drawing another one would show as a panel inside a panel. An attached panel takes the bar's
+  -- background, which may be fully transparent, so it gets a base here.
+  local attached = noctalia.getConfig("panel_placement") == "attached"
+  local base = if not attached then nil
+    elseif alpha < 1 then string.format("surface/%.2f", alpha * 0.6)
+    else "surface"
+  panel.render(ui.column({ padding = if attached then 12 else 0, gap = 8, fill = base, radius = if attached then 16 else nil }, children))
 end
 
 noctalia.state.watch("usage", function(value)

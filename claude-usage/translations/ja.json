@@ -162,10 +162,6 @@
       "label": "透けるパネル",
       "description": "パネル越しに壁紙が見えます。文字ははっきりしたままです。"
     },
-    "panel_opacity": {
-      "label": "パネルの濃さ",
-      "description": "0 = 完全に透明、1 = 不透明。"
-    },
     "show_cost": {
       "label": "かかる費用を表示",
       "description": "トークンごとに支払った場合にこの使用量がいくらになるかの目安です。Claude のサブスクリプションでは支払いは発生しません。"
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "読み直し用に保存されるテキストも数える",
       "description": "オフ: Claude に送った新しいテキストと Claude が書いたテキストだけ。オン: Claude Code がすばやく読み直すために保存する会話も含めます。間が空くと長い会話が保存し直されるので、数字が跳ね上がります。"
+    },
+    "panel_transparency": {
+      "label": "パネルの透明度（%）",
+      "description": "0 = 不透明、100 = 完全に透明。"
+    },
+    "match_ui": {
+      "label": "Noctalia の見た目に合わせる",
+      "description": "バーの文字の太さと「設定 → パネル → 透明度」の値を、Noctalia のほかの部分と同じように使います。オフにすると自分で設定できます。"
     }
   },
   "bar": {

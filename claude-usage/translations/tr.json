@@ -162,10 +162,6 @@
       "label": "Saydam panel",
       "description": "Duvar kâğıdının panelin arkasından görünmesini sağlar. Metin net kalır."
     },
-    "panel_opacity": {
-      "label": "Panelin ne kadar dolu olduğu",
-      "description": "0 = tamamen saydam, 1 = tamamen dolu."
-    },
     "show_cost": {
       "label": "Ne kadar tutacağını göster",
       "description": "Token başına ödenseydi bu kullanımın ne kadar tutacağına dair bir tahmin. Claude aboneliğinde bunu ödemezsiniz."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Yeniden okumak için saklanan metni de say",
       "description": "Kapalı: yalnızca Claude'a gönderilen ve Claude'un yazdığı yeni metin. Açık: Claude Code'un hızlıca yeniden okumak için sakladığı konuşma da; bir aradan sonra uzun bir konuşma yeniden saklanır ve sayı birden artar."
+    },
+    "panel_transparency": {
+      "label": "Panel saydamlığı (%)",
+      "description": "0 = tamamen dolu, 100 = tamamen saydam."
+    },
+    "match_ui": {
+      "label": "Noctalia görünümüne uy",
+      "description": "Çubuğun yazı kalınlığını ve Ayarlar → Paneller → Saydamlık değerini, Noctalia'nın geri kalanı gibi kullanır. Kendiniz seçmek için kapatın."
     }
   },
   "bar": {

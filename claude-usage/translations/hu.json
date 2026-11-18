@@ -162,10 +162,6 @@
       "label": "Áttetsző panel",
       "description": "A háttérkép átlátszik a panelen. A szöveg éles marad."
     },
-    "panel_opacity": {
-      "label": "Mennyire fedő a panel",
-      "description": "0 = teljesen átlátszó, 1 = teljesen fedő."
-    },
     "show_cost": {
       "label": "Mennyibe kerülne",
       "description": "Becslés arról, mennyibe kerülne ez a használat tokenenkénti fizetéssel. Claude-előfizetéssel ezt nem kell fizetni."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Az újraolvasáshoz mentett szöveg is számítson",
       "description": "Ki: csak a Claude-nak küldött és általa írt új szöveg. Be: az a beszélgetés is, amelyet a Claude Code a gyors újraolvasáshoz ment – szünet után egy hosszú beszélgetés újra mentődik, ezért a szám megugrik."
+    },
+    "panel_transparency": {
+      "label": "A panel átlátszósága (%)",
+      "description": "0 = teljesen fedő, 100 = teljesen átlátszó."
+    },
+    "match_ui": {
+      "label": "A Noctalia megjelenésének követése",
+      "description": "A sáv szövegvastagságát és a Beállítások → Panelek → Átlátszóság értékét használja, mint a Noctalia többi része. Kikapcsolva kézzel állítható."
     }
   },
   "bar": {

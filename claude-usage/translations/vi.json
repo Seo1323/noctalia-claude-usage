@@ -162,10 +162,6 @@
       "label": "Bảng trong suốt",
       "description": "Cho hình nền hiện qua bảng. Chữ vẫn sắc nét."
     },
-    "panel_opacity": {
-      "label": "Độ đặc của bảng",
-      "description": "0 = trong suốt hoàn toàn, 1 = đặc."
-    },
     "show_cost": {
       "label": "Hiện chi phí ước tính",
       "description": "Ước tính mức sử dụng này sẽ tốn bao nhiêu nếu trả tiền theo token. Với gói đăng ký Claude, bạn không phải trả khoản này."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Đếm cả văn bản được lưu để đọc lại",
       "description": "Tắt: chỉ văn bản mới gửi tới và do Claude viết. Bật: cả cuộc trò chuyện mà Claude Code lưu để đọc lại nhanh; sau một lúc nghỉ, cuộc trò chuyện dài được lưu lại từ đầu nên con số tăng vọt."
+    },
+    "panel_transparency": {
+      "label": "Độ trong suốt của bảng (%)",
+      "description": "0 = đặc, 100 = trong suốt hoàn toàn."
+    },
+    "match_ui": {
+      "label": "Theo giao diện của Noctalia",
+      "description": "Dùng độ đậm chữ của thanh và độ trong suốt trong Cài đặt → Bảng → Độ trong suốt, giống phần còn lại của Noctalia. Tắt để tự chọn."
     }
   },
   "bar": {

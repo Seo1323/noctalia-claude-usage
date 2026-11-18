@@ -162,10 +162,6 @@
       "label": "Plafó transparent",
       "description": "Deixa veure el fons de pantalla a través del plafó. El text es manté nítid."
     },
-    "panel_opacity": {
-      "label": "Opacitat del plafó",
-      "description": "0 = totalment transparent, 1 = sòlid."
-    },
     "show_cost": {
       "label": "Mostra quant costaria",
       "description": "Una estimació del que costaria aquest ús pagant per token. Amb una subscripció a Claude no ho pagues."
@@ -275,6 +271,14 @@
     "count_cache_writes": {
       "label": "Compta també el text desat per rellegir-lo",
       "description": "Desactivat: només el text nou enviat a Claude i escrit per Claude. Activat: també la conversa que Claude Code desa per rellegir-la de pressa; després d’una pausa, una conversa llarga es torna a desar i el nombre fa un salt."
+    },
+    "panel_transparency": {
+      "label": "Transparència del plafó (%)",
+      "description": "0 = sòlid, 100 = totalment transparent."
+    },
+    "match_ui": {
+      "label": "Segueix l’aspecte de Noctalia",
+      "description": "Fa servir el gruix del text de la barra i la transparència de Configuració → Plafons → Transparència, com la resta de Noctalia. Desactiva-ho per triar-los a mà."
     }
   },
   "bar": {
