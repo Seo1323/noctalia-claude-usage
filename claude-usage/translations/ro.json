@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Când o limită se epuizează, afișează doar numărătoarea inversă",
       "description": "La 100% widgetul arată doar timpul până când Claude Code poate fi folosit din nou."
+    },
+    "count_cache_writes": {
+      "label": "Numără și textul salvat pentru recitire",
+      "description": "Dezactivat: doar textul nou trimis la Claude și scris de Claude. Activat: și conversația pe care Claude Code o salvează ca s-o recitească repede; după o pauză, o conversație lungă se salvează din nou și numărul sare."
     }
   },
   "bar": {

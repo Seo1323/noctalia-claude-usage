@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Kali limit vyčarpany, pakazvać toĺki advarotny adlik",
       "description": "Pry 100% vidžet pakazvaje toĺki čas da momantu, kali Claude Code znoŭ možna vykarystoŭvać."
+    },
+    "count_cache_writes": {
+      "label": "Uličvać i tekst, zachavany dlia paŭtornaha čytannia",
+      "description": "Vykl.: toĺki novy tekst, adpraŭleny Claude i napisany im. Ukl.: taksama razmova, jakuju Claude Code zachoŭvaje, kab chutka pieračytvać, — paslia pierapynku doŭhaja razmova zachoŭvajecca nanava i lik rezka rascie."
     }
   },
   "bar": {

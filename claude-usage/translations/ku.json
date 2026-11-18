@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Dema sînor diqede, tenê jimartina berevajî nîşan bide",
       "description": "Li %100 widget tenê dema heta ku Claude Code dîsa were bikaranîn nîşan dide."
+    },
+    "count_cache_writes": {
+      "label": "Nivîsa ji bo xwendina dîsa tê tomarkirin jî bihejmêre",
+      "description": "Girtî: tenê nivîsa nû ya ji Claude re tê şandin û ya Claude dinivîse. Vekirî: axaftina ku Claude Code tomar dike da ku zû dîsa bixwîne jî; piştî navberekê axaftineke dirêj dîsa tê tomarkirin û hejmar ji nişkê ve zêde dibe."
     }
   },
   "bar": {

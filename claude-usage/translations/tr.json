@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Sınır dolduğunda yalnızca geri sayımı göster",
       "description": "%100'de bileşen yalnızca Claude Code yeniden kullanılabilene kadar kalan süreyi gösterir."
+    },
+    "count_cache_writes": {
+      "label": "Yeniden okumak için saklanan metni de say",
+      "description": "Kapalı: yalnızca Claude'a gönderilen ve Claude'un yazdığı yeni metin. Açık: Claude Code'un hızlıca yeniden okumak için sakladığı konuşma da; bir aradan sonra uzun bir konuşma yeniden saklanır ve sayı birden artar."
     }
   },
   "bar": {

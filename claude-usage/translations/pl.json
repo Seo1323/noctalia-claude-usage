@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Po wyczerpaniu limitu pokazuj tylko odliczanie",
       "description": "Przy 100% widżet pokazuje tylko czas do chwili, gdy znów można korzystać z Claude Code."
+    },
+    "count_cache_writes": {
+      "label": "Licz też tekst zapisywany do ponownego czytania",
+      "description": "Wyłączone: tylko nowy tekst wysłany do Claude i przez niego napisany. Włączone: także rozmowa, którą Claude Code zapisuje, żeby szybko ją czytać — po przerwie długa rozmowa zapisuje się od nowa, więc liczba skacze."
     }
   },
   "bar": {

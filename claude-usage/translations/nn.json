@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Når ei grense er brukt opp, vis berre nedteljinga",
       "description": "Ved 100 % viser widgeten berre tida til Claude Code kan brukast att."
+    },
+    "count_cache_writes": {
+      "label": "Tel òg tekst som vert lagra for å lesast på nytt",
+      "description": "Av: berre ny tekst som vert send til og skriven av Claude. På: òg samtalen Claude Code lagrar for å lesa han raskt på nytt – etter ein pause vert ein lang samtale lagra att, så talet hoppar."
     }
   },
   "bar": {

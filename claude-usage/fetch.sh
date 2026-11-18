@@ -60,14 +60,16 @@ find "$DIR/projects" -name '*.jsonl' -mtime -8 -print0 2>/dev/null \
         | group_by(.model) | map({ model: .[0].model, tokens: (map(.n) | add), cache_read: (map(.c) | add), messages: length,
             input: (map(.i) | add), output: (map(.o) | add), cache_write_5m: (map(.w5) | add), cache_write_1h: (map(.w1) | add) })
         | sort_by(-.tokens);
-      def series($size; $count): ([$m[] | (($now - .t) / $size | floor) as $b | select($b >= 0 and $b < $count)
-          | { b: ($count - 1 - $b), n }] | group_by(.b) | map({ key: (.[0].b | tostring), value: (map(.n) | add) }) | from_entries) as $g
+      def series($size; $count; f): ([$m[] | (($now - .t) / $size | floor) as $b | select($b >= 0 and $b < $count)
+          | { b: ($count - 1 - $b), n: f }] | group_by(.b) | map({ key: (.[0].b | tostring), value: (map(.n) | add) }) | from_entries) as $g
         | [range(0; $count) | $g[tostring] // 0];
       { five_hour: $api.five_hour.utilization, five_reset: $r5,
         weekly: $api.seven_day.utilization, weekly_reset: $rw,
         five_tokens: total(.n; start($r5; 18000)), weekly_tokens: total(.n; start($rw; 604800)),
         five_cache_read: total(.c; start($r5; 18000)), weekly_cache_read: total(.c; start($rw; 604800)),
+        five_io: total(.i + .o; start($r5; 18000)), weekly_io: total(.i + .o; start($rw; 604800)),
         five_models: models(start($r5; 18000)), weekly_models: models(start($rw; 604800)),
-        hourly: series(3600; 24), daily: series(86400; 7), recent_sessions: $sessions,
+        hourly: series(3600; 24; .n), daily: series(86400; 7; .n),
+        hourly_io: series(3600; 24; .i + .o), daily_io: series(86400; 7; .i + .o), recent_sessions: $sessions,
         last_model: ([$m[] | select(.model != "" and (.model | startswith("<") | not))] | max_by(.t) | .model?) }' 2>/dev/null \
 || fail bad_response

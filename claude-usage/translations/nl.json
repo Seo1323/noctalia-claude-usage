@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Als een limiet op is, alleen de aftelling tonen",
       "description": "Bij 100% toont de widget alleen de tijd tot Claude Code weer gebruikt kan worden."
+    },
+    "count_cache_writes": {
+      "label": "Ook tekst tellen die wordt opgeslagen om opnieuw te lezen",
+      "description": "Uit: alleen nieuwe tekst die naar Claude gaat of door Claude wordt geschreven. Aan: ook het gesprek dat Claude Code opslaat om het snel opnieuw te lezen; na een pauze wordt een lang gesprek opnieuw opgeslagen en springt het getal omhoog."
     }
   },
   "bar": {

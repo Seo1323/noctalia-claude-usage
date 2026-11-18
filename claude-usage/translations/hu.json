@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Elfogyott korlátnál csak a visszaszámlálás",
       "description": "100%-nál a modul csak azt az időt mutatja, amíg a Claude Code újra használható lesz."
+    },
+    "count_cache_writes": {
+      "label": "Az újraolvasáshoz mentett szöveg is számítson",
+      "description": "Ki: csak a Claude-nak küldött és általa írt új szöveg. Be: az a beszélgetés is, amelyet a Claude Code a gyors újraolvasáshoz ment – szünet után egy hosszú beszélgetés újra mentődik, ezért a szám megugrik."
     }
   },
   "bar": {

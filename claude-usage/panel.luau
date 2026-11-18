@@ -85,16 +85,16 @@ end
 local function modelTable(data)
   local list = data[tableWindow .. "_models"] or {}
   local total = 0
-  for _, m in list do total += m.tokens end
+  for _, m in list do total += S.modelTokens(m) end
   local rows = {}
   for _, m in list do
     rows[#rows + 1] = ui.column({ gap = 3 }, {
       ui.row({ justify = "space_between" }, {
         ui.label({ text = S.modelName(m.model) }),
-        muted(noctalia.tr("panel.model_tokens", { tokens = S.tokens(m.tokens), messages = m.messages, cache = S.tokens(m.cache_read) })
+        muted(noctalia.tr("panel.model_tokens", { tokens = S.tokens(S.modelTokens(m)), messages = m.messages, cache = S.tokens(m.cache_read) })
           .. (if S.cost({ m }) then " · " .. S.money(S.cost({ m })) else "")),
       }),
-      ui.progress({ progress = if total > 0 then m.tokens / total else 0, fill = "secondary", height = 4, radius = 2 }),
+      ui.progress({ progress = if total > 0 then S.modelTokens(m) / total else 0, fill = "secondary", height = 4, radius = 2 }),
     })
   end
   if #rows == 0 then rows[1] = muted(noctalia.tr("panel.no_models")) end
@@ -166,10 +166,12 @@ function render()
     end
   end
 
-  if data and data.hourly then
+  local hourly = if S.COUNT_WRITES then data and data.hourly else data and (data.hourly_io or data.hourly)
+  local daily = if S.COUNT_WRITES then data and data.daily else data and (data.daily_io or data.daily)
+  if hourly then
     add(ui.separator({}))
-    add(graph("hourly", noctalia.tr("panel.last_24h"), data.hourly, function(n) return noctalia.tr("panel.hours_ago", { n = n }) end))
-    add(graph("daily", noctalia.tr("panel.last_7d"), data.daily, function(n) return noctalia.tr("panel.days_ago", { n = n }) end))
+    add(graph("hourly", noctalia.tr("panel.last_24h"), hourly, function(n) return noctalia.tr("panel.hours_ago", { n = n }) end))
+    add(graph("daily", noctalia.tr("panel.last_7d"), daily, function(n) return noctalia.tr("panel.days_ago", { n = n }) end))
     add(ui.separator({}))
     add(modelTable(data))
   end

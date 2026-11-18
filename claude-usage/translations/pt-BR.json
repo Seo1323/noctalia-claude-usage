@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Quando um limite acabar, mostrar só a contagem regressiva",
       "description": "Em 100% o widget mostra só o tempo até ser possível usar o Claude Code de novo."
+    },
+    "count_cache_writes": {
+      "label": "Contar também o texto salvo para reler",
+      "description": "Desativado: só o texto novo enviado ao Claude e escrito pelo Claude. Ativado: também a conversa que o Claude Code salva para reler rápido; depois de uma pausa, uma conversa longa é salva de novo e o número dá um salto."
     }
   },
   "bar": {

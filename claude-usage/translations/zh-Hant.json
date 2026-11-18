@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "限額用完時只顯示倒數",
       "description": "達到 100% 時，小工具只顯示還要多久才能再次使用 Claude Code。"
+    },
+    "count_cache_writes": {
+      "label": "也計算為重新讀取而儲存的文字",
+      "description": "關閉：只計算傳送給 Claude 和 Claude 寫出的新文字。開啟：也包括 Claude Code 為快速重新讀取而儲存的對話；停頓一段時間後，長對話會重新儲存，數字會暴增。"
     }
   },
   "bar": {

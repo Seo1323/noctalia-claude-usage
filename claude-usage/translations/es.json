@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Al agotarse un límite, mostrar solo la cuenta atrás",
       "description": "Al 100 % el widget muestra solo el tiempo hasta poder volver a usar Claude Code."
+    },
+    "count_cache_writes": {
+      "label": "Contar también el texto guardado para releer",
+      "description": "Desactivado: solo el texto nuevo enviado a Claude y escrito por Claude. Activado: también la conversación que Claude Code guarda para releerla rápido; tras una pausa, una conversación larga se vuelve a guardar y el número da un salto."
     }
   },
   "bar": {

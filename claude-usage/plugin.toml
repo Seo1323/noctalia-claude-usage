@@ -1,6 +1,6 @@
 id = "seo/claude-usage"
 name = "Claude Limits"
-version = "1.9.0"
+version = "1.10.0"
 plugin_api = 43
 author = "Seo1323"
 license = "MIT"
@@ -34,6 +34,13 @@ type = "string"
 label_key = "settings.launch_command.label"
 description_key = "settings.launch_command.description"
 default = "alacritty -e claude"
+
+[[setting]]
+key = "count_cache_writes"
+type = "bool"
+label_key = "settings.count_cache_writes.label"
+description_key = "settings.count_cache_writes.description"
+default = false
 
 [[setting]]
 key = "currency"

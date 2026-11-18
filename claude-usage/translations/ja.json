@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "上限に達したらカウントダウンだけを表示",
       "description": "100% になると、Claude Code をまた使えるようになるまでの時間だけを表示します。"
+    },
+    "count_cache_writes": {
+      "label": "読み直し用に保存されるテキストも数える",
+      "description": "オフ: Claude に送った新しいテキストと Claude が書いたテキストだけ。オン: Claude Code がすばやく読み直すために保存する会話も含めます。間が空くと長い会話が保存し直されるので、数字が跳ね上がります。"
     }
   },
   "bar": {

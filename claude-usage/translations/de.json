@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Bei ausgeschöpftem Limit nur den Countdown zeigen",
       "description": "Bei 100 % zeigt das Widget nur die Zeit, bis Claude Code wieder genutzt werden kann."
+    },
+    "count_cache_writes": {
+      "label": "Auch zum erneuten Lesen gespeicherten Text zählen",
+      "description": "Aus: nur neuer Text, der an Claude geht oder von Claude geschrieben wird. An: auch das Gespräch, das Claude Code zum schnellen erneuten Lesen speichert – nach einer Pause wird ein langes Gespräch neu gespeichert, die Zahl springt dann."
     }
   },
   "bar": {

@@ -22,13 +22,26 @@ end
 -- Error codes from fetch.sh that have a translated message (others are shown as-is).
 local ERRORS = { no_credentials = true, token_expired = true, network = true, bad_response = true, http_429 = true }
 
+-- Tokens count the new text (sent + written) by default; the plugin setting count_cache_writes
+-- also counts text saved for re-reading, which jumps after a pause when a long conversation is
+-- saved again.
+local COUNT_WRITES = noctalia.getConfig("count_cache_writes") == true
+M.COUNT_WRITES = COUNT_WRITES
+
+-- Tokens of one per-model entry from fetch.sh, following count_cache_writes.
+function M.modelTokens(m)
+  if COUNT_WRITES then return tonumber(m.tokens) or 0 end
+  return (tonumber(m.input) or 0) + (tonumber(m.output) or 0)
+end
+
 -- Per-window values from a fetch.sh snapshot: { pct, reset, tokens, cache }.
 -- A window whose reset time already passed has been renewed, so it counts as unused.
 function M.windows(data, withCacheReads)
   local function window(prefix, pctKey)
     local reset = data and data[prefix .. "_reset"]
     local pct = data and data[pctKey]
-    local tokens = data and data[prefix .. "_tokens"]
+    -- older cached readings have no *_io field yet: fall back to the full count
+    local tokens = data and (if COUNT_WRITES then data[prefix .. "_tokens"] else (data[prefix .. "_io"] or data[prefix .. "_tokens"]))
     local cache = data and data[prefix .. "_cache_read"]
     if pct ~= nil then pct = tonumber(pct) end
     if reset ~= nil and tonumber(reset) <= os.time() then pct, tokens, cache = 0, 0, 0 end

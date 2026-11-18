@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Quand une limite est atteinte, n’afficher que le compte à rebours",
       "description": "À 100 %, le widget affiche seulement le temps avant de pouvoir réutiliser Claude Code."
+    },
+    "count_cache_writes": {
+      "label": "Compter aussi le texte enregistré pour être relu",
+      "description": "Désactivé : seulement le nouveau texte envoyé à Claude et écrit par Claude. Activé : aussi la conversation que Claude Code enregistre pour la relire vite — après une pause, une longue conversation est réenregistrée et le nombre fait un bond."
     }
   },
   "bar": {

@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "Po vyčerpání limitu zobrazit jen odpočet",
       "description": "Při 100 % widget ukazuje jen čas do chvíle, kdy půjde Claude Code znovu používat."
+    },
+    "count_cache_writes": {
+      "label": "Počítat i text uložený pro opětovné čtení",
+      "description": "Vypnuto: jen nový text odeslaný Claudovi a jím napsaný. Zapnuto: i konverzace, kterou Claude Code ukládá, aby ji mohl rychle znovu číst – po přestávce se dlouhá konverzace uloží znovu a číslo poskočí."
     }
   },
   "bar": {

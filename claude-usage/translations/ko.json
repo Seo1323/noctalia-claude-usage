@@ -271,6 +271,10 @@
     "limit_countdown": {
       "label": "한도를 다 쓰면 카운트다운만 표시",
       "description": "100%가 되면 Claude Code를 다시 쓸 수 있을 때까지의 시간만 표시합니다."
+    },
+    "count_cache_writes": {
+      "label": "다시 읽기용으로 저장되는 텍스트도 세기",
+      "description": "끔: Claude에 보낸 새 텍스트와 Claude가 쓴 텍스트만. 켬: Claude Code가 빨리 다시 읽으려고 저장하는 대화도 포함합니다. 쉬었다가 다시 쓰면 긴 대화가 다시 저장되어 숫자가 크게 뜁니다."
     }
   },
   "bar": {
