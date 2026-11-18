@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Price of re-read text",
       "description": "In US dollars per million tokens."
+    },
+    "panel_resume": {
+      "label": "Show “Resume a session” in the panel",
+      "description": "Buttons that reopen one of your latest Claude Code conversations."
     }
   },
   "bar": {

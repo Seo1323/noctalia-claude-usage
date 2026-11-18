@@ -31,7 +31,7 @@ sessions=$(find "$DIR/projects" -mindepth 2 -maxdepth 2 -name '*.jsonl' -printf 
             prompt: ([$l[] | select(.type == "user") | .message.content
                       | if type == "string" then . else ([.[]? | select(.type == "text") | .text] | join(" ")) end
                       | select(type == "string" and length > 0 and (startswith("<") | not))] | first // "" | .[0:60]) }
-        | select(.cwd != null)' "$file" 2>/dev/null
+        | select(.cwd != null)' < <(head -n 200 "$file") 2>/dev/null
     done | jq -sc '.' 2>/dev/null)
 [ -n "$sessions" ] || sessions='[]'
 
@@ -40,21 +40,21 @@ sessions=$(find "$DIR/projects" -mindepth 2 -maxdepth 2 -name '*.jsonl' -printf 
 # for both windows (with the input / output / cache split used for cost estimates), and
 # series for the panel graphs (24 hourly / 7 daily buckets).
 find "$DIR/projects" -name '*.jsonl' -mtime -8 -print0 2>/dev/null \
-| xargs -0 -r grep -hF '"usage"' 2>/dev/null \
+| xargs -0 -r grep -hF '"usage"' 2>/dev/null | grep -F '"type":"assistant"' \
 | jq -Rnc --argjson now "$(date +%s)" --argjson api "${resp%$'\n'*}" --argjson sessions "$sessions" '
     def ts: sub("\\.[0-9]+"; "") | sub("\\+00:00$"; "Z") | fromdateiso8601;
     def start($r; $len): if $r != null and $r > $now then $r - $len else $now + 1 end;
     ($api.five_hour.resets_at | values | ts) as $r5
     | ($api.seven_day.resets_at | values | ts) as $rw
-    | [inputs | fromjson? | select(.type == "assistant" and .message.usage != null)
+    | reduce (inputs | fromjson? | select(.type == "assistant" and .message.usage != null)
         | .message.usage as $u
         | ($u.cache_creation_input_tokens // 0) as $w
         | ($u.cache_creation.ephemeral_1h_input_tokens // 0) as $w1
         | { k: (.message.id // .uuid), t: ((.timestamp | ts)? // 0), model: (.message.model // ""),
             i: ($u.input_tokens // 0), o: ($u.output_tokens // 0), w5: ($w - $w1), w1: $w1,
             n: (($u.input_tokens // 0) + ($u.output_tokens // 0) + $w),
-            c: ($u.cache_read_input_tokens // 0) }]
-    | (group_by(.k) | map(last)) as $m
+            c: ($u.cache_read_input_tokens // 0) }) as $e ({}; .[$e.k] = $e)
+    | [.[]] as $m
     | def total(f; $from): [$m[] | select(.t >= $from) | f] | add // 0;
       def models($from): [$m[] | select(.t >= $from and .model != "" and (.model | startswith("<") | not))]
         | group_by(.model) | map({ model: .[0].model, tokens: (map(.n) | add), cache_read: (map(.c) | add), messages: length,

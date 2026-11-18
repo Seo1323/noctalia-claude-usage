@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Pris för omläst text",
       "description": "I amerikanska dollar per miljon tokens."
+    },
+    "panel_resume": {
+      "label": "Visa ”Återuppta en session” i panelen",
+      "description": "Knappar som öppnar ett av de senaste Claude Code-samtalen igen."
     }
   },
   "bar": {

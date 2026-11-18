@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Pris for tekst som vert lesen på nytt",
       "description": "I amerikanske dollar per million token."
+    },
+    "panel_resume": {
+      "label": "Vis «Hald fram med ei økt» i panelet",
+      "description": "Knappar som opnar att ein av dei siste Claude Code-samtalane."
     }
   },
   "bar": {

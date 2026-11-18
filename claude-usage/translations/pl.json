@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Cena ponownie czytanego tekstu",
       "description": "W dolarach za milion tokenów."
+    },
+    "panel_resume": {
+      "label": "Pokazuj „Wznów sesję” w panelu",
+      "description": "Przyciski, które otwierają jedną z ostatnich rozmów w Claude Code."
     }
   },
   "bar": {

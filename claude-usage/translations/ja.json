@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "再読み込みされるテキストの価格",
       "description": "100 万トークンあたりの米ドル。"
+    },
+    "panel_resume": {
+      "label": "パネルに「セッションを再開」を表示",
+      "description": "最近の Claude Code の会話を開き直すボタンです。"
     }
   },
   "bar": {

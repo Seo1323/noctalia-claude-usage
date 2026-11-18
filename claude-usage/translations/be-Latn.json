@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Cana paŭtorna pračytanaha tekstu",
       "description": "U dolarach ZŠA za miljon tokienaŭ."
+    },
+    "panel_resume": {
+      "label": "Pakazvać «Praciahnuć sesiju» na paneli",
+      "description": "Knopki, jakija znoŭ adkryvajuć adnu z apošnich razmoŭ u Claude Code."
     }
   },
   "bar": {

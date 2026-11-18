@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "重复读取的文本价格",
       "description": "每百万令牌的美元价格。"
+    },
+    "panel_resume": {
+      "label": "在面板中显示“恢复会话”",
+      "description": "用于重新打开最近某个 Claude Code 对话的按钮。"
     }
   },
   "bar": {

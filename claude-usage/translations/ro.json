@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Prețul textului recitit",
       "description": "În dolari pe milion de tokenuri."
+    },
+    "panel_resume": {
+      "label": "Afișează „Reia o sesiune” în panou",
+      "description": "Butoane care redeschid una dintre ultimele conversații din Claude Code."
     }
   },
   "bar": {

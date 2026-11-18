@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Precio del texto releído",
       "description": "En dólares por millón de tokens."
+    },
+    "panel_resume": {
+      "label": "Mostrar «Reanudar una sesión» en el panel",
+      "description": "Botones que vuelven a abrir una de las últimas conversaciones de Claude Code."
     }
   },
   "bar": {

@@ -8,7 +8,7 @@ local MODELS = { "", "opus", "sonnet", "haiku" } -- "" = Claude Code's default m
 local MODES = { "", "--continue", "--resume" } -- new session, continue last, pick a session
 
 local snapshot = noctalia.state.get("usage")
-local style = noctalia.state.get("panel_style") or {} -- set by the bar widget: { translucent, opacity }
+local style = noctalia.state.get("panel_style") or {} -- set by the bar widget: { translucent, opacity, resume }
 local isOpen = false
 local model, mode = 1, 1
 local tableWindow = "five" -- five | weekly
@@ -151,7 +151,7 @@ function render()
   }))
   add(ui.button({ text = noctalia.tr("panel.start"), glyph = "terminal-2", variant = "primary", onClick = launch }))
 
-  local sessions = data and data.recent_sessions or {}
+  local sessions = if style.resume == false then {} else (data and data.recent_sessions or {})
   if #sessions > 0 then
     add(ui.separator({}))
     add(heading(noctalia.tr("panel.resume")))

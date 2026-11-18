@@ -1,6 +1,6 @@
 id = "seo/claude-usage"
 name = "Claude Limits"
-version = "1.8.0"
+version = "1.8.1"
 plugin_api = 43
 author = "Seo1323"
 license = "MIT"
@@ -550,6 +550,13 @@ entry = "bar.luau"
   max = 1.0
   step = 0.05
   visible_when = { key = "panel_translucent", values = ["true"] }
+
+  [[widget.setting]]
+  key = "panel_resume"
+  type = "bool"
+  label_key = "settings.panel_resume.label"
+  description_key = "settings.panel_resume.description"
+  default = true
 
   [[widget.setting]]
   key = "click_command"

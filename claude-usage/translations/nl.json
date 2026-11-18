@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Prijs van opnieuw gelezen tekst",
       "description": "In Amerikaanse dollars per miljoen tokens."
+    },
+    "panel_resume": {
+      "label": "„Sessie hervatten” in het paneel tonen",
+      "description": "Knoppen die een van de laatste Claude Code-gesprekken opnieuw openen."
     }
   },
   "bar": {

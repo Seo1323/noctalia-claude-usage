@@ -153,6 +153,7 @@ is attached to the bar.
 | My command | empty | A command to run, for example alacritty -e claude to open Claude Code in a terminal. |
 | See-through panel | off | Lets your wallpaper show through the panel. The text stays sharp. |
 | How solid the panel is | `0.85` | 0 = fully see-through, 1 = solid. |
+| Show “Resume a session” in the panel | on | Buttons that reopen one of your latest Claude Code conversations. |
 | Notifications | Off | Get one notification when usage passes a level. Choices: Off, At the warning and critical levels, Only at the critical level. |
 
 ### `icon` widget

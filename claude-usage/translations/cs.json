@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Cena znovu čteného textu",
       "description": "V dolarech za milion tokenů."
+    },
+    "panel_resume": {
+      "label": "Zobrazit „Obnovit relaci“ v panelu",
+      "description": "Tlačítka, která znovu otevřou jednu z posledních konverzací v Claude Code."
     }
   },
   "bar": {

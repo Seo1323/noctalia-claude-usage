@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Giá văn bản được đọc lại",
       "description": "Tính bằng đô la Mỹ cho mỗi triệu token."
+    },
+    "panel_resume": {
+      "label": "Hiện “Tiếp tục một phiên” trong bảng",
+      "description": "Các nút mở lại một trong những cuộc trò chuyện Claude Code gần đây."
     }
   },
   "bar": {

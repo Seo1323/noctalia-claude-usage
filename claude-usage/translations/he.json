@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "מחיר טקסט שנקרא שוב",
       "description": "בדולרים לכל מיליון טוקנים."
+    },
+    "panel_resume": {
+      "label": "הצגת „חזרה לסשן” בלוח",
+      "description": "כפתורים שפותחים מחדש אחת מהשיחות האחרונות ב-Claude Code."
     }
   },
   "bar": {

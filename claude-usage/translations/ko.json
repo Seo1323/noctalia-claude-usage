@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "다시 읽는 텍스트 가격",
       "description": "100만 토큰당 미국 달러."
+    },
+    "panel_resume": {
+      "label": "패널에 “세션 이어 하기” 표시",
+      "description": "최근 Claude Code 대화 중 하나를 다시 여는 버튼입니다."
     }
   },
   "bar": {

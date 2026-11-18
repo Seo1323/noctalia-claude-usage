@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Yeniden okunan metnin fiyatı",
       "description": "Milyon token başına ABD doları."
+    },
+    "panel_resume": {
+      "label": "Panelde “Bir oturumu sürdür”ü göster",
+      "description": "Son Claude Code konuşmalarından birini yeniden açan düğmeler."
     }
   },
   "bar": {

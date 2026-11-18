@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Az újraolvasott szöveg ára",
       "description": "Amerikai dollárban, millió tokenenként."
+    },
+    "panel_resume": {
+      "label": "„Munkamenet folytatása” a panelen",
+      "description": "Gombok, amelyek újra megnyitják valamelyik legutóbbi Claude Code-beszélgetést."
     }
   },
   "bar": {

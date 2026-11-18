@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Preu del text rellegit",
       "description": "En dòlars per milió de tokens."
+    },
+    "panel_resume": {
+      "label": "Mostra «Reprèn una sessió» al plafó",
+      "description": "Botons que tornen a obrir una de les últimes converses de Claude Code."
     }
   },
   "bar": {

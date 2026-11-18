@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "重複讀取的文字價格",
       "description": "每百萬權杖的美元價格。"
+    },
+    "panel_resume": {
+      "label": "在面板中顯示「恢復工作階段」",
+      "description": "用來重新開啟最近某個 Claude Code 對話的按鈕。"
     }
   },
   "bar": {

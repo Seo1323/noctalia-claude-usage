@@ -263,6 +263,10 @@
     "price_cache_read": {
       "label": "Bihayê nivîsa dîsa tê xwendin",
       "description": "Bi dolarê DYA ji bo her milyon tokenan."
+    },
+    "panel_resume": {
+      "label": "“Danişînekê bidomîne” di panelê de nîşan bide",
+      "description": "Bişkokên ku yek ji axaftinên dawî yên Claude Code dîsa vedikin."
     }
   },
   "bar": {
