@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Interval de reîmprospătare (minute)",
+      "description": "Cât de des este interogat API-ul de utilizare."
+    },
+    "window": {
+      "label": "Fereastra limitei",
+      "description": "Ce fereastră de utilizare afișează bara.",
+      "five_hour": "Sesiune de 5 ore",
+      "weekly": "Săptămânal (7z)",
+      "both": "Ambele"
+    },
+    "display_mode": {
+      "label": "Afișează detalii",
+      "description": "Când se afișează timpul până la resetare, tokenurile și bara.",
+      "always": "Mereu",
+      "important": "Doar la utilizare mare (peste pragul de avertizare)",
+      "hover": "Doar la trecerea cursorului (altfel pictogramă sau inel)"
+    },
+    "logo": {
+      "label": "Pictogramă",
+      "description": "Afișată înaintea textului. Inelul se umple cu partea rămasă (sau folosită) din limită.",
+      "none": "Niciuna",
+      "glyph": "Glif",
+      "star": "Stea (inclusă)",
+      "custom": "Imagine personalizată",
+      "ring": "Inel de utilizare"
+    },
+    "glyph": {
+      "label": "Glif"
+    },
+    "logo_path": {
+      "label": "Imagine personalizată",
+      "description": "SVG sau PNG. Gol înseamnă logo.svg din folderul pluginului."
+    },
+    "icon_size": {
+      "label": "Dimensiune pictogramă (px)"
+    },
+    "size": {
+      "label": "Dimensiune pictogramă (px)"
+    },
+    "show_percent": {
+      "label": "Afișează procentul de utilizare"
+    },
+    "percent_mode": {
+      "label": "Procentul arată",
+      "used": "Folosit (22%)",
+      "left": "Rămas (78% rămas)"
+    },
+    "show_prefix": {
+      "label": "Afișează etichetele 5h / 7d",
+      "description": "Prefixează fiecare procent cu fereastra sa."
+    },
+    "show_bar": {
+      "label": "Afișează bara de progres",
+      "description": "O bară mică lângă procent."
+    },
+    "bar_width": {
+      "label": "Lățimea barei de progres (px)"
+    },
+    "gauge_mode": {
+      "label": "Bara și inelul arată",
+      "description": "Cu ce se umplu bara de progres și inelul de utilizare.",
+      "left": "Ce a rămas",
+      "used": "Ce s-a folosit"
+    },
+    "show_reset": {
+      "label": "Afișează timpul până la resetare",
+      "description": "Timpul rămas până la resetarea ferestrei."
+    },
+    "reset_format": {
+      "label": "Formatul timpului de resetare",
+      "compact": "Compact (1:44)",
+      "verbose": "Detaliat (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Text când nu este programată nicio resetare",
+      "description": "Afișat în locul numărătorii inverse când fereastra nu rulează. Gol = „gata” în limba ta."
+    },
+    "show_tokens": {
+      "label": "Afișează tokenurile folosite",
+      "description": "Tokenuri folosite în fereastră (intrare + ieșire + creare cache, din transcrierile locale)."
+    },
+    "include_cache_read": {
+      "label": "Include citirile din cache",
+      "description": "Adaugă tokenurile citite din cache-ul de prompturi. Sunt ieftine, dar numeroase, așa că numărul crește mult."
+    },
+    "token_format": {
+      "label": "Formatul tokenurilor",
+      "short": "Scurt (92k)",
+      "full": "Complet (92424)"
+    },
+    "separator": {
+      "label": "Separator între elemente",
+      "none": "Niciunul",
+      "dot": "Punct (·)",
+      "bar": "Bară (|)",
+      "slash": "Bară oblică (/)"
+    },
+    "dim_extras": {
+      "label": "Estompează timpul și tokenurile",
+      "description": "Afișează timpul până la resetare și tokenurile într-o culoare estompată; doar procentul păstrează culoarea utilizării."
+    },
+    "gap": {
+      "label": "Spațiu între elemente (px)"
+    },
+    "font_weight": {
+      "label": "Grosimea fontului",
+      "medium": "Medie",
+      "bold": "Aldin"
+    },
+    "color_by_usage": {
+      "label": "Culoare după utilizare",
+      "description": "Comută la culorile de avertizare / critice peste praguri."
+    },
+    "warn_at": {
+      "label": "Prag de avertizare (%)"
+    },
+    "critical_at": {
+      "label": "Prag critic (%)"
+    },
+    "color": {
+      "label": "Culoarea textului",
+      "description": "Rol de culoare sau culoare hex pentru utilizare normală."
+    },
+    "warn_color": {
+      "label": "Culoare de avertizare"
+    },
+    "critical_color": {
+      "label": "Culoare critică"
+    },
+    "click_command": {
+      "label": "Comandă la clic",
+      "description": "Comandă shell rulată la clic stânga, de ex. alacritty -e claude. Gol = reîmprospătează acum. Clicul dreapta reîmprospătează mereu."
+    },
+    "command": {
+      "label": "Comandă la clic",
+      "description": "Comandă rulată la clic pe pictogramă."
+    },
+    "animation_ms": {
+      "label": "Animație la trecerea cursorului (ms)",
+      "description": "Cât durează până apar detaliile. 0 dezactivează animația."
+    }
+  },
+  "bar": {
+    "left": "{pct}% rămas",
+    "ready": "gata"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (resetare în {time})",
+    "tokens": "tokenuri: {tokens}, citire cache: {cache}",
+    "now": "acum",
+    "stale": "Învechit: {error}",
+    "loading": "Se încarcă..."
+  },
+  "error": {
+    "no_credentials": "Nu ești conectat la Claude Code",
+    "token_expired": "Token expirat - folosește Claude Code o dată pentru a-l reînnoi",
+    "network": "Fără conexiune",
+    "bad_response": "Răspuns neașteptat de la API",
+    "http_429": "Limită de cereri - se va reîncerca"
+  }
+}

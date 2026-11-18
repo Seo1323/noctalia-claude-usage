@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "更新間隔（分）",
+      "description": "使用量 API を問い合わせる頻度。"
+    },
+    "window": {
+      "label": "制限ウィンドウ",
+      "description": "バーに表示する使用量ウィンドウ。",
+      "five_hour": "5時間セッション",
+      "weekly": "週間（7日）",
+      "both": "両方"
+    },
+    "display_mode": {
+      "label": "詳細を表示",
+      "description": "リセットまでの時間、トークン、バーを表示するタイミング。",
+      "always": "常に",
+      "important": "使用量が多いときのみ（警告しきい値以上）",
+      "hover": "ホバー時のみ（それ以外はアイコンまたはリング）"
+    },
+    "logo": {
+      "label": "アイコン",
+      "description": "テキストの前に表示されます。リングは制限の残り（または使用済み）の割合で満たされます。",
+      "none": "なし",
+      "glyph": "グリフ",
+      "star": "スター（同梱）",
+      "custom": "カスタム画像",
+      "ring": "使用量リング"
+    },
+    "glyph": {
+      "label": "グリフ"
+    },
+    "logo_path": {
+      "label": "カスタム画像",
+      "description": "SVG または PNG。空の場合はプラグインフォルダーの logo.svg。"
+    },
+    "icon_size": {
+      "label": "アイコンサイズ（px）"
+    },
+    "size": {
+      "label": "アイコンサイズ（px）"
+    },
+    "show_percent": {
+      "label": "使用率を表示"
+    },
+    "percent_mode": {
+      "label": "パーセントの表示内容",
+      "used": "使用済み（22%）",
+      "left": "残り（残り 78%）"
+    },
+    "show_prefix": {
+      "label": "5h / 7d ラベルを表示",
+      "description": "各パーセントの前にウィンドウ名を付けます。"
+    },
+    "show_bar": {
+      "label": "プログレスバーを表示",
+      "description": "パーセントの横に小さなバーを表示します。"
+    },
+    "bar_width": {
+      "label": "プログレスバーの幅（px）"
+    },
+    "gauge_mode": {
+      "label": "バーとリングの表示内容",
+      "description": "プログレスバーと使用量リングを何で満たすか。",
+      "left": "残り",
+      "used": "使用済み"
+    },
+    "show_reset": {
+      "label": "リセットまでの時間を表示",
+      "description": "ウィンドウがリセットされるまでの残り時間。"
+    },
+    "reset_format": {
+      "label": "リセット時間の形式",
+      "compact": "短縮（1:44）",
+      "verbose": "詳細（1h 44m）"
+    },
+    "ready_text": {
+      "label": "リセット待ちがないときのテキスト",
+      "description": "ウィンドウが動いていないとき、カウントダウンの代わりに表示します。空 = 使用言語の「準備完了」。"
+    },
+    "show_tokens": {
+      "label": "使用トークンを表示",
+      "description": "ウィンドウ内の使用トークン（入力 + 出力 + キャッシュ作成、ローカルのトランスクリプトから）。"
+    },
+    "include_cache_read": {
+      "label": "キャッシュ読み取りを含める",
+      "description": "プロンプトキャッシュから読み取ったトークンを加算します。安価ですが数が多いため、数値が大きくなります。"
+    },
+    "token_format": {
+      "label": "トークンの形式",
+      "short": "短縮（92k）",
+      "full": "完全（92424）"
+    },
+    "separator": {
+      "label": "項目間の区切り",
+      "none": "なし",
+      "dot": "ドット（·）",
+      "bar": "縦線（|）",
+      "slash": "スラッシュ（/）"
+    },
+    "dim_extras": {
+      "label": "時間とトークンを淡色にする",
+      "description": "リセットまでの時間とトークンを控えめな色で表示し、パーセントだけが使用量の色を保ちます。"
+    },
+    "gap": {
+      "label": "項目間の間隔（px）"
+    },
+    "font_weight": {
+      "label": "フォントの太さ",
+      "medium": "中",
+      "bold": "太字"
+    },
+    "color_by_usage": {
+      "label": "使用量に応じた色",
+      "description": "しきい値を超えると警告 / 危険の色に切り替えます。"
+    },
+    "warn_at": {
+      "label": "警告しきい値（%）"
+    },
+    "critical_at": {
+      "label": "危険しきい値（%）"
+    },
+    "color": {
+      "label": "テキストの色",
+      "description": "通常時のカラーロールまたは hex カラー。"
+    },
+    "warn_color": {
+      "label": "警告の色"
+    },
+    "critical_color": {
+      "label": "危険の色"
+    },
+    "click_command": {
+      "label": "クリック時のコマンド",
+      "description": "左クリックで実行するシェルコマンド（例: alacritty -e claude）。空 = 今すぐ更新。右クリックは常に更新します。"
+    },
+    "command": {
+      "label": "クリック時のコマンド",
+      "description": "アイコンをクリックしたときに実行するコマンド。"
+    },
+    "animation_ms": {
+      "label": "ホバーアニメーション（ms）",
+      "description": "詳細がスライドしてフェードインするまでの時間。0 でアニメーションをオフにします。"
+    }
+  },
+  "bar": {
+    "left": "残り {pct}%",
+    "ready": "準備完了"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  （{time} 後にリセット）",
+    "tokens": "トークン: {tokens}、キャッシュ読み取り: {cache}",
+    "now": "まもなく",
+    "stale": "古いデータ: {error}",
+    "loading": "読み込み中..."
+  },
+  "error": {
+    "no_credentials": "Claude Code にログインしていません",
+    "token_expired": "トークンの期限切れ - 一度 Claude Code を使うと更新されます",
+    "network": "接続がありません",
+    "bad_response": "予期しない API 応答",
+    "http_429": "レート制限中 - 後で再試行します"
+  }
+}

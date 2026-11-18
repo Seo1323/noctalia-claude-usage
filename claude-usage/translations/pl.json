@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Interwał odświeżania (minuty)",
+      "description": "Jak często odpytywane jest API zużycia."
+    },
+    "window": {
+      "label": "Okno limitu",
+      "description": "Które okno zużycia pokazuje pasek.",
+      "five_hour": "Sesja 5-godzinna",
+      "weekly": "Tygodniowe (7d)",
+      "both": "Oba"
+    },
+    "display_mode": {
+      "label": "Pokazuj szczegóły",
+      "description": "Kiedy widać czas do resetu, tokeny i pasek.",
+      "always": "Zawsze",
+      "important": "Tylko przy wysokim zużyciu (powyżej progu ostrzeżenia)",
+      "hover": "Tylko po najechaniu (inaczej ikona lub kółko)"
+    },
+    "logo": {
+      "label": "Ikona",
+      "description": "Wyświetlana przed tekstem. Kółko wypełnia się pozostałą (lub zużytą) częścią limitu.",
+      "none": "Brak",
+      "glyph": "Glif",
+      "star": "Gwiazdka (wbudowana)",
+      "custom": "Własny obraz",
+      "ring": "Kółko zużycia"
+    },
+    "glyph": {
+      "label": "Glif"
+    },
+    "logo_path": {
+      "label": "Własny obraz",
+      "description": "SVG lub PNG. Puste oznacza logo.svg w folderze wtyczki."
+    },
+    "icon_size": {
+      "label": "Rozmiar ikony (px)"
+    },
+    "size": {
+      "label": "Rozmiar ikony (px)"
+    },
+    "show_percent": {
+      "label": "Pokazuj procent zużycia"
+    },
+    "percent_mode": {
+      "label": "Procent pokazuje",
+      "used": "Zużyte (22%)",
+      "left": "Pozostałe (78% zostało)"
+    },
+    "show_prefix": {
+      "label": "Pokazuj etykiety 5h / 7d",
+      "description": "Poprzedza każdy procent nazwą okna."
+    },
+    "show_bar": {
+      "label": "Pokazuj pasek postępu",
+      "description": "Mały pasek obok procentu."
+    },
+    "bar_width": {
+      "label": "Szerokość paska postępu (px)"
+    },
+    "gauge_mode": {
+      "label": "Pasek i kółko pokazują",
+      "description": "Czym wypełnia się pasek postępu i kółko zużycia.",
+      "left": "Co zostało",
+      "used": "Co zużyte"
+    },
+    "show_reset": {
+      "label": "Pokazuj czas do resetu",
+      "description": "Czas pozostały do resetu okna."
+    },
+    "reset_format": {
+      "label": "Format czasu resetu",
+      "compact": "Krótki (1:44)",
+      "verbose": "Pełny (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Tekst, gdy reset nie jest naliczany",
+      "description": "Wyświetlany zamiast odliczania, gdy okno nie trwa. Puste = „gotowe” w Twoim języku."
+    },
+    "show_tokens": {
+      "label": "Pokazuj zużyte tokeny",
+      "description": "Tokeny zużyte w oknie (wejście + wyjście + zapis cache, z lokalnych transkryptów)."
+    },
+    "include_cache_read": {
+      "label": "Uwzględniaj odczyty cache",
+      "description": "Dolicza tokeny odczytane z cache promptów. Są tanie, ale liczne, więc liczba mocno rośnie."
+    },
+    "token_format": {
+      "label": "Format tokenów",
+      "short": "Krótki (92k)",
+      "full": "Pełny (92424)"
+    },
+    "separator": {
+      "label": "Separator między elementami",
+      "none": "Brak",
+      "dot": "Kropka (·)",
+      "bar": "Kreska (|)",
+      "slash": "Ukośnik (/)"
+    },
+    "dim_extras": {
+      "label": "Przygaszaj czas i tokeny",
+      "description": "Czas do resetu i tokeny w stonowanym kolorze; tylko procent zachowuje kolor zużycia."
+    },
+    "gap": {
+      "label": "Odstęp między elementami (px)"
+    },
+    "font_weight": {
+      "label": "Grubość czcionki",
+      "medium": "Średnia",
+      "bold": "Pogrubiona"
+    },
+    "color_by_usage": {
+      "label": "Kolor według zużycia",
+      "description": "Przełącza na kolor ostrzeżenia / krytyczny powyżej progów."
+    },
+    "warn_at": {
+      "label": "Próg ostrzeżenia (%)"
+    },
+    "critical_at": {
+      "label": "Próg krytyczny (%)"
+    },
+    "color": {
+      "label": "Kolor tekstu",
+      "description": "Rola koloru lub kolor hex dla zwykłego zużycia."
+    },
+    "warn_color": {
+      "label": "Kolor ostrzeżenia"
+    },
+    "critical_color": {
+      "label": "Kolor krytyczny"
+    },
+    "click_command": {
+      "label": "Polecenie kliknięcia",
+      "description": "Polecenie powłoki uruchamiane lewym kliknięciem, np. alacritty -e claude. Puste = odśwież teraz. Prawy przycisk zawsze odświeża."
+    },
+    "command": {
+      "label": "Polecenie kliknięcia",
+      "description": "Polecenie uruchamiane po kliknięciu ikony."
+    },
+    "animation_ms": {
+      "label": "Animacja po najechaniu (ms)",
+      "description": "Jak długo szczegóły się wysuwają i pojawiają. 0 wyłącza animację."
+    }
+  },
+  "bar": {
+    "left": "{pct}% zostało",
+    "ready": "gotowe"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (reset za {time})",
+    "tokens": "tokeny: {tokens}, odczyt cache: {cache}",
+    "now": "teraz",
+    "stale": "Nieaktualne: {error}",
+    "loading": "Wczytywanie..."
+  },
+  "error": {
+    "no_credentials": "Nie zalogowano do Claude Code",
+    "token_expired": "Token wygasł - użyj raz Claude Code, aby go odświeżyć",
+    "network": "Brak połączenia",
+    "bad_response": "Nieoczekiwana odpowiedź API",
+    "http_429": "Limit zapytań - ponowię później"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Intervalo de actualización (minutos)",
+      "description": "Con que frecuencia se consulta a API de uso."
+    },
+    "window": {
+      "label": "Xanela do límite",
+      "description": "Que xanela de uso amosa a barra.",
+      "five_hour": "Sesión de 5 horas",
+      "weekly": "Semanal (7 d)",
+      "both": "Ambas"
+    },
+    "display_mode": {
+      "label": "Amosar detalles",
+      "description": "Cando se amosan o tempo ata o reinicio, os tokens e a barra.",
+      "always": "Sempre",
+      "important": "Só con uso alto (por riba do limiar de aviso)",
+      "hover": "Só ao pasar o cursor (se non, icona ou anel)"
+    },
+    "logo": {
+      "label": "Icona",
+      "description": "Amósase antes do texto. O anel énchese coa parte restante (ou usada) do límite.",
+      "none": "Ningunha",
+      "glyph": "Glifo",
+      "star": "Estrela (incluída)",
+      "custom": "Imaxe personalizada",
+      "ring": "Anel de uso"
+    },
+    "glyph": {
+      "label": "Glifo"
+    },
+    "logo_path": {
+      "label": "Imaxe personalizada",
+      "description": "SVG ou PNG. Baleiro significa logo.svg no cartafol do complemento."
+    },
+    "icon_size": {
+      "label": "Tamaño da icona (px)"
+    },
+    "size": {
+      "label": "Tamaño da icona (px)"
+    },
+    "show_percent": {
+      "label": "Amosar a porcentaxe de uso"
+    },
+    "percent_mode": {
+      "label": "A porcentaxe amosa",
+      "used": "Usado (22%)",
+      "left": "Restante (78% restante)"
+    },
+    "show_prefix": {
+      "label": "Amosar etiquetas 5h / 7d",
+      "description": "Antepor a cada porcentaxe a súa xanela."
+    },
+    "show_bar": {
+      "label": "Amosar barra de progreso",
+      "description": "Unha barra pequena xunto á porcentaxe."
+    },
+    "bar_width": {
+      "label": "Largura da barra de progreso (px)"
+    },
+    "gauge_mode": {
+      "label": "A barra e o anel amosan",
+      "description": "De que se enchen a barra de progreso e o anel de uso.",
+      "left": "O que queda",
+      "used": "O usado"
+    },
+    "show_reset": {
+      "label": "Amosar o tempo ata o reinicio",
+      "description": "Tempo que falta para que a xanela se reinicie."
+    },
+    "reset_format": {
+      "label": "Formato do tempo de reinicio",
+      "compact": "Compacto (1:44)",
+      "verbose": "Detallado (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Texto cando non hai reinicio pendente",
+      "description": "Amósase no canto da conta atrás cando a xanela non está activa. Baleiro = «listo» no teu idioma."
+    },
+    "show_tokens": {
+      "label": "Amosar tokens usados",
+      "description": "Tokens usados na xanela (entrada + saída + creación de caché, das transcricións locais)."
+    },
+    "include_cache_read": {
+      "label": "Incluír lecturas da caché",
+      "description": "Sumar os tokens lidos da caché de prompts. Son baratos pero numerosos, así que o número medra moito."
+    },
+    "token_format": {
+      "label": "Formato dos tokens",
+      "short": "Curto (92k)",
+      "full": "Completo (92424)"
+    },
+    "separator": {
+      "label": "Separador entre elementos",
+      "none": "Ningún",
+      "dot": "Punto (·)",
+      "bar": "Barra (|)",
+      "slash": "Barra inclinada (/)"
+    },
+    "dim_extras": {
+      "label": "Atenuar tempo e tokens",
+      "description": "Amosa o tempo ata o reinicio e os tokens nunha cor atenuada; só a porcentaxe mantén a cor de uso."
+    },
+    "gap": {
+      "label": "Espazo entre elementos (px)"
+    },
+    "font_weight": {
+      "label": "Grosor da letra",
+      "medium": "Media",
+      "bold": "Negra"
+    },
+    "color_by_usage": {
+      "label": "Cor segundo o uso",
+      "description": "Cambiar ás cores de aviso / crítica por riba dos limiares."
+    },
+    "warn_at": {
+      "label": "Limiar de aviso (%)"
+    },
+    "critical_at": {
+      "label": "Limiar crítico (%)"
+    },
+    "color": {
+      "label": "Cor do texto",
+      "description": "Rol de cor ou cor hex para o uso normal."
+    },
+    "warn_color": {
+      "label": "Cor de aviso"
+    },
+    "critical_color": {
+      "label": "Cor crítica"
+    },
+    "click_command": {
+      "label": "Orde ao premer",
+      "description": "Orde de shell ao premer co botón esquerdo, p. ex. alacritty -e claude. Baleiro = actualizar agora. O botón dereito sempre actualiza."
+    },
+    "command": {
+      "label": "Orde ao premer",
+      "description": "Orde que se executa ao premer na icona."
+    },
+    "animation_ms": {
+      "label": "Animación ao pasar o cursor (ms)",
+      "description": "Canto tardan os detalles en despregarse e aparecer. 0 desactiva a animación."
+    }
+  },
+  "bar": {
+    "left": "{pct}% restante",
+    "ready": "listo"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (reiníciase en {time})",
+    "tokens": "tokens: {tokens}, lectura de caché: {cache}",
+    "now": "agora",
+    "stale": "Desactualizado: {error}",
+    "loading": "Cargando..."
+  },
+  "error": {
+    "no_credentials": "Non iniciaches sesión en Claude Code",
+    "token_expired": "Token caducado - usa Claude Code unha vez para renovalo",
+    "network": "Sen conexión",
+    "bad_response": "Resposta inesperada da API",
+    "http_429": "Límite de solicitudes - volverase intentar"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Navbera nûkirinê (deqîqe)",
+      "description": "API-ya bikaranînê çiqas caran tê pirsîn."
+    },
+    "window": {
+      "label": "Pencereya sînorê",
+      "description": "Darik kîjan pencereya bikaranînê nîşan dide.",
+      "five_hour": "Danişîna 5 saetan",
+      "weekly": "Heftane (7r)",
+      "both": "Herdu"
+    },
+    "display_mode": {
+      "label": "Hûrguliyan nîşan bide",
+      "description": "Dema heta sifirkirinê, token û darik kengî têne nîşandan.",
+      "always": "Her tim",
+      "important": "Tenê dema bikaranîn bilind be (li ser sînorê hişyariyê)",
+      "hover": "Tenê dema nîşanker li ser be (wekî din îkon an xelek)"
+    },
+    "logo": {
+      "label": "Îkon",
+      "description": "Berî nivîsê tê nîşandan. Xelek bi beşa mayî (an bikaranî) ya sînorê tije dibe.",
+      "none": "Tune",
+      "glyph": "Glîf",
+      "star": "Stêrk (pê re tê)",
+      "custom": "Wêneyê taybet",
+      "ring": "Xeleka bikaranînê"
+    },
+    "glyph": {
+      "label": "Glîf"
+    },
+    "logo_path": {
+      "label": "Wêneyê taybet",
+      "description": "SVG an PNG. Vala tê wateya logo.svg di peldanka pêvekê de."
+    },
+    "icon_size": {
+      "label": "Mezinahiya îkonê (px)"
+    },
+    "size": {
+      "label": "Mezinahiya îkonê (px)"
+    },
+    "show_percent": {
+      "label": "Rêjeya bikaranînê nîşan bide"
+    },
+    "percent_mode": {
+      "label": "Rêje nîşan dide",
+      "used": "Bikaranî (22%)",
+      "left": "Mayî (78% maye)"
+    },
+    "show_prefix": {
+      "label": "Etîketên 5h / 7d nîşan bide",
+      "description": "Pencereyê li pêşiya her rêjeyê binivîse."
+    },
+    "show_bar": {
+      "label": "Darika pêşveçûnê nîşan bide",
+      "description": "Darikek biçûk li kêleka rêjeyê."
+    },
+    "bar_width": {
+      "label": "Firehiya darika pêşveçûnê (px)"
+    },
+    "gauge_mode": {
+      "label": "Darik û xelek nîşan didin",
+      "description": "Darika pêşveçûnê û xeleka bikaranînê bi çi tije dibin.",
+      "left": "Ya mayî",
+      "used": "Ya bikaranî"
+    },
+    "show_reset": {
+      "label": "Dema heta sifirkirinê nîşan bide",
+      "description": "Dema mayî heta ku pencere sifir bibe."
+    },
+    "reset_format": {
+      "label": "Formata dema sifirkirinê",
+      "compact": "Kurt (1:44)",
+      "verbose": "Dirêj (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Nivîs dema ku sifirkirin tune be",
+      "description": "Dema pencere ne çalak be li şûna jimartina berevajî tê nîşandan. Vala = \"amade\" bi zimanê te."
+    },
+    "show_tokens": {
+      "label": "Tokenên bikaranî nîşan bide",
+      "description": "Tokenên di pencereyê de bikaranî (têketin + derketin + çêkirina kaşê, ji tomarên herêmî)."
+    },
+    "include_cache_read": {
+      "label": "Xwendinên kaşê jî bihesibîne",
+      "description": "Tokenên ji kaşa promptan hatine xwendin lê zêde bike. Erzan in lê pir in, ji ber vê jimar pir mezin dibe."
+    },
+    "token_format": {
+      "label": "Formata tokenan",
+      "short": "Kurt (92k)",
+      "full": "Tevahî (92424)"
+    },
+    "separator": {
+      "label": "Veqetîner di navbera hêmanan de",
+      "none": "Tune",
+      "dot": "Xal (·)",
+      "bar": "Xêza rast (|)",
+      "slash": "Xêza xwar (/)"
+    },
+    "dim_extras": {
+      "label": "Dem û tokenan zelal bike",
+      "description": "Dema heta sifirkirinê û tokenan bi rengekî nermtir nîşan dide; tenê rêje rengê bikaranînê diparêze."
+    },
+    "gap": {
+      "label": "Valahiya di navbera hêmanan de (px)"
+    },
+    "font_weight": {
+      "label": "Stûrahiya tîpan",
+      "medium": "Navîn",
+      "bold": "Stûr"
+    },
+    "color_by_usage": {
+      "label": "Reng li gorî bikaranînê",
+      "description": "Li ser sînoran derbasî rengên hişyarî / krîtîk dibe."
+    },
+    "warn_at": {
+      "label": "Sînorê hişyariyê (%)"
+    },
+    "critical_at": {
+      "label": "Sînorê krîtîk (%)"
+    },
+    "color": {
+      "label": "Rengê nivîsê",
+      "description": "Rola rengê an rengê hex ji bo bikaranîna asayî."
+    },
+    "warn_color": {
+      "label": "Rengê hişyariyê"
+    },
+    "critical_color": {
+      "label": "Rengê krîtîk"
+    },
+    "click_command": {
+      "label": "Fermana tikandinê",
+      "description": "Fermana shellê ya bi tikandina çepê dixebite, mînak alacritty -e claude. Vala = niha nû bike. Tikandina rastê her tim nû dike."
+    },
+    "command": {
+      "label": "Fermana tikandinê",
+      "description": "Fermana ku dema îkon tê tikandin dixebite."
+    },
+    "animation_ms": {
+      "label": "Anîmasyona nîşankerê (ms)",
+      "description": "Hûrgulî çiqas dem digirin ku derkevin û xuya bibin. 0 anîmasyonê digire."
+    }
+  },
+  "bar": {
+    "left": "{pct}% maye",
+    "ready": "amade"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (piştî {time} sifir dibe)",
+    "tokens": "token: {tokens}, xwendina kaşê: {cache}",
+    "now": "niha",
+    "stale": "Kevn: {error}",
+    "loading": "Tê barkirin..."
+  },
+  "error": {
+    "no_credentials": "Têketina Claude Code nehatiye kirin",
+    "token_expired": "Dema tokenê qediya - ji bo nûkirinê carekê Claude Code bikar bîne",
+    "network": "Girêdan tune",
+    "bad_response": "Bersiva API ya nediyar",
+    "http_429": "Sînorê daxwazan - dê dîsa biceribîne"
+  }
+}

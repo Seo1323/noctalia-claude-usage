@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Vernieuwingsinterval (minuten)",
+      "description": "Hoe vaak de gebruiks-API wordt bevraagd."
+    },
+    "window": {
+      "label": "Limietvenster",
+      "description": "Welk gebruiksvenster de balk toont.",
+      "five_hour": "Sessie van 5 uur",
+      "weekly": "Wekelijks (7d)",
+      "both": "Beide"
+    },
+    "display_mode": {
+      "label": "Details tonen",
+      "description": "Wanneer de tijd tot reset, tokens en balk worden getoond.",
+      "always": "Altijd",
+      "important": "Alleen bij hoog gebruik (boven de waarschuwingsdrempel)",
+      "hover": "Alleen bij aanwijzen (anders pictogram of ring)"
+    },
+    "logo": {
+      "label": "Pictogram",
+      "description": "Getoond vóór de tekst. De ring vult zich met het resterende (of gebruikte) deel van de limiet.",
+      "none": "Geen",
+      "glyph": "Glyph",
+      "star": "Ster (meegeleverd)",
+      "custom": "Eigen afbeelding",
+      "ring": "Gebruiksring"
+    },
+    "glyph": {
+      "label": "Glyph"
+    },
+    "logo_path": {
+      "label": "Eigen afbeelding",
+      "description": "SVG of PNG. Leeg betekent logo.svg in de pluginmap."
+    },
+    "icon_size": {
+      "label": "Pictogramgrootte (px)"
+    },
+    "size": {
+      "label": "Pictogramgrootte (px)"
+    },
+    "show_percent": {
+      "label": "Gebruikspercentage tonen"
+    },
+    "percent_mode": {
+      "label": "Percentage toont",
+      "used": "Gebruikt (22%)",
+      "left": "Over (78% over)"
+    },
+    "show_prefix": {
+      "label": "Labels 5h / 7d tonen",
+      "description": "Elk percentage laten voorafgaan door zijn venster."
+    },
+    "show_bar": {
+      "label": "Voortgangsbalk tonen",
+      "description": "Een kleine balk naast het percentage."
+    },
+    "bar_width": {
+      "label": "Breedte voortgangsbalk (px)"
+    },
+    "gauge_mode": {
+      "label": "Balk en ring tonen",
+      "description": "Waarmee de voortgangsbalk en de gebruiksring zich vullen.",
+      "left": "Wat over is",
+      "used": "Wat gebruikt is"
+    },
+    "show_reset": {
+      "label": "Tijd tot reset tonen",
+      "description": "Resterende tijd tot het venster wordt gereset."
+    },
+    "reset_format": {
+      "label": "Notatie resettijd",
+      "compact": "Compact (1:44)",
+      "verbose": "Uitgebreid (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Tekst als er geen reset loopt",
+      "description": "Getoond in plaats van de aftelling als het venster niet loopt. Leeg = „klaar” in jouw taal."
+    },
+    "show_tokens": {
+      "label": "Gebruikte tokens tonen",
+      "description": "Tokens gebruikt in het venster (invoer + uitvoer + cache-aanmaak, uit lokale transcripten)."
+    },
+    "include_cache_read": {
+      "label": "Cache-leesacties meetellen",
+      "description": "Tokens die uit de promptcache zijn gelezen optellen. Ze zijn goedkoop maar talrijk, dus het getal wordt veel groter."
+    },
+    "token_format": {
+      "label": "Tokennotatie",
+      "short": "Kort (92k)",
+      "full": "Volledig (92424)"
+    },
+    "separator": {
+      "label": "Scheidingsteken tussen items",
+      "none": "Geen",
+      "dot": "Punt (·)",
+      "bar": "Streep (|)",
+      "slash": "Schuine streep (/)"
+    },
+    "dim_extras": {
+      "label": "Tijd en tokens dimmen",
+      "description": "Toon de tijd tot reset en de tokens in een gedempte kleur; alleen het percentage houdt de gebruikskleur."
+    },
+    "gap": {
+      "label": "Ruimte tussen items (px)"
+    },
+    "font_weight": {
+      "label": "Lettergewicht",
+      "medium": "Normaal-vet",
+      "bold": "Vet"
+    },
+    "color_by_usage": {
+      "label": "Kleur volgens gebruik",
+      "description": "Boven de drempels overschakelen naar de waarschuwings- / kritieke kleuren."
+    },
+    "warn_at": {
+      "label": "Waarschuwingsdrempel (%)"
+    },
+    "critical_at": {
+      "label": "Kritieke drempel (%)"
+    },
+    "color": {
+      "label": "Tekstkleur",
+      "description": "Kleurrol of hex-kleur voor normaal gebruik."
+    },
+    "warn_color": {
+      "label": "Waarschuwingskleur"
+    },
+    "critical_color": {
+      "label": "Kritieke kleur"
+    },
+    "click_command": {
+      "label": "Klikopdracht",
+      "description": "Shell-opdracht bij linksklikken, bijv. alacritty -e claude. Leeg = nu vernieuwen. Rechtsklikken vernieuwt altijd."
+    },
+    "command": {
+      "label": "Klikopdracht",
+      "description": "Opdracht die wordt uitgevoerd bij klikken op het pictogram."
+    },
+    "animation_ms": {
+      "label": "Animatie bij aanwijzen (ms)",
+      "description": "Hoe lang de details erover doen om uit te schuiven en in te faden. 0 schakelt de animatie uit."
+    }
+  },
+  "bar": {
+    "left": "{pct}% over",
+    "ready": "klaar"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (reset over {time})",
+    "tokens": "tokens: {tokens}, cache gelezen: {cache}",
+    "now": "nu",
+    "stale": "Verouderd: {error}",
+    "loading": "Laden..."
+  },
+  "error": {
+    "no_credentials": "Niet aangemeld bij Claude Code",
+    "token_expired": "Token verlopen - gebruik Claude Code één keer om het te vernieuwen",
+    "network": "Geen verbinding",
+    "bad_response": "Onverwacht API-antwoord",
+    "http_429": "Aanvraaglimiet bereikt - wordt opnieuw geprobeerd"
+  }
+}

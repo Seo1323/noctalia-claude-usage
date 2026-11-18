@@ -28,6 +28,7 @@
 - **Colors that warn you** — switches to warning / critical colors above the thresholds you pick.
 - **Make it yours** — any glyph from the icon set or your own image, separators, dimmed extras, percent used or left,
   icon size, spacing, font weight and colors.
+- **Speaks your language** — settings, tooltip and bar text in all 29 languages Noctalia supports.
 - **Light on resources** — one background poller, no matter how many monitors or bars.
 
 ## 📸 Examples
@@ -130,6 +131,12 @@ Set **Icon** to *Custom image* and pick an SVG or PNG with the file browser (or 
 - That one request is the only network call. Nothing else leaves your machine.
 
 If the token has expired, the tooltip says so — use Claude Code once and it refreshes.
+
+## 🌍 Languages
+
+The widget follows Noctalia's language setting. English and Polish are maintained by the author; the other
+27 translations were machine-translated and are waiting for native speakers — fixes to
+[`claude-usage/translations`](claude-usage/translations) are very welcome.
 
 ## 📄 License
 

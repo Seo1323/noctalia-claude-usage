@@ -1,6 +1,6 @@
 id = "seo/claude-usage"
 name = "Claude Usage"
-version = "1.3.0"
+version = "1.4.0"
 plugin_api = 43
 author = "Seo1323"
 license = "MIT"
@@ -173,7 +173,7 @@ entry = "bar.luau"
   type = "string"
   label_key = "settings.ready_text.label"
   description_key = "settings.ready_text.description"
-  default = "ready"
+  default = ""
   visible_when = { key = "show_reset", values = ["true"] }
 
   [[widget.setting]]

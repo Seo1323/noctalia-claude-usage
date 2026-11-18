@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Text when no reset is pending",
-      "description": "Shown instead of a countdown when the window is not running."
+      "description": "Shown instead of a countdown when the window is not running. Empty = \"ready\" in your language."
     },
     "show_tokens": {
       "label": "Show tokens used",
@@ -143,5 +143,23 @@
       "label": "Hover animation (ms)",
       "description": "How long the details take to slide out and fade in. 0 turns the animation off."
     }
+  },
+  "bar": {
+    "left": "{pct}% left",
+    "ready": "ready"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (resets in {time})",
+    "tokens": "tokens: {tokens}, cache read: {cache}",
+    "now": "now",
+    "stale": "Stale: {error}",
+    "loading": "Loading..."
+  },
+  "error": {
+    "no_credentials": "Not logged in to Claude Code",
+    "token_expired": "Token expired - use Claude Code once to refresh",
+    "network": "No connection",
+    "bad_response": "Unexpected API response",
+    "http_429": "Rate limited - will retry"
   }
 }

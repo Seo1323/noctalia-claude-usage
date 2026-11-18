@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Intervalo de actualización (minutos)",
+      "description": "Con qué frecuencia se consulta la API de uso."
+    },
+    "window": {
+      "label": "Ventana de límite",
+      "description": "Qué ventana de uso muestra la barra.",
+      "five_hour": "Sesión de 5 horas",
+      "weekly": "Semanal (7 d)",
+      "both": "Ambas"
+    },
+    "display_mode": {
+      "label": "Mostrar detalles",
+      "description": "Cuándo se muestran el tiempo hasta el reinicio, los tokens y la barra.",
+      "always": "Siempre",
+      "important": "Solo con uso alto (por encima del umbral de aviso)",
+      "hover": "Solo al pasar el cursor (si no, icono o anillo)"
+    },
+    "logo": {
+      "label": "Icono",
+      "description": "Se muestra antes del texto. El anillo se llena con la parte restante (o usada) del límite.",
+      "none": "Ninguno",
+      "glyph": "Glifo",
+      "star": "Estrella (incluida)",
+      "custom": "Imagen personalizada",
+      "ring": "Anillo de uso"
+    },
+    "glyph": {
+      "label": "Glifo"
+    },
+    "logo_path": {
+      "label": "Imagen personalizada",
+      "description": "SVG o PNG. Vacío significa logo.svg en la carpeta del plugin."
+    },
+    "icon_size": {
+      "label": "Tamaño del icono (px)"
+    },
+    "size": {
+      "label": "Tamaño del icono (px)"
+    },
+    "show_percent": {
+      "label": "Mostrar porcentaje de uso"
+    },
+    "percent_mode": {
+      "label": "El porcentaje muestra",
+      "used": "Usado (22%)",
+      "left": "Restante (78% restante)"
+    },
+    "show_prefix": {
+      "label": "Mostrar etiquetas 5h / 7d",
+      "description": "Anteponer a cada porcentaje su ventana."
+    },
+    "show_bar": {
+      "label": "Mostrar barra de progreso",
+      "description": "Una barra pequeña junto al porcentaje."
+    },
+    "bar_width": {
+      "label": "Ancho de la barra de progreso (px)"
+    },
+    "gauge_mode": {
+      "label": "La barra y el anillo muestran",
+      "description": "Con qué se llenan la barra de progreso y el anillo de uso.",
+      "left": "Lo que queda",
+      "used": "Lo usado"
+    },
+    "show_reset": {
+      "label": "Mostrar tiempo hasta el reinicio",
+      "description": "Tiempo que falta para que la ventana se reinicie."
+    },
+    "reset_format": {
+      "label": "Formato del tiempo de reinicio",
+      "compact": "Compacto (1:44)",
+      "verbose": "Detallado (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Texto cuando no hay reinicio pendiente",
+      "description": "Se muestra en lugar de la cuenta atrás cuando la ventana no está activa. Vacío = «listo» en tu idioma."
+    },
+    "show_tokens": {
+      "label": "Mostrar tokens usados",
+      "description": "Tokens usados en la ventana (entrada + salida + creación de caché, de las transcripciones locales)."
+    },
+    "include_cache_read": {
+      "label": "Incluir lecturas de caché",
+      "description": "Sumar los tokens leídos de la caché de prompts. Son baratos pero numerosos, así que el número crece mucho."
+    },
+    "token_format": {
+      "label": "Formato de tokens",
+      "short": "Corto (92k)",
+      "full": "Completo (92424)"
+    },
+    "separator": {
+      "label": "Separador entre elementos",
+      "none": "Ninguno",
+      "dot": "Punto (·)",
+      "bar": "Barra (|)",
+      "slash": "Barra diagonal (/)"
+    },
+    "dim_extras": {
+      "label": "Atenuar tiempo y tokens",
+      "description": "Muestra el tiempo hasta el reinicio y los tokens en un color atenuado; solo el porcentaje conserva el color de uso."
+    },
+    "gap": {
+      "label": "Espacio entre elementos (px)"
+    },
+    "font_weight": {
+      "label": "Grosor de fuente",
+      "medium": "Media",
+      "bold": "Negrita"
+    },
+    "color_by_usage": {
+      "label": "Color según el uso",
+      "description": "Cambiar a los colores de aviso / crítico por encima de los umbrales."
+    },
+    "warn_at": {
+      "label": "Umbral de aviso (%)"
+    },
+    "critical_at": {
+      "label": "Umbral crítico (%)"
+    },
+    "color": {
+      "label": "Color del texto",
+      "description": "Rol de color o color hex para el uso normal."
+    },
+    "warn_color": {
+      "label": "Color de aviso"
+    },
+    "critical_color": {
+      "label": "Color crítico"
+    },
+    "click_command": {
+      "label": "Comando al hacer clic",
+      "description": "Comando de shell al hacer clic izquierdo, p. ej. alacritty -e claude. Vacío = actualizar ahora. El clic derecho siempre actualiza."
+    },
+    "command": {
+      "label": "Comando al hacer clic",
+      "description": "Comando que se ejecuta al hacer clic en el icono."
+    },
+    "animation_ms": {
+      "label": "Animación al pasar el cursor (ms)",
+      "description": "Cuánto tardan los detalles en desplegarse y aparecer. 0 desactiva la animación."
+    }
+  },
+  "bar": {
+    "left": "{pct}% restante",
+    "ready": "listo"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (se reinicia en {time})",
+    "tokens": "tokens: {tokens}, lectura de caché: {cache}",
+    "now": "ahora",
+    "stale": "Desactualizado: {error}",
+    "loading": "Cargando..."
+  },
+  "error": {
+    "no_credentials": "No has iniciado sesión en Claude Code",
+    "token_expired": "Token caducado - usa Claude Code una vez para renovarlo",
+    "network": "Sin conexión",
+    "bad_response": "Respuesta inesperada de la API",
+    "http_429": "Límite de solicitudes - se reintentará"
+  }
+}

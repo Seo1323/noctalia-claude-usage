@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Intervalo de atualização (minutos)",
+      "description": "Com que frequência a API de uso é consultada."
+    },
+    "window": {
+      "label": "Janela do limite",
+      "description": "Qual janela de uso a barra mostra.",
+      "five_hour": "Sessão de 5 horas",
+      "weekly": "Semanal (7d)",
+      "both": "Ambas"
+    },
+    "display_mode": {
+      "label": "Mostrar detalhes",
+      "description": "Quando o tempo até o reset, os tokens e a barra são exibidos.",
+      "always": "Sempre",
+      "important": "Só com uso alto (acima do limite de aviso)",
+      "hover": "Só ao passar o mouse (senão ícone ou anel)"
+    },
+    "logo": {
+      "label": "Ícone",
+      "description": "Exibido antes do texto. O anel se preenche com a parte restante (ou usada) do limite.",
+      "none": "Nenhum",
+      "glyph": "Glifo",
+      "star": "Estrela (incluída)",
+      "custom": "Imagem personalizada",
+      "ring": "Anel de uso"
+    },
+    "glyph": {
+      "label": "Glifo"
+    },
+    "logo_path": {
+      "label": "Imagem personalizada",
+      "description": "SVG ou PNG. Vazio significa logo.svg na pasta do plugin."
+    },
+    "icon_size": {
+      "label": "Tamanho do ícone (px)"
+    },
+    "size": {
+      "label": "Tamanho do ícone (px)"
+    },
+    "show_percent": {
+      "label": "Mostrar porcentagem de uso"
+    },
+    "percent_mode": {
+      "label": "A porcentagem mostra",
+      "used": "Usado (22%)",
+      "left": "Restante (78% restante)"
+    },
+    "show_prefix": {
+      "label": "Mostrar rótulos 5h / 7d",
+      "description": "Prefixar cada porcentagem com sua janela."
+    },
+    "show_bar": {
+      "label": "Mostrar barra de progresso",
+      "description": "Uma pequena barra ao lado da porcentagem."
+    },
+    "bar_width": {
+      "label": "Largura da barra de progresso (px)"
+    },
+    "gauge_mode": {
+      "label": "Barra e anel mostram",
+      "description": "Com o que a barra de progresso e o anel de uso se preenchem.",
+      "left": "O que resta",
+      "used": "O que foi usado"
+    },
+    "show_reset": {
+      "label": "Mostrar tempo até o reset",
+      "description": "Tempo restante até a janela ser reiniciada."
+    },
+    "reset_format": {
+      "label": "Formato do tempo de reset",
+      "compact": "Compacto (1:44)",
+      "verbose": "Detalhado (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Texto quando não há reset pendente",
+      "description": "Exibido no lugar da contagem regressiva quando a janela não está ativa. Vazio = “pronto” no seu idioma."
+    },
+    "show_tokens": {
+      "label": "Mostrar tokens usados",
+      "description": "Tokens usados na janela (entrada + saída + criação de cache, das transcrições locais)."
+    },
+    "include_cache_read": {
+      "label": "Incluir leituras de cache",
+      "description": "Somar os tokens lidos do cache de prompts. São baratos, mas numerosos, então o número fica muito maior."
+    },
+    "token_format": {
+      "label": "Formato dos tokens",
+      "short": "Curto (92k)",
+      "full": "Completo (92424)"
+    },
+    "separator": {
+      "label": "Separador entre itens",
+      "none": "Nenhum",
+      "dot": "Ponto (·)",
+      "bar": "Barra (|)",
+      "slash": "Barra inclinada (/)"
+    },
+    "dim_extras": {
+      "label": "Atenuar tempo e tokens",
+      "description": "Mostra o tempo até o reset e os tokens em uma cor suave; só a porcentagem mantém a cor de uso."
+    },
+    "gap": {
+      "label": "Espaçamento entre itens (px)"
+    },
+    "font_weight": {
+      "label": "Peso da fonte",
+      "medium": "Médio",
+      "bold": "Negrito"
+    },
+    "color_by_usage": {
+      "label": "Cor conforme o uso",
+      "description": "Mudar para as cores de aviso / crítica acima dos limites."
+    },
+    "warn_at": {
+      "label": "Limite de aviso (%)"
+    },
+    "critical_at": {
+      "label": "Limite crítico (%)"
+    },
+    "color": {
+      "label": "Cor do texto",
+      "description": "Papel de cor ou cor hex para uso normal."
+    },
+    "warn_color": {
+      "label": "Cor de aviso"
+    },
+    "critical_color": {
+      "label": "Cor crítica"
+    },
+    "click_command": {
+      "label": "Comando ao clicar",
+      "description": "Comando de shell executado no clique esquerdo, ex.: alacritty -e claude. Vazio = atualizar agora. O clique direito sempre atualiza."
+    },
+    "command": {
+      "label": "Comando ao clicar",
+      "description": "Comando executado ao clicar no ícone."
+    },
+    "animation_ms": {
+      "label": "Animação ao passar o mouse (ms)",
+      "description": "Quanto tempo os detalhes levam para deslizar e aparecer. 0 desativa a animação."
+    }
+  },
+  "bar": {
+    "left": "{pct}% restante",
+    "ready": "pronto"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (reinicia em {time})",
+    "tokens": "tokens: {tokens}, leitura de cache: {cache}",
+    "now": "agora",
+    "stale": "Desatualizado: {error}",
+    "loading": "Carregando..."
+  },
+  "error": {
+    "no_credentials": "Não conectado ao Claude Code",
+    "token_expired": "Token expirado - use o Claude Code uma vez para renová-lo",
+    "network": "Sem conexão",
+    "bad_response": "Resposta inesperada da API",
+    "http_429": "Limite de requisições - tentará novamente"
+  }
+}

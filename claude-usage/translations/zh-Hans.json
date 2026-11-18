@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "刷新间隔（分钟）",
+      "description": "查询用量 API 的频率。"
+    },
+    "window": {
+      "label": "限额窗口",
+      "description": "状态栏显示哪个用量窗口。",
+      "five_hour": "5 小时会话",
+      "weekly": "每周（7 天）",
+      "both": "两者"
+    },
+    "display_mode": {
+      "label": "显示详情",
+      "description": "何时显示距重置时间、令牌数和进度条。",
+      "always": "始终",
+      "important": "仅在用量较高时（高于警告阈值）",
+      "hover": "仅在悬停时（否则显示图标或圆环）"
+    },
+    "logo": {
+      "label": "图标",
+      "description": "显示在文字前面。圆环按限额的剩余（或已用）比例填充。",
+      "none": "无",
+      "glyph": "字形",
+      "star": "星形（内置）",
+      "custom": "自定义图片",
+      "ring": "用量圆环"
+    },
+    "glyph": {
+      "label": "字形"
+    },
+    "logo_path": {
+      "label": "自定义图片",
+      "description": "SVG 或 PNG。留空表示使用插件文件夹中的 logo.svg。"
+    },
+    "icon_size": {
+      "label": "图标大小（px）"
+    },
+    "size": {
+      "label": "图标大小（px）"
+    },
+    "show_percent": {
+      "label": "显示用量百分比"
+    },
+    "percent_mode": {
+      "label": "百分比显示",
+      "used": "已用（22%）",
+      "left": "剩余（剩余 78%）"
+    },
+    "show_prefix": {
+      "label": "显示 5h / 7d 标签",
+      "description": "在每个百分比前加上其窗口。"
+    },
+    "show_bar": {
+      "label": "显示进度条",
+      "description": "百分比旁边的小进度条。"
+    },
+    "bar_width": {
+      "label": "进度条宽度（px）"
+    },
+    "gauge_mode": {
+      "label": "进度条和圆环显示",
+      "description": "进度条和用量圆环按什么填充。",
+      "left": "剩余部分",
+      "used": "已用部分"
+    },
+    "show_reset": {
+      "label": "显示距重置时间",
+      "description": "距离窗口重置的剩余时间。"
+    },
+    "reset_format": {
+      "label": "重置时间格式",
+      "compact": "紧凑（1:44）",
+      "verbose": "详细（1h 44m）"
+    },
+    "ready_text": {
+      "label": "无待重置时的文字",
+      "description": "窗口未运行时代替倒计时显示。留空 = 你所用语言的“就绪”。"
+    },
+    "show_tokens": {
+      "label": "显示已用令牌",
+      "description": "窗口内已用令牌（输入 + 输出 + 缓存写入，来自本地对话记录）。"
+    },
+    "include_cache_read": {
+      "label": "计入缓存读取",
+      "description": "加上从提示缓存读取的令牌。它们便宜但数量多，因此数字会大很多。"
+    },
+    "token_format": {
+      "label": "令牌格式",
+      "short": "简短（92k）",
+      "full": "完整（92424）"
+    },
+    "separator": {
+      "label": "项目间分隔符",
+      "none": "无",
+      "dot": "圆点（·）",
+      "bar": "竖线（|）",
+      "slash": "斜杠（/）"
+    },
+    "dim_extras": {
+      "label": "淡化时间和令牌",
+      "description": "以柔和的颜色显示距重置时间和令牌；只有百分比保留用量颜色。"
+    },
+    "gap": {
+      "label": "项目间距（px）"
+    },
+    "font_weight": {
+      "label": "字重",
+      "medium": "中等",
+      "bold": "粗体"
+    },
+    "color_by_usage": {
+      "label": "按用量着色",
+      "description": "超过阈值时切换为警告 / 严重颜色。"
+    },
+    "warn_at": {
+      "label": "警告阈值（%）"
+    },
+    "critical_at": {
+      "label": "严重阈值（%）"
+    },
+    "color": {
+      "label": "文字颜色",
+      "description": "正常用量时的颜色角色或 hex 颜色。"
+    },
+    "warn_color": {
+      "label": "警告颜色"
+    },
+    "critical_color": {
+      "label": "严重颜色"
+    },
+    "click_command": {
+      "label": "点击命令",
+      "description": "左键点击时运行的 shell 命令，例如 alacritty -e claude。留空 = 立即刷新。右键点击始终刷新。"
+    },
+    "command": {
+      "label": "点击命令",
+      "description": "点击图标时运行的命令。"
+    },
+    "animation_ms": {
+      "label": "悬停动画（ms）",
+      "description": "详情滑出并淡入所需的时间。0 表示关闭动画。"
+    }
+  },
+  "bar": {
+    "left": "剩余 {pct}%",
+    "ready": "就绪"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  （{time} 后重置）",
+    "tokens": "令牌：{tokens}，缓存读取：{cache}",
+    "now": "即将",
+    "stale": "数据过期：{error}",
+    "loading": "加载中..."
+  },
+  "error": {
+    "no_credentials": "未登录 Claude Code",
+    "token_expired": "令牌已过期 - 使用一次 Claude Code 即可刷新",
+    "network": "无网络连接",
+    "bad_response": "API 响应异常",
+    "http_429": "请求受限 - 稍后重试"
+  }
+}

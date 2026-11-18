@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Yenileme aralığı (dakika)",
+      "description": "Kullanım API'sinin ne sıklıkla sorgulanacağı."
+    },
+    "window": {
+      "label": "Limit penceresi",
+      "description": "Çubuğun hangi kullanım penceresini göstereceği.",
+      "five_hour": "5 saatlik oturum",
+      "weekly": "Haftalık (7g)",
+      "both": "Her ikisi"
+    },
+    "display_mode": {
+      "label": "Ayrıntıları göster",
+      "description": "Sıfırlamaya kalan süre, token ve çubuğun ne zaman gösterileceği.",
+      "always": "Her zaman",
+      "important": "Yalnızca kullanım yüksekken (uyarı eşiğinin üstünde)",
+      "hover": "Yalnızca üzerine gelince (aksi halde simge veya halka)"
+    },
+    "logo": {
+      "label": "Simge",
+      "description": "Metnin önünde gösterilir. Halka, limitin kalan (veya kullanılan) kısmıyla dolar.",
+      "none": "Yok",
+      "glyph": "Glif",
+      "star": "Yıldız (dahili)",
+      "custom": "Özel görsel",
+      "ring": "Kullanım halkası"
+    },
+    "glyph": {
+      "label": "Glif"
+    },
+    "logo_path": {
+      "label": "Özel görsel",
+      "description": "SVG veya PNG. Boş bırakılırsa eklenti klasöründeki logo.svg kullanılır."
+    },
+    "icon_size": {
+      "label": "Simge boyutu (px)"
+    },
+    "size": {
+      "label": "Simge boyutu (px)"
+    },
+    "show_percent": {
+      "label": "Kullanım yüzdesini göster"
+    },
+    "percent_mode": {
+      "label": "Yüzde gösterir",
+      "used": "Kullanılan (22%)",
+      "left": "Kalan (%78 kaldı)"
+    },
+    "show_prefix": {
+      "label": "5h / 7d etiketlerini göster",
+      "description": "Her yüzdenin önüne penceresini ekler."
+    },
+    "show_bar": {
+      "label": "İlerleme çubuğunu göster",
+      "description": "Yüzdenin yanında küçük bir çubuk."
+    },
+    "bar_width": {
+      "label": "İlerleme çubuğu genişliği (px)"
+    },
+    "gauge_mode": {
+      "label": "Çubuk ve halka gösterir",
+      "description": "İlerleme çubuğunun ve kullanım halkasının neyle dolacağı.",
+      "left": "Kalanı",
+      "used": "Kullanılanı"
+    },
+    "show_reset": {
+      "label": "Sıfırlamaya kalan süreyi göster",
+      "description": "Pencerenin sıfırlanmasına kalan süre."
+    },
+    "reset_format": {
+      "label": "Sıfırlama süresi biçimi",
+      "compact": "Kısa (1:44)",
+      "verbose": "Ayrıntılı (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Bekleyen sıfırlama yokken metin",
+      "description": "Pencere çalışmıyorken geri sayım yerine gösterilir. Boş = kendi dilinizde \"hazır\"."
+    },
+    "show_tokens": {
+      "label": "Kullanılan tokenları göster",
+      "description": "Pencerede kullanılan tokenlar (girdi + çıktı + önbellek oluşturma, yerel dökümlerden)."
+    },
+    "include_cache_read": {
+      "label": "Önbellek okumalarını dahil et",
+      "description": "İstem önbelleğinden okunan tokenları ekler. Ucuzdurlar ama çoktur, bu yüzden sayı çok büyür."
+    },
+    "token_format": {
+      "label": "Token biçimi",
+      "short": "Kısa (92k)",
+      "full": "Tam (92424)"
+    },
+    "separator": {
+      "label": "Öğeler arası ayırıcı",
+      "none": "Yok",
+      "dot": "Nokta (·)",
+      "bar": "Dikey çizgi (|)",
+      "slash": "Eğik çizgi (/)"
+    },
+    "dim_extras": {
+      "label": "Süreyi ve tokenları soluklaştır",
+      "description": "Sıfırlamaya kalan süreyi ve tokenları soluk renkte gösterir; kullanım rengini yalnızca yüzde korur."
+    },
+    "gap": {
+      "label": "Öğeler arası boşluk (px)"
+    },
+    "font_weight": {
+      "label": "Yazı kalınlığı",
+      "medium": "Orta",
+      "bold": "Kalın"
+    },
+    "color_by_usage": {
+      "label": "Kullanıma göre renk",
+      "description": "Eşiklerin üzerinde uyarı / kritik renklere geçer."
+    },
+    "warn_at": {
+      "label": "Uyarı eşiği (%)"
+    },
+    "critical_at": {
+      "label": "Kritik eşik (%)"
+    },
+    "color": {
+      "label": "Metin rengi",
+      "description": "Normal kullanım için renk rolü veya hex renk."
+    },
+    "warn_color": {
+      "label": "Uyarı rengi"
+    },
+    "critical_color": {
+      "label": "Kritik renk"
+    },
+    "click_command": {
+      "label": "Tıklama komutu",
+      "description": "Sol tıklamada çalışan kabuk komutu, ör. alacritty -e claude. Boş = şimdi yenile. Sağ tıklama her zaman yeniler."
+    },
+    "command": {
+      "label": "Tıklama komutu",
+      "description": "Simgeye tıklanınca çalışan komut."
+    },
+    "animation_ms": {
+      "label": "Üzerine gelme animasyonu (ms)",
+      "description": "Ayrıntıların kayarak belirmesinin ne kadar süreceği. 0 animasyonu kapatır."
+    }
+  },
+  "bar": {
+    "left": "%{pct} kaldı",
+    "ready": "hazır"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  ({time} sonra sıfırlanır)",
+    "tokens": "tokenlar: {tokens}, önbellek okuma: {cache}",
+    "now": "şimdi",
+    "stale": "Güncel değil: {error}",
+    "loading": "Yükleniyor..."
+  },
+  "error": {
+    "no_credentials": "Claude Code'da oturum açılmamış",
+    "token_expired": "Tokenın süresi doldu - yenilemek için Claude Code'u bir kez kullanın",
+    "network": "Bağlantı yok",
+    "bad_response": "Beklenmeyen API yanıtı",
+    "http_429": "İstek sınırı - yeniden denenecek"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Interval abnaŭlennia (chviliny)",
+      "description": "Jak časta apytvajecca API vykarystannia."
+    },
+    "window": {
+      "label": "Akno limitu",
+      "description": "Jakoje akno vykarystannia pakazvaje paneĺ.",
+      "five_hour": "5-hadzinnaja sesija",
+      "weekly": "Tydzień (7 dz)",
+      "both": "Abodva"
+    },
+    "display_mode": {
+      "label": "Pakazvać padrabiaznasci",
+      "description": "Kali pakazvajucca čas da skidu, tokieny i palasa.",
+      "always": "Zaŭsiody",
+      "important": "Toĺki pry vysokim vykarystanni (vyšej za paroh papiaredžannia)",
+      "hover": "Toĺki pry naviadzienni (inakš značok abo kaĺco)"
+    },
+    "logo": {
+      "label": "Značok",
+      "description": "Pakazvajecca pierad tekstam. Kaĺco zapaŭniajecca reštaj (abo vykarystanaj) častkaj limitu.",
+      "none": "Niama",
+      "glyph": "Hlif",
+      "star": "Zorka (ubudavanaja)",
+      "custom": "Ulasny maliunak",
+      "ring": "Kaĺco vykarystannia"
+    },
+    "glyph": {
+      "label": "Hlif"
+    },
+    "logo_path": {
+      "label": "Ulasny maliunak",
+      "description": "SVG abo PNG. Pusta aznačaje logo.svg u papcy plahina."
+    },
+    "icon_size": {
+      "label": "Pamier značka (px)"
+    },
+    "size": {
+      "label": "Pamier značka (px)"
+    },
+    "show_percent": {
+      "label": "Pakazvać pracent vykarystannia"
+    },
+    "percent_mode": {
+      "label": "Pracent pakazvaje",
+      "used": "Vykarystana (22%)",
+      "left": "Zastałosia (zastałosia 78%)"
+    },
+    "show_prefix": {
+      "label": "Pakazvać mietki 5h / 7d",
+      "description": "Dadavać pierad kožnym pracentam jaho akno."
+    },
+    "show_bar": {
+      "label": "Pakazvać palasu prahresu",
+      "description": "Nievialikaja palasa pobač z pracentam."
+    },
+    "bar_width": {
+      "label": "Šyrynia palasy prahresu (px)"
+    },
+    "gauge_mode": {
+      "label": "Palasa i kaĺco pakazvajuć",
+      "description": "Čym zapaŭniajucca palasa prahresu i kaĺco vykarystannia.",
+      "left": "Koĺki zastałosia",
+      "used": "Koĺki vykarystana"
+    },
+    "show_reset": {
+      "label": "Pakazvać čas da skidu",
+      "description": "Čas da skidu akna."
+    },
+    "reset_format": {
+      "label": "Farmat času skidu",
+      "compact": "Scisły (1:44)",
+      "verbose": "Padrabiazny (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Tekst, kali skid nie čakajecca",
+      "description": "Pakazvajecca zamiest advarotnaha adliku, kali akno nie idzie. Pusta = «hatova» na vašaj movie."
+    },
+    "show_tokens": {
+      "label": "Pakazvać vykarystanyja tokieny",
+      "description": "Tokieny, vykarystanyja ŭ aknie (uvod + vyvad + zapis u keš, z lakaĺnych žurnałaŭ)."
+    },
+    "include_cache_read": {
+      "label": "Uličvać čytanni z keša",
+      "description": "Dadać tokieny, pračytanyja z keša promptaŭ. Jany tannyja, ale ich šmat, tamu lik mocna rascie."
+    },
+    "token_format": {
+      "label": "Farmat tokienaŭ",
+      "short": "Scisły (92k)",
+      "full": "Poŭny (92424)"
+    },
+    "separator": {
+      "label": "Razdzialiaĺnik pamiž elemientami",
+      "none": "Niama",
+      "dot": "Kropka (·)",
+      "bar": "Ryska (|)",
+      "slash": "Kasaja ryska (/)"
+    },
+    "dim_extras": {
+      "label": "Pryhłušać čas i tokieny",
+      "description": "Čas da skidu i tokieny pryhłušanym kolieram; kolier vykarystannia zachoŭvaje toĺki pracent."
+    },
+    "gap": {
+      "label": "Adstup pamiž elemientami (px)"
+    },
+    "font_weight": {
+      "label": "Taŭščynia šryftu",
+      "medium": "Siaredni",
+      "bold": "Toŭsty"
+    },
+    "color_by_usage": {
+      "label": "Kolier pavodle vykarystannia",
+      "description": "Vyšej za parohi pierakliučacca na koliery papiaredžannia / krytyčny."
+    },
+    "warn_at": {
+      "label": "Paroh papiaredžannia (%)"
+    },
+    "critical_at": {
+      "label": "Krytyčny paroh (%)"
+    },
+    "color": {
+      "label": "Kolier tekstu",
+      "description": "Kaliarovaja rolia abo hex-kolier dlia zvyčajnaha vykarystannia."
+    },
+    "warn_color": {
+      "label": "Kolier papiaredžannia"
+    },
+    "critical_color": {
+      "label": "Krytyčny kolier"
+    },
+    "click_command": {
+      "label": "Kamanda pa pstryčcy",
+      "description": "Kamanda abałonki pa levaj pstryčcy, napr. alacritty -e claude. Pusta = abnavić zaraz. Pravaja pstryčka zaŭsiody abnaŭliaje."
+    },
+    "command": {
+      "label": "Kamanda pa pstryčcy",
+      "description": "Kamanda, što vykonvajecca pa pstryčcy na značku."
+    },
+    "animation_ms": {
+      "label": "Animacyja pry naviadzienni (ms)",
+      "description": "Koĺki doŭžycca vysoŭvannie i zjaŭliennie padrabiaznasciej. 0 vykliučaje animacyju."
+    }
+  },
+  "bar": {
+    "left": "zastałosia {pct}%",
+    "ready": "hatova"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (skid praz {time})",
+    "tokens": "tokieny: {tokens}, čytannie keša: {cache}",
+    "now": "zaraz",
+    "stale": "Sastareła: {error}",
+    "loading": "Zahruzka..."
+  },
+  "error": {
+    "no_credentials": "Uvachod u Claude Code nie vykanany",
+    "token_expired": "Termin tokiena skončyŭsia - adzin raz skarystajciesia Claude Code, kab abnavić jaho",
+    "network": "Niama złučennia",
+    "bad_response": "Niečakany adkaz API",
+    "http_429": "Limit zapytaŭ - pasprabuju paźniej"
+  }
+}

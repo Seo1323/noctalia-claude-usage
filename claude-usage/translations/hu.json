@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Frissítési időköz (perc)",
+      "description": "Milyen gyakran kérdezi le a használati API-t."
+    },
+    "window": {
+      "label": "Korlátablak",
+      "description": "Melyik használati ablakot mutatja a sáv.",
+      "five_hour": "5 órás munkamenet",
+      "weekly": "Heti (7 nap)",
+      "both": "Mindkettő"
+    },
+    "display_mode": {
+      "label": "Részletek megjelenítése",
+      "description": "Mikor látszik a visszaállításig hátralévő idő, a tokenek és a sáv.",
+      "always": "Mindig",
+      "important": "Csak magas használatnál (a figyelmeztetési küszöb felett)",
+      "hover": "Csak rámutatáskor (egyébként ikon vagy gyűrű)"
+    },
+    "logo": {
+      "label": "Ikon",
+      "description": "A szöveg előtt jelenik meg. A gyűrű a korlát hátralévő (vagy felhasznált) részével telik meg.",
+      "none": "Nincs",
+      "glyph": "Glifa",
+      "star": "Csillag (mellékelt)",
+      "custom": "Egyéni kép",
+      "ring": "Használati gyűrű"
+    },
+    "glyph": {
+      "label": "Glifa"
+    },
+    "logo_path": {
+      "label": "Egyéni kép",
+      "description": "SVG vagy PNG. Üresen a bővítmény mappájában lévő logo.svg."
+    },
+    "icon_size": {
+      "label": "Ikonméret (px)"
+    },
+    "size": {
+      "label": "Ikonméret (px)"
+    },
+    "show_percent": {
+      "label": "Használati százalék megjelenítése"
+    },
+    "percent_mode": {
+      "label": "A százalék mutatja",
+      "used": "Felhasznált (22%)",
+      "left": "Hátralévő (78% maradt)"
+    },
+    "show_prefix": {
+      "label": "5h / 7d címkék megjelenítése",
+      "description": "Minden százalék elé odaírja az ablakát."
+    },
+    "show_bar": {
+      "label": "Folyamatjelző megjelenítése",
+      "description": "Kis sáv a százalék mellett."
+    },
+    "bar_width": {
+      "label": "Folyamatjelző szélessége (px)"
+    },
+    "gauge_mode": {
+      "label": "A sáv és a gyűrű mutatja",
+      "description": "Mivel telik meg a folyamatjelző és a használati gyűrű.",
+      "left": "Ami maradt",
+      "used": "Ami elfogyott"
+    },
+    "show_reset": {
+      "label": "Visszaállításig hátralévő idő",
+      "description": "Az ablak visszaállításáig hátralévő idő."
+    },
+    "reset_format": {
+      "label": "Visszaállítási idő formátuma",
+      "compact": "Tömör (1:44)",
+      "verbose": "Részletes (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Szöveg, ha nincs függő visszaállítás",
+      "description": "A visszaszámlálás helyett jelenik meg, ha az ablak nem fut. Üresen = „kész” a saját nyelveden."
+    },
+    "show_tokens": {
+      "label": "Felhasznált tokenek megjelenítése",
+      "description": "Az ablakban felhasznált tokenek (bemenet + kimenet + gyorsítótár-írás, a helyi átiratokból)."
+    },
+    "include_cache_read": {
+      "label": "Gyorsítótár-olvasások beszámítása",
+      "description": "A prompt-gyorsítótárból olvasott tokenek hozzáadása. Olcsók, de sok van belőlük, így a szám jóval nagyobb lesz."
+    },
+    "token_format": {
+      "label": "Tokenformátum",
+      "short": "Rövid (92k)",
+      "full": "Teljes (92424)"
+    },
+    "separator": {
+      "label": "Elválasztó az elemek között",
+      "none": "Nincs",
+      "dot": "Pont (·)",
+      "bar": "Függőleges vonal (|)",
+      "slash": "Perjel (/)"
+    },
+    "dim_extras": {
+      "label": "Idő és tokenek halványítása",
+      "description": "A visszaállításig hátralévő idő és a tokenek tompított színnel; csak a százalék tartja meg a használati színt."
+    },
+    "gap": {
+      "label": "Elemek közötti térköz (px)"
+    },
+    "font_weight": {
+      "label": "Betűvastagság",
+      "medium": "Közepes",
+      "bold": "Félkövér"
+    },
+    "color_by_usage": {
+      "label": "Színezés használat szerint",
+      "description": "A küszöbök felett figyelmeztető / kritikus színre vált."
+    },
+    "warn_at": {
+      "label": "Figyelmeztetési küszöb (%)"
+    },
+    "critical_at": {
+      "label": "Kritikus küszöb (%)"
+    },
+    "color": {
+      "label": "Szövegszín",
+      "description": "Színszerep vagy hex szín normál használathoz."
+    },
+    "warn_color": {
+      "label": "Figyelmeztető szín"
+    },
+    "critical_color": {
+      "label": "Kritikus szín"
+    },
+    "click_command": {
+      "label": "Kattintási parancs",
+      "description": "Bal kattintáskor futó shell-parancs, pl. alacritty -e claude. Üresen = frissítés most. A jobb kattintás mindig frissít."
+    },
+    "command": {
+      "label": "Kattintási parancs",
+      "description": "Az ikonra kattintáskor futó parancs."
+    },
+    "animation_ms": {
+      "label": "Rámutatási animáció (ms)",
+      "description": "Mennyi idő alatt csúsznak elő és jelennek meg a részletek. 0 kikapcsolja az animációt."
+    }
+  },
+  "bar": {
+    "left": "{pct}% maradt",
+    "ready": "kész"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (visszaállítás: {time} múlva)",
+    "tokens": "tokenek: {tokens}, gyorsítótár-olvasás: {cache}",
+    "now": "most",
+    "stale": "Elavult: {error}",
+    "loading": "Betöltés..."
+  },
+  "error": {
+    "no_credentials": "Nincs bejelentkezve a Claude Code-ba",
+    "token_expired": "A token lejárt - használd egyszer a Claude Code-ot a frissítéséhez",
+    "network": "Nincs kapcsolat",
+    "bad_response": "Váratlan API-válasz",
+    "http_429": "Kéréskorlát - később újrapróbálja"
+  }
+}

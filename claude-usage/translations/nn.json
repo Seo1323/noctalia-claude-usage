@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Oppdateringsintervall (minutt)",
+      "description": "Kor ofte bruks-API-et vert spurt."
+    },
+    "window": {
+      "label": "Grensevindauge",
+      "description": "Kva bruksvindauge linja viser.",
+      "five_hour": "5-timarsøkt",
+      "weekly": "Vekentleg (7 d)",
+      "both": "Begge"
+    },
+    "display_mode": {
+      "label": "Vis detaljar",
+      "description": "Når tid til nullstilling, token og stolpe vert viste.",
+      "always": "Alltid",
+      "important": "Berre ved høg bruk (over åtvaringsgrensa)",
+      "hover": "Berre ved peikar over (elles ikon eller ring)"
+    },
+    "logo": {
+      "label": "Ikon",
+      "description": "Vert vist før teksten. Ringen vert fylt med den attverande (eller brukte) delen av grensa.",
+      "none": "Ingen",
+      "glyph": "Glyf",
+      "star": "Stjerne (medfølgjande)",
+      "custom": "Eige bilete",
+      "ring": "Bruksring"
+    },
+    "glyph": {
+      "label": "Glyf"
+    },
+    "logo_path": {
+      "label": "Eige bilete",
+      "description": "SVG eller PNG. Tomt tyder logo.svg i programtilleggsmappa."
+    },
+    "icon_size": {
+      "label": "Ikonstorleik (px)"
+    },
+    "size": {
+      "label": "Ikonstorleik (px)"
+    },
+    "show_percent": {
+      "label": "Vis bruk i prosent"
+    },
+    "percent_mode": {
+      "label": "Prosenten viser",
+      "used": "Brukt (22%)",
+      "left": "Att (78% att)"
+    },
+    "show_prefix": {
+      "label": "Vis merkelappane 5h / 7d",
+      "description": "Set vindauget framfor kvar prosent."
+    },
+    "show_bar": {
+      "label": "Vis framdriftsstolpe",
+      "description": "Ein liten stolpe ved sida av prosenten."
+    },
+    "bar_width": {
+      "label": "Breidd på framdriftsstolpen (px)"
+    },
+    "gauge_mode": {
+      "label": "Stolpe og ring viser",
+      "description": "Kva framdriftsstolpen og bruksringen vert fylte med.",
+      "left": "Det som er att",
+      "used": "Det som er brukt"
+    },
+    "show_reset": {
+      "label": "Vis tid til nullstilling",
+      "description": "Tid att til vindauget vert nullstilt."
+    },
+    "reset_format": {
+      "label": "Format for nullstillingstid",
+      "compact": "Kompakt (1:44)",
+      "verbose": "Utfyllande (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Tekst når inga nullstilling ventar",
+      "description": "Vert vist i staden for nedteljinga når vindauget ikkje går. Tomt = «klar» på ditt språk."
+    },
+    "show_tokens": {
+      "label": "Vis brukte token",
+      "description": "Token brukte i vindauget (inndata + utdata + bufferoppretting, frå lokale transkript)."
+    },
+    "include_cache_read": {
+      "label": "Ta med bufferlesingar",
+      "description": "Legg til token lesne frå prompt-bufferen. Dei er billege men mange, så talet vert mykje større."
+    },
+    "token_format": {
+      "label": "Tokenformat",
+      "short": "Kort (92k)",
+      "full": "Fullt (92424)"
+    },
+    "separator": {
+      "label": "Skiljeteikn mellom element",
+      "none": "Ingen",
+      "dot": "Punkt (·)",
+      "bar": "Strek (|)",
+      "slash": "Skråstrek (/)"
+    },
+    "dim_extras": {
+      "label": "Dempa tid og token",
+      "description": "Vis tid til nullstilling og token i ein dempa farge; berre prosenten held på bruksfargen."
+    },
+    "gap": {
+      "label": "Avstand mellom element (px)"
+    },
+    "font_weight": {
+      "label": "Skriftvekt",
+      "medium": "Medium",
+      "bold": "Feit"
+    },
+    "color_by_usage": {
+      "label": "Farge etter bruk",
+      "description": "Byt til åtvarings- / kritiske fargar over grensene."
+    },
+    "warn_at": {
+      "label": "Åtvaringsgrense (%)"
+    },
+    "critical_at": {
+      "label": "Kritisk grense (%)"
+    },
+    "color": {
+      "label": "Tekstfarge",
+      "description": "Fargerolle eller hex-farge for vanleg bruk."
+    },
+    "warn_color": {
+      "label": "Åtvaringsfarge"
+    },
+    "critical_color": {
+      "label": "Kritisk farge"
+    },
+    "click_command": {
+      "label": "Klikkommando",
+      "description": "Skalkommando ved venstreklikk, t.d. alacritty -e claude. Tomt = oppdater no. Høgreklikk oppdaterer alltid."
+    },
+    "command": {
+      "label": "Klikkommando",
+      "description": "Kommando som vert køyrd når ikonet vert klikka."
+    },
+    "animation_ms": {
+      "label": "Animasjon ved peikar over (ms)",
+      "description": "Kor lang tid detaljane brukar på å gli fram og tonast inn. 0 slår av animasjonen."
+    }
+  },
+  "bar": {
+    "left": "{pct}% att",
+    "ready": "klar"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (nullstilt om {time})",
+    "tokens": "token: {tokens}, bufferlesing: {cache}",
+    "now": "no",
+    "stale": "Utdatert: {error}",
+    "loading": "Lastar..."
+  },
+  "error": {
+    "no_credentials": "Ikkje logga inn i Claude Code",
+    "token_expired": "Tokenet har gått ut - bruk Claude Code éin gong for å fornya det",
+    "network": "Inga tilkopling",
+    "bad_response": "Uventa API-svar",
+    "http_429": "Avgrensa førespurnader - prøver på nytt"
+  }
+}

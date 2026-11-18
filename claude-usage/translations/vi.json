@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Khoảng làm mới (phút)",
+      "description": "Tần suất truy vấn API sử dụng."
+    },
+    "window": {
+      "label": "Cửa sổ giới hạn",
+      "description": "Thanh hiển thị cửa sổ sử dụng nào.",
+      "five_hour": "Phiên 5 giờ",
+      "weekly": "Hằng tuần (7 ngày)",
+      "both": "Cả hai"
+    },
+    "display_mode": {
+      "label": "Hiện chi tiết",
+      "description": "Khi nào hiện thời gian đến lúc đặt lại, token và thanh.",
+      "always": "Luôn luôn",
+      "important": "Chỉ khi mức dùng cao (trên ngưỡng cảnh báo)",
+      "hover": "Chỉ khi rê chuột (nếu không thì biểu tượng hoặc vòng)"
+    },
+    "logo": {
+      "label": "Biểu tượng",
+      "description": "Hiển thị trước văn bản. Vòng được tô theo phần còn lại (hoặc đã dùng) của giới hạn.",
+      "none": "Không có",
+      "glyph": "Glyph",
+      "star": "Ngôi sao (đi kèm)",
+      "custom": "Ảnh tùy chỉnh",
+      "ring": "Vòng sử dụng"
+    },
+    "glyph": {
+      "label": "Glyph"
+    },
+    "logo_path": {
+      "label": "Ảnh tùy chỉnh",
+      "description": "SVG hoặc PNG. Để trống nghĩa là logo.svg trong thư mục plugin."
+    },
+    "icon_size": {
+      "label": "Kích thước biểu tượng (px)"
+    },
+    "size": {
+      "label": "Kích thước biểu tượng (px)"
+    },
+    "show_percent": {
+      "label": "Hiện phần trăm sử dụng"
+    },
+    "percent_mode": {
+      "label": "Phần trăm hiển thị",
+      "used": "Đã dùng (22%)",
+      "left": "Còn lại (còn 78%)"
+    },
+    "show_prefix": {
+      "label": "Hiện nhãn 5h / 7d",
+      "description": "Thêm tên cửa sổ trước mỗi phần trăm."
+    },
+    "show_bar": {
+      "label": "Hiện thanh tiến trình",
+      "description": "Một thanh nhỏ cạnh phần trăm."
+    },
+    "bar_width": {
+      "label": "Độ rộng thanh tiến trình (px)"
+    },
+    "gauge_mode": {
+      "label": "Thanh và vòng hiển thị",
+      "description": "Thanh tiến trình và vòng sử dụng được tô theo gì.",
+      "left": "Phần còn lại",
+      "used": "Phần đã dùng"
+    },
+    "show_reset": {
+      "label": "Hiện thời gian đến lúc đặt lại",
+      "description": "Thời gian còn lại cho đến khi cửa sổ được đặt lại."
+    },
+    "reset_format": {
+      "label": "Định dạng thời gian đặt lại",
+      "compact": "Gọn (1:44)",
+      "verbose": "Đầy đủ (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Văn bản khi không có lần đặt lại nào",
+      "description": "Hiển thị thay cho đếm ngược khi cửa sổ không chạy. Để trống = \"sẵn sàng\" theo ngôn ngữ của bạn."
+    },
+    "show_tokens": {
+      "label": "Hiện token đã dùng",
+      "description": "Token đã dùng trong cửa sổ (đầu vào + đầu ra + tạo bộ nhớ đệm, từ bản ghi cục bộ)."
+    },
+    "include_cache_read": {
+      "label": "Tính cả lượt đọc bộ nhớ đệm",
+      "description": "Cộng thêm token đọc từ bộ nhớ đệm prompt. Chúng rẻ nhưng nhiều, nên con số lớn hơn nhiều."
+    },
+    "token_format": {
+      "label": "Định dạng token",
+      "short": "Ngắn (92k)",
+      "full": "Đầy đủ (92424)"
+    },
+    "separator": {
+      "label": "Dấu phân cách giữa các mục",
+      "none": "Không có",
+      "dot": "Dấu chấm (·)",
+      "bar": "Gạch đứng (|)",
+      "slash": "Gạch chéo (/)"
+    },
+    "dim_extras": {
+      "label": "Làm mờ thời gian và token",
+      "description": "Hiện thời gian đặt lại và token bằng màu dịu; chỉ phần trăm giữ màu sử dụng."
+    },
+    "gap": {
+      "label": "Khoảng cách giữa các mục (px)"
+    },
+    "font_weight": {
+      "label": "Độ đậm phông chữ",
+      "medium": "Vừa",
+      "bold": "Đậm"
+    },
+    "color_by_usage": {
+      "label": "Tô màu theo mức dùng",
+      "description": "Chuyển sang màu cảnh báo / nguy cấp khi vượt ngưỡng."
+    },
+    "warn_at": {
+      "label": "Ngưỡng cảnh báo (%)"
+    },
+    "critical_at": {
+      "label": "Ngưỡng nguy cấp (%)"
+    },
+    "color": {
+      "label": "Màu chữ",
+      "description": "Vai trò màu hoặc màu hex cho mức dùng bình thường."
+    },
+    "warn_color": {
+      "label": "Màu cảnh báo"
+    },
+    "critical_color": {
+      "label": "Màu nguy cấp"
+    },
+    "click_command": {
+      "label": "Lệnh khi nhấp",
+      "description": "Lệnh shell chạy khi nhấp chuột trái, ví dụ alacritty -e claude. Để trống = làm mới ngay. Nhấp chuột phải luôn làm mới."
+    },
+    "command": {
+      "label": "Lệnh khi nhấp",
+      "description": "Lệnh chạy khi nhấp vào biểu tượng."
+    },
+    "animation_ms": {
+      "label": "Hiệu ứng khi rê chuột (ms)",
+      "description": "Thời gian để chi tiết trượt ra và hiện dần. 0 tắt hiệu ứng."
+    }
+  },
+  "bar": {
+    "left": "còn {pct}%",
+    "ready": "sẵn sàng"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (đặt lại sau {time})",
+    "tokens": "token: {tokens}, đọc bộ nhớ đệm: {cache}",
+    "now": "bây giờ",
+    "stale": "Đã cũ: {error}",
+    "loading": "Đang tải..."
+  },
+  "error": {
+    "no_credentials": "Chưa đăng nhập Claude Code",
+    "token_expired": "Token đã hết hạn - hãy dùng Claude Code một lần để làm mới",
+    "network": "Không có kết nối",
+    "bad_response": "Phản hồi API không mong đợi",
+    "http_429": "Bị giới hạn yêu cầu - sẽ thử lại"
+  }
+}

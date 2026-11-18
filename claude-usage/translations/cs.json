@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Interval obnovení (minuty)",
+      "description": "Jak často se dotazuje API využití."
+    },
+    "window": {
+      "label": "Okno limitu",
+      "description": "Které okno využití lišta zobrazuje.",
+      "five_hour": "5hodinová relace",
+      "weekly": "Týdenní (7d)",
+      "both": "Obě"
+    },
+    "display_mode": {
+      "label": "Zobrazit podrobnosti",
+      "description": "Kdy se zobrazí čas do resetu, tokeny a lišta.",
+      "always": "Vždy",
+      "important": "Jen při vysokém využití (nad prahem varování)",
+      "hover": "Jen při najetí myší (jinak ikona nebo kruh)"
+    },
+    "logo": {
+      "label": "Ikona",
+      "description": "Zobrazí se před textem. Kruh se plní zbývající (nebo využitou) částí limitu.",
+      "none": "Žádná",
+      "glyph": "Glyf",
+      "star": "Hvězda (přibalená)",
+      "custom": "Vlastní obrázek",
+      "ring": "Kruh využití"
+    },
+    "glyph": {
+      "label": "Glyf"
+    },
+    "logo_path": {
+      "label": "Vlastní obrázek",
+      "description": "SVG nebo PNG. Prázdné znamená logo.svg ve složce pluginu."
+    },
+    "icon_size": {
+      "label": "Velikost ikony (px)"
+    },
+    "size": {
+      "label": "Velikost ikony (px)"
+    },
+    "show_percent": {
+      "label": "Zobrazit procento využití"
+    },
+    "percent_mode": {
+      "label": "Procento ukazuje",
+      "used": "Využito (22%)",
+      "left": "Zbývá (zbývá 78%)"
+    },
+    "show_prefix": {
+      "label": "Zobrazit štítky 5h / 7d",
+      "description": "Před každé procento přidat jeho okno."
+    },
+    "show_bar": {
+      "label": "Zobrazit ukazatel průběhu",
+      "description": "Malá lišta vedle procenta."
+    },
+    "bar_width": {
+      "label": "Šířka ukazatele průběhu (px)"
+    },
+    "gauge_mode": {
+      "label": "Lišta a kruh ukazují",
+      "description": "Čím se plní ukazatel průběhu a kruh využití.",
+      "left": "Co zbývá",
+      "used": "Co je využito"
+    },
+    "show_reset": {
+      "label": "Zobrazit čas do resetu",
+      "description": "Čas zbývající do resetu okna."
+    },
+    "reset_format": {
+      "label": "Formát času resetu",
+      "compact": "Kompaktní (1:44)",
+      "verbose": "Podrobný (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Text, když reset neprobíhá",
+      "description": "Zobrazí se místo odpočtu, když okno neběží. Prázdné = „připraveno“ ve vašem jazyce."
+    },
+    "show_tokens": {
+      "label": "Zobrazit využité tokeny",
+      "description": "Tokeny využité v okně (vstup + výstup + vytvoření mezipaměti, z místních přepisů)."
+    },
+    "include_cache_read": {
+      "label": "Započítat čtení z mezipaměti",
+      "description": "Přičíst tokeny načtené z mezipaměti promptů. Jsou levné, ale početné, takže číslo výrazně vzroste."
+    },
+    "token_format": {
+      "label": "Formát tokenů",
+      "short": "Krátký (92k)",
+      "full": "Úplný (92424)"
+    },
+    "separator": {
+      "label": "Oddělovač mezi položkami",
+      "none": "Žádný",
+      "dot": "Tečka (·)",
+      "bar": "Svislice (|)",
+      "slash": "Lomítko (/)"
+    },
+    "dim_extras": {
+      "label": "Ztlumit čas a tokeny",
+      "description": "Zobrazit čas do resetu a tokeny tlumenou barvou; barvu využití si ponechá jen procento."
+    },
+    "gap": {
+      "label": "Mezera mezi položkami (px)"
+    },
+    "font_weight": {
+      "label": "Tloušťka písma",
+      "medium": "Střední",
+      "bold": "Tučné"
+    },
+    "color_by_usage": {
+      "label": "Barva podle využití",
+      "description": "Nad prahy přepnout na barvy varování / kritické."
+    },
+    "warn_at": {
+      "label": "Práh varování (%)"
+    },
+    "critical_at": {
+      "label": "Kritický práh (%)"
+    },
+    "color": {
+      "label": "Barva textu",
+      "description": "Barevná role nebo hex barva pro běžné využití."
+    },
+    "warn_color": {
+      "label": "Barva varování"
+    },
+    "critical_color": {
+      "label": "Kritická barva"
+    },
+    "click_command": {
+      "label": "Příkaz po kliknutí",
+      "description": "Příkaz shellu spuštěný levým kliknutím, např. alacritty -e claude. Prázdné = obnovit nyní. Pravé kliknutí vždy obnoví."
+    },
+    "command": {
+      "label": "Příkaz po kliknutí",
+      "description": "Příkaz spuštěný po kliknutí na ikonu."
+    },
+    "animation_ms": {
+      "label": "Animace při najetí (ms)",
+      "description": "Jak dlouho se podrobnosti vysouvají a objevují. 0 animaci vypne."
+    }
+  },
+  "bar": {
+    "left": "zbývá {pct}%",
+    "ready": "připraveno"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (reset za {time})",
+    "tokens": "tokeny: {tokens}, čtení z mezipaměti: {cache}",
+    "now": "nyní",
+    "stale": "Neaktuální: {error}",
+    "loading": "Načítání..."
+  },
+  "error": {
+    "no_credentials": "Nepřihlášeno do Claude Code",
+    "token_expired": "Token vypršel - jednou použijte Claude Code pro jeho obnovení",
+    "network": "Bez připojení",
+    "bad_response": "Neočekávaná odpověď API",
+    "http_429": "Limit požadavků - zkusím znovu"
+  }
+}

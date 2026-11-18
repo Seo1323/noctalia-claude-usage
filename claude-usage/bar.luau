@@ -25,7 +25,7 @@ local cfg = {
   gaugeLeft = conf("gauge_mode", "left") == "left",
   showReset = bool("show_reset", true),
   resetText = if conf("reset_format", "compact") == "verbose" then S.verbose else S.compact,
-  readyText = tostring(conf("ready_text", "ready")),
+  readyText = S.text("ready_text", ""), -- empty = translated "ready"
   showTokens = bool("show_tokens", true),
   cacheReads = bool("include_cache_read", false),
   fullTokens = conf("token_format", "short") == "full",
@@ -43,6 +43,7 @@ local cfg = {
   },
   clickCommand = S.text("click_command", ""),
 }
+if cfg.readyText == "" then cfg.readyText = noctalia.tr("bar.ready") end
 local hoverMode = cfg.display == "hover"
 
 local snapshot = noctalia.state.get("usage")
@@ -62,7 +63,7 @@ local function ease(t) -- ease-in-out cubic
 end
 
 local function percentText(prefix, pct)
-  local text = if pct == nil then "--" elseif cfg.percentLeft then `{100 - pct}% left` else `{pct}%`
+  local text = if pct == nil then "--" elseif cfg.percentLeft then noctalia.tr("bar.left", { pct = 100 - pct }) else `{pct}%`
   return if cfg.showPrefix then `{prefix} {text}` else text
 end
 

@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Aktualisierungsintervall (Minuten)",
+      "description": "Wie oft die Nutzungs-API abgefragt wird."
+    },
+    "window": {
+      "label": "Limit-Zeitraum",
+      "description": "Welcher Nutzungszeitraum in der Leiste angezeigt wird.",
+      "five_hour": "5-Stunden-Sitzung",
+      "weekly": "Wöchentlich (7 T)",
+      "both": "Beide"
+    },
+    "display_mode": {
+      "label": "Details anzeigen",
+      "description": "Wann Zeit bis zum Reset, Tokens und Balken angezeigt werden.",
+      "always": "Immer",
+      "important": "Nur bei hoher Nutzung (über der Warnschwelle)",
+      "hover": "Nur beim Überfahren (sonst Symbol oder Ring)"
+    },
+    "logo": {
+      "label": "Symbol",
+      "description": "Wird vor dem Text angezeigt. Der Ring füllt sich mit dem verbleibenden (oder verbrauchten) Anteil des Limits.",
+      "none": "Keins",
+      "glyph": "Glyphe",
+      "star": "Stern (mitgeliefert)",
+      "custom": "Eigenes Bild",
+      "ring": "Nutzungsring"
+    },
+    "glyph": {
+      "label": "Glyphe"
+    },
+    "logo_path": {
+      "label": "Eigenes Bild",
+      "description": "SVG oder PNG. Leer bedeutet logo.svg im Plugin-Ordner."
+    },
+    "icon_size": {
+      "label": "Symbolgröße (px)"
+    },
+    "size": {
+      "label": "Symbolgröße (px)"
+    },
+    "show_percent": {
+      "label": "Nutzung in Prozent anzeigen"
+    },
+    "percent_mode": {
+      "label": "Prozent zeigt",
+      "used": "Verbraucht (22%)",
+      "left": "Verbleibend (78% übrig)"
+    },
+    "show_prefix": {
+      "label": "5h / 7d-Beschriftung anzeigen",
+      "description": "Jedem Prozentwert den Zeitraum voranstellen."
+    },
+    "show_bar": {
+      "label": "Fortschrittsbalken anzeigen",
+      "description": "Ein kleiner Balken neben dem Prozentwert."
+    },
+    "bar_width": {
+      "label": "Breite des Fortschrittsbalkens (px)"
+    },
+    "gauge_mode": {
+      "label": "Balken und Ring zeigen",
+      "description": "Womit sich Fortschrittsbalken und Nutzungsring füllen.",
+      "left": "Was übrig ist",
+      "used": "Was verbraucht ist"
+    },
+    "show_reset": {
+      "label": "Zeit bis zum Reset anzeigen",
+      "description": "Verbleibende Zeit, bis der Zeitraum zurückgesetzt wird."
+    },
+    "reset_format": {
+      "label": "Format der Reset-Zeit",
+      "compact": "Kompakt (1:44)",
+      "verbose": "Ausführlich (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Text, wenn kein Reset ansteht",
+      "description": "Wird statt des Countdowns angezeigt, wenn der Zeitraum nicht läuft. Leer = „bereit“ in deiner Sprache."
+    },
+    "show_tokens": {
+      "label": "Verbrauchte Tokens anzeigen",
+      "description": "Im Zeitraum verbrauchte Tokens (Eingabe + Ausgabe + Cache-Erstellung, aus lokalen Transkripten)."
+    },
+    "include_cache_read": {
+      "label": "Cache-Lesezugriffe einbeziehen",
+      "description": "Aus dem Prompt-Cache gelesene Tokens hinzurechnen. Sie sind günstig, aber zahlreich, daher wird die Zahl deutlich größer."
+    },
+    "token_format": {
+      "label": "Token-Format",
+      "short": "Kurz (92k)",
+      "full": "Vollständig (92424)"
+    },
+    "separator": {
+      "label": "Trennzeichen zwischen Elementen",
+      "none": "Keins",
+      "dot": "Punkt (·)",
+      "bar": "Strich (|)",
+      "slash": "Schrägstrich (/)"
+    },
+    "dim_extras": {
+      "label": "Zeit und Tokens abdunkeln",
+      "description": "Zeit bis zum Reset und Tokens in gedämpfter Farbe; nur der Prozentwert behält die Nutzungsfarbe."
+    },
+    "gap": {
+      "label": "Abstand zwischen Elementen (px)"
+    },
+    "font_weight": {
+      "label": "Schriftstärke",
+      "medium": "Mittel",
+      "bold": "Fett"
+    },
+    "color_by_usage": {
+      "label": "Nach Nutzung einfärben",
+      "description": "Oberhalb der Schwellen zu Warn- / kritischen Farben wechseln."
+    },
+    "warn_at": {
+      "label": "Warnschwelle (%)"
+    },
+    "critical_at": {
+      "label": "Kritische Schwelle (%)"
+    },
+    "color": {
+      "label": "Textfarbe",
+      "description": "Farbrolle oder Hex-Farbe für normale Nutzung."
+    },
+    "warn_color": {
+      "label": "Warnfarbe"
+    },
+    "critical_color": {
+      "label": "Kritische Farbe"
+    },
+    "click_command": {
+      "label": "Klick-Befehl",
+      "description": "Shell-Befehl beim Linksklick, z. B. alacritty -e claude. Leer = jetzt aktualisieren. Rechtsklick aktualisiert immer."
+    },
+    "command": {
+      "label": "Klick-Befehl",
+      "description": "Befehl, der beim Klick auf das Symbol ausgeführt wird."
+    },
+    "animation_ms": {
+      "label": "Hover-Animation (ms)",
+      "description": "Wie lange die Details zum Ausfahren und Einblenden brauchen. 0 schaltet die Animation aus."
+    }
+  },
+  "bar": {
+    "left": "{pct}% übrig",
+    "ready": "bereit"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (Reset in {time})",
+    "tokens": "Tokens: {tokens}, Cache gelesen: {cache}",
+    "now": "jetzt",
+    "stale": "Veraltet: {error}",
+    "loading": "Wird geladen..."
+  },
+  "error": {
+    "no_credentials": "Nicht bei Claude Code angemeldet",
+    "token_expired": "Token abgelaufen - Claude Code einmal benutzen, um ihn zu erneuern",
+    "network": "Keine Verbindung",
+    "bad_response": "Unerwartete API-Antwort",
+    "http_429": "Anfragelimit erreicht - neuer Versuch folgt"
+  }
+}

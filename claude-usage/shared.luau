@@ -19,28 +19,19 @@ function M.text(key, default)
   return noctalia.string.trim(tostring(M.conf(key, default)))
 end
 
-local ERRORS = {
-  no_credentials = "Not logged in to Claude Code",
-  token_expired = "Token expired - use Claude Code once to refresh",
-  network = "No connection",
-  bad_response = "Unexpected API response",
-  http_429 = "Rate limited - will retry",
-}
-
--- A window whose reset time already passed has been renewed: usage is 0.
-local function effective(pct, resetAt)
-  if pct == nil then return nil end
-  if resetAt ~= nil and tonumber(resetAt) <= os.time() then return 0 end
-  return math.floor(tonumber(pct) + 0.5)
-end
+-- Error codes from fetch.sh that have a translated message (others are shown as-is).
+local ERRORS = { no_credentials = true, token_expired = true, network = true, bad_response = true, http_429 = true }
 
 -- Per-window values from a fetch.sh snapshot: { pct, reset, tokens, cache }.
+-- A window whose reset time already passed has been renewed, so it counts as unused.
 function M.windows(data, withCacheReads)
   local function window(prefix, pctKey)
-    local pct = data and effective(data[pctKey], data[prefix .. "_reset"])
+    local reset = data and data[prefix .. "_reset"]
+    local pct = data and data[pctKey]
     local tokens = data and data[prefix .. "_tokens"]
     local cache = data and data[prefix .. "_cache_read"]
-    if pct == 0 then tokens, cache = 0, 0 end
+    if pct ~= nil then pct = math.floor(tonumber(pct) + 0.5) end
+    if reset ~= nil and tonumber(reset) <= os.time() then pct, tokens, cache = 0, 0, 0 end
     if withCacheReads and tokens ~= nil then tokens = tonumber(tokens) + tonumber(cache or 0) end
     return { pct = pct, reset = data and data[prefix .. "_reset"], tokens = tokens, cache = cache }
   end
@@ -136,14 +127,17 @@ function M.tooltip(snapshot)
     local w = M.windows(data, false)
     for _, g in { { "5h", w.five }, { "7d", w.week } } do
       local win = g[2]
-      local resets = M.verbose(win.reset) or (if win.reset then "now" else "-")
-      lines[#lines + 1] = `{g[1]}: {win.pct or "--"}%  (resets in {resets})`
-      lines[#lines + 1] = `    tokens: {M.tokens(win.tokens)}, cache read: {M.tokens(win.cache)}`
+      local time = M.verbose(win.reset) or (if win.reset then noctalia.tr("tooltip.now") else "-")
+      lines[#lines + 1] = noctalia.tr("tooltip.window", { window = g[1], pct = win.pct or "--", time = time })
+      lines[#lines + 1] = "    " .. noctalia.tr("tooltip.tokens", { tokens = M.tokens(win.tokens), cache = M.tokens(win.cache) })
     end
   end
   local err = snapshot and snapshot.error
-  if err then lines[#lines + 1] = (if data then "Stale: " else "") .. (ERRORS[err] or err) end
-  if snapshot == nil then lines[#lines + 1] = "Loading..." end
+  if err then
+    local msg = if ERRORS[err] then noctalia.tr("error." .. err) else err
+    lines[#lines + 1] = if data then noctalia.tr("tooltip.stale", { error = msg }) else msg
+  end
+  if snapshot == nil then lines[#lines + 1] = noctalia.tr("tooltip.loading") end
   return table.concat(lines, "\n")
 end
 

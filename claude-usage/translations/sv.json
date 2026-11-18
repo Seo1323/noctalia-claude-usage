@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Uppdateringsintervall (minuter)",
+      "description": "Hur ofta användnings-API:t frågas."
+    },
+    "window": {
+      "label": "Gränsfönster",
+      "description": "Vilket användningsfönster fältet visar.",
+      "five_hour": "5-timmarssession",
+      "weekly": "Veckovis (7 d)",
+      "both": "Båda"
+    },
+    "display_mode": {
+      "label": "Visa detaljer",
+      "description": "När tid till återställning, tokens och stapel visas.",
+      "always": "Alltid",
+      "important": "Bara vid hög användning (över varningströskeln)",
+      "hover": "Bara vid hovring (annars ikon eller ring)"
+    },
+    "logo": {
+      "label": "Ikon",
+      "description": "Visas före texten. Ringen fylls med den återstående (eller använda) delen av gränsen.",
+      "none": "Ingen",
+      "glyph": "Glyf",
+      "star": "Stjärna (medföljer)",
+      "custom": "Egen bild",
+      "ring": "Användningsring"
+    },
+    "glyph": {
+      "label": "Glyf"
+    },
+    "logo_path": {
+      "label": "Egen bild",
+      "description": "SVG eller PNG. Tomt betyder logo.svg i insticksmappen."
+    },
+    "icon_size": {
+      "label": "Ikonstorlek (px)"
+    },
+    "size": {
+      "label": "Ikonstorlek (px)"
+    },
+    "show_percent": {
+      "label": "Visa användning i procent"
+    },
+    "percent_mode": {
+      "label": "Procenten visar",
+      "used": "Använt (22%)",
+      "left": "Kvar (78% kvar)"
+    },
+    "show_prefix": {
+      "label": "Visa etiketterna 5h / 7d",
+      "description": "Inled varje procentsats med dess fönster."
+    },
+    "show_bar": {
+      "label": "Visa förloppsstapel",
+      "description": "En liten stapel bredvid procenten."
+    },
+    "bar_width": {
+      "label": "Förloppsstapelns bredd (px)"
+    },
+    "gauge_mode": {
+      "label": "Stapel och ring visar",
+      "description": "Vad förloppsstapeln och användningsringen fylls med.",
+      "left": "Det som är kvar",
+      "used": "Det som är använt"
+    },
+    "show_reset": {
+      "label": "Visa tid till återställning",
+      "description": "Tid kvar tills fönstret återställs."
+    },
+    "reset_format": {
+      "label": "Format för återställningstid",
+      "compact": "Kompakt (1:44)",
+      "verbose": "Utförligt (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Text när ingen återställning väntar",
+      "description": "Visas i stället för nedräkningen när fönstret inte pågår. Tomt = ”klar” på ditt språk."
+    },
+    "show_tokens": {
+      "label": "Visa använda tokens",
+      "description": "Tokens använda i fönstret (indata + utdata + cacheskapande, från lokala transkript)."
+    },
+    "include_cache_read": {
+      "label": "Räkna med cacheläsningar",
+      "description": "Lägg till tokens som lästs från promptcachen. De är billiga men många, så talet blir mycket större."
+    },
+    "token_format": {
+      "label": "Tokenformat",
+      "short": "Kort (92k)",
+      "full": "Fullständigt (92424)"
+    },
+    "separator": {
+      "label": "Avgränsare mellan objekt",
+      "none": "Ingen",
+      "dot": "Punkt (·)",
+      "bar": "Streck (|)",
+      "slash": "Snedstreck (/)"
+    },
+    "dim_extras": {
+      "label": "Dämpa tid och tokens",
+      "description": "Visa tid till återställning och tokens i en dämpad färg; bara procenten behåller användningsfärgen."
+    },
+    "gap": {
+      "label": "Avstånd mellan objekt (px)"
+    },
+    "font_weight": {
+      "label": "Teckenvikt",
+      "medium": "Medium",
+      "bold": "Fet"
+    },
+    "color_by_usage": {
+      "label": "Färg efter användning",
+      "description": "Byt till varnings- / kritiska färger över trösklarna."
+    },
+    "warn_at": {
+      "label": "Varningströskel (%)"
+    },
+    "critical_at": {
+      "label": "Kritisk tröskel (%)"
+    },
+    "color": {
+      "label": "Textfärg",
+      "description": "Färgroll eller hex-färg för normal användning."
+    },
+    "warn_color": {
+      "label": "Varningsfärg"
+    },
+    "critical_color": {
+      "label": "Kritisk färg"
+    },
+    "click_command": {
+      "label": "Klickkommando",
+      "description": "Skalkommando vid vänsterklick, t.ex. alacritty -e claude. Tomt = uppdatera nu. Högerklick uppdaterar alltid."
+    },
+    "command": {
+      "label": "Klickkommando",
+      "description": "Kommando som körs när ikonen klickas."
+    },
+    "animation_ms": {
+      "label": "Hovringsanimation (ms)",
+      "description": "Hur lång tid detaljerna tar att glida fram och tonas in. 0 stänger av animationen."
+    }
+  },
+  "bar": {
+    "left": "{pct}% kvar",
+    "ready": "klar"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (återställs om {time})",
+    "tokens": "tokens: {tokens}, cacheläsning: {cache}",
+    "now": "nu",
+    "stale": "Inaktuellt: {error}",
+    "loading": "Laddar..."
+  },
+  "error": {
+    "no_credentials": "Inte inloggad i Claude Code",
+    "token_expired": "Token har gått ut - använd Claude Code en gång för att förnya den",
+    "network": "Ingen anslutning",
+    "bad_response": "Oväntat API-svar",
+    "http_429": "Begränsning av förfrågningar - försöker igen"
+  }
+}

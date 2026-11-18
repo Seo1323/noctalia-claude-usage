@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Interval d’actualització (minuts)",
+      "description": "Amb quina freqüència es consulta l’API d’ús."
+    },
+    "window": {
+      "label": "Finestra del límit",
+      "description": "Quina finestra d’ús mostra la barra.",
+      "five_hour": "Sessió de 5 hores",
+      "weekly": "Setmanal (7 d)",
+      "both": "Totes dues"
+    },
+    "display_mode": {
+      "label": "Mostra els detalls",
+      "description": "Quan es mostren el temps fins al reinici, els tokens i la barra.",
+      "always": "Sempre",
+      "important": "Només amb ús alt (per sobre del llindar d’avís)",
+      "hover": "Només en passar-hi el cursor (si no, icona o anell)"
+    },
+    "logo": {
+      "label": "Icona",
+      "description": "Es mostra abans del text. L’anell s’omple amb la part restant (o usada) del límit.",
+      "none": "Cap",
+      "glyph": "Glif",
+      "star": "Estrella (inclosa)",
+      "custom": "Imatge personalitzada",
+      "ring": "Anell d’ús"
+    },
+    "glyph": {
+      "label": "Glif"
+    },
+    "logo_path": {
+      "label": "Imatge personalitzada",
+      "description": "SVG o PNG. Buit vol dir logo.svg a la carpeta del connector."
+    },
+    "icon_size": {
+      "label": "Mida de la icona (px)"
+    },
+    "size": {
+      "label": "Mida de la icona (px)"
+    },
+    "show_percent": {
+      "label": "Mostra el percentatge d’ús"
+    },
+    "percent_mode": {
+      "label": "El percentatge mostra",
+      "used": "Usat (22%)",
+      "left": "Restant (78% restant)"
+    },
+    "show_prefix": {
+      "label": "Mostra les etiquetes 5h / 7d",
+      "description": "Posa davant de cada percentatge la seva finestra."
+    },
+    "show_bar": {
+      "label": "Mostra la barra de progrés",
+      "description": "Una barra petita al costat del percentatge."
+    },
+    "bar_width": {
+      "label": "Amplada de la barra de progrés (px)"
+    },
+    "gauge_mode": {
+      "label": "La barra i l’anell mostren",
+      "description": "De què s’omplen la barra de progrés i l’anell d’ús.",
+      "left": "El que queda",
+      "used": "El que s’ha usat"
+    },
+    "show_reset": {
+      "label": "Mostra el temps fins al reinici",
+      "description": "Temps que falta perquè la finestra es reiniciï."
+    },
+    "reset_format": {
+      "label": "Format del temps de reinici",
+      "compact": "Compacte (1:44)",
+      "verbose": "Detallat (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Text quan no hi ha cap reinici pendent",
+      "description": "Es mostra en lloc del compte enrere quan la finestra no està activa. Buit = «a punt» en el teu idioma."
+    },
+    "show_tokens": {
+      "label": "Mostra els tokens usats",
+      "description": "Tokens usats a la finestra (entrada + sortida + creació de memòria cau, de les transcripcions locals)."
+    },
+    "include_cache_read": {
+      "label": "Inclou les lectures de la memòria cau",
+      "description": "Suma els tokens llegits de la memòria cau de prompts. Són barats però nombrosos, així que el nombre creix molt."
+    },
+    "token_format": {
+      "label": "Format dels tokens",
+      "short": "Curt (92k)",
+      "full": "Complet (92424)"
+    },
+    "separator": {
+      "label": "Separador entre elements",
+      "none": "Cap",
+      "dot": "Punt (·)",
+      "bar": "Barra (|)",
+      "slash": "Barra inclinada (/)"
+    },
+    "dim_extras": {
+      "label": "Atenua el temps i els tokens",
+      "description": "Mostra el temps fins al reinici i els tokens amb un color atenuat; només el percentatge manté el color d’ús."
+    },
+    "gap": {
+      "label": "Espai entre elements (px)"
+    },
+    "font_weight": {
+      "label": "Gruix de la lletra",
+      "medium": "Mitjà",
+      "bold": "Negreta"
+    },
+    "color_by_usage": {
+      "label": "Color segons l’ús",
+      "description": "Canvia als colors d’avís / crític per sobre dels llindars."
+    },
+    "warn_at": {
+      "label": "Llindar d’avís (%)"
+    },
+    "critical_at": {
+      "label": "Llindar crític (%)"
+    },
+    "color": {
+      "label": "Color del text",
+      "description": "Rol de color o color hex per a l’ús normal."
+    },
+    "warn_color": {
+      "label": "Color d’avís"
+    },
+    "critical_color": {
+      "label": "Color crític"
+    },
+    "click_command": {
+      "label": "Ordre en fer clic",
+      "description": "Ordre de shell en fer clic esquerre, p. ex. alacritty -e claude. Buit = actualitza ara. El clic dret sempre actualitza."
+    },
+    "command": {
+      "label": "Ordre en fer clic",
+      "description": "Ordre que s’executa en fer clic a la icona."
+    },
+    "animation_ms": {
+      "label": "Animació en passar-hi el cursor (ms)",
+      "description": "Quant triguen els detalls a desplegar-se i aparèixer. 0 desactiva l’animació."
+    }
+  },
+  "bar": {
+    "left": "{pct}% restant",
+    "ready": "a punt"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (es reinicia d’aquí a {time})",
+    "tokens": "tokens: {tokens}, lectura de memòria cau: {cache}",
+    "now": "ara",
+    "stale": "Desactualitzat: {error}",
+    "loading": "S’està carregant..."
+  },
+  "error": {
+    "no_credentials": "No has iniciat sessió a Claude Code",
+    "token_expired": "El token ha caducat - fes servir Claude Code un cop per renovar-lo",
+    "network": "Sense connexió",
+    "bad_response": "Resposta inesperada de l’API",
+    "http_429": "Límit de sol·licituds - es tornarà a provar"
+  }
+}

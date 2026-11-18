@@ -73,7 +73,7 @@ Plugin:
 | `gauge_mode` | `select` | `left` | What the progress bar and the ring fill with: `left` or `used`. |
 | `show_reset` | `bool` | `true` | Show the time left until the window resets. |
 | `reset_format` | `select` | `compact` | `compact` (`1:05`, hours:minutes) or `verbose` (`1h 5m`). |
-| `ready_text` | `string` | `ready` | Shown instead of the countdown when no window is running. |
+| `ready_text` | `string` | `""` | Shown instead of the countdown when no window is running; empty means "ready" in the shell's language. |
 | `show_tokens` | `bool` | `true` | Show tokens used in the window. |
 | `include_cache_read` | `bool` | `false` | Add prompt-cache reads to the token count. They are cheap but numerous, so the number gets much larger. The tooltip always shows them separately. |
 | `token_format` | `select` | `short` | `short` (`290k`) or `full` (`289731`). |
@@ -100,6 +100,16 @@ Dependent settings (glyph, image, formats, thresholds…) only appear in the set
 | `logo_path` | `file` | `""` | SVG / PNG used when `logo = custom`; empty means `logo.svg` in the plugin folder. |
 | `size` | `int` | `20` | Icon size, in pixels (10–40). |
 | `command` | `string` | `alacritty -e claude` | Command run on click. |
+
+## Languages
+
+The settings window, the tooltip and the bar text follow Noctalia's language (**Settings → Appearance → Language**,
+`[shell] lang`). Translations ship for every language Noctalia supports: `ar`, `be`, `be-Latn`, `ca`, `cs`, `de`,
+`en`, `en-GB`, `es`, `fr`, `gl-ES`, `he`, `hu`, `it`, `ja`, `ko`, `ku`, `nl`, `nn`, `pl`, `pt-BR`, `ro`, `ru`, `sv`,
+`tr`, `uk-UA`, `vi`, `zh-Hans` and `zh-Hant`.
+
+English and Polish are maintained by the author; the others were machine-translated and have not been reviewed by
+native speakers yet. Corrections are very welcome — edit `translations/<lang>.json` and open a pull request.
 
 ## IPC
 

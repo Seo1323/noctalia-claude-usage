@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "새로 고침 간격(분)",
+      "description": "사용량 API를 조회하는 빈도."
+    },
+    "window": {
+      "label": "한도 창",
+      "description": "바에 표시할 사용량 창.",
+      "five_hour": "5시간 세션",
+      "weekly": "주간(7일)",
+      "both": "둘 다"
+    },
+    "display_mode": {
+      "label": "세부 정보 표시",
+      "description": "재설정까지 남은 시간, 토큰, 막대를 표시하는 시점.",
+      "always": "항상",
+      "important": "사용량이 높을 때만(경고 임계값 이상)",
+      "hover": "마우스를 올렸을 때만(그 외에는 아이콘 또는 링)"
+    },
+    "logo": {
+      "label": "아이콘",
+      "description": "텍스트 앞에 표시됩니다. 링은 한도의 남은(또는 사용한) 비율로 채워집니다.",
+      "none": "없음",
+      "glyph": "글리프",
+      "star": "별(기본 제공)",
+      "custom": "사용자 이미지",
+      "ring": "사용량 링"
+    },
+    "glyph": {
+      "label": "글리프"
+    },
+    "logo_path": {
+      "label": "사용자 이미지",
+      "description": "SVG 또는 PNG. 비워 두면 플러그인 폴더의 logo.svg."
+    },
+    "icon_size": {
+      "label": "아이콘 크기(px)"
+    },
+    "size": {
+      "label": "아이콘 크기(px)"
+    },
+    "show_percent": {
+      "label": "사용률 표시"
+    },
+    "percent_mode": {
+      "label": "백분율 표시 내용",
+      "used": "사용함(22%)",
+      "left": "남음(78% 남음)"
+    },
+    "show_prefix": {
+      "label": "5h / 7d 레이블 표시",
+      "description": "각 백분율 앞에 창 이름을 붙입니다."
+    },
+    "show_bar": {
+      "label": "진행 막대 표시",
+      "description": "백분율 옆의 작은 막대."
+    },
+    "bar_width": {
+      "label": "진행 막대 너비(px)"
+    },
+    "gauge_mode": {
+      "label": "막대와 링 표시 내용",
+      "description": "진행 막대와 사용량 링을 무엇으로 채울지.",
+      "left": "남은 양",
+      "used": "사용한 양"
+    },
+    "show_reset": {
+      "label": "재설정까지 남은 시간 표시",
+      "description": "창이 재설정될 때까지 남은 시간."
+    },
+    "reset_format": {
+      "label": "재설정 시간 형식",
+      "compact": "간략(1:44)",
+      "verbose": "자세히(1h 44m)"
+    },
+    "ready_text": {
+      "label": "대기 중인 재설정이 없을 때 텍스트",
+      "description": "창이 진행 중이 아닐 때 카운트다운 대신 표시됩니다. 비워 두면 사용 언어의 \"준비됨\"."
+    },
+    "show_tokens": {
+      "label": "사용한 토큰 표시",
+      "description": "창에서 사용한 토큰(입력 + 출력 + 캐시 생성, 로컬 기록 기준)."
+    },
+    "include_cache_read": {
+      "label": "캐시 읽기 포함",
+      "description": "프롬프트 캐시에서 읽은 토큰을 더합니다. 저렴하지만 양이 많아 숫자가 훨씬 커집니다."
+    },
+    "token_format": {
+      "label": "토큰 형식",
+      "short": "짧게(92k)",
+      "full": "전체(92424)"
+    },
+    "separator": {
+      "label": "항목 사이 구분자",
+      "none": "없음",
+      "dot": "점(·)",
+      "bar": "세로선(|)",
+      "slash": "슬래시(/)"
+    },
+    "dim_extras": {
+      "label": "시간과 토큰 흐리게",
+      "description": "재설정까지 남은 시간과 토큰을 차분한 색으로 표시하고, 백분율만 사용량 색을 유지합니다."
+    },
+    "gap": {
+      "label": "항목 간격(px)"
+    },
+    "font_weight": {
+      "label": "글꼴 두께",
+      "medium": "중간",
+      "bold": "굵게"
+    },
+    "color_by_usage": {
+      "label": "사용량에 따른 색상",
+      "description": "임계값을 넘으면 경고 / 위험 색상으로 전환합니다."
+    },
+    "warn_at": {
+      "label": "경고 임계값(%)"
+    },
+    "critical_at": {
+      "label": "위험 임계값(%)"
+    },
+    "color": {
+      "label": "텍스트 색상",
+      "description": "일반 사용 시 색상 역할 또는 hex 색상."
+    },
+    "warn_color": {
+      "label": "경고 색상"
+    },
+    "critical_color": {
+      "label": "위험 색상"
+    },
+    "click_command": {
+      "label": "클릭 명령",
+      "description": "왼쪽 클릭 시 실행할 셸 명령(예: alacritty -e claude). 비워 두면 지금 새로 고침. 오른쪽 클릭은 항상 새로 고칩니다."
+    },
+    "command": {
+      "label": "클릭 명령",
+      "description": "아이콘을 클릭하면 실행할 명령."
+    },
+    "animation_ms": {
+      "label": "마우스 오버 애니메이션(ms)",
+      "description": "세부 정보가 펼쳐지며 나타나는 데 걸리는 시간. 0이면 애니메이션을 끕니다."
+    }
+  },
+  "bar": {
+    "left": "{pct}% 남음",
+    "ready": "준비됨"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  ({time} 후 재설정)",
+    "tokens": "토큰: {tokens}, 캐시 읽기: {cache}",
+    "now": "곧",
+    "stale": "오래된 데이터: {error}",
+    "loading": "불러오는 중..."
+  },
+  "error": {
+    "no_credentials": "Claude Code에 로그인하지 않았습니다",
+    "token_expired": "토큰이 만료됨 - Claude Code를 한 번 사용하면 갱신됩니다",
+    "network": "연결 없음",
+    "bad_response": "예상치 못한 API 응답",
+    "http_429": "요청 한도 초과 - 다시 시도합니다"
+  }
+}

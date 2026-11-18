@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "Refresh interval (minutes)",
+      "description": "How often the usage API is queried."
+    },
+    "window": {
+      "label": "Limit window",
+      "description": "Which usage window the bar shows.",
+      "five_hour": "5-hour session",
+      "weekly": "Weekly (7d)",
+      "both": "Both"
+    },
+    "display_mode": {
+      "label": "Show details",
+      "description": "When the time to reset, tokens and bar are shown.",
+      "always": "Always",
+      "important": "Only when usage is high (above the warning threshold)",
+      "hover": "Only on hover (icon or ring otherwise)"
+    },
+    "logo": {
+      "label": "Icon",
+      "description": "Shown before the text. The ring fills with the remaining (or used) share of the limit.",
+      "none": "None",
+      "glyph": "Glyph",
+      "star": "Star (bundled)",
+      "custom": "Custom image",
+      "ring": "Usage ring"
+    },
+    "glyph": {
+      "label": "Glyph"
+    },
+    "logo_path": {
+      "label": "Custom image",
+      "description": "SVG or PNG. Empty means logo.svg in the plugin folder."
+    },
+    "icon_size": {
+      "label": "Icon size (px)"
+    },
+    "size": {
+      "label": "Icon size (px)"
+    },
+    "show_percent": {
+      "label": "Show usage percentage"
+    },
+    "percent_mode": {
+      "label": "Percentage shows",
+      "used": "Used (22%)",
+      "left": "Left (78% left)"
+    },
+    "show_prefix": {
+      "label": "Show 5h / 7d labels",
+      "description": "Prefix each percentage with its window."
+    },
+    "show_bar": {
+      "label": "Show progress bar",
+      "description": "A small bar next to the percentage."
+    },
+    "bar_width": {
+      "label": "Progress bar width (px)"
+    },
+    "gauge_mode": {
+      "label": "Bar and ring show",
+      "description": "What the progress bar and the usage ring fill with.",
+      "left": "What is left",
+      "used": "What is used"
+    },
+    "show_reset": {
+      "label": "Show time to reset",
+      "description": "Time left until the window resets."
+    },
+    "reset_format": {
+      "label": "Reset time format",
+      "compact": "Compact (1:44)",
+      "verbose": "Verbose (1h 44m)"
+    },
+    "ready_text": {
+      "label": "Text when no reset is pending",
+      "description": "Shown instead of a countdown when the window is not running. Empty = \"ready\" in your language."
+    },
+    "show_tokens": {
+      "label": "Show tokens used",
+      "description": "Tokens used in the window (input + output + cache creation, from local transcripts)."
+    },
+    "include_cache_read": {
+      "label": "Include cache reads",
+      "description": "Add tokens read from the prompt cache. They are cheap but numerous, so the number gets much larger."
+    },
+    "token_format": {
+      "label": "Token format",
+      "short": "Short (92k)",
+      "full": "Full (92424)"
+    },
+    "separator": {
+      "label": "Separator between items",
+      "none": "None",
+      "dot": "Dot (·)",
+      "bar": "Bar (|)",
+      "slash": "Slash (/)"
+    },
+    "dim_extras": {
+      "label": "Dim time and tokens",
+      "description": "Show the time to reset and the tokens in a muted colour; only the percentage keeps the usage colour."
+    },
+    "gap": {
+      "label": "Spacing between items (px)"
+    },
+    "font_weight": {
+      "label": "Font weight",
+      "medium": "Medium",
+      "bold": "Bold"
+    },
+    "color_by_usage": {
+      "label": "Colour by usage",
+      "description": "Switch to the warning / critical colours above the thresholds."
+    },
+    "warn_at": {
+      "label": "Warning threshold (%)"
+    },
+    "critical_at": {
+      "label": "Critical threshold (%)"
+    },
+    "color": {
+      "label": "Text colour",
+      "description": "Colour role or hex colour for normal usage."
+    },
+    "warn_color": {
+      "label": "Warning colour"
+    },
+    "critical_color": {
+      "label": "Critical colour"
+    },
+    "click_command": {
+      "label": "Click command",
+      "description": "Shell command run on left click, e.g. alacritty -e claude. Empty = refresh now. Right click always refreshes."
+    },
+    "command": {
+      "label": "Click command",
+      "description": "Command run when the icon is clicked."
+    },
+    "animation_ms": {
+      "label": "Hover animation (ms)",
+      "description": "How long the details take to slide out and fade in. 0 turns the animation off."
+    }
+  },
+  "bar": {
+    "left": "{pct}% left",
+    "ready": "ready"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  (resets in {time})",
+    "tokens": "tokens: {tokens}, cache read: {cache}",
+    "now": "now",
+    "stale": "Stale: {error}",
+    "loading": "Loading..."
+  },
+  "error": {
+    "no_credentials": "Not logged in to Claude Code",
+    "token_expired": "Token expired - use Claude Code once to refresh",
+    "network": "No connection",
+    "bad_response": "Unexpected API response",
+    "http_429": "Rate limited - will retry"
+  }
+}

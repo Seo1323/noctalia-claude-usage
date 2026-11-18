@@ -1,0 +1,165 @@
+{
+  "title": "Claude Usage",
+  "settings": {
+    "refresh_minutes": {
+      "label": "重新整理間隔（分鐘）",
+      "description": "查詢用量 API 的頻率。"
+    },
+    "window": {
+      "label": "限額視窗",
+      "description": "狀態列顯示哪個用量視窗。",
+      "five_hour": "5 小時工作階段",
+      "weekly": "每週（7 天）",
+      "both": "兩者"
+    },
+    "display_mode": {
+      "label": "顯示詳細資訊",
+      "description": "何時顯示距重設時間、權杖數與進度列。",
+      "always": "一律",
+      "important": "僅在用量偏高時（高於警告門檻）",
+      "hover": "僅在滑鼠懸停時（否則顯示圖示或圓環）"
+    },
+    "logo": {
+      "label": "圖示",
+      "description": "顯示在文字前面。圓環依限額的剩餘（或已用）比例填滿。",
+      "none": "無",
+      "glyph": "字符",
+      "star": "星形（內建）",
+      "custom": "自訂圖片",
+      "ring": "用量圓環"
+    },
+    "glyph": {
+      "label": "字符"
+    },
+    "logo_path": {
+      "label": "自訂圖片",
+      "description": "SVG 或 PNG。留空表示使用外掛資料夾中的 logo.svg。"
+    },
+    "icon_size": {
+      "label": "圖示大小（px）"
+    },
+    "size": {
+      "label": "圖示大小（px）"
+    },
+    "show_percent": {
+      "label": "顯示用量百分比"
+    },
+    "percent_mode": {
+      "label": "百分比顯示",
+      "used": "已用（22%）",
+      "left": "剩餘（剩餘 78%）"
+    },
+    "show_prefix": {
+      "label": "顯示 5h / 7d 標籤",
+      "description": "在每個百分比前加上其視窗。"
+    },
+    "show_bar": {
+      "label": "顯示進度列",
+      "description": "百分比旁的小進度列。"
+    },
+    "bar_width": {
+      "label": "進度列寬度（px）"
+    },
+    "gauge_mode": {
+      "label": "進度列與圓環顯示",
+      "description": "進度列與用量圓環依什麼填滿。",
+      "left": "剩餘部分",
+      "used": "已用部分"
+    },
+    "show_reset": {
+      "label": "顯示距重設時間",
+      "description": "距離視窗重設的剩餘時間。"
+    },
+    "reset_format": {
+      "label": "重設時間格式",
+      "compact": "精簡（1:44）",
+      "verbose": "詳細（1h 44m）"
+    },
+    "ready_text": {
+      "label": "沒有待重設時的文字",
+      "description": "視窗未進行時取代倒數顯示。留空 = 你所用語言的「就緒」。"
+    },
+    "show_tokens": {
+      "label": "顯示已用權杖",
+      "description": "視窗內已用權杖（輸入 + 輸出 + 快取寫入，來自本機對話記錄）。"
+    },
+    "include_cache_read": {
+      "label": "計入快取讀取",
+      "description": "加上從提示快取讀取的權杖。它們便宜但數量多，因此數字會大很多。"
+    },
+    "token_format": {
+      "label": "權杖格式",
+      "short": "簡短（92k）",
+      "full": "完整（92424）"
+    },
+    "separator": {
+      "label": "項目間分隔符",
+      "none": "無",
+      "dot": "圓點（·）",
+      "bar": "直線（|）",
+      "slash": "斜線（/）"
+    },
+    "dim_extras": {
+      "label": "淡化時間與權杖",
+      "description": "以柔和的顏色顯示距重設時間與權杖；只有百分比保留用量顏色。"
+    },
+    "gap": {
+      "label": "項目間距（px）"
+    },
+    "font_weight": {
+      "label": "字重",
+      "medium": "中等",
+      "bold": "粗體"
+    },
+    "color_by_usage": {
+      "label": "依用量著色",
+      "description": "超過門檻時切換為警告 / 嚴重顏色。"
+    },
+    "warn_at": {
+      "label": "警告門檻（%）"
+    },
+    "critical_at": {
+      "label": "嚴重門檻（%）"
+    },
+    "color": {
+      "label": "文字顏色",
+      "description": "一般用量時的顏色角色或 hex 顏色。"
+    },
+    "warn_color": {
+      "label": "警告顏色"
+    },
+    "critical_color": {
+      "label": "嚴重顏色"
+    },
+    "click_command": {
+      "label": "點擊指令",
+      "description": "滑鼠左鍵點擊時執行的 shell 指令，例如 alacritty -e claude。留空 = 立即重新整理。右鍵點擊一律重新整理。"
+    },
+    "command": {
+      "label": "點擊指令",
+      "description": "點擊圖示時執行的指令。"
+    },
+    "animation_ms": {
+      "label": "懸停動畫（ms）",
+      "description": "詳細資訊滑出並淡入所需的時間。0 表示關閉動畫。"
+    }
+  },
+  "bar": {
+    "left": "剩餘 {pct}%",
+    "ready": "就緒"
+  },
+  "tooltip": {
+    "window": "{window}: {pct}%  （{time} 後重設）",
+    "tokens": "權杖：{tokens}，快取讀取：{cache}",
+    "now": "即將",
+    "stale": "資料過期：{error}",
+    "loading": "載入中..."
+  },
+  "error": {
+    "no_credentials": "未登入 Claude Code",
+    "token_expired": "權杖已過期 - 使用一次 Claude Code 即可更新",
+    "network": "沒有網路連線",
+    "bad_response": "API 回應異常",
+    "http_429": "請求受限 - 稍後重試"
+  }
+}
