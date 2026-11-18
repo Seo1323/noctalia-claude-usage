@@ -157,6 +157,14 @@
       "panel": "Otwórz panel",
       "command": "Uruchom polecenie kliknięcia",
       "refresh": "Odśwież"
+    },
+    "panel_translucent": {
+      "label": "Przezroczysty panel",
+      "description": "Tapeta prześwituje przez tło panelu; tekst pozostaje w pełni nieprzezroczysty."
+    },
+    "panel_opacity": {
+      "label": "Krycie tła panelu",
+      "description": "0 to pełna przezroczystość, 1 to jednolite tło."
     }
   },
   "bar": {

@@ -157,6 +157,14 @@
       "panel": "Apri il pannello",
       "command": "Esegui il comando al clic",
       "refresh": "Aggiorna"
+    },
+    "panel_translucent": {
+      "label": "Pannello traslucido",
+      "description": "Lascia trasparire lo sfondo attraverso il pannello; il testo resta completamente opaco."
+    },
+    "panel_opacity": {
+      "label": "Opacità dello sfondo del pannello",
+      "description": "0 è completamente trasparente, 1 è pieno."
     }
   },
   "bar": {

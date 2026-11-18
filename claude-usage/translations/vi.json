@@ -157,6 +157,14 @@
       "panel": "Mở bảng",
       "command": "Chạy lệnh khi nhấp",
       "refresh": "Làm mới"
+    },
+    "panel_translucent": {
+      "label": "Bảng trong mờ",
+      "description": "Cho hình nền hiện qua nền bảng; chữ vẫn rõ hoàn toàn."
+    },
+    "panel_opacity": {
+      "label": "Độ mờ đục của nền bảng",
+      "description": "0 là trong suốt hoàn toàn, 1 là đặc."
     }
   },
   "bar": {

@@ -157,6 +157,14 @@
       "panel": "Abrir o panel",
       "command": "Executar a orde de clic",
       "refresh": "Actualizar"
+    },
+    "panel_translucent": {
+      "label": "Panel translúcido",
+      "description": "Deixa ver o fondo a través do panel; o texto segue totalmente opaco."
+    },
+    "panel_opacity": {
+      "label": "Opacidade do fondo do panel",
+      "description": "0 é totalmente transparente, 1 é sólido."
     }
   },
   "bar": {

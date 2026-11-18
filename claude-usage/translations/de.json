@@ -157,6 +157,14 @@
       "panel": "Panel öffnen",
       "command": "Klick-Befehl ausführen",
       "refresh": "Aktualisieren"
+    },
+    "panel_translucent": {
+      "label": "Durchscheinendes Panel",
+      "description": "Lässt den Hintergrund durch das Panel scheinen; der Text bleibt voll deckend."
+    },
+    "panel_opacity": {
+      "label": "Deckkraft des Panel-Hintergrunds",
+      "description": "0 ist völlig durchsichtig, 1 ist deckend."
     }
   },
   "bar": {

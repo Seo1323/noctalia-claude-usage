@@ -45,6 +45,9 @@ entry = "panel.luau"
 width = 380
 height = "content"
 max_height = 760
+placement = "attached"
+position = "auto"
+open_near_click = true
 
 [[widget]]
 id = "bar"
@@ -323,6 +326,24 @@ entry = "bar.luau"
     { value = "command", label_key = "settings.click_action.command" },
     { value = "refresh", label_key = "settings.click_action.refresh" },
   ]
+
+  [[widget.setting]]
+  key = "panel_translucent"
+  type = "bool"
+  label_key = "settings.panel_translucent.label"
+  description_key = "settings.panel_translucent.description"
+  default = false
+
+  [[widget.setting]]
+  key = "panel_opacity"
+  type = "double"
+  label_key = "settings.panel_opacity.label"
+  description_key = "settings.panel_opacity.description"
+  default = 0.85
+  min = 0.0
+  max = 1.0
+  step = 0.05
+  visible_when = { key = "panel_translucent", values = ["true"] }
 
   [[widget.setting]]
   key = "click_command"

@@ -157,6 +157,14 @@
       "panel": "Panel megnyitása",
       "command": "Kattintási parancs futtatása",
       "refresh": "Frissítés"
+    },
+    "panel_translucent": {
+      "label": "Áttetsző panel",
+      "description": "A háttér átlátszik a panelen; a szöveg teljesen fedő marad."
+    },
+    "panel_opacity": {
+      "label": "Panelháttér átlátszatlansága",
+      "description": "0 teljesen átlátszó, 1 tömör."
     }
   },
   "bar": {

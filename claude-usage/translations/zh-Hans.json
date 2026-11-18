@@ -157,6 +157,14 @@
       "panel": "打开面板",
       "command": "运行点击命令",
       "refresh": "刷新"
+    },
+    "panel_translucent": {
+      "label": "半透明面板",
+      "description": "让壁纸透过面板背景显示；文字保持完全不透明。"
+    },
+    "panel_opacity": {
+      "label": "面板背景不透明度",
+      "description": "0 为完全透明，1 为不透明。"
     }
   },
   "bar": {

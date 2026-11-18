@@ -157,6 +157,14 @@
       "panel": "開啟面板",
       "command": "執行點擊指令",
       "refresh": "重新整理"
+    },
+    "panel_translucent": {
+      "label": "半透明面板",
+      "description": "讓桌布透過面板背景顯示；文字保持完全不透明。"
+    },
+    "panel_opacity": {
+      "label": "面板背景不透明度",
+      "description": "0 為完全透明，1 為不透明。"
     }
   },
   "bar": {

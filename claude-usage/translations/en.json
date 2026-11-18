@@ -157,6 +157,14 @@
       "panel": "Open the panel",
       "command": "Run the click command",
       "refresh": "Refresh"
+    },
+    "panel_translucent": {
+      "label": "Translucent panel",
+      "description": "Let the wallpaper show through the panel background; the text stays fully opaque."
+    },
+    "panel_opacity": {
+      "label": "Panel background opacity",
+      "description": "0 is fully transparent, 1 is solid."
     }
   },
   "bar": {

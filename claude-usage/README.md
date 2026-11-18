@@ -33,7 +33,8 @@ Add **Claude Usage** to a bar in **Settings → Bar** and pick the entry:
   `noctalia msg panel-toggle seo/claude-usage:panel`. It shows both limits, lets you start Claude Code in a
   terminal with a chosen model (default, Opus, Sonnet, Haiku) and mode (new session, `--continue`, `--resume`),
   graphs your tokens over the last 24 hours and 7 days (hover a graph for the value), and lists tokens per model
-  for the 5-hour or weekly window.
+  for the 5-hour or weekly window. The panel is attached to the bar next to the widget, like the built-in panels; its
+  background can be made translucent from the `bar` widget settings.
 
 The `poller` service starts with the plugin and refreshes every `refresh_minutes`; all widgets share its result.
 
@@ -97,6 +98,8 @@ Plugin:
 | `critical_color` | `color` | `error` | Text color above `critical_at`. |
 | `click_action` | `select` | `panel` | Left click: `panel` (open the panel), `command` (run `click_command`) or `refresh`. Right click always refreshes. |
 | `click_command` | `string` | `""` | Shell command for `click_action = command`, e.g. `alacritty -e claude`. |
+| `panel_translucent` | `bool` | `false` | Translucent panel background (the text stays opaque). |
+| `panel_opacity` | `double` | `0.85` | Panel background opacity when translucent, 0–1. |
 
 Dependent settings (glyph, image, formats, thresholds…) only appear in the settings window when they apply.
 

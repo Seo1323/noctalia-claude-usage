@@ -8,6 +8,7 @@ local MODELS = { "", "opus", "sonnet", "haiku" } -- "" = Claude Code's default m
 local MODES = { "", "--continue", "--resume" } -- new session, continue last, pick a session
 
 local snapshot = noctalia.state.get("usage")
+local style = noctalia.state.get("panel_style") or {} -- set by the bar widget: { translucent, opacity }
 local isOpen = false
 local model, mode = 1, 1
 local tableWindow = "five" -- five | weekly
@@ -140,11 +141,18 @@ function render()
     add(modelTable(data))
   end
 
-  panel.render(ui.column({ padding = 16, gap = 12 }, children))
+  -- Translucency goes into the background fill only, so the content stays fully opaque.
+  local fill = if style.translucent then string.format("surface/%.2f", style.opacity or 0.85) else "surface"
+  panel.render(ui.column({ padding = 16, gap = 12, fill = fill, radius = 12 }, children))
 end
 
 noctalia.state.watch("usage", function(value)
   snapshot = value
+  render()
+end)
+
+noctalia.state.watch("panel_style", function(value)
+  style = value or {}
   render()
 end)
 

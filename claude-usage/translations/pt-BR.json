@@ -157,6 +157,14 @@
       "panel": "Abrir o painel",
       "command": "Executar o comando de clique",
       "refresh": "Atualizar"
+    },
+    "panel_translucent": {
+      "label": "Painel translúcido",
+      "description": "Deixa o fundo aparecer através do painel; o texto continua totalmente opaco."
+    },
+    "panel_opacity": {
+      "label": "Opacidade do fundo do painel",
+      "description": "0 é totalmente transparente, 1 é sólido."
     }
   },
   "bar": {

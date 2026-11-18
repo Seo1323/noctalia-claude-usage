@@ -157,6 +157,14 @@
       "panel": "Paneli aç",
       "command": "Tıklama komutunu çalıştır",
       "refresh": "Yenile"
+    },
+    "panel_translucent": {
+      "label": "Yarı saydam panel",
+      "description": "Arka planın panelden görünmesini sağlar; metin tamamen opak kalır."
+    },
+    "panel_opacity": {
+      "label": "Panel arka planı opaklığı",
+      "description": "0 tamamen saydam, 1 tamamen opaktır."
     }
   },
   "bar": {

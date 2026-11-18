@@ -157,6 +157,14 @@
       "panel": "Ouvrir le panneau",
       "command": "Exécuter la commande au clic",
       "refresh": "Actualiser"
+    },
+    "panel_translucent": {
+      "label": "Panneau translucide",
+      "description": "Laisse transparaître le fond d’écran à travers le panneau ; le texte reste entièrement opaque."
+    },
+    "panel_opacity": {
+      "label": "Opacité du fond du panneau",
+      "description": "0 est entièrement transparent, 1 est opaque."
     }
   },
   "bar": {

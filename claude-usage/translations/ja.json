@@ -157,6 +157,14 @@
       "panel": "パネルを開く",
       "command": "クリック時のコマンドを実行",
       "refresh": "更新"
+    },
+    "panel_translucent": {
+      "label": "半透明のパネル",
+      "description": "パネルの背景から壁紙が透けて見えます。テキストは不透明のままです。"
+    },
+    "panel_opacity": {
+      "label": "パネル背景の不透明度",
+      "description": "0 は完全に透明、1 は不透明です。"
     }
   },
   "bar": {

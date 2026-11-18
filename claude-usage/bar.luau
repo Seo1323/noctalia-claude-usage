@@ -42,9 +42,13 @@ local cfg = {
     critAt = tonumber(conf("critical_at", 90)) or 90,
   },
   clickAction = conf("click_action", "panel"), -- panel | command | refresh
+  panelTranslucent = bool("panel_translucent", false),
+  panelOpacity = math.clamp(tonumber(conf("panel_opacity", 0.85)) or 0.85, 0, 1),
   clickCommand = S.text("click_command", ""),
 }
 if cfg.readyText == "" then cfg.readyText = noctalia.tr("bar.ready") end
+-- The panel cannot read this widget's settings, so its look is handed over through shared state.
+noctalia.state.set("panel_style", { translucent = cfg.panelTranslucent, opacity = cfg.panelOpacity })
 local hoverMode = cfg.display == "hover"
 
 local snapshot = noctalia.state.get("usage")

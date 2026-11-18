@@ -157,6 +157,14 @@
       "panel": "패널 열기",
       "command": "클릭 명령 실행",
       "refresh": "새로 고침"
+    },
+    "panel_translucent": {
+      "label": "반투명 패널",
+      "description": "패널 배경으로 배경 화면이 비쳐 보입니다. 텍스트는 완전히 불투명하게 유지됩니다."
+    },
+    "panel_opacity": {
+      "label": "패널 배경 불투명도",
+      "description": "0은 완전히 투명, 1은 불투명입니다."
     }
   },
   "bar": {

@@ -115,7 +115,7 @@ Everything is set per widget in Noctalia's widget settings. The full list with t
 | **When** | Details always, only when usage is high, or only on hover (animated, adjustable speed) |
 | **Format** | Reset time `1:05` or `1h 5m`, the text shown when ready, tokens `290k` or `289731`, separators |
 | **Icon** | None, any glyph, bundled star, custom image or usage ring; icon size |
-| **Look** | Spacing, font weight, dimmed time and tokens |
+| **Look** | Spacing, font weight, dimmed time and tokens, translucent panel with adjustable opacity |
 | **Colors** | Color by usage, warning / critical thresholds, text / warning / critical colors |
 | **Format** | Decimal places in percentages (0–2) |
 | **Behaviour** | Refresh interval, left click opens the panel / runs a command / refreshes, right click refreshes, the command the panel starts Claude Code with |

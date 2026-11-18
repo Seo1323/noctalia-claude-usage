@@ -157,6 +157,14 @@
       "panel": "Otevřít panel",
       "command": "Spustit příkaz kliknutí",
       "refresh": "Obnovit"
+    },
+    "panel_translucent": {
+      "label": "Průsvitný panel",
+      "description": "Pozadí prosvítá panelem; text zůstává plně neprůhledný."
+    },
+    "panel_opacity": {
+      "label": "Krytí pozadí panelu",
+      "description": "0 je zcela průhledné, 1 je plné."
     }
   },
   "bar": {

@@ -157,6 +157,14 @@
       "panel": "Paneel openen",
       "command": "Klikopdracht uitvoeren",
       "refresh": "Vernieuwen"
+    },
+    "panel_translucent": {
+      "label": "Doorschijnend paneel",
+      "description": "Laat de achtergrond door het paneel schijnen; de tekst blijft volledig dekkend."
+    },
+    "panel_opacity": {
+      "label": "Dekking paneelachtergrond",
+      "description": "0 is volledig transparant, 1 is effen."
     }
   },
   "bar": {

@@ -157,6 +157,14 @@
       "panel": "Deschide panoul",
       "command": "Rulează comanda de clic",
       "refresh": "Reîmprospătează"
+    },
+    "panel_translucent": {
+      "label": "Panou translucid",
+      "description": "Lasă fundalul să se vadă prin panou; textul rămâne complet opac."
+    },
+    "panel_opacity": {
+      "label": "Opacitatea fundalului panoului",
+      "description": "0 este complet transparent, 1 este solid."
     }
   },
   "bar": {

@@ -157,6 +157,14 @@
       "panel": "Öppna panelen",
       "command": "Kör klickkommandot",
       "refresh": "Uppdatera"
+    },
+    "panel_translucent": {
+      "label": "Genomskinlig panel",
+      "description": "Låter bakgrunden synas genom panelen; texten förblir helt ogenomskinlig."
+    },
+    "panel_opacity": {
+      "label": "Panelbakgrundens opacitet",
+      "description": "0 är helt genomskinlig, 1 är heltäckande."
     }
   },
   "bar": {

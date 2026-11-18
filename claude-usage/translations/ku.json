@@ -157,6 +157,14 @@
       "panel": "Panelê veke",
       "command": "Fermana tikandinê bixebitîne",
       "refresh": "Nû bike"
+    },
+    "panel_translucent": {
+      "label": "Panela nîvşefaf",
+      "description": "Dihêle paşxane di panelê re xuya bibe; nivîs bi tevahî zelal dimîne."
+    },
+    "panel_opacity": {
+      "label": "Opaktiya paşxaneya panelê",
+      "description": "0 bi tevahî şefaf e, 1 tije ye."
     }
   },
   "bar": {

@@ -157,6 +157,14 @@
       "panel": "Adkryć paneĺ",
       "command": "Vykanać kamandu pstryčki",
       "refresh": "Abnavić"
+    },
+    "panel_translucent": {
+      "label": "Paŭprazrystaja paneĺ",
+      "description": "Fon prasviečvaje praz paneĺ; tekst zastajecca całkam nieprazrystym."
+    },
+    "panel_opacity": {
+      "label": "Nieprazrystasć fonu panełi",
+      "description": "0 — całkam prazrysta, 1 — sucelny fon."
     }
   },
   "bar": {

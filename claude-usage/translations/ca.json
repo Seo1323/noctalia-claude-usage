@@ -157,6 +157,14 @@
       "panel": "Obre el plafó",
       "command": "Executa l’ordre de clic",
       "refresh": "Actualitza"
+    },
+    "panel_translucent": {
+      "label": "Plafó translúcid",
+      "description": "Deixa veure el fons a través del plafó; el text continua totalment opac."
+    },
+    "panel_opacity": {
+      "label": "Opacitat del fons del plafó",
+      "description": "0 és totalment transparent, 1 és sòlid."
     }
   },
   "bar": {
