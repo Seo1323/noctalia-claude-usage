@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Theo giao diện của Noctalia",
       "description": "Dùng độ đậm chữ của thanh và độ trong suốt trong Cài đặt → Bảng → Độ trong suốt, giống phần còn lại của Noctalia. Tắt để tự chọn."
+    },
+    "show_prices": {
+      "label": "Hiện giá",
+      "description": "Chi phí ước tính theo giá API trong chú giải và bảng (và trên thanh nếu bật ở đó). Tắt sẽ ẩn mọi mức giá."
     }
   },
   "bar": {

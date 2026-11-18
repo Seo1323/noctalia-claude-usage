@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Seguir el aspecto de Noctalia",
       "description": "Usa el grosor de texto de la barra y la transparencia de Ajustes → Paneles → Transparencia, como el resto de Noctalia. Desactívalo para elegirlos a mano."
+    },
+    "show_prices": {
+      "label": "Mostrar precios",
+      "description": "Costes estimados a precios de la API en la información emergente y el panel (y en la barra si lo activas allí). Desactivado oculta todos los precios."
     }
   },
   "bar": {

@@ -70,6 +70,7 @@ Noctalia's **Advanced** switch is on, and settings that do not apply right now s
 | Decimals in percentages ⚙ | `0` | 0 shows whole numbers. Usage currently comes in whole percents, so decimals usually show .0. |
 | Command that opens Claude Code | `alacritty -e claude` | The panel uses it to open Claude Code in a terminal. The model and session you pick are added at the end. |
 | Also count text saved for re-reading | off | Off: only new text sent to and written by Claude. On: also the conversation Claude Code saves so it can re-read it quickly — after a pause a long conversation is saved again, so the number jumps. |
+| Show prices | on | Estimated costs at API prices in the tooltip and the panel (and on the bar if you turn that on there). Off hides every price. |
 | Currency | USD ($) | Costs are converted from US dollars with the European Central Bank's daily rates, or with your own rate. Choices: USD ($), EUR (€), PLN (zł), GBP (£), CHF, JPY (¥), CNY (¥), CAD (C$), AUD (A$), SEK (kr), NOK (kr), DKK (kr), CZK (Kč), HUF (Ft), RON (lei), TRY (₺), BRL (R$), INR (₹), KRW (₩), MXN (MX$). |
 | My exchange rate ⚙ | `0.0` | How much of your currency 1 US dollar is worth. 0 = use the daily rate automatically. |
 | Use my own token prices ⚙ | off | Replace Anthropic's price list with your own prices, for every model. |

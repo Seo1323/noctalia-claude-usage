@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Segueix l’aspecte de Noctalia",
       "description": "Fa servir el gruix del text de la barra i la transparència de Configuració → Plafons → Transparència, com la resta de Noctalia. Desactiva-ho per triar-los a mà."
+    },
+    "show_prices": {
+      "label": "Mostra els preus",
+      "description": "Costos estimats a preus de l’API a l’indicador i al plafó (i a la barra si ho actives allà). Desactivat amaga tots els preus."
     }
   },
   "bar": {

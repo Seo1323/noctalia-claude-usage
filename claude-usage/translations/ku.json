@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Li gorî xuyaniya Noctalia",
       "description": "Stûrahiya nivîsê ya darikê û şefafiya ji Mîheng → Panel → Şefafî bikar tîne, wek beşên din ên Noctalia. Ji bo ku tu bixwe hilbijêrî, bigire."
+    },
+    "show_prices": {
+      "label": "Bihayan nîşan bide",
+      "description": "Lêçûnên texmînî li gorî bihayên API di şîretê û panelê de (û li ser darikê heke li wir vekirî be). Girtî hemû bihayan vedişêre."
     }
   },
   "bar": {

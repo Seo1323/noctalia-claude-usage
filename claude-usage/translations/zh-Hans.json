@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "与 Noctalia 外观一致",
       "description": "使用状态栏的文字粗细和“设置 → 面板 → 透明度”的值，和 Noctalia 其他部分一致。关闭后可以自己设置。"
+    },
+    "show_prices": {
+      "label": "显示价格",
+      "description": "在提示框和面板中显示按 API 价格估算的费用（若在状态栏中开启也会显示在状态栏）。关闭则隐藏所有价格。"
     }
   },
   "bar": {

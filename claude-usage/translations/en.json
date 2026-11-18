@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Match Noctalia's look",
       "description": "Use the bar's text weight and the panel transparency from Settings → Panels → Transparency, like the rest of Noctalia. Turn off to set them yourself."
+    },
+    "show_prices": {
+      "label": "Show prices",
+      "description": "Estimated costs at API prices in the tooltip and the panel (and on the bar if you turn that on there). Off hides every price."
     }
   },
   "bar": {

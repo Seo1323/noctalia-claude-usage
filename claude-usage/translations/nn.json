@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Følg utsjånaden til Noctalia",
       "description": "Brukar tekstvekta til linja og gjennomsiktigheita frå Innstillingar → Panel → Gjennomsiktigheit, som resten av Noctalia. Slå av for å velja sjølv."
+    },
+    "show_prices": {
+      "label": "Vis prisar",
+      "description": "Overslag over kostnader etter API-prisar i verktøytipset og panelet (og på linja om det er slått på der). Av gøymer alle prisar."
     }
   },
   "bar": {

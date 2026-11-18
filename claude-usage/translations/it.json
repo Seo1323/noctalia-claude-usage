@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Segui l’aspetto di Noctalia",
       "description": "Usa lo spessore del testo della barra e la trasparenza di Impostazioni → Pannelli → Trasparenza, come il resto di Noctalia. Disattiva per sceglierli a mano."
+    },
+    "show_prices": {
+      "label": "Mostra i prezzi",
+      "description": "Costi stimati ai prezzi API nel suggerimento e nel pannello (e nella barra, se lì è attivo). Disattivato nasconde tutti i prezzi."
     }
   },
   "bar": {

@@ -29,7 +29,7 @@ local cfg = {
   showTokens = bool("show_tokens", true),
   cacheReads = bool("include_cache_read", false),
   fullTokens = conf("token_format", "short") == "full",
-  showCost = bool("show_cost", false),
+  showCost = bool("show_cost", false) and S.SHOW_PRICES,
   separator = SEPARATORS[conf("separator", "dot")],
   dim = bool("dim_extras", true),
   gap = tonumber(conf("gap", 4)) or 4,

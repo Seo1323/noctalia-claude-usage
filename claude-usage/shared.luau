@@ -109,6 +109,9 @@ function M.cost(models)
   return if priced then total else nil
 end
 
+-- Plugin setting show_prices: off hides every cost (bar, tooltip and panel).
+M.SHOW_PRICES = noctalia.getConfig("show_prices") ~= false
+
 -- Display currency (plugin setting). The rate is manual (exchange_rate = units per 1 USD) or,
 -- when that is 0, the ECB reference rates the poller publishes as "rates" (EUR based).
 local CURRENCY = tostring(noctalia.getConfig("currency") or "USD")
@@ -288,7 +291,7 @@ function M.tooltip(snapshot)
         then noctalia.tr("tooltip.window", { window = g[1], pct = M.num(win.pct), time = time })
         else `{g[1]}: {M.num(win.pct)}%  ({noctalia.tr("bar.ready")})`
       lines[#lines + 1] = "    " .. noctalia.tr("tooltip.tokens", { tokens = M.tokens(win.tokens), cache = M.tokens(win.cache) })
-      if win.cost ~= nil then lines[#lines + 1] = "    " .. noctalia.tr("tooltip.cost", { cost = M.money(win.cost) }) end
+      if M.SHOW_PRICES and win.cost ~= nil then lines[#lines + 1] = "    " .. noctalia.tr("tooltip.cost", { cost = M.money(win.cost) }) end
     end
   end
   local err = snapshot and snapshot.error

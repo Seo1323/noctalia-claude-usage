@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "A Noctalia megjelenésének követése",
       "description": "A sáv szövegvastagságát és a Beállítások → Panelek → Átlátszóság értékét használja, mint a Noctalia többi része. Kikapcsolva kézzel állítható."
+    },
+    "show_prices": {
+      "label": "Árak megjelenítése",
+      "description": "Becsült költségek API-áron az eszköztippben és a panelen (és a sávon, ha ott be van kapcsolva). Kikapcsolva minden ár rejtve marad."
     }
   },
   "bar": {

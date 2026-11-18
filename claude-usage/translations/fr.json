@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Suivre l’apparence de Noctalia",
       "description": "Utilise la graisse du texte de la barre et la transparence des panneaux de Paramètres → Panneaux → Transparence, comme le reste de Noctalia. Désactiver pour les régler soi-même."
+    },
+    "show_prices": {
+      "label": "Afficher les prix",
+      "description": "Coûts estimés aux tarifs de l’API dans l’infobulle et le panneau (et dans la barre si c’est activé là-bas). Désactivé masque tous les prix."
     }
   },
   "bar": {

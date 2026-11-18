@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Řídit se vzhledem Noctalie",
       "description": "Použije tloušťku textu lišty a průhlednost z Nastavení → Panely → Průhlednost, stejně jako zbytek Noctalie. Vypněte, chcete-li je nastavit sami."
+    },
+    "show_prices": {
+      "label": "Zobrazovat ceny",
+      "description": "Odhadované náklady podle cen API v bublině a v panelu (a na liště, pokud je to tam zapnuté). Vypnuto skryje všechny ceny."
     }
   },
   "bar": {

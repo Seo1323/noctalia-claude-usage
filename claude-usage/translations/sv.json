@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Följ Noctalias utseende",
       "description": "Använder fältets textvikt och genomskinligheten från Inställningar → Paneler → Genomskinlighet, som resten av Noctalia. Stäng av för att välja själv."
+    },
+    "show_prices": {
+      "label": "Visa priser",
+      "description": "Uppskattade kostnader enligt API-priser i verktygstipset och panelen (och i fältet om det är påslaget där). Av döljer alla priser."
     }
   },
   "bar": {

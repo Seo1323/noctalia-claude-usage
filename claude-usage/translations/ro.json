@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Urmează aspectul Noctalia",
       "description": "Folosește grosimea textului din bară și transparența din Setări → Panouri → Transparență, ca restul Noctalia. Dezactivează pentru a le alege manual."
+    },
+    "show_prices": {
+      "label": "Afișează prețurile",
+      "description": "Costuri estimate la prețurile API în sugestie și în panou (și în bară, dacă e activat acolo). Dezactivat ascunde toate prețurile."
     }
   },
   "bar": {

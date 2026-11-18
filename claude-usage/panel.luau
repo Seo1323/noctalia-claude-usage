@@ -92,7 +92,7 @@ local function modelTable(data)
       ui.row({ justify = "space_between" }, {
         ui.label({ text = S.modelName(m.model) }),
         muted(noctalia.tr("panel.model_tokens", { tokens = S.tokens(S.modelTokens(m)), messages = m.messages, cache = S.tokens(m.cache_read) })
-          .. (if S.cost({ m }) then " · " .. S.money(S.cost({ m })) else "")),
+          .. (if S.SHOW_PRICES and S.cost({ m }) then " · " .. S.money(S.cost({ m })) else "")),
       }),
       ui.progress({ progress = if total > 0 then S.modelTokens(m) / total else 0, fill = "secondary", height = 4, radius = 2 }),
     })
@@ -110,7 +110,7 @@ local function modelTable(data)
       ui.row({ gap = 4 }, { tab("five", "5h"), tab("weekly", "7d") }),
     }),
     ui.column({ gap = 8 }, rows),
-    if S.cost(list) then muted(noctalia.tr("panel.cost_total", { cost = S.money(S.cost(list)) })) else nil,
+    if S.SHOW_PRICES and S.cost(list) then muted(noctalia.tr("panel.cost_total", { cost = S.money(S.cost(list)) })) else nil,
   })
 end
 

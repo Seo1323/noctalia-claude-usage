@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Jak u astatnim Noctalia",
       "description": "Taŭščynia tekstu panełi i prazrystasć z «Nałady → Panełi → Prazrystasć», jak u astatnim Noctalia. Vykliučycie, kab zadać ich uručnuju."
+    },
+    "show_prices": {
+      "label": "Pakazvać ceny",
+      "description": "Prykładny košt pa cenach API ŭ padkazcy i na paneli (i na pałasie, kali tam ukliučana). Vykl. chavaje ŭsie ceny."
     }
   },
   "bar": {

@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Noctalia görünümüne uy",
       "description": "Çubuğun yazı kalınlığını ve Ayarlar → Paneller → Saydamlık değerini, Noctalia'nın geri kalanı gibi kullanır. Kendiniz seçmek için kapatın."
+    },
+    "show_prices": {
+      "label": "Fiyatları göster",
+      "description": "API fiyatlarıyla tahmini maliyetler ipucunda ve panelde (orada açıksa çubukta da). Kapalı tüm fiyatları gizler."
     }
   },
   "bar": {

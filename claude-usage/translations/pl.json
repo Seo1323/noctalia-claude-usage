@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Dopasuj do wyglądu Noctalii",
       "description": "Grubość tekstu jak na reszcie paska i przezroczystość panelu z Ustawień → Panele → Przezroczystość, tak jak w reszcie Noctalii. Wyłącz, żeby ustawić je samodzielnie."
+    },
+    "show_prices": {
+      "label": "Pokazuj ceny",
+      "description": "Szacunkowe koszty według cen API w tooltipie i panelu (oraz na pasku, jeśli to tam włączysz). Wyłączone chowa wszystkie ceny."
     }
   },
   "bar": {

@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "An das Aussehen von Noctalia anpassen",
       "description": "Textstärke der Leiste und Panel-Transparenz aus Einstellungen → Panels → Transparenz übernehmen, wie im Rest von Noctalia. Ausschalten, um sie selbst festzulegen."
+    },
+    "show_prices": {
+      "label": "Preise anzeigen",
+      "description": "Geschätzte Kosten zu API-Preisen im Tooltip und im Panel (und in der Leiste, wenn dort eingeschaltet). Aus blendet alle Preise aus."
     }
   },
   "bar": {

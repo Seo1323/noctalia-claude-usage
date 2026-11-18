@@ -279,6 +279,10 @@
     "match_ui": {
       "label": "Uiterlijk van Noctalia volgen",
       "description": "Gebruikt de tekstdikte van de balk en de transparantie uit Instellingen → Panelen → Transparantie, zoals de rest van Noctalia. Uitzetten om ze zelf in te stellen."
+    },
+    "show_prices": {
+      "label": "Prijzen tonen",
+      "description": "Geschatte kosten tegen API-prijzen in de tooltip en het paneel (en in de balk als je dat daar aanzet). Uit verbergt alle prijzen."
     }
   },
   "bar": {
