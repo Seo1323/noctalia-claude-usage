@@ -5,6 +5,13 @@
 local size = tonumber(noctalia.getConfig("size")) or 20
 local snapshot = noctalia.state.get("usage")
 
+-- Custom logo: the `logo_path` setting, or logo.svg inside the plugin folder.
+local function logoFile()
+  local p = noctalia.string.trim(tostring(noctalia.getConfig("logo_path") or ""))
+  if p ~= "" then return (p:gsub("^~", os.getenv("HOME") or "~")) end
+  return noctalia.pluginDir() .. "/logo.svg"
+end
+
 local function effective(pct, resetAt)
   if pct == nil then return nil end
   if resetAt ~= nil and tonumber(resetAt) <= os.time() then return 0 end
@@ -32,7 +39,7 @@ end
 local function render()
   if noctalia.getConfig("logo") == "custom" then
     barWidget.render(ui.image({
-      path = noctalia.pluginDir() .. "/logo.svg",
+      path = logoFile(),
       width = size,
       height = size,
       fit = "contain",

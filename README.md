@@ -53,6 +53,7 @@ Global: `refresh_minutes` (default 5).
 | --- | --- | --- |
 | `window` | `five_hour` | `five_hour`, `weekly` or `both`. |
 | `logo` | `glyph` | `glyph` (built-in icon), `custom` (your own `logo.svg` in the plugin folder) or `none`. |
+| `logo_path` | empty | Image used when `logo` = `custom`; empty = `logo.svg` in the plugin folder (advanced). |
 | `show_percent` | `true` | Usage percentage. |
 | `show_prefix` | `false` | `5h` / `7d` label before the percentage. |
 | `show_reset` | `true` | Time left until the window resets. |
@@ -72,7 +73,7 @@ Global: `refresh_minutes` (default 5).
 ### Custom logo
 
 The repository does not ship the Claude logo (it is Anthropic's trademark). To use one, put your own
-SVG at `claude-usage/logo.svg` and set the widget's **Icon** setting to *Custom logo.svg*. The file is git-ignored.
+SVG/PNG at `claude-usage/logo.svg` (git-ignored) — or anywhere you like and point the **Custom logo path** setting at it — then set the widget's **Icon** setting to *Custom*. Use a light, single-color image so it matches the other bar icons.
 
 ## Notes
 

@@ -26,10 +26,17 @@ local cfg = {
   critColor = conf("critical_color", "error"),
   warnAt = tonumber(conf("warn_at", 70)) or 70,
   critAt = tonumber(conf("critical_at", 90)) or 90,
+  logoPath = noctalia.string.trim(tostring(conf("logo_path", ""))),
   clickCommand = noctalia.string.trim(tostring(conf("click_command", ""))),
 }
 
 local snapshot = noctalia.state.get("usage")
+
+-- Custom logo: the `logo_path` setting, or logo.svg inside the plugin folder.
+local function logoFile()
+  if cfg.logoPath ~= "" then return (cfg.logoPath:gsub("^~", os.getenv("HOME") or "~")) end
+  return noctalia.pluginDir() .. "/logo.svg"
+end
 
 local ERRORS = {
   no_credentials = "Not logged in to Claude Code",
@@ -87,9 +94,9 @@ local function render()
 
   local parts = {}
   if cfg.logo == "custom" then
-    parts[#parts + 1] = ui.image({ path = noctalia.pluginDir() .. "/logo.svg", width = 18, height = 18, fit = "contain" })
+    parts[#parts + 1] = ui.image({ path = logoFile(), width = 18, height = 18, fit = "contain" })
   elseif cfg.logo ~= "none" then
-    parts[#parts + 1] = ui.glyph({ name = "brain", color = cfg.color })
+    parts[#parts + 1] = ui.glyph({ name = "brain" })
   end
 
   local function label(text, pct)

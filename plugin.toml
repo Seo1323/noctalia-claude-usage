@@ -51,6 +51,14 @@ entry = "bar.luau"
   ]
 
   [[widget.setting]]
+  key = "logo_path"
+  type = "string"
+  label_key = "settings.logo_path.label"
+  description_key = "settings.logo_path.description"
+  default = ""
+  advanced = true
+
+  [[widget.setting]]
   key = "show_percent"
   type = "bool"
   label_key = "settings.show_percent.label"
@@ -190,6 +198,14 @@ entry = "icon.luau"
     { value = "glyph", label_key = "settings.logo.glyph" },
     { value = "custom", label_key = "settings.logo.custom" },
   ]
+
+  [[widget.setting]]
+  key = "logo_path"
+  type = "string"
+  label_key = "settings.logo_path.label"
+  description_key = "settings.logo_path.description"
+  default = ""
+  advanced = true
 
   [[widget.setting]]
   key = "size"

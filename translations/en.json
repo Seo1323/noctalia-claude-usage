@@ -82,10 +82,14 @@
     },
     "logo": {
       "label": "Icon",
-      "description": "Built-in glyph, or your own logo.svg placed in the plugin folder.",
+      "description": "Built-in glyph, or your own image (see Custom logo path).",
       "glyph": "Built-in glyph",
       "custom": "Custom logo.svg",
       "none": "None"
+    },
+    "logo_path": {
+      "label": "Custom logo path",
+      "description": "SVG/PNG file used when Icon is \"Custom\". Empty = logo.svg in the plugin folder. ~ is allowed."
     }
   }
 }
