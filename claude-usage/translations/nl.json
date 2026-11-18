@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Kosten tegen API-prijzen tonen",
       "description": "Geschatte kosten van de tokens in het venster tegen de API-catalogusprijzen van Anthropic. Met een Claude-abonnement betaal je niet per token - dit toont wat hetzelfde gebruik via de API zou kosten."
+    },
+    "currency": {
+      "label": "Valuta voor kosten",
+      "description": "Kosten worden vanuit USD omgerekend met de dagelijkse referentiekoersen van de Europese Centrale Bank (hoogstens elke 12 uur opgehaald, alleen voor een andere valuta dan USD), tenzij je een eigen koers instelt.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Handmatige wisselkoers",
+      "description": "Eenheden van de gekozen valuta per 1 USD. 0 = dagelijkse ECB-koers."
+    },
+    "ring_thickness": {
+      "label": "Ringdikte",
+      "thin": "Dun",
+      "normal": "Normaal",
+      "thick": "Dik"
+    },
+    "ring_track": {
+      "label": "Ringspoor tonen",
+      "description": "De vage volledige cirkel achter het gevulde deel."
+    },
+    "format": {
+      "label": "Tekstsjabloon",
+      "description": "Vervangt de items door je eigen tekst, bijv. {pct} · {reset} · {tokens}. Variabelen: {window} {pct} {left} {reset} {tokens} {cost} {model}. Leeg = normale indeling."
+    },
+    "label_five": {
+      "label": "Label voor het venster van 5 uur"
+    },
+    "label_week": {
+      "label": "Label voor het weekvenster"
+    },
+    "show_model": {
+      "label": "Huidig model tonen",
+      "description": "Het model van je laatste Claude Code-bericht, bijv. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Lettergrootte (px)",
+      "description": "0 = lettergrootte van de balk."
+    },
+    "gradient": {
+      "label": "Vloeiend kleurverloop",
+      "description": "Kleuren gaan geleidelijk over met het gebruik in plaats van te wisselen bij de drempels."
+    },
+    "weekly_own_color": {
+      "label": "Eigen kleur voor het weekvenster",
+      "description": "Een andere basiskleur voor de 7d-items als beide vensters worden getoond."
+    },
+    "weekly_color": {
+      "label": "Kleur van het weekvenster"
+    },
+    "hide_below": {
+      "label": "Verbergen onder gebruik (%)",
+      "description": "Verbergt de widget zolang het gebruik onder deze waarde ligt. 0 = altijd tonen."
+    },
+    "notify": {
+      "label": "Meldingen",
+      "description": "Toont één keer per venster een melding als het gebruik een drempel overschrijdt.",
+      "off": "Uit",
+      "warning": "Bij de waarschuwings- en kritieke drempel",
+      "critical": "Alleen bij de kritieke drempel"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (reset over {time})",
     "tokens": "tokens: {tokens}, cache gelezen: {cache}",
-    "now": "nu",
     "stale": "Verouderd: {error}",
     "loading": "Laden...",
     "cost": "tegen API-prijzen: {cost}"
@@ -191,7 +268,7 @@
     "http_429": "Aanvraaglimiet bereikt - wordt opnieuw geprobeerd"
   },
   "panel": {
-    "no_reset": "geen reset in behandeling",
+    "no_reset": "geen reset gepland",
     "resets_in": "reset over {time}",
     "peak": "piek {tokens}",
     "model_tokens": "{tokens} · {messages} ber. · cache {cache}",
@@ -210,5 +287,9 @@
     "hours_ago": "{n} u geleden",
     "days_ago": "{n} d geleden",
     "cost_total": "≈ {cost} tegen API-prijzen (schatting)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct}%",
+    "body": "Reset over {time}"
   }
 }

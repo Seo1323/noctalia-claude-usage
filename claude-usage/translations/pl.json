@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Pokazuj koszt według cen API",
       "description": "Szacunkowy koszt tokenów z okna według cennika API Anthropic. Przy subskrypcji Claude nie płacisz za tokeny - to pokazuje, ile to samo zużycie kosztowałoby w API."
+    },
+    "currency": {
+      "label": "Waluta kosztów",
+      "description": "Koszty są przeliczane z USD po dziennych kursach referencyjnych Europejskiego Banku Centralnego (pobieranych najwyżej co 12 godzin i tylko dla waluty innej niż USD), chyba że ustawisz kurs ręcznie.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Ręczny kurs wymiany",
+      "description": "Ile jednostek wybranej waluty za 1 USD. 0 = dzienny kurs EBC."
+    },
+    "ring_thickness": {
+      "label": "Grubość kółka",
+      "thin": "Cienkie",
+      "normal": "Normalne",
+      "thick": "Grube"
+    },
+    "ring_track": {
+      "label": "Pokazuj tor kółka",
+      "description": "Blady pełny okrąg za wypełnioną częścią."
+    },
+    "format": {
+      "label": "Szablon tekstu",
+      "description": "Zastępuje elementy własnym tekstem, np. {pct} · {reset} · {tokens}. Znaczniki: {window} {pct} {left} {reset} {tokens} {cost} {model}. Puste = zwykły układ."
+    },
+    "label_five": {
+      "label": "Etykieta okna 5-godzinnego"
+    },
+    "label_week": {
+      "label": "Etykieta okna tygodniowego"
+    },
+    "show_model": {
+      "label": "Pokazuj aktualny model",
+      "description": "Model Twojej ostatniej wiadomości w Claude Code, np. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Rozmiar czcionki (px)",
+      "description": "0 = rozmiar czcionki paska."
+    },
+    "gradient": {
+      "label": "Płynny gradient kolorów",
+      "description": "Kolory przechodzą płynnie wraz ze zużyciem zamiast przełączać się na progach."
+    },
+    "weekly_own_color": {
+      "label": "Własny kolor okna tygodniowego",
+      "description": "Inny kolor bazowy dla elementów 7d, gdy widać oba okna."
+    },
+    "weekly_color": {
+      "label": "Kolor okna tygodniowego"
+    },
+    "hide_below": {
+      "label": "Ukryj poniżej zużycia (%)",
+      "description": "Ukrywa widżet, dopóki zużycie jest poniżej tej wartości. 0 = zawsze widoczny."
+    },
+    "notify": {
+      "label": "Powiadomienia",
+      "description": "Pokazuje powiadomienie raz na okno, gdy zużycie przekroczy próg.",
+      "off": "Wyłączone",
+      "warning": "Przy progu ostrzeżenia i krytycznym",
+      "critical": "Tylko przy progu krytycznym"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (reset za {time})",
     "tokens": "tokeny: {tokens}, odczyt cache: {cache}",
-    "now": "teraz",
     "stale": "Nieaktualne: {error}",
     "loading": "Wczytywanie...",
     "cost": "według cen API: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "{n} godz. temu",
     "days_ago": "{n} dni temu",
     "cost_total": "≈ {cost} według cen API (szacunek)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct}%",
+    "body": "Reset za {time}"
   }
 }

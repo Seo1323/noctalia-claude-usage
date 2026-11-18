@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Pakazvać košt pa cenach API",
       "description": "Prykładny košt tokienaŭ akna pavodle prajsa API Anthropic. Z padpiskaj Claude vy nie płacicie za tokieny - tut vidać, koĺki kaštavała b toje ž vykarystannie praz API."
+    },
+    "currency": {
+      "label": "Valiuta koštu",
+      "description": "Košt pieraličvajecca z USD pa štodzionnych daviedačnych kursach Jeŭrapiejskaha centraĺnaha banka (zahružajucca nie čašciej za raz na 12 hadzin i toĺki dlia valiuty, adroznaj ad USD), kali vy nie zadali kurs uručnuju.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Kurs uručnuju",
+      "description": "Adzinak vybranaj valiuty za 1 USD. 0 = štodzionny kurs JeCB."
+    },
+    "ring_thickness": {
+      "label": "Taŭščynia kaĺca",
+      "thin": "Tonkaje",
+      "normal": "Zvyčajnaje",
+      "thick": "Toŭstaje"
+    },
+    "ring_track": {
+      "label": "Pakazvać darožku kaĺca",
+      "description": "Blednaja poŭnaja akružyna za zapoŭnienaj častkaj."
+    },
+    "format": {
+      "label": "Šablon tekstu",
+      "description": "Zamianiaje elemienty vašym tekstam, napryklad {pct} · {reset} · {tokens}. Padstanoŭki: {window} {pct} {left} {reset} {tokens} {cost} {model}. Pusta = zvyčajny vyhliad."
+    },
+    "label_five": {
+      "label": "Mietka 5-hadzinnaha akna"
+    },
+    "label_week": {
+      "label": "Mietka tydniovaha akna"
+    },
+    "show_model": {
+      "label": "Pakazvać biahučuju madeĺ",
+      "description": "Madeĺ vašaha apošniaha paviedamliennia ŭ Claude Code, napryklad Opus 5.5."
+    },
+    "font_size": {
+      "label": "Pamier šryftu (px)",
+      "description": "0 = pamier šryftu panełi."
+    },
+    "gradient": {
+      "label": "Płaŭny pierachod kolieraŭ",
+      "description": "Koliery zmianiajucca płaŭna razam z vykarystanniem, a nie pierakliučajucca na parohach."
+    },
+    "weekly_own_color": {
+      "label": "Ulasny kolier dlia tydniovaha akna",
+      "description": "Inšy bazavy kolier dlia elemientaŭ 7d, kali pakazany abodva vokny."
+    },
+    "weekly_color": {
+      "label": "Kolier tydniovaha akna"
+    },
+    "hide_below": {
+      "label": "Chavać nižej vykarystannia (%)",
+      "description": "Chavaje vidžet, pakuĺ vykarystannie nižej za heta značennie. 0 = zaŭsiody pakazvać."
+    },
+    "notify": {
+      "label": "Apaviaščenni",
+      "description": "Pakazvaje apaviaščennie adzin raz za akno, kali vykarystannie pieravyšaje paroh.",
+      "off": "Vykl.",
+      "warning": "Na parozie papiaredžannia i krytyčnym",
+      "critical": "Toĺki na krytyčnym parozie"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (skid praz {time})",
     "tokens": "tokieny: {tokens}, čytannie keša: {cache}",
-    "now": "zaraz",
     "stale": "Sastareła: {error}",
     "loading": "Zahruzka...",
     "cost": "pa cenach API: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "{n} hadz tamu",
     "days_ago": "{n} dz tamu",
     "cost_total": "≈ {cost} pa cenach API (acenka)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct}%",
+    "body": "Skid praz {time}"
   }
 }

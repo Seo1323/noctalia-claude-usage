@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Hiện chi phí theo giá API",
       "description": "Chi phí ước tính của token trong cửa sổ theo bảng giá API của Anthropic. Với gói đăng ký Claude bạn không trả tiền theo token - đây là số tiền nếu dùng tương tự qua API."
+    },
+    "currency": {
+      "label": "Tiền tệ cho chi phí",
+      "description": "Chi phí được quy đổi từ USD theo tỷ giá tham chiếu hằng ngày của Ngân hàng Trung ương châu Âu (tải tối đa 12 giờ một lần và chỉ khi dùng tiền tệ khác USD), trừ khi bạn đặt tỷ giá thủ công.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Tỷ giá thủ công",
+      "description": "Số đơn vị tiền tệ đã chọn cho 1 USD. 0 = tỷ giá hằng ngày của ECB."
+    },
+    "ring_thickness": {
+      "label": "Độ dày vòng",
+      "thin": "Mỏng",
+      "normal": "Bình thường",
+      "thick": "Dày"
+    },
+    "ring_track": {
+      "label": "Hiện đường nền của vòng",
+      "description": "Vòng tròn mờ đầy đủ phía sau phần đã tô."
+    },
+    "format": {
+      "label": "Mẫu văn bản",
+      "description": "Thay các mục bằng văn bản của bạn, ví dụ {pct} · {reset} · {tokens}. Biến: {window} {pct} {left} {reset} {tokens} {cost} {model}. Để trống = bố cục thường."
+    },
+    "label_five": {
+      "label": "Nhãn cho cửa sổ 5 giờ"
+    },
+    "label_week": {
+      "label": "Nhãn cho cửa sổ hằng tuần"
+    },
+    "show_model": {
+      "label": "Hiện mô hình hiện tại",
+      "description": "Mô hình của tin nhắn Claude Code gần nhất, ví dụ Opus 5.5."
+    },
+    "font_size": {
+      "label": "Cỡ chữ (px)",
+      "description": "0 = cỡ chữ của thanh."
+    },
+    "gradient": {
+      "label": "Chuyển màu mượt",
+      "description": "Màu thay đổi dần theo mức dùng thay vì đổi đột ngột ở các ngưỡng."
+    },
+    "weekly_own_color": {
+      "label": "Màu riêng cho cửa sổ hằng tuần",
+      "description": "Một màu nền khác cho các mục 7d khi hiện cả hai cửa sổ."
+    },
+    "weekly_color": {
+      "label": "Màu cửa sổ hằng tuần"
+    },
+    "hide_below": {
+      "label": "Ẩn khi mức dùng dưới (%)",
+      "description": "Ẩn widget khi mức dùng dưới giá trị này. 0 = luôn hiện."
+    },
+    "notify": {
+      "label": "Thông báo",
+      "description": "Hiện thông báo một lần cho mỗi cửa sổ khi mức dùng vượt ngưỡng.",
+      "off": "Tắt",
+      "warning": "Ở ngưỡng cảnh báo và nguy cấp",
+      "critical": "Chỉ ở ngưỡng nguy cấp"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (đặt lại sau {time})",
     "tokens": "token: {tokens}, đọc bộ nhớ đệm: {cache}",
-    "now": "bây giờ",
     "stale": "Đã cũ: {error}",
     "loading": "Đang tải...",
     "cost": "theo giá API: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "{n} giờ trước",
     "days_ago": "{n} ngày trước",
     "cost_total": "≈ {cost} theo giá API (ước tính)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct}%",
+    "body": "Đặt lại sau {time}"
   }
 }

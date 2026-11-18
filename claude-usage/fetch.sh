@@ -53,5 +53,6 @@ find "$DIR/projects" -name '*.jsonl' -mtime -8 -print0 2>/dev/null \
         five_tokens: total(.n; start($r5; 18000)), weekly_tokens: total(.n; start($rw; 604800)),
         five_cache_read: total(.c; start($r5; 18000)), weekly_cache_read: total(.c; start($rw; 604800)),
         five_models: models(start($r5; 18000)), weekly_models: models(start($rw; 604800)),
-        hourly: series(3600; 24), daily: series(86400; 7) }' 2>/dev/null \
+        hourly: series(3600; 24), daily: series(86400; 7),
+        last_model: ([$m[] | select(.model != "" and (.model | startswith("<") | not))] | max_by(.t) | .model?) }' 2>/dev/null \
 || fail bad_response

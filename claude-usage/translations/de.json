@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Kosten zu API-Preisen anzeigen",
       "description": "Geschätzte Kosten der Tokens im Zeitraum zu den API-Listenpreisen von Anthropic. Mit einem Claude-Abo zahlst du nicht pro Token - angezeigt wird, was dieselbe Nutzung über die API kosten würde."
+    },
+    "currency": {
+      "label": "Währung für Kosten",
+      "description": "Kosten werden mit den täglichen Referenzkursen der Europäischen Zentralbank aus USD umgerechnet (höchstens alle 12 Stunden abgerufen, nur für eine andere Währung als USD), sofern du keinen eigenen Kurs festlegst.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Manueller Wechselkurs",
+      "description": "Einheiten der gewählten Währung pro 1 USD. 0 = täglicher EZB-Kurs."
+    },
+    "ring_thickness": {
+      "label": "Ringstärke",
+      "thin": "Dünn",
+      "normal": "Normal",
+      "thick": "Dick"
+    },
+    "ring_track": {
+      "label": "Ringspur anzeigen",
+      "description": "Der blasse volle Kreis hinter dem gefüllten Teil."
+    },
+    "format": {
+      "label": "Textvorlage",
+      "description": "Ersetzt die Elemente durch eigenen Text, z. B. {pct} · {reset} · {tokens}. Platzhalter: {window} {pct} {left} {reset} {tokens} {cost} {model}. Leer = normales Layout."
+    },
+    "label_five": {
+      "label": "Bezeichnung für den 5-Stunden-Zeitraum"
+    },
+    "label_week": {
+      "label": "Bezeichnung für den Wochenzeitraum"
+    },
+    "show_model": {
+      "label": "Aktuelles Modell anzeigen",
+      "description": "Das Modell deiner letzten Claude-Code-Nachricht, z. B. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Schriftgröße (px)",
+      "description": "0 = Schriftgröße der Leiste."
+    },
+    "gradient": {
+      "label": "Fließender Farbverlauf",
+      "description": "Farben gehen mit der Nutzung fließend ineinander über, statt an den Schwellen umzuschalten."
+    },
+    "weekly_own_color": {
+      "label": "Eigene Farbe für den Wochenzeitraum",
+      "description": "Eine andere Grundfarbe für die 7d-Elemente, wenn beide Zeiträume angezeigt werden."
+    },
+    "weekly_color": {
+      "label": "Farbe des Wochenzeitraums"
+    },
+    "hide_below": {
+      "label": "Unter Nutzung ausblenden (%)",
+      "description": "Blendet das Widget aus, solange die Nutzung unter diesem Wert liegt. 0 = immer anzeigen."
+    },
+    "notify": {
+      "label": "Benachrichtigungen",
+      "description": "Zeigt einmal pro Zeitraum eine Benachrichtigung, wenn die Nutzung eine Schwelle überschreitet.",
+      "off": "Aus",
+      "warning": "Bei Warn- und kritischer Schwelle",
+      "critical": "Nur bei kritischer Schwelle"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (Reset in {time})",
     "tokens": "Tokens: {tokens}, Cache gelesen: {cache}",
-    "now": "jetzt",
     "stale": "Veraltet: {error}",
     "loading": "Wird geladen...",
     "cost": "zu API-Preisen: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "vor {n} Std.",
     "days_ago": "vor {n} T.",
     "cost_total": "≈ {cost} zu API-Preisen (Schätzung)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct}%",
+    "body": "Reset in {time}"
   }
 }

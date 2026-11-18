@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Afișează costul la prețurile API",
       "description": "Costul estimat al tokenurilor din fereastră la prețurile de listă ale API-ului Anthropic. Cu un abonament Claude nu plătești per token - arată cât ar costa aceeași utilizare prin API."
+    },
+    "currency": {
+      "label": "Moneda costurilor",
+      "description": "Costurile sunt convertite din USD cu cursurile de referință zilnice ale Băncii Centrale Europene (preluate cel mult la 12 ore și doar pentru o altă monedă decât USD), dacă nu setezi un curs manual.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Curs de schimb manual",
+      "description": "Unități din moneda aleasă pentru 1 USD. 0 = cursul zilnic BCE."
+    },
+    "ring_thickness": {
+      "label": "Grosimea inelului",
+      "thin": "Subțire",
+      "normal": "Normală",
+      "thick": "Groasă"
+    },
+    "ring_track": {
+      "label": "Afișează fundalul inelului",
+      "description": "Cercul complet estompat din spatele părții umplute."
+    },
+    "format": {
+      "label": "Șablon de text",
+      "description": "Înlocuiește elementele cu propriul text, de ex. {pct} · {reset} · {tokens}. Marcaje: {window} {pct} {left} {reset} {tokens} {cost} {model}. Gol = aranjament normal."
+    },
+    "label_five": {
+      "label": "Eticheta ferestrei de 5 ore"
+    },
+    "label_week": {
+      "label": "Eticheta ferestrei săptămânale"
+    },
+    "show_model": {
+      "label": "Afișează modelul curent",
+      "description": "Modelul ultimului tău mesaj din Claude Code, de ex. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Mărimea fontului (px)",
+      "description": "0 = mărimea fontului barei."
+    },
+    "gradient": {
+      "label": "Gradient de culoare fin",
+      "description": "Culorile trec treptat odată cu utilizarea, în loc să se schimbe brusc la praguri."
+    },
+    "weekly_own_color": {
+      "label": "Culoare proprie pentru fereastra săptămânală",
+      "description": "O altă culoare de bază pentru elementele 7d când sunt afișate ambele ferestre."
+    },
+    "weekly_color": {
+      "label": "Culoarea ferestrei săptămânale"
+    },
+    "hide_below": {
+      "label": "Ascunde sub utilizarea (%)",
+      "description": "Ascunde widgetul cât timp utilizarea este sub această valoare. 0 = afișează mereu."
+    },
+    "notify": {
+      "label": "Notificări",
+      "description": "Afișează o notificare o dată pe fereastră când utilizarea depășește un prag.",
+      "off": "Dezactivate",
+      "warning": "La pragurile de avertizare și critic",
+      "critical": "Doar la pragul critic"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (resetare în {time})",
     "tokens": "tokenuri: {tokens}, citire cache: {cache}",
-    "now": "acum",
     "stale": "Învechit: {error}",
     "loading": "Se încarcă...",
     "cost": "la prețurile API: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "acum {n} h",
     "days_ago": "acum {n} z",
     "cost_total": "≈ {cost} la prețurile API (estimare)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct}%",
+    "body": "Resetare în {time}"
   }
 }

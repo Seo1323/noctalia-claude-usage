@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Visa kostnad enligt API-priser",
       "description": "Uppskattad kostnad för fönstrets tokens enligt Anthropics API-listpriser. Med ett Claude-abonnemang betalar du inte per token - detta visar vad samma användning skulle kosta via API:t."
+    },
+    "currency": {
+      "label": "Valuta för kostnader",
+      "description": "Kostnader räknas om från USD med Europeiska centralbankens dagliga referenskurser (hämtas högst var 12:e timme och bara för en annan valuta än USD), om du inte anger en egen kurs.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Manuell växelkurs",
+      "description": "Enheter av vald valuta per 1 USD. 0 = ECB:s dagliga kurs."
+    },
+    "ring_thickness": {
+      "label": "Ringens tjocklek",
+      "thin": "Tunn",
+      "normal": "Normal",
+      "thick": "Tjock"
+    },
+    "ring_track": {
+      "label": "Visa ringens spår",
+      "description": "Den svaga hela cirkeln bakom den fyllda delen."
+    },
+    "format": {
+      "label": "Textmall",
+      "description": "Ersätter objekten med egen text, t.ex. {pct} · {reset} · {tokens}. Platshållare: {window} {pct} {left} {reset} {tokens} {cost} {model}. Tomt = vanlig layout."
+    },
+    "label_five": {
+      "label": "Etikett för 5-timmarsfönstret"
+    },
+    "label_week": {
+      "label": "Etikett för veckofönstret"
+    },
+    "show_model": {
+      "label": "Visa aktuell modell",
+      "description": "Modellen i ditt senaste Claude Code-meddelande, t.ex. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Teckenstorlek (px)",
+      "description": "0 = fältets teckenstorlek."
+    },
+    "gradient": {
+      "label": "Mjuk färgövergång",
+      "description": "Färgerna övergår gradvis med användningen i stället för att växla vid trösklarna."
+    },
+    "weekly_own_color": {
+      "label": "Egen färg för veckofönstret",
+      "description": "En annan grundfärg för 7d-objekten när båda fönstren visas."
+    },
+    "weekly_color": {
+      "label": "Veckofönstrets färg"
+    },
+    "hide_below": {
+      "label": "Dölj under användning (%)",
+      "description": "Döljer widgeten så länge användningen är under detta värde. 0 = visa alltid."
+    },
+    "notify": {
+      "label": "Aviseringar",
+      "description": "Visar en avisering en gång per fönster när användningen passerar en tröskel.",
+      "off": "Av",
+      "warning": "Vid varnings- och kritisk tröskel",
+      "critical": "Bara vid kritisk tröskel"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (återställs om {time})",
     "tokens": "tokens: {tokens}, cacheläsning: {cache}",
-    "now": "nu",
     "stale": "Inaktuellt: {error}",
     "loading": "Laddar...",
     "cost": "enligt API-priser: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "för {n} h sedan",
     "days_ago": "för {n} d sedan",
     "cost_total": "≈ {cost} enligt API-priser (uppskattning)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct} %",
+    "body": "Återställs om {time}"
   }
 }

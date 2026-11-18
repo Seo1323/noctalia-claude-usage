@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Show cost at API prices",
       "description": "Estimated cost of the window's tokens at Anthropic API list prices. With a Claude subscription you do not pay per token - this shows what the same usage would cost on the API."
+    },
+    "currency": {
+      "label": "Currency for costs",
+      "description": "Costs are converted from USD with the European Central Bank's daily reference rates (fetched at most every 12 hours, only for a currency other than USD), unless you set a manual rate.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Manual exchange rate",
+      "description": "Units of the chosen currency per 1 USD. 0 = use the ECB daily rate."
+    },
+    "ring_thickness": {
+      "label": "Ring thickness",
+      "thin": "Thin",
+      "normal": "Normal",
+      "thick": "Thick"
+    },
+    "ring_track": {
+      "label": "Show ring track",
+      "description": "The faint full circle behind the filled part."
+    },
+    "format": {
+      "label": "Text template",
+      "description": "Replaces the items with your own text, e.g. {pct} · {reset} · {tokens}. Placeholders: {window} {pct} {left} {reset} {tokens} {cost} {model}. Empty = normal layout."
+    },
+    "label_five": {
+      "label": "Label for the 5-hour window"
+    },
+    "label_week": {
+      "label": "Label for the weekly window"
+    },
+    "show_model": {
+      "label": "Show current model",
+      "description": "The model of your latest Claude Code message, e.g. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Font size (px)",
+      "description": "0 = the bar's font size."
+    },
+    "gradient": {
+      "label": "Smooth colour gradient",
+      "description": "Blend the colours continuously with usage instead of switching at the thresholds."
+    },
+    "weekly_own_color": {
+      "label": "Own colour for the weekly window",
+      "description": "Use a different base colour for the 7d items when both windows are shown."
+    },
+    "weekly_color": {
+      "label": "Weekly window colour"
+    },
+    "hide_below": {
+      "label": "Hide below usage (%)",
+      "description": "Hide the widget while usage is below this value. 0 = always show."
+    },
+    "notify": {
+      "label": "Notifications",
+      "description": "Show a notification once per window when usage crosses a threshold.",
+      "off": "Off",
+      "warning": "At the warning and critical thresholds",
+      "critical": "Only at the critical threshold"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (resets in {time})",
     "tokens": "tokens: {tokens}, cache read: {cache}",
-    "now": "now",
     "stale": "Stale: {error}",
     "loading": "Loading...",
     "cost": "at API prices: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "{n} h ago",
     "days_ago": "{n} d ago",
     "cost_total": "≈ {cost} at API prices (estimate)"
+  },
+  "notify": {
+    "title": "Claude Code {window} at {pct}%",
+    "body": "Resets in {time}"
   }
 }

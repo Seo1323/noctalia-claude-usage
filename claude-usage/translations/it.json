@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Mostra il costo ai prezzi API",
       "description": "Costo stimato dei token della finestra ai prezzi di listino dell’API Anthropic. Con un abbonamento Claude non paghi a token: indica quanto costerebbe lo stesso utilizzo tramite API."
+    },
+    "currency": {
+      "label": "Valuta dei costi",
+      "description": "I costi sono convertiti da USD con i tassi di riferimento giornalieri della Banca centrale europea (scaricati al massimo ogni 12 ore e solo per una valuta diversa da USD), a meno che tu non imposti un tasso manuale.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Tasso di cambio manuale",
+      "description": "Unità della valuta scelta per 1 USD. 0 = tasso giornaliero BCE."
+    },
+    "ring_thickness": {
+      "label": "Spessore dell’anello",
+      "thin": "Sottile",
+      "normal": "Normale",
+      "thick": "Spesso"
+    },
+    "ring_track": {
+      "label": "Mostra la traccia dell’anello",
+      "description": "Il cerchio completo tenue dietro la parte piena."
+    },
+    "format": {
+      "label": "Modello di testo",
+      "description": "Sostituisce gli elementi con un testo tuo, ad es. {pct} · {reset} · {tokens}. Segnaposto: {window} {pct} {left} {reset} {tokens} {cost} {model}. Vuoto = layout normale."
+    },
+    "label_five": {
+      "label": "Etichetta della finestra di 5 ore"
+    },
+    "label_week": {
+      "label": "Etichetta della finestra settimanale"
+    },
+    "show_model": {
+      "label": "Mostra il modello attuale",
+      "description": "Il modello del tuo ultimo messaggio di Claude Code, ad es. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Dimensione del carattere (px)",
+      "description": "0 = dimensione del carattere della barra."
+    },
+    "gradient": {
+      "label": "Sfumatura di colore graduale",
+      "description": "I colori cambiano gradualmente con l’utilizzo invece di scattare alle soglie."
+    },
+    "weekly_own_color": {
+      "label": "Colore proprio per la finestra settimanale",
+      "description": "Un altro colore di base per gli elementi 7d quando sono mostrate entrambe le finestre."
+    },
+    "weekly_color": {
+      "label": "Colore della finestra settimanale"
+    },
+    "hide_below": {
+      "label": "Nascondi sotto l’utilizzo (%)",
+      "description": "Nasconde il widget finché l’utilizzo è sotto questo valore. 0 = mostra sempre."
+    },
+    "notify": {
+      "label": "Notifiche",
+      "description": "Mostra una notifica una volta per finestra quando l’utilizzo supera una soglia.",
+      "off": "Disattivate",
+      "warning": "Alle soglie di avviso e critica",
+      "critical": "Solo alla soglia critica"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (reset tra {time})",
     "tokens": "token: {tokens}, letture cache: {cache}",
-    "now": "ora",
     "stale": "Non aggiornato: {error}",
     "loading": "Caricamento...",
     "cost": "ai prezzi API: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "{n} h fa",
     "days_ago": "{n} g fa",
     "cost_total": "≈ {cost} ai prezzi API (stima)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct}%",
+    "body": "Reset tra {time}"
   }
 }

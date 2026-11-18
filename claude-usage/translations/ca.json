@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Mostra el cost a preus de l’API",
       "description": "Cost estimat dels tokens de la finestra segons els preus de llista de l’API d’Anthropic. Amb una subscripció a Claude no pagues per token: mostra quant costaria el mateix ús a l’API."
+    },
+    "currency": {
+      "label": "Moneda dels costos",
+      "description": "Els costos es converteixen des d’USD amb els tipus de referència diaris del Banc Central Europeu (obtinguts com a molt cada 12 hores i només per a una moneda diferent d’USD), tret que hi fixis un tipus manual.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Tipus de canvi manual",
+      "description": "Unitats de la moneda triada per 1 USD. 0 = tipus diari del BCE."
+    },
+    "ring_thickness": {
+      "label": "Gruix de l’anell",
+      "thin": "Fi",
+      "normal": "Normal",
+      "thick": "Gruixut"
+    },
+    "ring_track": {
+      "label": "Mostra el fons de l’anell",
+      "description": "El cercle complet tènue darrere la part plena."
+    },
+    "format": {
+      "label": "Plantilla de text",
+      "description": "Substitueix els elements pel teu propi text, p. ex. {pct} · {reset} · {tokens}. Marcadors: {window} {pct} {left} {reset} {tokens} {cost} {model}. Buit = disposició normal."
+    },
+    "label_five": {
+      "label": "Etiqueta de la finestra de 5 hores"
+    },
+    "label_week": {
+      "label": "Etiqueta de la finestra setmanal"
+    },
+    "show_model": {
+      "label": "Mostra el model actual",
+      "description": "El model del teu darrer missatge de Claude Code, p. ex. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Mida de la lletra (px)",
+      "description": "0 = mida de la lletra de la barra."
+    },
+    "gradient": {
+      "label": "Degradat de color suau",
+      "description": "Els colors canvien gradualment amb l’ús en lloc de saltar als llindars."
+    },
+    "weekly_own_color": {
+      "label": "Color propi per a la finestra setmanal",
+      "description": "Un altre color base per als elements de 7d quan es mostren les dues finestres."
+    },
+    "weekly_color": {
+      "label": "Color de la finestra setmanal"
+    },
+    "hide_below": {
+      "label": "Amaga per sota de l’ús (%)",
+      "description": "Amaga el giny mentre l’ús sigui inferior a aquest valor. 0 = mostra sempre."
+    },
+    "notify": {
+      "label": "Notificacions",
+      "description": "Mostra una notificació un cop per finestra quan l’ús supera un llindar.",
+      "off": "Desactivades",
+      "warning": "Als llindars d’avís i crític",
+      "critical": "Només al llindar crític"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (es reinicia d’aquí a {time})",
     "tokens": "tokens: {tokens}, lectura de memòria cau: {cache}",
-    "now": "ara",
     "stale": "Desactualitzat: {error}",
     "loading": "S’està carregant...",
     "cost": "a preus de l’API: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "fa {n} h",
     "days_ago": "fa {n} d",
     "cost_total": "≈ {cost} a preus de l’API (estimació)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct} %",
+    "body": "Es reinicia d’aquí a {time}"
   }
 }

@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "按 API 价格显示费用",
       "description": "按 Anthropic API 标价估算窗口内令牌的费用。使用 Claude 订阅时不按令牌付费——这里显示的是同样用量在 API 上的花费。"
+    },
+    "currency": {
+      "label": "费用货币",
+      "description": "除非手动设置汇率，费用会按欧洲中央银行的每日参考汇率从美元换算（仅在使用非美元货币时获取，最多每 12 小时一次）。",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "手动汇率",
+      "description": "每 1 美元对应所选货币的数量。0 = 欧洲央行每日汇率。"
+    },
+    "ring_thickness": {
+      "label": "圆环粗细",
+      "thin": "细",
+      "normal": "正常",
+      "thick": "粗"
+    },
+    "ring_track": {
+      "label": "显示圆环轨道",
+      "description": "已填充部分后面的浅色完整圆圈。"
+    },
+    "format": {
+      "label": "文本模板",
+      "description": "用你自己的文本替换各项，例如 {pct} · {reset} · {tokens}。占位符：{window} {pct} {left} {reset} {tokens} {cost} {model}。留空 = 常规布局。"
+    },
+    "label_five": {
+      "label": "5 小时窗口的标签"
+    },
+    "label_week": {
+      "label": "每周窗口的标签"
+    },
+    "show_model": {
+      "label": "显示当前模型",
+      "description": "你最近一条 Claude Code 消息所用的模型，例如 Opus 5.5。"
+    },
+    "font_size": {
+      "label": "字号（px）",
+      "description": "0 = 状态栏字号。"
+    },
+    "gradient": {
+      "label": "平滑颜色渐变",
+      "description": "颜色随用量平滑过渡，而不是在阈值处突变。"
+    },
+    "weekly_own_color": {
+      "label": "每周窗口使用单独颜色",
+      "description": "同时显示两个窗口时，为 7d 项目使用另一种基础颜色。"
+    },
+    "weekly_color": {
+      "label": "每周窗口颜色"
+    },
+    "hide_below": {
+      "label": "用量低于此值时隐藏（%）",
+      "description": "用量低于该值时隐藏小组件。0 = 始终显示。"
+    },
+    "notify": {
+      "label": "通知",
+      "description": "用量超过阈值时，每个窗口通知一次。",
+      "off": "关闭",
+      "warning": "在警告和严重阈值时",
+      "critical": "仅在严重阈值时"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  （{time} 后重置）",
     "tokens": "令牌：{tokens}，缓存读取：{cache}",
-    "now": "即将",
     "stale": "数据过期：{error}",
     "loading": "加载中...",
     "cost": "按 API 价格：{cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "{n} 小时前",
     "days_ago": "{n} 天前",
     "cost_total": "≈ {cost}（按 API 价格估算）"
+  },
+  "notify": {
+    "title": "Claude Code {window}：{pct}%",
+    "body": "{time} 后重置"
   }
 }

@@ -1,6 +1,6 @@
 # Claude Limits
 
-<p align="center"><img src="docs/example-6.png" alt="Claude Limits in the Noctalia bar" height="44"></p>
+<p align="center"><img src="docs/example-6.webp" alt="Claude Limits in the Noctalia bar" height="44"></p>
 
 Shows your Claude Code usage in the bar: how much of the 5-hour (and optionally weekly) limit is used, how long
 until it resets, and how many tokens you used in that window — as text, a small progress bar or a usage ring.
@@ -33,8 +33,9 @@ Add **Claude Limits** to a bar in **Settings → Bar** and pick the entry:
   `noctalia msg panel-toggle seo/claude-usage:panel`. It shows both limits, lets you start Claude Code in a
   terminal with a chosen model (default, Opus, Sonnet, Haiku) and mode (new session, `--continue`, `--resume`),
   graphs your tokens over the last 24 hours and 7 days (hover a graph for the value), and lists tokens per model
-  for the 5-hour or weekly window. The panel is attached to the bar next to the widget, like the built-in panels; its
-  background can be made translucent from the `bar` widget settings.
+  for the 5-hour or weekly window. It opens in the middle of the screen like the built-in panels; Noctalia's own
+  panel settings (**Settings → Plugins**, gear on the plugin) switch it to attached, another position or "open near
+  the widget". Its background can be made translucent from the `bar` widget settings.
 
 The `poller` service starts with the plugin and refreshes every `refresh_minutes`; all widgets share its result.
 
@@ -42,16 +43,16 @@ The `poller` service starts with the plugin and refreshes every `refresh_minutes
 
 | Look | Settings |
 | --- | --- |
-| <img src="docs/example-6.png" alt="Defaults" height="34"> | Defaults |
-| <img src="docs/example-1.png" alt="Plain text" height="34"> | `logo = none`, `separator = none`, `dim_extras = false` |
-| <img src="docs/example-2.png" alt="Star icon" height="34"> | `logo = star`, `show_prefix = true` |
-| <img src="docs/example-3.png" alt="Both windows" height="34"> | `logo = glyph`, `show_prefix = true`, `window = both`, `show_reset = false`, `show_tokens = false` |
-| <img src="docs/example-4.png" alt="Verbose and bold" height="34"> | `logo = star`, `reset_format = verbose`, `token_format = full`, `font_weight = bold` |
-| <img src="docs/example-5.png" alt="Critical color" height="34"> | `show_prefix = true`, `show_tokens = false`, `critical_at = 5` |
-| <img src="docs/example-7.png" alt="Progress bar" height="34"> | `show_bar = true`, `percent_mode = left`, `show_tokens = false` |
-| <img src="docs/example-8.png" alt="Ring until hovered" height="34"> | `display_mode = hover`, `logo = ring` (at rest) |
-| <img src="docs/example-9.png" alt="Quiet until high" height="34"> | `display_mode = important`, `logo = star` |
-| <img src="docs/example-10.png" alt="Any glyph" height="34"> | `logo = glyph`, `glyph = bolt`, `separator = bar` |
+| <img src="docs/example-6.webp" alt="Defaults" height="34"> | Defaults |
+| <img src="docs/example-1.webp" alt="Plain text" height="34"> | `logo = none`, `separator = none`, `dim_extras = false` |
+| <img src="docs/example-2.webp" alt="Star icon" height="34"> | `logo = star`, `show_prefix = true` |
+| <img src="docs/example-3.webp" alt="Both windows" height="34"> | `logo = glyph`, `show_prefix = true`, `window = both`, `show_reset = false`, `show_tokens = false` |
+| <img src="docs/example-4.webp" alt="Verbose and bold" height="34"> | `logo = star`, `reset_format = verbose`, `token_format = full`, `font_weight = bold` |
+| <img src="docs/example-5.webp" alt="Critical color" height="34"> | `show_prefix = true`, `show_tokens = false`, `critical_at = 5` |
+| <img src="docs/example-7.webp" alt="Progress bar" height="34"> | `show_bar = true`, `percent_mode = left`, `show_tokens = false` |
+| <img src="docs/example-8.webp" alt="Ring until hovered" height="34"> | `display_mode = hover`, `logo = ring` (at rest) |
+| <img src="docs/example-9.webp" alt="Quiet until high" height="34"> | `display_mode = important`, `logo = star` |
+| <img src="docs/example-10.webp" alt="Any glyph" height="34"> | `logo = glyph`, `glyph = bolt`, `separator = bar` |
 
 ## Settings
 
@@ -61,6 +62,8 @@ Plugin:
 | --- | --- | --- | --- |
 | `refresh_minutes` | `int` | `5` | How often the usage API is queried (1–120 minutes). |
 | `percent_decimals` | `int` | `0` | Decimal places in percentages (0–2). The API currently reports whole percentages. |
+| `currency` | `select` | `USD` | Currency for costs: USD, EUR, PLN, GBP, CHF, JPY, CNY, CAD, AUD, SEK, NOK, DKK, CZK, HUF, RON, TRY, BRL, INR, KRW, MXN. |
+| `exchange_rate` | `double` | `0` | Units of `currency` per 1 USD; `0` uses the ECB daily reference rate. |
 | `launch_command` | `string` | `alacritty -e claude` | Command the panel uses to start Claude Code; `--model …` and the mode flag are appended. |
 
 `bar` widget:
@@ -74,9 +77,13 @@ Plugin:
 | `glyph` | `glyph` | `brain` | Icon used when `logo = glyph`. |
 | `logo_path` | `file` | `""` | SVG / PNG used when `logo = custom`; empty means `logo.svg` in the plugin folder. |
 | `icon_size` | `int` | `18` | Icon and ring size, in pixels (10–40). |
+| `ring_thickness` | `select` | `normal` | Usage ring stroke: `thin`, `normal` or `thick`. |
+| `ring_track` | `bool` | `true` | Faint full circle behind the filled part of the ring. |
+| `format` | `string` | `""` | Own text template instead of the items: `{window}` `{pct}` `{left}` `{reset}` `{tokens}` `{cost}` `{model}`. |
 | `show_percent` | `bool` | `true` | Show the usage percentage. |
 | `percent_mode` | `select` | `used` | `used` (`22%`) or `left` (`78% left`). |
 | `show_prefix` | `bool` | `false` | Prefix the percentage with `5h` / `7d`. |
+| `label_five` / `label_week` | `string` | `5h` / `7d` | Labels used by `show_prefix` and `{window}`. |
 | `show_bar` | `bool` | `false` | Small progress bar after the percentage. |
 | `bar_width` | `int` | `32` | Progress bar width, in pixels (12–120). |
 | `gauge_mode` | `select` | `left` | What the progress bar and the ring fill with: `left` or `used`. |
@@ -87,16 +94,22 @@ Plugin:
 | `include_cache_read` | `bool` | `false` | Add prompt-cache reads to the token count. They are cheap but numerous, so the number gets much larger. The tooltip always shows them separately. |
 | `show_cost` | `bool` | `false` | Estimated cost of the window's tokens at Anthropic API list prices (see Notes). |
 | `token_format` | `select` | `short` | `short` (`290k`) or `full` (`289731`). |
+| `show_model` | `bool` | `false` | Model of your latest Claude Code message, e.g. `Opus 5.5`. |
 | `separator` | `select` | `dot` | Between items: `none`, `dot` (`·`), `bar` (`\|`) or `slash` (`/`). |
 | `dim_extras` | `bool` | `true` | Time and tokens in a muted color; only the percentage keeps the usage color. |
+| `font_size` | `int` | `0` | Font size in px; `0` keeps the bar's size. |
 | `gap` | `int` | `4` | Spacing between items, in pixels (0–24). |
 | `font_weight` | `select` | `medium` | `medium` or `bold`. |
 | `color_by_usage` | `bool` | `true` | Use the warning / critical colors above the thresholds. |
+| `gradient` | `bool` | `false` | Blend colors smoothly with usage instead of switching at the thresholds. |
 | `warn_at` | `int` | `70` | Warning threshold, in percent. |
 | `critical_at` | `int` | `90` | Critical threshold, in percent. |
 | `color` | `color` | `on_surface` | Normal text color (color role or hex). |
 | `warn_color` | `color` | `tertiary` | Text color above `warn_at`. |
 | `critical_color` | `color` | `error` | Text color above `critical_at`. |
+| `weekly_own_color` / `weekly_color` | `bool` / `color` | `false` / `secondary` | Own base color for the 7d items when both windows are shown. |
+| `hide_below` | `int` | `0` | Hide the widget while usage is below this %; `0` always shows it. |
+| `notify` | `select` | `off` | Notify once per window: `off`, `warning` (warning and critical) or `critical`. |
 | `click_action` | `select` | `panel` | Left click: `panel` (open the panel), `command` (run `click_command`) or `refresh`. Right click always refreshes. |
 | `click_command` | `string` | `""` | Shell command for `click_action = command`, e.g. `alacritty -e claude`. |
 | `panel_translucent` | `bool` | `false` | Translucent panel background (the text stays opaque). |
@@ -157,6 +170,10 @@ Limits was written independently and takes a different direction:
 - **Network:** one HTTPS request per refresh to `https://api.anthropic.com/api/oauth/usage`, authenticated with
   the OAuth token Claude Code stores in `~/.claude/.credentials.json`. The token is only read, never written or
   refreshed. If it has expired, the tooltip says so; using Claude Code once refreshes it.
+- **Exchange rates:** only when `currency` is not USD and `exchange_rate` is 0, the poller runs `rates.sh`, which
+  fetches the ECB daily reference rates from `https://www.ecb.europa.eu` at most every 12 hours.
+- **Cache:** the last good reading is kept in the plugin data directory (`last.json`), so a restart or a rate limit
+  shows stale numbers instead of an empty widget.
 - **Cost estimates:** prices per model are built into `shared.luau` (Anthropic API list prices, November 2026;
   cache writes at 1.25x input for the 5-minute TTL and 2x for the 1-hour TTL). With a Claude subscription you do not
   pay per token - the figure shows what the same usage would cost on the API. Unknown models fall back to their

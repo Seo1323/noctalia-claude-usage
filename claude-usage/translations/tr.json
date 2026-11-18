@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Maliyeti API fiyatlarıyla göster",
       "description": "Penceredeki tokenların Anthropic API liste fiyatlarıyla tahmini maliyeti. Claude aboneliğinde token başına ödeme yapmazsınız - aynı kullanımın API'de ne kadar tutacağını gösterir."
+    },
+    "currency": {
+      "label": "Maliyet para birimi",
+      "description": "Maliyetler, elle bir kur girmediğiniz sürece Avrupa Merkez Bankası'nın günlük referans kurlarıyla USD'den çevrilir (en fazla 12 saatte bir ve yalnızca USD dışındaki bir para birimi için alınır).",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Elle döviz kuru",
+      "description": "1 USD karşılığı seçilen para biriminden birim. 0 = AMB günlük kuru."
+    },
+    "ring_thickness": {
+      "label": "Halka kalınlığı",
+      "thin": "İnce",
+      "normal": "Normal",
+      "thick": "Kalın"
+    },
+    "ring_track": {
+      "label": "Halka izini göster",
+      "description": "Dolu kısmın arkasındaki soluk tam daire."
+    },
+    "format": {
+      "label": "Metin şablonu",
+      "description": "Öğeleri kendi metninizle değiştirir, ör. {pct} · {reset} · {tokens}. Yer tutucular: {window} {pct} {left} {reset} {tokens} {cost} {model}. Boş = normal düzen."
+    },
+    "label_five": {
+      "label": "5 saatlik pencere etiketi"
+    },
+    "label_week": {
+      "label": "Haftalık pencere etiketi"
+    },
+    "show_model": {
+      "label": "Geçerli modeli göster",
+      "description": "Son Claude Code iletinizin modeli, ör. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Yazı boyutu (px)",
+      "description": "0 = çubuğun yazı boyutu."
+    },
+    "gradient": {
+      "label": "Yumuşak renk geçişi",
+      "description": "Renkler eşiklerde birden değişmek yerine kullanıma göre kademeli değişir."
+    },
+    "weekly_own_color": {
+      "label": "Haftalık pencere için ayrı renk",
+      "description": "Her iki pencere gösterildiğinde 7d öğeleri için farklı bir temel renk."
+    },
+    "weekly_color": {
+      "label": "Haftalık pencere rengi"
+    },
+    "hide_below": {
+      "label": "Bu kullanımın altında gizle (%)",
+      "description": "Kullanım bu değerin altındayken bileşeni gizler. 0 = her zaman göster."
+    },
+    "notify": {
+      "label": "Bildirimler",
+      "description": "Kullanım bir eşiği aştığında her pencere için bir kez bildirim gösterir.",
+      "off": "Kapalı",
+      "warning": "Uyarı ve kritik eşiklerde",
+      "critical": "Yalnızca kritik eşikte"
     }
   },
   "bar": {
@@ -176,9 +254,8 @@
     "ready": "hazır"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  ({time} sonra sıfırlanır)",
+    "window": "{window}: %{pct}  ({time} sonra sıfırlanır)",
     "tokens": "tokenlar: {tokens}, önbellek okuma: {cache}",
-    "now": "şimdi",
     "stale": "Güncel değil: {error}",
     "loading": "Yükleniyor...",
     "cost": "API fiyatlarıyla: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "{n} sa önce",
     "days_ago": "{n} g önce",
     "cost_total": "≈ {cost} API fiyatlarıyla (tahmin)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: %{pct}",
+    "body": "{time} sonra sıfırlanır"
   }
 }

@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Zobrazit cenu podle ceníku API",
       "description": "Odhadovaná cena tokenů v okně podle ceníku API Anthropic. S předplatným Claude neplatíte za tokeny - ukazuje, kolik by stejné využití stálo přes API."
+    },
+    "currency": {
+      "label": "Měna nákladů",
+      "description": "Náklady se přepočítávají z USD podle denních referenčních kurzů Evropské centrální banky (stahovaných nejvýše každých 12 hodin a jen pro jinou měnu než USD), pokud nenastavíte vlastní kurz.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Ruční směnný kurz",
+      "description": "Jednotky zvolené měny za 1 USD. 0 = denní kurz ECB."
+    },
+    "ring_thickness": {
+      "label": "Tloušťka kruhu",
+      "thin": "Tenký",
+      "normal": "Normální",
+      "thick": "Silný"
+    },
+    "ring_track": {
+      "label": "Zobrazit stopu kruhu",
+      "description": "Bledá celá kružnice za vyplněnou částí."
+    },
+    "format": {
+      "label": "Textová šablona",
+      "description": "Nahradí položky vlastním textem, např. {pct} · {reset} · {tokens}. Zástupné symboly: {window} {pct} {left} {reset} {tokens} {cost} {model}. Prázdné = běžné rozvržení."
+    },
+    "label_five": {
+      "label": "Popisek 5hodinového okna"
+    },
+    "label_week": {
+      "label": "Popisek týdenního okna"
+    },
+    "show_model": {
+      "label": "Zobrazit aktuální model",
+      "description": "Model vaší poslední zprávy v Claude Code, např. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Velikost písma (px)",
+      "description": "0 = velikost písma lišty."
+    },
+    "gradient": {
+      "label": "Plynulý barevný přechod",
+      "description": "Barvy se s využitím mění plynule, místo aby se přepínaly na prazích."
+    },
+    "weekly_own_color": {
+      "label": "Vlastní barva týdenního okna",
+      "description": "Jiná základní barva pro položky 7d, když jsou zobrazena obě okna."
+    },
+    "weekly_color": {
+      "label": "Barva týdenního okna"
+    },
+    "hide_below": {
+      "label": "Skrýt pod využitím (%)",
+      "description": "Skryje widget, dokud je využití pod touto hodnotou. 0 = vždy zobrazit."
+    },
+    "notify": {
+      "label": "Oznámení",
+      "description": "Zobrazí oznámení jednou za okno, když využití překročí práh.",
+      "off": "Vypnuto",
+      "warning": "Na prahu varování a kritickém",
+      "critical": "Jen na kritickém prahu"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (reset za {time})",
     "tokens": "tokeny: {tokens}, čtení z mezipaměti: {cache}",
-    "now": "nyní",
     "stale": "Neaktuální: {error}",
     "loading": "Načítání...",
     "cost": "podle cen API: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "před {n} h",
     "days_ago": "před {n} d",
     "cost_total": "≈ {cost} podle cen API (odhad)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct} %",
+    "body": "Reset za {time}"
   }
 }

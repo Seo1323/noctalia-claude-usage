@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Költség megjelenítése API-áron",
       "description": "Az ablak tokenjeinek becsült költsége az Anthropic API listaárai szerint. Claude-előfizetéssel nem tokenenként fizetsz - ez azt mutatja, mennyibe kerülne ugyanez a használat az API-n."
+    },
+    "currency": {
+      "label": "Költségek pénzneme",
+      "description": "A költségeket az Európai Központi Bank napi referencia-árfolyamaival váltja át USD-ből (legfeljebb 12 óránként tölti le, csak USD-től eltérő pénznemnél), hacsak nem adsz meg kézi árfolyamot.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Kézi árfolyam",
+      "description": "A választott pénznem egységei 1 USD-re. 0 = napi EKB-árfolyam."
+    },
+    "ring_thickness": {
+      "label": "Gyűrű vastagsága",
+      "thin": "Vékony",
+      "normal": "Normál",
+      "thick": "Vastag"
+    },
+    "ring_track": {
+      "label": "Gyűrű sávjának megjelenítése",
+      "description": "A halvány teljes kör a kitöltött rész mögött."
+    },
+    "format": {
+      "label": "Szövegsablon",
+      "description": "Az elemeket saját szövegre cseréli, pl. {pct} · {reset} · {tokens}. Helyőrzők: {window} {pct} {left} {reset} {tokens} {cost} {model}. Üres = szokásos elrendezés."
+    },
+    "label_five": {
+      "label": "Az 5 órás ablak címkéje"
+    },
+    "label_week": {
+      "label": "A heti ablak címkéje"
+    },
+    "show_model": {
+      "label": "Aktuális modell megjelenítése",
+      "description": "A legutóbbi Claude Code-üzeneted modellje, pl. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Betűméret (px)",
+      "description": "0 = a sáv betűmérete."
+    },
+    "gradient": {
+      "label": "Folyamatos színátmenet",
+      "description": "A színek a használattal folyamatosan változnak, nem a küszöböknél ugranak."
+    },
+    "weekly_own_color": {
+      "label": "Saját szín a heti ablakhoz",
+      "description": "Más alapszín a 7d elemekhez, ha mindkét ablak látszik."
+    },
+    "weekly_color": {
+      "label": "A heti ablak színe"
+    },
+    "hide_below": {
+      "label": "Elrejtés e használat alatt (%)",
+      "description": "Elrejti a modult, amíg a használat ez alatt az érték alatt van. 0 = mindig látszik."
+    },
+    "notify": {
+      "label": "Értesítések",
+      "description": "Ablakonként egyszer értesítést mutat, amikor a használat átlép egy küszöböt.",
+      "off": "Ki",
+      "warning": "A figyelmeztetési és a kritikus küszöbnél",
+      "critical": "Csak a kritikus küszöbnél"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (visszaállítás: {time} múlva)",
     "tokens": "tokenek: {tokens}, gyorsítótár-olvasás: {cache}",
-    "now": "most",
     "stale": "Elavult: {error}",
     "loading": "Betöltés...",
     "cost": "API-áron: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "{n} órája",
     "days_ago": "{n} napja",
     "cost_total": "≈ {cost} API-áron (becslés)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct}%",
+    "body": "Visszaállítás: {time} múlva"
   }
 }

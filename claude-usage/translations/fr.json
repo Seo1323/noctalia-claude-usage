@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Afficher le coût aux tarifs de l’API",
       "description": "Coût estimé des tokens de la fenêtre aux tarifs publics de l’API Anthropic. Avec un abonnement Claude, vous ne payez pas au token - cela montre ce que la même utilisation coûterait via l’API."
+    },
+    "currency": {
+      "label": "Devise des coûts",
+      "description": "Les coûts sont convertis depuis l’USD avec les taux de référence quotidiens de la Banque centrale européenne (récupérés au plus toutes les 12 heures, seulement pour une devise autre que l’USD), sauf si vous définissez un taux manuel.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Taux de change manuel",
+      "description": "Unités de la devise choisie pour 1 USD. 0 = taux quotidien de la BCE."
+    },
+    "ring_thickness": {
+      "label": "Épaisseur de l’anneau",
+      "thin": "Fine",
+      "normal": "Normale",
+      "thick": "Épaisse"
+    },
+    "ring_track": {
+      "label": "Afficher le fond de l’anneau",
+      "description": "Le cercle complet pâle derrière la partie remplie."
+    },
+    "format": {
+      "label": "Modèle de texte",
+      "description": "Remplace les éléments par votre propre texte, p. ex. {pct} · {reset} · {tokens}. Variables : {window} {pct} {left} {reset} {tokens} {cost} {model}. Vide = disposition normale."
+    },
+    "label_five": {
+      "label": "Étiquette de la fenêtre de 5 heures"
+    },
+    "label_week": {
+      "label": "Étiquette de la fenêtre hebdomadaire"
+    },
+    "show_model": {
+      "label": "Afficher le modèle actuel",
+      "description": "Le modèle de votre dernier message Claude Code, p. ex. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Taille de police (px)",
+      "description": "0 = taille de police de la barre."
+    },
+    "gradient": {
+      "label": "Dégradé de couleurs progressif",
+      "description": "Les couleurs évoluent progressivement avec l’utilisation au lieu de changer aux seuils."
+    },
+    "weekly_own_color": {
+      "label": "Couleur propre à la fenêtre hebdomadaire",
+      "description": "Une autre couleur de base pour les éléments 7d quand les deux fenêtres sont affichées."
+    },
+    "weekly_color": {
+      "label": "Couleur de la fenêtre hebdomadaire"
+    },
+    "hide_below": {
+      "label": "Masquer sous ce taux d’utilisation (%)",
+      "description": "Masque le widget tant que l’utilisation est inférieure à cette valeur. 0 = toujours afficher."
+    },
+    "notify": {
+      "label": "Notifications",
+      "description": "Affiche une notification une fois par fenêtre lorsque l’utilisation dépasse un seuil.",
+      "off": "Désactivées",
+      "warning": "Aux seuils d’avertissement et critique",
+      "critical": "Seulement au seuil critique"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window} : {pct}%  (réinitialisation dans {time})",
     "tokens": "tokens : {tokens}, lecture du cache : {cache}",
-    "now": "maintenant",
     "stale": "Obsolète : {error}",
     "loading": "Chargement...",
     "cost": "aux tarifs de l’API : {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "il y a {n} h",
     "days_ago": "il y a {n} j",
     "cost_total": "≈ {cost} aux tarifs de l’API (estimation)"
+  },
+  "notify": {
+    "title": "Claude Code {window} : {pct} %",
+    "body": "Réinitialisation dans {time}"
   }
 }

@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Lêçûnê li gorî bihayên API nîşan bide",
       "description": "Lêçûna texmînî ya tokenên pencereyê li gorî bihayên lîsteyê yên API-ya Anthropic. Bi abonetiya Claude tu ji bo her tokenê pere nadî - ev nîşan dide ku heman bikaranîn di API de çiqas dike."
+    },
+    "currency": {
+      "label": "Pereya lêçûnan",
+      "description": "Lêçûn ji USD bi rêjeyên referansê yên rojane yên Banka Navendî ya Ewropayê têne guhertin (herî zêde her 12 saetan û tenê ji bo pereyekî ji bilî USD tê wergirtin), heke tu rêjeyekê bi destan danenî.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Rêjeya guhertinê ya bi destan",
+      "description": "Yekeyên pereyê hilbijartî ji bo 1 USD. 0 = rêjeya rojane ya BNE."
+    },
+    "ring_thickness": {
+      "label": "Stûrahiya xelekê",
+      "thin": "Zirav",
+      "normal": "Asayî",
+      "thick": "Stûr"
+    },
+    "ring_track": {
+      "label": "Şopa xelekê nîşan bide",
+      "description": "Xeleka tevahî ya zelal li pişt beşa tije."
+    },
+    "format": {
+      "label": "Şablona nivîsê",
+      "description": "Hêmanan bi nivîsa te diguherîne, mînak {pct} · {reset} · {tokens}. Cihgir: {window} {pct} {left} {reset} {tokens} {cost} {model}. Vala = rêzkirina asayî."
+    },
+    "label_five": {
+      "label": "Etîketa pencereya 5 saetan"
+    },
+    "label_week": {
+      "label": "Etîketa pencereya heftane"
+    },
+    "show_model": {
+      "label": "Modela niha nîşan bide",
+      "description": "Modela peyama te ya dawî ya Claude Code, mînak Opus 5.5."
+    },
+    "font_size": {
+      "label": "Mezinahiya tîpan (px)",
+      "description": "0 = mezinahiya tîpan a darikê."
+    },
+    "gradient": {
+      "label": "Gradyana rengan a nerm",
+      "description": "Reng li gorî bikaranînê hêdî hêdî diguherin, ne li ser sînoran ji nişkê ve."
+    },
+    "weekly_own_color": {
+      "label": "Rengê taybet ji bo pencereya heftane",
+      "description": "Rengekî bingehîn ê din ji bo hêmanên 7d dema herdu pencere xuya dibin."
+    },
+    "weekly_color": {
+      "label": "Rengê pencereya heftane"
+    },
+    "hide_below": {
+      "label": "Di bin vê bikaranînê de veşêre (%)",
+      "description": "Widgetê vedişêre heta ku bikaranîn di bin vê nirxê de be. 0 = her tim nîşan bide."
+    },
+    "notify": {
+      "label": "Agahdarî",
+      "description": "Dema bikaranîn ji sînorekî derbas dibe, ji bo her pencereyê carekê agahdariyê nîşan dide.",
+      "off": "Girtî",
+      "warning": "Li sînorên hişyarî û krîtîk",
+      "critical": "Tenê li sînorê krîtîk"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (piştî {time} sifir dibe)",
     "tokens": "token: {tokens}, xwendina kaşê: {cache}",
-    "now": "niha",
     "stale": "Kevn: {error}",
     "loading": "Tê barkirin...",
     "cost": "li gorî bihayên API: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "{n} saet berê",
     "days_ago": "{n} roj berê",
     "cost_total": "≈ {cost} li gorî bihayên API (texmîn)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct}%",
+    "body": "Piştî {time} sifir dibe"
   }
 }

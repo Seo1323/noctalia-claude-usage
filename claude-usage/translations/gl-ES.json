@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Amosar o custo a prezos da API",
       "description": "Custo estimado dos tokens da xanela segundo os prezos de lista da API de Anthropic. Cunha subscrición a Claude non pagas por token: amosa canto custaría o mesmo uso na API."
+    },
+    "currency": {
+      "label": "Moeda dos custos",
+      "description": "Os custos convértense desde USD cos tipos de referencia diarios do Banco Central Europeo (obtidos como moito cada 12 horas e só para unha moeda distinta de USD), agás que fixes un tipo manual.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Tipo de cambio manual",
+      "description": "Unidades da moeda escollida por 1 USD. 0 = tipo diario do BCE."
+    },
+    "ring_thickness": {
+      "label": "Grosor do anel",
+      "thin": "Fino",
+      "normal": "Normal",
+      "thick": "Groso"
+    },
+    "ring_track": {
+      "label": "Amosar o fondo do anel",
+      "description": "O círculo completo tenue detrás da parte chea."
+    },
+    "format": {
+      "label": "Modelo de texto",
+      "description": "Substitúe os elementos polo teu propio texto, p. ex. {pct} · {reset} · {tokens}. Marcadores: {window} {pct} {left} {reset} {tokens} {cost} {model}. Baleiro = deseño normal."
+    },
+    "label_five": {
+      "label": "Etiqueta da xanela de 5 horas"
+    },
+    "label_week": {
+      "label": "Etiqueta da xanela semanal"
+    },
+    "show_model": {
+      "label": "Amosar o modelo actual",
+      "description": "O modelo da túa última mensaxe de Claude Code, p. ex. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Tamaño da letra (px)",
+      "description": "0 = tamaño da letra da barra."
+    },
+    "gradient": {
+      "label": "Degradado de cor suave",
+      "description": "As cores cambian aos poucos co uso en vez de saltar nos limiares."
+    },
+    "weekly_own_color": {
+      "label": "Cor propia para a xanela semanal",
+      "description": "Outra cor base para os elementos de 7d cando se amosan as dúas xanelas."
+    },
+    "weekly_color": {
+      "label": "Cor da xanela semanal"
+    },
+    "hide_below": {
+      "label": "Agochar por debaixo do uso (%)",
+      "description": "Agocha o trebello mentres o uso estea por debaixo deste valor. 0 = amosar sempre."
+    },
+    "notify": {
+      "label": "Notificacións",
+      "description": "Amosa unha notificación unha vez por xanela cando o uso supera un limiar.",
+      "off": "Desactivadas",
+      "warning": "Nos limiares de aviso e crítico",
+      "critical": "Só no limiar crítico"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (reiníciase en {time})",
     "tokens": "tokens: {tokens}, lectura de caché: {cache}",
-    "now": "agora",
     "stale": "Desactualizado: {error}",
     "loading": "Cargando...",
     "cost": "a prezos da API: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "hai {n} h",
     "days_ago": "hai {n} d",
     "cost_total": "≈ {cost} a prezos da API (estimación)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct} %",
+    "body": "Reiníciase en {time}"
   }
 }

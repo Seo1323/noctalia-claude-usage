@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="claude-usage/docs/banner.png" alt="Claude Limits — Claude Code limits in your Noctalia bar" width="720">
+<img src="claude-usage/docs/banner.webp" alt="Claude Limits — Claude Code limits in your Noctalia bar" width="720">
 
 <br>
 
@@ -41,43 +41,43 @@ Same widget, different settings:
 
 <table>
   <tr>
-    <td align="center"><img src="claude-usage/docs/example-6.png" alt="Default look" height="40"></td>
+    <td align="center"><img src="claude-usage/docs/example-6.webp" alt="Default look" height="40"></td>
     <td><b>Defaults</b><br>usage ring · usage · time to reset · tokens</td>
   </tr>
   <tr>
-    <td align="center"><img src="claude-usage/docs/example-1.png" alt="Plain text" height="40"></td>
+    <td align="center"><img src="claude-usage/docs/example-1.webp" alt="Plain text" height="40"></td>
     <td><b>Plain text</b><br><code>logo = none</code>, <code>separator = none</code>, <code>dim_extras = false</code></td>
   </tr>
   <tr>
-    <td align="center"><img src="claude-usage/docs/example-2.png" alt="Star icon and 5h label" height="40"></td>
+    <td align="center"><img src="claude-usage/docs/example-2.webp" alt="Star icon and 5h label" height="40"></td>
     <td><b>Star icon + label</b><br><code>logo = star</code>, <code>show_prefix = true</code></td>
   </tr>
   <tr>
-    <td align="center"><img src="claude-usage/docs/example-3.png" alt="Both windows" height="40"></td>
+    <td align="center"><img src="claude-usage/docs/example-3.webp" alt="Both windows" height="40"></td>
     <td><b>Both windows, compact</b><br><code>logo = glyph</code>, <code>window = both</code>, <code>show_reset = false</code>, <code>show_tokens = false</code></td>
   </tr>
   <tr>
-    <td align="center"><img src="claude-usage/docs/example-4.png" alt="Verbose and bold" height="40"></td>
+    <td align="center"><img src="claude-usage/docs/example-4.webp" alt="Verbose and bold" height="40"></td>
     <td><b>Verbose & bold</b><br><code>reset_format = verbose</code>, <code>token_format = full</code>, <code>font_weight = bold</code></td>
   </tr>
   <tr>
-    <td align="center"><img src="claude-usage/docs/example-5.png" alt="Critical color" height="40"></td>
+    <td align="center"><img src="claude-usage/docs/example-5.webp" alt="Critical color" height="40"></td>
     <td><b>Critical color</b><br>shown above <code>critical_at</code> (here forced with <code>critical_at = 5</code>)</td>
   </tr>
   <tr>
-    <td align="center"><img src="claude-usage/docs/example-7.png" alt="Progress bar and percent left" height="40"></td>
+    <td align="center"><img src="claude-usage/docs/example-7.webp" alt="Progress bar and percent left" height="40"></td>
     <td><b>Progress bar, percent left</b><br><code>show_bar = true</code>, <code>percent_mode = left</code>, <code>show_tokens = false</code></td>
   </tr>
   <tr>
-    <td align="center"><img src="claude-usage/docs/example-8.png" alt="Ring only until hovered" height="40"></td>
+    <td align="center"><img src="claude-usage/docs/example-8.webp" alt="Ring only until hovered" height="40"></td>
     <td><b>Ring only — details on hover</b><br><code>display_mode = hover</code>, <code>logo = ring</code></td>
   </tr>
   <tr>
-    <td align="center"><img src="claude-usage/docs/example-9.png" alt="Details only when usage is high" height="40"></td>
+    <td align="center"><img src="claude-usage/docs/example-9.webp" alt="Details only when usage is high" height="40"></td>
     <td><b>Quiet until it matters</b><br><code>display_mode = important</code> — time and tokens appear above <code>warn_at</code></td>
   </tr>
   <tr>
-    <td align="center"><img src="claude-usage/docs/example-10.png" alt="Any glyph and bar separators" height="40"></td>
+    <td align="center"><img src="claude-usage/docs/example-10.webp" alt="Any glyph and bar separators" height="40"></td>
     <td><b>Any glyph</b><br><code>logo = glyph</code>, <code>glyph = bolt</code>, <code>separator = bar</code></td>
   </tr>
 </table>
@@ -115,10 +115,11 @@ Everything is set per widget in Noctalia's widget settings. The full list with t
 | **Content** | Limit window (5h / weekly / both), usage % (used or left), `5h` / `7d` labels, progress bar, time to reset, tokens (with or without cache reads), cost at API prices |
 | **When** | Details always, only when usage is high, or only on hover (animated, adjustable speed) |
 | **Format** | Reset time `1:05` or `1h 5m`, the text shown when ready, tokens `290k` or `289731`, separators |
-| **Icon** | None, any glyph, bundled star, custom image or usage ring; icon size |
+| **Icon** | None, any glyph, bundled star, custom image or usage ring (thin / normal / thick, with or without track); icon size |
 | **Look** | Spacing, font weight, dimmed time and tokens, translucent panel with adjustable opacity |
-| **Colors** | Color by usage, warning / critical thresholds, text / warning / critical colors |
-| **Format** | Decimal places in percentages (0–2) |
+| **Colors** | Color by usage or a smooth gradient, warning / critical thresholds, text / warning / critical colors, own color for the weekly window |
+| **Format** | Decimal places in percentages (0–2), own text template, custom 5h / 7d labels, font size, cost currency (20 currencies, ECB rates) |
+| **Extras** | Current model, notifications at the thresholds, hide while usage is low |
 | **Behaviour** | Refresh interval, left click opens the panel / runs a command / refreshes, right click refreshes, the command the panel starts Claude Code with |
 
 ### Custom icon

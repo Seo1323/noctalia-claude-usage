@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "Vis kostnad etter API-prisar",
       "description": "Overslag over kostnaden for token i vindauget etter API-listeprisane til Anthropic. Med eit Claude-abonnement betaler du ikkje per token - dette viser kva same bruk ville kosta via API-et."
+    },
+    "currency": {
+      "label": "Valuta for kostnader",
+      "description": "Kostnader vert rekna om frå USD med dei daglege referansekursane til Den europeiske sentralbanken (henta høgst kvar 12. time og berre for ei anna valuta enn USD), med mindre du set ein eigen kurs.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "Manuell vekslingskurs",
+      "description": "Einingar av vald valuta per 1 USD. 0 = dagleg ESB-kurs."
+    },
+    "ring_thickness": {
+      "label": "Ringtjukkleik",
+      "thin": "Tynn",
+      "normal": "Normal",
+      "thick": "Tjukk"
+    },
+    "ring_track": {
+      "label": "Vis ringsporet",
+      "description": "Den svake heile sirkelen bak den fylte delen."
+    },
+    "format": {
+      "label": "Tekstmal",
+      "description": "Byter ut elementa med eigen tekst, t.d. {pct} · {reset} · {tokens}. Plasshaldarar: {window} {pct} {left} {reset} {tokens} {cost} {model}. Tomt = vanleg oppsett."
+    },
+    "label_five": {
+      "label": "Merkelapp for 5-timarsvindauget"
+    },
+    "label_week": {
+      "label": "Merkelapp for vekevindauget"
+    },
+    "show_model": {
+      "label": "Vis gjeldande modell",
+      "description": "Modellen i den siste Claude Code-meldinga di, t.d. Opus 5.5."
+    },
+    "font_size": {
+      "label": "Skriftstorleik (px)",
+      "description": "0 = skriftstorleiken til linja."
+    },
+    "gradient": {
+      "label": "Mjuk fargeovergang",
+      "description": "Fargane går gradvis over med bruken i staden for å byta ved grensene."
+    },
+    "weekly_own_color": {
+      "label": "Eigen farge for vekevindauget",
+      "description": "Ein annan grunnfarge for 7d-elementa når begge vindauga er viste."
+    },
+    "weekly_color": {
+      "label": "Fargen til vekevindauget"
+    },
+    "hide_below": {
+      "label": "Gøym under bruk (%)",
+      "description": "Gøymer widgeten så lenge bruken er under denne verdien. 0 = vis alltid."
+    },
+    "notify": {
+      "label": "Varsel",
+      "description": "Viser eit varsel éin gong per vindauge når bruken passerer ei grense.",
+      "off": "Av",
+      "warning": "Ved åtvarings- og kritisk grense",
+      "critical": "Berre ved kritisk grense"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (nullstilt om {time})",
     "tokens": "token: {tokens}, bufferlesing: {cache}",
-    "now": "no",
     "stale": "Utdatert: {error}",
     "loading": "Lastar...",
     "cost": "etter API-prisar: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "for {n} t sidan",
     "days_ago": "for {n} d sidan",
     "cost_total": "≈ {cost} etter API-prisar (overslag)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct} %",
+    "body": "Nullstilt om {time}"
   }
 }

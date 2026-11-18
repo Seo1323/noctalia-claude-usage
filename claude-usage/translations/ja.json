@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "API 価格でのコストを表示",
       "description": "ウィンドウ内トークンの推定コスト（Anthropic API の定価ベース）。Claude のサブスクリプションではトークン単位で支払いません。同じ使用量を API で使った場合の金額です。"
+    },
+    "currency": {
+      "label": "コストの通貨",
+      "description": "手動レートを設定しない限り、コストは欧州中央銀行の日次参照レートで USD から換算されます（USD 以外の通貨のときだけ、最大 12 時間ごとに取得）。",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "手動の為替レート",
+      "description": "1 USD あたりの選択した通貨の単位数。0 = ECB の日次レート。"
+    },
+    "ring_thickness": {
+      "label": "リングの太さ",
+      "thin": "細い",
+      "normal": "標準",
+      "thick": "太い"
+    },
+    "ring_track": {
+      "label": "リングのトラックを表示",
+      "description": "塗られた部分の後ろにある淡い円全体。"
+    },
+    "format": {
+      "label": "テキストテンプレート",
+      "description": "項目を独自のテキストに置き換えます。例: {pct} · {reset} · {tokens}。プレースホルダー: {window} {pct} {left} {reset} {tokens} {cost} {model}。空 = 通常のレイアウト。"
+    },
+    "label_five": {
+      "label": "5時間ウィンドウのラベル"
+    },
+    "label_week": {
+      "label": "週間ウィンドウのラベル"
+    },
+    "show_model": {
+      "label": "現在のモデルを表示",
+      "description": "最新の Claude Code メッセージのモデル（例: Opus 5.5）。"
+    },
+    "font_size": {
+      "label": "フォントサイズ（px）",
+      "description": "0 = バーのフォントサイズ。"
+    },
+    "gradient": {
+      "label": "なめらかなグラデーション",
+      "description": "しきい値で切り替えるのではなく、使用量に応じて色をなめらかに変化させます。"
+    },
+    "weekly_own_color": {
+      "label": "週間ウィンドウに専用の色",
+      "description": "両方のウィンドウを表示するとき、7d の項目に別のベースカラーを使います。"
+    },
+    "weekly_color": {
+      "label": "週間ウィンドウの色"
+    },
+    "hide_below": {
+      "label": "使用率がこの値未満なら非表示（%）",
+      "description": "使用率がこの値を下回っている間はウィジェットを隠します。0 = 常に表示。"
+    },
+    "notify": {
+      "label": "通知",
+      "description": "使用量がしきい値を超えたとき、ウィンドウごとに一度通知します。",
+      "off": "オフ",
+      "warning": "警告と危険のしきい値で",
+      "critical": "危険のしきい値のみ"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  （{time} 後にリセット）",
     "tokens": "トークン: {tokens}、キャッシュ読み取り: {cache}",
-    "now": "まもなく",
     "stale": "古いデータ: {error}",
     "loading": "読み込み中...",
     "cost": "API 価格: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "{n} 時間前",
     "days_ago": "{n} 日前",
     "cost_total": "≈ {cost}（API 価格での推定）"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct}%",
+    "body": "{time} 後にリセット"
   }
 }

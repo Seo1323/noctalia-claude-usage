@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "הצגת עלות לפי מחירי ה-API",
       "description": "עלות משוערת של הטוקנים בחלון לפי מחירון ה-API של Anthropic. במנוי Claude אינך משלם לפי טוקן - זה מראה כמה אותו שימוש היה עולה דרך ה-API."
+    },
+    "currency": {
+      "label": "מטבע העלויות",
+      "description": "העלויות מומרות מדולר לפי שערי היציג היומיים של הבנק המרכזי האירופי (נטענים לכל היותר אחת ל-12 שעות ורק למטבע שאינו דולר), אלא אם הגדרת שער ידני.",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "שער חליפין ידני",
+      "description": "יחידות של המטבע שנבחר לכל 1 דולר. 0 = השער היומי של הבנק המרכזי האירופי."
+    },
+    "ring_thickness": {
+      "label": "עובי הטבעת",
+      "thin": "דקה",
+      "normal": "רגילה",
+      "thick": "עבה"
+    },
+    "ring_track": {
+      "label": "הצגת מסלול הטבעת",
+      "description": "המעגל המלא החיוור מאחורי החלק המלא."
+    },
+    "format": {
+      "label": "תבנית טקסט",
+      "description": "מחליפה את הפריטים בטקסט משלך, למשל {pct} · {reset} · {tokens}. מצייני מקום: {window} {pct} {left} {reset} {tokens} {cost} {model}. ריק = פריסה רגילה."
+    },
+    "label_five": {
+      "label": "תווית לחלון של 5 שעות"
+    },
+    "label_week": {
+      "label": "תווית לחלון השבועי"
+    },
+    "show_model": {
+      "label": "הצגת המודל הנוכחי",
+      "description": "המודל של ההודעה האחרונה שלך ב-Claude Code, למשל Opus 5.5."
+    },
+    "font_size": {
+      "label": "גודל גופן (px)",
+      "description": "0 = גודל הגופן של הסרגל."
+    },
+    "gradient": {
+      "label": "מעבר צבעים חלק",
+      "description": "הצבעים משתנים בהדרגה עם השימוש במקום להתחלף בספים."
+    },
+    "weekly_own_color": {
+      "label": "צבע משלו לחלון השבועי",
+      "description": "צבע בסיס אחר לפריטי 7d כששני החלונות מוצגים."
+    },
+    "weekly_color": {
+      "label": "צבע החלון השבועי"
+    },
+    "hide_below": {
+      "label": "הסתרה מתחת לשימוש (%)",
+      "description": "מסתירה את הווידג׳ט כל עוד השימוש מתחת לערך הזה. 0 = תמיד מוצג."
+    },
+    "notify": {
+      "label": "התראות",
+      "description": "מציגה התראה פעם אחת לכל חלון כשהשימוש חוצה סף.",
+      "off": "כבוי",
+      "warning": "בסף האזהרה ובסף הקריטי",
+      "critical": "רק בסף הקריטי"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  (איפוס בעוד {time})",
     "tokens": "טוקנים: {tokens}, קריאה מהמטמון: {cache}",
-    "now": "עכשיו",
     "stale": "לא עדכני: {error}",
     "loading": "טוען...",
     "cost": "לפי מחירי ה-API: {cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "לפני {n} ש׳",
     "days_ago": "לפני {n} י׳",
     "cost_total": "≈ {cost} לפי מחירי ה-API (הערכה)"
+  },
+  "notify": {
+    "title": "Claude Code {window}: {pct}%",
+    "body": "איפוס בעוד {time}"
   }
 }

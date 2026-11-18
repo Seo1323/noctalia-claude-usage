@@ -169,6 +169,84 @@
     "show_cost": {
       "label": "依 API 價格顯示費用",
       "description": "依 Anthropic API 定價估算視窗內權杖的費用。使用 Claude 訂閱時不按權杖付費——這裡顯示的是同樣用量在 API 上的花費。"
+    },
+    "currency": {
+      "label": "費用貨幣",
+      "description": "除非手動設定匯率，費用會依歐洲中央銀行的每日參考匯率從美元換算（僅在使用非美元貨幣時取得，最多每 12 小時一次）。",
+      "USD": "USD ($)",
+      "EUR": "EUR (€)",
+      "PLN": "PLN (zł)",
+      "GBP": "GBP (£)",
+      "CHF": "CHF",
+      "JPY": "JPY (¥)",
+      "CNY": "CNY (¥)",
+      "CAD": "CAD (C$)",
+      "AUD": "AUD (A$)",
+      "SEK": "SEK (kr)",
+      "NOK": "NOK (kr)",
+      "DKK": "DKK (kr)",
+      "CZK": "CZK (Kč)",
+      "HUF": "HUF (Ft)",
+      "RON": "RON (lei)",
+      "TRY": "TRY (₺)",
+      "BRL": "BRL (R$)",
+      "INR": "INR (₹)",
+      "KRW": "KRW (₩)",
+      "MXN": "MXN (MX$)"
+    },
+    "exchange_rate": {
+      "label": "手動匯率",
+      "description": "每 1 美元對應所選貨幣的數量。0 = 歐洲央行每日匯率。"
+    },
+    "ring_thickness": {
+      "label": "圓環粗細",
+      "thin": "細",
+      "normal": "一般",
+      "thick": "粗"
+    },
+    "ring_track": {
+      "label": "顯示圓環軌道",
+      "description": "已填滿部分後方的淡色完整圓圈。"
+    },
+    "format": {
+      "label": "文字範本",
+      "description": "以你自己的文字取代各項，例如 {pct} · {reset} · {tokens}。預留位置：{window} {pct} {left} {reset} {tokens} {cost} {model}。留空 = 一般版面。"
+    },
+    "label_five": {
+      "label": "5 小時視窗的標籤"
+    },
+    "label_week": {
+      "label": "每週視窗的標籤"
+    },
+    "show_model": {
+      "label": "顯示目前模型",
+      "description": "你最近一則 Claude Code 訊息所用的模型，例如 Opus 5.5。"
+    },
+    "font_size": {
+      "label": "字型大小（px）",
+      "description": "0 = 狀態列字型大小。"
+    },
+    "gradient": {
+      "label": "平滑色彩漸層",
+      "description": "色彩隨用量平滑變化，而不是在門檻處突然切換。"
+    },
+    "weekly_own_color": {
+      "label": "每週視窗使用專屬顏色",
+      "description": "同時顯示兩個視窗時，為 7d 項目使用另一種基本顏色。"
+    },
+    "weekly_color": {
+      "label": "每週視窗顏色"
+    },
+    "hide_below": {
+      "label": "用量低於此值時隱藏（%）",
+      "description": "用量低於此值時隱藏小工具。0 = 一律顯示。"
+    },
+    "notify": {
+      "label": "通知",
+      "description": "用量超過門檻時，每個視窗通知一次。",
+      "off": "關閉",
+      "warning": "在警告與嚴重門檻時",
+      "critical": "僅在嚴重門檻時"
     }
   },
   "bar": {
@@ -178,7 +256,6 @@
   "tooltip": {
     "window": "{window}: {pct}%  （{time} 後重設）",
     "tokens": "權杖：{tokens}，快取讀取：{cache}",
-    "now": "即將",
     "stale": "資料過期：{error}",
     "loading": "載入中...",
     "cost": "依 API 價格：{cost}"
@@ -210,5 +287,9 @@
     "hours_ago": "{n} 小時前",
     "days_ago": "{n} 天前",
     "cost_total": "≈ {cost}（依 API 價格估算）"
+  },
+  "notify": {
+    "title": "Claude Code {window}：{pct}%",
+    "body": "{time} 後重設"
   }
 }

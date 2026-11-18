@@ -88,11 +88,37 @@ function M.cost(models)
   return if priced then total else nil
 end
 
+-- Display currency (plugin setting). The rate is manual (exchange_rate = units per 1 USD) or,
+-- when that is 0, the ECB reference rates the poller publishes as "rates" (EUR based).
+local CURRENCY = tostring(noctalia.getConfig("currency") or "USD")
+local MANUAL_RATE = tonumber(noctalia.getConfig("exchange_rate")) or 0
+-- symbol, placed before (true) or after (false) the amount; decimals for small amounts
+local SYMBOLS = {
+  USD = { "$", true, 2 }, EUR = { " €", false, 2 }, GBP = { "£", true, 2 }, PLN = { " zł", false, 2 },
+  CHF = { "CHF ", true, 2 }, JPY = { "¥", true, 0 }, CNY = { "¥", true, 2 }, CAD = { "C$", true, 2 },
+  AUD = { "A$", true, 2 }, SEK = { " kr", false, 2 }, NOK = { " kr", false, 2 }, DKK = { " kr", false, 2 },
+  CZK = { " Kč", false, 0 }, HUF = { " Ft", false, 0 }, RON = { " lei", false, 2 }, TRY = { "₺", true, 2 },
+  BRL = { "R$", true, 2 }, INR = { "₹", true, 0 }, KRW = { "₩", true, 0 }, MXN = { "MX$", true, 2 },
+}
+
+local function rate()
+  if CURRENCY == "USD" then return 1 end
+  if MANUAL_RATE > 0 then return MANUAL_RATE end
+  local rates = noctalia.state.get("rates")
+  if rates and rates.USD and rates[CURRENCY] then return rates[CURRENCY] / rates.USD end
+  return nil
+end
+
+-- Formats a USD amount in the display currency; falls back to USD until rates arrive.
 function M.money(usd)
   if usd == nil then return "--" end
-  if usd >= 100 then return string.format("$%.0f", usd) end
-  if usd >= 10 then return string.format("$%.1f", usd) end
-  return string.format("$%.2f", usd)
+  local r, code = rate(), CURRENCY
+  if r == nil then r, code = 1, "USD" end
+  local amount = usd * r
+  local sym = SYMBOLS[code] or { " " .. code, false, 2 }
+  local decimals = if amount >= 100 then 0 elseif amount >= 10 then math.min(1, sym[3]) else sym[3]
+  local text = string.format(`%.{decimals}f`, amount)
+  return if sym[2] then sym[1] .. text else text .. sym[1]
 end
 
 -- "claude-opus-5-5" -> "Opus 5.5"; ids in another shape are returned unchanged.
@@ -136,8 +162,20 @@ end
 
 M.DEFAULT_COLORS = { byUsage = true, color = "on_surface", warn = "tertiary", crit = "error", warnAt = 70, critAt = 90 }
 
+local function mix(a, b, t)
+  local function ch(h, i) return tonumber(h:sub(i, i + 1), 16) end
+  local function lerp(i) return math.floor(ch(a, i) + (ch(b, i) - ch(a, i)) * t + 0.5) end
+  return string.format("#%02x%02x%02x", lerp(2), lerp(4), lerp(6))
+end
+
 function M.colorFor(pct, c)
   if not c.byUsage or pct == nil then return c.color end
+  if c.gradient then -- smooth blend: color at 0 -> warn at warnAt -> crit at critAt
+    local base, warn, crit = M.hex(c.color), M.hex(c.warn), M.hex(c.crit)
+    if pct >= c.critAt then return crit end
+    if pct >= c.warnAt then return mix(warn, crit, (pct - c.warnAt) / math.max(1, c.critAt - c.warnAt)) end
+    return mix(base, warn, math.max(0, pct) / math.max(1, c.warnAt))
+  end
   if pct >= c.critAt then return c.crit end
   if pct >= c.warnAt then return c.warn end
   return c.color
@@ -155,31 +193,37 @@ function M.logo(mode, size, color, glyph, path)
   return ui.image({ path = file, width = size, height = size, fit = "contain" })
 end
 
--- Only plain #rrggbb ever reaches the SVG and its file name.
-local function hex(color)
+-- Resolves a color role or hex to plain #rrggbb; only that ever reaches the SVG and its file name.
+function M.hex(color)
   local h = if type(color) == "string" and color:sub(1, 1) ~= "#" then noctalia.getColor(color) else color
   if type(h) == "string" and h:match("^#%x%x%x%x%x%x$") then return h:lower() end
   return "#e4e1e8"
 end
 
-local RING = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
-  .. '<circle cx="32" cy="32" r="25" fill="none" stroke="%s" stroke-opacity="0.25" stroke-width="9"/>%s</svg>'
-local ARC = '<circle cx="32" cy="32" r="25" fill="none" stroke="%s" stroke-width="9" stroke-linecap="round"'
+local RING_WIDTH = { thin = 5, normal = 9, thick = 13 }
+local TRACK = '<circle cx="32" cy="32" r="%.1f" fill="none" stroke="%s" stroke-opacity="0.25" stroke-width="%d"/>'
+local ARC = '<circle cx="32" cy="32" r="%.1f" fill="none" stroke="%s" stroke-width="%d" stroke-linecap="round"'
   .. ' stroke-dasharray="%.2f 999" transform="rotate(-90 32 32)"/>'
 
 local written = {} -- ring files known to exist, to skip the disk check
 
--- Circular gauge filled clockwise from 12 o'clock. ui.ring needs plugin_api 55, so the
--- ring is an SVG cached in the plugin data dir, one file per (percent, colors).
-function M.ring(fraction, color, size)
+-- Circular gauge filled clockwise from 12 o'clock. ui.ring needs plugin_api 55, so the ring is
+-- an SVG cached in the plugin data dir, one file per (percent, colors, thickness, track).
+-- opts: { thickness = "thin" | "normal" | "thick", track = bool }
+function M.ring(fraction, color, size, opts)
   local dir = noctalia.pluginDataDir()
   if dir == nil then return nil end
+  opts = opts or {}
+  local width = RING_WIDTH[opts.thickness or "normal"] or 9
+  local showTrack = opts.track ~= false
   local p = math.clamp(math.floor(fraction * 100 + 0.5), 0, 100)
-  local fg, track = hex(color), hex("on_surface")
-  local path = `{dir}/ring-{p}-{fg:sub(2)}-{track:sub(2)}.svg`
+  local fg, track = M.hex(color), M.hex("on_surface")
+  local path = `{dir}/ring-{p}-{fg:sub(2)}-{track:sub(2)}-{width}{if showTrack then "t" else "n"}.svg`
   if not written[path] and not noctalia.fileExists(path) then
-    local arc = if p > 0 then string.format(ARC, fg, 2 * math.pi * 25 * p / 100) else ""
-    noctalia.writeFile(path, string.format(RING, track, arc))
+    local r = 32 - width / 2 - 2
+    local body = if showTrack then string.format(TRACK, r, track, width) else ""
+    if p > 0 then body ..= string.format(ARC, r, fg, width, 2 * math.pi * r * p / 100) end
+    noctalia.writeFile(path, '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">' .. body .. "</svg>")
   end
   written[path] = true
   return ui.image({ path = path, width = size, height = size, fit = "contain" })
@@ -197,8 +241,10 @@ function M.tooltip(snapshot)
     local w = M.windows(data, false)
     for _, g in { { "5h", w.five }, { "7d", w.week } } do
       local win = g[2]
-      local time = M.verbose(win.reset) or (if win.reset then noctalia.tr("tooltip.now") else "-")
-      lines[#lines + 1] = noctalia.tr("tooltip.window", { window = g[1], pct = M.num(win.pct), time = time })
+      local time = M.verbose(win.reset)
+      lines[#lines + 1] = if time
+        then noctalia.tr("tooltip.window", { window = g[1], pct = M.num(win.pct), time = time })
+        else `{g[1]}: {M.num(win.pct)}%  ({noctalia.tr("bar.ready")})`
       lines[#lines + 1] = "    " .. noctalia.tr("tooltip.tokens", { tokens = M.tokens(win.tokens), cache = M.tokens(win.cache) })
       if win.cost ~= nil then lines[#lines + 1] = "    " .. noctalia.tr("tooltip.cost", { cost = M.money(win.cost) }) end
     end
