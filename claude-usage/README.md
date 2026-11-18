@@ -1,100 +1,99 @@
-# Claude Usage — Noctalia plugin
+# Claude Usage
 
-Shows your **Claude Code** usage limits in the [Noctalia](https://github.com/noctalia-dev) bar:
+<p align="center"><img src="docs/example-2.png" alt="Claude Usage in the Noctalia bar" height="44"></p>
 
-<p align="center"><img src="docs/example-2.png" alt="Claude Usage in the Noctalia bar" width="320"></p>
+Shows your Claude Code usage in the bar: how much of the 5-hour (and optionally weekly) limit is used, how long
+until it resets, and how many tokens you used in that window. Hover for both windows, click to refresh.
 
-Left to right: usage of the 5-hour window · time to reset · tokens used in that window (shown with the bundled `star` icon). The weekly (7d) window
-can be shown too. Hover for a tooltip with both windows, click to refresh.
+## Plugin
 
-## Examples
-
-Every item below is the same widget with different settings.
-
-| Look | Settings |
+| Field | Value |
 | --- | --- |
-| <img src="docs/example-1.png" height="36"> | Defaults: no icon, usage %, time to reset, tokens. |
-| <img src="docs/example-2.png" height="36"> | `logo = star`, `show_prefix = true` |
-| <img src="docs/example-3.png" height="36"> | `logo = glyph`, `show_prefix = true`, `window = both`, `show_reset = false`, `show_tokens = false` |
-| <img src="docs/example-4.png" height="36"> | `logo = star`, `reset_format = verbose`, `token_format = full`, `font_weight = bold` |
-| <img src="docs/example-5.png" height="36"> | `show_prefix = true`, `show_tokens = false`, `critical_at = 5` (forces the critical color to show it) |
+| ID | `seo/claude-usage` |
+| Entries | Bar widget: `bar`; bar widget: `icon`; service: `poller` |
 
 ## Requirements
 
-- Noctalia (plugin API 43+)
-- `curl` and `jq`
-- Claude Code logged in (`~/.claude/.credentials.json`, or `$CLAUDE_CONFIG_DIR`)
+Install `curl` and `jq` on `PATH`. Claude Code must be logged in on this machine
+(`~/.claude/.credentials.json`, or `$CLAUDE_CONFIG_DIR/.credentials.json`).
 
-## How it works
+## Usage
 
-- `fetch.sh` reads the OAuth token Claude Code already stores (it never writes or refreshes it)
-  and queries `https://api.anthropic.com/api/oauth/usage` for the utilization and reset times.
-- Token counts are computed locally from Claude Code's transcripts in `~/.claude/projects`
-  (input + output + cache-creation tokens, deduplicated per message, inside the current window).
-- A single background service polls the API, so several monitors still cost one request.
-- Nothing is sent anywhere except that one request to the Anthropic API.
+Add **Claude Usage** to a bar in **Settings → Bar** and pick the entry:
 
-If the token has expired, the widget says so — just use Claude Code once to refresh it.
+- **`bar`** — text capsule: usage %, time to reset and tokens. Click refreshes now (or runs your
+  `click_command`).
+- **`icon`** — compact variant: only an icon, everything else in the tooltip. Click runs `command`
+  (default `alacritty -e claude`).
 
-## Install
+The `poller` service starts with the plugin and refreshes every `refresh_minutes`; all widgets share its result.
 
-**From Noctalia's settings** (recommended): open **Settings → Plugins → Add source**, choose *git* and enter
-`https://github.com/Seo1323/noctalia-claude-usage`, then switch on **Claude Usage** in the plugin list and add the
-widget to your bar.
+### Examples
 
-Or from a terminal:
-
-```sh
-noctalia msg plugins source add claude-usage git https://github.com/Seo1323/noctalia-claude-usage
-noctalia msg plugins enable seo/claude-usage
-```
-
-Then add the **Claude Usage** widget to your bar in Noctalia's settings.
-
-## Widgets
-
-| Widget | Description |
+| Look | Settings |
 | --- | --- |
-| `bar` | Text capsule: usage %, time to reset, tokens. |
-| `icon` | Compact variant: only an icon, usage in the tooltip; click launches a command. |
+| <img src="docs/example-1.png" alt="Defaults" height="34"> | Defaults |
+| <img src="docs/example-2.png" alt="Star icon" height="34"> | `logo = star`, `show_prefix = true` |
+| <img src="docs/example-3.png" alt="Both windows" height="34"> | `logo = glyph`, `show_prefix = true`, `window = both`, `show_reset = false`, `show_tokens = false` |
+| <img src="docs/example-4.png" alt="Verbose and bold" height="34"> | `logo = star`, `reset_format = verbose`, `token_format = full`, `font_weight = bold` |
+| <img src="docs/example-5.png" alt="Critical color" height="34"> | `show_prefix = true`, `show_tokens = false`, `critical_at = 5` |
 
 ## Settings
 
-Global: `refresh_minutes` (default 5).
+Plugin:
+
+| Setting | Type | Default | Description |
+| --- | --- | --- | --- |
+| `refresh_minutes` | `int` | `5` | How often the usage API is queried (1–120 minutes). |
 
 `bar` widget:
 
-| Setting | Default | Description |
-| --- | --- | --- |
-| `window` | `five_hour` | `five_hour`, `weekly` or `both`. |
-| `logo` | `none` | `none`, `glyph` (built-in brain icon), `star` (bundled `assets/star.svg`) or `custom` (your own image). |
-| `logo_path` | empty | Image used when `logo` = `custom`; empty = `logo.svg` in the plugin folder (advanced). |
-| `show_percent` | `true` | Usage percentage. |
-| `show_prefix` | `false` | `5h` / `7d` label before the percentage. |
-| `show_reset` | `true` | Time left until the window resets. |
-| `reset_format` | `compact` | `compact` (`1:37`) or `verbose` (`1h 37m`). |
-| `ready_text` | `ready` | Shown instead of a countdown when no reset is pending. |
-| `show_tokens` | `true` | Tokens used in the window. |
-| `token_format` | `short` | `short` (`141k`) or `full` (`141234`). |
-| `gap` | `4` | Spacing between items (px). |
-| `font_weight` | `medium` | `medium` or `bold`. |
-| `color_by_usage` | `true` | Use warning / critical colors above the thresholds. |
-| `warn_at` / `critical_at` | `70` / `90` | Thresholds in %. |
-| `color` / `warn_color` / `critical_color` | `on_surface` / `tertiary` / `error` | Color roles or hex colors (advanced). |
-| `click_command` | empty | Shell command on click; empty = refresh now (advanced). |
+| Setting | Type | Default | Description |
+| --- | --- | --- | --- |
+| `window` | `select` | `five_hour` | Which limit to show: `five_hour`, `weekly` or `both`. |
+| `logo` | `select` | `none` | `none`, `glyph` (built-in brain icon), `star` (bundled `assets/star.svg`) or `custom`. |
+| `logo_path` | `string` | `""` | Image for `custom`; empty means `logo.svg` in the plugin folder. `~` is expanded. |
+| `show_percent` | `bool` | `true` | Show the usage percentage. |
+| `show_prefix` | `bool` | `false` | Prefix the percentage with `5h` / `7d`. |
+| `show_reset` | `bool` | `true` | Show the time left until the window resets. |
+| `reset_format` | `select` | `compact` | `compact` (`1:05`, hours:minutes) or `verbose` (`1h 5m`). |
+| `ready_text` | `string` | `ready` | Shown instead of the countdown when no window is running. |
+| `show_tokens` | `bool` | `true` | Show tokens used in the window. |
+| `token_format` | `select` | `short` | `short` (`290k`) or `full` (`289731`). |
+| `gap` | `int` | `4` | Spacing between items, in pixels (0–24). |
+| `font_weight` | `select` | `medium` | `medium` or `bold`. |
+| `color_by_usage` | `bool` | `true` | Use the warning / critical colors above the thresholds. |
+| `warn_at` | `int` | `70` | Warning threshold, in percent. |
+| `critical_at` | `int` | `90` | Critical threshold, in percent. |
+| `color` | `color` | `on_surface` | Normal text color (color role or hex). |
+| `warn_color` | `color` | `tertiary` | Text color above `warn_at`. |
+| `critical_color` | `color` | `error` | Text color above `critical_at`. |
+| `click_command` | `string` | `""` | Shell command run on click; empty refreshes now. |
 
-`icon` widget: `logo` (`glyph` default, `star` or `custom`), `size` (px) and `command` (default `alacritty -e claude`).
+`icon` widget:
 
-### Custom logo
+| Setting | Type | Default | Description |
+| --- | --- | --- | --- |
+| `logo` | `select` | `glyph` | `glyph`, `star` or `custom`. |
+| `logo_path` | `string` | `""` | Image for `custom`; empty means `logo.svg` in the plugin folder. |
+| `size` | `int` | `20` | Icon size, in pixels (10–40). |
+| `command` | `string` | `alacritty -e claude` | Command run on click. |
 
-The repository does not ship the Claude logo (it is Anthropic's trademark). To use one, put your own
-SVG/PNG at `claude-usage/logo.svg` (git-ignored) — or anywhere you like and point the **Custom logo path** setting at it — then set the widget's **Icon** setting to *Custom*. Use a light, single-color image so it matches the other bar icons.
+## IPC
+
+Refresh immediately:
+
+```sh
+noctalia msg plugin seo/claude-usage:poller all refresh
+```
 
 ## Notes
 
-- Uses an undocumented Anthropic OAuth usage endpoint, which may change without notice.
-- Not affiliated with or endorsed by Anthropic.
-
-## License
-
-MIT
+- **Network:** one HTTPS request per refresh to `https://api.anthropic.com/api/oauth/usage`, authenticated with
+  the OAuth token Claude Code stores in `~/.claude/.credentials.json`. The token is only read, never written or
+  refreshed. If it has expired, the tooltip says so; using Claude Code once refreshes it.
+- **Files read:** `~/.claude/.credentials.json` and transcripts in `~/.claude/projects/**/*.jsonl` modified in the
+  last 8 days (to count tokens: input + output + cache-creation, deduplicated per message). Nothing is written.
+- **Processes:** `fetch.sh` runs `curl`, `jq`, `find`, `xargs` and `cat`. A click runs `click_command` / `command`
+  if you set one.
+- Uses an undocumented endpoint that may change without notice. Not affiliated with or endorsed by Anthropic.
