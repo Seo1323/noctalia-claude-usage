@@ -1,5 +1,5 @@
 --!nonstrict
--- Bar capsule: Claude logo + "5h 12%  1:44  92k" (usage %, time to reset, tokens used).
+-- Bar capsule: optional icon + "5h 12%  1:44  92k" (usage %, time to reset, tokens used).
 -- Everything is configurable in the widget settings. Click refreshes (or runs a custom command).
 
 local function conf(key, default)
@@ -10,7 +10,7 @@ end
 
 local cfg = {
   window = conf("window", "five_hour"), -- five_hour | weekly | both
-  logo = conf("logo", "glyph"), -- glyph | custom (logo.svg in the plugin folder) | none
+  logo = conf("logo", "none"), -- none | glyph | star | custom
   showPrefix = conf("show_prefix", false) ~= false,
   showPercent = conf("show_percent", true) ~= false,
   showReset = conf("show_reset", true) ~= false,
@@ -34,6 +34,7 @@ local snapshot = noctalia.state.get("usage")
 
 -- Custom logo: the `logo_path` setting, or logo.svg inside the plugin folder.
 local function logoFile()
+  if cfg.logo == "star" then return noctalia.pluginDir() .. "/assets/star.svg" end
   if cfg.logoPath ~= "" then return (cfg.logoPath:gsub("^~", os.getenv("HOME") or "~")) end
   return noctalia.pluginDir() .. "/logo.svg"
 end
@@ -93,10 +94,10 @@ local function render()
   local err = snapshot and snapshot.error
 
   local parts = {}
-  if cfg.logo == "custom" then
+  if cfg.logo == "custom" or cfg.logo == "star" then
     parts[#parts + 1] = ui.image({ path = logoFile(), width = 18, height = 18, fit = "contain" })
-  elseif cfg.logo ~= "none" then
-    parts[#parts + 1] = ui.glyph({ name = "brain" })
+  elseif cfg.logo == "glyph" then
+    parts[#parts + 1] = ui.glyph({ name = "brain", color = cfg.color })
   end
 
   local function label(text, pct)

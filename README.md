@@ -52,7 +52,7 @@ Global: `refresh_minutes` (default 5).
 | Setting | Default | Description |
 | --- | --- | --- |
 | `window` | `five_hour` | `five_hour`, `weekly` or `both`. |
-| `logo` | `glyph` | `glyph` (built-in icon), `custom` (your own `logo.svg` in the plugin folder) or `none`. |
+| `logo` | `none` | `none`, `glyph` (built-in brain icon), `star` (bundled `assets/star.svg`) or `custom` (your own image). |
 | `logo_path` | empty | Image used when `logo` = `custom`; empty = `logo.svg` in the plugin folder (advanced). |
 | `show_percent` | `true` | Usage percentage. |
 | `show_prefix` | `false` | `5h` / `7d` label before the percentage. |
@@ -68,7 +68,7 @@ Global: `refresh_minutes` (default 5).
 | `color` / `warn_color` / `critical_color` | `on_surface` / `tertiary` / `error` | Color roles or hex colors (advanced). |
 | `click_command` | empty | Shell command on click; empty = refresh now (advanced). |
 
-`icon` widget: `logo` (`glyph` / `custom`), `size` (px) and `command` (default `alacritty -e claude`).
+`icon` widget: `logo` (`glyph` default, `star` or `custom`), `size` (px) and `command` (default `alacritty -e claude`).
 
 ### Custom logo
 

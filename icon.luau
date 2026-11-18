@@ -7,6 +7,7 @@ local snapshot = noctalia.state.get("usage")
 
 -- Custom logo: the `logo_path` setting, or logo.svg inside the plugin folder.
 local function logoFile()
+  if noctalia.getConfig("logo") == "star" then return noctalia.pluginDir() .. "/assets/star.svg" end
   local p = noctalia.string.trim(tostring(noctalia.getConfig("logo_path") or ""))
   if p ~= "" then return (p:gsub("^~", os.getenv("HOME") or "~")) end
   return noctalia.pluginDir() .. "/logo.svg"
@@ -37,7 +38,8 @@ local function fmtTokens(n)
 end
 
 local function render()
-  if noctalia.getConfig("logo") == "custom" then
+  local logoMode = noctalia.getConfig("logo")
+  if logoMode == "custom" or logoMode == "star" then
     barWidget.render(ui.image({
       path = logoFile(),
       width = size,

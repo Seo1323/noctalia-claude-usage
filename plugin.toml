@@ -43,11 +43,12 @@ entry = "bar.luau"
   type = "select"
   label_key = "settings.logo.label"
   description_key = "settings.logo.description"
-  default = "glyph"
+  default = "none"
   options = [
-    { value = "glyph", label_key = "settings.logo.glyph" },
-    { value = "custom", label_key = "settings.logo.custom" },
     { value = "none", label_key = "settings.logo.none" },
+    { value = "glyph", label_key = "settings.logo.glyph" },
+    { value = "star", label_key = "settings.logo.star" },
+    { value = "custom", label_key = "settings.logo.custom" },
   ]
 
   [[widget.setting]]
@@ -196,6 +197,7 @@ entry = "icon.luau"
   default = "glyph"
   options = [
     { value = "glyph", label_key = "settings.logo.glyph" },
+    { value = "star", label_key = "settings.logo.star" },
     { value = "custom", label_key = "settings.logo.custom" },
   ]
 

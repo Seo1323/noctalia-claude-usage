@@ -82,10 +82,11 @@
     },
     "logo": {
       "label": "Icon",
-      "description": "Built-in glyph, or your own image (see Custom logo path).",
+      "description": "None, a built-in glyph, a bundled star, or your own image (see Custom logo path).",
       "glyph": "Built-in glyph",
-      "custom": "Custom logo.svg",
-      "none": "None"
+      "custom": "Custom image",
+      "none": "None",
+      "star": "Star (bundled)"
     },
     "logo_path": {
       "label": "Custom logo path",
