@@ -2,11 +2,9 @@
 
 Shows your **Claude Code** usage limits in the [Noctalia](https://github.com/noctalia-dev) bar:
 
-```
-🧠 5h 8%  1:37  141k
-```
+<p align="center"><img src="docs/screenshot.png" alt="Claude Usage in the Noctalia bar" width="320"></p>
 
-usage of the 5-hour window · time to reset · tokens used in that window. The weekly (7d) window
+Left to right: usage of the 5-hour window · time to reset · tokens used in that window (shown with the bundled `star` icon). The weekly (7d) window
 can be shown too. Hover for a tooltip with both windows, click to refresh.
 
 ## Requirements
