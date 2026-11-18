@@ -156,7 +156,8 @@ end
 local function secondsLeft(resetAt)
   if resetAt == nil then return nil end
   local s = tonumber(resetAt) - os.time()
-  return if s > 0 then s else nil
+  -- round up to whole minutes: 2m 1s left shows 3m, never 2m
+  return if s > 0 then (s + 59) // 60 * 60 else nil
 end
 
 -- "3d 2h" / "1h 44m" / "5m", or nil when no reset is pending.
