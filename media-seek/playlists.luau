@@ -41,7 +41,7 @@ local function toggle(p)
   p.contains = want; render() -- optimistic; undone below if Spotify refuses
   run({ if want then "add" else "remove", p.id, trackId }, function(d)
     busy[p.id] = nil
-    if d.error then p.contains = not want; err = d.error end
+    if d.error then p.contains = not want; err = d.error else err = nil end
     render()
   end)
 end
@@ -52,10 +52,10 @@ function render()
   local function add(n) kids[#kids + 1] = n end
   if status == "no_client_id" then
     add(muted("Brak Client ID. Utwórz aplikację na developer.spotify.com (Redirect URI: http://127.0.0.1:8888/callback) i zapisz Client ID w pliku ~/.config/media-seek/client_id"))
-  elseif status == "not_logged_in" or status == "http_401" then
+  elseif status == "not_logged_in" or status == "http_401" or status == "http_400" then
     add(muted("Zaloguj się do Spotify, żeby zarządzać playlistami."))
     add(ui.button({ text = "Zaloguj", glyph = "brand-spotify", variant = "primary", onClick = function()
-      run({ "login" }, function() load() end)
+      run({ "login" }, function(d) if d.error then status = d.error; err = d.error; return render() end load() end)
     end }))
   elseif status == "no_track" then
     add(muted("Gra utwór spoza Spotify albo nic nie gra."))

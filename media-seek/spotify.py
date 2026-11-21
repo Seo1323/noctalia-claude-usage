@@ -8,7 +8,7 @@
 Needs a Client ID in ~/.config/media-seek/client_id (Spotify dashboard app, redirect URI
 http://127.0.0.1:8888/callback). Uses the February 2026 /items endpoints.
 """
-import base64, hashlib, http.server, json, os, re, secrets, sys, threading, time
+import base64, fcntl, hashlib, http.server, json, os, re, secrets, sys, threading, time
 import urllib.error, urllib.parse, urllib.request
 import webbrowser
 from concurrent.futures import ThreadPoolExecutor
@@ -59,24 +59,35 @@ class Api:
     # ---- auth
     def _save(self, tok):
         os.makedirs(self.dir, exist_ok=True)
-        fd = os.open(self.token_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+        tmp = self.token_path + ".tmp"
+        fd = os.open(tmp, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
         with os.fdopen(fd, "w") as f:
             json.dump(tok, f)
+        os.replace(tmp, self.token_path)  # readers never see a half-written file
 
     def _token(self):
-        try:
-            with open(self.token_path) as f:
-                tok = json.load(f)
-        except (OSError, ValueError):
-            raise NotLoggedIn("run: spotify.py login")
-        if tok.get("expires_at", 0) < time.time() + 60:
-            new = self.http("POST", ACCOUNTS + "/api/token", None, {
-                "grant_type": "refresh_token", "refresh_token": tok["refresh_token"], "client_id": self.client_id})
-            tok.update(access_token=new["access_token"], expires_at=time.time() + new.get("expires_in", 3600))
-            if new.get("refresh_token"):
-                tok["refresh_token"] = new["refresh_token"]
-            self._save(tok)
-        return tok["access_token"]
+        os.makedirs(self.dir, exist_ok=True)
+        with open(os.path.join(self.dir, ".lock"), "w") as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)  # one refresh at a time: rotated refresh tokens are single use
+            try:
+                with open(self.token_path) as f:
+                    tok = json.load(f)
+                refresh = tok["refresh_token"]
+            except (OSError, ValueError, KeyError):
+                raise NotLoggedIn("run: spotify.py login")
+            if tok.get("expires_at", 0) < time.time() + 60:
+                try:
+                    new = self.http("POST", ACCOUNTS + "/api/token", None, {
+                        "grant_type": "refresh_token", "refresh_token": refresh, "client_id": self.client_id})
+                except urllib.error.HTTPError as e:
+                    if e.code in (400, 401):  # invalid_grant: the login was revoked or expired
+                        raise NotLoggedIn("login expired")
+                    raise
+                tok.update(access_token=new["access_token"], expires_at=time.time() + new.get("expires_in", 3600))
+                if new.get("refresh_token"):
+                    tok["refresh_token"] = new["refresh_token"]
+                self._save(tok)
+            return tok["access_token"]
 
     def _call(self, method, path, body=None):
         return self.http(method, API + path, {"Authorization": "Bearer " + self._token()}, body)
@@ -127,14 +138,24 @@ class Api:
             nxt = page.get("next")
             if not nxt:
                 return False
-            path = nxt.split("/v1", 1)[1]
+            u = urllib.parse.urlparse(nxt)
+            if u.netloc != "api.spotify.com" or not u.path.startswith("/v1/"):
+                return False  # unexpected shape: stop paging this playlist instead of failing the whole panel
+            path = u.path[3:] + ("?" + u.query if u.query else "")
         return False
 
     def playlists(self, track_id):
         check_id(track_id)
         me = self._call("GET", "/me")["id"]
-        lists = [p for p in self._call("GET", "/me/playlists?limit=50").get("items", [])
-                 if p["owner"]["id"] == me or p.get("collaborative")]  # others' playlists are read-only
+        lists, path = [], "/me/playlists?limit=50"
+        for _ in range(MAX_PAGES):
+            page = self._call("GET", path)
+            lists += [p for p in page.get("items", [])
+                      if p["owner"]["id"] == me or p.get("collaborative")]  # others' playlists are read-only
+            u = urllib.parse.urlparse(page.get("next") or "")
+            if u.netloc != "api.spotify.com" or not u.path.startswith("/v1/"):
+                break
+            path = u.path[3:] + ("?" + u.query if u.query else "")
         with ThreadPoolExecutor(8) as ex:
             flags = list(ex.map(lambda p: self._contains(check_pl(p["id"]), track_id), lists))
         return [{"id": p["id"], "name": p["name"], "contains": c} for p, c in zip(lists, flags)]

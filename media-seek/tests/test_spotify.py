@@ -63,6 +63,84 @@ class Spotify(unittest.TestCase):
             self.api.add("mine/../me", TRACK)
         self.assertFalse(any(c[0] in ("POST", "DELETE") for c in self.api.http.calls))
 
+    def test_playlists_and_items_are_paginated(self):
+        pages = {}
+        def http(method, url, headers=None, body=None):
+            path = url.split("api.spotify.com/v1", 1)[1]
+            if path == "/me":
+                return {"id": "me"}
+            mk = lambda i: {"id": i, "name": i, "owner": {"id": "me"}, "collaborative": False}
+            if path.startswith("/me/playlists") and "offset=50" not in path:
+                return {"items": [mk("p1")], "next": f"{spotify.API}/me/playlists?offset=50&limit=50"}
+            if path.startswith("/me/playlists"):
+                return {"items": [mk("p2")], "next": None}
+            if "offset=100" not in path:  # first items page of every playlist: track is on page 2
+                return {"items": [{"item": {"id": OTHER}}], "next": f"{spotify.API}{path.split('?')[0]}?offset=100&limit=100"}
+            return {"items": [{"item": {"id": TRACK}}], "next": None}
+        api = spotify.Api("cid", self.d, http)
+        self.assertEqual({p["id"]: p["contains"] for p in api.playlists(TRACK)}, {"p1": True, "p2": True})
+
+    def test_foreign_next_url_stops_paging_without_failing(self):
+        def http(method, url, headers=None, body=None):
+            path = url.split("api.spotify.com/v1", 1)[1]
+            if path == "/me":
+                return {"id": "me"}
+            if path.startswith("/me/playlists"):
+                return {"items": [{"id": "p1", "name": "p1", "owner": {"id": "me"}}], "next": None}
+            return {"items": [], "next": "https://evil.example/v1/steal"}
+        self.assertEqual(spotify.Api("cid", self.d, http).playlists(TRACK), [{"id": "p1", "name": "p1", "contains": False}])
+
+    def test_rotated_refresh_token_is_saved(self):
+        with open(os.path.join(self.d, "token.json"), "w") as f:
+            json.dump({"access_token": "old", "refresh_token": "r1", "expires_at": 0}, f)
+        def http(method, url, headers=None, body=None):
+            if "accounts.spotify.com" in url:
+                return {"access_token": "new", "refresh_token": "r2", "expires_in": 3600}
+            return Fake({"mine": [], "collab": []})(method, url, headers, body)
+        spotify.Api("cid", self.d, http).playlists(TRACK)
+        with open(os.path.join(self.d, "token.json")) as f:
+            self.assertEqual(json.load(f)["refresh_token"], "r2")
+
+    def test_revoked_refresh_token_means_login_again(self):
+        import urllib.error
+        with open(os.path.join(self.d, "token.json"), "w") as f:
+            json.dump({"access_token": "old", "refresh_token": "dead", "expires_at": 0}, f)
+        def http(method, url, headers=None, body=None):
+            raise urllib.error.HTTPError(url, 400, "invalid_grant", {}, None)
+        with self.assertRaises(spotify.NotLoggedIn):
+            spotify.Api("cid", self.d, http).playlists(TRACK)
+
+    def test_token_without_refresh_token_means_login_again(self):
+        with open(os.path.join(self.d, "token.json"), "w") as f:
+            json.dump({"access_token": "x", "expires_at": time.time() + 3600}, f)
+        with self.assertRaises(spotify.NotLoggedIn):
+            self.api.playlists(TRACK)
+
+    def test_http_errors_become_json_errors(self):
+        import contextlib, io, urllib.error
+        os.makedirs(os.path.join(self.d, "media-seek"))
+        with open(os.path.join(self.d, "media-seek", "client_id"), "w") as f:
+            f.write("cid")
+        def run_main(exc):
+            def boom(self, track_id):
+                raise exc
+            saved, spotify.Api.playlists = spotify.Api.playlists, boom
+            old, os.environ["XDG_CONFIG_HOME"] = os.environ.get("XDG_CONFIG_HOME"), self.d
+            try:
+                buf = io.StringIO()
+                with contextlib.redirect_stdout(buf):
+                    spotify.main(["spotify.py", "playlists", TRACK])
+                return json.loads(buf.getvalue())
+            finally:
+                spotify.Api.playlists = saved
+                if old is None:
+                    del os.environ["XDG_CONFIG_HOME"]
+                else:
+                    os.environ["XDG_CONFIG_HOME"] = old
+        self.assertEqual(run_main(urllib.error.HTTPError("u", 403, "x", {}, None)), {"error": "http_403"})
+        self.assertEqual(run_main(OSError("network down")), {"error": "OSError"})
+        self.assertEqual(run_main(spotify.NotLoggedIn("x")), {"error": "not_logged_in"})
+
     def test_missing_login_is_a_clear_error(self):
         os.remove(os.path.join(self.d, "token.json"))
         with self.assertRaises(spotify.NotLoggedIn):
