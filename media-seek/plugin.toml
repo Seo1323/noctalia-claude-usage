@@ -1,13 +1,13 @@
 id = "seo/media-seek"
 name = "Media Seek"
-version = "0.2.0"
+version = "0.3.0"
 plugin_api = 43
 author = "Seo1323"
 license = "MIT"
 icon = "music"
 description = "Replacement for the bar media widget: marquee title, spinning cover, seek bar on hover, full Media panel."
 tags = ["bar", "panel", "media"]
-dependencies = ["busctl", "jq", "curl"]
+dependencies = ["busctl", "jq", "curl", "python3"]
 
 [[service]]
 id = "poller"
@@ -34,6 +34,21 @@ max_height = 120
 placement = "attached"
 position = "center"
 open_near_click = false
+
+# Add / remove the current Spotify track to your playlists.
+[[panel]]
+id = "playlists"
+entry = "playlists.luau"
+width = 340
+height = "content"
+max_height = 560
+placement = "attached"
+position = "center"
+open_near_click = true
+
+[[widget]]
+id = "playlist"
+entry = "playlist.luau"
 
 [[widget]]
 id = "bar"
