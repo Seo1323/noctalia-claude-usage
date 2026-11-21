@@ -1,6 +1,6 @@
 id = "seo/media-seek"
 name = "Media Seek"
-version = "0.4.0"
+version = "0.5.0"
 plugin_api = 43
 author = "Seo1323"
 license = "MIT"
@@ -68,6 +68,39 @@ entry = "volume.luau"
 [[widget]]
 id = "bar"
 entry = "bar.luau"
+
+  [[widget.setting]]
+  key = "art_size"
+  type = "int"
+  label_key = "settings.art_size.label"
+  default = 18
+  min = 12
+  max = 40
+
+  [[widget.setting]]
+  key = "max_length"
+  type = "int"
+  label_key = "settings.max_length.label"
+  default = 260
+  min = 60
+  max = 600
+
+  [[widget.setting]]
+  key = "rotate_cover"
+  type = "bool"
+  label_key = "settings.rotate_cover.label"
+  default = true
+
+  [[widget.setting]]
+  key = "hide_when_idle"
+  type = "bool"
+  label_key = "settings.hide_when_idle.label"
+  default = true
+
+# One capsule: player + add-to-playlist + volume.
+[[widget]]
+id = "player"
+entry = "player.luau"
 
   [[widget.setting]]
   key = "art_size"

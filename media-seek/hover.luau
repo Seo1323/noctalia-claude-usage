@@ -22,7 +22,7 @@ local function render()
         noctalia.state.set("cmd", { kind = "seek", bus = p.bus, arg = p.trackid, arg2 = tostring(math.floor(v * p.length)), n = noctalia.nowMs() })
       end })
     else ui.progress({ progress = frac, height = 6, radius = 3 })
-  panel.render(ui.column({ padding = 12, gap = 4,
+  panel.render(ui.column({ padding = 12, gap = 4, fill = "surface_container", radius = 14, border = "outline_variant", borderWidth = 1,
     onPointerMove = function() noctalia.state.set("hover_keep", true) end,
     onPointerLeave = function() noctalia.state.set("hover_keep", false) end,
   }, {
