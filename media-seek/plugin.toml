@@ -1,6 +1,6 @@
 id = "seo/media-seek"
 name = "Media Seek"
-version = "0.3.0"
+version = "0.4.0"
 plugin_api = 43
 author = "Seo1323"
 license = "MIT"
@@ -39,9 +39,20 @@ open_near_click = false
 [[panel]]
 id = "playlists"
 entry = "playlists.luau"
-width = 300
+width = 360
 height = "content"
 max_height = 560
+placement = "attached"
+position = "center"
+open_near_click = false
+
+# Hover: vertical volume slider of the active player.
+[[panel]]
+id = "volume-card"
+entry = "volume_panel.luau"
+width = 96
+height = "content"
+max_height = 300
 placement = "attached"
 position = "center"
 open_near_click = false
@@ -49,6 +60,10 @@ open_near_click = false
 [[widget]]
 id = "playlist"
 entry = "playlist.luau"
+
+[[widget]]
+id = "volume"
+entry = "volume.luau"
 
 [[widget]]
 id = "bar"

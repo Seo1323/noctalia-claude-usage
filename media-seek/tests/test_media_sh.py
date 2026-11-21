@@ -50,6 +50,11 @@ esac
         players = json.loads(run("status", stub_body=body, capture=True))["players"]
         self.assertEqual([p["title"] for p in players if p["status"] == "Playing"], ["T"])
 
+    def test_volume_forwards_valid_and_rejects_bad(self):
+        self.assertIn("Volume d 0.35", run("volume", "org.mpris.MediaPlayer2.spotify", "0.35"))
+        for bad in ("1.5", "-0.1", "abc", "0.3;x", ""):
+            self.assertEqual(run("volume", "org.mpris.MediaPlayer2.spotify", bad), "", bad)
+
     def test_rejects_bad_bus(self):
         self.assertEqual(run("ctl", "evil;rm", "Next"), "")
 

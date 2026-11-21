@@ -2,6 +2,7 @@
 -- Polls MPRIS once a second, picks the active player and caches its cover art locally.
 local DIR = noctalia.pluginDir()
 local busy, art = false, {}
+local lastTrack = nil
 
 local function pick(players)
   for _, p in players do if p.status == "Playing" then return p end end
@@ -39,6 +40,17 @@ local function poll()
     end
     if p then local a = art[p.art]; p.cover = if a ~= "pending" then a else nil end
     publish(data)
+    -- Track changed: ask Spotify whether it is already on one of the user's playlists (errors = "no")
+    local id = p and tostring(p.trackid):match("^/com/spotify/track/(%w+)$")
+    if id and id ~= lastTrack then
+      lastTrack = id
+      noctalia.runAsync({ "python3", DIR .. "/spotify.py", "playlists", id }, function(r)
+        local ok2, d = pcall(noctalia.json.decode, r.stdout or "")
+        local any = false
+        if ok2 and type(d) == "table" and d.playlists then for _, pl in d.playlists do if pl.contains then any = true end end end
+        noctalia.state.set("in_any", { track = id, value = any })
+      end)
+    end
   end)
 end
 

@@ -32,6 +32,32 @@ class Fake:
 
 
 class Spotify(unittest.TestCase):
+    def test_playlist_covers_are_cached_and_failures_tolerated(self):
+        fetched = []
+        def fetch(url):
+            fetched.append(url)
+            if "bad" in url:
+                raise OSError("down")
+            return b"\xff\xd8jpeg"
+        def http(method, url, headers=None, body=None):
+            path = url.split("api.spotify.com/v1", 1)[1]
+            if path == "/me":
+                return {"id": "me"}
+            if path.startswith("/me/playlists"):
+                mk = lambda i, imgs: {"id": i, "name": i, "owner": {"id": "me"}, "images": imgs}
+                return {"items": [mk("a", [{"url": "https://i.scdn.co/big"}, {"url": "https://i.scdn.co/small"}]),
+                                  mk("b", [{"url": "https://i.scdn.co/bad"}]), mk("c", None),
+                                  mk("d", [{"url": "http://insecure.example/x"}])], "next": None}
+            return {"items": [], "next": None}
+        api = spotify.Api("cid", self.d, http, fetch=fetch)
+        got = {p["id"]: p["cover"] for p in api.playlists(TRACK)}
+        self.assertTrue(got["a"] and os.path.exists(got["a"]) and got["a"].startswith(self.d))
+        self.assertEqual((got["b"], got["c"], got["d"]), (None, None, None))
+        self.assertEqual(fetched.count("https://i.scdn.co/small"), 1)  # smallest image, https only
+        self.assertNotIn("http://insecure.example/x", fetched)
+        api.playlists(TRACK)
+        self.assertEqual(fetched.count("https://i.scdn.co/small"), 1)  # second call is served from the cache
+
     def setUp(self):
         self.d = tempfile.mkdtemp()
         with open(os.path.join(self.d, "token.json"), "w") as f:
@@ -88,7 +114,7 @@ class Spotify(unittest.TestCase):
             if path.startswith("/me/playlists"):
                 return {"items": [{"id": "p1", "name": "p1", "owner": {"id": "me"}}], "next": None}
             return {"items": [], "next": "https://evil.example/v1/steal"}
-        self.assertEqual(spotify.Api("cid", self.d, http).playlists(TRACK), [{"id": "p1", "name": "p1", "contains": False}])
+        self.assertEqual(spotify.Api("cid", self.d, http).playlists(TRACK), [{"id": "p1", "name": "p1", "contains": False, "cover": None}])
 
     def test_rotated_refresh_token_is_saved(self):
         with open(os.path.join(self.d, "token.json"), "w") as f:

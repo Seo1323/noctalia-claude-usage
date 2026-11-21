@@ -22,6 +22,12 @@ ID_RE = re.compile(r"^[A-Za-z0-9]{22}$")        # track ids
 PL_RE = re.compile(r"^[A-Za-z0-9]{1,40}$")      # playlist ids (22 in practice; only path-safe chars matter)
 
 
+def default_fetch(url):
+    """Raw bytes of a small image; capped so a hostile response cannot fill the disk."""
+    with urllib.request.urlopen(urllib.request.Request(url), timeout=10) as r:
+        return r.read(2_000_000)
+
+
 class NotLoggedIn(Exception):
     pass
 
@@ -52,8 +58,8 @@ def check_pl(value):
 
 
 class Api:
-    def __init__(self, client_id, config_dir, http=urlopen_json):
-        self.client_id, self.dir, self.http = client_id, config_dir, http
+    def __init__(self, client_id, config_dir, http=urlopen_json, fetch=default_fetch):
+        self.client_id, self.dir, self.http, self.fetch = client_id, config_dir, http, fetch
         self.token_path = os.path.join(config_dir, "token.json")
 
     # ---- auth
@@ -144,6 +150,26 @@ class Api:
             path = u.path[3:] + ("?" + u.query if u.query else "")
         return False
 
+    def _cover(self, images):
+        """Local path of the playlist's smallest cover (cached), or None. Never raises."""
+        urls = [i.get("url") for i in (images or []) if isinstance(i, dict)]
+        url = next((u for u in reversed(urls) if isinstance(u, str) and u.startswith("https://")), None)
+        if not url:
+            return None
+        path = os.path.join(self.dir, "covers", hashlib.sha1(url.encode()).hexdigest()[:16] + ".jpg")
+        if os.path.exists(path):
+            return path
+        try:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            data = self.fetch(url)
+            tmp = path + ".part"
+            with open(tmp, "wb") as f:
+                f.write(data)
+            os.replace(tmp, path)
+            return path
+        except Exception:  # a missing cover must not break the list
+            return None
+
     def playlists(self, track_id):
         check_id(track_id)
         me = self._call("GET", "/me")["id"]
@@ -158,7 +184,9 @@ class Api:
             path = u.path[3:] + ("?" + u.query if u.query else "")
         with ThreadPoolExecutor(8) as ex:
             flags = list(ex.map(lambda p: self._contains(check_pl(p["id"]), track_id), lists))
-        return [{"id": p["id"], "name": p["name"], "contains": c} for p, c in zip(lists, flags)]
+        with ThreadPoolExecutor(8) as ex:
+            covers = list(ex.map(lambda p: self._cover(p.get("images")), lists))
+        return [{"id": p["id"], "name": p["name"], "contains": c, "cover": cv} for p, c, cv in zip(lists, flags, covers)]
 
     def add(self, pid, track_id):
         self._call("POST", f"/playlists/{check_pl(pid)}/items", {"uris": [f"spotify:track:{check_id(track_id)}"]})
