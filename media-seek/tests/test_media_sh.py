@@ -23,6 +23,10 @@ def run(*args, stub_body=None, capture=False):
 
 
 class MediaSh(unittest.TestCase):
+    def test_scripts_are_executable(self):  # service.luau runs media.sh directly; a lost +x silently kills the widget
+        for name in ("media.sh", "spotify.py"):
+            self.assertTrue(os.access(os.path.join(os.path.dirname(SH), name), os.X_OK), name)
+
     def test_seek_forwards_valid(self):
         self.assertIn("SetPosition ox /t/1 1000", run("seek", "org.mpris.MediaPlayer2.spotify", "/t/1", "1000"))
 
