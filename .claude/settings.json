@@ -1,0 +1,23 @@
+{
+  "$comment": "code-factory gates for this repo. Engine lives at /home/seo/code-factory (global install).",
+  "hooks": {
+    "PreToolUse": [
+      { "matcher": "Bash", "hooks": [
+        { "type": "command", "command": "python3 \"/home/seo/code-factory/core/hooks/dangerous-cmd.py\"" },
+        { "type": "command", "command": "python3 \"/home/seo/code-factory/core/hooks/check-branch-name.py\"" },
+        { "type": "command", "command": "python3 \"/home/seo/code-factory/core/hooks/check-commit-msg.py\"" },
+        { "type": "command", "command": "python3 \"/home/seo/code-factory/core/hooks/check-push.py\"" },
+        { "type": "command", "command": "python3 \"/home/seo/code-factory/core/hooks/check-merge.py\"" },
+        { "type": "command", "command": "python3 \"/home/seo/code-factory/core/hooks/check-pr-create.py\"" }
+      ]}
+    ],
+    "PostToolUse": [
+      { "matcher": "Edit|MultiEdit|Write|NotebookEdit", "hooks": [
+        { "type": "command", "command": "python3 \"/home/seo/code-factory/core/hooks/standards-check.py\"" }
+      ]}
+    ],
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "python3 \"/home/seo/code-factory/core/hooks/stop-completeness.py\"" } ] }
+    ]
+  }
+}

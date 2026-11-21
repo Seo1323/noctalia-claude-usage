@@ -1,0 +1,10 @@
+# code-factory config. The engine lives globally; this just selects the pack + policy.
+packs:
+  - python
+base_branches:
+  - main
+issue_pattern: ""
+# Enforce verification: block turn-end on a governed-code change until `factory verify` stamps
+# the ledger. This is what makes "what ships is verified" real rather than honor-system.
+# Waive per-change: stamp-ledger.py verify waived "reason". Disable entirely: set to false.
+require_verify: true

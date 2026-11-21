@@ -1,2 +1,5 @@
 *.bak
 PR_*.md
+
+# code-factory runtime ledger
+.claude/state/
