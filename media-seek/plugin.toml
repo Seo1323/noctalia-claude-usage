@@ -39,7 +39,7 @@ open_near_click = false
 [[panel]]
 id = "playlists"
 entry = "playlists.luau"
-width = 340
+width = 300
 height = "content"
 max_height = 560
 placement = "attached"

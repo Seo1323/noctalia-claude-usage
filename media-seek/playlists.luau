@@ -2,6 +2,7 @@
 -- Panel: your editable Spotify playlists, tick = the current track is in it. Click toggles (like the Android app).
 local DIR = noctalia.pluginDir()
 local SCRIPT = DIR .. "/spotify.py"
+local GREEN = "#1ed760" -- Spotify green
 local isOpen, status, lists, busy, err = false, "loading", {}, {}, nil
 local trackId, title = nil, ""
 
@@ -48,7 +49,7 @@ end
 
 function render()
   if not isOpen then return end
-  local kids = { ui.label({ text = "Dodaj do playlisty", fontWeight = "bold", fontSize = 16 }) }
+  local kids = { ui.label({ text = "Dodaj do playlisty", fontWeight = "medium", fontSize = 13, color = "on_surface_variant" }) }
   local function add(n) kids[#kids + 1] = n end
   if status == "no_client_id" then
     add(muted("Brak Client ID. Utwórz aplikację na developer.spotify.com (Redirect URI: http://127.0.0.1:8888/callback) i zapisz Client ID w pliku ~/.config/media-seek/client_id"))
@@ -65,16 +66,21 @@ function render()
     add(muted("Błąd: " .. tostring(status)))
     add(ui.button({ text = "Spróbuj ponownie", variant = "ghost", onClick = load }))
   else
-    add(muted(title))
-    local rows = {}
+        local rows = {}
     for _, p in lists do
-      rows[#rows + 1] = ui.button({ text = p.name, glyph = if p.contains then "circle-check" else "circle-plus",
-        variant = if p.contains then "primary" else "ghost", onClick = function() toggle(p) end })
+      -- Spotify style: name on the left, circled plus when absent, green filled check when present
+      rows[#rows + 1] = ui.row({ align = "center", justify = "space_between", gap = 8 }, {
+        ui.label({ text = p.name, fontSize = 14, maxWidth = 230 }),
+        ui.button({ glyph = if p.contains then "circle-check-filled" else "circle-plus", variant = "ghost",
+          color = if p.contains then GREEN else "on_surface_variant", tooltip = if p.contains then "Usuń z playlisty" else "Dodaj do playlisty",
+          onClick = function() toggle(p) end }),
+      })
     end
-    if #rows == 0 then add(muted("Brak playlist, które możesz edytować.")) else add(ui.scroll({ height = 380 }, { ui.column({ gap = 4 }, rows) })) end
+    if #rows == 0 then add(muted("Brak playlist, które możesz edytować."))
+    else add(ui.scroll({ height = math.min(380, 44 * #rows) }, { ui.column({ gap = 2 }, rows) })) end
     if err then add(ui.label({ text = "Nie udało się: " .. err, color = "error", fontSize = 12 })) end
   end
-  panel.render(ui.column({ padding = 14, gap = 8 }, kids))
+  panel.render(ui.column({ padding = 10, gap = 4 }, kids))
 end
 
 function onOpen() isOpen = true; err = nil; load() end
