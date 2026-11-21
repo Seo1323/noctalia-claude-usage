@@ -1,5 +1,5 @@
 --!nonstrict
--- One capsule: [marquee title + spinning cover] [add-to-playlist icon] [volume icon].
+-- One capsule: [volume icon] [add-to-playlist icon] [marquee title + spinning cover].
 --   title  : hover = seek card, click = full Media panel
 --   plus   : click = playlist menu (green check when the track is already on a playlist)
 --   volume : hover = vertical volume card
@@ -8,7 +8,7 @@ local ART = tonumber(noctalia.getConfig("art_size")) or 18
 local MAXW = tonumber(noctalia.getConfig("max_length")) or 260
 local SPIN = noctalia.getConfig("rotate_cover") ~= false
 local HIDE = noctalia.getConfig("hide_when_idle") ~= false
-local FONT, ICON, GREEN = 13, 22, "#1ed760"
+local FONT, ICON, ADD_ICON, GREEN = 13, 22, 19, "#1ed760"
 local CHAR = FONT * 0.55 -- rough glyph width; shortcut: no text measuring API, upgrade if one appears
 local WINDOW = math.max(8, math.floor(MAXW / CHAR))
 local offset, angle = 0, 0
@@ -68,11 +68,11 @@ local function render()
     then ui.image({ path = p.cover, width = ART, height = ART, fit = "cover", radius = ART / 2, rotation = if SPIN then angle else 0 })
     else ui.glyph({ name = if p.status == "Playing" then "player-play" else "player-pause" })
   barWidget.render(ui.row({ gap = 10, align = "center" }, {
+    ui.row({ key = "vol", align = "center", onHover = vol.hover }, { ui.glyph({ name = vglyph, size = ICON }) }),
+    ui.row({ key = "add", align = "center", onClick = clickAdd }, {
+      ui.glyph({ name = if added then "circle-check-filled" else "circle-plus", size = ADD_ICON, color = if added then GREEN else "on_surface" }) }),
     ui.row({ key = "title", gap = 6, align = "center", onClick = clickTitle, onHover = seek.hover }, {
       ui.label({ text = marquee(label(p)), fontSize = FONT, fontWeight = "medium", maxWidth = MAXW }), cover }),
-    ui.row({ key = "add", align = "center", onClick = clickAdd }, {
-      ui.glyph({ name = if added then "circle-check-filled" else "circle-plus", size = ICON, color = if added then GREEN else "on_surface" }) }),
-    ui.row({ key = "vol", align = "center", onHover = vol.hover }, { ui.glyph({ name = vglyph, size = ICON }) }),
   }))
 end
 
