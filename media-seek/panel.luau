@@ -38,28 +38,28 @@ local function render()
     return ui.button({ glyph = glyph, variant = variant or (if active then "primary" else "ghost"), onClick = onClick })
   end
 
-  local now = card({ grow = 1 }, {
-    ui.row({ justify = "space_between", align = "center" }, {
-      ui.label({ text = "Now Playing", fontWeight = "bold", fontSize = 16 }),
-      ui.glyph({ name = "headphones", color = "on_surface_variant" }),
-    }),
-    if p.cover then ui.image({ path = p.cover, width = 180, height = 180, fit = "cover", radius = 8 }) else nil,
-    ui.label({ text = p.title, fontWeight = "bold", fontSize = 16 }),
-    muted(p.artist, 14),
-    muted(p.album, 12),
-    if p.canSeek and p.length > 0 then
-      ui.slider({ value = frac, min = 0, max = 1,
-        onChange = function(v) dragging = v * p.length; render() end,
-        onChangeEnd = function(v) dragging = nil; cmd("seek", p.trackid, tostring(math.floor(v * p.length))) end })
-      else ui.progress({ progress = frac, height = 6, radius = 3 }),
-    ui.row({ justify = "space_between", align = "center" }, {
-      btn("repeat", looping, function() cmd("loop", if looping then "None" else "Playlist") end),
-      btn("player-skip-back", false, function() cmd("ctl", "Previous") end),
-      btn(if p.status == "Playing" then "player-pause" else "player-play", true, function() cmd("ctl", "PlayPause") end, "primary"),
-      btn("player-skip-forward", false, function() cmd("ctl", "Next") end),
-      btn("arrows-shuffle", p.shuffle, function() cmd("shuffle", if p.shuffle then "false" else "true") end),
-    }),
-  })
+  local kids = { ui.row({ justify = "space_between", align = "center" }, {
+    ui.label({ text = "Now Playing", fontWeight = "bold", fontSize = 16 }),
+    ui.glyph({ name = "headphones", color = "on_surface_variant" }),
+  }) }
+  local function add(node) kids[#kids + 1] = node end -- no nil holes in the array
+  if p.cover then add(ui.image({ path = p.cover, width = 180, height = 180, fit = "cover", radius = 8 })) end
+  add(ui.label({ text = p.title, fontWeight = "bold", fontSize = 16 }))
+  add(muted(p.artist, 14))
+  add(muted(p.album, 12))
+  add(if p.canSeek and p.length > 0 then
+    ui.slider({ value = frac, min = 0, max = 1,
+      onChange = function(v) dragging = v * p.length; render() end,
+      onChangeEnd = function(v) dragging = nil; cmd("seek", p.trackid, tostring(math.floor(v * p.length))) end })
+    else ui.progress({ progress = frac, height = 6, radius = 3 }))
+  add(ui.row({ justify = "space_between", align = "center" }, {
+    btn("repeat", looping, function() cmd("loop", if looping then "None" else "Playlist") end),
+    btn("player-skip-back", false, function() cmd("ctl", "Previous") end),
+    btn(if p.status == "Playing" then "player-pause" else "player-play", true, function() cmd("ctl", "PlayPause") end, "primary"),
+    btn("player-skip-forward", false, function() cmd("ctl", "Next") end),
+    btn("arrows-shuffle", p.shuffle, function() cmd("shuffle", if p.shuffle then "false" else "true") end),
+  }))
+  local now = card({ grow = 1 }, kids)
   panel.render(ui.row({ padding = 8, gap = 8 }, { now, spectrum() }))
 end
 

@@ -3,3 +3,4 @@ PR_*.md
 
 # code-factory runtime ledger
 .claude/state/
+__pycache__/

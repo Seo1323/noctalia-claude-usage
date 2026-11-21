@@ -35,5 +35,5 @@ local function render()
 end
 
 noctalia.state.watch("media", function(v) m = v; if not dragging then render() end end)
-function onOpen() isOpen = true; render() end
-function onClose() isOpen = false; dragging = nil; noctalia.state.set("hover_keep", false) end
+function onOpen() isOpen = true; noctalia.state.set("hover_open", true); render() end
+function onClose() isOpen = false; dragging = nil; noctalia.state.set("hover_open", false); noctalia.state.set("hover_keep", false) end

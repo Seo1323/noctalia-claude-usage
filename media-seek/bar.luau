@@ -10,7 +10,8 @@ local FONT = 13
 local CHAR = FONT * 0.55 -- rough glyph width; shortcut: no text measuring API, upgrade if one appears
 local WINDOW = math.max(8, math.floor(MAXW / CHAR))
 
-local offset, angle, hoverOpen, leaveAt = 0, 0, false, nil
+local offset, angle, leaveAt = 0, 0, nil
+local function hoverOpen() return noctalia.state.get("hover_open") == true end -- real state, set by hover.luau
 local lastTick = noctalia.nowMs()
 
 local function label(p) return if p.artist ~= "" then `{p.title} - {p.artist}` else p.title end
@@ -50,14 +51,14 @@ noctalia.state.watch("media", function(v) m = v; render() end)
 function onHover(state)
   if state == "true" then
     leaveAt = nil
-    if not hoverOpen then hoverOpen = true; noctalia.togglePanel("seo/media-seek:hover") end
+    if not hoverOpen() then noctalia.togglePanel("seo/media-seek:hover") end
   else
     leaveAt = noctalia.nowMs() + 400 -- grace period to move the cursor onto the card
   end
 end
 
 function onClick()
-  if hoverOpen then hoverOpen = false; noctalia.togglePanel("seo/media-seek:hover") end
+  if hoverOpen() then noctalia.togglePanel("seo/media-seek:hover") end
   noctalia.togglePanel("seo/media-seek:panel")
 end
 
@@ -76,11 +77,11 @@ function update()
     offset += dt * 6 -- characters per second
     angle = (angle + dt * 20) % 360
   end
-  if hoverOpen and leaveAt and now >= leaveAt and not noctalia.state.get("hover_keep") then
-    hoverOpen = false; leaveAt = nil
-    noctalia.togglePanel("seo/media-seek:hover")
+  if leaveAt and now >= leaveAt and not noctalia.state.get("hover_keep") then
+    leaveAt = nil
+    if hoverOpen() then noctalia.togglePanel("seo/media-seek:hover") end
   end
-  noctalia.setUpdateInterval(if p and p.status == "Playing" then 100 else 1000)
+  noctalia.setUpdateInterval(if (p and p.status == "Playing") or leaveAt then 100 else 1000)
   render()
 end
 render()

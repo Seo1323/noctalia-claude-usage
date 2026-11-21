@@ -30,7 +30,8 @@ local function poll()
         if noctalia.fileExists(file) then art[p.art] = file
         else
           art[p.art] = "pending"
-          noctalia.runAsync({ "curl", "-sfL", "--max-time", "10", "-o", file, p.art }, function()
+          -- download to .part and rename only on success, so a cut-off transfer is never cached
+          noctalia.runAsync({ "sh", "-c", 'curl -sfL --proto =https --max-time 10 -o "$1.part" "$2" && mv "$1.part" "$1" || rm -f "$1.part"', "sh", file, p.art }, function()
             art[p.art] = if noctalia.fileExists(file) then file else nil -- nil = retry on a later poll
           end)
         end
