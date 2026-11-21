@@ -1,0 +1,68 @@
+id = "seo/media-seek"
+name = "Media Seek"
+version = "0.2.0"
+plugin_api = 43
+author = "Seo1323"
+license = "MIT"
+icon = "music"
+description = "Replacement for the bar media widget: marquee title, spinning cover, seek bar on hover, full Media panel."
+tags = ["bar", "panel", "media"]
+dependencies = ["busctl", "jq", "curl"]
+
+[[service]]
+id = "poller"
+entry = "service.luau"
+
+# Click: the full Media card (same layout as Noctalia's own Media tab).
+[[panel]]
+id = "panel"
+entry = "panel.luau"
+width = 440
+height = "content"
+max_height = 700
+placement = "attached"
+position = "center"
+open_near_click = false
+
+# Hover: a small card under the bar with the seek bar.
+[[panel]]
+id = "hover"
+entry = "hover.luau"
+width = 320
+height = "content"
+max_height = 120
+placement = "attached"
+position = "center"
+open_near_click = false
+
+[[widget]]
+id = "bar"
+entry = "bar.luau"
+
+  [[widget.setting]]
+  key = "art_size"
+  type = "int"
+  label_key = "settings.art_size.label"
+  default = 18
+  min = 12
+  max = 40
+
+  [[widget.setting]]
+  key = "max_length"
+  type = "int"
+  label_key = "settings.max_length.label"
+  default = 260
+  min = 60
+  max = 600
+
+  [[widget.setting]]
+  key = "rotate_cover"
+  type = "bool"
+  label_key = "settings.rotate_cover.label"
+  default = true
+
+  [[widget.setting]]
+  key = "hide_when_idle"
+  type = "bool"
+  label_key = "settings.hide_when_idle.label"
+  default = true

@@ -1,0 +1,8 @@
+{
+  "settings": {
+    "art_size": { "label": "Cover size" },
+    "max_length": { "label": "Max text width (px)" },
+    "rotate_cover": { "label": "Spin the cover while playing" },
+    "hide_when_idle": { "label": "Hide when nothing is playing" }
+  }
+}
