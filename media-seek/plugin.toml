@@ -44,7 +44,7 @@ height = "content"
 max_height = 560
 placement = "attached"
 position = "center"
-open_near_click = true
+open_near_click = false
 
 [[widget]]
 id = "playlist"
