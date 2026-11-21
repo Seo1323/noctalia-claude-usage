@@ -26,6 +26,8 @@ function onHover(state)
     leaveAt = noctalia.nowMs() + 400 -- grace period to move the cursor onto the card
   end
 end
+-- `noctalia msg plugin seo/media-seek:volume <output> hover true|false` simulates the pointer (used for testing)
+function onIpc(event, payload) if event == "hover" then onHover(tostring(payload)) end end
 function onClick() if not isOpen() then noctalia.togglePanel("seo/media-seek:volume-card") end end
 
 function update()

@@ -1,10 +1,7 @@
 --!nonstrict
--- Round bar button: circled plus, or a green check when the playing track is already on one of your
--- playlists. Click opens the playlist menu. The capsule adds `capsule_padding` on both sides, so a content
--- width of (capsule height - 2 * padding) makes it a circle. shortcut: sizes come from config, not measured.
-local function num(key, default) return tonumber(noctalia.getSetting(key)) or default end
-local THICK = num("bar.default.thickness", 40) * num("bar.default.capsule_thickness", 0.8)
-local SIZE = math.max(12, math.floor(THICK - 2 * num("bar.default.capsule_padding", 8)))
+-- Bar button: circled plus, or a green check when the playing track is already on one of your playlists.
+-- Click opens the playlist menu. No capsule (set per widget in settings: capsule_opacity / capsule_border_width = 0).
+local SIZE = 22 -- typical bar glyph size
 local GREEN = "#1ed760" -- Spotify green
 
 local m, any = noctalia.state.get("media"), noctalia.state.get("in_any")

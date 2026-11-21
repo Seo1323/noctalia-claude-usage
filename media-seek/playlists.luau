@@ -91,7 +91,10 @@ function render()
     else add(ui.scroll({ height = math.min(420, 56 * #rows) }, { ui.column({ gap = 4 }, rows) })) end
     if err then add(ui.label({ text = "Nie udało się: " .. err, color = "error", fontSize = 12 })) end
   end
-  panel.render(ui.column({ padding = 14, gap = 10 }, kids))
+  -- Attached panels take the bar's (often transparent) background, so give it a base like the built-in panels
+  local alpha = ({ glass = 0.45, soft = 0.7, solid = 1 })[tostring(noctalia.getSetting("shell.panel.transparency_mode") or "solid")] or 1
+  panel.render(ui.column({ padding = 14, gap = 10, fill = string.format("surface/%.2f", math.max(alpha, 0.85)), radius = 16,
+    border = "outline_variant", borderWidth = 1 }, kids))
 end
 
 function onOpen() isOpen = true; err = nil; load() end
