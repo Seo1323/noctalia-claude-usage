@@ -56,6 +56,7 @@ The `poller` service starts with the plugin and refreshes every `refresh_minutes
 | <img src="docs/example-9.webp" alt="Quiet until usage is high" height="34"> | **Quiet until usage is high** — When to show the details: Only when usage is high |
 | <img src="docs/example-10.webp" alt="Any glyph" height="34"> | **Any glyph** — Picture in front: Icon · Which icon: bolt · Separator: Bar |
 | <img src="docs/example-11.webp" alt="Limit used up" height="34"> | **Limit used up** — nothing changed; at 100% only the countdown is shown |
+| <img src="docs/example-12.webp" alt="Limit not used yet" height="34"> | **Limit not used yet** — nothing changed; “Ready” is shown instead of the countdown |
 
 ## Settings
 

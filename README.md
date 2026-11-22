@@ -84,7 +84,7 @@ Hover the widget for both limits; click it for graphs and a button that opens Cl
   </tr>
   <tr>
     <td align="center"><img src="claude-usage/docs/example-11.webp" alt="Limit used up" height="36"><br><sub><b>Limit used up: only the countdown</b></sub></td>
-    <td></td>
+    <td align="center"><img src="claude-usage/docs/example-12.webp" alt="Limit not used yet" height="36"><br><sub><b>Limit not used yet: Ready</b></sub></td>
   </tr>
 </table>
 
@@ -104,6 +104,7 @@ Hover the widget for both limits; click it for graphs and a button that opens Cl
 | Any glyph, bar separators | Picture in front: Icon · Which icon: bolt · Separator: Bar |
 | Critical color | usage above “Critical from (%)” (set to 5 here to show it) |
 | Limit used up: only the countdown | nothing changed — at 100% the widget shows only the time until the limit refills |
+| Limit not used yet: Ready | nothing changed — “Ready” is shown instead of the countdown |
 
 </details>
 
