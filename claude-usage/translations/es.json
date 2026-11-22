@@ -2,8 +2,8 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Cada cuánto comprobar (minutos)",
-      "description": "Cada cuánto el widget consulta tu uso actual."
+      "label": "Con qué frecuencia comprobar (minutos)",
+      "description": "Con qué frecuencia consulta el widget tu uso actual."
     },
     "window": {
       "label": "Qué límite mostrar",
@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Texto cuando el límite está lleno",
-      "description": "Se muestra en lugar de la cuenta atrás mientras este límite aún no se ha usado. Déjalo vacío para «listo»."
+      "description": "Se muestra en lugar de la cuenta atrás mientras este límite aún no se ha usado. Déjalo vacío para «Listo»."
     },
     "show_tokens": {
       "label": "Mostrar los tokens usados",
@@ -145,17 +145,17 @@
     },
     "percent_decimals": {
       "label": "Decimales en los porcentajes",
-      "description": "0 muestra números enteros. Ahora el uso llega en porcentajes enteros, así que los decimales suelen mostrar ,0."
+      "description": "0 muestra números enteros. El uso se recibe actualmente en porcentajes enteros, así que los decimales suelen mostrar ,0."
     },
     "launch_command": {
       "label": "Comando que abre Claude Code",
       "description": "El panel lo usa para abrir Claude Code en un terminal. El modelo y la sesión elegidos se añaden al final."
     },
     "click_action": {
-      "label": "El clic izquierdo",
+      "label": "Clic izquierdo",
       "description": "Qué ocurre al hacer clic izquierdo en el widget. El clic derecho siempre actualiza.",
       "panel": "Abrir el panel",
-      "command": "Ejecuta mi comando",
+      "command": "Ejecutar mi comando",
       "refresh": "Actualizar"
     },
     "panel_translucent": {
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Mostrar precios",
-      "description": "Costes estimados a precios de la API en la información emergente y el panel (y en la barra si lo activas allí). Desactivado oculta todos los precios."
+      "description": "Costes estimados a precios de la API en la información emergente y el panel (y en la barra si lo activas allí). Si se desactiva, se ocultan todos los precios."
     }
   },
   "bar": {
     "left": "{pct}% restante",
-    "ready": "listo"
+    "ready": "Listo"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (se recarga en {time})",
-    "tokens": "tokens: {tokens}, releído: {cache}",
+    "tokens": "Tokens: {tokens}, releído: {cache}",
     "stale": "Datos anteriores — {error}",
-    "loading": "Cargando...",
-    "cost": "pagando por token: {cost}"
+    "loading": "Cargando…",
+    "cost": "Pagando por token: {cost}"
   },
   "error": {
     "no_credentials": "No has iniciado sesión en Claude Code",
-    "token_expired": "La sesión ha caducado - abre Claude Code una vez para renovarla",
+    "token_expired": "La sesión ha caducado — abre Claude Code una vez para renovarla",
     "network": "Sin conexión",
     "bad_response": "Respuesta inesperada del servicio de uso",
-    "http_429": "Demasiadas consultas - nuevo intento en unos minutos"
+    "http_429": "Demasiadas consultas — nuevo intento en unos minutos"
   },
   "panel": {
-    "no_reset": "el límite está lleno",
-    "resets_in": "se recarga en {time}",
-    "peak": "pico {tokens}",
+    "no_reset": "El límite está lleno",
+    "resets_in": "Se recarga en {time}",
+    "peak": "Pico {tokens}",
     "model_tokens": "{tokens} · {messages} mensajes · releído {cache}",
     "no_models": "Todavía no hay uso en esta ventana.",
     "by_model": "Tokens por modelo",

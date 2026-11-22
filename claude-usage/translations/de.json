@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Text, wenn das Limit voll ist",
-      "description": "Wird statt des Countdowns angezeigt, solange dieses Limit noch nicht genutzt wurde. Leer lassen für „bereit“."
+      "description": "Wird statt des Countdowns angezeigt, solange dieses Limit noch nicht genutzt wurde. Leer lassen für „Bereit“."
     },
     "show_tokens": {
       "label": "Verbrauchte Tokens anzeigen",
@@ -145,17 +145,17 @@
     },
     "percent_decimals": {
       "label": "Nachkommastellen bei Prozent",
-      "description": "0 zeigt ganze Zahlen. Die Nutzung kommt derzeit in ganzen Prozent, daher zeigen Nachkommastellen meist ,0."
+      "description": "0 zeigt ganze Zahlen. Die Nutzung wird derzeit in ganzen Prozent geliefert, daher zeigen Nachkommastellen meist ,0."
     },
     "launch_command": {
       "label": "Befehl, der Claude Code öffnet",
       "description": "Das Panel öffnet damit Claude Code in einem Terminal. Das gewählte Modell und die Sitzung werden ans Ende angehängt."
     },
     "click_action": {
-      "label": "Linksklick bewirkt",
+      "label": "Linksklick",
       "description": "Was beim Linksklick auf das Widget passiert. Ein Rechtsklick aktualisiert immer.",
       "panel": "Panel öffnen",
-      "command": "Führt meinen Befehl aus",
+      "command": "Meinen Befehl ausführen",
       "refresh": "Aktualisieren"
     },
     "panel_translucent": {
@@ -234,7 +234,7 @@
       "label": "Farbe des Wochenlimits"
     },
     "hide_below": {
-      "label": "Ausblenden, bis die Nutzung erreicht (%)",
+      "label": "Ausblenden bis zu einer Nutzung von (%)",
       "description": "Hält das Widget verborgen, solange die Nutzung niedrig ist. 0 = immer sichtbar."
     },
     "notify": {
@@ -282,30 +282,30 @@
     },
     "show_prices": {
       "label": "Preise anzeigen",
-      "description": "Geschätzte Kosten zu API-Preisen im Tooltip und im Panel (und in der Leiste, wenn dort eingeschaltet). Aus blendet alle Preise aus."
+      "description": "Geschätzte Kosten zu API-Preisen im Tooltip und im Panel (und in der Leiste, wenn dort eingeschaltet). Ausgeschaltet werden alle Preise ausgeblendet."
     }
   },
   "bar": {
     "left": "{pct}% übrig",
-    "ready": "bereit"
+    "ready": "Bereit"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (wieder voll in {time})",
     "tokens": "Tokens: {tokens}, erneut gelesen: {cache}",
-    "stale": "Ältere Zahlen — {error}",
-    "loading": "Wird geladen...",
-    "cost": "bei Bezahlung pro Token: {cost}"
+    "stale": "Ältere Zahlen – {error}",
+    "loading": "Wird geladen…",
+    "cost": "Bei Bezahlung pro Token: {cost}"
   },
   "error": {
     "no_credentials": "Nicht bei Claude Code angemeldet",
-    "token_expired": "Anmeldung abgelaufen - öffne Claude Code einmal, um sie zu erneuern",
+    "token_expired": "Anmeldung abgelaufen – öffne Claude Code einmal, um sie zu erneuern",
     "network": "Keine Verbindung",
     "bad_response": "Unerwartete Antwort des Nutzungsdienstes",
-    "http_429": "Zu viele Abfragen - neuer Versuch in ein paar Minuten"
+    "http_429": "Zu viele Abfragen – neuer Versuch in ein paar Minuten"
   },
   "panel": {
-    "no_reset": "das Limit ist voll",
-    "resets_in": "wieder voll in {time}",
+    "no_reset": "Das Limit ist voll",
+    "resets_in": "Wieder voll in {time}",
     "peak": "Spitze {tokens}",
     "model_tokens": "{tokens} · {messages} Nachrichten · erneut gelesen {cache}",
     "no_models": "In diesem Zeitraum noch keine Nutzung.",

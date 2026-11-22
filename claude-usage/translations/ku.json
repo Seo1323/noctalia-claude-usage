@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Nivîs dema sînor tije ye",
-      "description": "Heta ku ev sînor hîn nehatibe bikaranîn, li şûna jimartinê tê nîşandan. Ji bo “amade” vala bihêle."
+      "description": "Heta ku ev sînor hîn nehatibe bikaranîn, li şûna jimartinê tê nîşandan. Ji bo “Amade” vala bihêle."
     },
     "show_tokens": {
       "label": "Tokenên bikaranî nîşan bide",
@@ -100,7 +100,7 @@
       "slash": "Xêza xwar (/)"
     },
     "dim_extras": {
-      "label": "Dem û tokenan zelaltir bike",
+      "label": "Dem û tokenan kêmtir berbiçav bike",
       "description": "Tenê rêje rengên hişyariyê diparêze."
     },
     "gap": {
@@ -155,7 +155,7 @@
       "label": "Tikandina çepê",
       "description": "Dema li widgetê bi bişkoka çepê tê tikandin çi dibe. Tikandina rastê her tim nû dike.",
       "panel": "Panelê veke",
-      "command": "Fermana min dixebitîne",
+      "command": "Fermana min bixebitîne",
       "refresh": "Nû bike"
     },
     "panel_translucent": {
@@ -163,8 +163,8 @@
       "description": "Dihêle wêneyê paşxaneyê di panelê re xuya bibe. Nivîs zelal dimîne."
     },
     "show_cost": {
-      "label": "Nîşan bide ku çiqas bike",
-      "description": "Texmînek ka ev bikaranîn çiqas bike heke ji bo her tokenê pere were dayîn. Bi abonetiya Claude tu vê nadî."
+      "label": "Nîşan bide ku dê çiqas lêçûn bike",
+      "description": "Texmînek ka ev bikaranîn dê çiqas lêçûn bike heke ji bo her tokenê pere were dayîn. Bi abonetiya Claude tu vê nadî."
     },
     "currency": {
       "label": "Pere",
@@ -202,7 +202,7 @@
     },
     "ring_track": {
       "label": "Paşxaneya xelekê nîşan bide",
-      "description": "Dorhêleke tevahî ya zelal li pişt beşa tije."
+      "description": "Dorhêleke tevahî ya nîvşefaf li pişt beşa tije."
     },
     "format": {
       "label": "Nivîsa min",
@@ -274,7 +274,7 @@
     },
     "panel_transparency": {
       "label": "Şefafiya panelê (%)",
-      "description": "0 = tije, 100 = bi tevahî şefaf."
+      "description": "0 = ne şefaf, 100 = bi tevahî şefaf."
     },
     "match_ui": {
       "label": "Li gorî xuyaniya Noctalia",
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Bihayan nîşan bide",
-      "description": "Lêçûnên texmînî li gorî bihayên API di şîretê û panelê de (û li ser darikê heke li wir vekirî be). Girtî hemû bihayan vedişêre."
+      "description": "Lêçûnên texmînî li gorî bihayên API di tooltip û panelê de (û li ser darikê heke li wir vekirî be). Dema girtî be, hemû biha tên veşartin."
     }
   },
   "bar": {
     "left": "{pct}% maye",
-    "ready": "amade"
+    "ready": "Amade"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (piştî {time} dîsa tije dibe)",
-    "tokens": "token: {tokens}, dîsa hatine xwendin: {cache}",
-    "stale": "Daneyên kevntir — {error}",
-    "loading": "Tê barkirin...",
-    "cost": "bi dayîna ji bo her tokenê: {cost}"
+    "tokens": "Token: {tokens}, dîsa hatine xwendin: {cache}",
+    "stale": "Daneyên kevintir — {error}",
+    "loading": "Tê barkirin…",
+    "cost": "Bi dayîna ji bo her tokenê: {cost}"
   },
   "error": {
     "no_credentials": "Têketina Claude Code nehatiye kirin",
-    "token_expired": "Dema têketinê qediya - carekê Claude Code veke da ku nû bibe",
+    "token_expired": "Dema têketinê qediya — carekê Claude Code veke da ku nû bibe",
     "network": "Girêdan tune",
     "bad_response": "Bersiveke nediyar ji xizmeta bikaranînê",
-    "http_429": "Gelek kontrol - piştî çend deqîqeyan dîsa tê ceribandin"
+    "http_429": "Gelek kontrol — piştî çend deqîqeyan dîsa tê ceribandin"
   },
   "panel": {
-    "no_reset": "sînor tije ye",
-    "resets_in": "piştî {time} dîsa tije dibe",
-    "peak": "lûtke {tokens}",
+    "no_reset": "Sînor tije ye",
+    "resets_in": "Piştî {time} dîsa tije dibe",
+    "peak": "Lûtke {tokens}",
     "model_tokens": "{tokens} · {messages} peyam · dîsa hatine xwendin {cache}",
     "no_models": "Hîn di vê pencereyê de bikaranîn tune.",
     "by_model": "Token li gorî modelê",

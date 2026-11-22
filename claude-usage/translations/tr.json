@@ -33,7 +33,7 @@
     },
     "logo_path": {
       "label": "Görselim",
-      "description": "Bir SVG veya PNG dosyası. Eklenti klasöründeki logo.svg için boş bırakın."
+      "description": "Bir SVG veya PNG dosyası. Eklenti klasöründeki logo.svg'yi kullanmak için boş bırakın."
     },
     "icon_size": {
       "label": "Görsel boyutu (px)"
@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Sınır doluyken metin",
-      "description": "Bu sınır henüz kullanılmadıysa geri sayım yerine gösterilir. “hazır” için boş bırakın."
+      "description": "Bu sınır henüz kullanılmadıysa geri sayım yerine gösterilir. “Hazır” için boş bırakın."
     },
     "show_tokens": {
       "label": "Kullanılan tokenları göster",
@@ -116,10 +116,10 @@
       "description": "Aşağıdaki seviyelerde önce uyarı, sonra kritik renge geçer."
     },
     "warn_at": {
-      "label": "Uyarı başlangıcı (%)"
+      "label": "Uyarı seviyesi başlangıcı (%)"
     },
     "critical_at": {
-      "label": "Kritik başlangıcı (%)"
+      "label": "Kritik seviye başlangıcı (%)"
     },
     "color": {
       "label": "Normal metin rengi",
@@ -145,7 +145,7 @@
     },
     "percent_decimals": {
       "label": "Yüzdelerde ondalık basamak",
-      "description": "0 tam sayı gösterir. Kullanım şu anda tam yüzde olarak gelir, bu yüzden ondalık kısım genelde ,0 olur."
+      "description": "0 tam sayı gösterir. Kullanım şu anda tam yüzde olarak iletilir, bu yüzden ondalık kısım genelde ,0 olur."
     },
     "launch_command": {
       "label": "Claude Code'u açan komut",
@@ -155,7 +155,7 @@
       "label": "Sol tıklama",
       "description": "Bileşene sol tıklandığında ne olacağı. Sağ tıklama her zaman yeniler.",
       "panel": "Paneli aç",
-      "command": "Komutumu çalıştırır",
+      "command": "Komutumu çalıştır",
       "refresh": "Yenile"
     },
     "panel_translucent": {
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Fiyatları göster",
-      "description": "API fiyatlarıyla tahmini maliyetler ipucunda ve panelde (orada açıksa çubukta da). Kapalı tüm fiyatları gizler."
+      "description": "API fiyatlarıyla tahmini maliyetler ipucu balonunda ve panelde (orada açıksa çubukta da). Kapalıyken tüm fiyatlar gizlenir."
     }
   },
   "bar": {
     "left": "%{pct} kaldı",
-    "ready": "hazır"
+    "ready": "Hazır"
   },
   "tooltip": {
     "window": "{window}: %{pct}  ({time} sonra yeniden dolar)",
-    "tokens": "tokenlar: {tokens}, yeniden okunan: {cache}",
+    "tokens": "Tokenlar: {tokens}, yeniden okunan: {cache}",
     "stale": "Eski veriler — {error}",
-    "loading": "Yükleniyor...",
-    "cost": "token başına ödemeyle: {cost}"
+    "loading": "Yükleniyor…",
+    "cost": "Token başına ödemeyle: {cost}"
   },
   "error": {
     "no_credentials": "Claude Code'da oturum açılmamış",
-    "token_expired": "Oturumun süresi doldu - yenilemek için Claude Code'u bir kez açın",
+    "token_expired": "Oturumun süresi doldu — yenilemek için Claude Code'u bir kez açın",
     "network": "Bağlantı yok",
     "bad_response": "Kullanım hizmetinden beklenmeyen yanıt",
-    "http_429": "Çok fazla kontrol - birkaç dakika içinde yeniden denenecek"
+    "http_429": "Çok fazla kontrol — birkaç dakika içinde yeniden denenecek"
   },
   "panel": {
-    "no_reset": "sınır dolu",
+    "no_reset": "Sınır dolu",
     "resets_in": "{time} sonra yeniden dolar",
-    "peak": "zirve {tokens}",
+    "peak": "Zirve {tokens}",
     "model_tokens": "{tokens} · {messages} ileti · yeniden okunan {cache}",
     "no_models": "Bu pencerede henüz kullanım yok.",
     "by_model": "Modele göre tokenlar",

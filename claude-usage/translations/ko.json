@@ -192,7 +192,7 @@
     },
     "exchange_rate": {
       "label": "직접 정한 환율",
-      "description": "1미국 달러가 고른 통화로 얼마인지 적습니다. 0 = 일일 환율 자동 사용."
+      "description": "미국 달러 1달러가 고른 통화로 얼마인지 적습니다. 0 = 일일 환율 자동 사용."
     },
     "ring_thickness": {
       "label": "링 두께",
@@ -290,18 +290,18 @@
     "ready": "준비됨"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  ({time} 후 다시 참)",
+    "window": "{window}: {pct}% ({time} 후 다시 참)",
     "tokens": "토큰: {tokens}, 다시 읽음: {cache}",
-    "stale": "이전 수치 — {error}",
-    "loading": "불러오는 중...",
+    "stale": "이전 수치: {error}",
+    "loading": "불러오는 중…",
     "cost": "토큰마다 낸다면: {cost}"
   },
   "error": {
     "no_credentials": "Claude Code에 로그인하지 않았습니다",
-    "token_expired": "로그인 만료 - Claude Code를 한 번 열면 갱신됩니다",
+    "token_expired": "로그인이 만료되었습니다. Claude Code를 한 번 열면 갱신됩니다",
     "network": "연결 없음",
     "bad_response": "사용량 서비스의 예상치 못한 응답",
-    "http_429": "확인이 너무 많음 - 몇 분 뒤 다시 시도합니다"
+    "http_429": "확인이 너무 많습니다. 몇 분 뒤 다시 시도합니다"
   },
   "panel": {
     "no_reset": "한도가 가득 찼습니다",

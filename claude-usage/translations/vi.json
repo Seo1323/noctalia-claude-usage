@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Văn bản khi giới hạn còn đầy",
-      "description": "Hiện thay cho đếm ngược khi giới hạn này chưa được dùng. Để trống để hiện “sẵn sàng”."
+      "description": "Hiện thay cho đếm ngược khi giới hạn này chưa được dùng. Để trống để hiện “Sẵn sàng”."
     },
     "show_tokens": {
       "label": "Hiện số token đã dùng",
@@ -145,7 +145,7 @@
     },
     "percent_decimals": {
       "label": "Số thập phân của phần trăm",
-      "description": "0 hiện số nguyên. Hiện mức dùng được báo theo phần trăm nguyên, nên phần thập phân thường là ,0."
+      "description": "0 hiện số nguyên. Hiện tại mức dùng được báo theo phần trăm nguyên, nên phần thập phân thường là ,0."
     },
     "launch_command": {
       "label": "Lệnh mở Claude Code",
@@ -215,7 +215,7 @@
       "label": "Tên của giới hạn hằng tuần"
     },
     "show_model": {
-      "label": "Hiện mô hình hiện tại",
+      "label": "Hiện mô hình đang dùng",
       "description": "Mô hình Claude được dùng gần nhất, ví dụ Opus 5.5."
     },
     "font_size": {
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Hiện giá",
-      "description": "Chi phí ước tính theo giá API trong chú giải và bảng (và trên thanh nếu bật ở đó). Tắt sẽ ẩn mọi mức giá."
+      "description": "Chi phí ước tính theo giá API trong chú thích nổi và bảng (và trên thanh nếu bật ở đó). Khi tắt, mọi mức giá sẽ bị ẩn."
     }
   },
   "bar": {
     "left": "còn {pct}%",
-    "ready": "sẵn sàng"
+    "ready": "Sẵn sàng"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (đầy lại sau {time})",
-    "tokens": "token: {tokens}, đọc lại: {cache}",
+    "tokens": "Token: {tokens}, đọc lại: {cache}",
     "stale": "Số liệu cũ hơn — {error}",
-    "loading": "Đang tải...",
-    "cost": "nếu trả theo token: {cost}"
+    "loading": "Đang tải…",
+    "cost": "Nếu trả theo token: {cost}"
   },
   "error": {
     "no_credentials": "Chưa đăng nhập Claude Code",
-    "token_expired": "Phiên đăng nhập đã hết hạn - mở Claude Code một lần để gia hạn",
+    "token_expired": "Phiên đăng nhập đã hết hạn — mở Claude Code một lần để gia hạn",
     "network": "Không có kết nối",
     "bad_response": "Dịch vụ sử dụng trả lời không như mong đợi",
-    "http_429": "Kiểm tra quá nhiều lần - sẽ thử lại sau vài phút"
+    "http_429": "Kiểm tra quá nhiều lần — sẽ thử lại sau vài phút"
   },
   "panel": {
-    "no_reset": "giới hạn đang đầy",
-    "resets_in": "đầy lại sau {time}",
-    "peak": "đỉnh {tokens}",
+    "no_reset": "Giới hạn đang đầy",
+    "resets_in": "Đầy lại sau {time}",
+    "peak": "Đỉnh {tokens}",
     "model_tokens": "{tokens} · {messages} tin nhắn · đọc lại {cache}",
     "no_models": "Chưa có lượt dùng trong cửa sổ này.",
     "by_model": "Token theo mô hình",

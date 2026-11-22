@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Tekst når grensa er full",
-      "description": "Vert vist i staden for nedteljinga så lenge grensa ikkje er brukt enno. La stå tomt for «klar»."
+      "description": "Vert vist i staden for nedteljinga så lenge grensa ikkje er brukt enno. La stå tomt for «Klar»."
     },
     "show_tokens": {
       "label": "Vis brukte token",
@@ -100,7 +100,7 @@
       "slash": "Skråstrek (/)"
     },
     "dim_extras": {
-      "label": "Gjer tida og tokena svakare",
+      "label": "Tone ned tida og tokena",
       "description": "Berre prosenten held på varselfargane."
     },
     "gap": {
@@ -145,7 +145,7 @@
     },
     "percent_decimals": {
       "label": "Desimalar i prosent",
-      "description": "0 viser heiltal. Bruken kjem no i heile prosent, så desimalane viser oftast ,0."
+      "description": "0 viser heiltal. Bruken vert for tida gitt i heile prosent, så desimalane viser oftast ,0."
     },
     "launch_command": {
       "label": "Kommando som opnar Claude Code",
@@ -155,7 +155,7 @@
       "label": "Venstreklikk",
       "description": "Kva som skjer når du venstreklikkar på widgeten. Høgreklikk oppdaterer alltid.",
       "panel": "Opna panelet",
-      "command": "Køyrer kommandoen min",
+      "command": "Køyr kommandoen min",
       "refresh": "Oppdater"
     },
     "panel_translucent": {
@@ -234,14 +234,14 @@
       "label": "Fargen til vekegrensa"
     },
     "hide_below": {
-      "label": "Gøym til bruken når (%)",
+      "label": "Gøym til bruken har nådd (%)",
       "description": "Held widgeten ute av syne medan bruken er låg. 0 = alltid synleg."
     },
     "notify": {
       "label": "Varsel",
       "description": "Få eitt varsel når bruken passerer eit nivå.",
       "off": "Av",
-      "warning": "Ved varsel- og det kritiske nivået",
+      "warning": "Ved varselnivået og det kritiske nivået",
       "critical": "Berre ved det kritiske nivået"
     },
     "custom_prices": {
@@ -282,33 +282,33 @@
     },
     "show_prices": {
       "label": "Vis prisar",
-      "description": "Overslag over kostnader etter API-prisar i verktøytipset og panelet (og på linja om det er slått på der). Av gøymer alle prisar."
+      "description": "Overslag over kostnader etter API-prisar i verktøytipset og panelet (og på linja om det er slått på der). Når det er av, vert alle prisar gøymde."
     }
   },
   "bar": {
     "left": "{pct}% att",
-    "ready": "klar"
+    "ready": "Klar"
   },
   "tooltip": {
     "window": "{window}: {pct} %  (full att om {time})",
-    "tokens": "token: {tokens}, lesne på nytt: {cache}",
-    "stale": "Eldre tal — {error}",
-    "loading": "Lastar...",
-    "cost": "ved betaling per token: {cost}"
+    "tokens": "Token: {tokens}, lesne på nytt: {cache}",
+    "stale": "Eldre tal – {error}",
+    "loading": "Lastar…",
+    "cost": "Ved betaling per token: {cost}"
   },
   "error": {
     "no_credentials": "Ikkje logga inn i Claude Code",
-    "token_expired": "Innlogginga har gått ut - opna Claude Code éin gong for å fornya ho",
+    "token_expired": "Innlogginga har gått ut – opna Claude Code éin gong for å fornya ho",
     "network": "Inga tilkopling",
     "bad_response": "Uventa svar frå brukstenesta",
-    "http_429": "For mange sjekkar - nytt forsøk om nokre minutt"
+    "http_429": "For mange sjekkar – nytt forsøk om nokre minutt"
   },
   "panel": {
-    "no_reset": "grensa er full",
-    "resets_in": "full att om {time}",
-    "peak": "topp {tokens}",
+    "no_reset": "Grensa er full",
+    "resets_in": "Full att om {time}",
+    "peak": "Topp {tokens}",
     "model_tokens": "{tokens} · {messages} meldingar · lesne på nytt {cache}",
-    "no_models": "Inga bruk i dette vindauget enno.",
+    "no_models": "Ingen bruk i dette vindauget enno.",
     "by_model": "Token per modell",
     "refresh": "Oppdater",
     "settings": "Innstillingar",

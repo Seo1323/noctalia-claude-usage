@@ -2,12 +2,12 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Cada canto comprobar (minutos)",
-      "description": "Cada canto o trebello consulta o teu uso actual."
+      "label": "Con que frecuencia comprobar (minutos)",
+      "description": "Con que frecuencia consulta o trebello o teu uso actual."
     },
     "window": {
       "label": "Que límite amosar",
-      "description": "Claude Code ten un límite de 5 horas e un semanal. Amosa un deles ou os dous.",
+      "description": "Claude Code ten un límite de 5 horas e outro semanal. Amosa un deles ou os dous.",
       "five_hour": "Límite de 5 horas",
       "weekly": "Límite semanal (7 d)",
       "both": "Os dous"
@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Texto cando o límite está cheo",
-      "description": "Amósase no canto da conta atrás mentres este límite aínda non se usou. Déixao baleiro para «listo»."
+      "description": "Amósase no canto da conta atrás mentres este límite aínda non se usou. Déixao baleiro para «Listo»."
     },
     "show_tokens": {
       "label": "Amosar os tokens usados",
@@ -85,7 +85,7 @@
     },
     "include_cache_read": {
       "label": "Contar tamén o texto relido",
-      "description": "Claude rele a conversa antes de cada resposta. Contalo fai o número moito maior."
+      "description": "Claude rele a conversa antes de cada resposta. Se isto se conta, o número fica moito maior."
     },
     "token_format": {
       "label": "Forma do número de tokens",
@@ -145,17 +145,17 @@
     },
     "percent_decimals": {
       "label": "Decimais nas porcentaxes",
-      "description": "0 amosa números enteiros. Agora o uso chega en porcentaxes enteiras, así que os decimais adoitan amosar ,0."
+      "description": "0 amosa números enteiros. Agora o uso recíbese en porcentaxes enteiras, así que os decimais adoitan amosar ,0."
     },
     "launch_command": {
       "label": "Orde que abre Claude Code",
       "description": "O panel úsaa para abrir Claude Code nun terminal. O modelo e a sesión escollidos engádense ao final."
     },
     "click_action": {
-      "label": "O clic esquerdo",
+      "label": "Clic esquerdo",
       "description": "Que pasa ao premer co botón esquerdo no trebello. O botón dereito sempre actualiza.",
       "panel": "Abrir o panel",
-      "command": "Executa a miña orde",
+      "command": "Executar a miña orde",
       "refresh": "Actualizar"
     },
     "panel_translucent": {
@@ -168,7 +168,7 @@
     },
     "currency": {
       "label": "Moeda",
-      "description": "Os custos convértense desde dólares estadounidenses cos tipos diarios do Banco Central Europeo ou co teu tipo.",
+      "description": "Os custos convértense desde dólares estadounidenses cos tipos diarios do Banco Central Europeo ou co teu propio tipo.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -205,7 +205,7 @@
       "description": "Un círculo completo tenue detrás da parte chea."
     },
     "format": {
-      "label": "O meu texto",
+      "label": "O meu propio texto",
       "description": "Escribe o teu propio texto no canto dos elementos habituais. As palabras entre chaves substitúense: {window} {pct} {left} {reset} {tokens} {cost} {model}. Exemplo: {pct} · {reset}. Déixao baleiro para o aspecto normal."
     },
     "label_five": {
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Amosar os prezos",
-      "description": "Custos estimados a prezos da API na axuda emerxente e no panel (e na barra se o activas alí). Desactivado agocha todos os prezos."
+      "description": "Custos estimados a prezos da API na axuda emerxente e no panel (e na barra se o activas alí). Se se desactiva, agóchanse todos os prezos."
     }
   },
   "bar": {
     "left": "{pct}% restante",
-    "ready": "listo"
+    "ready": "Listo"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (recárgase en {time})",
-    "tokens": "tokens: {tokens}, relido: {cache}",
+    "tokens": "Tokens: {tokens}, relido: {cache}",
     "stale": "Datos anteriores — {error}",
-    "loading": "Cargando...",
-    "cost": "pagando por token: {cost}"
+    "loading": "Cargando…",
+    "cost": "Pagando por token: {cost}"
   },
   "error": {
     "no_credentials": "Non iniciaches sesión en Claude Code",
-    "token_expired": "A sesión caducou - abre Claude Code unha vez para renovala",
+    "token_expired": "A sesión caducou — abre Claude Code unha vez para renovala",
     "network": "Sen conexión",
     "bad_response": "Resposta inesperada do servizo de uso",
-    "http_429": "Demasiadas comprobacións - novo intento nuns minutos"
+    "http_429": "Demasiadas comprobacións — novo intento nuns minutos"
   },
   "panel": {
-    "no_reset": "o límite está cheo",
-    "resets_in": "recárgase en {time}",
-    "peak": "pico {tokens}",
+    "no_reset": "O límite está cheo",
+    "resets_in": "Recárgase en {time}",
+    "peak": "Pico {tokens}",
     "model_tokens": "{tokens} · {messages} mensaxes · relido {cache}",
     "no_models": "Aínda non hai uso nesta xanela.",
     "by_model": "Tokens por modelo",

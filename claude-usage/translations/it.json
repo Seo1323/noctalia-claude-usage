@@ -2,8 +2,8 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Ogni quanto controllare (minuti)",
-      "description": "Ogni quanto il widget recupera il tuo utilizzo attuale."
+      "label": "Frequenza di controllo (minuti)",
+      "description": "Ogni quanto tempo il widget recupera il tuo utilizzo attuale."
     },
     "window": {
       "label": "Quale limite mostrare",
@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Testo quando il limite è pieno",
-      "description": "Mostrato al posto del conto alla rovescia finché questo limite non è stato usato. Lascia vuoto per «pronto»."
+      "description": "Mostrato al posto del conto alla rovescia finché questo limite non è stato usato. Lascia vuoto per «Pronto»."
     },
     "show_tokens": {
       "label": "Mostra i token usati",
@@ -145,17 +145,17 @@
     },
     "percent_decimals": {
       "label": "Decimali nelle percentuali",
-      "description": "0 mostra numeri interi. L’utilizzo arriva ora in percentuali intere, quindi i decimali mostrano di solito ,0."
+      "description": "0 mostra numeri interi. L’utilizzo viene fornito al momento in percentuali intere, quindi di solito i decimali mostrano ,0."
     },
     "launch_command": {
       "label": "Comando che apre Claude Code",
       "description": "Il pannello lo usa per aprire Claude Code in un terminale. Il modello e la sessione scelti vengono aggiunti alla fine."
     },
     "click_action": {
-      "label": "Il clic sinistro",
+      "label": "Clic sinistro",
       "description": "Cosa succede con un clic sinistro sul widget. Il clic destro aggiorna sempre.",
       "panel": "Apri il pannello",
-      "command": "Esegue il mio comando",
+      "command": "Esegui il mio comando",
       "refresh": "Aggiorna"
     },
     "panel_translucent": {
@@ -168,7 +168,7 @@
     },
     "currency": {
       "label": "Valuta",
-      "description": "I costi sono convertiti dal dollaro statunitense con i tassi giornalieri della Banca centrale europea o con un tasso tuo.",
+      "description": "I costi sono convertiti dal dollaro statunitense con i tassi giornalieri della Banca centrale europea o con un tasso personalizzato.",
       "USD": "USD ($)",
       "EUR": "EUR (€)",
       "PLN": "PLN (zł)",
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Mostra i prezzi",
-      "description": "Costi stimati ai prezzi API nel suggerimento e nel pannello (e nella barra, se lì è attivo). Disattivato nasconde tutti i prezzi."
+      "description": "Costi stimati ai prezzi API nel suggerimento e nel pannello (e nella barra, se lì è attivo). Se disattivato, tutti i prezzi sono nascosti."
     }
   },
   "bar": {
     "left": "{pct}% rimanente",
-    "ready": "pronto"
+    "ready": "Pronto"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (si ricarica tra {time})",
-    "tokens": "token: {tokens}, riletti: {cache}",
+    "tokens": "Token: {tokens}, riletti: {cache}",
     "stale": "Dati precedenti — {error}",
-    "loading": "Caricamento...",
-    "cost": "pagando a token: {cost}"
+    "loading": "Caricamento…",
+    "cost": "Pagando a token: {cost}"
   },
   "error": {
     "no_credentials": "Accesso a Claude Code non effettuato",
-    "token_expired": "Accesso scaduto - apri Claude Code una volta per rinnovarlo",
+    "token_expired": "Accesso scaduto — apri Claude Code una volta per rinnovarlo",
     "network": "Nessuna connessione",
     "bad_response": "Risposta inattesa dal servizio di utilizzo",
-    "http_429": "Troppi controlli - nuovo tentativo tra qualche minuto"
+    "http_429": "Troppi controlli — nuovo tentativo tra qualche minuto"
   },
   "panel": {
-    "no_reset": "il limite è pieno",
-    "resets_in": "si ricarica tra {time}",
-    "peak": "picco {tokens}",
+    "no_reset": "Il limite è pieno",
+    "resets_in": "Si ricarica tra {time}",
+    "peak": "Picco {tokens}",
     "model_tokens": "{tokens} · {messages} messaggi · riletti {cache}",
     "no_models": "Ancora nessun utilizzo in questa finestra.",
     "by_model": "Token per modello",

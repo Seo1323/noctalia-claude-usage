@@ -164,7 +164,7 @@
     },
     "show_cost": {
       "label": "显示大概花费",
-      "description": "按令牌付费时这些用量大约要花多少钱的估算。使用 Claude 订阅时不需要支付这笔钱。"
+      "description": "估算按令牌付费时这些用量要花多少钱。使用 Claude 订阅时无需支付。"
     },
     "currency": {
       "label": "货币",
@@ -290,18 +290,18 @@
     "ready": "就绪"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  （{time} 后恢复）",
+    "window": "{window}：{pct}%（{time} 后恢复）",
     "tokens": "令牌：{tokens}，重新读取：{cache}",
-    "stale": "较早的数据 — {error}",
-    "loading": "加载中...",
+    "stale": "较早的数据：{error}",
+    "loading": "加载中…",
     "cost": "按令牌付费：{cost}"
   },
   "error": {
     "no_credentials": "未登录 Claude Code",
-    "token_expired": "登录已过期 - 打开一次 Claude Code 即可续期",
+    "token_expired": "登录已过期，打开一次 Claude Code 即可续期",
     "network": "无网络连接",
     "bad_response": "用量服务返回了意外的结果",
-    "http_429": "检查次数过多 - 几分钟后重试"
+    "http_429": "检查次数过多，几分钟后重试"
   },
   "panel": {
     "no_reset": "限额已满",

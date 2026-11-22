@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Text när gränsen är full",
-      "description": "Visas i stället för nedräkningen så länge gränsen inte har använts. Lämna tomt för ”klar”."
+      "description": "Visas i stället för nedräkningen så länge gränsen inte har använts. Lämna tomt för ”Klar”."
     },
     "show_tokens": {
       "label": "Visa använda tokens",
@@ -100,7 +100,7 @@
       "slash": "Snedstreck (/)"
     },
     "dim_extras": {
-      "label": "Gör tiden och tokens svagare",
+      "label": "Tona ner tiden och tokens",
       "description": "Bara procenten behåller varningsfärgerna."
     },
     "gap": {
@@ -145,7 +145,7 @@
     },
     "percent_decimals": {
       "label": "Decimaler i procent",
-      "description": "0 visar heltal. Användningen kommer just nu i hela procent, så decimaler visar oftast ,0."
+      "description": "0 visar heltal. Användningen levereras just nu i hela procent, så decimaler visar oftast ,0."
     },
     "launch_command": {
       "label": "Kommando som öppnar Claude Code",
@@ -241,7 +241,7 @@
       "label": "Aviseringar",
       "description": "Få en avisering när användningen passerar en nivå.",
       "off": "Av",
-      "warning": "Vid varnings- och den kritiska nivån",
+      "warning": "Vid varningsnivån och den kritiska nivån",
       "critical": "Bara vid den kritiska nivån"
     },
     "custom_prices": {
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Visa priser",
-      "description": "Uppskattade kostnader enligt API-priser i verktygstipset och panelen (och i fältet om det är påslaget där). Av döljer alla priser."
+      "description": "Uppskattade kostnader enligt API-priser i verktygstipset och panelen (och i fältet om det är påslaget där). När det är av döljs alla priser."
     }
   },
   "bar": {
     "left": "{pct}% kvar",
-    "ready": "klar"
+    "ready": "Klar"
   },
   "tooltip": {
     "window": "{window}: {pct} %  (full igen om {time})",
-    "tokens": "tokens: {tokens}, omläst: {cache}",
-    "stale": "Äldre siffror — {error}",
-    "loading": "Laddar...",
-    "cost": "vid betalning per token: {cost}"
+    "tokens": "Tokens: {tokens}, omläst: {cache}",
+    "stale": "Äldre siffror – {error}",
+    "loading": "Laddar…",
+    "cost": "Vid betalning per token: {cost}"
   },
   "error": {
     "no_credentials": "Inte inloggad i Claude Code",
-    "token_expired": "Inloggningen har gått ut - öppna Claude Code en gång för att förnya den",
+    "token_expired": "Inloggningen har gått ut – öppna Claude Code en gång för att förnya den",
     "network": "Ingen anslutning",
     "bad_response": "Oväntat svar från användningstjänsten",
-    "http_429": "För många kontroller - nytt försök om några minuter"
+    "http_429": "För många kontroller – nytt försök om några minuter"
   },
   "panel": {
-    "no_reset": "gränsen är full",
-    "resets_in": "full igen om {time}",
-    "peak": "topp {tokens}",
+    "no_reset": "Gränsen är full",
+    "resets_in": "Full igen om {time}",
+    "peak": "Topp {tokens}",
     "model_tokens": "{tokens} · {messages} meddelanden · omläst {cache}",
     "no_models": "Ingen användning i det här fönstret än.",
     "by_model": "Tokens per modell",

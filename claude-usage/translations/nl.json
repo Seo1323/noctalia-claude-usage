@@ -7,7 +7,7 @@
     },
     "window": {
       "label": "Welke limiet tonen",
-      "description": "Claude Code heeft een limiet per 5 uur en een weeklimiet. Toon er een of allebei.",
+      "description": "Claude Code heeft een limiet per 5 uur en een weeklimiet. Toon er één of allebei.",
       "five_hour": "Limiet per 5 uur",
       "weekly": "Weeklimiet (7d)",
       "both": "Allebei"
@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Tekst als de limiet vol is",
-      "description": "Getoond in plaats van de aftelling zolang deze limiet nog niet gebruikt is. Laat leeg voor „klaar”."
+      "description": "Getoond in plaats van de aftelling zolang deze limiet nog niet gebruikt is. Laat leeg voor „Klaar”."
     },
     "show_tokens": {
       "label": "Gebruikte tokens tonen",
@@ -113,7 +113,7 @@
     },
     "color_by_usage": {
       "label": "Kleur aanpassen aan het gebruik",
-      "description": "Wordt de waarschuwingskleur en daarna de kritieke kleur bij de niveaus hieronder."
+      "description": "Verandert bij de niveaus hieronder naar de waarschuwingskleur en daarna naar de kritieke kleur."
     },
     "warn_at": {
       "label": "Waarschuwing vanaf (%)"
@@ -145,7 +145,7 @@
     },
     "percent_decimals": {
       "label": "Decimalen in percentages",
-      "description": "0 toont hele getallen. Het gebruik komt nu in hele procenten, dus decimalen tonen meestal ,0."
+      "description": "0 toont hele getallen. Het gebruik wordt nu in hele procenten doorgegeven, dus decimalen tonen meestal ,0."
     },
     "launch_command": {
       "label": "Opdracht die Claude Code opent",
@@ -155,7 +155,7 @@
       "label": "Linksklikken",
       "description": "Wat er gebeurt als je met links op de widget klikt. Rechtsklikken vernieuwt altijd.",
       "panel": "Paneel openen",
-      "command": "Voert mijn opdracht uit",
+      "command": "Mijn opdracht uitvoeren",
       "refresh": "Vernieuwen"
     },
     "panel_translucent": {
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Prijzen tonen",
-      "description": "Geschatte kosten tegen API-prijzen in de tooltip en het paneel (en in de balk als je dat daar aanzet). Uit verbergt alle prijzen."
+      "description": "Geschatte kosten tegen API-prijzen in de tooltip en het paneel (en in de balk als je dat daar aanzet). Als dit uit staat, worden alle prijzen verborgen."
     }
   },
   "bar": {
     "left": "{pct}% over",
-    "ready": "klaar"
+    "ready": "Klaar"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (weer vol over {time})",
-    "tokens": "tokens: {tokens}, opnieuw gelezen: {cache}",
+    "tokens": "Tokens: {tokens}, opnieuw gelezen: {cache}",
     "stale": "Oudere cijfers — {error}",
-    "loading": "Laden...",
-    "cost": "bij betalen per token: {cost}"
+    "loading": "Laden…",
+    "cost": "Bij betalen per token: {cost}"
   },
   "error": {
     "no_credentials": "Niet aangemeld bij Claude Code",
-    "token_expired": "Aanmelding verlopen - open Claude Code één keer om die te vernieuwen",
+    "token_expired": "Aanmelding verlopen — open Claude Code één keer om die te vernieuwen",
     "network": "Geen verbinding",
     "bad_response": "Onverwacht antwoord van de gebruiksdienst",
-    "http_429": "Te veel controles - nieuwe poging over een paar minuten"
+    "http_429": "Te veel controles — nieuwe poging over een paar minuten"
   },
   "panel": {
-    "no_reset": "de limiet is vol",
-    "resets_in": "weer vol over {time}",
-    "peak": "piek {tokens}",
+    "no_reset": "De limiet is vol",
+    "resets_in": "Weer vol over {time}",
+    "peak": "Piek {tokens}",
     "model_tokens": "{tokens} · {messages} berichten · opnieuw gelezen {cache}",
     "no_models": "Nog geen gebruik in dit venster.",
     "by_model": "Tokens per model",

@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Text, když je limit plný",
-      "description": "Zobrazí se místo odpočtu, dokud tento limit ještě nebyl využit. Nechte prázdné pro „připraveno“."
+      "description": "Zobrazí se místo odpočtu, dokud tento limit ještě nebyl využit. Nechte prázdné pro „Připraveno“."
     },
     "show_tokens": {
       "label": "Zobrazit využité tokeny",
@@ -145,7 +145,7 @@
     },
     "percent_decimals": {
       "label": "Desetinná místa v procentech",
-      "description": "0 zobrazuje celá čísla. Využití teď přichází v celých procentech, takže desetinná místa obvykle ukazují ,0."
+      "description": "0 zobrazuje celá čísla. Využití se aktuálně předává v celých procentech, takže desetinná místa obvykle ukazují ,0."
     },
     "launch_command": {
       "label": "Příkaz, který otevře Claude Code",
@@ -155,7 +155,7 @@
       "label": "Levé kliknutí",
       "description": "Co se stane po kliknutí levým tlačítkem na widget. Pravé kliknutí vždy obnoví.",
       "panel": "Otevřít panel",
-      "command": "Spustí můj příkaz",
+      "command": "Spustit můj příkaz",
       "refresh": "Obnovit"
     },
     "panel_translucent": {
@@ -202,7 +202,7 @@
     },
     "ring_track": {
       "label": "Zobrazit pozadí kroužku",
-      "description": "Bledý celý kruh za vyplněnou částí."
+      "description": "Slabě viditelný celý kruh za vyplněnou částí."
     },
     "format": {
       "label": "Vlastní text",
@@ -239,7 +239,7 @@
     },
     "notify": {
       "label": "Oznámení",
-      "description": "Jedno oznámení, když využití překročí úroveň.",
+      "description": "Jedno oznámení, když využití překročí zvolenou úroveň.",
       "off": "Vypnuto",
       "warning": "Na úrovni upozornění a kritické",
       "critical": "Jen na kritické úrovni"
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Zobrazovat ceny",
-      "description": "Odhadované náklady podle cen API v bublině a v panelu (a na liště, pokud je to tam zapnuté). Vypnuto skryje všechny ceny."
+      "description": "Odhadované náklady podle cen API v bublině a v panelu (a na liště, pokud je to tam zapnuté). Po vypnutí se skryjí všechny ceny."
     }
   },
   "bar": {
     "left": "zbývá {pct}%",
-    "ready": "připraveno"
+    "ready": "Připraveno"
   },
   "tooltip": {
     "window": "{window}: {pct} %  (obnovení za {time})",
-    "tokens": "tokeny: {tokens}, znovu čtené: {cache}",
-    "stale": "Starší údaje — {error}",
-    "loading": "Načítání...",
-    "cost": "při placení za tokeny: {cost}"
+    "tokens": "Tokeny: {tokens}, znovu čtené: {cache}",
+    "stale": "Starší údaje – {error}",
+    "loading": "Načítání…",
+    "cost": "Při placení za tokeny: {cost}"
   },
   "error": {
     "no_credentials": "Nepřihlášeno do Claude Code",
-    "token_expired": "Přihlášení vypršelo - jednou otevřete Claude Code, aby se obnovilo",
+    "token_expired": "Přihlášení vypršelo – jednou otevřete Claude Code, aby se obnovilo",
     "network": "Bez připojení",
     "bad_response": "Neočekávaná odpověď služby využití",
-    "http_429": "Příliš mnoho kontrol - nový pokus za pár minut"
+    "http_429": "Příliš mnoho kontrol – nový pokus za pár minut"
   },
   "panel": {
-    "no_reset": "limit je plný",
-    "resets_in": "obnovení za {time}",
-    "peak": "maximum {tokens}",
+    "no_reset": "Limit je plný",
+    "resets_in": "Obnovení za {time}",
+    "peak": "Maximum {tokens}",
     "model_tokens": "{tokens} · {messages} zpráv · znovu čtené {cache}",
     "no_models": "V tomto okně zatím žádné využití.",
     "by_model": "Tokeny podle modelu",

@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Tekst, gdy limit jest pełny",
-      "description": "Wyświetlany zamiast odliczania, gdy jeszcze nie korzystasz z tego limitu. Zostaw puste, żeby było „gotowe”."
+      "description": "Wyświetlany zamiast odliczania, gdy jeszcze nie korzystasz z tego limitu. Zostaw puste, żeby było „Gotowe”."
     },
     "show_tokens": {
       "label": "Pokazuj zużyte tokeny",
@@ -145,7 +145,7 @@
     },
     "percent_decimals": {
       "label": "Miejsca po przecinku w procentach",
-      "description": "0 pokazuje liczby całkowite. Zużycie przychodzi teraz w pełnych procentach, więc po przecinku zwykle jest 0."
+      "description": "0 pokazuje liczby całkowite. Zużycie jest podawane w pełnych procentach, więc po przecinku zwykle jest 0."
     },
     "launch_command": {
       "label": "Polecenie otwierające Claude Code",
@@ -155,7 +155,7 @@
       "label": "Lewy przycisk",
       "description": "Co się dzieje po kliknięciu widżetu lewym przyciskiem. Prawy przycisk zawsze odświeża.",
       "panel": "Otwórz panel",
-      "command": "Uruchamia moje polecenie",
+      "command": "Uruchom moje polecenie",
       "refresh": "Odśwież"
     },
     "panel_translucent": {
@@ -206,7 +206,7 @@
     },
     "format": {
       "label": "Własny tekst",
-      "description": "Wpisz własny tekst zamiast zwykłych elementów. Słowa w klamrach są podmieniane: {window} {pct} {left} {reset} {tokens} {cost} {model}. Przykład: {pct} · {reset}. Zostaw puste dla zwykłego wyglądu."
+      "description": "Wpisz własny tekst zamiast zwykłych elementów. Wyrazy w nawiasach klamrowych są zastępowane wartościami: {window} {pct} {left} {reset} {tokens} {cost} {model}. Przykład: {pct} · {reset}. Zostaw puste dla zwykłego wyglądu."
     },
     "label_five": {
       "label": "Nazwa limitu 5-godzinnego"
@@ -241,8 +241,8 @@
       "label": "Powiadomienia",
       "description": "Dostaniesz jedno powiadomienie, gdy zużycie przekroczy poziom.",
       "off": "Wyłączone",
-      "warning": "Przy poziomie ostrzeżenia i krytycznym",
-      "critical": "Tylko przy poziomie krytycznym"
+      "warning": "Na poziomie ostrzeżenia i krytycznym",
+      "critical": "Tylko na poziomie krytycznym"
     },
     "custom_prices": {
       "label": "Używaj moich cen tokenów",
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Pokazuj ceny",
-      "description": "Szacunkowe koszty według cen API w tooltipie i panelu (oraz na pasku, jeśli to tam włączysz). Wyłączone chowa wszystkie ceny."
+      "description": "Szacunkowe koszty według cen API w podpowiedzi i w panelu (oraz na pasku, jeśli to tam włączysz). Po wyłączeniu wszystkie ceny są ukryte."
     }
   },
   "bar": {
     "left": "{pct}% zostało",
-    "ready": "gotowe"
+    "ready": "Gotowe"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (odnowienie za {time})",
-    "tokens": "tokeny: {tokens}, ponownie czytane: {cache}",
+    "tokens": "Tokeny: {tokens}, ponownie czytane: {cache}",
     "stale": "Starsze dane — {error}",
-    "loading": "Wczytywanie...",
-    "cost": "przy płaceniu za tokeny: {cost}"
+    "loading": "Wczytywanie…",
+    "cost": "Przy płaceniu za tokeny: {cost}"
   },
   "error": {
     "no_credentials": "Nie zalogowano do Claude Code",
-    "token_expired": "Logowanie wygasło - otwórz raz Claude Code, żeby je odnowić",
+    "token_expired": "Logowanie wygasło — otwórz raz Claude Code, żeby je odnowić",
     "network": "Brak połączenia",
     "bad_response": "Nieoczekiwana odpowiedź usługi zużycia",
-    "http_429": "Za dużo sprawdzeń - ponowna próba za kilka minut"
+    "http_429": "Zbyt wiele sprawdzeń — ponowna próba za kilka minut"
   },
   "panel": {
-    "no_reset": "limit jest pełny",
-    "resets_in": "odnowienie za {time}",
-    "peak": "szczyt {tokens}",
+    "no_reset": "Limit jest pełny",
+    "resets_in": "Odnowienie za {time}",
+    "peak": "Szczyt {tokens}",
     "model_tokens": "{tokens} · {messages} wiad. · ponownie czytane {cache}",
     "no_models": "Brak zużycia w tym oknie.",
     "by_model": "Tokeny według modelu",

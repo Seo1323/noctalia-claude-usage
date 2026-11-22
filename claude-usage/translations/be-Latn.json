@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Tekst, kali limit poŭny",
-      "description": "Pakazvajecca zamiest advarotnaha adliku, pakuĺ hety limit jašče nie vydatkoŭvaŭsia. Pakińcie pustym dlia «hatova»."
+      "description": "Pakazvajecca zamiest advarotnaha adliku, pakuĺ hety limit jašče nie vydatkoŭvaŭsia. Pakińcie pustym dlia «Hatova»."
     },
     "show_tokens": {
       "label": "Pakazvać vydatkavanyja tokieny",
@@ -145,7 +145,7 @@
     },
     "percent_decimals": {
       "label": "Znakaŭ paslia koski ŭ pracentach",
-      "description": "0 pakazvaje cełyja liki. Ciapier vykarystannie prychodzić u cełych pracentach, tamu paslia koski zvyčajna 0."
+      "description": "0 pakazvaje cełyja liki. Ciapier vykarystannie pieradajecca ŭ cełych pracentach, tamu paslia koski zvyčajna 0."
     },
     "launch_command": {
       "label": "Kamanda, jakaja adkryvaje Claude Code",
@@ -155,7 +155,7 @@
       "label": "Levaja pstryčka",
       "description": "Što adbyvajecca paslia pstryčki levaj knopkaj pa vidžecie. Pravaja pstryčka zaŭsiody abnaŭliaje.",
       "panel": "Adkryć paneĺ",
-      "command": "Zapuskaje maju kamandu",
+      "command": "Zapuscić maju kamandu",
       "refresh": "Abnavić"
     },
     "panel_translucent": {
@@ -239,7 +239,7 @@
     },
     "notify": {
       "label": "Apaviaščenni",
-      "description": "Adno apaviaščennie, kali vykarystannie pierachodzić uzrovień.",
+      "description": "Adno apaviaščennie, kali vykarystannie pieravyšaje ŭstanoŭleny ŭzrovień.",
       "off": "Vykl.",
       "warning": "Na ŭzroŭni papiaredžannia i na krytyčnym",
       "critical": "Toĺki na krytyčnym uzroŭni"
@@ -277,36 +277,36 @@
       "description": "0 = sucelnaja, 100 = całkam prazrystaja."
     },
     "match_ui": {
-      "label": "Jak u astatnim Noctalia",
+      "label": "Padładzicca pad vyhlad Noctalia",
       "description": "Taŭščynia tekstu panełi i prazrystasć z «Nałady → Panełi → Prazrystasć», jak u astatnim Noctalia. Vykliučycie, kab zadać ich uručnuju."
     },
     "show_prices": {
       "label": "Pakazvać ceny",
-      "description": "Prykładny košt pa cenach API ŭ padkazcy i na paneli (i na pałasie, kali tam ukliučana). Vykl. chavaje ŭsie ceny."
+      "description": "Prykładny košt pa cenach API u padkazcy i na paneli (i na pałasie, kali tam ukliučana). Kali vykliučana, usie ceny schavanyja."
     }
   },
   "bar": {
     "left": "zastałosia {pct}%",
-    "ready": "hatova"
+    "ready": "Hatova"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (adnovicca praz {time})",
-    "tokens": "tokieny: {tokens}, pieračytana: {cache}",
+    "tokens": "Tokieny: {tokens}, pieračytana: {cache}",
     "stale": "Papiarednija danyja — {error}",
-    "loading": "Zahruzka...",
-    "cost": "z apłataj za tokieny: {cost}"
+    "loading": "Zahruzka…",
+    "cost": "Z apłataj za tokieny: {cost}"
   },
   "error": {
     "no_credentials": "Uvachod u Claude Code nie vykanany",
-    "token_expired": "Termin uvachodu skončyŭsia - adkryjcie Claude Code adzin raz, kab abnavić jaho",
+    "token_expired": "Termin uvachodu skončyŭsia — adkryjcie Claude Code adzin raz, kab abnavić jaho",
     "network": "Niama złučennia",
     "bad_response": "Niečakany adkaz servisu vykarystannia",
-    "http_429": "Zanadta šmat pravierak - novaja sproba praz niekaĺki chvilin"
+    "http_429": "Zanadta šmat pravierak — novaja sproba praz niekaĺki chvilin"
   },
   "panel": {
-    "no_reset": "limit poŭny",
-    "resets_in": "adnovicca praz {time}",
-    "peak": "pik {tokens}",
+    "no_reset": "Limit poŭny",
+    "resets_in": "Adnovicca praz {time}",
+    "peak": "Pik {tokens}",
     "model_tokens": "{tokens} · {messages} paviedam. · pieračytana {cache}",
     "no_models": "U hetym aknie pakuĺ niama vykarystannia.",
     "by_model": "Tokieny pavodle madelaŭ",

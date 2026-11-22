@@ -17,7 +17,7 @@
       "description": "Les détails sont le temps avant que la limite se recharge, les tokens et la barre.",
       "always": "Toujours",
       "important": "Seulement si l’utilisation est élevée",
-      "hover": "Seulement quand le pointeur est dessus"
+      "hover": "Seulement au survol"
     },
     "logo": {
       "label": "Image devant",
@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Texte quand la limite est pleine",
-      "description": "Affiché à la place du compte à rebours tant que cette limite n’a pas été utilisée. Laisser vide pour « disponible »."
+      "description": "Affiché à la place du compte à rebours tant que cette limite n’a pas été utilisée. Laisser vide pour « Disponible »."
     },
     "show_tokens": {
       "label": "Afficher les tokens utilisés",
@@ -145,17 +145,17 @@
     },
     "percent_decimals": {
       "label": "Décimales des pourcentages",
-      "description": "0 affiche des nombres entiers. L’utilisation arrive actuellement en pourcentages entiers, donc les décimales affichent souvent ,0."
+      "description": "0 affiche des nombres entiers. L’utilisation est actuellement fournie en pourcentages entiers, donc les décimales affichent le plus souvent ,0."
     },
     "launch_command": {
       "label": "Commande qui ouvre Claude Code",
       "description": "Le panneau s’en sert pour ouvrir Claude Code dans un terminal. Le modèle et la session choisis sont ajoutés à la fin."
     },
     "click_action": {
-      "label": "Le clic gauche",
+      "label": "Clic gauche",
       "description": "Ce qui se passe quand vous cliquez sur le widget avec le bouton gauche. Un clic droit actualise toujours.",
       "panel": "Ouvrir le panneau",
-      "command": "Lance ma commande",
+      "command": "Lancer ma commande",
       "refresh": "Actualiser"
     },
     "panel_translucent": {
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Afficher les prix",
-      "description": "Coûts estimés aux tarifs de l’API dans l’infobulle et le panneau (et dans la barre si c’est activé là-bas). Désactivé masque tous les prix."
+      "description": "Coûts estimés aux tarifs de l’API dans l’infobulle et le panneau (et dans la barre si c’est activé là-bas). Si désactivé, tous les prix sont masqués."
     }
   },
   "bar": {
     "left": "{pct}% restant",
-    "ready": "disponible"
+    "ready": "Disponible"
   },
   "tooltip": {
     "window": "{window} : {pct}%  (rechargée dans {time})",
-    "tokens": "tokens : {tokens}, relu : {cache}",
+    "tokens": "Tokens : {tokens}, relu : {cache}",
     "stale": "Chiffres plus anciens — {error}",
-    "loading": "Chargement...",
-    "cost": "en payant au token : {cost}"
+    "loading": "Chargement…",
+    "cost": "En payant au token : {cost}"
   },
   "error": {
     "no_credentials": "Connexion à Claude Code requise",
-    "token_expired": "Connexion expirée - ouvrez Claude Code une fois pour la renouveler",
+    "token_expired": "Connexion expirée — ouvrez Claude Code une fois pour la renouveler",
     "network": "Pas de connexion",
     "bad_response": "Réponse inattendue du service d’utilisation",
-    "http_429": "Trop de vérifications - nouvel essai dans quelques minutes"
+    "http_429": "Trop de vérifications — nouvel essai dans quelques minutes"
   },
   "panel": {
-    "no_reset": "la limite est pleine",
-    "resets_in": "rechargée dans {time}",
-    "peak": "pic {tokens}",
+    "no_reset": "La limite est pleine",
+    "resets_in": "Rechargée dans {time}",
+    "peak": "Pic {tokens}",
     "model_tokens": "{tokens} · {messages} messages · relu {cache}",
     "no_models": "Aucune utilisation dans cette fenêtre.",
     "by_model": "Tokens par modèle",

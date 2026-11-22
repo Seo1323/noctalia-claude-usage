@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Text when the limit is full",
-      "description": "Shown instead of the countdown when you have not used this limit yet. Leave empty for “ready”."
+      "description": "Shown instead of the countdown when you have not used this limit yet. Leave empty for “Ready”."
     },
     "show_tokens": {
       "label": "Show tokens used",
@@ -152,10 +152,10 @@
       "description": "The panel uses it to open Claude Code in a terminal. The model and session you pick are added at the end."
     },
     "click_action": {
-      "label": "Left click does",
+      "label": "Left click",
       "description": "What happens when you left-click the widget. A right click always refreshes.",
       "panel": "Open the panel",
-      "command": "Runs my command",
+      "command": "Run my command",
       "refresh": "Refresh"
     },
     "panel_translucent": {
@@ -287,26 +287,26 @@
   },
   "bar": {
     "left": "{pct}% left",
-    "ready": "ready"
+    "ready": "Ready"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (refills in {time})",
-    "tokens": "tokens: {tokens}, re-read: {cache}",
+    "tokens": "Tokens: {tokens}, re-read: {cache}",
     "stale": "Older numbers — {error}",
-    "loading": "Loading...",
-    "cost": "if paid per token: {cost}"
+    "loading": "Loading…",
+    "cost": "If paid per token: {cost}"
   },
   "error": {
     "no_credentials": "Not logged in to Claude Code",
-    "token_expired": "Login expired - open Claude Code once to renew it",
+    "token_expired": "Login expired — open Claude Code once to renew it",
     "network": "No connection",
     "bad_response": "Unexpected answer from the usage service",
-    "http_429": "Too many checks - trying again in a few minutes"
+    "http_429": "Too many checks — trying again in a few minutes"
   },
   "panel": {
-    "no_reset": "the limit is full",
-    "resets_in": "refills in {time}",
-    "peak": "peak {tokens}",
+    "no_reset": "The limit is full",
+    "resets_in": "Refills in {time}",
+    "peak": "Peak {tokens}",
     "model_tokens": "{tokens} · {messages} messages · re-read {cache}",
     "no_models": "No usage in this window yet.",
     "by_model": "Tokens by model",

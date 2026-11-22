@@ -164,7 +164,7 @@
     },
     "show_cost": {
       "label": "顯示大概花費",
-      "description": "依權杖付費時這些用量大約要花多少錢的估算。使用 Claude 訂閱時不需要支付這筆錢。"
+      "description": "估算依權杖付費時這些用量要花多少錢。使用 Claude 訂閱時無需支付。"
     },
     "currency": {
       "label": "貨幣",
@@ -290,18 +290,18 @@
     "ready": "就緒"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  （{time} 後恢復）",
+    "window": "{window}：{pct}%（{time} 後恢復）",
     "tokens": "權杖：{tokens}，重新讀取：{cache}",
-    "stale": "較早的資料 — {error}",
-    "loading": "載入中...",
+    "stale": "較早的資料：{error}",
+    "loading": "載入中…",
     "cost": "依權杖付費：{cost}"
   },
   "error": {
     "no_credentials": "未登入 Claude Code",
-    "token_expired": "登入已過期 - 開啟一次 Claude Code 即可續期",
+    "token_expired": "登入已過期，開啟一次 Claude Code 即可續期",
     "network": "沒有網路連線",
     "bad_response": "用量服務傳回了非預期的結果",
-    "http_429": "檢查次數過多 - 幾分鐘後重試"
+    "http_429": "檢查次數過多，幾分鐘後重試"
   },
   "panel": {
     "no_reset": "限額已滿",

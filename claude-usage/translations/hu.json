@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Szöveg, amikor a korlát tele van",
-      "description": "A visszaszámlálás helyett látszik, amíg ez a korlát még nincs használatban. Üresen hagyva: „kész”."
+      "description": "A visszaszámlálás helyett látszik, amíg ez a korlát még nincs használatban. Üresen hagyva: „Kész”."
     },
     "show_tokens": {
       "label": "Felhasznált tokenek megjelenítése",
@@ -100,7 +100,7 @@
       "slash": "Perjel (/)"
     },
     "dim_extras": {
-      "label": "Az idő és a tokenek halványabbak",
+      "label": "Az idő és a tokenek halványítása",
       "description": "Csak a százalék tartja meg a figyelmeztető színeket."
     },
     "gap": {
@@ -112,7 +112,7 @@
       "bold": "Félkövér"
     },
     "color_by_usage": {
-      "label": "Szín változik a használattal",
+      "label": "Szín változtatása a használattal",
       "description": "Az alábbi szinteken figyelmeztető, majd kritikus színre vált."
     },
     "warn_at": {
@@ -145,7 +145,7 @@
     },
     "percent_decimals": {
       "label": "Tizedesjegyek a százalékokban",
-      "description": "0 egész számokat mutat. A használat most egész százalékban érkezik, ezért a tizedesjegyek általában ,0-t mutatnak."
+      "description": "0 egész számokat mutat. A használat jelenleg egész százalékban érkezik, ezért a tizedesjegyek általában ,0-t mutatnak."
     },
     "launch_command": {
       "label": "A Claude Code-ot megnyitó parancs",
@@ -234,7 +234,7 @@
       "label": "A heti korlát színe"
     },
     "hide_below": {
-      "label": "Rejtve, amíg a használat el nem éri (%)",
+      "label": "Elrejtés, amíg a használat el nem éri (%)",
       "description": "A modul rejtve marad, amíg a használat alacsony. 0 = mindig látszik."
     },
     "notify": {
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Árak megjelenítése",
-      "description": "Becsült költségek API-áron az eszköztippben és a panelen (és a sávon, ha ott be van kapcsolva). Kikapcsolva minden ár rejtve marad."
+      "description": "Becsült költségek API-áron a felugró leírásban és a panelen (és a sávon, ha ott be van kapcsolva). Kikapcsolva minden ár el van rejtve."
     }
   },
   "bar": {
     "left": "{pct}% maradt",
-    "ready": "kész"
+    "ready": "Kész"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (feltöltődik {time} múlva)",
-    "tokens": "tokenek: {tokens}, újraolvasva: {cache}",
-    "stale": "Régebbi adatok — {error}",
-    "loading": "Betöltés...",
-    "cost": "tokenenkénti fizetéssel: {cost}"
+    "tokens": "Tokenek: {tokens}, újraolvasva: {cache}",
+    "stale": "Régebbi adatok – {error}",
+    "loading": "Betöltés…",
+    "cost": "Tokenenkénti fizetéssel: {cost}"
   },
   "error": {
     "no_credentials": "Nincs bejelentkezve a Claude Code-ba",
-    "token_expired": "A bejelentkezés lejárt - a Claude Code egyszeri megnyitása megújítja",
+    "token_expired": "A bejelentkezés lejárt – nyisd meg egyszer a Claude Code-ot a megújításhoz",
     "network": "Nincs kapcsolat",
     "bad_response": "Váratlan válasz a használati szolgáltatástól",
-    "http_429": "Túl sok lekérdezés - új próbálkozás néhány perc múlva"
+    "http_429": "Túl sok lekérdezés – új próbálkozás néhány perc múlva"
   },
   "panel": {
-    "no_reset": "a korlát tele van",
-    "resets_in": "feltöltődik {time} múlva",
-    "peak": "csúcs {tokens}",
+    "no_reset": "A korlát tele van",
+    "resets_in": "Feltöltődik {time} múlva",
+    "peak": "Csúcs {tokens}",
     "model_tokens": "{tokens} · {messages} üzenet · újraolvasva {cache}",
     "no_models": "Ebben az ablakban még nincs használat.",
     "by_model": "Tokenek modellenként",

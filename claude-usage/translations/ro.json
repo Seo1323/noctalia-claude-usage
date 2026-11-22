@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Text când limita este plină",
-      "description": "Afișat în locul numărătorii inverse cât timp limita nu a fost încă folosită. Lasă gol pentru „gata”."
+      "description": "Afișat în locul numărătorii inverse cât timp limita nu a fost încă folosită. Lasă gol pentru „Gata”."
     },
     "show_tokens": {
       "label": "Afișează tokenurile folosite",
@@ -145,14 +145,14 @@
     },
     "percent_decimals": {
       "label": "Zecimale în procente",
-      "description": "0 afișează numere întregi. Acum utilizarea vine în procente întregi, așa că zecimalele arată de obicei ,0."
+      "description": "0 afișează numere întregi. Utilizarea este furnizată momentan în procente întregi, așa că zecimalele arată de obicei ,0."
     },
     "launch_command": {
       "label": "Comanda care deschide Claude Code",
       "description": "Panoul o folosește pentru a deschide Claude Code într-un terminal. Modelul și sesiunea alese se adaugă la sfârșit."
     },
     "click_action": {
-      "label": "Clicul stânga",
+      "label": "Clic stânga",
       "description": "Ce se întâmplă la un clic stânga pe widget. Clicul dreapta reîmprospătează mereu.",
       "panel": "Deschide panoul",
       "command": "Rulează comanda mea",
@@ -205,7 +205,7 @@
       "description": "Un cerc complet estompat în spatele părții pline."
     },
     "format": {
-      "label": "Textul meu",
+      "label": "Textul meu propriu",
       "description": "Scrie propriul text în locul elementelor obișnuite. Cuvintele dintre acolade sunt înlocuite: {window} {pct} {left} {reset} {tokens} {cost} {model}. Exemplu: {pct} · {reset}. Lasă gol pentru aspectul obișnuit."
     },
     "label_five": {
@@ -249,7 +249,7 @@
       "description": "Înlocuiește lista de prețuri Anthropic cu prețurile tale, pentru toate modelele."
     },
     "price_input": {
-      "label": "Prețul textului trimis la Claude",
+      "label": "Prețul textului trimis către Claude",
       "description": "În dolari pe milion de tokenuri. Salvarea textului pentru recitire costă de 1,25× sau 2× mai mult."
     },
     "price_output": {
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Afișează prețurile",
-      "description": "Costuri estimate la prețurile API în sugestie și în panou (și în bară, dacă e activat acolo). Dezactivat ascunde toate prețurile."
+      "description": "Costuri estimate la prețurile API în sugestie și în panou (și în bară, dacă e activat acolo). Dacă este dezactivat, toate prețurile sunt ascunse."
     }
   },
   "bar": {
     "left": "{pct}% rămas",
-    "ready": "gata"
+    "ready": "Gata"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (se reîncarcă în {time})",
-    "tokens": "tokenuri: {tokens}, recitite: {cache}",
+    "tokens": "Tokenuri: {tokens}, recitite: {cache}",
     "stale": "Date mai vechi — {error}",
-    "loading": "Se încarcă...",
-    "cost": "plătind per token: {cost}"
+    "loading": "Se încarcă…",
+    "cost": "Plătind per token: {cost}"
   },
   "error": {
-    "no_credentials": "Autentificarea în Claude Code lipsește",
-    "token_expired": "Autentificarea a expirat - deschide Claude Code o dată pentru a o reînnoi",
+    "no_credentials": "Nu ești autentificat în Claude Code",
+    "token_expired": "Autentificarea a expirat — deschide Claude Code o dată pentru a o reînnoi",
     "network": "Fără conexiune",
     "bad_response": "Răspuns neașteptat de la serviciul de utilizare",
-    "http_429": "Prea multe verificări - nouă încercare în câteva minute"
+    "http_429": "Prea multe verificări — nouă încercare în câteva minute"
   },
   "panel": {
-    "no_reset": "limita este plină",
-    "resets_in": "se reîncarcă în {time}",
-    "peak": "vârf {tokens}",
+    "no_reset": "Limita este plină",
+    "resets_in": "Se reîncarcă în {time}",
+    "peak": "Vârf {tokens}",
     "model_tokens": "{tokens} · {messages} mesaje · recitite {cache}",
     "no_models": "Încă nicio utilizare în această fereastră.",
     "by_model": "Tokenuri pe model",

@@ -109,7 +109,7 @@ is attached to the bar.
 | The bar and ring show ⚙ | What is left | Choose whether they fill up with what you have left or with what you have used. Choices: What is left, What is used. |
 | Show time until the limit refills | on | A countdown to the moment your limit is full again. |
 | Time format | Short (1:44) | Choices: Short (1:44), Long (1h 44m). |
-| Text when the limit is full ⚙ | empty | Shown instead of the countdown when you have not used this limit yet. Leave empty for “ready”. |
+| Text when the limit is full ⚙ | empty | Shown instead of the countdown when you have not used this limit yet. Leave empty for “Ready”. |
 | Show tokens used | on | Tokens are pieces of text Claude reads and writes. Counted on your own computer. |
 | Also count re-read text ⚙ | off | Claude re-reads the conversation before every answer. Counting that makes the number much bigger. |
 | Token number style ⚙ | Short (92k) | Choices: Short (92k), Exact (92424). |
@@ -155,7 +155,7 @@ is attached to the bar.
 
 | Setting | Default | What it does |
 | --- | --- | --- |
-| Left click does | Open the panel | What happens when you left-click the widget. A right click always refreshes. Choices: Open the panel, Runs my command, Refresh. |
+| Left click | Open the panel | What happens when you left-click the widget. A right click always refreshes. Choices: Open the panel, Run my command, Refresh. |
 | My command | empty | A command to run, for example alacritty -e claude to open Claude Code in a terminal. |
 | See-through panel | off | Lets your wallpaper show through the panel. The text stays sharp. |
 | Panel transparency (%) | `15` | 0 = solid, 100 = fully see-through. |

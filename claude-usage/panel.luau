@@ -49,11 +49,11 @@ end
 local render
 
 local function limitRow(label, win)
-  local time = S.verbose(win.reset) or noctalia.tr("panel.no_reset")
+  local time = S.verbose(win.reset)
   return ui.column({ gap = 4 }, {
     ui.row({ justify = "space_between" }, {
       ui.label({ text = `{label}  {S.num(win.pct)}%`, fontWeight = "medium", color = S.colorFor(win.pct, S.DEFAULT_COLORS) }),
-      muted(noctalia.tr("panel.resets_in", { time = time })),
+      muted(if time then noctalia.tr("panel.resets_in", { time = time }) else noctalia.tr("panel.no_reset")),
     }),
     ui.progress({ progress = math.clamp((win.pct or 0) / 100, 0, 1), fill = S.colorFor(win.pct, S.DEFAULT_COLORS), height = 6, radius = 3 }),
   })

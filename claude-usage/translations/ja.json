@@ -290,18 +290,18 @@
     "ready": "準備完了"
   },
   "tooltip": {
-    "window": "{window}: {pct}%  （{time} 後に回復）",
+    "window": "{window}: {pct}%（{time} 後に回復）",
     "tokens": "トークン: {tokens}、読み直し: {cache}",
-    "stale": "前のデータ — {error}",
-    "loading": "読み込み中...",
+    "stale": "前回のデータ: {error}",
+    "loading": "読み込み中…",
     "cost": "トークンごとに支払うと: {cost}"
   },
   "error": {
     "no_credentials": "Claude Code にログインしていません",
-    "token_expired": "ログインの期限切れ - Claude Code を一度開くと更新されます",
+    "token_expired": "ログインの期限が切れました。Claude Code を一度開くと更新されます",
     "network": "接続がありません",
     "bad_response": "使用量サービスから予期しない応答",
-    "http_429": "確認が多すぎます - 数分後にもう一度試します"
+    "http_429": "確認が多すぎます。数分後にもう一度試します"
   },
   "panel": {
     "no_reset": "上限はいっぱいです",
@@ -318,8 +318,8 @@
     "mode_continue": "前回のセッションを続ける",
     "mode_resume": "再開するセッションを選ぶ",
     "start": "起動",
-    "last_24h": "過去24時間",
-    "last_7d": "過去7日間",
+    "last_24h": "過去 24 時間",
+    "last_7d": "過去 7 日間",
     "hours_ago": "{n} 時間前",
     "days_ago": "{n} 日前",
     "cost_total": "≈ {cost}（トークンごとに支払った場合の目安）",

@@ -2,12 +2,12 @@
   "title": "Claude Limits",
   "settings": {
     "refresh_minutes": {
-      "label": "Cada quan comprovar (minuts)",
-      "description": "Cada quan el giny consulta el teu ús actual."
+      "label": "Amb quina freqüència comprovar (minuts)",
+      "description": "Amb quina freqüència el giny consulta el teu ús actual."
     },
     "window": {
       "label": "Quin límit mostrar",
-      "description": "Claude Code té un límit de 5 hores i un de setmanal. Mostra’n un o tots dos.",
+      "description": "Claude Code té un límit de 5 hores i un límit setmanal. Mostra’n un o tots dos.",
       "five_hour": "Límit de 5 hores",
       "weekly": "Límit setmanal (7 d)",
       "both": "Tots dos"
@@ -77,7 +77,7 @@
     },
     "ready_text": {
       "label": "Text quan el límit és ple",
-      "description": "Es mostra en lloc del compte enrere mentre aquest límit encara no s’ha usat. Deixa-ho buit per a «a punt»."
+      "description": "Es mostra en lloc del compte enrere mentre aquest límit encara no s’ha usat. Deixa-ho buit per a «A punt»."
     },
     "show_tokens": {
       "label": "Mostra els tokens usats",
@@ -145,14 +145,14 @@
     },
     "percent_decimals": {
       "label": "Decimals als percentatges",
-      "description": "0 mostra nombres enters. Ara l’ús arriba en percentatges enters, així que els decimals solen mostrar ,0."
+      "description": "0 mostra nombres enters. Ara l’ús es rep en percentatges enters, així que els decimals solen mostrar ,0."
     },
     "launch_command": {
       "label": "Ordre que obre Claude Code",
       "description": "El plafó la fa servir per obrir Claude Code en un terminal. El model i la sessió triats s’afegeixen al final."
     },
     "click_action": {
-      "label": "El clic esquerre",
+      "label": "Clic esquerre",
       "description": "Què passa quan fas clic esquerre al giny. El clic dret sempre actualitza.",
       "panel": "Obre el plafó",
       "command": "Executa la meva ordre",
@@ -205,7 +205,7 @@
       "description": "Un cercle complet tènue darrere la part plena."
     },
     "format": {
-      "label": "El meu text",
+      "label": "El meu propi text",
       "description": "Escriu el teu propi text en lloc dels elements habituals. Les paraules entre claus se substitueixen: {window} {pct} {left} {reset} {tokens} {cost} {model}. Exemple: {pct} · {reset}. Deixa-ho buit per a l’aspecte normal."
     },
     "label_five": {
@@ -282,31 +282,31 @@
     },
     "show_prices": {
       "label": "Mostra els preus",
-      "description": "Costos estimats a preus de l’API a l’indicador i al plafó (i a la barra si ho actives allà). Desactivat amaga tots els preus."
+      "description": "Costos estimats a preus de l’API a la descripció emergent i al plafó (i a la barra si ho actives allà). Si es desactiva, s’amaguen tots els preus."
     }
   },
   "bar": {
     "left": "{pct}% restant",
-    "ready": "a punt"
+    "ready": "A punt"
   },
   "tooltip": {
     "window": "{window}: {pct}%  (es recarrega d’aquí a {time})",
-    "tokens": "tokens: {tokens}, rellegit: {cache}",
+    "tokens": "Tokens: {tokens}, rellegit: {cache}",
     "stale": "Dades anteriors — {error}",
-    "loading": "S’està carregant...",
-    "cost": "pagant per token: {cost}"
+    "loading": "S’està carregant…",
+    "cost": "Pagant per token: {cost}"
   },
   "error": {
     "no_credentials": "No has iniciat sessió a Claude Code",
-    "token_expired": "La sessió ha caducat - obre Claude Code un cop per renovar-la",
+    "token_expired": "La sessió ha caducat — obre Claude Code un cop per renovar-la",
     "network": "Sense connexió",
     "bad_response": "Resposta inesperada del servei d’ús",
-    "http_429": "Massa comprovacions - nou intent d’aquí a uns minuts"
+    "http_429": "Massa comprovacions — nou intent d’aquí a uns minuts"
   },
   "panel": {
-    "no_reset": "el límit és ple",
-    "resets_in": "es recarrega d’aquí a {time}",
-    "peak": "pic {tokens}",
+    "no_reset": "El límit és ple",
+    "resets_in": "Es recarrega d’aquí a {time}",
+    "peak": "Pic {tokens}",
     "model_tokens": "{tokens} · {messages} missatges · rellegit {cache}",
     "no_models": "Encara no hi ha ús en aquesta finestra.",
     "by_model": "Tokens per model",
