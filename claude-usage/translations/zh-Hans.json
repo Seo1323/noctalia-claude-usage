@@ -147,10 +147,6 @@
       "label": "百分比的小数位",
       "description": "0 显示整数。目前用量以整数百分比提供，所以小数部分通常是 .0。"
     },
-    "launch_command": {
-      "label": "打开 Claude Code 的命令",
-      "description": "面板用它在终端中打开 Claude Code。所选的模型和会话会加在末尾。"
-    },
     "click_action": {
       "label": "左键点击时",
       "description": "左键点击小组件时会发生什么。右键点击始终刷新。",
@@ -260,10 +256,6 @@
       "label": "重复读取的文本价格",
       "description": "每百万令牌的美元价格。"
     },
-    "panel_resume": {
-      "label": "在面板中显示“恢复会话”",
-      "description": "用于重新打开最近某个 Claude Code 对话的按钮。"
-    },
     "limit_countdown": {
       "label": "限额用完时只显示倒计时",
       "description": "达到 100% 时，小组件只显示还要多久才能再次使用 Claude Code。"
@@ -312,20 +304,11 @@
     "by_model": "按模型统计令牌",
     "refresh": "刷新",
     "settings": "设置",
-    "launch": "启动 Claude Code",
-    "model_default": "默认模型",
-    "mode_new": "新会话",
-    "mode_continue": "继续上次会话",
-    "mode_resume": "选择要恢复的会话",
-    "start": "启动",
     "last_24h": "最近 24 小时",
     "last_7d": "最近 7 天",
     "hours_ago": "{n} 小时前",
     "days_ago": "{n} 天前",
-    "cost_total": "≈ {cost}（按令牌付费，估算）",
-    "resume": "恢复会话",
-    "just_now": "刚刚",
-    "minutes_ago": "{n} 分钟前"
+    "cost_total": "≈ {cost}（按令牌付费，估算）"
   },
   "notify": {
     "title": "Claude Code {window}：{pct}%",

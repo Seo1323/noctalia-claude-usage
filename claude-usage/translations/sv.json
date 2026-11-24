@@ -147,10 +147,6 @@
       "label": "Decimaler i procent",
       "description": "0 visar heltal. Användningen levereras just nu i hela procent, så decimaler visar oftast ,0."
     },
-    "launch_command": {
-      "label": "Kommando som öppnar Claude Code",
-      "description": "Panelen använder det för att öppna Claude Code i en terminal. Vald modell och session läggs till sist."
-    },
     "click_action": {
       "label": "Vänsterklick",
       "description": "Vad som händer när du vänsterklickar på widgeten. Högerklick uppdaterar alltid.",
@@ -260,10 +256,6 @@
       "label": "Pris för omläst text",
       "description": "I amerikanska dollar per miljon tokens."
     },
-    "panel_resume": {
-      "label": "Visa ”Återuppta en session” i panelen",
-      "description": "Knappar som öppnar ett av de senaste Claude Code-samtalen igen."
-    },
     "limit_countdown": {
       "label": "När en gräns tar slut, visa bara nedräkningen",
       "description": "Vid 100 % visar widgeten bara tiden tills Claude Code kan användas igen."
@@ -312,20 +304,11 @@
     "by_model": "Tokens per modell",
     "refresh": "Uppdatera",
     "settings": "Inställningar",
-    "launch": "Starta Claude Code",
-    "model_default": "Standardmodell",
-    "mode_new": "Ny session",
-    "mode_continue": "Fortsätt senaste sessionen",
-    "mode_resume": "Välj en session att återuppta",
-    "start": "Starta",
     "last_24h": "Senaste 24 timmarna",
     "last_7d": "Senaste 7 dagarna",
     "hours_ago": "för {n} h sedan",
     "days_ago": "för {n} d sedan",
-    "cost_total": "≈ {cost} vid betalning per token (uppskattning)",
-    "resume": "Återuppta en session",
-    "just_now": "nyss",
-    "minutes_ago": "för {n} min sedan"
+    "cost_total": "≈ {cost} vid betalning per token (uppskattning)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",

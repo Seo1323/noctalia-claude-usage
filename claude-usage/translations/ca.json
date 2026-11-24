@@ -147,10 +147,6 @@
       "label": "Decimals als percentatges",
       "description": "0 mostra nombres enters. Ara l’ús es rep en percentatges enters, així que els decimals solen mostrar ,0."
     },
-    "launch_command": {
-      "label": "Ordre que obre Claude Code",
-      "description": "El plafó la fa servir per obrir Claude Code en un terminal. El model i la sessió triats s’afegeixen al final."
-    },
     "click_action": {
       "label": "Clic esquerre",
       "description": "Què passa quan fas clic esquerre al giny. El clic dret sempre actualitza.",
@@ -260,10 +256,6 @@
       "label": "Preu del text rellegit",
       "description": "En dòlars per milió de tokens."
     },
-    "panel_resume": {
-      "label": "Mostra «Reprèn una sessió» al plafó",
-      "description": "Botons que tornen a obrir una de les últimes converses de Claude Code."
-    },
     "limit_countdown": {
       "label": "Quan s’esgoti un límit, mostra només el compte enrere",
       "description": "Al 100% el giny mostra només el temps fins que es pugui tornar a fer servir Claude Code."
@@ -312,20 +304,11 @@
     "by_model": "Tokens per model",
     "refresh": "Actualitza",
     "settings": "Configuració",
-    "launch": "Inicia Claude Code",
-    "model_default": "Model per defecte",
-    "mode_new": "Sessió nova",
-    "mode_continue": "Continua l’última sessió",
-    "mode_resume": "Tria una sessió per reprendre",
-    "start": "Inicia",
     "last_24h": "Últimes 24 hores",
     "last_7d": "Últims 7 dies",
     "hours_ago": "fa {n} h",
     "days_ago": "fa {n} d",
-    "cost_total": "≈ {cost} pagant per token (estimació)",
-    "resume": "Reprèn una sessió",
-    "just_now": "ara mateix",
-    "minutes_ago": "fa {n} min"
+    "cost_total": "≈ {cost} pagant per token (estimació)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",

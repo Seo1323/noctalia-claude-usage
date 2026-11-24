@@ -147,10 +147,6 @@
       "label": "Decimais nas porcentaxes",
       "description": "0 amosa números enteiros. Agora o uso recíbese en porcentaxes enteiras, así que os decimais adoitan amosar ,0."
     },
-    "launch_command": {
-      "label": "Orde que abre Claude Code",
-      "description": "O panel úsaa para abrir Claude Code nun terminal. O modelo e a sesión escollidos engádense ao final."
-    },
     "click_action": {
       "label": "Clic esquerdo",
       "description": "Que pasa ao premer co botón esquerdo no trebello. O botón dereito sempre actualiza.",
@@ -260,10 +256,6 @@
       "label": "Prezo do texto relido",
       "description": "En dólares por millón de tokens."
     },
-    "panel_resume": {
-      "label": "Amosar «Retomar unha sesión» no panel",
-      "description": "Botóns que volven abrir unha das últimas conversas de Claude Code."
-    },
     "limit_countdown": {
       "label": "Cando se esgote un límite, amosar só a conta atrás",
       "description": "Ao 100% o trebello amosa só o tempo ata que se poida volver usar Claude Code."
@@ -312,20 +304,11 @@
     "by_model": "Tokens por modelo",
     "refresh": "Actualizar",
     "settings": "Configuración",
-    "launch": "Iniciar Claude Code",
-    "model_default": "Modelo predeterminado",
-    "mode_new": "Nova sesión",
-    "mode_continue": "Continuar a última sesión",
-    "mode_resume": "Escoller unha sesión para retomar",
-    "start": "Iniciar",
     "last_24h": "Últimas 24 horas",
     "last_7d": "Últimos 7 días",
     "hours_ago": "hai {n} h",
     "days_ago": "hai {n} d",
-    "cost_total": "≈ {cost} pagando por token (estimación)",
-    "resume": "Retomar unha sesión",
-    "just_now": "agora mesmo",
-    "minutes_ago": "hai {n} min"
+    "cost_total": "≈ {cost} pagando por token (estimación)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",

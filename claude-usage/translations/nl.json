@@ -147,10 +147,6 @@
       "label": "Decimalen in percentages",
       "description": "0 toont hele getallen. Het gebruik wordt nu in hele procenten doorgegeven, dus decimalen tonen meestal ,0."
     },
-    "launch_command": {
-      "label": "Opdracht die Claude Code opent",
-      "description": "Het paneel opent er Claude Code mee in een terminal. Het gekozen model en de sessie worden aan het eind toegevoegd."
-    },
     "click_action": {
       "label": "Linksklikken",
       "description": "Wat er gebeurt als je met links op de widget klikt. Rechtsklikken vernieuwt altijd.",
@@ -260,10 +256,6 @@
       "label": "Prijs van opnieuw gelezen tekst",
       "description": "In Amerikaanse dollars per miljoen tokens."
     },
-    "panel_resume": {
-      "label": "„Sessie hervatten” in het paneel tonen",
-      "description": "Knoppen die een van de laatste Claude Code-gesprekken opnieuw openen."
-    },
     "limit_countdown": {
       "label": "Als een limiet op is, alleen de aftelling tonen",
       "description": "Bij 100% toont de widget alleen de tijd tot Claude Code weer gebruikt kan worden."
@@ -312,20 +304,11 @@
     "by_model": "Tokens per model",
     "refresh": "Vernieuwen",
     "settings": "Instellingen",
-    "launch": "Claude Code starten",
-    "model_default": "Standaardmodel",
-    "mode_new": "Nieuwe sessie",
-    "mode_continue": "Laatste sessie voortzetten",
-    "mode_resume": "Sessie kiezen om te hervatten",
-    "start": "Starten",
     "last_24h": "Afgelopen 24 uur",
     "last_7d": "Afgelopen 7 dagen",
     "hours_ago": "{n} u geleden",
     "days_ago": "{n} d geleden",
-    "cost_total": "≈ {cost} bij betalen per token (schatting)",
-    "resume": "Sessie hervatten",
-    "just_now": "zojuist",
-    "minutes_ago": "{n} min geleden"
+    "cost_total": "≈ {cost} bij betalen per token (schatting)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

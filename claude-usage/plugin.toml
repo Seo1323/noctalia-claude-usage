@@ -29,13 +29,6 @@ max = 2
 advanced = true
 
 [[setting]]
-key = "launch_command"
-type = "string"
-label_key = "settings.launch_command.label"
-description_key = "settings.launch_command.description"
-default = "alacritty -e claude"
-
-[[setting]]
 key = "count_cache_writes"
 type = "bool"
 label_key = "settings.count_cache_writes.label"
@@ -134,17 +127,17 @@ visible_when = { key = "custom_prices", values = ["true"] }
 id = "poller"
 entry = "service.luau"
 
-# Opened by a left click on the bar widget: launch Claude Code, graphs, tokens per model.
-# Centered like the built-in panels; placement / position / open-near-click can be changed in
+# Opened by a left click on the bar widget: limits, graphs, tokens per model.
+# Attached to the bar like the built-in panels; placement / position / open-near-click can be changed in
 # Settings -> Plugins (Noctalia adds these standard panel settings itself).
 [[panel]]
 id = "panel"
 entry = "panel.luau"
-width = 380
+width = 420
 height = "content"
 max_height = 980
-placement = "floating"
-position = "center"
+placement = "attached"
+position = "auto"
 open_near_click = false
 
 [[widget]]
@@ -580,13 +573,6 @@ entry = "bar.luau"
   max = 100
   step = 5
   visible_when = { key = "panel_translucent", values = ["true"] }
-
-  [[widget.setting]]
-  key = "panel_resume"
-  type = "bool"
-  label_key = "settings.panel_resume.label"
-  description_key = "settings.panel_resume.description"
-  default = true
 
   [[widget.setting]]
   key = "click_command"

@@ -30,14 +30,13 @@ Add **Claude Limits** to a bar in **Settings → Bar** and pick the entry:
   `command` (default `alacritty -e claude`).
 
 - **`panel`** — opens on a left click on the `bar` widget (default `click_action`), or with
-  `noctalia msg panel-toggle seo/claude-usage:panel`. It shows both limits, lets you start Claude Code in a
-  terminal with a chosen model (default, Opus, Sonnet, Haiku) and mode (new session, `--continue`, `--resume`),
-  resumes one of your 3 latest sessions with one click (in the folder where it was started, so `--resume` finds it),
-  graphs your tokens over the last 24 hours and 7 days (hover a graph for the value), and lists tokens per model
-  for the 5-hour or weekly window. It opens in the middle of the screen like the built-in panels; Noctalia's own
-  panel settings (**Settings → Plugins**, gear on the plugin) switch it to attached, another position or "open near
-  the widget". Like Noctalia's own panels, each section sits on its own card. With **Match Noctalia's look** (default) the cards
-  follow **Settings → Panels → Transparency**; turn it off to pick a transparency level yourself.
+  `noctalia msg panel-toggle seo/claude-usage:panel`. It shows both limits as rings with the time until they
+  refill, graphs your tokens over the last 24 hours and 7 days (hover a graph for the value), and lists tokens per
+  model for the 5-hour or weekly window. It is styled like Noctalia's own panels (the weather tab, for example):
+  it slides out of the bar, each section sits on its own card, and the title uses the accent color. Noctalia's own
+  panel settings (**Settings → Plugins**, gear on the plugin) can switch it to floating, another position or "open
+  near the widget". With **Match Noctalia's look** (default) the cards follow **Settings → Panels → Transparency**;
+  turn it off to pick a transparency level yourself.
 
 The `poller` service starts with the plugin and refreshes every `refresh_minutes`; all widgets share its result.
 
@@ -69,7 +68,6 @@ Noctalia's **Advanced** switch is on, and settings that do not apply right now s
 | --- | --- | --- |
 | How often to check (minutes) | `5` | How often the widget asks for your latest usage. |
 | Decimals in percentages ⚙ | `0` | 0 shows whole numbers. Usage currently comes in whole percents, so decimals usually show .0. |
-| Command that opens Claude Code | `alacritty -e claude` | The panel uses it to open Claude Code in a terminal. The model and session you pick are added at the end. |
 | Also count text saved for re-reading | off | Off: only new text sent to and written by Claude. On: also the conversation Claude Code saves so it can re-read it quickly — after a pause a long conversation is saved again, so the number jumps. |
 | Show prices | on | Estimated costs at API prices in the tooltip and the panel (and on the bar if you turn that on there). Off hides every price. |
 | Currency | USD ($) | Costs are converted from US dollars with the European Central Bank's daily rates, or with your own rate. Choices: USD ($), EUR (€), PLN (zł), GBP (£), CHF, JPY (¥), CNY (¥), CAD (C$), AUD (A$), SEK (kr), NOK (kr), DKK (kr), CZK (Kč), HUF (Ft), RON (lei), TRY (₺), BRL (R$), INR (₹), KRW (₩), MXN (MX$). |
@@ -79,8 +77,8 @@ Noctalia's **Advanced** switch is on, and settings that do not apply right now s
 | Price of text Claude writes | `20.0` | In US dollars per million tokens. |
 | Price of re-read text | `0.2` | In US dollars per million tokens. |
 
-Noctalia adds its own panel settings on the same page: where the panel opens (centered by default) and whether it
-is attached to the bar.
+Noctalia adds its own panel settings on the same page: whether the panel is attached to the bar (default) or
+floats, and where it opens.
 
 ### `bar` widget
 
@@ -160,7 +158,6 @@ is attached to the bar.
 | My command | empty | A command to run, for example alacritty -e claude to open Claude Code in a terminal. |
 | See-through panel | off | Lets your wallpaper show through the panel. The text stays sharp. |
 | Panel transparency (%) | `15` | 0 = solid, 100 = fully see-through. |
-| Show “Resume a session” in the panel | on | Buttons that reopen one of your latest Claude Code conversations. |
 | Notifications | Off | Get one notification when usage passes a level. Choices: Off, At the warning and critical levels, Only at the critical level. |
 
 ### `icon` widget
@@ -209,7 +206,8 @@ Limits was written independently and takes a different direction:
 - **Small by default** — one compact capsule; details can stay visible, appear only when usage is high, or slide
   out on hover with an adjustable animation.
 - **Lightweight** — a shell script with `curl` + `jq`, no Python; one request per refresh for every bar and monitor.
-- **Quick launcher** — the click panel starts Claude Code with a chosen model and session mode.
+- **Usage panel** — one click shows both limits, 24-hour and 7-day graphs and tokens per model, in the same style as
+  Noctalia's built-in panels.
 
 ## Notes
 
@@ -224,8 +222,7 @@ Limits was written independently and takes a different direction:
   cache writes at 1.25x input for the 5-minute TTL and 2x for the 1-hour TTL). With a Claude subscription you do not
   pay per token - the figure shows what the same usage would cost on the API. Unknown models fall back to their
   family's price.
-- **Panel data:** the graphs, the per-model table and the recent-session buttons (folder, time and the first ~60
-  characters of the first prompt) come from the same local transcripts; nothing extra is sent.
+- **Panel data:** the graphs and the per-model table come from the same local transcripts; nothing extra is sent.
 - **Files read:** `~/.claude/.credentials.json` and transcripts in `~/.claude/projects/**/*.jsonl` modified in the
   last 8 days (to count tokens: new text sent and written by default, deduplicated per message; saving text for
   re-reading is added with `count_cache_writes`, re-read text with `include_cache_read`).

@@ -147,10 +147,6 @@
       "label": "Desetinná místa v procentech",
       "description": "0 zobrazuje celá čísla. Využití se aktuálně předává v celých procentech, takže desetinná místa obvykle ukazují ,0."
     },
-    "launch_command": {
-      "label": "Příkaz, který otevře Claude Code",
-      "description": "Panel jím otevírá Claude Code v terminálu. Zvolený model a relace se přidají na konec."
-    },
     "click_action": {
       "label": "Levé kliknutí",
       "description": "Co se stane po kliknutí levým tlačítkem na widget. Pravé kliknutí vždy obnoví.",
@@ -260,10 +256,6 @@
       "label": "Cena znovu čteného textu",
       "description": "V dolarech za milion tokenů."
     },
-    "panel_resume": {
-      "label": "Zobrazit „Obnovit relaci“ v panelu",
-      "description": "Tlačítka, která znovu otevřou jednu z posledních konverzací v Claude Code."
-    },
     "limit_countdown": {
       "label": "Po vyčerpání limitu zobrazit jen odpočet",
       "description": "Při 100 % widget ukazuje jen čas do chvíle, kdy půjde Claude Code znovu používat."
@@ -312,20 +304,11 @@
     "by_model": "Tokeny podle modelu",
     "refresh": "Obnovit",
     "settings": "Nastavení",
-    "launch": "Spustit Claude Code",
-    "model_default": "Výchozí model",
-    "mode_new": "Nová relace",
-    "mode_continue": "Pokračovat v poslední relaci",
-    "mode_resume": "Vybrat relaci k obnovení",
-    "start": "Spustit",
     "last_24h": "Posledních 24 hodin",
     "last_7d": "Posledních 7 dní",
     "hours_ago": "před {n} h",
     "days_ago": "před {n} d",
-    "cost_total": "≈ {cost} při placení za tokeny (odhad)",
-    "resume": "Obnovit relaci",
-    "just_now": "právě teď",
-    "minutes_ago": "před {n} min"
+    "cost_total": "≈ {cost} při placení za tokeny (odhad)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",

@@ -147,10 +147,6 @@
       "label": "Miejsca po przecinku w procentach",
       "description": "0 pokazuje liczby całkowite. Zużycie jest podawane w pełnych procentach, więc po przecinku zwykle jest 0."
     },
-    "launch_command": {
-      "label": "Polecenie otwierające Claude Code",
-      "description": "Panel otwiera nim Claude Code w terminalu. Wybrany model i sesja są dopisywane na końcu."
-    },
     "click_action": {
       "label": "Lewy przycisk",
       "description": "Co się dzieje po kliknięciu widżetu lewym przyciskiem. Prawy przycisk zawsze odświeża.",
@@ -260,10 +256,6 @@
       "label": "Cena ponownie czytanego tekstu",
       "description": "W dolarach za milion tokenów."
     },
-    "panel_resume": {
-      "label": "Pokazuj „Wznów sesję” w panelu",
-      "description": "Przyciski, które otwierają jedną z ostatnich rozmów w Claude Code."
-    },
     "limit_countdown": {
       "label": "Po wyczerpaniu limitu pokazuj tylko odliczanie",
       "description": "Przy 100% widżet pokazuje tylko czas do chwili, gdy znów można korzystać z Claude Code."
@@ -312,20 +304,11 @@
     "by_model": "Tokeny według modelu",
     "refresh": "Odśwież",
     "settings": "Ustawienia",
-    "launch": "Uruchom Claude Code",
-    "model_default": "Domyślny model",
-    "mode_new": "Nowa sesja",
-    "mode_continue": "Kontynuuj ostatnią sesję",
-    "mode_resume": "Wybierz sesję do wznowienia",
-    "start": "Uruchom",
     "last_24h": "Ostatnie 24 godziny",
     "last_7d": "Ostatnie 7 dni",
     "hours_ago": "{n} godz. temu",
     "days_ago": "{n} dni temu",
-    "cost_total": "≈ {cost} przy płaceniu za tokeny (szacunek)",
-    "resume": "Wznów sesję",
-    "just_now": "przed chwilą",
-    "minutes_ago": "{n} min temu"
+    "cost_total": "≈ {cost} przy płaceniu za tokeny (szacunek)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

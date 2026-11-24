@@ -1,16 +1,11 @@
 --!nonstrict
--- Click panel: both limits, launching Claude Code with a chosen model and mode,
--- token graphs (last 24 h / 7 days) and tokens per model.
+-- Click panel: both limits, token graphs (last 24 h / 7 days) and tokens per model.
 
 local S = require("./shared.luau")
 
-local MODELS = { "", "opus", "sonnet", "haiku" } -- "" = Claude Code's default model
-local MODES = { "", "--continue", "--resume" } -- new session, continue last, pick a session
-
 local snapshot = noctalia.state.get("usage")
-local style = noctalia.state.get("panel_style") or {} -- set by the bar widget: { translucent, opacity, resume }
+local style = noctalia.state.get("panel_style") or {} -- set by the bar widget: { translucent, opacity, match }
 local isOpen = false
-local model, mode = 1, 1
 local tableWindow = "five" -- five | weekly
 local hover = {} -- graph id -> hovered bucket index
 
@@ -18,49 +13,31 @@ local function muted(text)
   return ui.label({ text = text, color = "on_surface_variant", fontSize = 12 })
 end
 
-local function heading(text)
-  return ui.label({ text = text, fontWeight = "bold" })
-end
-
-local function launch()
-  local parts = { S.text("launch_command", "alacritty -e claude") }
-  if MODELS[model] ~= "" then parts[#parts + 1] = "--model " .. MODELS[model] end
-  if MODES[mode] ~= "" then parts[#parts + 1] = MODES[mode] end
-  S.spawn(table.concat(parts, " "))
-  panel.close()
-end
-
--- Resumes a session in the folder it was started in (Claude Code keeps sessions per folder).
-local function resume(session)
-  local id = tostring(session.id or "")
-  if not id:match("^%x%x%x%x%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%-%x%x%x%x%x%x%x%x%x%x%x%x$") then return end
-  local parts = { S.text("launch_command", "alacritty -e claude") }
-  if MODELS[model] ~= "" then parts[#parts + 1] = "--model " .. MODELS[model] end
-  parts[#parts + 1] = "--resume " .. id
-  S.spawnIn(session.cwd, table.concat(parts, " "))
-  panel.close()
-end
-
-local function folderName(path)
-  if path:match("^/home/[^/]+/?$") or path == "/root" then return "~" end
-  return path:match("([^/]+)/*$") or path
+local function heading(glyph, text)
+  return ui.row({ gap = 8, align = "center" }, {
+    ui.glyph({ name = glyph, size = 18, color = "primary" }),
+    ui.label({ text = text, fontWeight = "bold" }),
+  })
 end
 
 local render
 
-local function limitRow(label, win)
+-- One half of the top card: usage ring, big percentage, window name and reset time.
+local function limitBlock(label, win)
   local time = S.verbose(win.reset)
-  return ui.column({ gap = 4 }, {
-    ui.row({ justify = "space_between" }, {
-      ui.label({ text = `{label}  {S.num(win.pct)}%`, fontWeight = "medium", color = S.colorFor(win.pct, S.DEFAULT_COLORS) }),
-      muted(if time then noctalia.tr("panel.resets_in", { time = time }) else noctalia.tr("panel.no_reset")),
+  local color = S.colorFor(win.pct, S.DEFAULT_COLORS)
+  return ui.row({ gap = 12, align = "center" }, {
+    S.ring(math.clamp((win.pct or 0) / 100, 0, 1), color, 52) or ui.glyph({ name = "gauge", size = 40, color = color }),
+    ui.column({ gap = 2 }, {
+      muted(label),
+      ui.label({ text = `{S.num(win.pct)}%`, fontSize = 24, fontWeight = "bold", color = color }),
+      muted(time or noctalia.tr("panel.no_reset")),
     }),
-    ui.progress({ progress = math.clamp((win.pct or 0) / 100, 0, 1), fill = S.colorFor(win.pct, S.DEFAULT_COLORS), height = 6, radius = 3 }),
   })
 end
 
 -- Line graph of token counts with a hover readout; `unit` is the bucket length label key.
-local function graph(id, title, values, ago)
+local function graph(id, glyph, title, values, ago)
   local max = 0
   for _, v in values do max = math.max(max, v) end
   local norm = {}
@@ -70,7 +47,7 @@ local function graph(id, title, values, ago)
     then `{S.tokens(values[i])} · {ago(#values - i)}`
     else noctalia.tr("panel.peak", { tokens = S.tokens(max) })
   return ui.column({ gap = 4 }, {
-    ui.row({ justify = "space_between" }, { ui.label({ text = title, fontWeight = "medium" }), muted(readout) }),
+    ui.row({ justify = "space_between", align = "center" }, { heading(glyph, title), muted(readout) }),
     ui.graph({
       values = norm, color = "primary", fillOpacity = 0.25, lineWidth = 2, height = 44,
       onPointerMove = function(x)
@@ -84,17 +61,20 @@ end
 
 local function modelTable(data)
   local list = data[tableWindow .. "_models"] or {}
-  local total = 0
-  for _, m in list do total += S.modelTokens(m) end
   local rows = {}
   for _, m in list do
-    rows[#rows + 1] = ui.column({ gap = 3 }, {
-      ui.row({ justify = "space_between" }, {
-        ui.label({ text = S.modelName(m.model) }),
-        muted(noctalia.tr("panel.model_tokens", { tokens = S.tokens(S.modelTokens(m)), messages = m.messages, cache = S.tokens(m.cache_read) })
-          .. (if S.SHOW_PRICES and S.cost({ m }) then " · " .. S.money(S.cost({ m })) else "")),
+    -- thin line between rows, like the forecast list in the weather tab
+    if #rows > 0 then rows[#rows + 1] = ui.separator({}) end
+    local detail = noctalia.tr("panel.model_tokens", { tokens = "", messages = m.messages, cache = S.tokens(m.cache_read) })
+      :gsub("^%s*·%s*", "") .. (if S.SHOW_PRICES and S.cost({ m }) then " · " .. S.money(S.cost({ m })) else "")
+    rows[#rows + 1] = ui.column({ gap = 4 }, {
+      ui.row({ gap = 8, align = "center" }, {
+        ui.glyph({ name = "sparkles", size = 16, color = "secondary" }),
+        ui.label({ text = S.modelName(m.model), fontWeight = "medium" }),
+        ui.spacer({ grow = 1 }),
+        ui.label({ text = S.tokens(S.modelTokens(m)), fontWeight = "bold" }),
       }),
-      ui.progress({ progress = if total > 0 then S.modelTokens(m) / total else 0, fill = "secondary", height = 4, radius = 2 }),
+      muted(detail),
     })
   end
   if #rows == 0 then rows[1] = muted(noctalia.tr("panel.no_models")) end
@@ -104,12 +84,13 @@ local function modelTable(data)
       onClick = function() tableWindow = key; render() end,
     })
   end
-  return ui.column({ gap = 8 }, {
+  return ui.column({ gap = 10 }, {
     ui.row({ justify = "space_between", align = "center" }, {
-      heading(noctalia.tr("panel.by_model")),
-      ui.row({ gap = 4 }, { tab("five", "5h"), tab("weekly", "7d") }),
+      heading("cpu", noctalia.tr("panel.by_model")),
+      -- one pill holding both buttons, like the Daily / Hourly switch in the weather tab
+      ui.row({ gap = 0, padding = 3, fill = "surface", radius = 10 }, { tab("five", "5h"), tab("weekly", "7d") }),
     }),
-    ui.column({ gap = 8 }, rows),
+    ui.column({ gap = 10 }, rows),
     if S.SHOW_PRICES and S.cost(list) then muted(noctalia.tr("panel.cost_total", { cost = S.money(S.cost(list)) })) else nil,
   })
 end
@@ -125,17 +106,18 @@ function render()
     elseif style.translucent then style.opacity or 0.85 else 1
   local cardFill = if alpha < 1 then string.format("surface_container/%.2f", alpha) else "surface_container"
   local function card(nodes)
-    return ui.column({ padding = 12, gap = 8, fill = cardFill, radius = 14, border = "outline_variant", borderWidth = 1 }, nodes)
+    return ui.column({ padding = 14, gap = 12, fill = cardFill, radius = 16, border = "outline_variant", borderWidth = 1 }, nodes)
   end
 
   local children = {
     ui.row({ justify = "space_between", align = "center" }, {
-      ui.label({ text = "Claude Code", fontWeight = "bold", fontSize = 16 }),
+      ui.label({ text = "Claude Code", fontWeight = "bold", fontSize = 16, color = "primary" }),
       ui.row({ gap = 4 }, {
         ui.button({ glyph = "refresh", variant = "ghost", controlSize = "sm", tooltip = noctalia.tr("panel.refresh"),
           onClick = function() noctalia.state.set("refresh", noctalia.nowMs()) end }),
         ui.button({ glyph = "settings", variant = "ghost", controlSize = "sm", tooltip = noctalia.tr("panel.settings"),
           onClick = function() noctalia.openSettings() end }),
+        ui.button({ glyph = "x", variant = "ghost", controlSize = "sm", onClick = function() panel.close() end }),
       }),
     }),
   }
@@ -143,58 +125,25 @@ function render()
 
   if data then
     local w = S.windows(data, false)
-    add(card({ limitRow("5h", w.five), limitRow("7d", w.week) }))
+    local gap = function() return ui.spacer({ grow = 1 }) end
+    add(card({ ui.row({ align = "center" }, { gap(), limitBlock("5h", w.five), gap(), limitBlock("7d", w.week), gap() }) }))
   else
     add(card({ muted(S.tooltip(snapshot)) }))
-  end
-
-  add(card({
-    heading(noctalia.tr("panel.launch")),
-    ui.select({
-      options = { noctalia.tr("panel.model_default"), "Opus", "Sonnet", "Haiku" }, selectedIndex = model - 1,
-      onChange = function(i) model = tonumber(i) + 1 end,
-    }),
-    ui.select({
-      options = { noctalia.tr("panel.mode_new"), noctalia.tr("panel.mode_continue"), noctalia.tr("panel.mode_resume") },
-      selectedIndex = mode - 1,
-      onChange = function(i) mode = tonumber(i) + 1 end,
-    }),
-    ui.button({ text = noctalia.tr("panel.start"), glyph = "terminal-2", variant = "primary", onClick = launch }),
-  }))
-
-  local sessions = if style.resume == false then {} else (data and data.recent_sessions or {})
-  if #sessions > 0 then
-    local rows = { heading(noctalia.tr("panel.resume")) }
-    for _, s in sessions do
-      local prompt = tostring(s.prompt or "")
-      if utf8.len(prompt) and utf8.len(prompt) > 38 then prompt = prompt:sub(1, utf8.offset(prompt, 38) - 1) .. "…" end
-      rows[#rows + 1] = ui.button({
-        text = `{folderName(s.cwd)} · {S.ago(s.t)}` .. (if prompt ~= "" then ` — {prompt}` else ""),
-        glyph = "history", variant = "ghost", contentAlign = "start",
-        onClick = function() resume(s) end,
-      })
-    end
-    add(card(rows))
   end
 
   local hourly = if S.COUNT_WRITES then data and data.hourly else data and (data.hourly_io or data.hourly)
   local daily = if S.COUNT_WRITES then data and data.daily else data and (data.daily_io or data.daily)
   if hourly then
     add(card({
-      graph("hourly", noctalia.tr("panel.last_24h"), hourly, function(n) return noctalia.tr("panel.hours_ago", { n = n }) end),
-      graph("daily", noctalia.tr("panel.last_7d"), daily, function(n) return noctalia.tr("panel.days_ago", { n = n }) end),
+      graph("hourly", "clock", noctalia.tr("panel.last_24h"), hourly, function(n) return noctalia.tr("panel.hours_ago", { n = n }) end),
+      graph("daily", "calendar", noctalia.tr("panel.last_7d"), daily, function(n) return noctalia.tr("panel.days_ago", { n = n }) end),
     }))
-    add(card({ modelTable(data) }))
   end
 
-  -- A floating panel already has Noctalia's own background (Settings -> Panels -> Transparency),
-  -- so drawing another one would show as a panel inside a panel. An attached panel takes the bar's
-  -- background, which may be fully transparent, so it gets a base here.
-  local attached = noctalia.getConfig("panel_placement") == "attached"
-  local base = if not attached then nil
-    elseif alpha < 1 then string.format("surface/%.2f", alpha * 0.6)
-    else "surface"
-  panel.render(ui.column({ padding = if attached then 12 else 0, gap = 8, fill = base, radius = if attached then 16 else nil }, children))
+  if data and data.hourly then add(card({ modelTable(data) })) end
+
+  -- Noctalia draws the panel background itself (attached or floating), like its own panels.
+  panel.render(ui.column({ gap = 8 }, children))
 end
 
 noctalia.state.watch("usage", function(value)

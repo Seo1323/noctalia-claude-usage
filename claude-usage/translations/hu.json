@@ -147,10 +147,6 @@
       "label": "Tizedesjegyek a százalékokban",
       "description": "0 egész számokat mutat. A használat jelenleg egész százalékban érkezik, ezért a tizedesjegyek általában ,0-t mutatnak."
     },
-    "launch_command": {
-      "label": "A Claude Code-ot megnyitó parancs",
-      "description": "A panel ezzel nyitja meg a Claude Code-ot egy terminálban. A választott modell és munkamenet a végére kerül."
-    },
     "click_action": {
       "label": "Bal kattintás hatása",
       "description": "Mi történik a modulra kattintva bal gombbal. A jobb kattintás mindig frissít.",
@@ -260,10 +256,6 @@
       "label": "Az újraolvasott szöveg ára",
       "description": "Amerikai dollárban, millió tokenenként."
     },
-    "panel_resume": {
-      "label": "„Munkamenet folytatása” a panelen",
-      "description": "Gombok, amelyek újra megnyitják valamelyik legutóbbi Claude Code-beszélgetést."
-    },
     "limit_countdown": {
       "label": "Elfogyott korlátnál csak a visszaszámlálás",
       "description": "100%-nál a modul csak azt az időt mutatja, amíg a Claude Code újra használható lesz."
@@ -312,20 +304,11 @@
     "by_model": "Tokenek modellenként",
     "refresh": "Frissítés",
     "settings": "Beállítások",
-    "launch": "Claude Code indítása",
-    "model_default": "Alapértelmezett modell",
-    "mode_new": "Új munkamenet",
-    "mode_continue": "Az utolsó munkamenet folytatása",
-    "mode_resume": "Folytatandó munkamenet kiválasztása",
-    "start": "Indítás",
     "last_24h": "Elmúlt 24 óra",
     "last_7d": "Elmúlt 7 nap",
     "hours_ago": "{n} órája",
     "days_ago": "{n} napja",
-    "cost_total": "≈ {cost} tokenenkénti fizetéssel (becslés)",
-    "resume": "Munkamenet folytatása",
-    "just_now": "épp most",
-    "minutes_ago": "{n} perce"
+    "cost_total": "≈ {cost} tokenenkénti fizetéssel (becslés)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",
