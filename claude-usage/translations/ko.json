@@ -147,10 +147,6 @@
       "label": "백분율의 소수 자릿수",
       "description": "0은 정수로 표시합니다. 지금은 사용량이 정수 백분율로 오므로 소수점 아래는 보통 .0입니다."
     },
-    "launch_command": {
-      "label": "Claude Code를 여는 명령",
-      "description": "패널이 이 명령으로 터미널에서 Claude Code를 엽니다. 고른 모델과 세션이 끝에 붙습니다."
-    },
     "click_action": {
       "label": "왼쪽 클릭 동작",
       "description": "위젯을 왼쪽 클릭하면 일어나는 일입니다. 오른쪽 클릭은 항상 새로 고칩니다.",
@@ -260,10 +256,6 @@
       "label": "다시 읽는 텍스트 가격",
       "description": "100만 토큰당 미국 달러."
     },
-    "panel_resume": {
-      "label": "패널에 “세션 이어 하기” 표시",
-      "description": "최근 Claude Code 대화 중 하나를 다시 여는 버튼입니다."
-    },
     "limit_countdown": {
       "label": "한도를 다 쓰면 카운트다운만 표시",
       "description": "100%가 되면 Claude Code를 다시 쓸 수 있을 때까지의 시간만 표시합니다."
@@ -312,20 +304,11 @@
     "by_model": "모델별 토큰",
     "refresh": "새로 고침",
     "settings": "설정",
-    "launch": "Claude Code 시작",
-    "model_default": "기본 모델",
-    "mode_new": "새 세션",
-    "mode_continue": "마지막 세션 계속",
-    "mode_resume": "재개할 세션 선택",
-    "start": "시작",
     "last_24h": "최근 24시간",
     "last_7d": "최근 7일",
     "hours_ago": "{n}시간 전",
     "days_ago": "{n}일 전",
-    "cost_total": "≈ {cost} (토큰마다 낸다면, 추정)",
-    "resume": "세션 이어 하기",
-    "just_now": "방금",
-    "minutes_ago": "{n}분 전"
+    "cost_total": "≈ {cost} (토큰마다 낸다면, 추정)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

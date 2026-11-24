@@ -147,10 +147,6 @@
       "label": "Znakaŭ paslia koski ŭ pracentach",
       "description": "0 pakazvaje cełyja liki. Ciapier vykarystannie pieradajecca ŭ cełych pracentach, tamu paslia koski zvyčajna 0."
     },
-    "launch_command": {
-      "label": "Kamanda, jakaja adkryvaje Claude Code",
-      "description": "Joju paneĺ adkryvaje Claude Code u terminale. Vybranyja madeĺ i sesija dadajucca ŭ kancy."
-    },
     "click_action": {
       "label": "Levaja pstryčka",
       "description": "Što adbyvajecca paslia pstryčki levaj knopkaj pa vidžecie. Pravaja pstryčka zaŭsiody abnaŭliaje.",
@@ -260,10 +256,6 @@
       "label": "Cana paŭtorna pračytanaha tekstu",
       "description": "U dolarach ZŠA za miljon tokienaŭ."
     },
-    "panel_resume": {
-      "label": "Pakazvać «Praciahnuć sesiju» na paneli",
-      "description": "Knopki, jakija znoŭ adkryvajuć adnu z apošnich razmoŭ u Claude Code."
-    },
     "limit_countdown": {
       "label": "Kali limit vyčarpany, pakazvać toĺki advarotny adlik",
       "description": "Pry 100% vidžet pakazvaje toĺki čas da momantu, kali Claude Code znoŭ možna vykarystoŭvać."
@@ -312,20 +304,11 @@
     "by_model": "Tokieny pavodle madelaŭ",
     "refresh": "Abnavić",
     "settings": "Nałady",
-    "launch": "Zapuscić Claude Code",
-    "model_default": "Madeĺ pa zmaŭčanni",
-    "mode_new": "Novaja sesija",
-    "mode_continue": "Praciahnuć apošniuju sesiju",
-    "mode_resume": "Vybrać sesiju dlia praciahu",
-    "start": "Zapuscić",
     "last_24h": "Apošnija 24 hadziny",
     "last_7d": "Apošnija 7 dzion",
     "hours_ago": "{n} hadz tamu",
     "days_ago": "{n} dz tamu",
-    "cost_total": "≈ {cost} z apłataj za tokieny (acenka)",
-    "resume": "Praciahnuć sesiju",
-    "just_now": "toĺki što",
-    "minutes_ago": "{n} chv tamu"
+    "cost_total": "≈ {cost} z apłataj za tokieny (acenka)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

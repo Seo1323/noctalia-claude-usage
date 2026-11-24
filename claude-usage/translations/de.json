@@ -147,10 +147,6 @@
       "label": "Nachkommastellen bei Prozent",
       "description": "0 zeigt ganze Zahlen. Die Nutzung wird derzeit in ganzen Prozent geliefert, daher zeigen Nachkommastellen meist ,0."
     },
-    "launch_command": {
-      "label": "Befehl, der Claude Code öffnet",
-      "description": "Das Panel öffnet damit Claude Code in einem Terminal. Das gewählte Modell und die Sitzung werden ans Ende angehängt."
-    },
     "click_action": {
       "label": "Linksklick",
       "description": "Was beim Linksklick auf das Widget passiert. Ein Rechtsklick aktualisiert immer.",
@@ -260,10 +256,6 @@
       "label": "Preis für erneut gelesenen Text",
       "description": "In US-Dollar pro Million Tokens."
     },
-    "panel_resume": {
-      "label": "„Sitzung fortsetzen“ im Panel anzeigen",
-      "description": "Schaltflächen, die eines der letzten Claude-Code-Gespräche wieder öffnen."
-    },
     "limit_countdown": {
       "label": "Bei ausgeschöpftem Limit nur den Countdown zeigen",
       "description": "Bei 100 % zeigt das Widget nur die Zeit, bis Claude Code wieder genutzt werden kann."
@@ -312,20 +304,11 @@
     "by_model": "Tokens nach Modell",
     "refresh": "Aktualisieren",
     "settings": "Einstellungen",
-    "launch": "Claude Code starten",
-    "model_default": "Standardmodell",
-    "mode_new": "Neue Sitzung",
-    "mode_continue": "Letzte Sitzung fortsetzen",
-    "mode_resume": "Sitzung zum Fortsetzen wählen",
-    "start": "Starten",
     "last_24h": "Letzte 24 Stunden",
     "last_7d": "Letzte 7 Tage",
     "hours_ago": "vor {n} Std.",
     "days_ago": "vor {n} T.",
-    "cost_total": "≈ {cost} bei Bezahlung pro Token (Schätzung)",
-    "resume": "Sitzung fortsetzen",
-    "just_now": "gerade eben",
-    "minutes_ago": "vor {n} Min."
+    "cost_total": "≈ {cost} bei Bezahlung pro Token (Schätzung)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

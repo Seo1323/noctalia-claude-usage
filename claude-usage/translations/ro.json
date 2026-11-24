@@ -147,10 +147,6 @@
       "label": "Zecimale în procente",
       "description": "0 afișează numere întregi. Utilizarea este furnizată momentan în procente întregi, așa că zecimalele arată de obicei ,0."
     },
-    "launch_command": {
-      "label": "Comanda care deschide Claude Code",
-      "description": "Panoul o folosește pentru a deschide Claude Code într-un terminal. Modelul și sesiunea alese se adaugă la sfârșit."
-    },
     "click_action": {
       "label": "Clic stânga",
       "description": "Ce se întâmplă la un clic stânga pe widget. Clicul dreapta reîmprospătează mereu.",
@@ -260,10 +256,6 @@
       "label": "Prețul textului recitit",
       "description": "În dolari pe milion de tokenuri."
     },
-    "panel_resume": {
-      "label": "Afișează „Reia o sesiune” în panou",
-      "description": "Butoane care redeschid una dintre ultimele conversații din Claude Code."
-    },
     "limit_countdown": {
       "label": "Când o limită se epuizează, afișează doar numărătoarea inversă",
       "description": "La 100% widgetul arată doar timpul până când Claude Code poate fi folosit din nou."
@@ -312,20 +304,11 @@
     "by_model": "Tokenuri pe model",
     "refresh": "Reîmprospătează",
     "settings": "Setări",
-    "launch": "Pornește Claude Code",
-    "model_default": "Model implicit",
-    "mode_new": "Sesiune nouă",
-    "mode_continue": "Continuă ultima sesiune",
-    "mode_resume": "Alege o sesiune de reluat",
-    "start": "Pornește",
     "last_24h": "Ultimele 24 de ore",
     "last_7d": "Ultimele 7 zile",
     "hours_ago": "acum {n} h",
     "days_ago": "acum {n} z",
-    "cost_total": "≈ {cost} plătind per token (estimare)",
-    "resume": "Reia o sesiune",
-    "just_now": "chiar acum",
-    "minutes_ago": "acum {n} min"
+    "cost_total": "≈ {cost} plătind per token (estimare)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

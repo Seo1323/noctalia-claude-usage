@@ -147,10 +147,6 @@
       "label": "Hejmarên piştî xalê di rêjeyan de",
       "description": "0 hejmarên tam nîşan dide. Bikaranîn niha bi rêjeyên tam tê, loma piştî xalê bi gelemperî ,0 xuya dibe."
     },
-    "launch_command": {
-      "label": "Fermana ku Claude Code vedike",
-      "description": "Panel bi vê fermanê Claude Code di termînalekê de vedike. Model û danişîna hilbijartî li dawiyê tên zêdekirin."
-    },
     "click_action": {
       "label": "Tikandina çepê",
       "description": "Dema li widgetê bi bişkoka çepê tê tikandin çi dibe. Tikandina rastê her tim nû dike.",
@@ -260,10 +256,6 @@
       "label": "Bihayê nivîsa dîsa tê xwendin",
       "description": "Bi dolarê DYA ji bo her milyon tokenan."
     },
-    "panel_resume": {
-      "label": "“Danişînekê bidomîne” di panelê de nîşan bide",
-      "description": "Bişkokên ku yek ji axaftinên dawî yên Claude Code dîsa vedikin."
-    },
     "limit_countdown": {
       "label": "Dema sînor diqede, tenê jimartina berevajî nîşan bide",
       "description": "Li %100 widget tenê dema heta ku Claude Code dîsa were bikaranîn nîşan dide."
@@ -312,20 +304,11 @@
     "by_model": "Token li gorî modelê",
     "refresh": "Nû bike",
     "settings": "Mîheng",
-    "launch": "Claude Code bide destpêkirin",
-    "model_default": "Modela xwerû",
-    "mode_new": "Danişîna nû",
-    "mode_continue": "Danişîna dawî bidomîne",
-    "mode_resume": "Danişînekê ji bo domandinê hilbijêre",
-    "start": "Dest pê bike",
     "last_24h": "24 saetên dawî",
     "last_7d": "7 rojên dawî",
     "hours_ago": "{n} saet berê",
     "days_ago": "{n} roj berê",
-    "cost_total": "≈ {cost} bi dayîna ji bo her tokenê (texmîn)",
-    "resume": "Danişînekê bidomîne",
-    "just_now": "niha",
-    "minutes_ago": "{n} deqîqe berê"
+    "cost_total": "≈ {cost} bi dayîna ji bo her tokenê (texmîn)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

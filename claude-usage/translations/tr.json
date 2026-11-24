@@ -147,10 +147,6 @@
       "label": "Yüzdelerde ondalık basamak",
       "description": "0 tam sayı gösterir. Kullanım şu anda tam yüzde olarak iletilir, bu yüzden ondalık kısım genelde ,0 olur."
     },
-    "launch_command": {
-      "label": "Claude Code'u açan komut",
-      "description": "Panel, Claude Code'u bir terminalde bununla açar. Seçilen model ve oturum sona eklenir."
-    },
     "click_action": {
       "label": "Sol tıklama",
       "description": "Bileşene sol tıklandığında ne olacağı. Sağ tıklama her zaman yeniler.",
@@ -260,10 +256,6 @@
       "label": "Yeniden okunan metnin fiyatı",
       "description": "Milyon token başına ABD doları."
     },
-    "panel_resume": {
-      "label": "Panelde “Bir oturumu sürdür”ü göster",
-      "description": "Son Claude Code konuşmalarından birini yeniden açan düğmeler."
-    },
     "limit_countdown": {
       "label": "Sınır dolduğunda yalnızca geri sayımı göster",
       "description": "%100'de bileşen yalnızca Claude Code yeniden kullanılabilene kadar kalan süreyi gösterir."
@@ -312,20 +304,11 @@
     "by_model": "Modele göre tokenlar",
     "refresh": "Yenile",
     "settings": "Ayarlar",
-    "launch": "Claude Code'u başlat",
-    "model_default": "Varsayılan model",
-    "mode_new": "Yeni oturum",
-    "mode_continue": "Son oturuma devam et",
-    "mode_resume": "Sürdürülecek oturumu seç",
-    "start": "Başlat",
     "last_24h": "Son 24 saat",
     "last_7d": "Son 7 gün",
     "hours_ago": "{n} sa önce",
     "days_ago": "{n} g önce",
-    "cost_total": "≈ {cost} token başına ödemeyle (tahmin)",
-    "resume": "Bir oturumu sürdür",
-    "just_now": "az önce",
-    "minutes_ago": "{n} dk önce"
+    "cost_total": "≈ {cost} token başına ödemeyle (tahmin)"
   },
   "notify": {
     "title": "Claude Code {window}: %{pct}",

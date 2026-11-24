@@ -147,10 +147,6 @@
       "label": "Decimals in percentages",
       "description": "0 shows whole numbers. Usage currently comes in whole percents, so decimals usually show .0."
     },
-    "launch_command": {
-      "label": "Command that opens Claude Code",
-      "description": "The panel uses it to open Claude Code in a terminal. The model and session you pick are added at the end."
-    },
     "click_action": {
       "label": "Left click",
       "description": "What happens when you left-click the widget. A right click always refreshes.",
@@ -260,10 +256,6 @@
       "label": "Price of re-read text",
       "description": "In US dollars per million tokens."
     },
-    "panel_resume": {
-      "label": "Show “Resume a session” in the panel",
-      "description": "Buttons that reopen one of your latest Claude Code conversations."
-    },
     "limit_countdown": {
       "label": "When a limit runs out, show only the countdown",
       "description": "At 100% the widget shows just the time until you can use Claude Code again."
@@ -312,20 +304,11 @@
     "by_model": "Tokens by model",
     "refresh": "Refresh",
     "settings": "Settings",
-    "launch": "Start Claude Code",
-    "model_default": "Default model",
-    "mode_new": "New session",
-    "mode_continue": "Continue last session",
-    "mode_resume": "Pick a session to resume",
-    "start": "Start",
     "last_24h": "Last 24 hours",
     "last_7d": "Last 7 days",
     "hours_ago": "{n} h ago",
     "days_ago": "{n} d ago",
-    "cost_total": "≈ {cost} if paid per token (estimate)",
-    "resume": "Resume a session",
-    "just_now": "just now",
-    "minutes_ago": "{n} min ago"
+    "cost_total": "≈ {cost} if paid per token (estimate)"
   },
   "notify": {
     "title": "Claude Code {window} at {pct}%",

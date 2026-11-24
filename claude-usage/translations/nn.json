@@ -147,10 +147,6 @@
       "label": "Desimalar i prosent",
       "description": "0 viser heiltal. Bruken vert for tida gitt i heile prosent, så desimalane viser oftast ,0."
     },
-    "launch_command": {
-      "label": "Kommando som opnar Claude Code",
-      "description": "Panelet brukar han til å opna Claude Code i ein terminal. Vald modell og økt vert lagde til på slutten."
-    },
     "click_action": {
       "label": "Venstreklikk",
       "description": "Kva som skjer når du venstreklikkar på widgeten. Høgreklikk oppdaterer alltid.",
@@ -260,10 +256,6 @@
       "label": "Pris for tekst som vert lesen på nytt",
       "description": "I amerikanske dollar per million token."
     },
-    "panel_resume": {
-      "label": "Vis «Hald fram med ei økt» i panelet",
-      "description": "Knappar som opnar att ein av dei siste Claude Code-samtalane."
-    },
     "limit_countdown": {
       "label": "Når ei grense er brukt opp, vis berre nedteljinga",
       "description": "Ved 100 % viser widgeten berre tida til Claude Code kan brukast att."
@@ -312,20 +304,11 @@
     "by_model": "Token per modell",
     "refresh": "Oppdater",
     "settings": "Innstillingar",
-    "launch": "Start Claude Code",
-    "model_default": "Standardmodell",
-    "mode_new": "Ny økt",
-    "mode_continue": "Hald fram med siste økt",
-    "mode_resume": "Vel ei økt å halda fram med",
-    "start": "Start",
     "last_24h": "Siste 24 timar",
     "last_7d": "Siste 7 dagar",
     "hours_ago": "for {n} t sidan",
     "days_ago": "for {n} d sidan",
-    "cost_total": "≈ {cost} ved betaling per token (overslag)",
-    "resume": "Hald fram med ei økt",
-    "just_now": "nett no",
-    "minutes_ago": "for {n} min sidan"
+    "cost_total": "≈ {cost} ved betaling per token (overslag)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",

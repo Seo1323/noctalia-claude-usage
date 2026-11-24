@@ -147,10 +147,6 @@
       "label": "パーセントの小数点以下",
       "description": "0 は整数で表示します。使用量は現在整数のパーセントで届くため、小数点以下はたいてい .0 です。"
     },
-    "launch_command": {
-      "label": "Claude Code を開くコマンド",
-      "description": "パネルはこのコマンドでターミナルに Claude Code を開きます。選んだモデルとセッションが末尾に付きます。"
-    },
     "click_action": {
       "label": "左クリックの動作",
       "description": "ウィジェットを左クリックしたときの動作です。右クリックは常に更新します。",
@@ -260,10 +256,6 @@
       "label": "再読み込みされるテキストの価格",
       "description": "100 万トークンあたりの米ドル。"
     },
-    "panel_resume": {
-      "label": "パネルに「セッションを再開」を表示",
-      "description": "最近の Claude Code の会話を開き直すボタンです。"
-    },
     "limit_countdown": {
       "label": "上限に達したらカウントダウンだけを表示",
       "description": "100% になると、Claude Code をまた使えるようになるまでの時間だけを表示します。"
@@ -312,20 +304,11 @@
     "by_model": "モデル別トークン",
     "refresh": "更新",
     "settings": "設定",
-    "launch": "Claude Code を起動",
-    "model_default": "デフォルトのモデル",
-    "mode_new": "新しいセッション",
-    "mode_continue": "前回のセッションを続ける",
-    "mode_resume": "再開するセッションを選ぶ",
-    "start": "起動",
     "last_24h": "過去 24 時間",
     "last_7d": "過去 7 日間",
     "hours_ago": "{n} 時間前",
     "days_ago": "{n} 日前",
-    "cost_total": "≈ {cost}（トークンごとに支払った場合の目安）",
-    "resume": "セッションを再開",
-    "just_now": "たった今",
-    "minutes_ago": "{n} 分前"
+    "cost_total": "≈ {cost}（トークンごとに支払った場合の目安）"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

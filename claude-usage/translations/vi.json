@@ -147,10 +147,6 @@
       "label": "Số thập phân của phần trăm",
       "description": "0 hiện số nguyên. Hiện tại mức dùng được báo theo phần trăm nguyên, nên phần thập phân thường là ,0."
     },
-    "launch_command": {
-      "label": "Lệnh mở Claude Code",
-      "description": "Bảng dùng lệnh này để mở Claude Code trong terminal. Mô hình và phiên đã chọn được thêm vào cuối."
-    },
     "click_action": {
       "label": "Nhấp chuột trái sẽ",
       "description": "Điều gì xảy ra khi nhấp chuột trái vào widget. Nhấp chuột phải luôn làm mới.",
@@ -260,10 +256,6 @@
       "label": "Giá văn bản được đọc lại",
       "description": "Tính bằng đô la Mỹ cho mỗi triệu token."
     },
-    "panel_resume": {
-      "label": "Hiện “Tiếp tục một phiên” trong bảng",
-      "description": "Các nút mở lại một trong những cuộc trò chuyện Claude Code gần đây."
-    },
     "limit_countdown": {
       "label": "Khi hết giới hạn, chỉ hiện đếm ngược",
       "description": "Ở mức 100%, widget chỉ hiện thời gian đến khi có thể dùng lại Claude Code."
@@ -312,20 +304,11 @@
     "by_model": "Token theo mô hình",
     "refresh": "Làm mới",
     "settings": "Cài đặt",
-    "launch": "Khởi động Claude Code",
-    "model_default": "Mô hình mặc định",
-    "mode_new": "Phiên mới",
-    "mode_continue": "Tiếp tục phiên gần nhất",
-    "mode_resume": "Chọn phiên để tiếp tục",
-    "start": "Bắt đầu",
     "last_24h": "24 giờ qua",
     "last_7d": "7 ngày qua",
     "hours_ago": "{n} giờ trước",
     "days_ago": "{n} ngày trước",
-    "cost_total": "≈ {cost} nếu trả theo token (ước tính)",
-    "resume": "Tiếp tục một phiên",
-    "just_now": "vừa xong",
-    "minutes_ago": "{n} phút trước"
+    "cost_total": "≈ {cost} nếu trả theo token (ước tính)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct}%",

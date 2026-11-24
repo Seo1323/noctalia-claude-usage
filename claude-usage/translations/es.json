@@ -147,10 +147,6 @@
       "label": "Decimales en los porcentajes",
       "description": "0 muestra números enteros. El uso se recibe actualmente en porcentajes enteros, así que los decimales suelen mostrar ,0."
     },
-    "launch_command": {
-      "label": "Comando que abre Claude Code",
-      "description": "El panel lo usa para abrir Claude Code en un terminal. El modelo y la sesión elegidos se añaden al final."
-    },
     "click_action": {
       "label": "Clic izquierdo",
       "description": "Qué ocurre al hacer clic izquierdo en el widget. El clic derecho siempre actualiza.",
@@ -260,10 +256,6 @@
       "label": "Precio del texto releído",
       "description": "En dólares por millón de tokens."
     },
-    "panel_resume": {
-      "label": "Mostrar «Reanudar una sesión» en el panel",
-      "description": "Botones que vuelven a abrir una de las últimas conversaciones de Claude Code."
-    },
     "limit_countdown": {
       "label": "Al agotarse un límite, mostrar solo la cuenta atrás",
       "description": "Al 100 % el widget muestra solo el tiempo hasta poder volver a usar Claude Code."
@@ -312,20 +304,11 @@
     "by_model": "Tokens por modelo",
     "refresh": "Actualizar",
     "settings": "Ajustes",
-    "launch": "Iniciar Claude Code",
-    "model_default": "Modelo predeterminado",
-    "mode_new": "Nueva sesión",
-    "mode_continue": "Continuar la última sesión",
-    "mode_resume": "Elegir una sesión para reanudar",
-    "start": "Iniciar",
     "last_24h": "Últimas 24 horas",
     "last_7d": "Últimos 7 días",
     "hours_ago": "hace {n} h",
     "days_ago": "hace {n} d",
-    "cost_total": "≈ {cost} pagando por token (estimación)",
-    "resume": "Reanudar una sesión",
-    "just_now": "ahora mismo",
-    "minutes_ago": "hace {n} min"
+    "cost_total": "≈ {cost} pagando por token (estimación)"
   },
   "notify": {
     "title": "Claude Code {window}: {pct} %",

@@ -147,10 +147,6 @@
       "label": "百分比的小數位",
       "description": "0 顯示整數。目前用量以整數百分比提供，所以小數部分通常是 .0。"
     },
-    "launch_command": {
-      "label": "開啟 Claude Code 的指令",
-      "description": "面板用它在終端機中開啟 Claude Code。所選的模型和工作階段會加在最後。"
-    },
     "click_action": {
       "label": "以左鍵點擊時",
       "description": "以左鍵點擊小工具時會發生什麼事。右鍵點擊一律重新整理。",
@@ -260,10 +256,6 @@
       "label": "重複讀取的文字價格",
       "description": "每百萬權杖的美元價格。"
     },
-    "panel_resume": {
-      "label": "在面板中顯示「恢復工作階段」",
-      "description": "用來重新開啟最近某個 Claude Code 對話的按鈕。"
-    },
     "limit_countdown": {
       "label": "限額用完時只顯示倒數",
       "description": "達到 100% 時，小工具只顯示還要多久才能再次使用 Claude Code。"
@@ -312,20 +304,11 @@
     "by_model": "依模型統計權杖",
     "refresh": "重新整理",
     "settings": "設定",
-    "launch": "啟動 Claude Code",
-    "model_default": "預設模型",
-    "mode_new": "新工作階段",
-    "mode_continue": "繼續上次的工作階段",
-    "mode_resume": "選擇要恢復的工作階段",
-    "start": "啟動",
     "last_24h": "最近 24 小時",
     "last_7d": "最近 7 天",
     "hours_ago": "{n} 小時前",
     "days_ago": "{n} 天前",
-    "cost_total": "≈ {cost}（依權杖付費，估算）",
-    "resume": "恢復工作階段",
-    "just_now": "剛剛",
-    "minutes_ago": "{n} 分鐘前"
+    "cost_total": "≈ {cost}（依權杖付費，估算）"
   },
   "notify": {
     "title": "Claude Code {window}：{pct}%",
